@@ -1,0 +1,127 @@
+id,kind,expected_spoken,expected
+L001,orden-01-r1,Cambia el título a Metodología.,renameTitle
+L002,orden-02-r1,Pon como título Resultados.,renameTitle
+L003,orden-03-r1,Borra esto.,deleteSelection
+L004,orden-04-r1,Elimina la selección.,deleteSelection
+L005,orden-05-r1,Cambia esta palabra por dificultades.,replaceSelection
+L006,orden-06-r1,Sustituye esto por algo claro.,replaceSelection
+L007,orden-07-r1,Hazlo más corto.,rewriteSelection
+L008,orden-08-r1,Ponlo más formal.,rewriteSelection
+L009,orden-09-r1,Ponlo en negritas.,formatSelection:bold
+L010,orden-10-r1,Ponlo en cursivas.,formatSelection:italic
+L011,orden-11-r1,Subraya esto.,formatSelection:underline
+L012,orden-12-r1,Deshaz el último cambio.,undo
+L013,orden-13-r1,Vuelve atrás.,undo
+L014,orden-14-r1,Rehaz el cambio.,redo
+L015,orden-15-r1,Vuelve a aplicar el cambio.,redo
+L016,orden-16-r1,Selecciona el segundo párrafo.,selectText
+L017,orden-17-r1,Marca esta frase.,selectText
+L018,orden-18-r1,Busca la palabra accesibilidad.,findText
+L019,orden-19-r1,Encuentra Metodología.,findText
+L020,orden-20-r1,Guarda el documento.,saveDocument
+L021,orden-21-r1,Archiva el tanto.,saveDocument
+L022,orden-22-r1,Abre el archivo anterior.,openDocument
+L023,orden-23-r1,Recupera el acta vieja.,openDocument
+L024,orden-24-r1,Exporta a pdf.,exportDocument:pdf
+L025,orden-25-r1,Guarda una copia como pdf.,exportDocument:pdf
+L026,orden-26-r1,Deshaz eso.,undo
+L027,orden-27-r1,Rehaz eso.,redo
+L028,orden-28-r1,Busca TDAH.,findText
+L029,orden-29-r1,Selecciona accesibilidad.,selectText
+L030,orden-30-r1,Pon en negrita el monto.,formatSelection:bold
+L031,orden-31-r1,Pon en cursiva la cita.,formatSelection:italic
+L032,orden-32-r1,Cambia el título a Claridad.,renameTitle
+L033,orden-33-r1,Busca accesibilidad cognitiva.,findText
+L034,orden-34-r1,Cambia el título a Evaluación de IHC.,renameTitle
+L035,orden-35-r1,Reemplaza esto por Diseño centrado.,replaceSelection
+L036,orden-36-r1,Cámbialo.,unknown
+L037,orden-37-r1,Pon eso.,unknown
+L038,orden-38-r1,Hazlo diferente.,rewriteSelection
+L039,orden-39-r1,Bórralo.,deleteSelection
+L040,orden-40-r1,Guárdalo.,saveDocument
+L041,orden-41-r1,Ábrelo.,openDocument:nil
+L042,orden-42-r1,Subráyalo.,formatSelection:underline
+L043,orden-43-r1,Deshazlo.,undo
+L044,orden-44-r1,Rehazlo.,redo
+L045,orden-45-r1,Encuéntralo.,unknown
+L046,orden-46-r1,Selecciónalo.,unknown
+L047,orden-47-r1,Titula el informe.,renameTitle
+L048,orden-48-r1,Ponle Metodología.,renameTitle
+L049,orden-01-r2,Cambia el título a Metodología.,renameTitle
+L050,orden-02-r2,Pon como título Resultados.,renameTitle
+L051,orden-03-r2,Borra esto.,deleteSelection
+L052,orden-04-r2,Elimina la selección.,deleteSelection
+L053,orden-05-r2,Cambia esta palabra por dificultades.,replaceSelection
+L054,orden-06-r2,Sustituye esto por algo claro.,replaceSelection
+L055,orden-07-r2,Hazlo más corto.,rewriteSelection
+L056,orden-08-r2,Ponlo más formal.,rewriteSelection
+L057,orden-09-r2,Ponlo en negritas.,formatSelection:bold
+L058,orden-10-r2,Ponlo en cursivas.,formatSelection:italic
+L059,orden-11-r2,Subraya esto.,formatSelection:underline
+L060,orden-12-r2,Deshaz el último cambio.,undo
+L061,orden-13-r2,Vuelve atrás.,undo
+L062,orden-14-r2,Rehaz el cambio.,redo
+L063,orden-15-r2,Vuelve a aplicar el cambio.,redo
+L064,orden-16-r2,Selecciona el segundo párrafo.,selectText
+L065,orden-17-r2,Marca esta frase.,selectText
+L066,orden-18-r2,Busca la palabra accesibilidad.,findText
+L067,orden-19-r2,Encuentra Metodología.,findText
+L068,orden-20-r2,Guarda el documento.,saveDocument
+L069,orden-21-r2,Archiva el tanto.,saveDocument
+L070,orden-22-r2,Abre el archivo anterior.,openDocument
+L071,orden-23-r2,Recupera el acta vieja.,openDocument
+L072,orden-24-r2,Exporta a pdf.,exportDocument:pdf
+L073,orden-25-r2,Guarda una copia como pdf.,exportDocument:pdf
+L074,orden-26-r2,Deshaz eso.,undo
+L075,orden-27-r2,Rehaz eso.,redo
+L076,orden-28-r2,Busca TDAH.,findText
+L077,orden-29-r2,Selecciona accesibilidad.,selectText
+L078,orden-30-r2,Pon en negrita el monto.,formatSelection:bold
+L079,orden-31-r2,Pon en cursiva la cita.,formatSelection:italic
+L080,orden-32-r2,Cambia el título a Claridad.,renameTitle
+L081,orden-33-r2,Busca accesibilidad cognitiva.,findText
+L082,orden-34-r2,Cambia el título a Evaluación de IHC.,renameTitle
+L083,orden-35-r2,Reemplaza esto por Diseño centrado.,replaceSelection
+L084,orden-36-r2,Cámbialo.,unknown
+L085,orden-37-r2,Pon eso.,unknown
+L086,orden-38-r2,Hazlo diferente.,rewriteSelection
+L087,orden-39-r2,Bórralo.,deleteSelection
+L088,orden-40-r2,Guárdalo.,saveDocument
+L089,orden-41-r2,Ábrelo.,openDocument:nil
+L090,orden-42-r2,Subráyalo.,formatSelection:underline
+L091,orden-43-r2,Deshazlo.,undo
+L092,orden-44-r2,Rehazlo.,redo
+L093,orden-45-r2,Encuéntralo.,unknown
+L094,orden-46-r2,Selecciónalo.,unknown
+L095,orden-47-r2,Titula el informe.,renameTitle
+L096,orden-48-r2,Ponle Metodología.,renameTitle
+L097,unsupported,Imprime esto.,unsupported
+L098,unsupported,Manda esto por correo.,unsupported
+L099,unsupported,Traduce este párrafo.,unsupported
+L100,unsupported,Comprime el archivo.,unsupported
+L101,unsupported,Firma el documento.,unsupported
+L102,unsupported,Agenda una revisión.,unsupported
+L103,unsupported,Sube el documento a Drive.,unsupported
+L104,unsupported,Cifra el archivo.,unsupported
+L105,unsupported,Comparte esto.,unsupported
+L106,unsupported,Programa un recordatorio.,unsupported
+L107,unsupported,Dicta el siguiente párrafo.,unsupported
+L108,unsupported,Lee el acta.,unsupported
+L109,unsupported,Cuenta las palabras.,unsupported
+L110,unsupported,Convierte a epub.,unsupported
+L111,unsupported,Busca en internet.,unsupported
+L112,unknown,"Hmm, no.",unknown
+L113,unknown,Eso no.,unknown
+L114,unknown,Déjame pensarlo.,unknown
+L115,unknown,No estoy seguro.,unknown
+L116,unknown,Espera.,unknown
+L117,unknown,La interacción humano computadora estudia sistemas.,unknown
+L118,unknown,Borrar información accidentalmente afecta.,unknown
+L119,unknown,El gerente cambió al proveedor.,unknown
+L120,unknown,Hace calor aquí.,unknown
+L121,unknown,El informe quedó listo.,unknown
+L122,unknown,Traigo sueño.,unknown
+L123,unknown,Se acabó la pila.,unknown
+L124,unknown,No hay señal.,unknown
+L125,unknown,Mañana hablamos.,unknown
+L126,unknown,Gracias.,unknown
