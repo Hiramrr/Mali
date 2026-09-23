@@ -1,0 +1,25 @@
+paso,grupo,instruccion,expected
+C01,navigation,"Busca TDAH.",findText
+C02,navigation,"Encuentra IHC.",findText
+C03,navigation,"Busca accesibilidad cognitiva.",findText
+C04,navigation,"Localiza SwiftUI.",findText
+C05,navigation,"Halla Capítulo 3.",findText
+C06,navigation,"Detecta la cita duplicada.",findText
+C07,navigation,"Marca esta frase.",selectText
+C08,navigation,"Selecciona María José.",selectText
+C09,navigation,"Elige accesibilidad.",selectText
+C10,navigation,"Toma el Capítulo 3.",selectText
+C11,navigation,"Enfoca la conclusión.",selectText
+C12,navigation,"Aparta el párrafo duplicado.",selectText
+C13,reversible,"Deshaz.",undo
+C14,reversible,"Vuelve atrás.",undo
+C15,reversible,"Anula el último cambio.",undo
+C16,reversible,"Revierte el cambio.",undo
+C17,reversible,"Rehaz.",redo
+C18,reversible,"Vuelve a aplicar el cambio.",redo
+C19,reversible,"Reaplica el formato.",redo
+C20,reversible,"Restaura lo deshecho.",redo
+C21,reversible,"Ponlo en negrita.",formatSelection
+C22,reversible,"Ponlo en cursivas.",formatSelection
+C23,reversible,"Subráyalo.",formatSelection
+C24,reversible,"Aplica subrayado al párrafo.",formatSelection

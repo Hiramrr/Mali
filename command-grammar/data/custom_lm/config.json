@@ -1,0 +1,17 @@
+{
+  "locale": "es_MX",
+  "locale_note": "guion bajo, coincide DictationTranscriber y SFCustomLanguageModelData; verificado en supportedLocales",
+  "identifier": "com.editor.commands.v1",
+  "version": "1.0",
+  "weight": 0.6,
+  "weight_note": "única configuración a priori (moderada 0.6), sin tuning post-FINAL",
+  "phraseCount_entries": 95,
+  "templateCount": 12,
+  "aproxFrases": 145,
+  "vocab_unigramas_aprox": 143,
+  "asset_bin_bytes": 4858,
+  "compiled_lm_bytes": 8870069,
+  "compiled_vocab_bytes": 3860,
+  "contextualStrings": "idénticas baseline (commandContext(), sin cambios)",
+  "preset": "phrase (.phrase + customizedLanguage hint en B; resto idéntico)"
+}

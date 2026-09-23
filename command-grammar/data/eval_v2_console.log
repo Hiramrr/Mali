@@ -1,0 +1,281 @@
+Building for debugging...
+Build complete! (0.15 sec)
+eval-v2: 180 utterances, mismos WAV para A y B, locale es_MX
+[V001] B:renameTitle✓ C:renameTitle✓ | B[Cambia el encabezado a resultados 2026] C[Cambia el encabezado a resultados 2026]
+[V002] B:renameTitle✓ C:renameTitle✓ | B[Pon como título capítulo tres] C[Pon como título capítulo tres]
+[V003] B:renameTitle✓ C:renameTitle✓ | B[Ponle María José al informe] C[Ponle María José al informe]
+[V004] B:renameTitle✓ C:renameTitle✓ | B[Titula este informe como metodología] C[Titula este informe como metodología]
+[V005] B:unknown✗ C:unknown✗ | B[Renombre el documento SwiftUI] C[Renombre el documento SwiftUI]
+[V006] B:unknown✗ C:unknown✗ | B[Actualiza el nombre evaluación de IHC] C[Actualiza el nombre evaluación de IHC]
+[V007] B:renameTitle✓ C:renameTitle✓ | B[El título dirá interacción humana computadora] C[El título dirá interacción humana computadora]
+[V008] B:renameTitle✓ C:renameTitle✓ | B[Nombra el acta, accesibilidad cognitiva] C[Nombra el acta, accesibilidad cognitiva]
+[V009] B:renameTitle✓ C:renameTitle✓ | B[Cambia el nombre a HC] C[Cambia el nombre a HC]
+[V010] B:renameTitle✓ C:renameTitle✓ | B[Ponle de título TDA] C[Ponle de título TDA]
+[V011] B:renameTitle✓ C:renameTitle✓ | B[Bautiza el informe como María José] C[Bautiza el informe como María José]
+[V012] B:unknown✗ C:unknown✗ | B[Qué el título si te capítulo tres] C[Qué el título si te capítulo tres]
+[V013] B:unknown✗ C:unknown✗ | B[Modificar el encabezado a metodología] C[Modificar el encabezado a metodología]
+[V014] B:renameTitle✓ C:renameTitle✓ | B[El encabezado será resultados] C[El encabezado será resultados]
+[V015] B:deleteSelection✓ C:deleteSelection✓ | B[Borra la selección] C[Borra la selección]
+[V016] B:deleteSelection✓ C:deleteSelection✓ | B[Elimina esto] C[Elimina esto]
+[V017] B:deleteSelection✓ C:deleteSelection✓ | B[Quita esa frase] C[Quita esa frase]
+[V018] B:deleteSelection✓ C:deleteSelection✓ | B[Suprime el párrafo] C[Suprime el párrafo]
+[V019] B:deleteSelection✓ C:deleteSelection✓ | B[Tacha lo último] C[Tacha lo último]
+[V020] B:deleteSelection✓ C:deleteSelection✓ | B[Corta esa parte] C[Corta esa parte]
+[V021] B:deleteSelection✓ C:deleteSelection✓ | B[Descarta el borrador] C[Descarta el borrador]
+[V022] B:deleteSelection✓ C:deleteSelection✓ | B[Bórralo] C[Bórralo]
+[V023] B:deleteSelection✓ C:deleteSelection✓ | B[Elimina] C[Elimina]
+[V024] B:deleteSelection✓ C:deleteSelection✓ | B[Quítalo] C[Quítalo]
+[V025] B:replaceSelection✓ C:replaceSelection✓ | B[Reemplaza esta frase por interacción humana computadora] C[Reemplaza esta frase por interacción humana computadora]
+[V026] B:replaceSelection✓ C:replaceSelection✓ | B[Sustituye la palabra por SwiftUI] C[Sustituye la palabra por SwiftUI]
+[V027] B:replaceSelection✓ C:replaceSelection✓ | B[Cambia la cita por metodología] C[Cambia la cita por metodología]
+[V028] B:replaceSelection✓ C:replaceSelection✓ | B[Troca esto por TDA] C[Troca esto por TDA]
+[V029] B:replaceSelection✓ C:replaceSelection✓ | B[Escribe evaluación de IHC] C[Escribe evaluación de IHC]
+[V030] B:replaceSelection✓ C:replaceSelection✓ | B[Pon resultados 2026 donde dice borrador] C[Pon resultados 2026 donde dice borrador]
+[V031] B:replaceSelection✓ C:replaceSelection✓ | B[Pon capítulo tres tras la introducción] C[Pon capítulo tres tras la introducción]
+[V032] B:replaceSelection✓ C:replaceSelection✓ | B[Reemplázalo por accesibilidad cognitiva] C[Reemplázalo por accesibilidad cognitiva]
+[V033] B:replaceSelection✓ C:replaceSelection✓ | B[Sustitúyelo por María José] C[Sustitúyelo por María José]
+[V034] B:unknown✗ C:unknown✗ | B[Cambias de término por IHC] C[Cambias de término por IHC]
+[V035] B:rewriteSelection✓ C:rewriteSelection✓ | B[Haz lo más breve] C[Haz lo más breve]
+[V036] B:rewriteSelection✓ C:rewriteSelection✓ | B[Haz esa parte más cara] C[Haz esa parte más cara]
+[V037] B:rewriteSelection✓ C:rewriteSelection✓ | B[Reescribe el párrafo completo] C[Reescribe el párrafo completo]
+[V038] B:rewriteSelection✓ C:rewriteSelection✓ | B[Reformula esto más formal] C[Reformula esto más formal]
+[V039] B:rewriteSelection✓ C:rewriteSelection✓ | B[Hazla más accesible] C[Hazla más accesible]
+[V040] B:rewriteSelection✓ C:rewriteSelection✓ | B[Reescribe esto con otras palabras] C[Reescribe esto con otras palabras]
+[V041] B:rewriteSelection✓ C:rewriteSelection✓ | B[Hazlo en tono académico] C[Hazlo en tono académico]
+[V042] B:rewriteSelection✓ C:rewriteSelection✓ | B[Reformula la conclusión] C[Reformula la conclusión]
+[V043] B:formatSelection:bold✓ C:formatSelection:bold✓ | B[Ponlo en negritas] C[Ponlo en negritas]
+[V044] B:formatSelection:italic✓ C:formatSelection:italic✓ | B[Ponlo en cursivas] C[Ponlo en cursivas]
+[V045] B:formatSelection:underline✓ C:formatSelection:underline✓ | B[Subraya la cita] C[Subraya la cita]
+[V046] B:unknown✗ C:unknown✗ | B[Pone negrito el] C[Pone negrito el]
+[V047] B:formatSelection:italic✓ C:formatSelection:italic✓ | B[Pon en cursiva a este párrafo] C[Pon en cursiva a este párrafo]
+[V048] B:formatSelection:bold✓ C:formatSelection:bold✓ | B[Marca el texto negrita] C[Marca el texto negrita]
+[V049] B:formatSelection:italic✓ C:formatSelection:italic✓ | B[Aplica cursivas a la cita] C[Aplica cursivas a la cita]
+[V050] B:formatSelection:italic✓ C:formatSelection:italic✓ | B[Deja el texto en cursiva] C[Deja el texto en cursiva]
+[V051] B:formatSelection:bold✓ C:formatSelection:bold✓ | B[Resalta el resultado] C[Resalta el resultado]
+[V052] B:formatSelection:bold✓ C:formatSelection:bold✓ | B[Remarca la conclusión] C[Remarca la conclusión]
+[V053] B:formatSelection:bold✓ C:formatSelection:bold✓ | B[Ponlo en negrita] C[Ponlo en negrita]
+[V054] B:formatSelection:italic✓ C:formatSelection:italic✓ | B[Ponlo en cursiva] C[Ponlo en cursiva]
+[V055] B:formatSelection:underline✓ C:formatSelection:underline✓ | B[Subráyalo] C[Subráyalo]
+[V056] B:formatSelection:bold✓ C:formatSelection:bold✓ | B[Negritas] C[Negritas]
+[V057] B:formatSelection:italic✓ C:formatSelection:italic✓ | B[Cursivas] C[Cursivas]
+[V058] B:formatSelection:underline✓ C:formatSelection:underline✓ | B[Subrayado] C[Subrayado]
+[V059] B:unknown✗ C:unknown✗ | B[Hazle negritas] C[Hazle negritas]
+[V060] B:formatSelection:italic✓ C:formatSelection:italic✓ | B[Pon la cita en cursivas] C[Pon la cita en cursivas]
+[V061] B:formatSelection:underline✓ C:formatSelection:underline✓ | B[Aplica el subrayado al párrafo] C[Aplica el subrayado al párrafo]
+[V062] B:formatSelection:italic✓ C:formatSelection:italic✓ | B[Marca esta frase en cursiva] C[Marca esta frase en cursiva]
+[V063] B:formatSelection:bold✓ C:formatSelection:bold✓ | B[Pon el título negrita] C[Pon el título negrita]
+[V064] B:formatSelection:bold✓ C:formatSelection:bold✓ | B[Resalta el título negrita] C[Resalta el título negrita]
+[V065] B:undo✓ C:undo✓ | B[Deshaz] C[Deshaz]
+[V066] B:unknown✗ C:unknown✗ | B[Deshace eso] C[Deshace eso]
+[V067] B:undo✓ C:undo✓ | B[Deshaz hazlo] C[Deshaz hazlo]
+[V068] B:unknown✗ C:unknown✗ | B[Deshace el último cambio] C[Deshace el último cambio]
+[V069] B:undo✓ C:undo✓ | B[Vuelve atrás] C[Vuelve atrás]
+[V070] B:undo✓ C:undo✓ | B[Anula el último cambio] C[Anula el último cambio]
+[V071] B:undo✓ C:undo✓ | B[Cancela la edición] C[Cancela la edición]
+[V072] B:undo✓ C:undo✓ | B[Revierte el cambio] C[Revierte el cambio]
+[V073] B:undo✓ C:undo✓ | B[Vuelve a como estaba] C[Vuelve a como estaba]
+[V074] B:undo✓ C:undo✓ | B[Regresa al borrador] C[Regresa al borrador]
+[V075] B:undo✓ C:undo✓ | B[Restaura la edición] C[Restaura la edición]
+[V076] B:undo✓ C:undo✓ | B[Échalo para atrás] C[Échalo para atrás]
+[V077] B:undo✓ C:undo✓ | B[Déjalo como estaba] C[Déjalo como estaba]
+[V078] B:undo✓ C:undo✓ | B[Anula eso] C[Anula eso]
+[V079] B:undo✓ C:undo✓ | B[Deshaz el cambio] C[Deshaz el cambio]
+[V080] B:undo✓ C:undo✓ | B[Vuelve al estado anterior] C[Vuelve al estado anterior]
+[V081] B:redo✓ C:redo✓ | B[Rehaz] C[Rehaz]
+[V082] B:unknown✗ C:redo✓ | B[Reto] C[Rehaz esto]
+[V083] B:unknown✗ C:unknown✗ | B[Fea hazlo] C[Fea hazlo]
+[V084] B:redo✓ C:redo✓ | B[Rehace el último cambio] C[Rehace el último cambio]
+[V085] B:redo✓ C:redo✓ | B[Vuelve a aplicar el cambio] C[Vuelve a aplicar el cambio]
+[V086] B:unknown✗ C:unknown✗ | B[Aplicar el formato] C[Aplicar el formato]
+[V087] B:redo✓ C:redo✓ | B[Restaura lo deshecho] C[Restaura lo deshecho]
+[V088] B:redo✓ C:redo✓ | B[Vuelve a poner el texto] C[Vuelve a poner el texto]
+[V089] B:unknown✗ C:unknown✗ | B[Les haz el deshacer] C[Les haz el deshacer]
+[V090] B:unknown✗ C:unknown✗ | B[Repite el cambio de desecho] C[Repite el cambio de desecho]
+[V091] B:redo✓ C:redo✓ | B[Rehace el cambio] C[Rehace el cambio]
+[V092] B:redo✓ C:redo✓ | B[Vuelve a aplicar la edición] C[Vuelve a aplicar la edición]
+[V093] B:redo✓ C:redo✓ | B[Restaura lo que deshice] C[Restaura lo que deshice]
+[V094] B:unknown✗ C:unknown✗ | B[Creas el cambio] C[Creas el cambio]
+[V095] B:redo✓ C:redo✓ | B[Rehaz la edición] C[Rehaz la edición]
+[V096] B:redo✓ C:redo✓ | B[Vuelve a aplicar eso] C[Vuelve a aplicar eso]
+[V097] B:findText✓ C:findText✓ | B[Busca TDA] C[Busca TDA]
+[V098] B:findText✓ C:findText✓ | B[Encuentra IHC] C[Encuentra IHC]
+[V099] B:findText✓ C:findText✓ | B[Localiza SwiftUI] C[Localiza SwiftUI]
+[V100] B:findText✓ C:findText✓ | B[Busca accesibilidad cognitiva] C[Busca accesibilidad cognitiva]
+[V101] B:findText✓ C:findText✓ | B[Encuentra Metodología] C[Encuentra Metodología]
+[V102] B:findText✓ C:findText✓ | B[Busca la palabra evaluación de IHC] C[Busca la palabra evaluación de IHC]
+[V103] B:unknown✗ C:unknown✗ | B[Haya capítulo tres] C[Haya capítulo tres]
+[V104] B:findText✓ C:findText✓ | B[Rastrea a María José] C[Rastrea a María José]
+[V105] B:findText✓ C:findText✓ | B[Busca interacción humana computadora] C[Busca interacción humana computadora]
+[V106] B:findText✓ C:findText✓ | B[Encuentra resultados 2026] C[Encuentra resultados 2026]
+[V107] B:findText✓ C:findText✓ | B[Detecta la cita duplicada] C[Detecta la cita duplicada]
+[V108] B:findText✓ C:findText✓ | B[Ubica el segundo párrafo] C[Ubica el segundo párrafo]
+[V109] B:selectText✓ C:selectText✓ | B[Selecciona el segundo párrafo] C[Selecciona el segundo párrafo]
+[V110] B:selectText✓ C:selectText✓ | B[Marca esta frase] C[Marca esta frase]
+[V111] B:selectText✓ C:selectText✓ | B[Elige accesibilidad] C[Elige accesibilidad]
+[V112] B:selectText✓ C:selectText✓ | B[Toma el capítulo tres] C[Toma el capítulo tres]
+[V113] B:selectText✓ C:selectText✓ | B[Señala la palabra TDA] C[Señala la palabra TDA]
+[V114] B:selectText✓ C:selectText✓ | B[Selecciona María José] C[Selecciona María José]
+[V115] B:selectText✓ C:selectText✓ | B[Marca IHC] C[Marca IHC]
+[V116] B:selectText✓ C:selectText✓ | B[Enfoca la conclusión] C[Enfoca la conclusión]
+[V117] B:selectText✓ C:selectText✓ | B[Aparta el párrafo duplicado] C[Aparta el párrafo duplicado]
+[V118] B:unknown✗ C:unknown✗ | B[Te limita evaluación de IH] C[Te limita evaluación de IH]
+[V119] B:saveDocument✓ C:saveDocument✓ | B[Guarda el documento] C[Guarda el documento]
+[V120] B:saveDocument✓ C:saveDocument✓ | B[Archiva el informe] C[Archiva el informe]
+[V121] B:saveDocument✓ C:saveDocument✓ | B[Guárdalo] C[Guárdalo]
+[V122] B:saveDocument✓ C:saveDocument✓ | B[Respalda el borrador] C[Respalda el borrador]
+[V123] B:saveDocument✓ C:saveDocument✓ | B[Preserva los cambios] C[Preserva los cambios]
+[V124] B:saveDocument✓ C:saveDocument✓ | B[Registra el acta] C[Registra el acta]
+[V125] B:openDocument✓ C:openDocument✓ | B[Abre el archivo anterior] C[Abre el archivo anterior]
+[V126] B:openDocument✓ C:openDocument✓ | B[Recupera la acta vieja] C[Recupera la acta vieja]
+[V127] B:openDocument✓ C:openDocument✓ | B[Ábrelo] C[Ábrelo]
+[V128] B:openDocument✓ C:openDocument✓ | B[Carga el informe guardado] C[Carga el informe guardado]
+[V129] B:openDocument✓ C:openDocument✓ | B[Muestra el capítulo tres] C[Muestra el capítulo tres]
+[V130] B:openDocument✓ C:openDocument✓ | B[Trae el documento de María José] C[Trae el documento de María José]
+[V131] B:exportDocument:pdf✓ C:exportDocument:pdf✓ | B[Exporta pdf] C[Exporta pdf]
+[V132] B:exportDocument:pdf✓ C:exportDocument:pdf✓ | B[Guarda una copia como PDF] C[Guarda una copia como PDF]
+[V133] B:exportDocument:word✓ C:exportDocument:word✓ | B[Genera el documento en Word] C[Genera el documento en Word]
+[V134] B:exportDocument:plainText✓ C:exportDocument:plainText✓ | B[Convierte texto plano] C[Convierte texto plano]
+[V135] B:exportDocument:richText✓ C:exportDocument:richText✓ | B[Produce una versión en formato enriquecido] C[Produce una versión en formato enriquecido]
+[V136] B:exportDocument:pdf✓ C:exportDocument:pdf✓ | B[Saca el acta en PDF] C[Saca el acta en PDF]
+[V137] B:unsupported✓ C:unsupported✓ | B[Imprime el documento] C[Imprime el documento]
+[V138] B:unsupported✓ C:unsupported✓ | B[Traduce este párrafo al inglés] C[Traduce este párrafo al inglés]
+[V139] B:unsupported✓ C:unsupported✓ | B[Envía esto por correo] C[Envía esto por correo]
+[V140] B:unsupported✓ C:unsupported✓ | B[Comprime el archivo final] C[Comprime el archivo final]
+[V141] B:unsupported✓ C:unsupported✓ | B[Cifra del informe confidencial] C[Cifra del informe confidencial]
+[V142] B:unsupported✓ C:unsupported✓ | B[Firma la] C[Firma la]
+[V143] B:unsupported✓ C:unsupported✓ | B[Comparte el borrador con el equipo] C[Comparte el borrador con el equipo]
+[V144] B:unsupported✓ C:unsupported✓ | B[Sube el documento a la nube] C[Sube el documento a la nube]
+[V145] B:unsupported✓ C:unsupported✓ | B[Agenda una revisión para mañana] C[Agenda una revisión para mañana]
+[V146] B:unsupported✓ C:unsupported✓ | B[Programa un recordatorio] C[Programa un recordatorio]
+[V147] B:unsupported✓ C:unsupported✓ | B[Dicta el siguiente parra] C[Dicta el siguiente parra]
+[V148] B:unsupported✓ C:unsupported✓ | B[Lee el informe en voz al] C[Lee el informe en voz al]
+[V149] B:unsupported✓ C:unsupported✓ | B[Cuenta las palabras del texto] C[Cuenta las palabras del texto]
+[V150] B:unsupported✓ C:unsupported✓ | B[Copiar la selección] C[Copiar la selección]
+[V151] B:unsupported✓ C:unsupported✓ | B[Pega el contenido] C[Pega el contenido]
+[V152] B:unsupported✓ C:unsupported✓ | B[Cierra el documento] C[Cierra el documento]
+[V153] B:unsupported✓ C:unsupported✓ | B[Numera las páginas] C[Numera las páginas]
+[V154] B:unknown✗ C:unknown✗ | B[Central título] C[Central título]
+[V155] B:unsupported✓ C:unsupported✓ | B[Escanea la página] C[Escanea la página]
+[V156] B:unsupported✓ C:unsupported✓ | B[Recorta la imagen] C[Recorta la imagen]
+[V157] B:unsupported✓ C:unsupported✓ | B[Resume el informe] C[Resume el informe]
+[V158] B:unsupported✓ C:unsupported✓ | B[Busca en Internet] C[Busca en Internet]
+[V159] B:unknown✓ C:unknown✓ | B[No estoy] C[No estoy]
+[V160] B:unknown✓ C:unknown✓ | B[Déjame pensarlo un momento] C[Déjame pensarlo un momento]
+[V161] B:unknown✓ C:unknown✓ | B[] C[]
+[V162] B:unknown✓ C:unknown✓ | B[] C[]
+[V163] B:unknown✓ C:unknown✓ | B[Hace calor aquí hoy] C[Hace calor aquí hoy]
+[V164] B:unknown✓ C:unknown✓ | B[El informe quedó listo ayer] C[El informe quedó listo ayer]
+[V165] B:unknown✓ C:unknown✓ | B[Traigo sueño] C[Traigo sueño]
+[V166] B:unknown✓ C:unknown✓ | B[Se acabó la pila] C[Se acabó la pila]
+[V167] B:unknown✓ C:unknown✓ | B[No hay señal] C[No hay señal]
+[V168] B:unknown✓ C:unknown✓ | B[Mañana hablamos el proyecto] C[Mañana hablamos el proyecto]
+[V169] B:unknown✓ C:unknown✓ | B[Gracias por tu ayuda] C[Gracias por tu ayuda]
+[V170] B:unknown✓ C:unknown✓ | B[Qué hora es] C[Qué hora es]
+[V171] B:unknown✓ C:unknown✓ | B[Ay te llovió mucho] C[Ay te llovió mucho]
+[V172] B:unknown✓ C:unknown✓ | B[El gerente cambió el proveedor] C[El gerente cambió el proveedor]
+[V173] B:deleteSelection✗ C:deleteSelection✗ | B[Borra información accidentalmente afecta] C[Borra información accidentalmente afecta]
+[V174] B:unknown✓ C:unknown✓ | B[Qué buen café] C[Qué buen café]
+[V175] B:unknown✓ C:unknown✓ | B[Pues eso creo] C[Pues eso creo]
+[V176] B:unknown✓ C:unknown✓ | B[Encuéntralo] C[Encuéntralo]
+[V177] B:unknown✓ C:unknown✓ | B[Selecciona] C[Selecciona]
+[V178] B:unknown✓ C:unknown✓ | B[El acta está sobre la mesa] C[El acta está sobre la mesa]
+[V179] B:unknown✓ C:unknown✓ | B[Hoy es un buen día] C[Hoy es un buen día]
+[V180] B:unknown✓ C:unknown✓ | B[Nos vemos mañana] C[Nos vemos mañana]
+
+Resultados por utterance en /Users/hiram/Proyectos/EditorFinal/command-grammar/data/eval_v2_results.csv (180 filas)
+
+=== MÉTRICA PRIMARIA: END-TO-END COMMAND ACCURACY ===
+Baseline: 161/180 = 89.4%
+Custom:   162/180 = 90.0%
+Mejora absoluta: +0.6 puntos
+Reducción relativa de error: 5.3%
+
+=== WER (mismos audios) ===
+Baseline WER: 14.4% (94/655)
+Custom WER:   14.2% (93/655)
+Mejora absoluta WER: +0.2 puntos
+Reducción relativa WER: 1.1%
+
+=== COMPARACIÓN PAREADA ===
+Ambos correctos (B✓ C✓): 161
+Solo custom corrige (B✗ C✓): 1
+Regresiones (B✓ C✗) CUSTOM_LM_REGRESSIONS: 0 = 0.0%
+Ambos fallan (B✗ C✗): 18
+
+=== STT-SPECIFIC CHALLENGES (baseline vs custom, command accuracy) ===
+UNDO/REDO: n=32 baseline 24/32=75.0% custom 25/32=78.1%
+FORMAT: n=22 baseline 20/22=90.9% custom 20/22=90.9%
+FIND/SELECT: n=22 baseline 20/22=90.9% custom 20/22=90.9%
+SAVE/EXPORT: n=18 baseline 18/18=100.0% custom 18/18=100.0%
+SHORT: n=26 baseline 23/26=88.5% custom 24/26=92.3%
+ARGUMENTS: n=59 baseline 52/59=88.1% custom 52/59=88.1%
+RENAME: n=14 baseline 10/14=71.4% custom 10/14=71.4%
+DELETE: n=10 baseline 10/10=100.0% custom 10/10=100.0%
+REPLACE: n=10 baseline 9/10=90.0% custom 9/10=90.0%
+REWRITE: n=8 baseline 8/8=100.0% custom 8/8=100.0%
+FIND: n=12 baseline 11/12=91.7% custom 11/12=91.7%
+SELECT: n=10 baseline 9/10=90.0% custom 9/10=90.0%
+SAVE: n=6 baseline 6/6=100.0% custom 6/6=100.0%
+OPEN: n=6 baseline 6/6=100.0% custom 6/6=100.0%
+EXPORT: n=6 baseline 6/6=100.0% custom 6/6=100.0%
+
+=== ARGUMENT METRICS ===
+EXACT: baseline 149 custom 149
+CASE_ONLY_DIFFERENCE: baseline 8 custom 8
+MINOR_STT_ERROR: baseline 6 custom 6
+WRONG: baseline 17 custom 17
+Argument acceptable (EXACT+CASE+MINOR): baseline 163/180=90.6% custom 163/180=90.6%
+Argument strict (EXACT+CASE): baseline 157/180 custom 157/180
+
+=== UNSUPPORTED / UNKNOWN SAFETY ===
+Unsupported hablado n=22: baseline→supported 0 custom→supported 0 (objetivo 0)
+Unknown hablado n=22: baseline→supported 1 custom→supported 1 (objetivo 0)
+
+=== LATENCIAS (ms) ===
+STT baseline mean 198 median 193 p95 223
+STT custom   mean 195 median 192 p95 218
+Parser baseline mean 0.059 median 0.059
+Parser custom   mean 0.058 median 0.058
+E2E baseline mean 198 median 193
+E2E custom   mean 195 median 192
+
+=== FALLOS BASELINE (todos) ===
+B-FAIL V005 exp=renameTitle got=unknown raw=[Renombre el documento SwiftUI] ref=[Renombra el documento a SwiftUI.]
+B-FAIL V006 exp=renameTitle got=unknown raw=[Actualiza el nombre evaluación de IHC] ref=[Actualiza el nombre a Evaluación de IHC.]
+B-FAIL V012 exp=renameTitle got=unknown raw=[Qué el título si te capítulo tres] ref=[Que el título cite Capítulo 3.]
+B-FAIL V013 exp=renameTitle got=unknown raw=[Modificar el encabezado a metodología] ref=[Modifica el encabezado a Metodología.]
+B-FAIL V034 exp=replaceSelection got=unknown raw=[Cambias de término por IHC] ref=[Cambia este término por IHC.]
+B-FAIL V046 exp=formatSelection:bold got=unknown raw=[Pone negrito el] ref=[Pon en negrita el título.]
+B-FAIL V059 exp=formatSelection:bold got=unknown raw=[Hazle negritas] ref=[Hazlo en negritas.]
+B-FAIL V066 exp=undo got=unknown raw=[Deshace eso] ref=[Deshaz eso.]
+B-FAIL V068 exp=undo got=unknown raw=[Deshace el último cambio] ref=[Deshaz el último cambio.]
+B-FAIL V082 exp=redo got=unknown raw=[Reto] ref=[Rehaz eso.]
+B-FAIL V083 exp=redo got=unknown raw=[Fea hazlo] ref=[Rehazlo.]
+B-FAIL V086 exp=redo got=unknown raw=[Aplicar el formato] ref=[Reaplica el formato.]
+B-FAIL V089 exp=redo got=unknown raw=[Les haz el deshacer] ref=[Deshaz el deshacer.]
+B-FAIL V090 exp=redo got=unknown raw=[Repite el cambio de desecho] ref=[Repite el cambio deshecho.]
+B-FAIL V094 exp=redo got=unknown raw=[Creas el cambio] ref=[Rehace el cambio.]
+B-FAIL V103 exp=findText got=unknown raw=[Haya capítulo tres] ref=[Halla Capítulo 3.]
+B-FAIL V118 exp=selectText got=unknown raw=[Te limita evaluación de IH] ref=[Delimita Evaluación de IHC.]
+B-FAIL V154 exp=unsupported got=unknown raw=[Central título] ref=[Centra el título.]
+B-FAIL V173 exp=unknown got=deleteSelection raw=[Borra información accidentalmente afecta] ref=[Borrar información accidentalmente afecta.]
+
+=== FALLOS CUSTOM (todos) ===
+C-FAIL V005 exp=renameTitle got=unknown raw=[Renombre el documento SwiftUI] ref=[Renombra el documento a SwiftUI.]
+C-FAIL V006 exp=renameTitle got=unknown raw=[Actualiza el nombre evaluación de IHC] ref=[Actualiza el nombre a Evaluación de IHC.]
+C-FAIL V012 exp=renameTitle got=unknown raw=[Qué el título si te capítulo tres] ref=[Que el título cite Capítulo 3.]
+C-FAIL V013 exp=renameTitle got=unknown raw=[Modificar el encabezado a metodología] ref=[Modifica el encabezado a Metodología.]
+C-FAIL V034 exp=replaceSelection got=unknown raw=[Cambias de término por IHC] ref=[Cambia este término por IHC.]
+C-FAIL V046 exp=formatSelection:bold got=unknown raw=[Pone negrito el] ref=[Pon en negrita el título.]
+C-FAIL V059 exp=formatSelection:bold got=unknown raw=[Hazle negritas] ref=[Hazlo en negritas.]
+C-FAIL V066 exp=undo got=unknown raw=[Deshace eso] ref=[Deshaz eso.]
+C-FAIL V068 exp=undo got=unknown raw=[Deshace el último cambio] ref=[Deshaz el último cambio.]
+C-FAIL V083 exp=redo got=unknown raw=[Fea hazlo] ref=[Rehazlo.]
+C-FAIL V086 exp=redo got=unknown raw=[Aplicar el formato] ref=[Reaplica el formato.]
+C-FAIL V089 exp=redo got=unknown raw=[Les haz el deshacer] ref=[Deshaz el deshacer.]
+C-FAIL V090 exp=redo got=unknown raw=[Repite el cambio de desecho] ref=[Repite el cambio deshecho.]
+C-FAIL V094 exp=redo got=unknown raw=[Creas el cambio] ref=[Rehace el cambio.]
+C-FAIL V103 exp=findText got=unknown raw=[Haya capítulo tres] ref=[Halla Capítulo 3.]
+C-FAIL V118 exp=selectText got=unknown raw=[Te limita evaluación de IH] ref=[Delimita Evaluación de IHC.]
+C-FAIL V154 exp=unsupported got=unknown raw=[Central título] ref=[Centra el título.]
+C-FAIL V173 exp=unknown got=deleteSelection raw=[Borra información accidentalmente afecta] ref=[Borrar información accidentalmente afecta.]

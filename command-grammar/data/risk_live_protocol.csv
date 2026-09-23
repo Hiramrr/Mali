@@ -1,0 +1,41 @@
+paso,modo,instruccion,expected
+R01,normal,"Busca TDAH.",findText
+R02,normal,"Encuentra IHC.",findText
+R03,normal,"Localiza SwiftUI.",findText
+R04,normal,"Marca esta frase.",selectText
+R05,normal,"Elige accesibilidad.",selectText
+R06,normal,"Busca la palabra Evaluación de IHC.",findText
+R07,normal,"Selecciona María José.",selectText
+R08,normal,"Halla Capítulo 3.",findText
+R09,normal,"Detecta la cita duplicada.",findText
+R10,normal,"Toma el Capítulo 3.",selectText
+R11,normal,"Deshaz.",undo
+R12,normal,"Rehaz.",redo
+R13,normal,"Anula el último cambio.",undo
+R14,normal,"Reaplica el formato.",redo
+R15,normal,"Ponlo en negrita.",formatSelection
+R16,normal,"Vuelve atrás.",undo
+R17,normal,"Restaura lo deshecho.",redo
+R18,normal,"Aplica cursivas a la cita.",formatSelection
+R19,normal,"Vuelve a aplicar el cambio.",redo
+R20,normal,"Subráyalo.",formatSelection
+R21,normal,"Cambia el título a Claridad.",renameTitle
+R22,normal,"Bórralo.",deleteSelection
+R23,normal,"Reemplaza esto por Diseño centrado.",replaceSelection
+R24,normal,"Hazlo más corto.",rewriteSelection
+R25,normal,"Ponle Metodología al capítulo dos.",renameTitle
+R26,normal,"Elimina la selección.",deleteSelection
+R27,normal,"Escribe Evaluación de IHC.",replaceSelection
+R28,normal,"Reescribe el párrafo completo.",rewriteSelection
+R29,normal,"Troca esto por TDAH.",replaceSelection
+R30,normal,"Cambia esta palabra por dificultades.",replaceSelection
+R31,normal,"Guarda el documento.",saveDocument
+R32,normal,"Abre el archivo anterior.",openDocument
+R33,normal,"Exporta a pdf.",exportDocument
+R34,normal,"Genera el documento en Word.",exportDocument
+R35,normal,"Guárdalo.",saveDocument
+R36,error,"Deshaz eso. (si sale mal, repite con r)",undo
+R37,error,"Rehazlo. (si sale mal, repite con r)",redo
+R38,error,"Centra el título. (unsupported esperado)",unsupported
+R39,error,"Borrar información accidentalmente afecta. (unknown esperado)",unknown
+R40,error,"Pon en negrita el título. (si sale mal, repite con r)",formatSelection
