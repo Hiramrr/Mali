@@ -551,15 +551,35 @@ public extension WritingStyle {
         return result
     }
 
+    /// Colapsa un marcador markdown (`**`, `` ` ``, `[]()`, `\`…) para que no
+    /// deje huecos en el modo editor: lo deja con tamaño mínimo y transparente
+    /// pero sin borrarlo del texto (sigue editable y se copia con la fuente).
+    /// Conserva negrita/cursiva para no romper el estilo exterior.
+    private static func collapseMarker(in storage: NSMutableAttributedString, range: NSRange) {
+        guard range.length > 0, NSMaxRange(range) <= storage.length else { return }
+        let current = storage.attribute(.font, at: range.location, effectiveRange: nil) as? NSFont
+        let base = current ?? NSFont.systemFont(ofSize: NSFont.systemFontSize)
+        let tiny = NSFontManager.shared.convert(base, toSize: 0.1)
+        let finalFont: NSFont = tiny.pointSize < 1 ? tiny : (NSFont(descriptor: base.fontDescriptor, size: 0.1) ?? tiny)
+        storage.addAttribute(.font, value: finalFont, range: range)
+        storage.addAttribute(.foregroundColor, value: NSColor.clear, range: range)
+        storage.removeAttribute(.backgroundColor, range: range)
+        storage.removeAttribute(.underlineStyle, range: range)
+        storage.removeAttribute(.underlineColor, range: range)
+        storage.removeAttribute(.strikethroughStyle, range: range)
+        storage.removeAttribute(.strikethroughColor, range: range)
+        storage.removeAttribute(.link, range: range)
+    }
+
     private static func scanInline(lineText: String, baseOffset: Int, storage: NSMutableAttributedString, style: WritingStyle) {
         var index = lineText.startIndex
         while index < lineText.endIndex {
             let character = lineText[index]
             let nextIndex = lineText.index(after: index)
-            // Escape `\*`: atenúa la barra y salta el siguiente carácter.
+            // Escape `\*`: oculta la barra (colapsada, sin hueco) y salta el siguiente carácter.
             if character == "\\", nextIndex < lineText.endIndex, isEscapable(lineText[nextIndex]) {
                 if let range = nsRange(of: index..<nextIndex, in: lineText, base: baseOffset) {
-                    storage.addAttribute(.foregroundColor, value: style.tertiaryTextColor, range: range)
+                    collapseMarker(in: storage, range: range)
                 }
                 index = lineText.index(after: nextIndex)
                 continue
@@ -636,10 +656,10 @@ public extension WritingStyle {
                         storage.addAttribute(.backgroundColor, value: style.faintFillColor, range: fullRange)
                         storage.addAttribute(.foregroundColor, value: style.effectiveTextColor, range: fullRange)
                         if let openRange = nsRange(of: index..<innerStart, in: lineText, base: baseOffset) {
-                            storage.addAttribute(.foregroundColor, value: style.tertiaryTextColor, range: openRange)
+                            collapseMarker(in: storage, range: openRange)
                         }
                         if let closeRange = nsRange(of: cursor..<closeEnd, in: lineText, base: baseOffset) {
-                            storage.addAttribute(.foregroundColor, value: style.tertiaryTextColor, range: closeRange)
+                            collapseMarker(in: storage, range: closeRange)
                         }
                     }
                     return closeEnd
@@ -667,10 +687,10 @@ public extension WritingStyle {
             storage.addAttribute(.foregroundColor, value: style.effectiveAccentColor, range: fullRange)
             storage.addAttribute(.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: fullRange)
             if let openRange = nsRange(of: index..<innerStart, in: lineText, base: baseOffset) {
-                storage.addAttribute(.foregroundColor, value: style.tertiaryTextColor, range: openRange)
+                collapseMarker(in: storage, range: openRange)
             }
             if let closeRange = nsRange(of: close..<closeEnd, in: lineText, base: baseOffset) {
-                storage.addAttribute(.foregroundColor, value: style.tertiaryTextColor, range: closeRange)
+                collapseMarker(in: storage, range: closeRange)
             }
         }
         return closeEnd
@@ -742,13 +762,13 @@ public extension WritingStyle {
                 }
             }
             if let openRange = nsRange(of: index..<textStart, in: lineText, base: baseOffset) {
-                storage.addAttribute(.foregroundColor, value: style.tertiaryTextColor, range: openRange)
+                collapseMarker(in: storage, range: openRange)
             }
             if let midRange = nsRange(of: bracketClose..<refStart, in: lineText, base: baseOffset) {
-                storage.addAttribute(.foregroundColor, value: style.tertiaryTextColor, range: midRange)
+                collapseMarker(in: storage, range: midRange)
             }
             if let closeRange = nsRange(of: refClose..<linkEnd, in: lineText, base: baseOffset) {
-                storage.addAttribute(.foregroundColor, value: style.tertiaryTextColor, range: closeRange)
+                collapseMarker(in: storage, range: closeRange)
             }
             return linkEnd
         }
@@ -773,28 +793,27 @@ public extension WritingStyle {
             return min(cursor, lineText.endIndex)
         }()
         if start < openEnd, let openRange = nsRange(of: start..<openEnd, in: lineText, base: baseOffset) {
-            storage.addAttribute(.foregroundColor, value: style.tertiaryTextColor, range: openRange)
+            collapseMarker(in: storage, range: openRange)
         }
         if bracketClose < lineText.endIndex {
             let closeBracketEnd = lineText.index(after: bracketClose)
             if let closeBracket = nsRange(of: bracketClose..<closeBracketEnd, in: lineText, base: baseOffset) {
-                storage.addAttribute(.foregroundColor, value: style.tertiaryTextColor, range: closeBracket)
+                collapseMarker(in: storage, range: closeBracket)
             }
         }
         if parenOpen < lineText.endIndex {
             let parenOpenEnd = lineText.index(after: parenOpen)
             if let parenOpenRange = nsRange(of: parenOpen..<parenOpenEnd, in: lineText, base: baseOffset) {
-                storage.addAttribute(.foregroundColor, value: style.tertiaryTextColor, range: parenOpenRange)
+                collapseMarker(in: storage, range: parenOpenRange)
             }
         }
         if !urlRange.isEmpty, let urlNS = nsRange(of: urlRange, in: lineText, base: baseOffset) {
-            storage.addAttribute(.foregroundColor, value: style.tertiaryTextColor, range: urlNS)
-            storage.addAttribute(.font, value: NSFont.monospacedSystemFont(ofSize: max(11, style.size - 3), weight: .regular), range: urlNS)
+            collapseMarker(in: storage, range: urlNS)
         }
         if end > lineText.startIndex {
             let parenClose = lineText.index(before: end)
             if parenClose >= urlRange.upperBound, let closeRange = nsRange(of: parenClose..<end, in: lineText, base: baseOffset) {
-                storage.addAttribute(.foregroundColor, value: style.tertiaryTextColor, range: closeRange)
+                collapseMarker(in: storage, range: closeRange)
             }
         }
     }
@@ -878,12 +897,12 @@ public extension WritingStyle {
             default:
                 break
             }
-            // Atenúa los marcadores para reducir ruido sin perder el contenido.
+            // Colapsa los marcadores (sin huecos) en vez de atenuarlos.
             if let openNS = nsRange(of: index..<afterOpen, in: lineText, base: baseOffset) {
-                storage.addAttribute(.foregroundColor, value: style.tertiaryTextColor, range: openNS)
+                collapseMarker(in: storage, range: openNS)
             }
             if let closeNS = nsRange(of: candidate..<candidateEnd, in: lineText, base: baseOffset) {
-                storage.addAttribute(.foregroundColor, value: style.tertiaryTextColor, range: closeNS)
+                collapseMarker(in: storage, range: closeNS)
             }
             // Recursión para anidado (`**negrita *cursiva* **`).
             if !contentRange.isEmpty {
