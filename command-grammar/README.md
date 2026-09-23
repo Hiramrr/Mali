@@ -386,3 +386,22 @@ Live `safeauto_live_protocol.csv` (12 nav + 12 rev con fixture; content/ext
 cubiertos por 10B+tests): PENDIENTE humano. Cierre 10C: wrong-auto 0 +
 wrong 0 + nav-imm 100% + rev-auto 0 + regresiones contenidas → GO FASE 11.
 DETENIDO sin editor real.
+
+## Fase Safe-Auto LIVE 10C (2026-09-23, 24/24)
+
+`data/safeauto_live_results.csv`: 12 nav + 12 rev, fixtures frescos.
+- nav: 11 auto + 1 repeat (C05 Haya→unknown). Auto success en reconocidos:
+  11/11 = 100%. Total med 230 p95 3689 (STT med 230).
+- rev: 0 auto ✓. 10 confirmed-executed + 2 repeats (C17 Creas, C24 garbled).
+  Total med 1340. Confirms/effect 10/21.
+- wrong automatic effects = 0 ✓. Regresiones contenidas (B20/B42/V173 piden
+  confirm en tests; C20680 análogo en vivo pidió confirm ✓).
+- MATIZ C20: "Restaura los desechos" → undo (esperado redo); el humano
+  CONFIRMÓ la propuesta errónea → 1 wrong effect humano, 0 automático.
+  La política contuvo (dio la oportunidad de cancelar); el humano no es
+  infalible. Lección: el preview debe distinguir undo/redo inequívocamente.
+- STT reales: Haya, Creas-trunc, desecho(s), subrayado-garbled (familias
+  conocidas). Repeat 3/24=12.5%, cancels 0. ALL med 898.
+- Criterios 10C: wrong-auto 0 ✓, nav-imm 100% ✓, rev-auto 0 ✓, regresiones
+  contenidas ✓ (con matiz humano C20). GO FASE 11: NAVIGATION→immediate,
+  TODO LO QUE MUTA ESTADO→confirmation. Congelado salvo evidencia nueva.
