@@ -1,0 +1,228 @@
+text,label,category,family_id
+Elimina esto.,EDITOR_CONTROL,borrar,c_borrar_b_00
+Elimina eso.,EDITOR_CONTROL,borrar,c_borrar_b_00
+Quita eso.,EDITOR_CONTROL,borrar,c_borrar_b_00
+Elimina esta parte.,EDITOR_CONTROL,borrar,c_borrar_b_00
+Quita esta parte.,EDITOR_CONTROL,borrar,c_borrar_b_00
+Pon esto en negritas.,EDITOR_CONTROL,formato,c_formato_a_00
+Pon lo seleccionado en negritas.,EDITOR_CONTROL,formato,c_formato_a_00
+Pon esta frase en negritas.,EDITOR_CONTROL,formato,c_formato_a_00
+Pon el título en negritas.,EDITOR_CONTROL,formato,c_formato_a_00
+Pon esta frase clave en negritas.,EDITOR_CONTROL,formato,c_formato_a_00
+Subraya esto.,EDITOR_CONTROL,formato,c_formato_b_00
+Pon este fragmento en cursivas.,EDITOR_CONTROL,formato,c_formato_b_00
+Quita las negritas de aquí.,EDITOR_CONTROL,formato,c_formato_b_00
+Aumenta el tamaño de letra del título.,EDITOR_CONTROL,formato,c_formato_b_00
+Pon el título en mayúsculas.,EDITOR_CONTROL,formato,c_formato_b_00
+Cambia error por errata en este párrafo.,EDITOR_CONTROL,reemplazar,c_reemplazar_b_00
+Donde dice error pon errata.,EDITOR_CONTROL,reemplazar,c_reemplazar_b_00
+Cambia problema por dificultad en este párrafo.,EDITOR_CONTROL,reemplazar,c_reemplazar_b_00
+Donde dice problema pon dificultad.,EDITOR_CONTROL,reemplazar,c_reemplazar_b_00
+Cambia uso por utilización en este párrafo.,EDITOR_CONTROL,reemplazar,c_reemplazar_b_00
+Donde dice uso pon utilización.,EDITOR_CONTROL,reemplazar,c_reemplazar_b_00
+Reemplaza esta palabra por dificultades.,EDITOR_CONTROL,reemplazar,c_reemplazar_c_00
+Cambia esta palabra por interfaz.,EDITOR_CONTROL,reemplazar,c_reemplazar_c_00
+Reemplaza esta palabra por interfaz.,EDITOR_CONTROL,reemplazar,c_reemplazar_c_00
+Cambia esta palabra por accesibilidad.,EDITOR_CONTROL,reemplazar,c_reemplazar_c_00
+Reemplaza esta palabra por accesibilidad.,EDITOR_CONTROL,reemplazar,c_reemplazar_c_00
+Cambia esta palabra por expresión.,EDITOR_CONTROL,reemplazar,c_reemplazar_c_02
+Reemplaza esta palabra por expresión.,EDITOR_CONTROL,reemplazar,c_reemplazar_c_02
+Cambia esta palabra por palabra.,EDITOR_CONTROL,reemplazar,c_reemplazar_c_02
+Reemplaza esta palabra por palabra.,EDITOR_CONTROL,reemplazar,c_reemplazar_c_02
+Cambia esta palabra por concepto.,EDITOR_CONTROL,reemplazar,c_reemplazar_c_02
+Reemplaza esta palabra por concepto.,EDITOR_CONTROL,reemplazar,c_reemplazar_c_02
+Cambia esta palabra por figura.,EDITOR_CONTROL,reemplazar,c_reemplazar_c_04
+Reemplaza esta palabra por figura.,EDITOR_CONTROL,reemplazar,c_reemplazar_c_04
+Cambia esta palabra por tabla.,EDITOR_CONTROL,reemplazar,c_reemplazar_c_04
+Reemplaza esta palabra por tabla.,EDITOR_CONTROL,reemplazar,c_reemplazar_c_04
+Cambia esta palabra por resumen.,EDITOR_CONTROL,reemplazar,c_reemplazar_c_04
+Reemplaza esta palabra por resumen.,EDITOR_CONTROL,reemplazar,c_reemplazar_c_04
+Sustituye esa expresión por algo más claro.,EDITOR_CONTROL,reemplazar,c_reemplazar_d_00
+Cambia todas las menciones al autor anterior.,EDITOR_CONTROL,reemplazar,c_reemplazar_d_00
+Reemplaza este término en todo el documento.,EDITOR_CONTROL,reemplazar,c_reemplazar_d_00
+Corrige el nombre del modelo en este párrafo.,EDITOR_CONTROL,reemplazar,c_reemplazar_d_00
+Pon dificultades donde dice problemas.,EDITOR_CONTROL,reemplazar,c_reemplazar_d_00
+Intercambia el orden de estos dos párrafos.,EDITOR_CONTROL,reemplazar,c_reemplazar_d_00
+Hazlo más sencillo.,EDITOR_CONTROL,reformular,c_reformular_a_01
+Hazlo más académico.,EDITOR_CONTROL,reformular,c_reformular_a_01
+Hazlo menos redundante.,EDITOR_CONTROL,reformular,c_reformular_a_01
+Hazlo más persuasivo.,EDITOR_CONTROL,reformular,c_reformular_a_01
+Hazlo más neutral.,EDITOR_CONTROL,reformular,c_reformular_a_01
+Hazlo más conciso.,EDITOR_CONTROL,reformular,c_reformular_a_01
+Reescribe esta oración sin cambiar su significado.,EDITOR_CONTROL,reformular,c_reformular_c_00
+Reformula el último párrafo.,EDITOR_CONTROL,reformular,c_reformular_c_00
+Dale otra redacción a esta parte.,EDITOR_CONTROL,reformular,c_reformular_c_00
+Mejora la redacción de lo seleccionado.,EDITOR_CONTROL,reformular,c_reformular_c_00
+Haz esta frase más elegante.,EDITOR_CONTROL,reformular,c_reformular_c_00
+Resume el capítulo en una lista.,EDITOR_CONTROL,resumir,c_resumir_01
+Condensa la introducción.,EDITOR_CONTROL,resumir,c_resumir_01
+Selecciona todo el documento.,EDITOR_CONTROL,seleccion,c_seleccion_04
+Elige el tercer párrafo.,EDITOR_CONTROL,seleccion,c_seleccion_04
+Selecciona desde aquí hasta el final.,EDITOR_CONTROL,seleccion,c_seleccion_04
+Amplía la selección una palabra.,EDITOR_CONTROL,seleccion,c_seleccion_04
+Reduce la selección.,EDITOR_CONTROL,seleccion,c_seleccion_04
+Selecciona la palabra anterior.,EDITOR_CONTROL,seleccion,c_seleccion_04
+Cambia el título a Introducción.,EDITOR_CONTROL,titulo,c_titulo_a_00
+Cambia el título a Conclusiones.,EDITOR_CONTROL,titulo,c_titulo_a_00
+Cambia el título a Marco teórico.,EDITOR_CONTROL,titulo,c_titulo_a_00
+Cambia el título a Diseño del sistema.,EDITOR_CONTROL,titulo,c_titulo_a_00
+Pon como título Metodología.,EDITOR_CONTROL,titulo,c_titulo_b_00
+Quiero que cambies el título a Metodología.,EDITOR_CONTROL,titulo,c_titulo_b_00
+Pon como título Resultados.,EDITOR_CONTROL,titulo,c_titulo_b_00
+Quiero que cambies el título a Resultados.,EDITOR_CONTROL,titulo,c_titulo_b_00
+Pon como título Introducción.,EDITOR_CONTROL,titulo,c_titulo_b_00
+Quiero que cambies el título a Introducción.,EDITOR_CONTROL,titulo,c_titulo_b_00
+Pon como título Trabajo futuro.,EDITOR_CONTROL,titulo,c_titulo_b_02
+Quiero que cambies el título a Trabajo futuro.,EDITOR_CONTROL,titulo,c_titulo_b_02
+Pon como título Evaluación.,EDITOR_CONTROL,titulo,c_titulo_b_02
+Quiero que cambies el título a Evaluación.,EDITOR_CONTROL,titulo,c_titulo_b_02
+Pon como título Antecedentes.,EDITOR_CONTROL,titulo,c_titulo_b_02
+Quiero que cambies el título a Antecedentes.,EDITOR_CONTROL,titulo,c_titulo_b_02
+Pon como título Discusión.,EDITOR_CONTROL,titulo,c_titulo_b_03
+Quiero que cambies el título a Discusión.,EDITOR_CONTROL,titulo,c_titulo_b_03
+Pon como título Resumen.,EDITOR_CONTROL,titulo,c_titulo_b_03
+Quiero que cambies el título a Resumen.,EDITOR_CONTROL,titulo,c_titulo_b_03
+Pon como título Bibliografía.,EDITOR_CONTROL,titulo,c_titulo_b_03
+Quiero que cambies el título a Bibliografía.,EDITOR_CONTROL,titulo,c_titulo_b_03
+Cámbiale el título a Metodología.,EDITOR_CONTROL,titulo,c_titulo_c_00
+Actualiza el título a Metodología.,EDITOR_CONTROL,titulo,c_titulo_c_00
+Cámbiale el título a Resultados.,EDITOR_CONTROL,titulo,c_titulo_c_00
+Actualiza el título a Resultados.,EDITOR_CONTROL,titulo,c_titulo_c_00
+Cámbiale el título a Introducción.,EDITOR_CONTROL,titulo,c_titulo_c_00
+Actualiza el título a Introducción.,EDITOR_CONTROL,titulo,c_titulo_c_00
+Cámbiale el título a Conclusiones.,EDITOR_CONTROL,titulo,c_titulo_c_01
+Actualiza el título a Conclusiones.,EDITOR_CONTROL,titulo,c_titulo_c_01
+Cámbiale el título a Marco teórico.,EDITOR_CONTROL,titulo,c_titulo_c_01
+Actualiza el título a Marco teórico.,EDITOR_CONTROL,titulo,c_titulo_c_01
+Cámbiale el título a Diseño del sistema.,EDITOR_CONTROL,titulo,c_titulo_c_01
+Actualiza el título a Diseño del sistema.,EDITOR_CONTROL,titulo,c_titulo_c_01
+Cámbiale el título a Limitaciones.,EDITOR_CONTROL,titulo,c_titulo_c_05
+Actualiza el título a Limitaciones.,EDITOR_CONTROL,titulo,c_titulo_c_05
+Cámbiale el título a Propuesta.,EDITOR_CONTROL,titulo,c_titulo_c_05
+Actualiza el título a Propuesta.,EDITOR_CONTROL,titulo,c_titulo_c_05
+Cámbiale el título a Referencias.,EDITOR_CONTROL,titulo,c_titulo_c_05
+Actualiza el título a Referencias.,EDITOR_CONTROL,titulo,c_titulo_c_05
+¿Puedes ponerle título a este documento?,EDITOR_CONTROL,titulo,c_titulo_e_00
+Actualiza el encabezado con el nombre del proyecto.,EDITOR_CONTROL,titulo,c_titulo_e_00
+Cambia el encabezado a Introducción.,EDITOR_CONTROL,titulo,c_titulo_e_00
+Reescribe el título para que sea más descriptivo.,EDITOR_CONTROL,titulo,c_titulo_e_00
+"Corrige el título, tiene una errata.",EDITOR_CONTROL,titulo,c_titulo_e_00
+Haz el título más corto.,EDITOR_CONTROL,titulo,c_titulo_e_00
+Modifica el título a Conclusiones.,EDITOR_CONTROL,titulo,c_titulo_e_01
+Renombra el documento como Borrador final.,EDITOR_CONTROL,titulo,c_titulo_e_01
+El nuevo título será Versión revisada.,EDITOR_CONTROL,titulo,c_titulo_e_01
+"Cambia el título a Claridad, por favor.",EDITOR_CONTROL,titulo,c_titulo_e_01
+Por favor pon como título Resumen.,EDITOR_CONTROL,titulo,c_titulo_e_01
+Necesito que el título sea Evaluación.,EDITOR_CONTROL,titulo,c_titulo_e_01
+Hazlo menos ambiguo.,EDITOR_CONTROL,tono,c_tono_02
+Cancela la última edición.,EDITOR_CONTROL,undo,c_undo_01
+Deshaz la última acción.,EDITOR_CONTROL,undo,c_undo_01
+Regresa al estado anterior.,EDITOR_CONTROL,undo,c_undo_01
+Anula lo que acabas de hacer.,EDITOR_CONTROL,undo,c_undo_01
+Quiero deshacer lo anterior.,EDITOR_CONTROL,undo,c_undo_01
+Échalo para atrás.,EDITOR_CONTROL,undo,c_undo_01
+El contraste alto mejora la legibilidad en pantallas pequeñas.,DICTATION,academico,d_academico_base_06
+La latencia percibida afecta la confianza en el asistente de escritura.,DICTATION,academico,d_academico_base_06
+Un buen editor distingue dictado de órdenes sin pedir aclaraciones.,DICTATION,academico,d_academico_base_06
+La personalización del vocabulario mejora el reconocimiento de nombres propios.,DICTATION,academico,d_academico_base_06
+Los atajos de teclado conviven con la entrada por voz sin conflicto.,DICTATION,academico,d_academico_base_06
+El subrayado automático de errores guía la revisión posterior.,DICTATION,academico,d_academico_base_06
+El sistema propuesto muestra mejoras claras en velocidad de escritura.,DICTATION,academico,d_academico_suj_a_04
+El sistema propuesto confirma la importancia del contexto durante el dictado.,DICTATION,academico,d_academico_suj_a_04
+El sistema propuesto revela patrones interesantes de uso de la voz.,DICTATION,academico,d_academico_suj_a_04
+El sistema propuesto sugiere nuevas líneas de trabajo futuro.,DICTATION,academico,d_academico_suj_a_04
+La herramienta muestra mejoras claras en velocidad de escritura.,DICTATION,academico,d_academico_suj_a_04
+La herramienta confirma la importancia del contexto durante el dictado.,DICTATION,academico,d_academico_suj_a_04
+El estudio destaca la relevancia de la accesibilidad cognitiva.,DICTATION,academico,d_academico_suj_b_00
+El estudio aporta evidencia sobre fatiga en tareas prolongadas.,DICTATION,academico,d_academico_suj_b_00
+El estudio propone un marco para evaluar editores multimodales.,DICTATION,academico,d_academico_suj_b_00
+El estudio describe limitaciones del reconocimiento automático.,DICTATION,academico,d_academico_suj_b_00
+La investigación destaca la relevancia de la accesibilidad cognitiva.,DICTATION,academico,d_academico_suj_b_00
+La investigación aporta evidencia sobre fatiga en tareas prolongadas.,DICTATION,academico,d_academico_suj_b_00
+La herramienta propone un marco para evaluar editores multimodales.,DICTATION,academico,d_academico_suj_b_05
+La herramienta describe limitaciones del reconocimiento automático.,DICTATION,academico,d_academico_suj_b_05
+El modelo destaca la relevancia de la accesibilidad cognitiva.,DICTATION,academico,d_academico_suj_b_05
+El modelo aporta evidencia sobre fatiga en tareas prolongadas.,DICTATION,academico,d_academico_suj_b_05
+El modelo propone un marco para evaluar editores multimodales.,DICTATION,academico,d_academico_suj_b_05
+El modelo describe limitaciones del reconocimiento automático.,DICTATION,academico,d_academico_suj_b_05
+La prueba piloto destaca la relevancia de la accesibilidad cognitiva.,DICTATION,academico,d_academico_suj_b_08
+La prueba piloto aporta evidencia sobre fatiga en tareas prolongadas.,DICTATION,academico,d_academico_suj_b_08
+La prueba piloto propone un marco para evaluar editores multimodales.,DICTATION,academico,d_academico_suj_b_08
+La prueba piloto describe limitaciones del reconocimiento automático.,DICTATION,academico,d_academico_suj_b_08
+El grupo focal destaca la relevancia de la accesibilidad cognitiva.,DICTATION,academico,d_academico_suj_b_08
+El grupo focal aporta evidencia sobre fatiga en tareas prolongadas.,DICTATION,academico,d_academico_suj_b_08
+Ya veo.,DICTATION,fragmento,d_frag_a_01
+Claro.,DICTATION,fragmento,d_frag_a_01
+Entiendo.,DICTATION,fragmento,d_frag_a_01
+De acuerdo.,DICTATION,fragmento,d_frag_a_01
+Exacto.,DICTATION,fragmento,d_frag_a_03
+Correcto.,DICTATION,fragmento,d_frag_a_03
+Ajá.,DICTATION,fragmento,d_frag_a_03
+Oh.,DICTATION,fragmento,d_frag_a_03
+Bien.,DICTATION,fragmento,d_frag_a_03
+Qué bien.,DICTATION,fragmento,d_frag_c_00
+Qué raro.,DICTATION,fragmento,d_frag_c_00
+No sé.,DICTATION,fragmento,d_frag_c_00
+No estoy seguro.,DICTATION,fragmento,d_frag_c_00
+Depende.,DICTATION,fragmento,d_frag_c_00
+Más o menos.,DICTATION,fragmento,d_frag_c_00
+El informe necesita una última lectura atenta.,DICTATION,general,d_general_b_00
+El informe describe el proceso con detalle.,DICTATION,general,d_general_b_00
+El informe recoge opiniones de varios expertos.,DICTATION,general,d_general_b_00
+El informe cierra con una reflexión abierta.,DICTATION,general,d_general_b_00
+La presentación necesita una última lectura atenta.,DICTATION,general,d_general_b_00
+La presentación describe el proceso con detalle.,DICTATION,general,d_general_b_00
+La propuesta necesita una última lectura atenta.,DICTATION,general,d_general_b_02
+La propuesta describe el proceso con detalle.,DICTATION,general,d_general_b_02
+La propuesta recoge opiniones de varios expertos.,DICTATION,general,d_general_b_02
+La propuesta cierra con una reflexión abierta.,DICTATION,general,d_general_b_02
+El artículo necesita una última lectura atenta.,DICTATION,general,d_general_b_02
+El artículo describe el proceso con detalle.,DICTATION,general,d_general_b_02
+El ensayo necesita una última lectura atenta.,DICTATION,general,d_general_b_04
+El ensayo describe el proceso con detalle.,DICTATION,general,d_general_b_04
+El ensayo recoge opiniones de varios expertos.,DICTATION,general,d_general_b_04
+El ensayo cierra con una reflexión abierta.,DICTATION,general,d_general_b_04
+La memoria necesita una última lectura atenta.,DICTATION,general,d_general_b_04
+La memoria describe el proceso con detalle.,DICTATION,general,d_general_b_04
+La memoria recoge opiniones de varios expertos.,DICTATION,general,d_general_b_05
+La memoria cierra con una reflexión abierta.,DICTATION,general,d_general_b_05
+El resumen necesita una última lectura atenta.,DICTATION,general,d_general_b_05
+El resumen describe el proceso con detalle.,DICTATION,general,d_general_b_05
+El resumen recoge opiniones de varios expertos.,DICTATION,general,d_general_b_05
+El resumen cierra con una reflexión abierta.,DICTATION,general,d_general_b_05
+"La frase ""borra esto"" puede resultar ambigua sin contexto.",DICTATION,hard-cita,d_hard_cita_00
+"Un ejemplo de comando sería ""pon esto en negritas"".",DICTATION,hard-cita,d_hard_cita_00
+"La documentación utiliza la instrucción ""deshaz el cambio"".",DICTATION,hard-cita,d_hard_cita_00
+"El manual incluye el ejemplo ""cambia el título a Resultados"".",DICTATION,hard-cita,d_hard_cita_00
+"En clase analizamos la orden ""selecciona el segundo párrafo"".",DICTATION,hard-cita,d_hard_cita_00
+"El tutorial muestra cómo decir ""hazlo más corto"".",DICTATION,hard-cita,d_hard_cita_00
+"La nota al pie aclara ""título provisional sujeto a cambios"".",DICTATION,hard-cita,d_hard_cita_03
+"El examen pide ""describa el procedimiento"" en pasado.",DICTATION,hard-cita,d_hard_cita_03
+"La rúbrica exige ""cambios justificados"" en cada entrega.",DICTATION,hard-cita,d_hard_cita_03
+"El aviso dice ""no cambiar la configuración"".",DICTATION,hard-cita,d_hard_cita_03
+"La etiqueta indica ""reemplazar cada seis meses"".",DICTATION,hard-cita,d_hard_cita_03
+"El letrero pide ""seleccionar una opción"".",DICTATION,hard-cita,d_hard_cita_03
+Reemplazar términos automáticamente puede introducir errores sutiles.,DICTATION,hard-infinitivo,d_hard_inf_03
+Poner demasiado texto en negritas reduce su utilidad visual.,DICTATION,hard-infinitivo,d_hard_inf_03
+Eliminar contenido sin confirmación resulta frustrante.,DICTATION,hard-infinitivo,d_hard_inf_03
+Rehacer una acción permite recuperar un cambio revertido.,DICTATION,hard-infinitivo,d_hard_inf_03
+Borrar texto accidentalmente es frustrante para cualquiera.,DICTATION,hard-infinitivo,d_hard_inf_03
+Cambiar el título mejora la claridad del documento.,DICTATION,hard-infinitivo,d_hard_inf_03
+Deshacer modificaciones es una función importante del editor.,DICTATION,hard-infinitivo,d_hard_inf_04
+Seleccionar bien las palabras define el tono del mensaje.,DICTATION,hard-infinitivo,d_hard_inf_04
+Reemplazar expresiones coloquiales eleva el registro del texto.,DICTATION,hard-infinitivo,d_hard_inf_04
+Poner ejemplos concretos ayuda a entender ideas abstractas.,DICTATION,hard-infinitivo,d_hard_inf_04
+Cambiar de tema bruscamente desorienta al lector.,DICTATION,hard-infinitivo,d_hard_inf_04
+Borrar mensajes antiguos libera espacio en el teléfono.,DICTATION,hard-infinitivo,d_hard_inf_04
+El historial de cambios registra cada edición realizada.,DICTATION,hard-metalenguaje,d_hard_meta_01
+El corrector sugiere alternativas mientras se escribe.,DICTATION,hard-metalenguaje,d_hard_meta_01
+El dictado por voz interpreta pausas como signos de puntuación.,DICTATION,hard-metalenguaje,d_hard_meta_01
+El editor permite cambiar el título desde la barra superior.,DICTATION,hard-metalenguaje,d_hard_meta_01
+La función deshacer recupera el contenido anterior sin esfuerzo.,DICTATION,hard-metalenguaje,d_hard_meta_01
+El corrector automático puede reemplazar palabras mientras escribes.,DICTATION,hard-metalenguaje,d_hard_meta_01
+Es importante cambiar la manera en que diseñamos interfaces.,DICTATION,hard-mixto,d_hard_mixto_00
+Borrar información sin respaldo es una mala práctica profesional.,DICTATION,hard-mixto,d_hard_mixto_00
+El título debe comunicar claramente el objetivo del proyecto.,DICTATION,hard-mixto,d_hard_mixto_00
+Seleccionar correctamente los participantes es importante para el estudio.,DICTATION,hard-mixto,d_hard_mixto_00
+Deshacer una acción debería ser sencillo para el usuario.,DICTATION,hard-mixto,d_hard_mixto_00
+Reemplazar el cable dañado resolvió el problema del laboratorio.,DICTATION,hard-mixto,d_hard_mixto_00

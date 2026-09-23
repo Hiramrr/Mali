@@ -1,0 +1,377 @@
+id,group,text,expected_raw,expected_gate,family_id,critical
+A01,A,"El teclado mecánico produce un sonido característico al escribir.",DICTATION,NO_CONTROL,f_A_teclado,0
+A02,A,"La pantalla del portátil refleja demasiada luz por la tarde.",DICTATION,NO_CONTROL,f_A_pantalla,0
+A03,A,"El café de la mañana acompaña bien las sesiones largas de lectura.",DICTATION,NO_CONTROL,f_A_cafe,0
+A04,A,"Los apuntes a mano ayudan a retener conceptos difíciles.",DICTATION,NO_CONTROL,f_A_apuntes,0
+A05,A,"El seminario de los jueves reúne a estudiantes de varias carreras.",DICTATION,NO_CONTROL,f_A_seminario,0
+A06,A,"La biblioteca cierra temprano durante el periodo vacacional.",DICTATION,NO_CONTROL,f_A_biblioteca,0
+A07,A,"El transporte público llega con retraso cuando llueve.",DICTATION,NO_CONTROL,f_A_transporte,0
+A08,A,"Las notas del curso ya están disponibles en la plataforma.",DICTATION,NO_CONTROL,f_A_notas,0
+A09,A,"El laboratorio cuenta con equipos nuevos desde enero.",DICTATION,NO_CONTROL,f_A_laboratorio,0
+A10,A,"La conferencia inaugural trató sobre ética en tecnología.",DICTATION,NO_CONTROL,f_A_conferencia,0
+A11,A,"El comedor universitario ofrece menús vegetarianos cada día.",DICTATION,NO_CONTROL,f_A_comedor,0
+A12,A,"Los exámenes finales se concentran en dos semanas.",DICTATION,NO_CONTROL,f_A_examenes,0
+A13,A,"El jardín central es un buen lugar para leer entre clases.",DICTATION,NO_CONTROL,f_A_jardin,0
+A14,A,"La conexión inalámbrica falla en el tercer piso del edificio.",DICTATION,NO_CONTROL,f_A_wifi,0
+A15,A,"El taller de escritura mejoró notablemente mi redacción.",DICTATION,NO_CONTROL,f_A_taller,0
+A16,A,"Las becas de este año cubren alojamiento y materiales.",DICTATION,NO_CONTROL,f_A_becas,0
+A17,A,"El coro de la facultad ensaya los martes por la noche.",DICTATION,NO_CONTROL,f_A_coro,0
+A18,A,"La tesis doctoral defendida ayer recibió mención honorífica.",DICTATION,NO_CONTROL,f_A_tesis,0
+A19,A,"El museo de la ciudad inaugura una sala interactiva.",DICTATION,NO_CONTROL,f_A_museo,0
+A20,A,"Los horarios de tutoría se publican al inicio del semestre.",DICTATION,NO_CONTROL,f_A_tutoria,0
+A21,A,"El equipo de fútbol entrena en la cancha norte.",DICTATION,NO_CONTROL,f_A_futbol,0
+A22,A,"La lluvia de anoche inundó el estacionamiento subterráneo.",DICTATION,NO_CONTROL,f_A_lluvia,0
+A23,A,"El periódico local destacó el proyecto de los estudiantes.",DICTATION,NO_CONTROL,f_A_periodico,0
+A24,A,"La feria del libro reunió a decenas de editoriales.",DICTATION,NO_CONTROL,f_A_feria,0
+A25,A,"El observatorio organiza visitas guiadas cada mes.",DICTATION,NO_CONTROL,f_A_observatorio,0
+A26,A,"Las clases vespertinas terminan después de las nueve.",DICTATION,NO_CONTROL,f_A_vespertinas,0
+A27,A,"El gimnasio abre sus puertas antes del amanecer.",DICTATION,NO_CONTROL,f_A_gimnasio,0
+A28,A,"La cafetería amplió su horario durante exámenes.",DICTATION,NO_CONTROL,f_A_cafeteria,0
+A29,A,"El festival de cine proyecta cortos de animación.",DICTATION,NO_CONTROL,f_A_festival,0
+A30,A,"Los dormitorios nuevos tienen vista al volcán.",DICTATION,NO_CONTROL,f_A_dormitorios,0
+A31,A,"El banco de sangre necesita donadores este fin de semana.",DICTATION,NO_CONTROL,f_A_banco,0
+A32,A,"La orquesta juvenil dará un concierto gratuito.",DICTATION,NO_CONTROL,f_A_orquesta,0
+A33,A,"El mercado artesanal abre solo los domingos.",DICTATION,NO_CONTROL,f_A_mercado,0
+A34,A,"Las inscripciones cierran el último día del mes.",DICTATION,NO_CONTROL,f_A_inscripciones,0
+A35,A,"El parque nacional protege especies en peligro.",DICTATION,NO_CONTROL,f_A_parque,0
+A36,A,"La red de ciclovías conecta ya cinco alcaldías.",DICTATION,NO_CONTROL,f_A_ciclovias,0
+A37,A,"El acuario renovó por completo el tanque principal.",DICTATION,NO_CONTROL,f_A_acuario,0
+A38,A,"Los viernes hay cine al aire libre en la explanada.",DICTATION,NO_CONTROL,f_A_cine,0
+A39,A,"El tren suburbano amplió su recorrido hacia el norte.",DICTATION,NO_CONTROL,f_A_tren,0
+A40,A,"La exposición fotográfica retrata oficios tradicionales.",DICTATION,NO_CONTROL,f_A_expo,0
+A41,A,"El club de ajedrez compite a nivel nacional.",DICTATION,NO_CONTROL,f_A_ajedrez,0
+A42,A,"Las lluvias tempranas adelantaron la siembra este año.",DICTATION,NO_CONTROL,f_A_siembra,0
+A43,A,"El hospital nuevo atiende urgencias las veinticuatro horas.",DICTATION,NO_CONTROL,f_A_hospital,0
+A44,A,"La librería de viejo guarda verdaderas joyas.",DICTATION,NO_CONTROL,f_A_libreria,0
+A45,A,"El puente peatonal quedó iluminado con luces led.",DICTATION,NO_CONTROL,f_A_puente,0
+A46,A,"Los talleres infantiles fomentan la lectura temprana.",DICTATION,NO_CONTROL,f_A_infantiles,0
+A47,A,"El zoológico liberó tres cóndores rehabilitados.",DICTATION,NO_CONTROL,f_A_zoo,0
+A48,A,"La pista de atletismo recibe mantenimiento cada semestre.",DICTATION,NO_CONTROL,f_A_pista,0
+A49,A,"El coro infantil participará en el festival de primavera.",DICTATION,NO_CONTROL,f_A_coroinf,0
+A50,A,"Las noches despejadas permiten ver la vía láctea.",DICTATION,NO_CONTROL,f_A_noches,0
+A51,A,"El pan de la panadería de la esquina sigue tibio a las siete.",DICTATION,NO_CONTROL,f_A_pan,0
+A52,A,"Los globos del desfile taparon por completo la avenida.",DICTATION,NO_CONTROL,f_A_globos,0
+B01,B,"El gerente decidió cambiar al proveedor de papelería.",DICTATION,NO_CONTROL,f_B_proveedor,1
+B02,B,"La maestra pidió borrar el pizarrón antes del recreo.",DICTATION,NO_CONTROL,f_B_pizarron,1
+B03,B,"El mecánico tuvo que reemplazar la bomba de agua.",DICTATION,NO_CONTROL,f_B_bomba,1
+B04,B,"La directora anunció que pondrá orden en los archivos.",DICTATION,NO_CONTROL,f_B_archivos,1
+B05,B,"El juez ordenó deshacer la venta del terreno.",DICTATION,NO_CONTROL,f_B_venta,1
+B06,B,"Los vecinos quieren cambiar el nombre de la calle.",DICTATION,NO_CONTROL,f_B_calle,1
+B07,B,"El entrenador mandó repetir la jugada tres veces.",DICTATION,NO_CONTROL,f_B_jugada,0
+B08,B,"La cocinera suele poner laurel en el caldo.",DICTATION,NO_CONTROL,f_B_laurel,0
+B09,B,"El ayuntamiento planea reemplazar las luminarias del centro.",DICTATION,NO_CONTROL,f_B_luminarias,1
+B10,B,"Mi abuela siempre dice que borrar recuerdos es imposible.",DICTATION,NO_CONTROL,f_B_abuela,1
+B11,B,"El capitán decidió cambiar la formación del equipo.",DICTATION,NO_CONTROL,f_B_formacion,0
+B12,B,"La asamblea votó por deshacer el acuerdo anterior.",DICTATION,NO_CONTROL,f_B_asamblea,1
+B13,B,"El plomero recomendó cambiar toda la tubería.",DICTATION,NO_CONTROL,f_B_tuberia,0
+B14,B,"La editorial pidió reemplazar la portada del libro.",DICTATION,NO_CONTROL,f_B_portada,1
+B15,B,"El guía explicó que seleccionar el sendero corto ahorra una hora.",DICTATION,NO_CONTROL,f_B_sendero,1
+B16,B,"Los niños suelen borrar sus dibujos cuando no les gustan.",DICTATION,NO_CONTROL,f_B_dibujos,0
+B17,B,"El comité acordó poner fecha a la próxima reunión.",DICTATION,NO_CONTROL,f_B_fecha,0
+B18,B,"La tormenta obligó a cambiar la sede del concierto.",DICTATION,NO_CONTROL,f_B_sede,0
+B19,B,"El sastre prometió deshacer el dobladillo sin costo.",DICTATION,NO_CONTROL,f_B_sastre,1
+B20,B,"Nadie esperaba que el título del torneo cambiara de manos.",DICTATION,NO_CONTROL,f_B_torneo,1
+B21,B,"El jardinero poda y reemplaza las plantas secas cada mes.",DICTATION,NO_CONTROL,f_B_jardinero,0
+B22,B,"La empresa decidió borrar su cuenta de redes sociales.",DICTATION,NO_CONTROL,f_B_cuenta,1
+B23,B,"El arquitecto propuso cambiar los ventanales por tragaluces.",DICTATION,NO_CONTROL,f_B_ventanales,0
+B24,B,"Mi hermano insiste en poner música a todo volumen.",DICTATION,NO_CONTROL,f_B_musica,0
+B25,B,"El sindicato logró deshacer los recortes anunciados.",DICTATION,NO_CONTROL,f_B_sindicato,1
+B26,B,"La reforma puso fin a varios trámites innecesarios.",DICTATION,NO_CONTROL,f_B_reforma,0
+B27,B,"El fotógrafo prefiere seleccionar él mismo las tomas finales.",DICTATION,NO_CONTROL,f_B_tomas,1
+B28,B,"Los bomberos tuvieron que deshacer el camino andado.",DICTATION,NO_CONTROL,f_B_bomberos,0
+B29,B,"El restaurante cambió su carta para la temporada.",DICTATION,NO_CONTROL,f_B_carta,0
+B30,B,"La enfermera anotó que el paciente pidió cambiar de cama.",DICTATION,NO_CONTROL,f_B_cama,0
+B31,B,"Borrar cintas antiguas de video libera estanterías enteras.",DICTATION,NO_CONTROL,f_B_cintas,1
+B32,B,"Cambiar pañales cada tres horas evita irritaciones.",DICTATION,NO_CONTROL,f_B_panales,1
+B33,B,"Poner sal al agua acelera notablemente la ebullición.",DICTATION,NO_CONTROL,f_B_sal,1
+B34,B,"Deshacer maletas ajenas está prohibido en el albergue.",DICTATION,NO_CONTROL,f_B_maletas,1
+B35,B,"Reemplazar fusibles quemados restableció la corriente.",DICTATION,NO_CONTROL,f_B_fusibles,1
+B36,B,"Seleccionar tallas intermedias reduce devoluciones en línea.",DICTATION,NO_CONTROL,f_B_tallas,1
+B37,B,"Eliminar maleza del huerto lleva toda la mañana.",DICTATION,NO_CONTROL,f_B_maleza,1
+B38,B,"Rehacer camas de hotel a gran velocidad es todo un oficio.",DICTATION,NO_CONTROL,f_B_camas,1
+B39,B,"Subrayar pasajes del contrato reveló cláusulas abusivas.",DICTATION,NO_CONTROL,f_B_contrato,1
+B40,B,"El título de propiedad quedó a nombre de la cooperativa.",DICTATION,NO_CONTROL,f_B_propiedad,1
+B41,B,"Borrar grafitis cuesta al municipio miles cada año.",DICTATION,NO_CONTROL,f_B_grafitis,1
+B42,B,"Cambiar llantas ponchadas bajo la lluvia es miserable.",DICTATION,NO_CONTROL,f_B_llantas,1
+B43,B,"Poner candado a la bodega evitó más robos.",DICTATION,NO_CONTROL,f_B_candado,0
+B44,B,"Deshacer tratos de palabra genera desconfianza.",DICTATION,NO_CONTROL,f_B_tratos,1
+B45,B,"Reemplazar focos ahorradores bajó el recibo de luz.",DICTATION,NO_CONTROL,f_B_focos,1
+B46,B,"Seleccionar asiento junto a la ventana cuesta un extra.",DICTATION,NO_CONTROL,f_B_asiento,1
+B47,B,"Eliminar goteras del techo tomó dos fines de semana.",DICTATION,NO_CONTROL,f_B_goteras,0
+B48,B,"Rehacer la tarea con calma mejoró la calificación.",DICTATION,NO_CONTROL,f_B_tarea,0
+B49,B,"Subrayar con regla mantiene rectos los apuntes.",DICTATION,NO_CONTROL,f_B_regla,0
+B50,B,"Cambiar de carril sin espejear provoca accidentes.",DICTATION,NO_CONTROL,f_B_carril,0
+B51,B,"Ponerle correa al perro es obligatorio en el parque.",DICTATION,NO_CONTROL,f_B_correa,0
+B52,B,"Deshacer el nudo ciego requirió unas pinzas.",DICTATION,NO_CONTROL,f_B_nudo,1
+B53,B,"Borrar mensajes de voz antiguos ahorra almacenamiento.",DICTATION,NO_CONTROL,f_B_voz,1
+B54,B,"Cambiar focos fundidos del pasillo quedó pendiente.",DICTATION,NO_CONTROL,f_B_pasillo,0
+B55,B,"Poner insecticida cada semana controló la plaga.",DICTATION,NO_CONTROL,f_B_plaga,0
+B56,B,"Deshacer la trenza antes de dormir evita enredos.",DICTATION,NO_CONTROL,f_B_trenza,1
+B57,B,"Reemplazar el filtro del aire acondicionado es sencillo.",DICTATION,NO_CONTROL,f_B_filtro,1
+B58,B,"Seleccionar melones pesados asegura buena pulpa.",DICTATION,NO_CONTROL,f_B_melones,0
+B59,B,"Eliminar caries a tiempo evita endodoncias.",DICTATION,NO_CONTROL,f_B_caries,1
+B60,B,"Rehacer el inventario anual paraliza la tienda.",DICTATION,NO_CONTROL,f_B_inventario,0
+B61,B,"El título nobiliario pasó a la hija menor.",DICTATION,NO_CONTROL,f_B_nobiliario,1
+B62,B,"Poner la alarma a las cinco garantiza llegar temprano.",DICTATION,NO_CONTROL,f_B_alarma,0
+C01,C,"Borrar correos viejos cada viernes mantiene ordenada la bandeja.",DICTATION,NO_CONTROL,f_C_correos,1
+C02,C,"Cambiar sábanas semanalmente mejora notablemente el descanso.",DICTATION,NO_CONTROL,f_C_sabanas,1
+C03,C,"Modificar horarios laborales requiere negociar con el sindicato.",DICTATION,NO_CONTROL,f_C_horarios,1
+C04,C,"Reemplazar llantas lisas antes de viajar evita accidentes.",DICTATION,NO_CONTROL,f_C_llantas,1
+C05,C,"Seleccionar semillas certificadas aumenta el rendimiento.",DICTATION,NO_CONTROL,f_C_semillas,1
+C06,C,"Deshacer convenios internacionales daña la reputación del país.",DICTATION,NO_CONTROL,f_C_convenios,1
+C07,C,"Rehacer presupuestos familiares ordena las finanzas del hogar.",DICTATION,NO_CONTROL,f_C_presupuestos,1
+C08,C,"Subrayar vocabulario nuevo acelera el aprendizaje de idiomas.",DICTATION,NO_CONTROL,f_C_vocabulario,1
+C09,C,"Borrar tatuajes con láser duele más de lo esperado.",DICTATION,NO_CONTROL,f_C_tatuajes,1
+C10,C,"Cambiar aceite al motor alarga su vida útil.",DICTATION,NO_CONTROL,f_C_aceite,1
+C11,C,"Modificar recetas clásicas divide a los puristas.",DICTATION,NO_CONTROL,f_C_recetas,1
+C12,C,"Reemplazar cerraduras viejas disuade a los intrusos.",DICTATION,NO_CONTROL,f_C_cerraduras,1
+C13,C,"Seleccionar leña seca garantiza buen fuego.",DICTATION,NO_CONTROL,f_C_lena,0
+C14,C,"Deshacer malentendidos a tiempo salva amistades.",DICTATION,NO_CONTROL,f_C_amistades,1
+C15,C,"Rehacer jardines abandonados embellece el barrio.",DICTATION,NO_CONTROL,f_C_jardines,0
+C16,C,"Subrayar fechas patrias decora el salón de clases.",DICTATION,NO_CONTROL,f_C_fechas,0
+C17,C,"Borrar pines del mapa despeja la pantalla.",DICTATION,NO_CONTROL,f_C_pines,1
+C18,C,"Cambiar andenes en hora pico es un caos.",DICTATION,NO_CONTROL,f_C_andenes,0
+C19,C,"Modificar contraseñas cada mes fastidia a todos.",DICTATION,NO_CONTROL,f_C_contrasenas,1
+C20,C,"Reemplazar tejas rotas frenó las filtraciones.",DICTATION,NO_CONTROL,f_C_tejas,1
+C21,C,"Seleccionar horario nocturno conviene a los desvelados.",DICTATION,NO_CONTROL,f_C_nocturno,0
+C22,C,"Deshacer nudos de pesca exige uñas cortas.",DICTATION,NO_CONTROL,f_C_pesca,1
+C23,C,"Rehacer maletas ligeras agiliza los aeropuertos.",DICTATION,NO_CONTROL,f_C_aeropuertos,0
+C24,C,"Subrayar títulos de libros distingue la bibliografía.",DICTATION,NO_CONTROL,f_C_biblio,1
+C25,C,"Borrar huellas dactilares del vaso fue inútil.",DICTATION,NO_CONTROL,f_C_huellas,1
+C26,C,"Cambiar divisas en el aeropuerto sale carísimo.",DICTATION,NO_CONTROL,f_C_divisas,0
+C27,C,"Modificar el itinerario sobre la marcha divierte al grupo.",DICTATION,NO_CONTROL,f_C_itinerario,0
+C28,C,"Reemplazar persianas rotas iluminó la cocina.",DICTATION,NO_CONTROL,f_C_persianas,1
+C29,C,"Seleccionar cantos rodados entretiene a los niños.",DICTATION,NO_CONTROL,f_C_cantos,0
+C30,C,"Deshacer ovillos enredados relaja por las tardes.",DICTATION,NO_CONTROL,f_C_ovillos,1
+C31,C,"Rehacer la trenza francesa tomó veinte minutos.",DICTATION,NO_CONTROL,f_C_trenza2,0
+C32,C,"Subrayar con dos colores organiza mejor los temas.",DICTATION,NO_CONTROL,f_C_colores,0
+D01,D,"El letrero advierte que borrar anuncios está multado.",DICTATION,NO_CONTROL,f_D_letrero,1
+D02,D,"El reglamento indica cómo cambiar contraseñas cada trimestre.",DICTATION,NO_CONTROL,f_D_reglamento,1
+D03,D,"El folleto explica que seleccionar talla mediana evita cambios.",DICTATION,NO_CONTROL,f_D_folleto,1
+D04,D,"La etiqueta del frasco ordena poner en refrigeración.",DICTATION,NO_CONTROL,f_D_frasco,1
+D05,D,"El contrato estipula que deshacer la compra cuesta una penalización.",DICTATION,NO_CONTROL,f_D_contrato,1
+D06,D,"La crónica menciona que el título se definió en penales.",DICTATION,NO_CONTROL,f_D_cronica,1
+D07,D,"El instructivo detalla que reemplazar piezas anula la garantía.",DICTATION,NO_CONTROL,f_D_instructivo,1
+D08,D,"La minuta registra que rehacer la votación quedó pendiente.",DICTATION,NO_CONTROL,f_D_minuta,0
+D09,D,"El menú aclara que cambiar guarniciones no tiene costo.",DICTATION,NO_CONTROL,f_D_menu,1
+D10,D,"La convocatoria pide subrayar la respuesta correcta.",DICTATION,NO_CONTROL,f_D_convocatoria,1
+D11,D,"El acta asienta que borrar el punto quinto fue unánime.",DICTATION,NO_CONTROL,f_D_acta,1
+D12,D,"El cartel del museo prohíbe seleccionar flash en las fotos.",DICTATION,NO_CONTROL,f_D_cartel,1
+D13,D,"La receta de la abuela manda poner canela al final.",DICTATION,NO_CONTROL,f_D_receta,1
+D14,D,"El manual del auto sugiere rehacer la alineación cada año.",DICTATION,NO_CONTROL,f_D_manual,1
+D15,D,"La circular informa que cambiar turnos requiere aviso previo.",DICTATION,NO_CONTROL,f_D_circular,1
+D16,D,"El guion de la obra marca deshacer el abrazo lentamente.",DICTATION,NO_CONTROL,f_D_guion,1
+D17,D,"La placa conmemora a quienes lograron cambiar la ley.",DICTATION,NO_CONTROL,f_D_placa,0
+D18,D,"El programa de mano describe que reemplazar al actor fue difícil.",DICTATION,NO_CONTROL,f_D_programa,1
+D19,D,"El vale especifica que borrar tachaduras invalida el documento.",DICTATION,NO_CONTROL,f_D_vale,1
+D20,D,"La pancarta exige poner fin a los recortes.",DICTATION,NO_CONTROL,f_D_pancarta,1
+D21,D,"El boletín advierte que deshacer reservas cobra comisión.",DICTATION,NO_CONTROL,f_D_boletin,1
+D22,D,"La invitación sugiere confirmar asistencia antes del viernes.",DICTATION,NO_CONTROL,f_D_invitacion,0
+D23,D,"El edicto municipal prohíbe borrar murales autorizados.",DICTATION,NO_CONTROL,f_D_edicto,1
+D24,D,"La ficha técnica recomienda seleccionar broca del número ocho.",DICTATION,NO_CONTROL,f_D_ficha,0
+D25,D,"El epitafio reza que aquí yace quien quiso cambiar el mundo.",DICTATION,NO_CONTROL,f_D_epitafio,0
+D26,D,"El prospecto indica poner dos gotas cada ocho horas.",DICTATION,NO_CONTROL,f_D_prospecto,1
+D27,D,"La orden del día incluye rehacer el padrón electoral.",DICTATION,NO_CONTROL,f_D_orden,1
+D28,D,"El memorándum pide subrayar los acuerdos alcanzados.",DICTATION,NO_CONTROL,f_D_memo,1
+D29,D,"La esquela agradece no poner flores sino donativos.",DICTATION,NO_CONTROL,f_D_esquela,1
+D30,D,"El pergamino antiguo enseña técnicas para cuidar documentos.",DICTATION,NO_CONTROL,f_D_pergamino,0
+D31,D,"El anuncio clasificado ofrece borrar tatuajes sin dolor.",DICTATION,NO_CONTROL,f_D_anuncio,1
+D32,D,"La gaceta publica que cambiar de sede beneficia al equipo.",DICTATION,NO_CONTROL,f_D_gaceta,0
+E01,E,"Está bien así.",,NO_CONTROL,f_E_estabien,0
+E02,E,"No, así no.",,NO_CONTROL,f_E_asino,0
+E03,E,"Mejor déjalo.",,NO_CONTROL,f_E_mejordejalo,0
+E04,E,"Creo que no.",,NO_CONTROL,f_E_creoqueno,0
+E05,E,"No estoy convencido.",,NO_CONTROL,f_E_convencido,0
+E06,E,"Podría ser.",,NO_CONTROL,f_E_podria,0
+E07,E,"Quién sabe todavía.",,NO_CONTROL,f_E_quiensabe,0
+E08,E,"Déjame pensarlo.",,NO_CONTROL,f_E_pensarlo,0
+E09,E,"No sé aún.",,NO_CONTROL,f_E_noseaun,0
+E10,E,"Tal vez después.",,NO_CONTROL,f_E_despues,0
+E11,E,"Eso está mejor.",,NO_CONTROL,f_E_estamejor,0
+E12,E,"No, mejor no.",,NO_CONTROL,f_E_mejorno,0
+E13,E,"Me parece bien.",,NO_CONTROL,f_E_parecebien,0
+E14,E,"Suena razonable.",,NO_CONTROL,f_E_razonable,0
+E15,E,"Ya veremos.",,NO_CONTROL,f_E_veremos,0
+E16,E,"Está pasable.",,NO_CONTROL,f_E_pasable,0
+E17,E,"No me convence.",,NO_CONTROL,f_E_convence,0
+E18,E,"Mmm, tal vez.",,NO_CONTROL,f_E_mmtalvez,0
+E19,E,"Bueno, ya qué.",,NO_CONTROL,f_E_yaque,0
+E20,E,"Pues no sé.",,NO_CONTROL,f_E_puesno,0
+E21,E,"Ah, ya entiendo.",,NO_CONTROL,f_E_entiendo2,0
+E22,E,"Claro, claro.",,NO_CONTROL,f_E_claro2,0
+E23,E,"Sí, eso mero.",,NO_CONTROL,f_E_esomero,0
+E24,E,"Nel.",,NO_CONTROL,f_E_nel,0
+E25,E,"Simón.",,NO_CONTROL,f_E_simon,0
+E26,E,"Órale.",,NO_CONTROL,f_E_orale,0
+E27,E,"Chido.",,NO_CONTROL,f_E_chido,0
+E28,E,"Ni modo.",,NO_CONTROL,f_E_nimodo,0
+E29,E,"Ya ni modo.",,NO_CONTROL,f_E_yanimodo,0
+E30,E,"Pues bueno.",,NO_CONTROL,f_E_puesbueno,0
+E31,E,"Este...",,NO_CONTROL,f_E_este,0
+E32,E,"Ajá, ajá.",,NO_CONTROL,f_E_aja2,0
+F01,F,"Renombra el archivo como informe final.",EDITOR_CONTROL,CONTROL,f_F_renombra,0
+F02,F,"Guarda una copia con otro nombre.",EDITOR_CONTROL,CONTROL,f_F_copia,0
+F03,F,"Imprime solamente las páginas pares.",EDITOR_CONTROL,CONTROL,f_F_imprime,0
+F04,F,"Comparte este documento por correo.",EDITOR_CONTROL,CONTROL,f_F_comparte,0
+F05,F,"Descarga el archivo en formato pdf.",EDITOR_CONTROL,CONTROL,f_F_descarga,0
+F06,F,"Abre el documento adjunto de ayer.",EDITOR_CONTROL,CONTROL,f_F_abre,0
+F07,F,"Cierra todas las ventanas abiertas.",EDITOR_CONTROL,CONTROL,f_F_cierra,0
+F08,F,"Busca la palabra resumen en el texto.",EDITOR_CONTROL,CONTROL,f_F_busca,0
+F09,F,"Reemplaza comas por punto y coma.",EDITOR_CONTROL,CONTROL,f_F_comas,0
+F10,F,"Cuenta cuántas veces aparece ese término.",EDITOR_CONTROL,CONTROL,f_F_cuenta,0
+F11,F,"Ordena estos párrafos por fecha.",EDITOR_CONTROL,CONTROL,f_F_ordena,0
+F12,F,"Traduce esta oración al inglés.",EDITOR_CONTROL,CONTROL,f_F_traduce,0
+F13,F,"Lee en voz alta lo seleccionado.",EDITOR_CONTROL,CONTROL,f_F_lee,0
+F14,F,"Dicta el siguiente párrafo por mí.",EDITOR_CONTROL,CONTROL,f_F_dicta,0
+F15,F,"Inserta una imagen después del título.",EDITOR_CONTROL,CONTROL,f_F_inserta,0
+F16,F,"Agrega una nota al pie aquí.",EDITOR_CONTROL,CONTROL,f_F_nota,0
+F17,F,"Crea una tabla de dos columnas.",EDITOR_CONTROL,CONTROL,f_F_tabla,0
+F18,F,"Divide la pantalla en dos vistas.",EDITOR_CONTROL,CONTROL,f_F_dividir,0
+F19,F,"Activa el corrector ortográfico.",EDITOR_CONTROL,CONTROL,f_F_corrector,0
+F20,F,"Desactiva las sugerencias automáticas.",EDITOR_CONTROL,CONTROL,f_F_desactiva,0
+F21,F,"Aumenta el zoom al ciento cincuenta.",EDITOR_CONTROL,CONTROL,f_F_zoom,0
+F22,F,"Cambia la fuente a una sin serifas.",EDITOR_CONTROL,CONTROL,f_F_fuente,0
+F23,F,"Exporta el documento como epub.",EDITOR_CONTROL,CONTROL,f_F_exporta,0
+F24,F,"Firma electrónicamente la última página.",EDITOR_CONTROL,CONTROL,f_F_firma,0
+F25,F,"Comprime las imágenes del documento.",EDITOR_CONTROL,CONTROL,f_F_comprime,0
+F26,F,"Restaura la versión de ayer.",EDITOR_CONTROL,CONTROL,f_F_restaura,0
+F27,F,"Duplica este párrafo al final.",EDITOR_CONTROL,CONTROL,f_F_duplica,0
+F28,F,"Mueve esta cita al epígrafe.",EDITOR_CONTROL,CONTROL,f_F_mueve,0
+F29,F,"Combina estos dos apartados.",EDITOR_CONTROL,CONTROL,f_F_combina,0
+F30,F,"Separa la introducción del desarrollo.",EDITOR_CONTROL,CONTROL,f_F_separa,0
+F31,F,"Numera las secciones automáticamente.",EDITOR_CONTROL,CONTROL,f_F_numera,0
+F32,F,"Genera el índice del documento.",EDITOR_CONTROL,CONTROL,f_F_indice,0
+F33,F,"Revisa si hay enlaces rotos.",EDITOR_CONTROL,CONTROL,f_F_enlaces,0
+F34,F,"Actualiza la tabla de contenido.",EDITOR_CONTROL,CONTROL,f_F_tablacont,0
+F35,F,"Marca este borrador como final.",EDITOR_CONTROL,CONTROL,f_F_marca,0
+F36,F,"Archiva la versión anterior.",EDITOR_CONTROL,CONTROL,f_F_archiva,0
+F37,F,"Recupera el archivo de la papelera.",EDITOR_CONTROL,CONTROL,f_F_recupera,0
+F38,F,"Vacía la papelera ahora.",EDITOR_CONTROL,CONTROL,f_F_vacia,0
+F39,F,"Bloquea este documento con contraseña.",EDITOR_CONTROL,CONTROL,f_F_bloquea,0
+F40,F,"Desbloquea la sección de comentarios.",EDITOR_CONTROL,CONTROL,f_F_desbloquea,0
+F41,F,"Oculta los cambios registrados.",EDITOR_CONTROL,CONTROL,f_F_oculta,0
+F42,F,"Muestra los caracteres invisibles.",EDITOR_CONTROL,CONTROL,f_F_muestra,0
+F43,F,"Acepta todas las revisiones pendientes.",EDITOR_CONTROL,CONTROL,f_F_acepta,0
+F44,F,"Rechaza el último cambio sugerido.",EDITOR_CONTROL,CONTROL,f_F_rechaza,0
+F45,F,"Comenta este párrafo para revisarlo.",EDITOR_CONTROL,CONTROL,f_F_comenta,0
+F46,F,"Resalta las dudas con color amarillo.",EDITOR_CONTROL,CONTROL,f_F_resalta,0
+F47,F,"Asigna esta tarea a Mariana.",EDITOR_CONTROL,CONTROL,f_F_asigna,0
+F48,F,"Programa un recordatorio para mañana.",EDITOR_CONTROL,CONTROL,f_F_programa,0
+F49,F,"Fija la fecha de entrega el viernes.",EDITOR_CONTROL,CONTROL,f_F_fija,0
+F50,F,"Aplaza la reunión de revisión.",EDITOR_CONTROL,CONTROL,f_F_aplaza,0
+F51,F,"Adelanta el envío del borrador.",EDITOR_CONTROL,CONTROL,f_F_adelanta,0
+F52,F,"Cancela la suscripción premium.",EDITOR_CONTROL,CONTROL,f_F_cancela,0
+F53,F,"Renueva la licencia del programa.",EDITOR_CONTROL,CONTROL,f_F_renueva,0
+F54,F,"Instala la actualización disponible.",EDITOR_CONTROL,CONTROL,f_F_instala,0
+F55,F,"Reinicia la aplicación ahora.",EDITOR_CONTROL,CONTROL,f_F_reinicia,0
+F56,F,"Sincroniza con la nube.",EDITOR_CONTROL,CONTROL,f_F_sincroniza,0
+F57,F,"Haz una copia de seguridad.",EDITOR_CONTROL,CONTROL,f_F_respaldo,0
+F58,F,"Verifica la ortografía completa.",EDITOR_CONTROL,CONTROL,f_F_verifica,0
+F59,F,"Ejecuta el corrector de estilo.",EDITOR_CONTROL,CONTROL,f_F_ejecuta,0
+F60,F,"Previsualiza antes de imprimir.",EDITOR_CONTROL,CONTROL,f_F_previsualiza,0
+F61,F,"Ajusta los márgenes a dos centímetros.",EDITOR_CONTROL,CONTROL,f_F_margenes,0
+F62,F,"Cambia la orientación a horizontal.",EDITOR_CONTROL,CONTROL,f_F_orientacion,0
+F63,F,"Inserta el número de página.",EDITOR_CONTROL,CONTROL,f_F_numpag,0
+F64,F,"Agrega el encabezado institucional.",EDITOR_CONTROL,CONTROL,f_F_encabezado,0
+F65,F,"Pon pie de página con la fecha.",EDITOR_CONTROL,CONTROL,f_F_piepagina,0
+F66,F,"Alinea el texto a la derecha.",EDITOR_CONTROL,CONTROL,f_F_alinea,0
+F67,F,"Justifica ambos márgenes.",EDITOR_CONTROL,CONTROL,f_F_justifica,0
+F68,F,"Interlinea a espacio y medio.",EDITOR_CONTROL,CONTROL,f_F_interlinea,0
+F69,F,"Sangra la primera línea.",EDITOR_CONTROL,CONTROL,f_F_sangra,0
+F70,F,"Convierte a mayúsculas sostenidas.",EDITOR_CONTROL,CONTROL,f_F_mayus,0
+F71,F,"Pasa a minúsculas el encabezado.",EDITOR_CONTROL,CONTROL,f_F_minus,0
+F72,F,"Subraya los verbos principales.",EDITOR_CONTROL,CONTROL,f_F_subraya,0
+F73,F,"Tacha lo que ya corregiste.",EDITOR_CONTROL,CONTROL,f_F_tacha,0
+F74,F,"Cursiva los títulos de libros.",EDITOR_CONTROL,CONTROL,f_F_cursiva,0
+F75,F,"Negrita los conceptos clave.",EDITOR_CONTROL,CONTROL,f_F_negrita,0
+F76,F,"Agranda la tipografía del cartel.",EDITOR_CONTROL,CONTROL,f_F_agranda,0
+F77,F,"Reduce el cuerpo del texto.",EDITOR_CONTROL,CONTROL,f_F_reduce,0
+F78,F,"Cambia el color a azul marino.",EDITOR_CONTROL,CONTROL,f_F_color,0
+F79,F,"Aplica el tema oscuro.",EDITOR_CONTROL,CONTROL,f_F_tema,0
+F80,F,"Restaura los valores originales.",EDITOR_CONTROL,CONTROL,f_F_restaura2,0
+F81,F,"Deshaz la última corrección.",EDITOR_CONTROL,CONTROL,f_F_deshazcorr,0
+F82,F,"Rehaz la edición anterior.",EDITOR_CONTROL,CONTROL,f_F_rehazed,0
+G01,G,"Haz eso ya.",EDITOR_CONTROL,CONTROL,f_G_hazeso,0
+G02,G,"Quita aquel otro.",EDITOR_CONTROL,CONTROL,f_G_quitaaquello,0
+G03,G,"Ponlo ahí mismo.",EDITOR_CONTROL,CONTROL,f_G_ponloahi,0
+G04,G,"Mueve esto para allá.",EDITOR_CONTROL,CONTROL,f_G_muevelo,0
+G05,G,"Cambia eso otro.",EDITOR_CONTROL,CONTROL,f_G_cambiaeso,0
+G06,G,"Arregla aquello otro.",EDITOR_CONTROL,CONTROL,f_G_arreglaaquello,0
+G07,G,"Copia eso también.",EDITOR_CONTROL,CONTROL,f_G_copiaeso,0
+G08,G,"Borra aquello ya.",EDITOR_CONTROL,CONTROL,f_G_borraaquello,0
+G09,G,"Esto déjalo.",EDITOR_CONTROL,CONTROL,f_G_estodejalo,0
+G10,G,"Eso muévelo.",EDITOR_CONTROL,CONTROL,f_G_esomuevelo,0
+G11,G,"Hazlo de nuevo.",EDITOR_CONTROL,CONTROL,f_G_hazlodenuevo,0
+G12,G,"Pon eso otro.",EDITOR_CONTROL,CONTROL,f_G_poneso,0
+G13,G,"Quita eso de ahí.",EDITOR_CONTROL,CONTROL,f_G_quitaahi,0
+G14,G,"Cámbialo todo.",EDITOR_CONTROL,CONTROL,f_G_cambialotodo,0
+G15,G,"Bórralo completo.",EDITOR_CONTROL,CONTROL,f_G_borralo,0
+G16,G,"Déjalo ya.",EDITOR_CONTROL,CONTROL,f_G_dejalo,0
+G17,G,"Hazle así.",EDITOR_CONTROL,CONTROL,f_G_hazleasi,0
+G18,G,"Ponle así.",EDITOR_CONTROL,CONTROL,f_G_ponleasi,0
+G19,G,"Quítalo ya.",EDITOR_CONTROL,CONTROL,f_G_quitalo,0
+G20,G,"Míralo y arréglalo.",EDITOR_CONTROL,CONTROL,f_G_miralo,0
+G21,G,"Tómalo y muévelo.",EDITOR_CONTROL,CONTROL,f_G_tomalo,0
+G22,G,"Ábrelo.",EDITOR_CONTROL,CONTROL,f_G_abrelo,0
+G23,G,"Ciérralo.",EDITOR_CONTROL,CONTROL,f_G_cierralo,0
+G24,G,"Guárdalo.",EDITOR_CONTROL,CONTROL,f_G_guardalo,0
+G25,G,"Imprímelo.",EDITOR_CONTROL,CONTROL,f_G_imprimelo,0
+G26,G,"Envíalo.",EDITOR_CONTROL,CONTROL,f_G_envialo,0
+G27,G,"Léelo.",EDITOR_CONTROL,CONTROL,f_G_leelo,0
+G28,G,"Revísalo.",EDITOR_CONTROL,CONTROL,f_G_revisalo,0
+G29,G,"Fírmalo.",EDITOR_CONTROL,CONTROL,f_F_firmalo,0
+G30,G,"Archívalo.",EDITOR_CONTROL,CONTROL,f_G_archivalo,0
+G31,G,"Compártelo.",EDITOR_CONTROL,CONTROL,f_G_compartelo,0
+G32,G,"Descárgalo.",EDITOR_CONTROL,CONTROL,f_G_descargalo,0
+H01a,H,"Modificar horarios de clase altera la rutina.",DICTATION,NO_CONTROL,f_H_horarios,0
+H01b,H,"Modifica este horario.",EDITOR_CONTROL,CONTROL,f_H_horarios,0
+H02a,H,"Borrar mensajes viejos libera memoria del teléfono.",DICTATION,NO_CONTROL,f_H_mensajes,0
+H02b,H,"Borra ese mensaje.",EDITOR_CONTROL,CONTROL,f_H_mensajes,0
+H03a,H,"Seleccionar asientos juntos complica la reservación.",DICTATION,NO_CONTROL,f_H_asientos,0
+H03b,H,"Selecciona estos asientos.",EDITOR_CONTROL,CONTROL,f_H_asientos,0
+H04a,H,"Reemplazar focos fundidos toma cinco minutos.",DICTATION,NO_CONTROL,f_H_focos,0
+H04b,H,"Reemplaza ese foco.",EDITOR_CONTROL,CONTROL,f_H_focos,0
+H05a,H,"Deshacer tratos verbales deja mala imagen.",DICTATION,NO_CONTROL,f_H_tratos,0
+H05b,H,"Deshaz ese trato.",EDITOR_CONTROL,CONTROL,f_H_tratos,0
+H06a,H,"Poner música suave ameniza la sala de espera.",DICTATION,NO_CONTROL,f_H_musica,0
+H06b,H,"Pon música suave.",EDITOR_CONTROL,CONTROL,f_H_musica,0
+H07a,H,"Cambiar divisas temprano evita filas largas.",DICTATION,NO_CONTROL,f_H_divisas,0
+H07b,H,"Cambia estas divisas.",EDITOR_CONTROL,CONTROL,f_H_divisas,0
+H08a,H,"Eliminar goteras viejas requiere impermeabilizar.",DICTATION,NO_CONTROL,f_H_goteras,0
+H08b,H,"Elimina esa gotera.",EDITOR_CONTROL,CONTROL,f_H_goteras,0
+H09a,H,"Rehacer inventarios anuales paraliza tiendas.",DICTATION,NO_CONTROL,f_H_inventarios,0
+H09b,H,"Rehaz este inventario.",EDITOR_CONTROL,CONTROL,f_H_inventarios,0
+H10a,H,"Subrayar contratos extensos cansa la vista.",DICTATION,NO_CONTROL,f_H_contratos,0
+H10b,H,"Subraya este contrato.",EDITOR_CONTROL,CONTROL,f_H_contratos,0
+H11a,H,"Borrar historiales clínicos está penado por ley.",DICTATION,NO_CONTROL,f_H_clinicos,0
+H11b,H,"Borra ese historial.",EDITOR_CONTROL,CONTROL,f_H_clinicos,0
+H12a,H,"Cambiar pañales fríos despierta al bebé.",DICTATION,NO_CONTROL,f_H_panalesfrios,0
+H12b,H,"Cambia ese pañal.",EDITOR_CONTROL,CONTROL,f_H_panalesfrios,0
+H13a,H,"Poner candados nuevos disuade a intrusos.",DICTATION,NO_CONTROL,f_H_candados,0
+H13b,H,"Pon otro candado.",EDITOR_CONTROL,CONTROL,f_H_candados,0
+H14a,H,"Deshacer costuras finas exige buena luz.",DICTATION,NO_CONTROL,f_H_costuras,0
+H14b,H,"Deshaz esa costura.",EDITOR_CONTROL,CONTROL,f_H_costuras,0
+H15a,H,"Seleccionar sandías pesadas asegura dulzura.",DICTATION,NO_CONTROL,f_H_sandias,0
+H15b,H,"Selecciona esa sandía.",EDITOR_CONTROL,CONTROL,f_H_sandias,0
+H16a,H,"Reemplazar filtros sucios mejora el aire.",DICTATION,NO_CONTROL,f_H_filtros,0
+H16b,H,"Reemplaza ese filtro.",EDITOR_CONTROL,CONTROL,f_H_filtros,0
+H17a,H,"Eliminar caries profundas requiere anestesia.",DICTATION,NO_CONTROL,f_H_caries,0
+H17b,H,"Elimina esa caries.",EDITOR_CONTROL,CONTROL,f_H_caries,0
+H18a,H,"Rehacer presupuestos ajustados estresa al equipo.",DICTATION,NO_CONTROL,f_H_presupuestos,0
+H18b,H,"Rehaz ese presupuesto.",EDITOR_CONTROL,CONTROL,f_H_presupuestos,0
+H19a,H,"Subrayar mapas antiguos daña el papel.",DICTATION,NO_CONTROL,f_H_mapas,0
+H19b,H,"Subraya ese mapa.",EDITOR_CONTROL,CONTROL,f_H_mapas,0
+H20a,H,"Borrar huellas del espejo lleva minutos.",DICTATION,NO_CONTROL,f_H_huellas,0
+H20b,H,"Borra esa huella.",EDITOR_CONTROL,CONTROL,f_H_huellas,0
+H21a,H,"Cambiar andenes concurridos marea a cualquiera.",DICTATION,NO_CONTROL,f_H_andenes,0
+H21b,H,"Cambia de andén.",EDITOR_CONTROL,CONTROL,f_H_andenes,0
+H22a,H,"Modificar itinerarios largos agota a los guías.",DICTATION,NO_CONTROL,f_H_itinerarios,0
+H22b,H,"Modifica este itinerario.",EDITOR_CONTROL,CONTROL,f_H_itinerarios,0
+H23a,H,"Reemplazar persianas viejas aclara cuartos.",DICTATION,NO_CONTROL,f_H_persianas,0
+H23b,H,"Reemplaza esa persiana.",EDITOR_CONTROL,CONTROL,f_H_persianas,0
+H24a,H,"Seleccionar cantos lisos divierte en el río.",DICTATION,NO_CONTROL,f_H_cantos,0
+H24b,H,"Selecciona ese canto.",EDITOR_CONTROL,CONTROL,f_H_cantos,0
+H25a,H,"Deshacer ovillos grandes entretiene tardes.",DICTATION,NO_CONTROL,f_H_ovillos,0
+H25b,H,"Deshaz ese ovillo.",EDITOR_CONTROL,CONTROL,f_H_ovillos,0
+H26a,H,"Rehacer trenzas apretadas duele al inicio.",DICTATION,NO_CONTROL,f_H_trenzas,0
+H26b,H,"Rehaz esa trenza.",EDITOR_CONTROL,CONTROL,f_H_trenzas,0
