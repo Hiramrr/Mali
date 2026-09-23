@@ -54,6 +54,12 @@ final class VoiceCommandParserTests: XCTestCase {
         XCTAssertEqual(parser.parse("Ponle de título TDAH"), .renameTitle("TDAH"))
         XCTAssertEqual(parser.parse("Titula Informe final"), .renameTitle("Informe final"))
         XCTAssertEqual(parser.parse("Renombra a Borrador 2"), .renameTitle("Borrador 2"))
+        // El argumento va verbatim: si el STT confunde ("de usabilidad" por
+        // ", sensibilidad"), el título refleja el transcript tal cual.
+        XCTAssertEqual(
+            parser.parse("Cambia el titulo a prueba, sensibilidad."),
+            .renameTitle("prueba, sensibilidad")
+        )
     }
 
     func testRenameTitleGuards() {
