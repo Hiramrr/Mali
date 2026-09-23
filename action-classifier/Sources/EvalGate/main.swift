@@ -117,18 +117,21 @@ func classify(_ text: String) -> (top1: String, s1: Double, top2: String, s2: Do
 }
 
 let finRows = csvRows(try String(contentsOf: dataDir.appendingPathComponent("final_action_test.csv"), encoding: .utf8))
-var records: [ActionEvaluationRecord] = []
-var latencies: [Double] = []
-for r in finRows where r.count >= 9 {
-    let s0 = clock.now
-    let c = classify(r[2])
-    latencies.append(ms(s0, clock.now))
-    records.append(ActionEvaluationRecord(
-        text: r[2], expected: r[3], predicted: c.top1, top1: c.s1,
-        top2label: c.top2, top2: c.s2, margin: c.s1 - c.s2,
-        category: r[1], familyID: r[4],
-        uns: r[5] == "1", conf: r[6] == "1", para: r[7] == "1", short: r[8] == "1"))
-}
+
+@MainActor
+func evaluate() {
+    var records: [ActionEvaluationRecord] = []
+    var latencies: [Double] = []
+    for r in finRows where r.count >= 9 {
+        let s0 = clock.now
+        let c = classify(r[2])
+        latencies.append(ms(s0, clock.now))
+        records.append(ActionEvaluationRecord(
+            text: r[2], expected: r[3], predicted: c.top1, top1: c.s1,
+            top2label: c.top2, top2: c.s2, margin: c.s1 - c.s2,
+            category: r[1], familyID: r[4],
+            uns: r[5] == "1", conf: r[6] == "1", para: r[7] == "1", short: r[8] == "1"))
+    }
 
 // ---- verificación contable ----
 let total = records.count
@@ -236,3 +239,7 @@ for r in records where r.expected != r.predicted {
     print("--- [\(r.category)] exp=\(r.expected) pred=\(r.predicted) s1=\(String(format: "%.3f", r.top1)) s2=\(r.top2label)=\(String(format: "%.3f", r.top2)) fam=\(r.familyID)")
     print("TEXT: \(r.text)")
 }
+
+}
+
+evaluate()
