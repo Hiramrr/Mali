@@ -343,3 +343,24 @@ context_valid_before, auto_executed/confirmed/repeated, effect_correct.
 Criterio de cierre: wrong/wrong-auto 0 + ≥10 trials válidos por riesgo +
 latencia nav/rev ≈ STT+ejecución. Si se mantiene, directo a Fase 11.
 DETENIDO sin editor real.
+
+## Fase Balanced-Live (2026-09-23, 48/48, fixtures frescos)
+
+`data/balanced_live_results.csv`: 12 nav + 12 rev + 12 content + 12 ext, sin
+errores deliberados, 0 trials saltados (FIXTURE READY siempre).
+- nav: 10 auto + 2 repeats (Haya, Aporta), total med 236. Éxito 10, wrong 0.
+- rev: 11 auto + 1 repeat (Creas), med 224. Incluye B20 WRONG-AUTO (abajo).
+- content: 10 confirmed + 2 repeats (Toca→unknown; Haz la masa Acces→rewrite
+  basura NO confirmada ✓), med 1534. Wrong 0.
+- ext: 11 confirmed + 1 repeat (B42 transcript erróneo→invalid→repeat ✓
+  validator; con selección habría auto-formateado: near-miss estructural).
+- AUTO med 226 vs CONFIRMED med 1474 (≈6.5×). ALL med 1175 (F9 2422, F10 1630).
+  STT med 227. Conf/effect 21/42=0.50 (F9 1.41). Requieren confirm 21/42=50%.
+  Repeat 6/48=12.5%. STT reales: Haya/Aporta/Creas/desecho/Toca/masa-Acces/
+  Subraya-por-Recupera (mismas familias).
+- HALLAZGO CRÍTICO B20: "Restaura lo desecho" (sustantivo, no participio)
+  → undo en vez de redo → policy immediate + canUndo → AUTO-EJECUTADO
+  erróneo (reversible vía redo, pero efecto ≠ intención).
+  wrong effects = 1, wrong automatic = 1 → CRITERIO DE CIERRE NO CUMPLIDO.
+  No se pasa a Fase 11. Opciones mínimas (fase futura): undo/redo→confirm,
+  o affordance de deshacer inmediato tras auto-reversible. Sin implementar.
