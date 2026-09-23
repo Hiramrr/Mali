@@ -138,26 +138,25 @@ swift run GrammarTest smoke-ab f.wav  # humo TTS (NO oficial)
 - `Types.swift` SHA-256: `df57355...` (sin cambios funcionales).
 - Si cambia funcionalmente: `EXPERIMENT_INVALID_GRAMMAR_CHANGED`.
 
-### Evaluación (pendiente voz humana)
+### Evaluación (voz humana 180/180, mismos WAVs A/B — FINAL)
 
-- `data/audio_v2/`: WAV/PCM mono, un archivo por utterance, mismos archivos para A y B.
-- `data/eval_v2_results.csv`: columnas id,expected_spoken_text,expected_command,
-  audio_file,baseline_transcript,baseline_wer,baseline_parsed_command,baseline_correct,
-  custom_transcript,custom_wer,custom_parsed_command,custom_correct,
-  argument_expected,baseline_argument,custom_argument (+ stt/parse ms).
-- Métrica primaria: END-TO-END COMMAND ACCURACY (audio→STT→gramática).
-- Pareada: B✓C✓, B✗C✓, B✓C✗ (=CUSTOM_LM_REGRESSIONS), B✗C✗.
-- Argumentos: EXACT / CASE_ONLY_DIFFERENCE / MINOR_STT_ERROR / WRONG (reglas, sin LLM).
-- Safety: unsupported→supported = 0, unknown→supported = 0.
-- Latencias: STT (end-of-audio→transcript), parser, E2E; mean/median/p95 por condición.
-- Criterios valor real: E2E ≥95%, safety 0/0, args aceptable ≥95%,
-  regresiones ≤2%, preferido WER <8%, undo/redo ≥95%.
-- Si falla: NO cambiar gramática/weight/frases ni regrabar; reportar y detener.
-- Si funciona: DETENERSE (siguiente experimento: Preview/Confirmation, no editor real).
+- `data/audio_v2/`: 180 WAVs (V001–V180, 81 MB, mismos archivos para A y B).
+- `data/eval_v2_results.csv`: 180 filas + `data/eval_v2_console.log`.
+- Métrica primaria E2E: baseline 161/180=89.4%, custom 162/180=90.0% (+0.6 pp, reducción error 5.3%).
+- WER mismos audios: baseline 14.4% (94/655), custom 14.2% (93/655) (+0.2 pp, relativa 1.1%).
+- Pareada: B✓C✓ 161, B✗C✓ 1 (V082 `Rehaz eso`: `Reto`→`Rehaz esto`), B✓C✗ 0, B✗C✗ 18.
+- `CUSTOM_LM_REGRESSIONS`: 0 = 0.0% (≤2% ✓).
+- Challenges: UNDO/REDO 75.0%→78.1%, FORMAT 90.9%→90.9%, FIND/SELECT 90.9%→90.9%, SAVE/EXPORT 100%→100%, SHORT 88.5%→92.3%, ARGUMENTS 88.1%→88.1%.
+- Argumentos: EXACT 149/149, CASE 8/8, MINOR 6/6, WRONG 17/17; aceptable 163/180=90.6% ambos (<95% ✗).
+- Safety: unsupported→supported 0/0 ✓; unknown→supported 1/1 ✗ (V173 `Borrar...`→`Borra...`→delete, idéntico en A y B, inducido por STT, no por LM).
+- Latencias: STT baseline mean 198 med 193 p95 223; custom mean 195 med 192 p95 218. Parser ~0.06 ms. Sin overhead significativo.
+- Criterios valor real: E2E ≥95% NO (90.0%), safety 0/1 NO, args ≥95% NO (90.6%), regresiones SÍ (0%). Preferido WER<8% NO, undo/redo ≥95% NO (78.1%).
+- Veredicto: el Custom LM v1 NO aporta valor real. Una sola corrección (V082), cero regresiones, pero mejora marginal. NO modificar gramática/weight/frases ni regrabar (reportar y detener).
+- Fallos persistentes: `deshace` por `deshaz` (V066/V068), `Fea hazlo` (V083), `Aplicar el formato` sin `re-` (V086), `Les haz el deshacer` (V089), `desecho` por `deshecho` (V090), `Haya` por `Halla` (V103), `Te limita` por `Delimita` (V118), `Central` por `Centra` (V154), rename con `a` elidida (V005/V006) y `cite`→`si te` (V012).
 
-### Estado actual (código listo, audio pendiente)
+### Estado actual (FINAL completo)
 
 - [x] Rama, protocolo 180 + SHA, validación 100%, leakage 0, LM preparado.
-- [x] Humo TTS (NO oficial): `Deshaz eso`→`Les hace eso` en A y B; `Ponlo en negritas` OK en ambos.
-- [ ] `record-v2` voz humana (0/180 WAVs).
-- [ ] `eval-v2` + entrega 32 puntos.
+- [x] Humo TTS (NO oficial).
+- [x] `record-v2` voz humana (180/180 WAVs).
+- [x] `eval-v2` + entrega 32 puntos. DETENIDO (no conectar editor real).
