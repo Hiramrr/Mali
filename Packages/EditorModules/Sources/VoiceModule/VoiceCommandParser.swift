@@ -54,10 +54,11 @@ public struct VoiceCommandParser: Sendable {
         return nil
     }
 
-    /// "Cambia el título a X" → `X` verbatim (con tildes y mayúsculas del
-    /// hablante). Solo frase completa: el comando debe abrir la frase, el
-    /// argumento no va vacío y no contiene saltos de línea. Sin fuzzy: lo que
-    /// no calza exacto sigue siendo dictado.
+    /// "Cambia el título a/de X" → `X` verbatim (con tildes y mayúsculas del
+    /// hablante). Se acepta "de" además de "a" porque el STT los confunde y
+    /// en habla coloquial se intercambian. Solo frase completa: el comando
+    /// debe abrir la frase, el argumento no va vacío y no contiene saltos
+    /// de línea. Sin fuzzy: lo que no calza exacto sigue siendo dictado.
     private static func renameTitle(in transcript: String) -> String? {
         let raw = transcript.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !raw.isEmpty, !raw.contains("\n") else { return nil }
@@ -65,6 +66,7 @@ public struct VoiceCommandParser: Sendable {
             .folding(options: .diacriticInsensitive, locale: Locale(identifier: "es_MX"))
         let prefixes = [
             "cambia el titulo a ",
+            "cambia el titulo de ",
             "pon como titulo ",
             "ponle de titulo ",
             "titula ",

@@ -48,6 +48,7 @@ final class VoiceCommandParserTests: XCTestCase {
         let parser = VoiceCommandParser()
         // El caso reportado: antes caía a dictado e insertaba el texto.
         XCTAssertEqual(parser.parse("Cambia el título a prueba."), .renameTitle("prueba"))
+        XCTAssertEqual(parser.parse("Cambia el título de prueba."), .renameTitle("prueba"))
         XCTAssertEqual(parser.parse("Cambia el titulo a Metodología"), .renameTitle("Metodología"))
         XCTAssertEqual(parser.parse("Pon como título IHC 2026."), .renameTitle("IHC 2026"))
         XCTAssertEqual(parser.parse("Ponle de título TDAH"), .renameTitle("TDAH"))

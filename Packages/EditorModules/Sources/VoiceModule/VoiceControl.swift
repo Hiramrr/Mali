@@ -100,7 +100,7 @@ public struct VoiceControl: View {
             }
             .pickerStyle(.menu)
             .font(.callout)
-            Text("Comandos: “nueva línea”, “nuevo párrafo”, “deshacer”, “borra eso”, “cancelar”.")
+            Text("Comandos: “nueva línea”, “nuevo párrafo”, “deshacer”, “borra eso”, “cambia el título a…”, “cancelar”.")
                 .font(.caption)
                 .foregroundStyle(.secondary)
         }
