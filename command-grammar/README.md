@@ -251,7 +251,15 @@ estructural sobre FakeEditorState).
 
 Live (`data/confirmation_live_protocol.csv`: 20 normal + 5 repeat + 5 cancel;
 runner con timings speech-end→proposal/proposal→decisión/total;
-`confirmation_live_results.csv`): PENDIENTE de ejecución humana (mic+teclado).
-Friction baseline esperada ≈1.0 confirm/comando. Recomendación: tras medir
-fricción, Fase 10 risk-based (navigation→inmediato, reversible→inmediato+Undo,
-content→confirm, external→confirm). DETENIDO sin auto-ejecución.
+`confirmation_live_results.csv`): EJECUTADO 2026-09-23, 30/30 voz humana.
+Decisiones: 24 confirm, 6 repeat, 0 cancel (desvíos de modo: L26/L28
+modo=cancel pero confirmados; L03–L05 modo=normal pero repetidos). Efectos
+ejecutados 17, todos correctos o inocuos (L08 arg truncado en texto vacío);
+0 incorrectos. No-op absorbidos 7 (L07/L10/L12 invalid-context por estado
+persistente tras el borrado de L02; L18/L22 unknown; L29 unsupported; L30
+unknown). Repeats: STT real (Deshace, TTAH, Pone, Crea haz hazlo) + L03/L21
+exploratorios. Tiempos ms: STT med 228 (L01 506 warmup); proposal≈STT
+(artefacto); decisión med 2197 p95 7739; total med 2422. Confirms/efecto
+24/17=1.41; repeat 20%, cancel 0%. Friction baseline ≈2.4 s/comando.
+Recomendación: Fase 10 risk-based (navigation→inmediato,
+reversible→inmediato+Undo, content/external→confirm). DETENIDO.
