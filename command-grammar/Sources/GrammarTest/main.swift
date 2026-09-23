@@ -21,6 +21,10 @@ struct Runner {
             await runEvalV2()
         } else if let i = args.firstIndex(of: "smoke-ab"), i + 1 < args.count {
             await runSmokeAB(path: args[i + 1])
+        } else if let i = args.firstIndex(of: "alts-smoke"), i + 1 < args.count {
+            await runAltsSmoke(path: args[i + 1])
+        } else if args.contains("eval-alts") {
+            await runEvalAlternatives()
         } else if args.contains("protocol") {
             printLiveProtocol()
         } else if let i = args.firstIndex(of: "transcribe"), i + 1 < args.count {

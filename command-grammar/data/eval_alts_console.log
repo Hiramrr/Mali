@@ -1,0 +1,144 @@
+Building for debugging...
+[Planning deferred tasks]
+Build complete! (0.23 sec)
+eval-alts: 180 utterances, CUSTOM LM + alternatives + confidence, locale es_MX
+reportingOptions=[.alternativeTranscriptions] attributeOptions=[.transcriptionConfidence] (+ preset .phrase defaults)
+CSVs: alternatives_results.csv (180), segment_alternatives.csv, error_recovery.csv
+
+========================================
+SPEECH ALTERNATIVES ANALYSIS
+========================================
+
+Total audio:
+180
+
+Single-segment: 133  Multi-segment: 47 (N-best utterance solo en single-segment)
+Alternatives por utterance: mean 0.77 min 0 max 4
+
+TOP-K COMMAND ORACLE
+
+Top-1:
+161/180 = 89.4%
+
+Top-2:
+161/180 = 89.4%
+
+Top-3:
+162/180 = 90.0%
+
+Top-5 (todo lo registrado):
+162/180 = 90.0%
+
+TOP-1 FAILURES:
+19
+
+Recovered by Top-2:
+0
+
+Recovered by Top-3:
+1
+
+Recovered by Top-5:
+1
+
+Never recovered:
+18
+
+TRANSCRIPT ORACLE (normalizado, diagnóstico): Top-2 121/180 Top-3 121/180 Top-5 121/180
+
+RECOVERY CLASS (failures): STRONG 0 MIXED 1 NONE 18
+
+CONFIDENCE
+
+Correct Top-1 median:
+0.953
+
+Incorrect Top-1 median:
+0.703
+
+Correct: n=159 mean=0.903 median=0.953 p10=0.708 p25=0.870 p75=0.984 p90=0.991 min=0.411 max=0.996
+Incorrect: n=19 mean=0.699 median=0.703 p10=0.264 p25=0.647 p75=0.902 p90=0.960 min=0.012 max=0.985
+Sin confidence (nil): 2
+Alternative-level confidence: disponible (139/139 con valor, 0 nil)
+
+THRESHOLDS (accept if conf >= t; nil = reject)
+
+t=0.50 accepted=173/180 (96.1%) acc=90.8% incorrect_accepted=16 correct_rejected=4
+t=0.60 accepted=170/180 (94.4%) acc=90.6% incorrect_accepted=16 correct_rejected=7
+t=0.70 accepted=156/180 (86.7%) acc=93.6% incorrect_accepted=10 correct_rejected=15
+t=0.75 accepted=150/180 (83.3%) acc=94.0% incorrect_accepted=9 correct_rejected=20
+t=0.80 accepted=139/180 (77.2%) acc=95.0% incorrect_accepted=7 correct_rejected=29
+t=0.85 accepted=132/180 (73.3%) acc=95.5% incorrect_accepted=6 correct_rejected=35
+t=0.90 accepted=114/180 (63.3%) acc=95.6% incorrect_accepted=5 correct_rejected=52
+t=0.95 accepted=83/180 (46.1%) acc=97.6% incorrect_accepted=2 correct_rejected=80
+
+SAFETY
+
+UNSUPPORTED
+cases:
+22
+
+supported command appears in Top-2:
+0
+
+Top-3:
+0
+
+Top-5:
+0
+
+UNKNOWN
+cases:
+22
+
+supported command appears in Top-2:
+1
+
+Top-3:
+1
+
+Top-5:
+1
+
+UNSAFE ALTERNATIVES (expected non-actionable -> supported en alts):
+UNSAFE V173 rank0 [Borra información accidentalmente afecta] -> deleteSelection (expected unknown)
+UNSAFE V173 rank1 [Borra información accidentalmente afecta] -> deleteSelection (expected unknown)
+
+CHALLENGES (Top1/Top2/Top3/Top5 oracle)
+
+UNDO/REDO n=32: Top1 24 Top2 24 Top3 25 Top5 25
+FORMAT n=22: Top1 20 Top2 20 Top3 20 Top5 20
+FIND/SELECT n=22: Top1 20 Top2 20 Top3 20 Top5 20
+SAVE/EXPORT n=18: Top1 18 Top2 18 Top3 18 Top5 18
+SHORT n=26: Top1 23 Top2 23 Top3 24 Top5 24
+ARGUMENTS n=59: Top1 52 Top2 52 Top3 52 Top5 52
+
+ARGUMENT RECOVERY (utterances con argumento esperado no vacío)
+
+EXACT: top1 28 best-in-alts 28
+CASE_ONLY_DIFFERENCE: top1 8 best-in-alts 8
+MINOR_STT_ERROR: top1 6 best-in-alts 6
+WRONG: top1 17 best-in-alts 17
+Mejoradas por alternativas: 0/59
+
+TOP-1 FAILURES CON ALTERNATIVES:
+
+FAIL V005 exp=renameTitle class=NONE multiSeg=true r0=[Renombre el documento SwiftUI]->unknown
+FAIL V006 exp=renameTitle class=NONE multiSeg=true r0=[Actualiza el nombre evaluación de IHC]->unknown
+FAIL V012 exp=renameTitle class=NONE multiSeg=true r0=[Qué el título si te capítulo tres]->unknown
+FAIL V013 exp=renameTitle class=NONE multiSeg=true r0=[Modificar el encabezado a metodología]->unknown
+FAIL V034 exp=replaceSelection class=NONE multiSeg=true r0=[Cambias de término por IHC]->unknown
+FAIL V046 exp=formatSelection:bold class=NONE multiSeg=true r0=[Pone negrito el]->unknown
+FAIL V059 exp=formatSelection:bold class=NONE multiSeg=false r0=[Hazle negritas]->unknown | r1=[Hazle negritas]->unknown
+FAIL V066 exp=undo class=NONE multiSeg=false r0=[Deshace eso]->unknown | r1=[Deshace eso]->unknown
+FAIL V068 exp=undo class=NONE multiSeg=false r0=[Deshace el último cambio]->unknown | r1=[Deshace el último cambio]->unknown
+FAIL V082 exp=redo class=MIXED multiSeg=false r0=[Reto]->unknown | r1=[Reto]->unknown | r2=[Rehaz esto]->redo | r3=[Reta]->unknown | r4=[Re esto]->unknown
+FAIL V083 exp=redo class=NONE multiSeg=false r0=[Fea hazlo]->unknown | r1=[Fea hazlo]->unknown
+FAIL V086 exp=redo class=NONE multiSeg=true r0=[Aplicar el formato]->unknown
+FAIL V089 exp=redo class=NONE multiSeg=true r0=[Les haz el deshacer]->unknown
+FAIL V090 exp=redo class=NONE multiSeg=false r0=[Repite el cambio de desecho]->unknown | r1=[Repite el cambio de desecho]->unknown
+FAIL V094 exp=redo class=NONE multiSeg=true r0=[Creas el cambio]->unknown
+FAIL V103 exp=findText class=NONE multiSeg=true r0=[Haya capítulo tres]->unknown
+FAIL V118 exp=selectText class=NONE multiSeg=true r0=[Te limita evaluación de IH]->unknown
+FAIL V154 exp=unsupported class=NONE multiSeg=true r0=[Central título]->unknown
+FAIL V173 exp=unknown class=NONE multiSeg=false r0=[Borra información accidentalmente afecta]->deleteSelection | r1=[Borra información accidentalmente afecta]->deleteSelection

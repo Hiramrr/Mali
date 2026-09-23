@@ -160,3 +160,51 @@ swift run GrammarTest smoke-ab f.wav  # humo TTS (NO oficial)
 - [x] Humo TTS (NO oficial).
 - [x] `record-v2` voz humana (180/180 WAVs).
 - [x] `eval-v2` + entrega 32 puntos. DETENIDO (no conectar editor real).
+
+## Fase Alternatives+Confidence (rama prueba/speech-alternatives-confidence)
+
+Pregunta: ¿la interpretación correcta aparece entre las alternativas de
+`DictationTranscriber` cuando el Top-1 falla? ¿confidence separa correctos?
+
+Base congelada: commit `1e8b943`, `Grammar.swift` `ab31d6…530e2`,
+`Types.swift` `df5735…` (verificado al inicio; sin cambios).
+Mismos 180 WAVs Fase 8, sin regrabar. Sin baseline como experimento principal.
+
+```bash
+cd command-grammar
+swift run GrammarTest eval-alts  # CUSTOM LM + alternatives + confidence, 180 WAVs
+```
+
+Config (`Alternatives.swift`): `Locale es_MX`, `Preset.phrase` + hint
+custom LM (weight 0.6) + `reportingOptions [.alternativeTranscriptions]` +
+`attributeOptions [.transcriptionConfidence]` (resto del preset intacto),
+mismo `commandContext()`. Confidence = media de runs con atributo
+`transcriptionConfidence` (nil si ausente; nil = reject en thresholds).
+
+Hallazgos SDK (macOS 27): los flags segmentan más fino (Fase 8: 1 segmento;
+ahora hasta 4; 47/180 multi-segmento, 2 con 0 segmentos). Top-1 utterance =
+concatenación en orden de rango. N-best utterance solo si 1 segmento
+(alt_1..alt_5 en orden, sin reordenar/dedup/combinar). Multi-segmento se
+registra por segmento (`segment_alternatives.csv`). Top-2={top1,alt1},
+Top-3={top1,alt1,alt2}, Top-5=todo lo registrado. STRONG: expected ≥2 y ningún
+otro soportado ≥2; MIXED: expected ≥1 sin ser STRONG; NONE: ausente.
+
+Resultados (`alternatives_results.csv`, `confidence_analysis.csv`,
+`error_recovery.csv`):
+- Top-1 161/180=89.4% (Fase 8 custom dio 162; V082 cambió entre corridas:
+  no-determinismo documentado, sin re-correr para elegir).
+- Top-2 161, Top-3 162/180=90.0%, Top-5 162. Transcript oracle 121 en K=2/3/5.
+- Failures 19 (los 18 de Fase 8 + V082). Recovery Top-2 0, Top-3 1, Top-5 1
+  (V082 `Reto`→alt2 `Rehaz esto`), never 18. STRONG 0, MIXED 1, NONE 18.
+- Alts utterance: mean 0.77, min 0, max 4 (mayoría duplican top1 o vacías).
+- Confidence: correct median 0.953 (n=159), incorrect 0.703 (n=19, 2 nil).
+  Thresholds: ningún t da accepted ≥98% con coverage ≥50% (t=0.95: 97.6% @46.1%;
+  t=0.90: 95.6% @63.3%).
+- Safety: unsupported→supported 0/0/0; unknown 1/1/1 (V173, desde el propio
+  top1, igual que Fase 8; ninguna alternativa inferior introduce soportadas).
+- Challenges (Top1→Top5): UNDO/REDO 24→25, SHORT 23→24, resto plano.
+- Argumentos (59 con arg): 0 mejoradas por alternativas (EXACT 28, CASE 8,
+  MINOR 6, WRONG 17 idénticos).
+- Criterios: Top-3 ≥95% NO (90.0%); ≥50% failures STRONG NO (0%);
+  confidence útil NO. Escenario C: Top-5 casi no mejora → dejar de optimizar
+  recognizer + UX de repeat/confirmation. Sin auto-resolve ni gates.

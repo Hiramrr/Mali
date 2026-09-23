@@ -1,0 +1,20 @@
+id,expected_command,category,challenge,expected_spoken_text,top1_transcript,top1_confidence,top1_canon,recovered_top2,recovered_top3,recovered_top5,recovery_class,consensus_full,consensus_full_frac,consensus_nonunknown,consensus_nonunknown_frac,multi_segment,arg_grade_top1,best_arg_grade,arg_improved
+V005,renameTitle,rename,"argument;rename","Renombra el documento a SwiftUI.","Renombre el documento SwiftUI",0.647,unknown,0,0,0,NONE,unknown,1.00,—,0.00,1,WRONG,WRONG,0
+V006,renameTitle,rename,"argument;rename","Actualiza el nombre a Evaluación de IHC.","Actualiza el nombre evaluación de IHC",0.825,unknown,0,0,0,NONE,unknown,1.00,—,0.00,1,WRONG,WRONG,0
+V012,renameTitle,rename,"argument;rename","Que el título cite Capítulo 3.","Qué el título si te capítulo tres",0.682,unknown,0,0,0,NONE,unknown,1.00,—,0.00,1,WRONG,WRONG,0
+V013,renameTitle,rename,"argument;rename","Modifica el encabezado a Metodología.","Modificar el encabezado a metodología",0.655,unknown,0,0,0,NONE,unknown,1.00,—,0.00,1,WRONG,WRONG,0
+V034,replaceSelection,replace,"argument;replace","Cambia este término por IHC.","Cambias de término por IHC",0.703,unknown,0,0,0,NONE,unknown,1.00,—,0.00,1,WRONG,WRONG,0
+V046,formatSelection:bold,format,"format","Pon en negrita el título.","Pone negrito el",0.264,unknown,0,0,0,NONE,unknown,1.00,—,0.00,1,EXACT,EXACT,0
+V059,formatSelection:bold,format,"format","Hazlo en negritas.","Hazle negritas",0.960,unknown,0,0,0,NONE,unknown,1.00,—,0.00,0,EXACT,EXACT,0
+V066,undo,undo,"undo_redo;short","Deshaz eso.","Deshace eso",0.792,unknown,0,0,0,NONE,unknown,1.00,—,0.00,0,EXACT,EXACT,0
+V068,undo,undo,"undo_redo","Deshaz el último cambio.","Deshace el último cambio",0.909,unknown,0,0,0,NONE,unknown,1.00,—,0.00,0,EXACT,EXACT,0
+V082,redo,redo,"undo_redo;short","Rehaz eso.","Reto",0.012,unknown,0,1,1,MIXED,unknown,0.80,redo,1.00,0,EXACT,EXACT,0
+V083,redo,redo,"undo_redo;short","Rehazlo.","Fea hazlo",0.782,unknown,0,0,0,NONE,unknown,1.00,—,0.00,0,EXACT,EXACT,0
+V086,redo,redo,"undo_redo","Reaplica el formato.","Aplicar el formato",0.639,unknown,0,0,0,NONE,unknown,1.00,—,0.00,1,EXACT,EXACT,0
+V089,redo,redo,"undo_redo","Deshaz el deshacer.","Les haz el deshacer",0.401,unknown,0,0,0,NONE,unknown,1.00,—,0.00,1,EXACT,EXACT,0
+V090,redo,redo,"undo_redo","Repite el cambio deshecho.","Repite el cambio de desecho",0.902,unknown,0,0,0,NONE,unknown,1.00,—,0.00,0,EXACT,EXACT,0
+V094,redo,redo,"undo_redo","Rehace el cambio.","Creas el cambio",0.657,unknown,0,0,0,NONE,unknown,1.00,—,0.00,1,EXACT,EXACT,0
+V103,findText,find,"argument;find_select","Halla Capítulo 3.","Haya capítulo tres",0.872,unknown,0,0,0,NONE,unknown,1.00,—,0.00,1,WRONG,WRONG,0
+V118,selectText,select,"argument;find_select","Delimita Evaluación de IHC.","Te limita evaluación de IH",0.671,unknown,0,0,0,NONE,unknown,1.00,—,0.00,1,WRONG,WRONG,0
+V154,unsupported,unsupported,"unsupported","Centra el título.","Central título",0.932,unknown,0,0,0,NONE,unknown,1.00,—,0.00,1,EXACT,EXACT,0
+V173,unknown,unknown,"unknown","Borrar información accidentalmente afecta.","Borra información accidentalmente afecta",0.985,deleteSelection,0,0,0,NONE,deleteSelection,1.00,deleteSelection,1.00,0,EXACT,EXACT,0
