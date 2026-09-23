@@ -1,0 +1,473 @@
+text,label,category,family_id
+Cierra este documento.,EDITOR_CONTROL,close,n4_close_documento_00
+Cierra este documento por favor.,EDITOR_CONTROL,close,n4_close_documento_00
+Ya puedes cerrar este documento.,EDITOR_CONTROL,close,n4_close_documento_00
+Necesito que cierres este documento.,EDITOR_CONTROL,close,n4_close_documento_00
+Cierra la ventana.,EDITOR_CONTROL,close,n4_close_ventana_00
+Cierra la ventana por favor.,EDITOR_CONTROL,close,n4_close_ventana_00
+Ya puedes cerrar la ventana.,EDITOR_CONTROL,close,n4_close_ventana_00
+Necesito que cierres la ventana.,EDITOR_CONTROL,close,n4_close_ventana_00
+Cierra todas las pestañas.,EDITOR_CONTROL,close,n4_close_pestañas_00
+Cierra todas las pestañas por favor.,EDITOR_CONTROL,close,n4_close_pestañas_00
+Ya puedes cerrar todas las pestañas.,EDITOR_CONTROL,close,n4_close_pestañas_00
+Necesito que cierres todas las pestañas.,EDITOR_CONTROL,close,n4_close_pestañas_00
+Cierra el archivo.,EDITOR_CONTROL,close,n4_close_archivo_00
+Cierra el archivo por favor.,EDITOR_CONTROL,close,n4_close_archivo_00
+Ya puedes cerrar el archivo.,EDITOR_CONTROL,close,n4_close_archivo_00
+Necesito que cierres el archivo.,EDITOR_CONTROL,close,n4_close_archivo_00
+Cierra el panel lateral.,EDITOR_CONTROL,close,n4_close_lateral_00
+Cierra el panel lateral por favor.,EDITOR_CONTROL,close,n4_close_lateral_00
+Ya puedes cerrar el panel lateral.,EDITOR_CONTROL,close,n4_close_lateral_00
+Necesito que cierres el panel lateral.,EDITOR_CONTROL,close,n4_close_lateral_00
+Cierra la vista previa.,EDITOR_CONTROL,close,n4_close_previa_00
+Cierra la vista previa por favor.,EDITOR_CONTROL,close,n4_close_previa_00
+Ya puedes cerrar la vista previa.,EDITOR_CONTROL,close,n4_close_previa_00
+Necesito que cierres la vista previa.,EDITOR_CONTROL,close,n4_close_previa_00
+Cierra este borrador.,EDITOR_CONTROL,close,n4_close_borrador_00
+Cierra este borrador por favor.,EDITOR_CONTROL,close,n4_close_borrador_00
+Ya puedes cerrar este borrador.,EDITOR_CONTROL,close,n4_close_borrador_00
+Necesito que cierres este borrador.,EDITOR_CONTROL,close,n4_close_borrador_00
+Cierra la sesión.,EDITOR_CONTROL,close,n4_close_sesión_00
+Cierra la sesión por favor.,EDITOR_CONTROL,close,n4_close_sesión_00
+Ya puedes cerrar la sesión.,EDITOR_CONTROL,close,n4_close_sesión_00
+Necesito que cierres la sesión.,EDITOR_CONTROL,close,n4_close_sesión_00
+Guarda en el escritorio.,EDITOR_CONTROL,save-as,n4_saveas_escritorio_00
+Guarda el archivo en el escritorio.,EDITOR_CONTROL,save-as,n4_saveas_escritorio_00
+Guarda una copia en el escritorio.,EDITOR_CONTROL,save-as,n4_saveas_escritorio_00
+Guarda como borrador.,EDITOR_CONTROL,save-as,n4_saveas_borrador_00
+Guarda el archivo como borrador.,EDITOR_CONTROL,save-as,n4_saveas_borrador_00
+Guarda una copia como borrador.,EDITOR_CONTROL,save-as,n4_saveas_borrador_00
+Guarda con fecha de hoy.,EDITOR_CONTROL,save-as,n4_saveas_hoy_00
+Guarda el archivo con fecha de hoy.,EDITOR_CONTROL,save-as,n4_saveas_hoy_00
+Guarda una copia con fecha de hoy.,EDITOR_CONTROL,save-as,n4_saveas_hoy_00
+Guarda en la carpeta.,EDITOR_CONTROL,save-as,n4_saveas_carpeta_00
+Guarda el archivo en la carpeta.,EDITOR_CONTROL,save-as,n4_saveas_carpeta_00
+Guarda una copia en la carpeta.,EDITOR_CONTROL,save-as,n4_saveas_carpeta_00
+Guarda como plantilla.,EDITOR_CONTROL,save-as,n4_saveas_plantilla_00
+Guarda el archivo como plantilla.,EDITOR_CONTROL,save-as,n4_saveas_plantilla_00
+Guarda una copia como plantilla.,EDITOR_CONTROL,save-as,n4_saveas_plantilla_00
+Guarda en pdf.,EDITOR_CONTROL,save-as,n4_saveas_pdf_00
+Guarda el archivo en pdf.,EDITOR_CONTROL,save-as,n4_saveas_pdf_00
+Guarda una copia en pdf.,EDITOR_CONTROL,save-as,n4_saveas_pdf_00
+Guarda con otro nombre.,EDITOR_CONTROL,save-as,n4_saveas_nombre_00
+Guarda el archivo con otro nombre.,EDITOR_CONTROL,save-as,n4_saveas_nombre_00
+Guarda una copia con otro nombre.,EDITOR_CONTROL,save-as,n4_saveas_nombre_00
+Guarda en la nube.,EDITOR_CONTROL,save-as,n4_saveas_nube_00
+Guarda el archivo en la nube.,EDITOR_CONTROL,save-as,n4_saveas_nube_00
+Guarda una copia en la nube.,EDITOR_CONTROL,save-as,n4_saveas_nube_00
+Busca los espacios dobles y corrígelos.,EDITOR_CONTROL,find-replace,n4_findrep_espacios_00
+Encuentra los espacios dobles y arréglalos.,EDITOR_CONTROL,find-replace,n4_findrep_espacios_00
+Localiza los espacios dobles en el texto.,EDITOR_CONTROL,find-replace,n4_findrep_espacios_00
+Busca el nombre antiguo y corrígelos.,EDITOR_CONTROL,find-replace,n4_findrep_nombre_00
+Encuentra el nombre antiguo y arréglalos.,EDITOR_CONTROL,find-replace,n4_findrep_nombre_00
+Localiza el nombre antiguo en el texto.,EDITOR_CONTROL,find-replace,n4_findrep_nombre_00
+Busca las comillas simples y corrígelos.,EDITOR_CONTROL,find-replace,n4_findrep_comillas_00
+Encuentra las comillas simples y arréglalos.,EDITOR_CONTROL,find-replace,n4_findrep_comillas_00
+Localiza las comillas simples en el texto.,EDITOR_CONTROL,find-replace,n4_findrep_comillas_00
+Busca los guiones y corrígelos.,EDITOR_CONTROL,find-replace,n4_findrep_guiones_00
+Encuentra los guiones y arréglalos.,EDITOR_CONTROL,find-replace,n4_findrep_guiones_00
+Localiza los guiones en el texto.,EDITOR_CONTROL,find-replace,n4_findrep_guiones_00
+Busca los acentos faltantes y corrígelos.,EDITOR_CONTROL,find-replace,n4_findrep_acentos_00
+Encuentra los acentos faltantes y arréglalos.,EDITOR_CONTROL,find-replace,n4_findrep_acentos_00
+Localiza los acentos faltantes en el texto.,EDITOR_CONTROL,find-replace,n4_findrep_acentos_00
+Busca las mayúsculas y corrígelos.,EDITOR_CONTROL,find-replace,n4_findrep_mayúsculas_00
+Encuentra las mayúsculas y arréglalos.,EDITOR_CONTROL,find-replace,n4_findrep_mayúsculas_00
+Localiza las mayúsculas en el texto.,EDITOR_CONTROL,find-replace,n4_findrep_mayúsculas_00
+Busca los ceros de más y corrígelos.,EDITOR_CONTROL,find-replace,n4_findrep_ceros_00
+Encuentra los ceros de más y arréglalos.,EDITOR_CONTROL,find-replace,n4_findrep_ceros_00
+Localiza los ceros de más en el texto.,EDITOR_CONTROL,find-replace,n4_findrep_ceros_00
+Busca la palabra repetida y corrígelos.,EDITOR_CONTROL,find-replace,n4_findrep_palabra_00
+Encuentra la palabra repetida y arréglalos.,EDITOR_CONTROL,find-replace,n4_findrep_palabra_00
+Localiza la palabra repetida en el texto.,EDITOR_CONTROL,find-replace,n4_findrep_palabra_00
+Duplica esta sección.,EDITOR_CONTROL,duplicate,n4_dup_sección_00
+Duplica esta sección abajo.,EDITOR_CONTROL,duplicate,n4_dup_sección_00
+Haz un duplicado de esta sección.,EDITOR_CONTROL,duplicate,n4_dup_sección_00
+Duplica este bloque.,EDITOR_CONTROL,duplicate,n4_dup_bloque_00
+Duplica este bloque abajo.,EDITOR_CONTROL,duplicate,n4_dup_bloque_00
+Haz un duplicado de este bloque.,EDITOR_CONTROL,duplicate,n4_dup_bloque_00
+Duplica el formato.,EDITOR_CONTROL,duplicate,n4_dup_formato_00
+Duplica el formato abajo.,EDITOR_CONTROL,duplicate,n4_dup_formato_00
+Haz un duplicado de el formato.,EDITOR_CONTROL,duplicate,n4_dup_formato_00
+Duplica la tabla.,EDITOR_CONTROL,duplicate,n4_dup_tabla_00
+Duplica la tabla abajo.,EDITOR_CONTROL,duplicate,n4_dup_tabla_00
+Haz un duplicado de la tabla.,EDITOR_CONTROL,duplicate,n4_dup_tabla_00
+Duplica el encabezado.,EDITOR_CONTROL,duplicate,n4_dup_encabezado_00
+Duplica el encabezado abajo.,EDITOR_CONTROL,duplicate,n4_dup_encabezado_00
+Haz un duplicado de el encabezado.,EDITOR_CONTROL,duplicate,n4_dup_encabezado_00
+Revisa la ortografía de este capítulo.,EDITOR_CONTROL,spellcheck,n4_spell_capítulo_00
+Pasa el corrector en este capítulo.,EDITOR_CONTROL,spellcheck,n4_spell_capítulo_00
+Verifica la ortografía de este capítulo.,EDITOR_CONTROL,spellcheck,n4_spell_capítulo_00
+Revisa la ortografía de lo seleccionado.,EDITOR_CONTROL,spellcheck,n4_spell_seleccionado_00
+Pasa el corrector en lo seleccionado.,EDITOR_CONTROL,spellcheck,n4_spell_seleccionado_00
+Verifica la ortografía de lo seleccionado.,EDITOR_CONTROL,spellcheck,n4_spell_seleccionado_00
+Revisa la ortografía de el documento.,EDITOR_CONTROL,spellcheck,n4_spell_documento_00
+Pasa el corrector en el documento.,EDITOR_CONTROL,spellcheck,n4_spell_documento_00
+Verifica la ortografía de el documento.,EDITOR_CONTROL,spellcheck,n4_spell_documento_00
+Revisa la ortografía de esta página.,EDITOR_CONTROL,spellcheck,n4_spell_página_00
+Pasa el corrector en esta página.,EDITOR_CONTROL,spellcheck,n4_spell_página_00
+Verifica la ortografía de esta página.,EDITOR_CONTROL,spellcheck,n4_spell_página_00
+Resume este informe.,EDITOR_CONTROL,summarize,n4_sum_informe_00
+Resume este informe en dos frases.,EDITOR_CONTROL,summarize,n4_sum_informe_00
+Haz un resumen de este informe.,EDITOR_CONTROL,summarize,n4_sum_informe_00
+Resume la minuta.,EDITOR_CONTROL,summarize,n4_sum_minuta_00
+Resume la minuta en dos frases.,EDITOR_CONTROL,summarize,n4_sum_minuta_00
+Haz un resumen de la minuta.,EDITOR_CONTROL,summarize,n4_sum_minuta_00
+Resume el capítulo.,EDITOR_CONTROL,summarize,n4_sum_capítulo_00
+Resume el capítulo en dos frases.,EDITOR_CONTROL,summarize,n4_sum_capítulo_00
+Haz un resumen de el capítulo.,EDITOR_CONTROL,summarize,n4_sum_capítulo_00
+Resume lo anterior.,EDITOR_CONTROL,summarize,n4_sum_anterior_00
+Resume lo anterior en dos frases.,EDITOR_CONTROL,summarize,n4_sum_anterior_00
+Haz un resumen de lo anterior.,EDITOR_CONTROL,summarize,n4_sum_anterior_00
+Resume esta sección.,EDITOR_CONTROL,summarize,n4_sum_sección_00
+Resume esta sección en dos frases.,EDITOR_CONTROL,summarize,n4_sum_sección_00
+Haz un resumen de esta sección.,EDITOR_CONTROL,summarize,n4_sum_sección_00
+Expande esta idea.,EDITOR_CONTROL,expand,n4_exp_idea_00
+Desarrolla esta idea con detalle.,EDITOR_CONTROL,expand,n4_exp_idea_00
+Alarga esta idea un poco.,EDITOR_CONTROL,expand,n4_exp_idea_00
+Expande la introducción.,EDITOR_CONTROL,expand,n4_exp_introducción_00
+Desarrolla la introducción con detalle.,EDITOR_CONTROL,expand,n4_exp_introducción_00
+Alarga la introducción un poco.,EDITOR_CONTROL,expand,n4_exp_introducción_00
+Expande el ejemplo.,EDITOR_CONTROL,expand,n4_exp_ejemplo_00
+Desarrolla el ejemplo con detalle.,EDITOR_CONTROL,expand,n4_exp_ejemplo_00
+Alarga el ejemplo un poco.,EDITOR_CONTROL,expand,n4_exp_ejemplo_00
+Expande este argumento.,EDITOR_CONTROL,expand,n4_exp_argumento_00
+Desarrolla este argumento con detalle.,EDITOR_CONTROL,expand,n4_exp_argumento_00
+Alarga este argumento un poco.,EDITOR_CONTROL,expand,n4_exp_argumento_00
+Expande la conclusión.,EDITOR_CONTROL,expand,n4_exp_conclusión_00
+Desarrolla la conclusión con detalle.,EDITOR_CONTROL,expand,n4_exp_conclusión_00
+Alarga la conclusión un poco.,EDITOR_CONTROL,expand,n4_exp_conclusión_00
+Comenta este párrafo.,EDITOR_CONTROL,comment,n4_comm_párrafo_00
+Agrega un comentario a este párrafo.,EDITOR_CONTROL,comment,n4_comm_párrafo_00
+Deja una nota en este párrafo.,EDITOR_CONTROL,comment,n4_comm_párrafo_00
+Comenta la conclusión.,EDITOR_CONTROL,comment,n4_comm_conclusión_00
+Agrega un comentario a la conclusión.,EDITOR_CONTROL,comment,n4_comm_conclusión_00
+Deja una nota en la conclusión.,EDITOR_CONTROL,comment,n4_comm_conclusión_00
+Comenta esta cifra.,EDITOR_CONTROL,comment,n4_comm_cifra_00
+Agrega un comentario a esta cifra.,EDITOR_CONTROL,comment,n4_comm_cifra_00
+Deja una nota en esta cifra.,EDITOR_CONTROL,comment,n4_comm_cifra_00
+Comenta el último cambio.,EDITOR_CONTROL,comment,n4_comm_cambio_00
+Agrega un comentario a el último cambio.,EDITOR_CONTROL,comment,n4_comm_cambio_00
+Deja una nota en el último cambio.,EDITOR_CONTROL,comment,n4_comm_cambio_00
+Acepta los cambios.,EDITOR_CONTROL,accept-reject,n4_acrej_cambios_00
+Rechaza los cambios.,EDITOR_CONTROL,accept-reject,n4_acrej_cambios_00
+Confirma los cambios.,EDITOR_CONTROL,accept-reject,n4_acrej_cambios_00
+Acepta la sugerencia.,EDITOR_CONTROL,accept-reject,n4_acrej_sugerencia_00
+Rechaza la sugerencia.,EDITOR_CONTROL,accept-reject,n4_acrej_sugerencia_00
+Confirma la sugerencia.,EDITOR_CONTROL,accept-reject,n4_acrej_sugerencia_00
+Acepta la corrección.,EDITOR_CONTROL,accept-reject,n4_acrej_corrección_00
+Rechaza la corrección.,EDITOR_CONTROL,accept-reject,n4_acrej_corrección_00
+Confirma la corrección.,EDITOR_CONTROL,accept-reject,n4_acrej_corrección_00
+Acepta el formato nuevo.,EDITOR_CONTROL,accept-reject,n4_acrej_formato_00
+Rechaza el formato nuevo.,EDITOR_CONTROL,accept-reject,n4_acrej_formato_00
+Confirma el formato nuevo.,EDITOR_CONTROL,accept-reject,n4_acrej_formato_00
+Renombra este archivo.,EDITOR_CONTROL,rename,n4_ren_archivo_00
+Cámbiale el nombre a este archivo.,EDITOR_CONTROL,rename,n4_ren_archivo_00
+Ponle otro nombre a este archivo.,EDITOR_CONTROL,rename,n4_ren_archivo_00
+Renombra la carpeta.,EDITOR_CONTROL,rename,n4_ren_carpeta_00
+Cámbiale el nombre a la carpeta.,EDITOR_CONTROL,rename,n4_ren_carpeta_00
+Ponle otro nombre a la carpeta.,EDITOR_CONTROL,rename,n4_ren_carpeta_00
+Renombra el documento.,EDITOR_CONTROL,rename,n4_ren_documento_00
+Cámbiale el nombre a el documento.,EDITOR_CONTROL,rename,n4_ren_documento_00
+Ponle otro nombre a el documento.,EDITOR_CONTROL,rename,n4_ren_documento_00
+Renombra la versión.,EDITOR_CONTROL,rename,n4_ren_versión_00
+Cámbiale el nombre a la versión.,EDITOR_CONTROL,rename,n4_ren_versión_00
+Ponle otro nombre a la versión.,EDITOR_CONTROL,rename,n4_ren_versión_00
+Sincroniza la carpeta.,EDITOR_CONTROL,sync-share,n4_sync_carpeta_00
+Comparte la carpeta con el equipo.,EDITOR_CONTROL,sync-share,n4_sync_carpeta_00
+Sube la carpeta a la nube.,EDITOR_CONTROL,sync-share,n4_sync_carpeta_00
+Sincroniza el proyecto.,EDITOR_CONTROL,sync-share,n4_sync_proyecto_00
+Comparte el proyecto con el equipo.,EDITOR_CONTROL,sync-share,n4_sync_proyecto_00
+Sube el proyecto a la nube.,EDITOR_CONTROL,sync-share,n4_sync_proyecto_00
+Sincroniza los cambios.,EDITOR_CONTROL,sync-share,n4_sync_cambios_00
+Comparte los cambios con el equipo.,EDITOR_CONTROL,sync-share,n4_sync_cambios_00
+Sube los cambios a la nube.,EDITOR_CONTROL,sync-share,n4_sync_cambios_00
+Sincroniza tu copia.,EDITOR_CONTROL,sync-share,n4_sync_copia_00
+Comparte tu copia con el equipo.,EDITOR_CONTROL,sync-share,n4_sync_copia_00
+Sube tu copia a la nube.,EDITOR_CONTROL,sync-share,n4_sync_copia_00
+Ajusta la página.,EDITOR_CONTROL,view,n4_view_página_00
+Ve la página.,EDITOR_CONTROL,view,n4_view_página_00
+Desplázate la página.,EDITOR_CONTROL,view,n4_view_página_00
+Ajusta el zoom.,EDITOR_CONTROL,view,n4_view_zoom_00
+Ve el zoom.,EDITOR_CONTROL,view,n4_view_zoom_00
+Desplázate el zoom.,EDITOR_CONTROL,view,n4_view_zoom_00
+Ajusta hacia arriba.,EDITOR_CONTROL,view,n4_view_arriba_00
+Ve hacia arriba.,EDITOR_CONTROL,view,n4_view_arriba_00
+Desplázate hacia arriba.,EDITOR_CONTROL,view,n4_view_arriba_00
+Ajusta hasta el final.,EDITOR_CONTROL,view,n4_view_final_00
+Ve hasta el final.,EDITOR_CONTROL,view,n4_view_final_00
+Desplázate hasta el final.,EDITOR_CONTROL,view,n4_view_final_00
+Ajusta a la cita.,EDITOR_CONTROL,view,n4_view_cita_00
+Ve a la cita.,EDITOR_CONTROL,view,n4_view_cita_00
+Desplázate a la cita.,EDITOR_CONTROL,view,n4_view_cita_00
+Ve al índice.,EDITOR_CONTROL,go-to,n4_goto_índice_00
+Salta al índice.,EDITOR_CONTROL,go-to,n4_goto_índice_00
+Llévame al índice.,EDITOR_CONTROL,go-to,n4_goto_índice_00
+Ve a la firma.,EDITOR_CONTROL,go-to,n4_goto_firma_00
+Salta a la firma.,EDITOR_CONTROL,go-to,n4_goto_firma_00
+Llévame a la firma.,EDITOR_CONTROL,go-to,n4_goto_firma_00
+Ve al anexo.,EDITOR_CONTROL,go-to,n4_goto_anexo_00
+Salta al anexo.,EDITOR_CONTROL,go-to,n4_goto_anexo_00
+Llévame al anexo.,EDITOR_CONTROL,go-to,n4_goto_anexo_00
+Ve al principio.,EDITOR_CONTROL,go-to,n4_goto_principio_00
+Salta al principio.,EDITOR_CONTROL,go-to,n4_goto_principio_00
+Llévame al principio.,EDITOR_CONTROL,go-to,n4_goto_principio_00
+Ve a la tabla.,EDITOR_CONTROL,go-to,n4_goto_tabla_00
+Salta a la tabla.,EDITOR_CONTROL,go-to,n4_goto_tabla_00
+Llévame a la tabla.,EDITOR_CONTROL,go-to,n4_goto_tabla_00
+Actualiza el autor del documento.,EDITOR_CONTROL,document-properties,n4_docp_autor_00
+Cambia el autor en propiedades.,EDITOR_CONTROL,document-properties,n4_docp_autor_00
+Revisa el autor del archivo.,EDITOR_CONTROL,document-properties,n4_docp_autor_00
+Actualiza la fecha del documento.,EDITOR_CONTROL,document-properties,n4_docp_fecha_00
+Cambia la fecha en propiedades.,EDITOR_CONTROL,document-properties,n4_docp_fecha_00
+Revisa la fecha del archivo.,EDITOR_CONTROL,document-properties,n4_docp_fecha_00
+Actualiza las palabras clave del documento.,EDITOR_CONTROL,document-properties,n4_docp_palabras_00
+Cambia las palabras clave en propiedades.,EDITOR_CONTROL,document-properties,n4_docp_palabras_00
+Revisa las palabras clave del archivo.,EDITOR_CONTROL,document-properties,n4_docp_palabras_00
+Actualiza el idioma del documento.,EDITOR_CONTROL,document-properties,n4_docp_idioma_00
+Cambia el idioma en propiedades.,EDITOR_CONTROL,document-properties,n4_docp_idioma_00
+Revisa el idioma del archivo.,EDITOR_CONTROL,document-properties,n4_docp_idioma_00
+Actualiza la versión del documento.,EDITOR_CONTROL,document-properties,n4_docp_versión_00
+Cambia la versión en propiedades.,EDITOR_CONTROL,document-properties,n4_docp_versión_00
+Revisa la versión del archivo.,EDITOR_CONTROL,document-properties,n4_docp_versión_00
+Ábrelo.,EDITOR_CONTROL,deictico,n4_encl_Ábrel_00
+Ábrelo ya.,EDITOR_CONTROL,deictico,n4_encl_Ábrel_00
+Ábrelo por favor.,EDITOR_CONTROL,deictico,n4_encl_Ábrel_00
+"Por favor, ábrelo.",EDITOR_CONTROL,deictico,n4_encl_Ábrel_00
+Guárdalo.,EDITOR_CONTROL,deictico,n4_encl_Guárd_00
+Guárdalo ya.,EDITOR_CONTROL,deictico,n4_encl_Guárd_00
+Guárdalo por favor.,EDITOR_CONTROL,deictico,n4_encl_Guárd_00
+"Por favor, guárdalo.",EDITOR_CONTROL,deictico,n4_encl_Guárd_00
+Bórralo.,EDITOR_CONTROL,deictico,n4_encl_Bórra_00
+Bórralo ya.,EDITOR_CONTROL,deictico,n4_encl_Bórra_00
+Bórralo por favor.,EDITOR_CONTROL,deictico,n4_encl_Bórra_00
+"Por favor, bórralo.",EDITOR_CONTROL,deictico,n4_encl_Bórra_00
+Márcalo.,EDITOR_CONTROL,deictico,n4_encl_Márca_00
+Márcalo ya.,EDITOR_CONTROL,deictico,n4_encl_Márca_00
+Márcalo por favor.,EDITOR_CONTROL,deictico,n4_encl_Márca_00
+"Por favor, márcalo.",EDITOR_CONTROL,deictico,n4_encl_Márca_00
+Súbelo.,EDITOR_CONTROL,deictico,n4_encl_Súbel_00
+Súbelo ya.,EDITOR_CONTROL,deictico,n4_encl_Súbel_00
+Súbelo por favor.,EDITOR_CONTROL,deictico,n4_encl_Súbel_00
+"Por favor, súbelo.",EDITOR_CONTROL,deictico,n4_encl_Súbel_00
+Muévelo.,EDITOR_CONTROL,deictico,n4_encl_Muéve_00
+Muévelo ya.,EDITOR_CONTROL,deictico,n4_encl_Muéve_00
+Muévelo por favor.,EDITOR_CONTROL,deictico,n4_encl_Muéve_00
+"Por favor, muévelo.",EDITOR_CONTROL,deictico,n4_encl_Muéve_00
+Cópialo.,EDITOR_CONTROL,deictico,n4_encl_Cópia_00
+Cópialo ya.,EDITOR_CONTROL,deictico,n4_encl_Cópia_00
+Cópialo por favor.,EDITOR_CONTROL,deictico,n4_encl_Cópia_00
+"Por favor, cópialo.",EDITOR_CONTROL,deictico,n4_encl_Cópia_00
+Pégalo.,EDITOR_CONTROL,deictico,n4_encl_Pégal_00
+Pégalo ya.,EDITOR_CONTROL,deictico,n4_encl_Pégal_00
+Pégalo por favor.,EDITOR_CONTROL,deictico,n4_encl_Pégal_00
+"Por favor, pégalo.",EDITOR_CONTROL,deictico,n4_encl_Pégal_00
+Respáldalo.,EDITOR_CONTROL,deictico,n4_encl_Respá_00
+Respáldalo ya.,EDITOR_CONTROL,deictico,n4_encl_Respá_00
+Respáldalo por favor.,EDITOR_CONTROL,deictico,n4_encl_Respá_00
+"Por favor, respáldalo.",EDITOR_CONTROL,deictico,n4_encl_Respá_00
+Léelo.,EDITOR_CONTROL,deictico,n4_encl_Léelo_00
+Léelo ya.,EDITOR_CONTROL,deictico,n4_encl_Léelo_00
+Léelo por favor.,EDITOR_CONTROL,deictico,n4_encl_Léelo_00
+"Por favor, léelo.",EDITOR_CONTROL,deictico,n4_encl_Léelo_00
+Revísalo.,EDITOR_CONTROL,deictico,n4_encl_Revís_00
+Revísalo ya.,EDITOR_CONTROL,deictico,n4_encl_Revís_00
+Revísalo por favor.,EDITOR_CONTROL,deictico,n4_encl_Revís_00
+"Por favor, revísalo.",EDITOR_CONTROL,deictico,n4_encl_Revís_00
+Acéptalo.,EDITOR_CONTROL,deictico,n4_encl_Acépt_00
+Acéptalo ya.,EDITOR_CONTROL,deictico,n4_encl_Acépt_00
+Acéptalo por favor.,EDITOR_CONTROL,deictico,n4_encl_Acépt_00
+"Por favor, acéptalo.",EDITOR_CONTROL,deictico,n4_encl_Acépt_00
+Recházalo.,EDITOR_CONTROL,deictico,n4_encl_Rechá_00
+Recházalo ya.,EDITOR_CONTROL,deictico,n4_encl_Rechá_00
+Recházalo por favor.,EDITOR_CONTROL,deictico,n4_encl_Rechá_00
+"Por favor, recházalo.",EDITOR_CONTROL,deictico,n4_encl_Rechá_00
+Ciérralo.,EDITOR_CONTROL,deictico,n4_encl_Ciérr_00
+Ciérralo ya.,EDITOR_CONTROL,deictico,n4_encl_Ciérr_00
+Ciérralo por favor.,EDITOR_CONTROL,deictico,n4_encl_Ciérr_00
+"Por favor, ciérralo.",EDITOR_CONTROL,deictico,n4_encl_Ciérr_00
+Imprímelo.,EDITOR_CONTROL,deictico,n4_encl_Imprí_00
+Imprímelo ya.,EDITOR_CONTROL,deictico,n4_encl_Imprí_00
+Imprímelo por favor.,EDITOR_CONTROL,deictico,n4_encl_Imprí_00
+"Por favor, imprímelo.",EDITOR_CONTROL,deictico,n4_encl_Imprí_00
+Compártelo.,EDITOR_CONTROL,deictico,n4_encl_Compá_00
+Compártelo ya.,EDITOR_CONTROL,deictico,n4_encl_Compá_00
+Compártelo por favor.,EDITOR_CONTROL,deictico,n4_encl_Compá_00
+"Por favor, compártelo.",EDITOR_CONTROL,deictico,n4_encl_Compá_00
+Renómbralo.,EDITOR_CONTROL,deictico,n4_encl_Renóm_00
+Renómbralo ya.,EDITOR_CONTROL,deictico,n4_encl_Renóm_00
+Renómbralo por favor.,EDITOR_CONTROL,deictico,n4_encl_Renóm_00
+"Por favor, renómbralo.",EDITOR_CONTROL,deictico,n4_encl_Renóm_00
+Bájalo.,EDITOR_CONTROL,deictico,n4_encl_Bájal_00
+Bájalo ya.,EDITOR_CONTROL,deictico,n4_encl_Bájal_00
+Bájalo por favor.,EDITOR_CONTROL,deictico,n4_encl_Bájal_00
+"Por favor, bájalo.",EDITOR_CONTROL,deictico,n4_encl_Bájal_00
+Envíalo.,EDITOR_CONTROL,deictico,n4_encl_Envía_00
+Envíalo ya.,EDITOR_CONTROL,deictico,n4_encl_Envía_00
+Envíalo por favor.,EDITOR_CONTROL,deictico,n4_encl_Envía_00
+"Por favor, envíalo.",EDITOR_CONTROL,deictico,n4_encl_Envía_00
+Fírmalo.,EDITOR_CONTROL,deictico,n4_encl_Fírma_00
+Fírmalo ya.,EDITOR_CONTROL,deictico,n4_encl_Fírma_00
+Fírmalo por favor.,EDITOR_CONTROL,deictico,n4_encl_Fírma_00
+"Por favor, fírmalo.",EDITOR_CONTROL,deictico,n4_encl_Fírma_00
+Archívalo.,EDITOR_CONTROL,deictico,n4_encl_Archí_00
+Archívalo ya.,EDITOR_CONTROL,deictico,n4_encl_Archí_00
+Archívalo por favor.,EDITOR_CONTROL,deictico,n4_encl_Archí_00
+"Por favor, archívalo.",EDITOR_CONTROL,deictico,n4_encl_Archí_00
+Sincronízalo.,EDITOR_CONTROL,deictico,n4_encl_Sincr_00
+Sincronízalo ya.,EDITOR_CONTROL,deictico,n4_encl_Sincr_00
+Sincronízalo por favor.,EDITOR_CONTROL,deictico,n4_encl_Sincr_00
+"Por favor, sincronízalo.",EDITOR_CONTROL,deictico,n4_encl_Sincr_00
+Hazlo más corto.,EDITOR_CONTROL,deictico,n4_deic_Hazlo_00
+"Hazlo más corto, por favor.",EDITOR_CONTROL,deictico,n4_deic_Hazlo_00
+¿Puedes hazlo más corto?,EDITOR_CONTROL,deictico,n4_deic_Hazlo_00
+Ponlo aquí.,EDITOR_CONTROL,deictico,n4_deic_Ponlo_00
+"Ponlo aquí, por favor.",EDITOR_CONTROL,deictico,n4_deic_Ponlo_00
+¿Puedes ponlo aquí?,EDITOR_CONTROL,deictico,n4_deic_Ponlo_00
+Déjalo igual.,EDITOR_CONTROL,deictico,n4_deic_Déjalo_00
+"Déjalo igual, por favor.",EDITOR_CONTROL,deictico,n4_deic_Déjalo_00
+¿Puedes déjalo igual?,EDITOR_CONTROL,deictico,n4_deic_Déjalo_00
+Vuelve a ponerlo.,EDITOR_CONTROL,deictico,n4_deic_Vuelve_00
+"Vuelve a ponerlo, por favor.",EDITOR_CONTROL,deictico,n4_deic_Vuelve_00
+¿Puedes vuelve a ponerlo?,EDITOR_CONTROL,deictico,n4_deic_Vuelve_00
+Cambia esa parte.,EDITOR_CONTROL,deictico,n4_deic_Cambia_00
+"Cambia esa parte, por favor.",EDITOR_CONTROL,deictico,n4_deic_Cambia_00
+¿Puedes cambia esa parte?,EDITOR_CONTROL,deictico,n4_deic_Cambia_00
+Quita eso.,EDITOR_CONTROL,deictico,n4_deic_Quita_00
+"Quita eso, por favor.",EDITOR_CONTROL,deictico,n4_deic_Quita_00
+¿Puedes quita eso?,EDITOR_CONTROL,deictico,n4_deic_Quita_00
+Ponlo allá.,EDITOR_CONTROL,deictico,n4_deic_Ponlo_00
+"Ponlo allá, por favor.",EDITOR_CONTROL,deictico,n4_deic_Ponlo_00
+¿Puedes ponlo allá?,EDITOR_CONTROL,deictico,n4_deic_Ponlo_00
+Déjalo así.,EDITOR_CONTROL,deictico,n4_deic_Déjalo_00
+"Déjalo así, por favor.",EDITOR_CONTROL,deictico,n4_deic_Déjalo_00
+¿Puedes déjalo así?,EDITOR_CONTROL,deictico,n4_deic_Déjalo_00
+Muévelo acá.,EDITOR_CONTROL,deictico,n4_deic_Muévelo_00
+"Muévelo acá, por favor.",EDITOR_CONTROL,deictico,n4_deic_Muévelo_00
+¿Puedes muévelo acá?,EDITOR_CONTROL,deictico,n4_deic_Muévelo_00
+Cámbialo de lugar.,EDITOR_CONTROL,deictico,n4_deic_Cámbialo_00
+"Cámbialo de lugar, por favor.",EDITOR_CONTROL,deictico,n4_deic_Cámbialo_00
+¿Puedes cámbialo de lugar?,EDITOR_CONTROL,deictico,n4_deic_Cámbialo_00
+Ponlo bonito.,EDITOR_CONTROL,deictico,n4_deic_Ponlo_00
+"Ponlo bonito, por favor.",EDITOR_CONTROL,deictico,n4_deic_Ponlo_00
+¿Puedes ponlo bonito?,EDITOR_CONTROL,deictico,n4_deic_Ponlo_00
+Déjalo claro.,EDITOR_CONTROL,deictico,n4_deic_Déjalo_00
+"Déjalo claro, por favor.",EDITOR_CONTROL,deictico,n4_deic_Déjalo_00
+¿Puedes déjalo claro?,EDITOR_CONTROL,deictico,n4_deic_Déjalo_00
+Abrir documentos grandes puede ser lento.,NON_CONTROL,hard-espejo,n4_mirror_00
+Guarda es una forma verbal del verbo guardar.,NON_CONTROL,hard-espejo,n4_mirror_00
+Imprimir documentos utiliza papel.,NON_CONTROL,hard-espejo,n4_mirror_00
+Buscar información puede tomar tiempo.,NON_CONTROL,hard-espejo,n4_mirror_00
+Copiar texto puede introducir duplicados.,NON_CONTROL,hard-espejo,n4_mirror_00
+Firmar documentos digitalmente requiere autenticación.,NON_CONTROL,hard-espejo,n4_mirror_00
+Sincronizar información entre dispositivos puede generar conflictos.,NON_CONTROL,hard-espejo,n4_mirror_01
+Renombrar archivos facilita su organización.,NON_CONTROL,hard-espejo,n4_mirror_01
+Leer en voz alta puede apoyar la revisión.,NON_CONTROL,hard-espejo,n4_mirror_01
+Cerrar sesiones viejas libera memoria.,NON_CONTROL,hard-espejo,n4_mirror_01
+Guardar copias impresas ocupa archiveros.,NON_CONTROL,hard-espejo,n4_mirror_01
+Abrir debates largos cansa al público.,NON_CONTROL,hard-espejo,n4_mirror_01
+Imprimir actas oficiales exige sello.,NON_CONTROL,hard-espejo,n4_mirror_02
+Buscar culpables rara vez ayuda.,NON_CONTROL,hard-espejo,n4_mirror_02
+Copiar diseños registrados infringe derechos.,NON_CONTROL,hard-espejo,n4_mirror_02
+Pegar afiches viejos decora cuartos.,NON_CONTROL,hard-espejo,n4_mirror_02
+Leer contratos ajenos indispone.,NON_CONTROL,hard-espejo,n4_mirror_02
+Exportar datos personales vulnera privacidad.,NON_CONTROL,hard-espejo,n4_mirror_02
+Compartir contraseñas es temerario.,NON_CONTROL,hard-espejo,n4_mirror_03
+Sincronizar relojes antiguos es ritual.,NON_CONTROL,hard-espejo,n4_mirror_03
+Renombrar mascotas confunde veterinarios.,NON_CONTROL,hard-espejo,n4_mirror_03
+Borrar historiales clínicos es delito.,NON_CONTROL,hard-espejo,n4_mirror_03
+Cambiar pañales fríos despierta bebés.,NON_CONTROL,hard-espejo,n4_mirror_03
+Mover rocas gigantes exige grúa.,NON_CONTROL,hard-espejo,n4_mirror_03
+Cortar listones inaugura obras.,NON_CONTROL,hard-espejo,n4_mirror_04
+Firmar autógrafos cansa muñecas.,NON_CONTROL,hard-espejo,n4_mirror_04
+Revisar mochilas ajenas ofende.,NON_CONTROL,hard-espejo,n4_mirror_04
+Aceptar sobornos destruye carreras.,NON_CONTROL,hard-espejo,n4_mirror_04
+Separar gemelos idénticos confunde.,NON_CONTROL,hard-espejo,n4_mirror_04
+Navegar ríos bravos emociona.,NON_CONTROL,hard-espejo,n4_mirror_04
+Duplicar recetas caseras une familias.,NON_CONTROL,hard-espejo,n4_mirror_05
+Traducir refranes pierde gracia.,NON_CONTROL,hard-espejo,n4_mirror_05
+Contar chistes malos aburre.,NON_CONTROL,hard-espejo,n4_mirror_05
+Ordenar discos viejos entretiene.,NON_CONTROL,hard-espejo,n4_mirror_05
+Insertar comerciales interrumpe películas.,NON_CONTROL,hard-espejo,n4_mirror_05
+Combinar estampados arriesga el look.,NON_CONTROL,hard-espejo,n4_mirror_05
+Archivar cartas viejas conmueve.,NON_CONTROL,hard-espejo,n4_mirror_06
+Reenviar memes satura grupos.,NON_CONTROL,hard-espejo,n4_mirror_06
+Comprimir equipaje ahorra tarifas.,NON_CONTROL,hard-espejo,n4_mirror_06
+Bórralo.,EDITOR_CONTROL,corto,n4_shortc_00
+Guárdalo.,EDITOR_CONTROL,corto,n4_shortc_00
+Deshaz eso.,EDITOR_CONTROL,corto,n4_shortc_00
+Ponlo aquí.,EDITOR_CONTROL,corto,n4_shortc_00
+Ábrelo.,EDITOR_CONTROL,corto,n4_shortc_00
+Busca esto.,EDITOR_CONTROL,corto,n4_shortc_00
+Léelo.,EDITOR_CONTROL,corto,n4_shortc_01
+Fírmalo.,EDITOR_CONTROL,corto,n4_shortc_01
+Cierra eso.,EDITOR_CONTROL,corto,n4_shortc_01
+Abre esto.,EDITOR_CONTROL,corto,n4_shortc_01
+Imprime ya.,EDITOR_CONTROL,corto,n4_shortc_01
+Guarda ya.,EDITOR_CONTROL,corto,n4_shortc_01
+Copia eso.,EDITOR_CONTROL,corto,n4_shortc_02
+Pega aquí.,EDITOR_CONTROL,corto,n4_shortc_02
+Mueve eso.,EDITOR_CONTROL,corto,n4_shortc_02
+Cambia eso.,EDITOR_CONTROL,corto,n4_shortc_02
+Quita eso.,EDITOR_CONTROL,corto,n4_shortc_02
+Pon eso.,EDITOR_CONTROL,corto,n4_shortc_02
+Haz eso.,EDITOR_CONTROL,corto,n4_shortc_03
+Mira esto.,EDITOR_CONTROL,corto,n4_shortc_03
+Escucha esto.,EDITOR_CONTROL,corto,n4_shortc_03
+Repite eso.,EDITOR_CONTROL,corto,n4_shortc_03
+Anula eso.,EDITOR_CONTROL,corto,n4_shortc_03
+Confirma eso.,EDITOR_CONTROL,corto,n4_shortc_03
+Rechaza eso.,EDITOR_CONTROL,corto,n4_shortc_04
+Acepta eso.,EDITOR_CONTROL,corto,n4_shortc_04
+Envía eso.,EDITOR_CONTROL,corto,n4_shortc_04
+Sube eso.,EDITOR_CONTROL,corto,n4_shortc_04
+Baja eso.,EDITOR_CONTROL,corto,n4_shortc_04
+No sé.,NON_CONTROL,corto,n4_shortn_00
+Tal vez.,NON_CONTROL,corto,n4_shortn_00
+Bueno.,NON_CONTROL,corto,n4_shortn_00
+Un momento.,NON_CONTROL,corto,n4_shortn_00
+Estoy pensando.,NON_CONTROL,corto,n4_shortn_00
+Así parece.,NON_CONTROL,corto,n4_shortn_00
+Quién sabe.,NON_CONTROL,corto,n4_shortn_01
+Ya veremos.,NON_CONTROL,corto,n4_shortn_01
+A ver pues.,NON_CONTROL,corto,n4_shortn_01
+Hmm.,NON_CONTROL,corto,n4_shortn_01
+Eh.,NON_CONTROL,corto,n4_shortn_01
+Ay.,NON_CONTROL,corto,n4_shortn_01
+Uf.,NON_CONTROL,corto,n4_shortn_02
+Oh.,NON_CONTROL,corto,n4_shortn_02
+Ah.,NON_CONTROL,corto,n4_shortn_02
+"Mmm, no.",NON_CONTROL,corto,n4_shortn_02
+Pues sí.,NON_CONTROL,corto,n4_shortn_02
+Pues no.,NON_CONTROL,corto,n4_shortn_02
+Claro.,NON_CONTROL,corto,n4_shortn_03
+Obvio.,NON_CONTROL,corto,n4_shortn_03
+Nel pastel.,NON_CONTROL,corto,n4_shortn_03
+Simón que sí.,NON_CONTROL,corto,n4_shortn_03
+Arre pues.,NON_CONTROL,corto,n4_shortn_03
+Sale.,NON_CONTROL,corto,n4_shortn_03
+Va.,NON_CONTROL,corto,n4_shortn_04
+Dale.,NON_CONTROL,corto,n4_shortn_04
+Listo pues.,NON_CONTROL,corto,n4_shortn_04
+Ahorita.,NON_CONTROL,corto,n4_shortn_04
+Al ratito.,NON_CONTROL,corto,n4_shortn_04
+Luego vemos.,NON_CONTROL,corto,n4_shortn_04
+Accesibilidad cognitiva.,NON_CONTROL,fragmento-dictado,n4_fragd_00
+Interacción multimodal.,NON_CONTROL,fragmento-dictado,n4_fragd_00
+Resultados preliminares.,NON_CONTROL,fragmento-dictado,n4_fragd_00
+Metodología propuesta.,NON_CONTROL,fragmento-dictado,n4_fragd_00
+Diseño centrado en el usuario.,NON_CONTROL,fragmento-dictado,n4_fragd_00
+Carga mental reducida.,NON_CONTROL,fragmento-dictado,n4_fragd_00
+Entrada por voz.,NON_CONTROL,fragmento-dictado,n4_fragd_01
+Reconocimiento automático.,NON_CONTROL,fragmento-dictado,n4_fragd_01
+Fatiga visual.,NON_CONTROL,fragmento-dictado,n4_fragd_01
+Sesiones cortas.,NON_CONTROL,fragmento-dictado,n4_fragd_01
+Retroalimentación inmediata.,NON_CONTROL,fragmento-dictado,n4_fragd_01
+Barreras de acceso.,NON_CONTROL,fragmento-dictado,n4_fragd_01
+Pruebas con usuarios.,NON_CONTROL,fragmento-dictado,n4_fragd_02
+Análisis cualitativo.,NON_CONTROL,fragmento-dictado,n4_fragd_02
+Trabajo futuro.,NON_CONTROL,fragmento-dictado,n4_fragd_02
+Marco teórico.,NON_CONTROL,fragmento-dictado,n4_fragd_02
+Estado del arte.,NON_CONTROL,fragmento-dictado,n4_fragd_02
+Preguntas abiertas.,NON_CONTROL,fragmento-dictado,n4_fragd_02
+Hallazgos principales.,NON_CONTROL,fragmento-dictado,n4_fragd_03
+Limitaciones del estudio.,NON_CONTROL,fragmento-dictado,n4_fragd_03

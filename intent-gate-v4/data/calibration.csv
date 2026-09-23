@@ -1,0 +1,571 @@
+text,label,category,family_id
+Acepta los cambios.,EDITOR_CONTROL,accept-reject,n4_acrej_cambios_00
+Rechaza los cambios.,EDITOR_CONTROL,accept-reject,n4_acrej_cambios_00
+Confirma los cambios.,EDITOR_CONTROL,accept-reject,n4_acrej_cambios_00
+Acepta la corrección.,EDITOR_CONTROL,accept-reject,n4_acrej_corrección_00
+Rechaza la corrección.,EDITOR_CONTROL,accept-reject,n4_acrej_corrección_00
+Confirma la corrección.,EDITOR_CONTROL,accept-reject,n4_acrej_corrección_00
+Cierra la sesión.,EDITOR_CONTROL,close,n4_close_sesión_00
+Cierra la sesión por favor.,EDITOR_CONTROL,close,n4_close_sesión_00
+Ya puedes cerrar la sesión.,EDITOR_CONTROL,close,n4_close_sesión_00
+Necesito que cierres la sesión.,EDITOR_CONTROL,close,n4_close_sesión_00
+Comenta la conclusión.,EDITOR_CONTROL,comment,n4_comm_conclusión_00
+Agrega un comentario a la conclusión.,EDITOR_CONTROL,comment,n4_comm_conclusión_00
+Deja una nota en la conclusión.,EDITOR_CONTROL,comment,n4_comm_conclusión_00
+Comenta este párrafo.,EDITOR_CONTROL,comment,n4_comm_párrafo_00
+Agrega un comentario a este párrafo.,EDITOR_CONTROL,comment,n4_comm_párrafo_00
+Deja una nota en este párrafo.,EDITOR_CONTROL,comment,n4_comm_párrafo_00
+Cámbialo de lugar.,EDITOR_CONTROL,deictico,n4_deic_Cámbialo_00
+"Cámbialo de lugar, por favor.",EDITOR_CONTROL,deictico,n4_deic_Cámbialo_00
+¿Puedes cámbialo de lugar?,EDITOR_CONTROL,deictico,n4_deic_Cámbialo_00
+"Quita eso, por favor.",EDITOR_CONTROL,deictico,n4_deic_Quita_00
+¿Puedes quita eso?,EDITOR_CONTROL,deictico,n4_deic_Quita_00
+Duplica el formato.,EDITOR_CONTROL,duplicate,n4_dup_formato_00
+Duplica el formato abajo.,EDITOR_CONTROL,duplicate,n4_dup_formato_00
+Haz un duplicado de el formato.,EDITOR_CONTROL,duplicate,n4_dup_formato_00
+Duplica esta sección.,EDITOR_CONTROL,duplicate,n4_dup_sección_00
+Haz un duplicado de esta sección.,EDITOR_CONTROL,duplicate,n4_dup_sección_00
+Acéptalo.,EDITOR_CONTROL,deictico,n4_encl_Acépt_00
+Acéptalo ya.,EDITOR_CONTROL,deictico,n4_encl_Acépt_00
+Acéptalo por favor.,EDITOR_CONTROL,deictico,n4_encl_Acépt_00
+"Por favor, acéptalo.",EDITOR_CONTROL,deictico,n4_encl_Acépt_00
+Guárdalo ya.,EDITOR_CONTROL,deictico,n4_encl_Guárd_00
+Guárdalo por favor.,EDITOR_CONTROL,deictico,n4_encl_Guárd_00
+Recházalo.,EDITOR_CONTROL,deictico,n4_encl_Rechá_00
+Recházalo ya.,EDITOR_CONTROL,deictico,n4_encl_Rechá_00
+Recházalo por favor.,EDITOR_CONTROL,deictico,n4_encl_Rechá_00
+"Por favor, recházalo.",EDITOR_CONTROL,deictico,n4_encl_Rechá_00
+Revísalo ya.,EDITOR_CONTROL,deictico,n4_encl_Revís_00
+Revísalo por favor.,EDITOR_CONTROL,deictico,n4_encl_Revís_00
+Expande el ejemplo.,EDITOR_CONTROL,expand,n4_exp_ejemplo_00
+Desarrolla el ejemplo con detalle.,EDITOR_CONTROL,expand,n4_exp_ejemplo_00
+Alarga el ejemplo un poco.,EDITOR_CONTROL,expand,n4_exp_ejemplo_00
+Expande la introducción.,EDITOR_CONTROL,expand,n4_exp_introducción_00
+Desarrolla la introducción con detalle.,EDITOR_CONTROL,expand,n4_exp_introducción_00
+Alarga la introducción un poco.,EDITOR_CONTROL,expand,n4_exp_introducción_00
+Hallazgos principales.,NON_CONTROL,fragmento-dictado,n4_fragd_03
+Limitaciones del estudio.,NON_CONTROL,fragmento-dictado,n4_fragd_03
+Imprimir actas oficiales exige sello.,NON_CONTROL,hard-espejo,n4_mirror_02
+Buscar culpables rara vez ayuda.,NON_CONTROL,hard-espejo,n4_mirror_02
+Copiar diseños registrados infringe derechos.,NON_CONTROL,hard-espejo,n4_mirror_02
+Pegar afiches viejos decora cuartos.,NON_CONTROL,hard-espejo,n4_mirror_02
+Leer contratos ajenos indispone.,NON_CONTROL,hard-espejo,n4_mirror_02
+Exportar datos personales vulnera privacidad.,NON_CONTROL,hard-espejo,n4_mirror_02
+Guarda en pdf.,EDITOR_CONTROL,save-as,n4_saveas_pdf_00
+Guarda el archivo en pdf.,EDITOR_CONTROL,save-as,n4_saveas_pdf_00
+Guarda una copia en pdf.,EDITOR_CONTROL,save-as,n4_saveas_pdf_00
+A ver pues.,NON_CONTROL,corto,n4_shortn_01
+Hmm.,NON_CONTROL,corto,n4_shortn_01
+Obvio.,NON_CONTROL,corto,n4_shortn_03
+Nel pastel.,NON_CONTROL,corto,n4_shortn_03
+Simón que sí.,NON_CONTROL,corto,n4_shortn_03
+Arre pues.,NON_CONTROL,corto,n4_shortn_03
+Sale.,NON_CONTROL,corto,n4_shortn_03
+Revisa la ortografía de este capítulo.,EDITOR_CONTROL,spellcheck,n4_spell_capítulo_00
+Pasa el corrector en este capítulo.,EDITOR_CONTROL,spellcheck,n4_spell_capítulo_00
+Verifica la ortografía de este capítulo.,EDITOR_CONTROL,spellcheck,n4_spell_capítulo_00
+Sincroniza la carpeta.,EDITOR_CONTROL,sync-share,n4_sync_carpeta_00
+Comparte la carpeta con el equipo.,EDITOR_CONTROL,sync-share,n4_sync_carpeta_00
+Sube la carpeta a la nube.,EDITOR_CONTROL,sync-share,n4_sync_carpeta_00
+Sincroniza tu copia.,EDITOR_CONTROL,sync-share,n4_sync_copia_00
+Comparte tu copia con el equipo.,EDITOR_CONTROL,sync-share,n4_sync_copia_00
+Sube tu copia a la nube.,EDITOR_CONTROL,sync-share,n4_sync_copia_00
+Ajusta la página.,EDITOR_CONTROL,view,n4_view_página_00
+Ve la página.,EDITOR_CONTROL,view,n4_view_página_00
+Desplázate la página.,EDITOR_CONTROL,view,n4_view_página_00
+Ajusta el zoom.,EDITOR_CONTROL,view,n4_view_zoom_00
+Ve el zoom.,EDITOR_CONTROL,view,n4_view_zoom_00
+Desplázate el zoom.,EDITOR_CONTROL,view,n4_view_zoom_00
+Borra la última frase.,EDITOR_CONTROL,borrar,v2_c_borrar_a_01
+Borra esta palabra.,EDITOR_CONTROL,borrar,v2_c_borrar_a_01
+Borra lo seleccionado.,EDITOR_CONTROL,borrar,v2_c_borrar_a_01
+Borra esa sección.,EDITOR_CONTROL,borrar,v2_c_borrar_a_01
+Borra el borrador.,EDITOR_CONTROL,borrar,v2_c_borrar_a_01
+Borra la transcripción.,EDITOR_CONTROL,borrar,v2_c_borrar_a_01
+Corrige esta palabra.,EDITOR_CONTROL,correccion,v2_c_correccion_00
+Corrige la ortografía de lo seleccionado.,EDITOR_CONTROL,correccion,v2_c_correccion_00
+Revisa las tildes de este párrafo.,EDITOR_CONTROL,correccion,v2_c_correccion_00
+Arregla la puntuación.,EDITOR_CONTROL,correccion,v2_c_correccion_00
+"Hay una errata, corrígela.",EDITOR_CONTROL,correccion,v2_c_correccion_00
+Verifica la gramática de esta frase.,EDITOR_CONTROL,correccion,v2_c_correccion_00
+Hazlo.,EDITOR_CONTROL,deictico,v2_c_deictico_00
+Quita aquello.,EDITOR_CONTROL,deictico,v2_c_deictico_04
+Ponlo ahí.,EDITOR_CONTROL,deictico,v2_c_deictico_04
+Mueve esto allá.,EDITOR_CONTROL,deictico,v2_c_deictico_04
+Arregla aquello.,EDITOR_CONTROL,deictico,v2_c_deictico_04
+Copia eso.,EDITOR_CONTROL,deictico,v2_c_deictico_04
+Borra aquello.,EDITOR_CONTROL,deictico,v2_c_deictico_04
+Subraya esto.,EDITOR_CONTROL,formato,v2_c_formato_b_00
+Pon este fragmento en cursivas.,EDITOR_CONTROL,formato,v2_c_formato_b_00
+Quita las negritas de aquí.,EDITOR_CONTROL,formato,v2_c_formato_b_00
+Aumenta el tamaño de letra del título.,EDITOR_CONTROL,formato,v2_c_formato_b_00
+Pon el título en mayúsculas.,EDITOR_CONTROL,formato,v2_c_formato_b_00
+Sangra este párrafo.,EDITOR_CONTROL,formato,v2_c_formato_b_03
+Cambia la fuente del título.,EDITOR_CONTROL,formato,v2_c_formato_b_03
+Resalta el título en negritas.,EDITOR_CONTROL,formato,v2_c_formato_b_03
+Ve a la página anterior.,EDITOR_CONTROL,navegacion,v2_c_navegacion_01
+Desplázate hasta el resumen.,EDITOR_CONTROL,navegacion,v2_c_navegacion_01
+Pon el cursor después de esta frase.,EDITOR_CONTROL,navegacion,v2_c_navegacion_01
+Lléame a las conclusiones.,EDITOR_CONTROL,navegacion,v2_c_navegacion_01
+Baja hasta las conclusiones.,EDITOR_CONTROL,navegacion,v2_c_navegacion_01
+Sube a la introducción.,EDITOR_CONTROL,navegacion,v2_c_navegacion_01
+Sustituye inicio por comienzo.,EDITOR_CONTROL,reemplazar,v2_c_reemplazar_a_02
+Reemplaza inicio por comienzo.,EDITOR_CONTROL,reemplazar,v2_c_reemplazar_a_02
+Sustituye fin por cierre.,EDITOR_CONTROL,reemplazar,v2_c_reemplazar_a_02
+Reemplaza fin por cierre.,EDITOR_CONTROL,reemplazar,v2_c_reemplazar_a_02
+Sustituye imagen por figura.,EDITOR_CONTROL,reemplazar,v2_c_reemplazar_a_02
+Reemplaza imagen por figura.,EDITOR_CONTROL,reemplazar,v2_c_reemplazar_a_02
+Hazlo más sencillo.,EDITOR_CONTROL,reformular,v2_c_reformular_a_01
+Hazlo más académico.,EDITOR_CONTROL,reformular,v2_c_reformular_a_01
+Hazlo menos redundante.,EDITOR_CONTROL,reformular,v2_c_reformular_a_01
+Hazlo más persuasivo.,EDITOR_CONTROL,reformular,v2_c_reformular_a_01
+Hazlo más neutral.,EDITOR_CONTROL,reformular,v2_c_reformular_a_01
+Hazlo más conciso.,EDITOR_CONTROL,reformular,v2_c_reformular_a_01
+Hazlo más extenso.,EDITOR_CONTROL,reformular,v2_c_reformular_a_02
+Hazlo más crítico.,EDITOR_CONTROL,reformular,v2_c_reformular_a_02
+Hazlo más descriptivo.,EDITOR_CONTROL,reformular,v2_c_reformular_a_02
+Hazlo menos técnico.,EDITOR_CONTROL,reformular,v2_c_reformular_a_02
+Hazlo más urgente.,EDITOR_CONTROL,reformular,v2_c_reformular_a_02
+Hazlo más amable.,EDITOR_CONTROL,reformular,v2_c_reformular_a_02
+Haz este párrafo más corto.,EDITOR_CONTROL,reformular,v2_c_reformular_b_00
+Reescribe lo seleccionado más corto.,EDITOR_CONTROL,reformular,v2_c_reformular_b_00
+Haz este párrafo más formal.,EDITOR_CONTROL,reformular,v2_c_reformular_b_00
+Reescribe lo seleccionado más formal.,EDITOR_CONTROL,reformular,v2_c_reformular_b_00
+Reescribe lo seleccionado más claro.,EDITOR_CONTROL,reformular,v2_c_reformular_b_00
+Suaviza el tono de este párrafo.,EDITOR_CONTROL,reformular,v2_c_reformular_c_01
+Endurece la conclusión.,EDITOR_CONTROL,reformular,v2_c_reformular_c_01
+Haz esto más persuasivo.,EDITOR_CONTROL,reformular,v2_c_reformular_c_01
+Simplifica la explicación.,EDITOR_CONTROL,reformular,v2_c_reformular_c_01
+Acorta este párrafo.,EDITOR_CONTROL,reformular,v2_c_reformular_c_01
+Extiende un poco esta idea.,EDITOR_CONTROL,reformular,v2_c_reformular_c_01
+Selecciona el segundo párrafo.,EDITOR_CONTROL,seleccion,v2_c_seleccion_00
+Marca el segundo párrafo.,EDITOR_CONTROL,seleccion,v2_c_seleccion_00
+Selecciona la última sección.,EDITOR_CONTROL,seleccion,v2_c_seleccion_00
+Marca la última sección.,EDITOR_CONTROL,seleccion,v2_c_seleccion_00
+Selecciona el primer capítulo.,EDITOR_CONTROL,seleccion,v2_c_seleccion_00
+Marca el primer capítulo.,EDITOR_CONTROL,seleccion,v2_c_seleccion_00
+Cambia el título a Introducción.,EDITOR_CONTROL,titulo,v2_c_titulo_a_00
+Cambia el título a Conclusiones.,EDITOR_CONTROL,titulo,v2_c_titulo_a_00
+Cambia el título a Marco teórico.,EDITOR_CONTROL,titulo,v2_c_titulo_a_00
+Cambia el título a Diseño del sistema.,EDITOR_CONTROL,titulo,v2_c_titulo_a_00
+El título cámbialo a Antecedentes.,EDITOR_CONTROL,titulo,v2_c_titulo_d_04
+Ponle de título Antecedentes.,EDITOR_CONTROL,titulo,v2_c_titulo_d_04
+Titula esto como Antecedentes.,EDITOR_CONTROL,titulo,v2_c_titulo_d_04
+El título cámbialo a Discusión.,EDITOR_CONTROL,titulo,v2_c_titulo_d_04
+Ponle de título Discusión.,EDITOR_CONTROL,titulo,v2_c_titulo_d_04
+Titula esto como Discusión.,EDITOR_CONTROL,titulo,v2_c_titulo_d_04
+Modifica el título a Conclusiones.,EDITOR_CONTROL,titulo,v2_c_titulo_e_01
+Renombra el documento como Borrador final.,EDITOR_CONTROL,titulo,v2_c_titulo_e_01
+El nuevo título será Versión revisada.,EDITOR_CONTROL,titulo,v2_c_titulo_e_01
+"Cambia el título a Claridad, por favor.",EDITOR_CONTROL,titulo,v2_c_titulo_e_01
+Por favor pon como título Resumen.,EDITOR_CONTROL,titulo,v2_c_titulo_e_01
+Necesito que el título sea Evaluación.,EDITOR_CONTROL,titulo,v2_c_titulo_e_01
+Numera estos puntos.,EDITOR_CONTROL,transformar,v2_c_transformar_01
+Convierte esto en tabla.,EDITOR_CONTROL,transformar,v2_c_transformar_01
+Pasa todo a mayúsculas.,EDITOR_CONTROL,transformar,v2_c_transformar_01
+Pon en minúsculas el título.,EDITOR_CONTROL,transformar,v2_c_transformar_01
+Divide la lista en dos columnas.,EDITOR_CONTROL,transformar,v2_c_transformar_01
+Fusiona estos párrafos.,EDITOR_CONTROL,transformar,v2_c_transformar_01
+Convierte los puntos en lista numerada.,EDITOR_CONTROL,transformar,v2_c_transformar_02
+Parte esta oración larga.,EDITOR_CONTROL,transformar,v2_c_transformar_02
+Deshaz lo último.,EDITOR_CONTROL,undo,v2_c_undo_02
+Deshaz la edición anterior.,EDITOR_CONTROL,undo,v2_c_undo_02
+Echa para atrás el cambio.,EDITOR_CONTROL,undo,v2_c_undo_02
+Anula la última modificación.,EDITOR_CONTROL,undo,v2_c_undo_02
+Vuelve atrás.,EDITOR_CONTROL,undo,v2_c_undo_02
+Deshaz lo que hiciste.,EDITOR_CONTROL,undo,v2_c_undo_02
+El experimento muestra mejoras claras en velocidad de escritura.,NON_CONTROL,academico,v2_d_academico_suj_a_02
+El experimento confirma la importancia del contexto durante el dictado.,NON_CONTROL,academico,v2_d_academico_suj_a_02
+El experimento revela patrones interesantes de uso de la voz.,NON_CONTROL,academico,v2_d_academico_suj_a_02
+El experimento sugiere nuevas líneas de trabajo futuro.,NON_CONTROL,academico,v2_d_academico_suj_a_02
+La evaluación muestra mejoras claras en velocidad de escritura.,NON_CONTROL,academico,v2_d_academico_suj_a_02
+La evaluación confirma la importancia del contexto durante el dictado.,NON_CONTROL,academico,v2_d_academico_suj_a_02
+La evaluación revela patrones interesantes de uso de la voz.,NON_CONTROL,academico,v2_d_academico_suj_a_03
+La evaluación sugiere nuevas líneas de trabajo futuro.,NON_CONTROL,academico,v2_d_academico_suj_a_03
+El prototipo muestra mejoras claras en velocidad de escritura.,NON_CONTROL,academico,v2_d_academico_suj_a_03
+El prototipo confirma la importancia del contexto durante el dictado.,NON_CONTROL,academico,v2_d_academico_suj_a_03
+El prototipo revela patrones interesantes de uso de la voz.,NON_CONTROL,academico,v2_d_academico_suj_a_03
+El prototipo sugiere nuevas líneas de trabajo futuro.,NON_CONTROL,academico,v2_d_academico_suj_a_03
+El estudio destaca la relevancia de la accesibilidad cognitiva.,NON_CONTROL,academico,v2_d_academico_suj_b_00
+El estudio aporta evidencia sobre fatiga en tareas prolongadas.,NON_CONTROL,academico,v2_d_academico_suj_b_00
+El estudio propone un marco para evaluar editores multimodales.,NON_CONTROL,academico,v2_d_academico_suj_b_00
+El estudio describe limitaciones del reconocimiento automático.,NON_CONTROL,academico,v2_d_academico_suj_b_00
+La investigación destaca la relevancia de la accesibilidad cognitiva.,NON_CONTROL,academico,v2_d_academico_suj_b_00
+La investigación aporta evidencia sobre fatiga en tareas prolongadas.,NON_CONTROL,academico,v2_d_academico_suj_b_00
+La evaluación propone un marco para evaluar editores multimodales.,NON_CONTROL,academico,v2_d_academico_suj_b_03
+La evaluación describe limitaciones del reconocimiento automático.,NON_CONTROL,academico,v2_d_academico_suj_b_03
+El prototipo destaca la relevancia de la accesibilidad cognitiva.,NON_CONTROL,academico,v2_d_academico_suj_b_03
+El prototipo aporta evidencia sobre fatiga en tareas prolongadas.,NON_CONTROL,academico,v2_d_academico_suj_b_03
+El prototipo propone un marco para evaluar editores multimodales.,NON_CONTROL,academico,v2_d_academico_suj_b_03
+El prototipo describe limitaciones del reconocimiento automático.,NON_CONTROL,academico,v2_d_academico_suj_b_03
+El sistema propuesto destaca la relevancia de la accesibilidad cognitiva.,NON_CONTROL,academico,v2_d_academico_suj_b_04
+El sistema propuesto aporta evidencia sobre fatiga en tareas prolongadas.,NON_CONTROL,academico,v2_d_academico_suj_b_04
+El sistema propuesto propone un marco para evaluar editores multimodales.,NON_CONTROL,academico,v2_d_academico_suj_b_04
+El sistema propuesto describe limitaciones del reconocimiento automático.,NON_CONTROL,academico,v2_d_academico_suj_b_04
+La herramienta destaca la relevancia de la accesibilidad cognitiva.,NON_CONTROL,academico,v2_d_academico_suj_b_04
+La herramienta aporta evidencia sobre fatiga en tareas prolongadas.,NON_CONTROL,academico,v2_d_academico_suj_b_04
+La herramienta propone un marco para evaluar editores multimodales.,NON_CONTROL,academico,v2_d_academico_suj_b_05
+La herramienta describe limitaciones del reconocimiento automático.,NON_CONTROL,academico,v2_d_academico_suj_b_05
+El modelo destaca la relevancia de la accesibilidad cognitiva.,NON_CONTROL,academico,v2_d_academico_suj_b_05
+El modelo aporta evidencia sobre fatiga en tareas prolongadas.,NON_CONTROL,academico,v2_d_academico_suj_b_05
+El modelo propone un marco para evaluar editores multimodales.,NON_CONTROL,academico,v2_d_academico_suj_b_05
+El modelo describe limitaciones del reconocimiento automático.,NON_CONTROL,academico,v2_d_academico_suj_b_05
+El cuestionario aborda la ambigüedad de las órdenes habladas.,NON_CONTROL,academico,v2_d_academico_suj_c_06
+El cuestionario cuantifica interrupciones durante la redacción.,NON_CONTROL,academico,v2_d_academico_suj_c_06
+El cuestionario compara tres estrategias de confirmación.,NON_CONTROL,academico,v2_d_academico_suj_c_06
+El cuestionario documenta errores típicos del dictado automático.,NON_CONTROL,academico,v2_d_academico_suj_c_06
+Ni idea.,NON_CONTROL,fragmento,v2_d_frag_b_00
+Quién sabe.,NON_CONTROL,fragmento,v2_d_frag_b_00
+Puede ser.,NON_CONTROL,fragmento,v2_d_frag_b_00
+Ya.,NON_CONTROL,fragmento,v2_d_frag_b_00
+Listo.,NON_CONTROL,fragmento,v2_d_frag_b_00
+Hecho.,NON_CONTROL,fragmento,v2_d_frag_b_00
+Punto final.,NON_CONTROL,fragmento,v2_d_frag_c_04
+No sé todavía.,NON_CONTROL,fragmento,v2_d_frag_c_04
+Tal vez sí.,NON_CONTROL,fragmento,v2_d_frag_c_04
+Eso no está bien.,NON_CONTROL,fragmento,v2_d_frag_c_04
+Me parece mejor así.,NON_CONTROL,fragmento,v2_d_frag_c_04
+Eso podría funcionar.,NON_CONTROL,fragmento,v2_d_frag_c_04
+La memoria recoge opiniones de varios expertos.,NON_CONTROL,general,v2_d_general_b_05
+La memoria cierra con una reflexión abierta.,NON_CONTROL,general,v2_d_general_b_05
+El resumen necesita una última lectura atenta.,NON_CONTROL,general,v2_d_general_b_05
+El resumen describe el proceso con detalle.,NON_CONTROL,general,v2_d_general_b_05
+El resumen recoge opiniones de varios expertos.,NON_CONTROL,general,v2_d_general_b_05
+El resumen cierra con una reflexión abierta.,NON_CONTROL,general,v2_d_general_b_05
+Borrar archivos accidentalmente puede generar problemas graves.,NON_CONTROL,hard-infinitivo,v2_d_hard_inf_00
+Cambiar el formato sin avisar confunde a quien lee.,NON_CONTROL,hard-infinitivo,v2_d_hard_inf_00
+Seleccionar adecuadamente la muestra determina la validez del estudio.,NON_CONTROL,hard-infinitivo,v2_d_hard_inf_00
+Reemplazar palabras sin criterio empobrece el texto.,NON_CONTROL,hard-infinitivo,v2_d_hard_inf_00
+Deshacer acciones forma parte del aprendizaje con herramientas nuevas.,NON_CONTROL,hard-infinitivo,v2_d_hard_inf_00
+Poner títulos descriptivos facilita la navegación del documento.,NON_CONTROL,hard-infinitivo,v2_d_hard_inf_00
+Cambiar contraseñas con frecuencia refuerza la seguridad.,NON_CONTROL,hard-infinitivo,v2_d_hard_inf_05
+Seleccionar un buen asiento mejora la experiencia del vuelo.,NON_CONTROL,hard-infinitivo,v2_d_hard_inf_05
+Reemplazar la batería extendió la vida del portátil.,NON_CONTROL,hard-infinitivo,v2_d_hard_inf_05
+Deshacer la maleta lleva menos tiempo del esperado.,NON_CONTROL,hard-infinitivo,v2_d_hard_inf_05
+Poner límites claros evita malentendidos en el equipo.,NON_CONTROL,hard-infinitivo,v2_d_hard_inf_05
+Eliminar duplicados ordenó por fin la biblioteca.,NON_CONTROL,hard-infinitivo,v2_d_hard_inf_05
+Rehacer el presupuesto trimestral tomó toda la tarde.,NON_CONTROL,hard-infinitivo,v2_d_hard_inf_06
+Borrar historiales antiguos es una práctica recomendada.,NON_CONTROL,hard-infinitivo,v2_d_hard_inf_06
+Cambiar tipografías altera la personalidad del documento.,NON_CONTROL,hard-infinitivo,v2_d_hard_inf_06
+Seleccionar fondos claros favorece la lectura prolongada.,NON_CONTROL,hard-infinitivo,v2_d_hard_inf_06
+Reemplazar conectores repetidos mejora la fluidez.,NON_CONTROL,hard-infinitivo,v2_d_hard_inf_06
+Deshacer particiones del disco requiere herramientas especiales.,NON_CONTROL,hard-infinitivo,v2_d_hard_inf_06
+Seleccionar el menú degustación fue un acierto.,NON_CONTROL,hard-infinitivo,v2_d_hard_inf_08
+El taller enseña a reemplazar piezas defectuosas.,NON_CONTROL,hard-mixto,v2_d_hard_mixto_02
+Deshizo el nudo con paciencia antes de continuar.,NON_CONTROL,hard-mixto,v2_d_hard_mixto_02
+Cambiaron la cerradura después del incidente.,NON_CONTROL,hard-mixto,v2_d_hard_mixto_02
+El jurado cambió el veredicto tras la apelación.,NON_CONTROL,hard-mixto,v2_d_hard_mixto_02
+Reemplazó la bombilla antes de que anocheciera.,NON_CONTROL,hard-mixto,v2_d_hard_mixto_02
+Deshicieron las maletas nada más llegar.,NON_CONTROL,hard-mixto,v2_d_hard_mixto_02
+Busca la palabra accesibilidad.,EDITOR_CONTROL,find,v3_c_find_00
+Busca todas las menciones al autor.,EDITOR_CONTROL,find,v3_c_find_00
+Encuentra la sección de resultados.,EDITOR_CONTROL,find,v3_c_find_00
+Localiza la cita que falta.,EDITOR_CONTROL,find,v3_c_find_00
+Busca el párrafo duplicado.,EDITOR_CONTROL,find,v3_c_find_00
+Encuentra dónde dice conclusiones.,EDITOR_CONTROL,find,v3_c_find_00
+Pega aquí el texto.,EDITOR_CONTROL,paste,v3_c_paste_00
+Pega sin formato.,EDITOR_CONTROL,paste,v3_c_paste_00
+Inserta lo del portapapeles.,EDITOR_CONTROL,paste,v3_c_paste_00
+Imprime esta página.,EDITOR_CONTROL,print,v3_c_print_00
+Imprime el documento completo.,EDITOR_CONTROL,print,v3_c_print_00
+Manda a imprimir dos copias.,EDITOR_CONTROL,print,v3_c_print_00
+Sustituye esta palabra por diseño.,EDITOR_CONTROL,reemplazar,v3_c_reemplazar_02
+Sustituye esta palabra por término.,EDITOR_CONTROL,reemplazar,v3_c_reemplazar_02
+Guarda los cambios.,EDITOR_CONTROL,save,v3_c_save_00
+Guarda una copia.,EDITOR_CONTROL,save,v3_c_save_00
+Guarda antes de salir.,EDITOR_CONTROL,save,v3_c_save_00
+Guarda el archivo con otro nombre.,EDITOR_CONTROL,save,v3_c_save_00
+Guarda el progreso hasta aquí.,EDITOR_CONTROL,save,v3_c_save_00
+Quiero que cambies el título a Propuesta.,EDITOR_CONTROL,titulo,v3_c_titulo_07
+Pon como título Síntesis.,EDITOR_CONTROL,titulo,v3_c_titulo_07
+El experimento muestra mejoras en velocidad de escritura.,NON_CONTROL,academico,v3_d_acad_suj_a_02
+El experimento confirma el valor del contexto al dictar.,NON_CONTROL,academico,v3_d_acad_suj_a_02
+El experimento revela patrones de uso de la voz.,NON_CONTROL,academico,v3_d_acad_suj_a_02
+El experimento sugiere líneas de trabajo futuro.,NON_CONTROL,academico,v3_d_acad_suj_a_02
+La evaluación muestra mejoras en velocidad de escritura.,NON_CONTROL,academico,v3_d_acad_suj_a_02
+La evaluación confirma el valor del contexto al dictar.,NON_CONTROL,academico,v3_d_acad_suj_a_02
+La tesis muestra mejoras en velocidad de escritura.,NON_CONTROL,academico,v3_d_acad_suj_a_04
+La tesis confirma el valor del contexto al dictar.,NON_CONTROL,academico,v3_d_acad_suj_a_04
+La tesis revela patrones de uso de la voz.,NON_CONTROL,academico,v3_d_acad_suj_a_04
+La tesis sugiere líneas de trabajo futuro.,NON_CONTROL,academico,v3_d_acad_suj_a_04
+El informe muestra mejoras en velocidad de escritura.,NON_CONTROL,academico,v3_d_acad_suj_a_04
+El informe confirma el valor del contexto al dictar.,NON_CONTROL,academico,v3_d_acad_suj_a_04
+El estudio destaca la accesibilidad cognitiva.,NON_CONTROL,academico,v3_d_acad_suj_b_00
+El estudio aporta evidencia sobre fatiga prolongada.,NON_CONTROL,academico,v3_d_acad_suj_b_00
+El estudio propone evaluar editores multimodales.,NON_CONTROL,academico,v3_d_acad_suj_b_00
+El estudio documenta errores del dictado automático.,NON_CONTROL,academico,v3_d_acad_suj_b_00
+La investigación destaca la accesibilidad cognitiva.,NON_CONTROL,academico,v3_d_acad_suj_b_00
+La investigación aporta evidencia sobre fatiga prolongada.,NON_CONTROL,academico,v3_d_acad_suj_b_00
+La investigación propone evaluar editores multimodales.,NON_CONTROL,academico,v3_d_acad_suj_b_01
+La investigación documenta errores del dictado automático.,NON_CONTROL,academico,v3_d_acad_suj_b_01
+El análisis destaca la accesibilidad cognitiva.,NON_CONTROL,academico,v3_d_acad_suj_b_01
+El análisis aporta evidencia sobre fatiga prolongada.,NON_CONTROL,academico,v3_d_acad_suj_b_01
+El análisis propone evaluar editores multimodales.,NON_CONTROL,academico,v3_d_acad_suj_b_01
+El análisis documenta errores del dictado automático.,NON_CONTROL,academico,v3_d_acad_suj_b_01
+La evaluación propone evaluar editores multimodales.,NON_CONTROL,academico,v3_d_acad_suj_b_03
+La evaluación documenta errores del dictado automático.,NON_CONTROL,academico,v3_d_acad_suj_b_03
+El prototipo destaca la accesibilidad cognitiva.,NON_CONTROL,academico,v3_d_acad_suj_b_03
+El prototipo aporta evidencia sobre fatiga prolongada.,NON_CONTROL,academico,v3_d_acad_suj_b_03
+El prototipo propone evaluar editores multimodales.,NON_CONTROL,academico,v3_d_acad_suj_b_03
+El prototipo documenta errores del dictado automático.,NON_CONTROL,academico,v3_d_acad_suj_b_03
+El informe propone evaluar editores multimodales.,NON_CONTROL,academico,v3_d_acad_suj_b_05
+El informe documenta errores del dictado automático.,NON_CONTROL,academico,v3_d_acad_suj_b_05
+El parque protege especies.,NON_CONTROL,general,v3_d_gen2_03
+La red conecta cinco alcaldías.,NON_CONTROL,general,v3_d_gen2_03
+El acuario renovó el tanque.,NON_CONTROL,general,v3_d_gen2_03
+Los viernes hay cine al aire libre.,NON_CONTROL,general,v3_d_gen2_03
+El observatorio organiza visitas.,NON_CONTROL,general,v3_d_gen2_03
+Las clases terminan de noche.,NON_CONTROL,general,v3_d_gen2_03
+El gimnasio abre al amanecer.,NON_CONTROL,general,v3_d_gen2_04
+La cafetería amplió su horario.,NON_CONTROL,general,v3_d_gen2_04
+El club compite a nivel nacional.,NON_CONTROL,general,v3_d_gen2_04
+La librería guarda joyas.,NON_CONTROL,general,v3_d_gen2_04
+Los talleres fomentan lectura.,NON_CONTROL,general,v3_d_gen2_04
+Las noches permiten ver estrellas.,NON_CONTROL,general,v3_d_gen2_04
+El mercado abre solo los domingos.,NON_CONTROL,general,v3_d_general_02
+El tren amplió su recorrido.,NON_CONTROL,general,v3_d_general_02
+La feria reunió a decenas de editoriales.,NON_CONTROL,general,v3_d_general_02
+El hospital atiende urgencias.,NON_CONTROL,general,v3_d_general_02
+El puente quedó iluminado con led.,NON_CONTROL,general,v3_d_general_02
+El zoológico liberó tres cóndores.,NON_CONTROL,general,v3_d_general_02
+Guardar documentos automáticamente mejora la recuperación ante fallos.,NON_CONTROL,hard-archivo,v3_d_hard_file_00
+Imprimir demasiado contenido genera desperdicio.,NON_CONTROL,hard-archivo,v3_d_hard_file_00
+Buscar información es una tarea frecuente durante la escritura.,NON_CONTROL,hard-archivo,v3_d_hard_file_00
+Exportar un documento permite utilizarlo en otros sistemas.,NON_CONTROL,hard-archivo,v3_d_hard_file_00
+Imprimir carteles difundió el evento.,NON_CONTROL,hard-archivo,v3_d_hard_file_03
+Buscar consenso llevó toda la tarde.,NON_CONTROL,hard-archivo,v3_d_hard_file_03
+El corrector sugiere alternativas.,NON_CONTROL,hard-metalenguaje,v3_d_hard_meta_01
+El modo dictado desactiva atajos.,NON_CONTROL,hard-metalenguaje,v3_d_hard_meta_01
+La papelera conserva eliminados treinta días.,NON_CONTROL,hard-metalenguaje,v3_d_hard_meta_01
+El atajo de deshacer es casi universal.,NON_CONTROL,hard-metalenguaje,v3_d_hard_meta_01
+El reemplazo expande abreviaturas.,NON_CONTROL,hard-metalenguaje,v3_d_hard_meta_01
+El panel de estilos centraliza títulos.,NON_CONTROL,hard-metalenguaje,v3_d_hard_meta_01
+Seleccionar al azar garantiza imparcialidad.,NON_CONTROL,hard-mixto,v3_d_hard_mix_01
+Guardaron silencio durante el homenaje.,NON_CONTROL,hard-mixto,v3_d_hard_mix_01
+Abrieron debate tras la ponencia.,NON_CONTROL,hard-mixto,v3_d_hard_mix_01
+Imprimieron carteles para el festival.,NON_CONTROL,hard-mixto,v3_d_hard_mix_01
+Buscaron consenso hasta la madrugada.,NON_CONTROL,hard-mixto,v3_d_hard_mix_01
+Copiaron el esquema en sus cuadernos.,NON_CONTROL,hard-mixto,v3_d_hard_mix_01
+Guardar con método ahorra horas cada semana.,NON_CONTROL,hard-archivo,v3_d_hf2_guardar_00
+Quien sabe guardar bien rinde el doble.,NON_CONTROL,hard-archivo,v3_d_hf2_guardar_00
+Conviene guardar antes de que anochezca.,NON_CONTROL,hard-archivo,v3_d_hf2_guardar_00
+Me enseñaron a guardar desde chico.,NON_CONTROL,hard-archivo,v3_d_hf2_guardar_00
+Copiar a diario mantiene el orden del taller.,NON_CONTROL,hard-archivo,v3_d_hf_copiar_00
+Saber copiar bien distingue a los profesionales.,NON_CONTROL,hard-archivo,v3_d_hf_copiar_00
+Dicen que copiar con calma evita errores.,NON_CONTROL,hard-archivo,v3_d_hf_copiar_00
+Aprender a copiar lleva unas semanas.,NON_CONTROL,hard-archivo,v3_d_hf_copiar_00
+Imprimir a diario mantiene el orden del taller.,NON_CONTROL,hard-archivo,v3_d_hf_imprimir_00
+Saber imprimir bien distingue a los profesionales.,NON_CONTROL,hard-archivo,v3_d_hf_imprimir_00
+Dicen que imprimir con calma evita errores.,NON_CONTROL,hard-archivo,v3_d_hf_imprimir_00
+Aprender a imprimir lleva unas semanas.,NON_CONTROL,hard-archivo,v3_d_hf_imprimir_00
+Reemplazar sin pensar trae consecuencias.,NON_CONTROL,hard-infinitivo,v3_d_hi_reemplazar_00
+Conviene reemplazar solo cuando hace falta.,NON_CONTROL,hard-infinitivo,v3_d_hi_reemplazar_00
+Dicen que reemplazar de a poco funciona mejor.,NON_CONTROL,hard-infinitivo,v3_d_hi_reemplazar_00
+Hay que reemplazar con cuidado siempre.,NON_CONTROL,hard-infinitivo,v3_d_hi_reemplazar_00
+Buscar y encontrar no son sinónimos exactos.,NON_CONTROL,hard-metalenguaje,v3_d_meta2_01
+Copiar en exámenes se sanciona con cero.,NON_CONTROL,hard-metalenguaje,v3_d_meta2_01
+La mesa de diálogo renovó su directiva.,NON_CONTROL,general,v3_d_org_a_02
+La mesa de diálogo organizó una colecta.,NON_CONTROL,general,v3_d_org_a_02
+La mesa de diálogo repartió despensas.,NON_CONTROL,general,v3_d_org_a_02
+El coro mixto sesiona cada quince días.,NON_CONTROL,general,v3_d_org_a_02
+El coro mixto publicó su informe anual.,NON_CONTROL,general,v3_d_org_a_02
+El coro mixto renovó su directiva.,NON_CONTROL,general,v3_d_org_a_02
+El patronato publicó su informe anual.,NON_CONTROL,general,v3_d_org_a_06
+El patronato renovó su directiva.,NON_CONTROL,general,v3_d_org_a_06
+El patronato organizó una colecta.,NON_CONTROL,general,v3_d_org_a_06
+El patronato repartió despensas.,NON_CONTROL,general,v3_d_org_a_06
+La fundación sesiona cada quince días.,NON_CONTROL,general,v3_d_org_a_06
+La fundación publicó su informe anual.,NON_CONTROL,general,v3_d_org_a_06
+La fundación renovó su directiva.,NON_CONTROL,general,v3_d_org_a_07
+La fundación organizó una colecta.,NON_CONTROL,general,v3_d_org_a_07
+La fundación repartió despensas.,NON_CONTROL,general,v3_d_org_a_07
+El fideicomiso sesiona cada quince días.,NON_CONTROL,general,v3_d_org_a_07
+El fideicomiso publicó su informe anual.,NON_CONTROL,general,v3_d_org_a_07
+El fideicomiso renovó su directiva.,NON_CONTROL,general,v3_d_org_a_07
+La asamblea vecinal pintó la fachada.,NON_CONTROL,general,v3_d_org_b_07
+La asamblea vecinal sembró árboles nativos.,NON_CONTROL,general,v3_d_org_b_07
+La asamblea vecinal limpió el canal.,NON_CONTROL,general,v3_d_org_b_07
+La asamblea vecinal abrió un comedor.,NON_CONTROL,general,v3_d_org_b_07
+La asamblea vecinal becó a diez jóvenes.,NON_CONTROL,general,v3_d_org_b_07
+La asamblea vecinal editó una memoria.,NON_CONTROL,general,v3_d_org_b_07
+La fundación becó a diez jóvenes.,NON_CONTROL,general,v3_d_org_b_10
+La fundación editó una memoria.,NON_CONTROL,general,v3_d_org_b_10
+La fundación cumplió veinte años.,NON_CONTROL,general,v3_d_org_b_10
+El fideicomiso pintó la fachada.,NON_CONTROL,general,v3_d_org_b_10
+El fideicomiso sembró árboles nativos.,NON_CONTROL,general,v3_d_org_b_10
+El fideicomiso limpió el canal.,NON_CONTROL,general,v3_d_org_b_10
+El sindicato sembró árboles nativos.,NON_CONTROL,general,v3_d_org_b_13
+El sindicato limpió el canal.,NON_CONTROL,general,v3_d_org_b_13
+El sindicato abrió un comedor.,NON_CONTROL,general,v3_d_org_b_13
+El sindicato becó a diez jóvenes.,NON_CONTROL,general,v3_d_org_b_13
+El sindicato editó una memoria.,NON_CONTROL,general,v3_d_org_b_13
+El sindicato cumplió veinte años.,NON_CONTROL,general,v3_d_org_b_13
+La gaceta oficial destacó la nota roja.,NON_CONTROL,general,v3_d_prensa_00
+La gaceta oficial entrevistó al rector.,NON_CONTROL,general,v3_d_prensa_00
+La gaceta oficial cubrió la marcha.,NON_CONTROL,general,v3_d_prensa_00
+La gaceta oficial reseñó la temporada.,NON_CONTROL,general,v3_d_prensa_00
+La gaceta oficial denunció el ecocidio.,NON_CONTROL,general,v3_d_prensa_00
+La gaceta oficial premió la crónica.,NON_CONTROL,general,v3_d_prensa_00
+El diario matutino destacó la nota roja.,NON_CONTROL,general,v3_d_prensa_01
+El diario matutino entrevistó al rector.,NON_CONTROL,general,v3_d_prensa_01
+El diario matutino cubrió la marcha.,NON_CONTROL,general,v3_d_prensa_01
+El diario matutino reseñó la temporada.,NON_CONTROL,general,v3_d_prensa_01
+El diario matutino denunció el ecocidio.,NON_CONTROL,general,v3_d_prensa_01
+El diario matutino premió la crónica.,NON_CONTROL,general,v3_d_prensa_01
+Así está bien por ahora.,NON_CONTROL,conversacion,v3_n_conv_b_00
+No importa.,NON_CONTROL,conversacion,v3_n_conv_b_00
+Dale tiempo.,NON_CONTROL,conversacion,v3_n_conv_d_04
+Sin prisa.,NON_CONTROL,conversacion,v3_n_conv_d_04
+Con calma.,NON_CONTROL,conversacion,v3_n_conv_d_04
+Paso a paso.,NON_CONTROL,conversacion,v3_n_conv_d_04
+Poco a poco.,NON_CONTROL,conversacion,v3_n_conv_d_04
+Día a día.,NON_CONTROL,conversacion,v3_n_conv_d_04
+Hay que barrer el patio.,NON_CONTROL,conversacion,v3_n_cot_04_00
+Toca lavar los trastes.,NON_CONTROL,conversacion,v3_n_cot_04_00
+El baño necesita limpieza.,NON_CONTROL,conversacion,v3_n_cot_04_00
+Dobla tu ropa.,NON_CONTROL,conversacion,v3_n_cot_04_00
+Tiende la cama.,NON_CONTROL,conversacion,v3_n_cot_04_00
+Riega las macetas.,NON_CONTROL,conversacion,v3_n_cot_04_00
+"Mira, no estoy seguro.",NON_CONTROL,imperative-like,v3_n_imp_a_00
+"Espera, todavía no termino.",NON_CONTROL,imperative-like,v3_n_imp_a_00
+Pon atención a lo que voy a decir.,NON_CONTROL,imperative-like,v3_n_imp_a_00
+"Déjalo, luego vemos.",NON_CONTROL,imperative-like,v3_n_imp_a_00
+"Olvida eso, estoy pensando en otra cosa.",NON_CONTROL,imperative-like,v3_n_imp_a_00
+Dame un segundo.,NON_CONTROL,imperative-like,v3_n_imp_a_00
+"Calla un momento, que pienso.",NON_CONTROL,imperative-like,v3_n_imp_a_02
+"Suelta eso, que ya voy.",NON_CONTROL,imperative-like,v3_n_imp_a_02
+Toma aire conmigo antes de seguir.,NON_CONTROL,imperative-like,v3_n_imp_a_02
+"Quédate ahí, que ya te digo.",NON_CONTROL,imperative-like,v3_n_imp_a_02
+Párate un segundo a pensar.,NON_CONTROL,imperative-like,v3_n_imp_a_02
+"Siéntate, que esto va para largo.",NON_CONTROL,imperative-like,v3_n_imp_a_02
+Cambia de tema un momento.,NON_CONTROL,imperative-like,v3_n_imp_b_02
+Vuelve a eso más tarde.,NON_CONTROL,imperative-like,v3_n_imp_b_02
+Guarda silencio mientras pienso.,NON_CONTROL,imperative-like,v3_n_imp_b_02
+Abre tu mente a otra opción.,NON_CONTROL,imperative-like,v3_n_imp_b_02
+Cierra los ojos e imagina el resultado.,NON_CONTROL,imperative-like,v3_n_imp_b_02
+Haz como si no hubiera pasado.,NON_CONTROL,imperative-like,v3_n_imp_b_02
+Piensa antes de hablar.,NON_CONTROL,imperative-like,v3_n_imp_c_00
+Respira hondo primero.,NON_CONTROL,imperative-like,v3_n_imp_c_00
+"Calma, que hay tiempo.",NON_CONTROL,imperative-like,v3_n_imp_c_00
+"Tranquilo, todo saldrá bien.",NON_CONTROL,imperative-like,v3_n_imp_c_00
+Frena un poco el ritmo.,NON_CONTROL,imperative-like,v3_n_imp_c_00
+"Baja la voz, por favor.",NON_CONTROL,imperative-like,v3_n_imp_c_00
+No temas preguntar.,NON_CONTROL,imperative-like,v3_n_imp_d_02
+No dudes en llamar.,NON_CONTROL,imperative-like,v3_n_imp_d_02
+No tardes mucho.,NON_CONTROL,imperative-like,v3_n_imp_d_02
+No te entretengas.,NON_CONTROL,imperative-like,v3_n_imp_d_02
+Perdona el desorden.,NON_CONTROL,imperative-like,v3_n_imp_d_02
+Disculpa la tardanza.,NON_CONTROL,imperative-like,v3_n_imp_d_02
+Paga puntual.,NON_CONTROL,imperative-like,v3_n_impc2_01_01
+Evita deudas.,NON_CONTROL,imperative-like,v3_n_impc2_01_01
+Compara precios.,NON_CONTROL,imperative-like,v3_n_impc2_01_01
+Pide factura.,NON_CONTROL,imperative-like,v3_n_impc2_01_01
+Cierra la ventana.,NON_CONTROL,imperative-like,v3_n_impc_00_00
+Apaga el ventilador.,NON_CONTROL,imperative-like,v3_n_impc_00_00
+Prende la luz del patio.,NON_CONTROL,imperative-like,v3_n_impc_00_00
+Abre la puerta trasera.,NON_CONTROL,imperative-like,v3_n_impc_00_00
+Baja las persianas.,NON_CONTROL,imperative-like,v3_n_impc_00_00
+Sube el volumen.,NON_CONTROL,imperative-like,v3_n_impc_00_00
+Cuida a tu hermanito.,NON_CONTROL,imperative-like,v3_n_impc_05_00
+Alimenta al gato.,NON_CONTROL,imperative-like,v3_n_impc_05_00
+Pasea al perro.,NON_CONTROL,imperative-like,v3_n_impc_05_00
+Riega el jardín.,NON_CONTROL,imperative-like,v3_n_impc_05_00
+Podas las rosas.,NON_CONTROL,imperative-like,v3_n_impc_05_00
+Limpia la pecera.,NON_CONTROL,imperative-like,v3_n_impc_05_00
+Borra la fe de erratas.,EDITOR_CONTROL,borrar,v3_x_bor_erratas_00
+Elimina la fe de erratas por favor.,EDITOR_CONTROL,borrar,v3_x_bor_erratas_00
+Quita la fe de erratas de aquí.,EDITOR_CONTROL,borrar,v3_x_bor_erratas_00
+Suprime la fe de erratas sin falta.,EDITOR_CONTROL,borrar,v3_x_bor_erratas_00
+"Por favor, bórralo completo.",EDITOR_CONTROL,deictico,v3_x_dx_Bórralo_00
+"Por favor, haz eso ya.",EDITOR_CONTROL,deictico,v3_x_dx_Haz_00
+"Por favor, revísalo.",EDITOR_CONTROL,deictico,v3_x_dx_Revísalo._00
+Ahora copia este bloque.,EDITOR_CONTROL,edicion,v3_x_ev_copia_00
+Por favor copia el fragmento.,EDITOR_CONTROL,edicion,v3_x_ev_copia_00
+Necesito que copia eso.,EDITOR_CONTROL,edicion,v3_x_ev_copia_00
+¿Puedes copia la selección?,EDITOR_CONTROL,edicion,v3_x_ev_copia_00
+Ahora comparte el documento.,EDITOR_CONTROL,archivo,v3_x_fv_comparte_00
+Por favor comparte el archivo.,EDITOR_CONTROL,archivo,v3_x_fv_comparte_00
+Necesito que comparte esto ya.,EDITOR_CONTROL,archivo,v3_x_fv_comparte_00
+¿Puedes comparte el documento?,EDITOR_CONTROL,archivo,v3_x_fv_comparte_00
+"Por favor, adelante con lo deshecho.",EDITOR_CONTROL,redo,v3_x_re2_Adelante_00
+Cambia gráfica por ilustración.,EDITOR_CONTROL,reemplazar,v3_x_re_gráf_00
+Sustituye gráfica por ilustración.,EDITOR_CONTROL,reemplazar,v3_x_re_gráf_00
+Donde ponga gráfica escribe ilustración.,EDITOR_CONTROL,reemplazar,v3_x_re_gráf_00
+Troca gráfica por ilustración.,EDITOR_CONTROL,reemplazar,v3_x_re_gráf_00
+Reformula esto más sobrio.,EDITOR_CONTROL,reformular,v3_x_rf_sobrio_00
+Dale un aire más sobrio al texto.,EDITOR_CONTROL,reformular,v3_x_rf_sobrio_00
+Vuelve el párrafo más sobrio.,EDITOR_CONTROL,reformular,v3_x_rf_sobrio_00
+Cambia el título a Agradecimientos.,EDITOR_CONTROL,titulo,v3_x_tit_Agra_00
+Pon Agradecimientos como título.,EDITOR_CONTROL,titulo,v3_x_tit_Agra_00
+El documento se titulará Agradecimientos.,EDITOR_CONTROL,titulo,v3_x_tit_Agra_00
+Actualiza el encabezado a Agradecimientos.,EDITOR_CONTROL,titulo,v3_x_tit_Agra_00
+Cambia el título a Antología.,EDITOR_CONTROL,titulo,v3_x_tit_Anto_00
+Pon Antología como título.,EDITOR_CONTROL,titulo,v3_x_tit_Anto_00
+El documento se titulará Antología.,EDITOR_CONTROL,titulo,v3_x_tit_Anto_00
+Actualiza el encabezado a Antología.,EDITOR_CONTROL,titulo,v3_x_tit_Anto_00
+Cambia el título a Glosario.,EDITOR_CONTROL,titulo,v3_x_tit_Glos_00
+Pon Glosario como título.,EDITOR_CONTROL,titulo,v3_x_tit_Glos_00
+El documento se titulará Glosario.,EDITOR_CONTROL,titulo,v3_x_tit_Glos_00
+Actualiza el encabezado a Glosario.,EDITOR_CONTROL,titulo,v3_x_tit_Glos_00
+Cambia el título a Memorias.,EDITOR_CONTROL,titulo,v3_x_tit_Memo_00
+Pon Memorias como título.,EDITOR_CONTROL,titulo,v3_x_tit_Memo_00
+El documento se titulará Memorias.,EDITOR_CONTROL,titulo,v3_x_tit_Memo_00
+Actualiza el encabezado a Memorias.,EDITOR_CONTROL,titulo,v3_x_tit_Memo_00
+Ahora expande este texto.,EDITOR_CONTROL,transformar,v3_x_xv_expande_00
+Por favor expande el párrafo.,EDITOR_CONTROL,transformar,v3_x_xv_expande_00
+Necesito que expande la sección.,EDITOR_CONTROL,transformar,v3_x_xv_expande_00
+¿Puedes expande esto?,EDITOR_CONTROL,transformar,v3_x_xv_expande_00
+Ahora traduce este texto.,EDITOR_CONTROL,transformar,v3_x_xv_traduce_00
+Por favor traduce el párrafo.,EDITOR_CONTROL,transformar,v3_x_xv_traduce_00
+Necesito que traduce la sección.,EDITOR_CONTROL,transformar,v3_x_xv_traduce_00
+¿Puedes traduce esto?,EDITOR_CONTROL,transformar,v3_x_xv_traduce_00
+Busca la palabra resumen en el documento.,EDITOR_CONTROL,buscar,v3_y_find_Busca_00
+Busca el nombre del autor en el documento.,EDITOR_CONTROL,buscar,v3_y_find_Busca_00
+Busca la fecha de entrega en el documento.,EDITOR_CONTROL,buscar,v3_y_find_Busca_00
+Busca el párrafo repetido en el documento.,EDITOR_CONTROL,buscar,v3_y_find_Busca_00
+Busca la cita pendiente en el documento.,EDITOR_CONTROL,buscar,v3_y_find_Busca_00
+Busca los errores de dedo en el documento.,EDITOR_CONTROL,buscar,v3_y_find_Busca_00
+Ve al índice.,EDITOR_CONTROL,navegacion,v3_y_nav_Ve_00
+Ve a la bibliografía.,EDITOR_CONTROL,navegacion,v3_y_nav_Ve_00
+Ve al apéndice.,EDITOR_CONTROL,navegacion,v3_y_nav_Ve_00
+Ve al glosario.,EDITOR_CONTROL,navegacion,v3_y_nav_Ve_00
+Ve al prólogo.,EDITOR_CONTROL,navegacion,v3_y_nav_Ve_00
+Ve a los agradecimientos.,EDITOR_CONTROL,navegacion,v3_y_nav_Ve_00
+Ve a la primera nota.,EDITOR_CONTROL,navegacion,v3_y_nav_Ve_00
+Ve al último cuadro.,EDITOR_CONTROL,navegacion,v3_y_nav_Ve_00
+¿Puedes abrir el informe de ayer?,EDITOR_CONTROL,archivo,v3_y_open_¿Puede_00
+¿Puedes abrir la hoja de cálculo?,EDITOR_CONTROL,archivo,v3_y_open_¿Puede_00
+¿Puedes abrir el contrato final?,EDITOR_CONTROL,archivo,v3_y_open_¿Puede_00
+¿Puedes abrir el borrador?,EDITOR_CONTROL,archivo,v3_y_open_¿Puede_00
+¿Puedes abrir la presentación?,EDITOR_CONTROL,archivo,v3_y_open_¿Puede_00
+¿Puedes abrir el archivo adjunto?,EDITOR_CONTROL,archivo,v3_y_open_¿Puede_00
+¿Puedes abrir el manual?,EDITOR_CONTROL,archivo,v3_y_open_¿Puede_00
+¿Puedes abrir la tesis?,EDITOR_CONTROL,archivo,v3_y_open_¿Puede_00
+Imprime el informe,EDITOR_CONTROL,archivo,v3_y_print_Imprim_00
+Imprime el contrato,EDITOR_CONTROL,archivo,v3_y_print_Imprim_00
+Imprime las primeras páginas,EDITOR_CONTROL,archivo,v3_y_print_Imprim_00
+Imprime el borrador,EDITOR_CONTROL,archivo,v3_y_print_Imprim_00
+Imprime la propuesta,EDITOR_CONTROL,archivo,v3_y_print_Imprim_00
+Imprime el anexo,EDITOR_CONTROL,archivo,v3_y_print_Imprim_00
+Imprime dos copias,EDITOR_CONTROL,archivo,v3_y_print_Imprim_00
+Imprime esta página por favor.,EDITOR_CONTROL,archivo,v3_y_print_Imprim_00
+Imprime el informe por favor.,EDITOR_CONTROL,archivo,v3_y_print_Imprim_00
+Imprime el contrato por favor.,EDITOR_CONTROL,archivo,v3_y_print_Imprim_00
+Imprime las primeras páginas por favor.,EDITOR_CONTROL,archivo,v3_y_print_Imprim_00
+Imprime el borrador por favor.,EDITOR_CONTROL,archivo,v3_y_print_Imprim_00
+Imprime la propuesta por favor.,EDITOR_CONTROL,archivo,v3_y_print_Imprim_00
+Imprime el anexo por favor.,EDITOR_CONTROL,archivo,v3_y_print_Imprim_00
+Imprime dos copias por favor.,EDITOR_CONTROL,archivo,v3_y_print_Imprim_00
+Saca una copia impresa de esta página.,EDITOR_CONTROL,archivo,v3_y_print_Saca u_00
+Saca una copia impresa de el informe.,EDITOR_CONTROL,archivo,v3_y_print_Saca u_00
+Saca una copia impresa de el contrato.,EDITOR_CONTROL,archivo,v3_y_print_Saca u_00
+Saca una copia impresa de las primeras páginas.,EDITOR_CONTROL,archivo,v3_y_print_Saca u_00
+Saca una copia impresa de el borrador.,EDITOR_CONTROL,archivo,v3_y_print_Saca u_00
+Saca una copia impresa de la propuesta.,EDITOR_CONTROL,archivo,v3_y_print_Saca u_00
+Saca una copia impresa de el anexo.,EDITOR_CONTROL,archivo,v3_y_print_Saca u_00
+Saca una copia impresa de dos copias.,EDITOR_CONTROL,archivo,v3_y_print_Saca u_00
+Lee este párrafo en voz alta.,EDITOR_CONTROL,lectura,v3_y_read_Lee {}_00
+Lee la introducción en voz alta.,EDITOR_CONTROL,lectura,v3_y_read_Lee {}_00
+Lee el resumen en voz alta.,EDITOR_CONTROL,lectura,v3_y_read_Lee {}_00
+Lee lo seleccionado en voz alta.,EDITOR_CONTROL,lectura,v3_y_read_Lee {}_00
+Lee el primer capítulo en voz alta.,EDITOR_CONTROL,lectura,v3_y_read_Lee {}_00

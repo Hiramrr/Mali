@@ -1,0 +1,63 @@
+id,group,text,expected_raw,expected_gate
+A1,A,La interacción humano computadora estudia cómo las personas utilizan sistemas interactivos.,DICTATION,NO_CONTROL
+A2,A,Durante los últimos años han aparecido nuevas formas de interacción multimodal.,DICTATION,NO_CONTROL
+A3,A,Este proyecto propone un editor orientado a reducir interrupciones durante la escritura.,DICTATION,NO_CONTROL
+A4,A,La accesibilidad cognitiva debe considerarse durante el diseño de interfaces.,DICTATION,NO_CONTROL
+B1,B,Borrar datos por accidente puede provocar pérdida de información.,DICTATION,NO_CONTROL
+B2,B,Deshacer una modificación debería ser una operación sencilla.,DICTATION,NO_CONTROL
+B3,B,Cambiar un encabezado puede modificar la interpretación de una sección.,DICTATION,NO_CONTROL
+B4,B,Seleccionar correctamente una muestra es fundamental para el estudio.,DICTATION,NO_CONTROL
+B5,B,Reemplazar términos automáticamente puede introducir errores.,DICTATION,NO_CONTROL
+B6,B,Poner demasiado texto en negritas reduce su utilidad como recurso visual.,DICTATION,NO_CONTROL
+B7,B,Eliminar contenido sin confirmación puede resultar frustrante.,DICTATION,NO_CONTROL
+B8,B,Rehacer una acción permite recuperar un cambio previamente revertido.,DICTATION,NO_CONTROL
+C1,C,"El comando ""borra esto"" necesita un referente claro.",DICTATION,NO_CONTROL
+C2,C,"Una persona podría decir ""pon esto en negritas"" para dar formato.",DICTATION,NO_CONTROL
+C3,C,"La expresión ""cambia el título"" aparece en las instrucciones.",DICTATION,NO_CONTROL
+C4,C,Voy a escribir la frase: reemplaza esta palabra por accesibilidad.,DICTATION,NO_CONTROL
+C5,C,"En el ejemplo anterior el usuario dijo ""deshaz el cambio"".",DICTATION,NO_CONTROL
+C6,C,"Quiero escribir que el usuario puede pedir ""hazlo más corto"".",DICTATION,NO_CONTROL
+D1,D,Cambia el título a Metodología.,EDITOR_CONTROL,CONTROL
+D2,D,Borra esto.,EDITOR_CONTROL,CONTROL
+D3,D,Pon este texto en negritas.,EDITOR_CONTROL,CONTROL
+D4,D,Cambia esta palabra por dificultades.,EDITOR_CONTROL,CONTROL
+D5,D,Hazlo más breve.,EDITOR_CONTROL,CONTROL
+D6,D,Reescribe esto con un tono más formal.,EDITOR_CONTROL,CONTROL
+D7,D,Deshaz el último cambio.,EDITOR_CONTROL,CONTROL
+D8,D,Rehaz lo anterior.,EDITOR_CONTROL,CONTROL
+D9,D,Subraya esta parte.,EDITOR_CONTROL,CONTROL
+D10,D,Quita esta oración.,EDITOR_CONTROL,CONTROL
+D11,D,Sustituye este término.,EDITOR_CONTROL,CONTROL
+D12,D,Haz este párrafo más claro.,EDITOR_CONTROL,CONTROL
+E1,E,Cámbialo.,EDITOR_CONTROL,CONTROL
+E2,E,Borra eso.,EDITOR_CONTROL,CONTROL
+E3,E,Ponlo diferente.,EDITOR_CONTROL,CONTROL
+E4,E,Hazlo más corto.,EDITOR_CONTROL,CONTROL
+E5,E,Cambia esa parte.,EDITOR_CONTROL,CONTROL
+E6,E,Quita esto.,EDITOR_CONTROL,CONTROL
+E7,E,Pon eso.,EDITOR_CONTROL,CONTROL
+E8,E,Déjalo como antes.,EDITOR_CONTROL,CONTROL
+F1,F,Cambiar el título mejora la claridad.,DICTATION,NO_CONTROL
+F2,F,Cambia el título a Resultados.,EDITOR_CONTROL,CONTROL
+F3,F,Borrar texto accidentalmente es frustrante.,DICTATION,NO_CONTROL
+F4,F,Borra este texto.,EDITOR_CONTROL,CONTROL
+F5,F,Deshacer modificaciones es una función importante.,DICTATION,NO_CONTROL
+F6,F,Deshaz la modificación.,EDITOR_CONTROL,CONTROL
+F7,F,Reemplazar palabras automáticamente puede producir errores.,DICTATION,NO_CONTROL
+F8,F,Reemplaza esta palabra.,EDITOR_CONTROL,CONTROL
+F9,F,Poner texto en cursivas permite marcar énfasis.,DICTATION,NO_CONTROL
+F10,F,Pon este texto en cursivas.,EDITOR_CONTROL,CONTROL
+G1,G,Borrar información accidentalmente puede afectar la experiencia del usuario.,DICTATION,NO_CONTROL
+G2,G,Deshacer una acción debería resultar sencillo para el usuario.,DICTATION,NO_CONTROL
+G3,G,Seleccionar participantes correctamente es importante para el estudio.,DICTATION,NO_CONTROL
+G4,G,Cambiar el título puede ayudar a comunicar el objetivo del documento.,DICTATION,NO_CONTROL
+G5,G,Poner texto en negritas permite destacar información importante.,DICTATION,NO_CONTROL
+G6,G,Reemplazar palabras automáticamente puede introducir errores inesperados.,DICTATION,NO_CONTROL
+H1,H,Eso no.,,NO_CONTROL
+H2,H,Mejor.,,NO_CONTROL
+H3,H,No me gusta.,,NO_CONTROL
+H4,H,Ese.,,NO_CONTROL
+H5,H,Así está bien.,,NO_CONTROL
+H6,H,"Hmm, no.",,NO_CONTROL
+H7,H,Bueno.,,NO_CONTROL
+H8,H,Tal vez.,,NO_CONTROL
