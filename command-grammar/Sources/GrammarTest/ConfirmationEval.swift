@@ -1,3 +1,4 @@
+import CommandGrammar
 // Evaluación UX Fase 9: sim-19 (19 fallos reales, sin retranscribir) + live manual.
 // Diagnóstico: confidence/alternatives solo se registran, nunca deciden.
 import Foundation

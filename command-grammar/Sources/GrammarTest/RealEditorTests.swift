@@ -1,3 +1,5 @@
+import CommandGrammar
+
 // Fase 11 — Tests del pipeline real (ParsedCommand → Validator → Policy → Executor → NSTextView).
 import Foundation
 import AppKit
@@ -284,7 +286,7 @@ import AppKit
         return nil
     }
     t("r-fmt-undo-each") {
-        for style in [FormatStyle.bold, .italic, .underline] {
+        for style in [CommandGrammar.FormatStyle.bold, .italic, .underline] {
             let (w, v, _, e) = makeRealProbe(); defer { w.orderOut(nil) }
             probeSelect(v, "TDAH")
             _ = realConfirm(e, .formatSelection(style))

@@ -1,3 +1,5 @@
+import CommandGrammar
+
 // Fase 11 — ParsedCommand → Validator → ConfirmationPolicy → EditorCommandExecutor → editor real.
 //
 //  Usa la gramática, tipos, riesgo y política CONGELADOS solo en lectura
@@ -28,7 +30,7 @@ enum RealEditorEffect: Equatable {
     case selected(NSRange)
     case deleted(text: String)
     case replaced(old: String, new: String)
-    case formatted(FormatStyle)
+    case formatted(CommandGrammar.FormatStyle)
     case undone(label: String)
     case redone(label: String)
     case titleChanged(old: String, new: String)
@@ -224,7 +226,7 @@ enum RealFixtureText {
         return .success(.replaced(old: old, new: t))
     }
 
-    func formatSelection(_ style: FormatStyle) -> RealEditorResult {
+    func formatSelection(_ style: CommandGrammar.FormatStyle) -> RealEditorResult {
         let s = sel
         guard hasSelection, let sr = RealRanges.validated(s, in: text) else {
             return .invalidContext(.noSelection)

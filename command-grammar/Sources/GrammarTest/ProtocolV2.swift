@@ -1,3 +1,4 @@
+import CommandGrammar
 // Protocolo v2: validación, leakage, grabación única, evaluación pareada A/B.
 // Gramática congelada: solo llama a parseCommand, nunca la modifica.
 import Foundation

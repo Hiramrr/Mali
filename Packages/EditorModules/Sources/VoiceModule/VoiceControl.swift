@@ -52,7 +52,13 @@ public struct VoiceControl: View {
     private var statusText: String {
         switch module.state {
         case .idle:
-            module.lastInsertedText.isEmpty ? "Pulsa para dictar" : "Insertado: \(module.lastInsertedText.prefix(80))"
+            if !module.lastCommandFeedback.isEmpty {
+                module.lastCommandFeedback
+            } else if module.lastInsertedText.isEmpty {
+                "Pulsa para dictar"
+            } else {
+                "Insertado: \(module.lastInsertedText.prefix(80))"
+            }
         case .listening:
             module.partialTranscript.isEmpty ? "Escuchando… habla ahora" : module.partialTranscript
         case .processing:
@@ -76,12 +82,13 @@ public struct VoiceControl: View {
             }
             HStack {
                 if module.isListening {
-                    Button("Insertar") { Task { await module.finish() } }
+                    Button("Terminar") { Task { await module.finish() } }
                         .buttonStyle(.borderedProminent)
                         .keyboardShortcut(.defaultAction)
-                    Button("Cancelar", role: .cancel) { Task { await module.cancelDictation() } }
+                        .help("Cierra el enunciado y lo ejecuta sin esperar la pausa")
+                    Button("Descartar", role: .cancel) { Task { await module.cancelDictation() } }
                 } else {
-                    Button(module.lastInsertedText.isEmpty ? "Dictar" : "Dictar de nuevo") {
+                    Button(module.lastInsertedText.isEmpty && module.lastCommandFeedback.isEmpty ? "Dictar" : "Dictar de nuevo") {
                         Task { await module.begin() }
                     }
                     .buttonStyle(.borderedProminent)
@@ -91,6 +98,9 @@ public struct VoiceControl: View {
                     }
                 }
             }
+            Toggle("Escucha continua (cierra solo con pausas)", isOn: $module.continuousListening)
+                .font(.callout)
+                .help("Un toque inicia; cada pausa ejecuta y sigue escuchando; otro toque detiene.")
             Toggle("Estilo formal (mayúscula y punto final)", isOn: $module.formalStyle)
                 .font(.callout)
             Picker("Idioma", selection: $module.localeIdentifier) {
@@ -100,7 +110,7 @@ public struct VoiceControl: View {
             }
             .pickerStyle(.menu)
             .font(.callout)
-            Text("Comandos: “nueva línea”, “nuevo párrafo”, “deshacer”, “borra eso”, “cambia el título a…”, “cancelar”.")
+            Text("Comandos: “busca…”, “selecciona…”, “pon en negritas”, “borra la selección”, “guarda”, “abre”, “exporta…”, “cambia el título a…”, “deshacer”, “cancelar”.")
                 .font(.caption)
                 .foregroundStyle(.secondary)
         }

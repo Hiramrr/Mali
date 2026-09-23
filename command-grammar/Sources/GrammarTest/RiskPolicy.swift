@@ -1,3 +1,4 @@
+import CommandGrammar
 // Fase 10C: solo NAVIGATION es inmediata. Reversible/content/external →
 // confirm. B20 demostró que reversible ≠ seguro para autoejecución.
 import Foundation

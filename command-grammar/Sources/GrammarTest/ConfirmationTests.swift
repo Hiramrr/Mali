@@ -1,3 +1,4 @@
+import CommandGrammar
 // Tests automáticos Confirm-All (Fase 9). Invariante crítico tras cada test:
 // si no hubo confirmación, editorBefore == editorAfter, o SAFETY_INVARIANT_FAILURE.
 import Foundation

@@ -1,3 +1,5 @@
+import CommandGrammar
+
 // Fase Confirmation UX — capa DESPUÉS de Speech→Grammar→ParsedCommand.
 // CONGELADO: Grammar/Types/LM/contextualStrings/Speech sin cambios funcionales.
 // Política Fase 9: ALL SUPPORTED COMMANDS REQUIRE CONFIRMATION (baseline segura).
@@ -20,7 +22,7 @@ struct EditorSnapshot: Equatable {
 
 struct AppliedFormat: Equatable {
     var range: Range<String.Index>
-    var style: FormatStyle
+    var style: CommandGrammar.FormatStyle
 }
 
 struct FakeEditorState: Equatable {
@@ -130,7 +132,7 @@ func riskOf(_ cmd: ParsedCommand) -> CommandRisk {
 
 // MARK: - Preview por acción (legible, con estado actual)
 
-func styleName(_ s: FormatStyle) -> String {
+func styleName(_ s: CommandGrammar.FormatStyle) -> String {
     switch s { case .bold: return "negritas"; case .italic: return "cursiva"; case .underline: return "subrayado" }
 }
 

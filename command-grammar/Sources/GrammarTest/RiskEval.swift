@@ -1,3 +1,4 @@
+import CommandGrammar
 // Fase 10 evaluación: sim-19-risk + risk-live (40). Sin retranscribir.
 import Foundation
 import Speech

@@ -70,8 +70,12 @@ public final class EditorSession {
     public func send(_ command: EditorCommand) {
         guard !readingMode, let view = textView else { return }
         switch command {
-        case .insertText(let text), .replaceSelection(let text):
-            view.insertText(text, replacementRange: view.selectedRange())
+        case .insertText(let text):
+            edit(view) { $0.insertText(text, replacementRange: $0.selectedRange()) }
+        case .replaceSelection(let text):
+            // Solo con selección real: sin ella sería una inserción fantasma.
+            guard view.selectedRange().length > 0 else { return }
+            edit(view) { $0.insertText(text, replacementRange: $0.selectedRange()) }
         case .selectRange(let range):
             guard let valid = range.validated(in: view.string) else { return }
             view.setSelectedRange(valid)
@@ -81,20 +85,23 @@ public final class EditorSession {
         case .deleteForward: view.deleteForward(nil)
         case .undo: view.undoManager?.undo()
         case .redo: view.undoManager?.redo()
-        case .toggleBold: wrapSelection(in: "**", view: view)
-        case .toggleItalic: wrapSelection(in: "*", view: view)
-        case .toggleCode: wrapSelection(in: "`", view: view)
+        case .toggleBold: edit(view) { wrapSelection(in: "**", view: $0) }
+        case .toggleItalic: edit(view) { wrapSelection(in: "*", view: $0) }
+        case .toggleCode: edit(view) { wrapSelection(in: "`", view: $0) }
+        case .toggleUnderline: edit(view) { toggleUnderline(view: $0) }
         case .heading(let level):
             guard (1...6).contains(level) else { return }
-            prefixParagraph(String(repeating: "#", count: level) + " ", view: view)
-        case .bulletList: prefixParagraph("- ", view: view)
-        case .quote: prefixParagraph("> ", view: view)
+            edit(view) { prefixParagraph(String(repeating: "#", count: level) + " ", view: $0) }
+        case .bulletList: edit(view) { prefixParagraph("- ", view: $0) }
+        case .quote: edit(view) { prefixParagraph("> ", view: $0) }
         case .insertLink:
-            let range = view.selectedRange()
-            let selected = (view.string as NSString).substring(with: range)
-            let label = selected.isEmpty ? "texto" : selected
-            view.insertText("[\(label)](https://)", replacementRange: range)
-            view.setSelectedRange(NSRange(location: range.location + label.utf16.count + 3, length: 8))
+            edit(view) { v in
+                let range = v.selectedRange()
+                let selected = (v.string as NSString).substring(with: range)
+                let label = selected.isEmpty ? "texto" : selected
+                v.insertText("[\(label)](https://)", replacementRange: range)
+                v.setSelectedRange(NSRange(location: range.location + label.utf16.count + 3, length: 8))
+            }
         case .beginPreview(let range):
             beginPreview(range)
         case .showPreview(let option):
@@ -108,12 +115,28 @@ public final class EditorSession {
             // EditorCommand: ignorar aquí evita el bug de insertar el título
             // como texto si algún consumidor reenvía al session.send.
             break
+        case .findText(let query):
+            findInText(query, view: view)
+        case .selectText(let query):
+            findInText(query, view: view)
+        case .saveDocument, .openDocument, .exportDocument:
+            // Los aplica EditorScreen (documento y paneles). Ignorar aquí.
+            break
         }
         view.window?.makeFirstResponder(view)
     }
 
-    private func prefixParagraph(_ prefix: String, view: NSTextView) {
-        let text = view.string as NSString
+    /// Una sola operación de Undo por comando de voz: aísla la mutación del
+    /// tecleo adyacente (funciona con groupsByEvent true o false).
+    private func edit(_ view: NSTextView, _ body: (NSTextView) -> Void) {
+        view.breakUndoCoalescing()
+        view.undoManager?.beginUndoGrouping()
+        body(view)
+        view.undoManager?.endUndoGrouping()
+        view.breakUndoCoalescing()
+    }
+
+    private func prefixParagraph(_ prefix: String, view: NSTextView) {        let text = view.string as NSString
         let range = text.paragraphRange(for: view.selectedRange())
         let paragraph = text.substring(with: range)
         let replacement = paragraph.hasPrefix(prefix) ? String(paragraph.dropFirst(prefix.count)) : prefix + paragraph
@@ -138,6 +161,60 @@ public final class EditorSession {
         let replacement = unwrap ? String(selected.dropFirst(marker.count).dropLast(marker.count)) : marker + selected + marker
         view.insertText(replacement, replacementRange: range)
         view.setSelectedRange(NSRange(location: range.location + (unwrap ? 0 : width), length: unwrap ? replacement.utf16.count : range.length))
+    }
+
+    /// Subrayado con `<u>…</u>` (HTML inline válido en Markdown; el motor no
+    /// tiene toggleUnderline nativo). Misma semántica de conmutación que
+    /// `wrapSelection`: segunda aplicación lo retira.
+    private func toggleUnderline(view: NSTextView) {
+        let text = view.string as NSString
+        let range = view.selectedRange()
+        guard range.length > 0, NSMaxRange(range) <= text.length else { return }
+        let selected = text.substring(with: range)
+        let open = "<u>", close = "</u>"
+        let ow = (open as NSString).length, cw = (close as NSString).length
+        if range.location >= ow && NSMaxRange(range) + cw <= text.length
+            && text.substring(with: NSRange(location: range.location - ow, length: ow)) == open
+            && text.substring(with: NSRange(location: NSMaxRange(range), length: cw)) == close {
+            view.insertText(selected, replacementRange: NSRange(location: range.location - ow, length: range.length + ow + cw))
+            view.setSelectedRange(NSRange(location: range.location - ow, length: range.length))
+            return
+        }
+        if selected.hasPrefix(open) && selected.hasSuffix(close) && selected.count >= open.count + close.count {
+            let inner = String(selected.dropFirst(open.count).dropLast(close.count))
+            view.insertText(inner, replacementRange: range)
+            view.setSelectedRange(NSRange(location: range.location, length: (inner as NSString).length))
+            return
+        }
+        view.insertText(open + selected + close, replacementRange: range)
+        view.setSelectedRange(NSRange(location: range.location + ow, length: range.length))
+    }
+
+    /// Buscar por voz: coincidencia literal exacta primero, luego normalizada
+    /// (insensible a mayúsculas y acentos). Sin fuzzy. Duplicados: primera
+    /// coincidencia en o después del cursor, con wrap al inicio. Solo mueve
+    /// selección/cursor; jamás modifica contenido. Sin coincidencia no toca nada.
+    private func findInText(_ query: String, view: NSTextView) {
+        guard !query.isEmpty else { return }
+        let text = view.string
+        let ns = text as NSString
+        for options in [NSString.CompareOptions(), [.caseInsensitive, .diacriticInsensitive]] {
+            var found: [NSRange] = []
+            var at = NSRange(location: 0, length: ns.length)
+            while at.location < ns.length {
+                let r = ns.range(of: query, options: options, range: at)
+                guard r.location != NSNotFound else { break }
+                if Range(r, in: text) != nil { found.append(r) }
+                let next = r.location + max(r.length, 1)
+                if next >= ns.length { break }
+                at = NSRange(location: next, length: ns.length - next)
+            }
+            if let match = found.first(where: { $0.location >= min(view.selectedRange().location, ns.length) }) ?? found.first {
+                view.setSelectedRange(match)
+                view.scrollRangeToVisible(match)
+                return
+            }
+        }
     }
 
     // MARK: - Previsualización atómica (gestos)

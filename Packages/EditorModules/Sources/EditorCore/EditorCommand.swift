@@ -33,6 +33,7 @@ public enum EditorCommand: Equatable, Sendable {
     case toggleBold
     case toggleItalic
     case toggleCode
+    case toggleUnderline
     case heading(Int)
     case bulletList
     case quote
@@ -42,6 +43,16 @@ public enum EditorCommand: Equatable, Sendable {
     /// conoce la URL actual y renombra el archivo. Si llega a `send`, se
     /// ignora para no escribir el título dentro del texto.
     case renameTitle(String)
+    /// Buscar/seleccionar por voz (gramática probada). Mueven selección y
+    /// cursor; jamás modifican contenido, historial ni archivos.
+    case findText(String)
+    case selectText(String)
+    /// Guardar/abrir/exportar por voz. Los aplica `EditorScreen` (dueña del
+    /// documento y de los paneles); si llegan a `send`, se ignoran.
+    case saveDocument
+    case openDocument(String?)
+    /// Formato: "pdf", "txt" o "rtf". "word" no lo soporta el editor.
+    case exportDocument(String)
     // Previsualización atómica para módulos (gestos). Mientras dura, el texto
     // mostrado no toca el binding, el guardado ni el historial: confirmar
     // registra un único undo (o ninguno si no hubo cambio) y cancelar

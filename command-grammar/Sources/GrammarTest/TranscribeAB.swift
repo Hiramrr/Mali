@@ -1,3 +1,4 @@
+import CommandGrammar
 // Transcripción A/B sobre los MISMOS WAV. Todo idéntico excepto custom LM.
 // A: DictationTranscriber(locale: es_MX, preset: .phrase) + commandContext()
 // B: mismo preset + mismos contextualStrings + ContentHint.customizedLanguage

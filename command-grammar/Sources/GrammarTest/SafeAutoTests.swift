@@ -1,3 +1,4 @@
+import CommandGrammar
 // Tests Fase 10C: invariante estructural + regresiones B20/B42/V173.
 import Foundation
 

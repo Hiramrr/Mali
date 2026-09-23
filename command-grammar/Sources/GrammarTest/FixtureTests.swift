@@ -1,3 +1,4 @@
+import CommandGrammar
 // Tests de fixtures (Fase 10-balanced). No tocan política ni gramática.
 import Foundation
 

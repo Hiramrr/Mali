@@ -1,3 +1,4 @@
+import CommandGrammar
 // Runner: `test` (unit), `live` (mic), `protocol` (lista live).
 import Foundation
 

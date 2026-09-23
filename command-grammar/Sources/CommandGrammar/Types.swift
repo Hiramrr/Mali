@@ -1,20 +1,20 @@
 // Tipos del parser. Swift normal, sin @Generable, sin ML.
 import Foundation
 
-enum FormatStyle: String, Equatable {
+public enum FormatStyle: String, Equatable, Sendable {
     case bold
     case italic
     case underline
 }
 
-enum ExportFormat: String, Equatable {
+public enum ExportFormat: String, Equatable, Sendable {
     case pdf
     case word
     case plainText
     case richText
 }
 
-enum ParsedCommand: Equatable {
+public enum ParsedCommand: Equatable, Sendable {
     case renameTitle(String)
     case deleteSelection
     case replaceSelection(String)
@@ -32,13 +32,13 @@ enum ParsedCommand: Equatable {
     case unknown
 }
 
-struct CommandToken {
-    let raw: String
-    let normalized: String
-    let range: Range<String.Index>
+public struct CommandToken: Sendable {
+    public let raw: String
+    public let normalized: String
+    public let range: Range<String.Index>
 }
 
-struct CommandTranscript {
-    let raw: String
-    let normalized: String
+public struct CommandTranscript: Sendable {
+    public let raw: String
+    public let normalized: String
 }

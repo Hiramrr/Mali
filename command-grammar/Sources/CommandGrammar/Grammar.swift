@@ -10,17 +10,17 @@ import Foundation
 
 private let exteriorPunct = CharacterSet(charactersIn: ".,!?;:()\"'«»¿¡")
 
-func normalizeToken(_ s: String) -> String {
+public func normalizeToken(_ s: String) -> String {
     s.lowercased().folding(options: .diacriticInsensitive, locale: .current)
 }
 
-func normalizeUtterance(_ raw: String) -> String {
+public func normalizeUtterance(_ raw: String) -> String {
     raw.lowercased()
         .folding(options: .diacriticInsensitive, locale: .current)
         .precomposedStringWithCanonicalMapping
 }
 
-func tokenize(_ raw: String) -> [CommandToken] {
+public func tokenize(_ raw: String) -> [CommandToken] {
     var tokens: [CommandToken] = []
     var idx = raw.startIndex
     func isSpace(_ c: Character) -> Bool { c.isWhitespace }
@@ -43,7 +43,7 @@ func tokenize(_ raw: String) -> [CommandToken] {
 /// Subcadena raw correspondiente al span de tokens [from, to).
 /// Recorta espacios y [.,;:] exteriores; conserva ?!¿¡; quita un nivel de
 /// comillas externas coincidentes.
-func rawSpan(_ raw: String, _ tokens: [CommandToken], _ from: Int, _ to: Int) -> String {
+public func rawSpan(_ raw: String, _ tokens: [CommandToken], _ from: Int, _ to: Int) -> String {
     guard from < to, from >= 0, to <= tokens.count else { return "" }
     let lo = tokens[from].range.lowerBound
     let hi = tokens[to - 1].range.upperBound
@@ -71,7 +71,7 @@ func rawSpan(_ raw: String, _ tokens: [CommandToken], _ from: Int, _ to: Int) ->
 }
 
 /// Quita enclíticos (lo/la/los/las/le/les/me/te/se/nos) para matching verbal.
-func deenclitic(_ s: String) -> String {
+public func deenclitic(_ s: String) -> String {
     for e in ["los", "las", "les", "nos", "lo", "la", "le", "me", "te", "se"] {
         if s.hasSuffix(e) && s.count > e.count + 2 {
             return String(s.dropLast(e.count))
@@ -82,7 +82,7 @@ func deenclitic(_ s: String) -> String {
 
 /// Intenta verbo exacto primero; si no, prueba quitando enclíticos.
 /// Evita romper verbos que terminan en esas sílabas ("halla" ≠ "ha").
-func verbMatch(_ raw: String, _ verbs: Set<String>) -> Bool {
+public func verbMatch(_ raw: String, _ verbs: Set<String>) -> Bool {
     if verbs.contains(raw) { return true }
     return verbs.contains(deenclitic(raw))
 }
@@ -100,7 +100,7 @@ private let undoNouns: Set<String> = ["ultimo", "ultima", "cambio", "edicion",
     "ya", "eso", "esto"]
 
 /// true si el resto tras anula/cancela/revierte indica UNDO.
-func isUndoObject(_ rest: [String]) -> Bool {
+public func isUndoObject(_ rest: [String]) -> Bool {
     guard let r0 = rest.first else { return false }
     if r0 == "lo" && rest.dropFirst().first == "que" { return true }
     if r0 == "el" || r0 == "la" {
@@ -114,7 +114,7 @@ private let stripWords: Set<String> = ["esto", "esta", "este", "lo", "la", "el",
 
 /// Quita "por favor" en cualquier posición y "favor" suelto.
 /// Devuelve tokens supervivientes + mapa a índices originales.
-func stripPoliteness(_ t: [CommandToken]) -> (toks: [CommandToken], map: [Int]) {
+public func stripPoliteness(_ t: [CommandToken]) -> (toks: [CommandToken], map: [Int]) {
     var toks: [CommandToken] = []
     var map: [Int] = []
     var i = 0
@@ -134,14 +134,14 @@ func stripPoliteness(_ t: [CommandToken]) -> (toks: [CommandToken], map: [Int]) 
     return (toks, map)
 }
 
-func normTokens(_ raw: String) -> [String] {
+public func normTokens(_ raw: String) -> [String] {
     tokenize(raw).map(\.normalized)
 }
 
 // MARK: - Patrones por acción (devuelven nombre + span de argumento o nil)
 
 /// Intenta clasificar SOLO el tipo de acción (para detección multi).
-func actionType(of tokens: [CommandToken]) -> String? {
+public func actionType(of tokens: [CommandToken]) -> String? {
     let (t, _) = stripPoliteness(tokens)
     if matchReplace(t) != nil { return "replaceSelection" }
     if matchRewrite(t) != nil { return "rewriteSelection" }
@@ -158,7 +158,7 @@ func actionType(of tokens: [CommandToken]) -> String? {
     return nil
 }
 
-func matchReplace(_ t: [CommandToken]) -> (Int, Int)? {
+public func matchReplace(_ t: [CommandToken]) -> (Int, Int)? {
     guard let first = t.first else { return nil }
     if ["reemplaza", "reemplazalo", "sustituye", "sustituyelo", "cambia", "troca", "trocalo", "escribe"].contains(first.normalized) {
         // "cambia el <TITLEWORD> por X" es rename, no replace.
@@ -190,7 +190,7 @@ func matchReplace(_ t: [CommandToken]) -> (Int, Int)? {
     return nil
 }
 
-func matchRewrite(_ t: [CommandToken]) -> (Int, Int)? {
+public func matchRewrite(_ t: [CommandToken]) -> (Int, Int)? {
     guard let first = t.first else { return nil }
     // Si menciona un estilo explícito, es formato (precedencia de formato).
     if t.contains(where: { styleOf($0.normalized) != nil }) { return nil }
@@ -214,14 +214,14 @@ func matchRewrite(_ t: [CommandToken]) -> (Int, Int)? {
     return nil
 }
 
-func styleOf(_ tok: String) -> FormatStyle? {
+public func styleOf(_ tok: String) -> FormatStyle? {
     if tok.hasPrefix("negrit") { return .bold }
     if tok.hasPrefix("cursiv") { return .italic }
     if tok.hasPrefix("subray") { return .underline }
     return nil
 }
 
-func matchFormat(_ t: [CommandToken]) -> FormatStyle? {
+public func matchFormat(_ t: [CommandToken]) -> FormatStyle? {
     guard !t.isEmpty else { return nil }
     if t.count == 1, let s = styleOf(t[0].normalized) { return s }
     let verbs: Set<String> = ["pon", "ponlo", "ponle", "haz", "hazlo", "hazla",
@@ -235,7 +235,7 @@ func matchFormat(_ t: [CommandToken]) -> FormatStyle? {
     return nil
 }
 
-func matchRename(_ t: [CommandToken]) -> (Int, Int)? {
+public func matchRename(_ t: [CommandToken]) -> (Int, Int)? {
     let n = t.map(\.normalized)
     // R1: cambia el <TITLEWORD> {a|por} ARG
     if n.count >= 4 && n[0] == "cambia" && titleWords.contains(n[2]) && (n[3] == "a" || n[3] == "por") {
@@ -311,7 +311,7 @@ func matchRename(_ t: [CommandToken]) -> (Int, Int)? {
     return nil
 }
 
-func matchDelete(_ t: [CommandToken]) -> Bool {
+public func matchDelete(_ t: [CommandToken]) -> Bool {
     guard let first = t.first else { return false }
     let verbs: Set<String> = ["borra", "borralo", "elimina", "eliminalo", "quita",
                               "quitalo", "quitale", "suprime", "tacha", "tachalo",
@@ -336,7 +336,7 @@ func matchDelete(_ t: [CommandToken]) -> Bool {
     return false
 }
 
-func matchRedo(_ t: [CommandToken]) -> Bool {
+public func matchRedo(_ t: [CommandToken]) -> Bool {
     guard let first = t.first else { return false }
     let n = t.map(\.normalized)
     if first.normalized.hasPrefix("rehaz") || first.normalized == "rehazlo" { return true }
@@ -352,7 +352,7 @@ func matchRedo(_ t: [CommandToken]) -> Bool {
     return false
 }
 
-func matchUndo(_ t: [CommandToken]) -> Bool {
+public func matchUndo(_ t: [CommandToken]) -> Bool {
     guard let first = t.first else { return false }
     let n = t.map(\.normalized)
     if first.normalized.hasPrefix("deshaz") || first.normalized == "deshacer" { return true }
@@ -369,7 +369,7 @@ func matchUndo(_ t: [CommandToken]) -> Bool {
     return false
 }
 
-func matchFind(_ t: [CommandToken]) -> (Int, Int)? {
+public func matchFind(_ t: [CommandToken]) -> (Int, Int)? {
     guard let first = t.first else { return nil }
     guard verbMatch(first.normalized, ["busca", "encuentra", "localiza", "halla", "rastrea", "detecta", "caza", "ubica"]) else { return nil }
     var i = 1
@@ -378,21 +378,21 @@ func matchFind(_ t: [CommandToken]) -> (Int, Int)? {
     return i < t.count ? (i, t.count) : nil
 }
 
-func matchSelect(_ t: [CommandToken]) -> (Int, Int)? {
+public func matchSelect(_ t: [CommandToken]) -> (Int, Int)? {
     guard let first = t.first else { return nil }
     guard verbMatch(first.normalized, ["selecciona", "marca", "elige", "toma", "aparta", "senala",
            "delimita", "aisla", "enfoca", "apunta", "enmarca", "encierra"]) else { return nil }
     return t.count > 1 ? (1, t.count) : nil
 }
 
-func matchSave(_ t: [CommandToken]) -> Bool {
+public func matchSave(_ t: [CommandToken]) -> Bool {
     guard let first = t.first else { return false }
     return ["guarda", "guardalo", "archiva", "consigna", "respalda", "fija",
             "asegura", "preserva", "congela", "salvaguarda", "registra",
             "deposita", "custodia"].contains(first.normalized)
 }
 
-func matchOpen(_ t: [CommandToken]) -> (Int, Int)? {
+public func matchOpen(_ t: [CommandToken]) -> (Int, Int)? {
     guard let first = t.first else { return nil }
     guard verbMatch(first.normalized, ["abre", "abrelo", "recupera", "reabre", "carga", "muestra", "trae",
            "desarchiva", "jala", "retoma", "exhibe", "despliega", "proyecta"]) else { return nil }
@@ -400,7 +400,7 @@ func matchOpen(_ t: [CommandToken]) -> (Int, Int)? {
     return (1, t.count)
 }
 
-func matchExport(_ t: [CommandToken]) -> ExportFormat? {
+public func matchExport(_ t: [CommandToken]) -> ExportFormat? {
     guard let first = t.first else { return nil }
     guard ["exporta", "pasalo", "saca", "genera", "convierte", "rinde", "produce", "emite",
            "migra", "funde", "extrae", "publica", "entrega", "baja", "vierte",
@@ -416,7 +416,7 @@ func matchExport(_ t: [CommandToken]) -> ExportFormat? {
 }
 
 /// ¿Pide exportar pero con formato desconocido? → unsupported (no adivinar).
-func matchExportUnknownFormat(_ t: [CommandToken]) -> Bool {
+public func matchExportUnknownFormat(_ t: [CommandToken]) -> Bool {
     guard let first = t.first else { return false }
     guard ["exporta", "convierte", "guarda", "saca", "genera"].contains(first.normalized) else { return false }
     let n = t.map(\.normalized)
@@ -461,7 +461,7 @@ private let unsupportedVerbs: Set<String> = [
 ]
 
 /// "busca en internet|google|la web" → unsupported (no es find del documento).
-func matchInternetSearch(_ t: [CommandToken]) -> Bool {
+public func matchInternetSearch(_ t: [CommandToken]) -> Bool {
     let n = t.map(\.normalized)
     guard n.first == "busca" else { return false }
     let rest = n.dropFirst().joined(separator: " ")
@@ -472,7 +472,7 @@ private let unsupportedPhrases: [[String]] = [
     ["busca", "en", "internet"], ["busca", "en", "google"], ["busca", "en", "la", "web"],
 ]
 
-func matchUnsupported(_ t: [CommandToken]) -> Bool {
+public func matchUnsupported(_ t: [CommandToken]) -> Bool {
     guard let first = t.first else { return false }
     if verbMatch(first.normalized, unsupportedVerbs) { return true }
     let n = t.map(\.normalized)
@@ -485,7 +485,7 @@ func matchUnsupported(_ t: [CommandToken]) -> Bool {
 /// ¿Parece una acción (para segmentación multi)? Versión permisiva:
 /// tipo estricto, verbo de acción suelto, o verbo operational sin tool.
 /// Los segmentos multi pueden combinar soportadas y no soportadas.
-func isActionLike(_ tokens: [CommandToken]) -> Bool {
+public func isActionLike(_ tokens: [CommandToken]) -> Bool {
     if actionType(of: tokens) != nil { return true }
     if matchUnsupported(tokens) { return true }
     if matchUnsupported(tokens) { return true }
@@ -524,7 +524,7 @@ func isActionLike(_ tokens: [CommandToken]) -> Bool {
     return verbs.contains(v) || verbs.contains(stem)
 }
 
-func splitSegments(_ t: [CommandToken]) -> [[CommandToken]]? {
+public func splitSegments(_ t: [CommandToken]) -> [[CommandToken]]? {
     let seps: Set<String> = ["y", "e", ","]
     let discourse: Set<String> = ["luego", "despues", "entonces"]
     var idxs: [Int] = []
@@ -554,7 +554,7 @@ func splitSegments(_ t: [CommandToken]) -> [[CommandToken]]? {
 
 // MARK: - Parse principal
 
-func parseCommand(raw: String) -> ParsedCommand {
+public func parseCommand(raw: String) -> ParsedCommand {
     var tokens = tokenize(raw)
     if tokens.isEmpty { return .unknown }
     // "No, ..." inicial (con coma) modifica la polaridad: se descarta el "no".

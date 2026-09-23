@@ -1,3 +1,4 @@
+import CommandGrammar
 // Fase B: micrófono → wav → SpeechAnalyzer → parseCommand. Sin executor.
 import Foundation
 import Speech

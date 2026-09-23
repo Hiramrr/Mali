@@ -1,3 +1,4 @@
+import CommandGrammar
 // Fase Alternatives+Confidence: CUSTOM LM + alternatives + confidence.
 // NO toca Grammar/Types/contextualStrings/LM/weight/preset/locale/audios/protocolo.
 // Config: mismo preset .phrase + custom hint + .alternativeTranscriptions

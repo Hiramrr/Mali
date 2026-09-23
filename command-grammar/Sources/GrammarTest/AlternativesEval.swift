@@ -1,3 +1,4 @@
+import CommandGrammar
 // Fase Alternatives+Confidence — evaluación sobre los mismos 180 WAVs.
 // CONGELADO: Grammar/Types/contextualStrings/LM/weight/preset/locale/audios/protocolo.
 // - top1 utterance = concatenación de segment tops en orden de rango

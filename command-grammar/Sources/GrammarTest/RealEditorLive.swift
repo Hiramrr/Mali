@@ -1,3 +1,4 @@
+import CommandGrammar
 // Fase 11 — Protocolo live: 36 comandos sobre el editor real (fixtures).
 // Distribución: 8 navegación (4 find + 4 select, immediate),
 // 8 reversibles (3 undo + 3 redo + 2 format, confirm),

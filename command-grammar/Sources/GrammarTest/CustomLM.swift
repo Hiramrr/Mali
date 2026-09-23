@@ -1,3 +1,4 @@
+import CommandGrammar
 // Fase Custom LM v1 — datos y configuración. NO toca CommandGrammar.
 // Locale: es_MX (guion bajo, verificado en DictationTranscriber.supportedLocales).
 // Weight único elegido a priori: 0.6 (moderado, sin tuning post-FINAL).

@@ -1,3 +1,4 @@
+import CommandGrammar
 // Fixtures independientes por trial (Fase 10-balanced).
 // Política, validator, riesgo y mapping SIN cambios.
 // Cada trial parte de fixture(for:) nuevo; jamás se reutiliza estado.

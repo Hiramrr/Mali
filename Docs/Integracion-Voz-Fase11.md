@@ -31,3 +31,27 @@ comandos) + cambios de voz probados en `prueba/real-editor-command-integration`
 - Cablear sin confirmación violaría el invariante `wrongAuto = 0`.
   El siguiente paso es una UI de modo-comando que use `makeVoiceExecutor`
   (proposal → Enter/Esc/R), no un atajo automático.
+
+## Actualización: comandos completos por voz (2026-09-23)
+
+Los 12 comandos probadas ahora funcionan en la app, SIN duplicar la
+gramática: `command-grammar` expone la librería `CommandGrammar`
+(`Types`+`Grammar`, solo cambio de acceso a `public` + `Sendable`; cero
+funcional) y `VoiceModule` depende de ella (fuente única).
+
+Ruta: transcript → legacy (frases exactas) → `parseCommand` real (+reintento
+"cambia el título de X"→"a X", adaptación en app, `Grammar.swift` intacta)
+→ `[EditorCommand]` → bus → sesión/pantalla.
+
+Cobertura: find/select inmediatos (solo selección), delete/replace/format/
+undo/redo/rename/save/open/export ejecutados, rewrite y word con aviso
+honesto (Fase 12), unsupported/unknown/múltiple → dictado o aviso, 0 comandos.
+
+Desviación consciente de Fase 11: la app auto-ejecuta (no hay UI de
+confirmación; construirla es el siguiente paso). Red de seguridad: cada
+mutación es UNA operación de Undo y el HUD dice qué pasó + «deshacer» por
+voz revierte. Borrado/reemplazo/formato sin selección = no-op.
+
+Dictado automático: `continuousListening` (defecto sí) + cierre por pausa
+(1.6 s sin cambios en el parcial). Un toque inicia, cada pausa ejecuta y
+rearma, otro toque o Terminar detiene. El silencio total nunca cierra solo.

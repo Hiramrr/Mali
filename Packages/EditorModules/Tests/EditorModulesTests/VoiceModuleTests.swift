@@ -1,5 +1,6 @@
 import XCTest
 import AppKit
+import CommandGrammar
 import EditorCore
 import EditorEngine
 @testable import ModuleKit
@@ -44,21 +45,21 @@ final class VoiceCommandParserTests: XCTestCase {
         XCTAssertNil(parser.parse(""))
     }
 
-    func testRenameTitle() {
-        let parser = VoiceCommandParser()
-        // El caso reportado: antes caía a dictado e insertaba el texto.
-        XCTAssertEqual(parser.parse("Cambia el título a prueba."), .renameTitle("prueba"))
-        XCTAssertEqual(parser.parse("Cambia el título de prueba."), .renameTitle("prueba"))
-        XCTAssertEqual(parser.parse("Cambia el titulo a Metodología"), .renameTitle("Metodología"))
-        XCTAssertEqual(parser.parse("Pon como título IHC 2026."), .renameTitle("IHC 2026"))
-        XCTAssertEqual(parser.parse("Ponle de título TDAH"), .renameTitle("TDAH"))
-        XCTAssertEqual(parser.parse("Titula Informe final"), .renameTitle("Informe final"))
-        XCTAssertEqual(parser.parse("Renombra a Borrador 2"), .renameTitle("Borrador 2"))
+    @MainActor func testRenameTitleViaGrammar() {
+        // El rename ahora lo resuelve la gramática probada (fuente única),
+        // no el parser legacy: mismo resultado, bestemado en 447 tests.
+        let module = VoiceModule(recognizer: MockSpeechRecognizer())
+        XCTAssertEqual(module.process(rawTranscript: "Cambia el título a prueba."), .command(.renameTitle("prueba")))
+        XCTAssertEqual(module.process(rawTranscript: "Cambia el titulo a Metodología"), .command(.renameTitle("Metodología")))
+        XCTAssertEqual(module.process(rawTranscript: "Pon como título IHC 2026."), .command(.renameTitle("IHC 2026")))
+        XCTAssertEqual(module.process(rawTranscript: "Ponle de título TDAH"), .command(.renameTitle("TDAH")))
+        XCTAssertEqual(module.process(rawTranscript: "Titula Informe final"), .command(.renameTitle("Informe final")))
+        XCTAssertEqual(module.process(rawTranscript: "Renombra a Borrador 2"), .command(.renameTitle("Borrador 2")))
         // El argumento va verbatim: si el STT confunde ("de usabilidad" por
         // ", sensibilidad"), el título refleja el transcript tal cual.
         XCTAssertEqual(
-            parser.parse("Cambia el titulo a prueba, sensibilidad."),
-            .renameTitle("prueba, sensibilidad")
+            module.process(rawTranscript: "Cambia el titulo a prueba, sensibilidad."),
+            .command(.renameTitle("prueba, sensibilidad"))
         )
     }
 
@@ -70,6 +71,87 @@ final class VoiceCommandParserTests: XCTestCase {
         XCTAssertNil(parser.parse("Titula"))
         XCTAssertNil(parser.parse("quiero que cambies el título a otro porque este no me gusta nada"))
         XCTAssertNil(parser.parse("hola mundo"))
+    }
+
+    @MainActor func testFullGrammarCommands() {
+        // La gramática probada (fuente única) resuelve los 12 comandos.
+        let module = VoiceModule(recognizer: MockSpeechRecognizer())
+        XCTAssertEqual(module.process(rawTranscript: "Cambia el título a prueba."), .command(.renameTitle("prueba")))
+        XCTAssertEqual(module.process(rawTranscript: "Busca TDAH."), .command(.findText("TDAH")))
+        XCTAssertEqual(module.process(rawTranscript: "Selecciona IHC."), .command(.selectText("IHC")))
+        XCTAssertEqual(module.process(rawTranscript: "Ponlo en negritas."), .command(.formatSelection(.bold)))
+        XCTAssertEqual(module.process(rawTranscript: "Borra la selección."), .command(.deleteSelection))
+        XCTAssertEqual(module.process(rawTranscript: "Sustituye esto por diseño."), .command(.replaceSelection("diseño")))
+        XCTAssertEqual(module.process(rawTranscript: "Deshaz el cambio."), .command(.undo))
+        XCTAssertEqual(module.process(rawTranscript: "Rehaz el cambio."), .command(.redo))
+        XCTAssertEqual(module.process(rawTranscript: "Guarda el documento."), .command(.saveDocument))
+        XCTAssertEqual(module.process(rawTranscript: "Exporta a pdf."), .command(.exportDocument(.pdf)))
+        XCTAssertEqual(module.process(rawTranscript: "Hazlo más breve."), .command(.rewriteSelection("más breve")))
+    }
+
+    @MainActor func testTitleDeAdaptation() {
+        // El STT confunde a/de: segundo intento con "a", sin tocar Grammar.
+        let module = VoiceModule(recognizer: MockSpeechRecognizer())
+        XCTAssertEqual(module.process(rawTranscript: "Cambia el título de prueba."), .command(.renameTitle("prueba")))
+        XCTAssertEqual(VoiceModule.adaptTitleDe("Cambia el título de prueba."), "Cambia el título a prueba.")
+        XCTAssertNil(VoiceModule.adaptTitleDe("Cambia el título a prueba."))
+        XCTAssertNil(VoiceModule.adaptTitleDe("hola mundo"))
+    }
+
+    @MainActor func testLegacyWinsAndFallbackIsDictation() {
+        let module = VoiceModule(recognizer: MockSpeechRecognizer())
+        // "Borra eso" sigue siendo undo (legacy), no deleteSelection.
+        XCTAssertEqual(module.process(rawTranscript: "borra eso"), .deleteLastInsertion)
+        // Lo no accionable (unsupported/unknown/múltiple) cae a dictado.
+        if case .dictation = module.process(rawTranscript: "Imprime el documento.") { } else {
+            XCTFail("unsupported debe caer a dictado")
+        }
+        if case .dictation = module.process(rawTranscript: "klmn xyz wq") { } else {
+            XCTFail("unknown debe caer a dictado")
+        }
+        if case .dictation = module.process(rawTranscript: "hola coma mundo") { } else {
+            XCTFail("dictado normal intacto")
+        }
+    }
+
+    @MainActor func testCommandMapping() {
+        let module = VoiceModule(recognizer: MockSpeechRecognizer())
+        XCTAssertEqual(module.editorCommands(for: .renameTitle("X")), [.renameTitle("X")])
+        XCTAssertEqual(module.editorCommands(for: .deleteSelection), [.replaceSelection("")])
+        XCTAssertEqual(module.editorCommands(for: .replaceSelection("diseño")), [.replaceSelection("diseño")])
+        XCTAssertEqual(module.editorCommands(for: .formatSelection(.bold)), [.toggleBold])
+        XCTAssertEqual(module.editorCommands(for: .formatSelection(.italic)), [.toggleItalic])
+        XCTAssertEqual(module.editorCommands(for: .formatSelection(.underline)), [.toggleUnderline])
+        XCTAssertEqual(module.editorCommands(for: VoiceIntent.undo), [.undo])
+        XCTAssertEqual(module.editorCommands(for: .redo), [.redo])
+        XCTAssertEqual(module.editorCommands(for: .findText("a")), [.findText("a")])
+        XCTAssertEqual(module.editorCommands(for: .selectText("b")), [.selectText("b")])
+        XCTAssertEqual(module.editorCommands(for: .saveDocument), [.saveDocument])
+        XCTAssertEqual(module.editorCommands(for: .openDocument("x")), [.openDocument("x")])
+        XCTAssertEqual(module.editorCommands(for: .exportDocument(.pdf)), [.exportDocument("pdf")])
+        XCTAssertEqual(module.editorCommands(for: .exportDocument(.plainText)), [.exportDocument("txt")])
+        XCTAssertEqual(module.editorCommands(for: .exportDocument(.richText)), [.exportDocument("rtf")])
+        // Sin fingir: rewrite y word no emiten comandos.
+        XCTAssertEqual(module.editorCommands(for: .rewriteSelection("x")), [])
+        XCTAssertEqual(module.editorCommands(for: .exportDocument(.word)), [])
+        XCTAssertEqual(module.editorCommands(for: .unsupported("z")), [])
+        XCTAssertEqual(module.editorCommands(for: .unknown), [])
+        XCTAssertEqual(module.editorCommands(for: .multipleActions), [])
+    }
+
+    @MainActor func testCommandFeedback() {
+        let module = VoiceModule(recognizer: MockSpeechRecognizer())
+        XCTAssertFalse(module.feedback(for: .saveDocument).isEmpty)
+        XCTAssertFalse(module.feedback(for: .renameTitle("X")).isEmpty)
+        XCTAssertTrue(module.feedback(for: .exportDocument(.word)).contains("Word"))
+        XCTAssertTrue(module.feedback(for: .rewriteSelection("x")).contains("Fase 12"))
+    }
+
+    func testEndpointReached() {
+        XCTAssertTrue(VoiceModule.endpointReached(partial: "hola", unchangedFor: 2.0, timeout: 1.6))
+        XCTAssertFalse(VoiceModule.endpointReached(partial: "hola", unchangedFor: 0.5, timeout: 1.6))
+        XCTAssertFalse(VoiceModule.endpointReached(partial: "   ", unchangedFor: 9.0, timeout: 1.6))
+        XCTAssertFalse(VoiceModule.endpointReached(partial: "", unchangedFor: 9.0, timeout: 1.6))
     }
 }
 
@@ -122,13 +204,11 @@ final class VoiceModuleTests: XCTestCase {
         XCTAssertEqual(module.editorCommands(for: .dictation("Hola.")), [.insertText("Hola.")])
         XCTAssertEqual(module.editorCommands(for: .newline), [.insertText("\n")])
         XCTAssertEqual(module.editorCommands(for: .paragraph), [.insertText("\n\n")])
-        XCTAssertEqual(module.editorCommands(for: .undo), [.undo])
+        XCTAssertEqual(module.editorCommands(for: VoiceIntent.undo), [.undo])
         // "Borra eso" usa el UndoManager del editor: equivale a undo.
         XCTAssertEqual(module.editorCommands(for: .deleteLastInsertion), [.undo])
         XCTAssertEqual(module.editorCommands(for: .cancel), [])
         XCTAssertEqual(module.editorCommands(for: .dictation("")), [])
-        // Renombrar viaja como comando de título, jamás como insertText.
-        XCTAssertEqual(module.editorCommands(for: .renameTitle("prueba")), [.renameTitle("prueba")])
     }
 
     @MainActor func testProcessPrefersCommands() {
@@ -214,7 +294,6 @@ final class VoiceModuleTests: XCTestCase {
     }
 
     @MainActor func testSessionNeverInsertsTitleAsText() {
-        // Defensa en profundidad: si renameTitle llegara a session.send, el
         // texto, la selección y el historial quedan intactos.
         _ = NSApplication.shared
         let window = NSWindow(contentRect: NSRect(x: 0, y: 0, width: 400, height: 300),
@@ -233,4 +312,66 @@ final class VoiceModuleTests: XCTestCase {
         XCTAssertFalse(view.undoManager?.canUndo ?? true)
         window.orderOut(nil)
     }
+
+    @MainActor func testSessionFindSelect() {
+        let (window, view, session) = voiceTestSession(text: "TDAH y accesibilidad con 🧠 y metodología.")
+        session.send(.findText("metodologia"))
+        XCTAssertEqual((view.string as NSString).substring(with: view.selectedRange()), "metodología")
+        let before = view.string
+        session.send(.selectText("🧠"))
+        XCTAssertEqual((view.string as NSString).substring(with: view.selectedRange()), "🧠")
+        XCTAssertEqual(view.string, before, "find/select jamás mutan contenido")
+        XCTAssertFalse(view.undoManager?.canUndo ?? true, "navegación no toca historial")
+        session.send(.findText("zzz-sin-match"))
+        XCTAssertEqual(view.string, before)
+        window.orderOut(nil)
+    }
+
+    @MainActor func testSessionUnderline() {
+        let (window, view, session) = voiceTestSession(text: "texto claro aquí")
+        voiceTestSelect(view, "claro")
+        let before = view.string
+        session.send(.toggleUnderline)
+        XCTAssertTrue(view.string.contains("<u>claro</u>"))
+        view.undoManager?.undo()
+        XCTAssertEqual(view.string, before)
+        window.orderOut(nil)
+    }
+
+    @MainActor func testSessionReplaceDeleteGuards() {
+        let (window, view, session) = voiceTestSession(text: "borra esto por favor")
+        view.setSelectedRange(NSRange(location: 0, length: 0))
+        session.send(.replaceSelection("X"))
+        XCTAssertEqual(view.string, "borra esto por favor", "replace sin selección no inserta")
+        voiceTestSelect(view, "esto")
+        session.send(.replaceSelection(""))
+        XCTAssertEqual(view.string, "borra  por favor", "delete = replace vacío con selección")
+        view.undoManager?.undo()
+        XCTAssertEqual(view.string, "borra esto por favor", "un undo restaura")
+        window.orderOut(nil)
+    }
+}
+
+@MainActor private func voiceTestSession(text: String) -> (NSWindow, NSTextView, EditorSession) {
+    _ = NSApplication.shared
+    let window = NSWindow(contentRect: NSRect(x: 0, y: 0, width: 400, height: 300),
+                          styleMask: [.titled], backing: .buffered, defer: false)
+    let view = NSTextView(usingTextLayoutManager: true)
+    view.isRichText = false
+    view.allowsUndo = true
+    window.contentView = view
+    window.makeFirstResponder(view)
+    view.undoManager?.groupsByEvent = false
+    view.string = text
+    view.breakUndoCoalescing()
+    view.undoManager?.removeAllActions()
+    let session = EditorSession()
+    session.textView = view
+    return (window, view, session)
+}
+
+@MainActor private func voiceTestSelect(_ view: NSTextView, _ query: String) {
+    let r = (view.string as NSString).range(of: query)
+    guard r.location != NSNotFound else { return }
+    view.setSelectedRange(r)
 }

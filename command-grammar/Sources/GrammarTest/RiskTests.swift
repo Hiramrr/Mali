@@ -1,3 +1,4 @@
+import CommandGrammar
 // Tests Risk-Based (Fase 10). Invariante: inmediato solo si
 // supported + contexto válido + policy==immediate; resto sin efectos sin Enter.
 import Foundation

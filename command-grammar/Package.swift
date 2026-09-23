@@ -4,7 +4,13 @@ import PackageDescription
 let package = Package(
     name: "GrammarTest",
     platforms: [.macOS(.v26)],
+    products: [
+        // Librería importable por la app: gramática probada como fuente única.
+        // Solo cambio de acceso (public); cero cambios funcionales.
+        .library(name: "CommandGrammar", targets: ["CommandGrammar"]),
+    ],
     targets: [
-        .executableTarget(name: "GrammarTest", path: "Sources/GrammarTest"),
+        .target(name: "CommandGrammar", path: "Sources/CommandGrammar"),
+        .executableTarget(name: "GrammarTest", dependencies: ["CommandGrammar"], path: "Sources/GrammarTest"),
     ]
 )

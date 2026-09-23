@@ -432,9 +432,16 @@ public struct EditorScreen: View {
         // sesión: cambiar el título renombra el archivo, no el texto.
         .task { @MainActor in
             for await command in await commandBus.commands() {
-                if case .renameTitle(let title) = command {
+                switch command {
+                case .renameTitle(let title):
                     applyVoiceRename(title)
-                } else {
+                case .saveDocument:
+                    applyVoiceSave()
+                case .openDocument:
+                    applyVoiceOpen()
+                case .exportDocument(let format):
+                    applyVoiceExport(format)
+                default:
                     session.send(command)
                 }
             }
@@ -1079,6 +1086,53 @@ public struct EditorScreen: View {
     private func focusEditor() {
         guard !session.readingMode, let view = session.textView else { return }
         view.window?.makeFirstResponder(view)
+    }
+
+    /// Guardar por voz ("Guarda el documento"): delega al NSDocument activo
+    /// vía la cadena de respondedores (sin panel si ya tiene archivo; con
+    /// panel si es borrador nuevo). Respeta autosave y sandbox del sistema.
+    private func applyVoiceSave() {
+        NSApplication.shared.sendAction(#selector(NSDocument.save(_:)), to: nil, from: nil)
+    }
+
+    /// Abrir por voz ("Abre…"): panel del sistema (powerbox: acceso permitido)
+    /// y apertura en la ventana actual. El nombre dicho solo orienta: el
+    /// editor no resuelve nombres a rutas por sí solo.
+    private func applyVoiceOpen() {
+        let panel = NSOpenPanel()
+        panel.message = "Elige el documento para abrir"
+        panel.allowedContentTypes = [UTType.plainText, UTType(filenameExtension: "md"), UTType(filenameExtension: "markdown")].compactMap { $0 }
+        panel.allowsMultipleSelection = false
+        panel.canChooseDirectories = false
+        guard panel.runModal() == .OK, let url = panel.url else { return }
+        openFile(url)
+    }
+
+    /// Exportar por voz. pdf → diálogo de impresión (ahí se guarda como PDF);
+    /// txt/rtf → panel de guardado con el contenido real. word no lo soporta
+    /// el editor (el mapeo ya lo filtra con aviso en el HUD).
+    private func applyVoiceExport(_ format: String) {
+        switch format {
+        case "pdf":
+            PrintDocument.run(text: text, title: documentTitle, window: session.textView?.window)
+        case "txt", "rtf":
+            let panel = NSSavePanel()
+            panel.nameFieldStringValue = documentTitle
+            panel.allowedContentTypes = format == "txt" ? [.plainText] : [.rtf]
+            guard panel.runModal() == .OK, let url = panel.url else { return }
+            do {
+                if format == "txt" {
+                    try Data(text.utf8).write(to: url, options: .atomic)
+                } else if let storage = session.textView?.textStorage,
+                          let data = storage.rtf(from: NSRange(location: 0, length: storage.length), documentAttributes: [:]) {
+                    try data.write(to: url, options: .atomic)
+                }
+            } catch {
+                NSApplication.shared.presentError(error)
+            }
+        default:
+            break
+        }
     }
 
     /// Renombrar por voz ("Cambia el título a X"): actualiza el encabezado
