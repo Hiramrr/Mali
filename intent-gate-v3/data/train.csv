@@ -1,0 +1,1560 @@
+text,label,category,family_id,scope
+Elimina esto.,EDITOR_CONTROL,borrar,c_borrar_00,SUPPORTED
+Elimina eso.,EDITOR_CONTROL,borrar,c_borrar_00,SUPPORTED
+Quita eso.,EDITOR_CONTROL,borrar,c_borrar_00,SUPPORTED
+Borra esta parte.,EDITOR_CONTROL,borrar,c_borrar_01,SUPPORTED
+Elimina esta parte.,EDITOR_CONTROL,borrar,c_borrar_01,SUPPORTED
+Quita esta parte.,EDITOR_CONTROL,borrar,c_borrar_01,SUPPORTED
+Borra esta oración.,EDITOR_CONTROL,borrar,c_borrar_01,SUPPORTED
+Elimina esta oración.,EDITOR_CONTROL,borrar,c_borrar_01,SUPPORTED
+Borra este párrafo.,EDITOR_CONTROL,borrar,c_borrar_02,SUPPORTED
+Elimina este párrafo.,EDITOR_CONTROL,borrar,c_borrar_02,SUPPORTED
+Quita este párrafo.,EDITOR_CONTROL,borrar,c_borrar_02,SUPPORTED
+Elimina este texto.,EDITOR_CONTROL,borrar,c_borrar_02,SUPPORTED
+Quita este texto.,EDITOR_CONTROL,borrar,c_borrar_02,SUPPORTED
+Borra la última frase.,EDITOR_CONTROL,borrar,c_borrar_03,SUPPORTED
+Elimina la última frase.,EDITOR_CONTROL,borrar,c_borrar_03,SUPPORTED
+Quita la última frase.,EDITOR_CONTROL,borrar,c_borrar_03,SUPPORTED
+Borra esta palabra.,EDITOR_CONTROL,borrar,c_borrar_03,SUPPORTED
+Elimina esta palabra.,EDITOR_CONTROL,borrar,c_borrar_03,SUPPORTED
+Quita esta palabra.,EDITOR_CONTROL,borrar,c_borrar_03,SUPPORTED
+Borra lo seleccionado.,EDITOR_CONTROL,borrar,c_borrar_04,SUPPORTED
+Elimina lo seleccionado.,EDITOR_CONTROL,borrar,c_borrar_04,SUPPORTED
+Quita lo seleccionado.,EDITOR_CONTROL,borrar,c_borrar_04,SUPPORTED
+Borra esa sección.,EDITOR_CONTROL,borrar,c_borrar_04,SUPPORTED
+Elimina esa sección.,EDITOR_CONTROL,borrar,c_borrar_04,SUPPORTED
+Quita esa sección.,EDITOR_CONTROL,borrar,c_borrar_04,SUPPORTED
+Borra el borrador.,EDITOR_CONTROL,borrar,c_borrar_05,SUPPORTED
+Elimina el borrador.,EDITOR_CONTROL,borrar,c_borrar_05,SUPPORTED
+Quita el borrador.,EDITOR_CONTROL,borrar,c_borrar_05,SUPPORTED
+Borra la cita.,EDITOR_CONTROL,borrar,c_borrar_05,SUPPORTED
+Elimina la cita.,EDITOR_CONTROL,borrar,c_borrar_05,SUPPORTED
+Quita la cita.,EDITOR_CONTROL,borrar,c_borrar_05,SUPPORTED
+Borra el ejemplo.,EDITOR_CONTROL,borrar,c_borrar_06,SUPPORTED
+Elimina el ejemplo.,EDITOR_CONTROL,borrar,c_borrar_06,SUPPORTED
+Quita el ejemplo.,EDITOR_CONTROL,borrar,c_borrar_06,SUPPORTED
+Borra la nota al pie.,EDITOR_CONTROL,borrar,c_borrar_06,SUPPORTED
+Elimina la nota al pie.,EDITOR_CONTROL,borrar,c_borrar_06,SUPPORTED
+Quita la nota al pie.,EDITOR_CONTROL,borrar,c_borrar_06,SUPPORTED
+Borra el encabezado.,EDITOR_CONTROL,borrar,c_borrar_07,SUPPORTED
+Elimina el encabezado.,EDITOR_CONTROL,borrar,c_borrar_07,SUPPORTED
+Quita el encabezado.,EDITOR_CONTROL,borrar,c_borrar_07,SUPPORTED
+Copia este párrafo.,EDITOR_CONTROL,copy,c_copy_00,UNSUPPORTED
+Copia la cita al portapapeles.,EDITOR_CONTROL,copy,c_copy_00,UNSUPPORTED
+Copia esto para pegarlo después.,EDITOR_CONTROL,copy,c_copy_00,UNSUPPORTED
+Duplica esta sección abajo.,EDITOR_CONTROL,copy,c_copy_00,UNSUPPORTED
+Corrige esta palabra.,EDITOR_CONTROL,correct,c_correct_00,UNSUPPORTED
+Corrige la ortografía de lo seleccionado.,EDITOR_CONTROL,correct,c_correct_00,UNSUPPORTED
+Revisa las tildes de este párrafo.,EDITOR_CONTROL,correct,c_correct_00,UNSUPPORTED
+"Hay una errata, corrígela.",EDITOR_CONTROL,correct,c_correct_00,UNSUPPORTED
+Verifica la gramática.,EDITOR_CONTROL,correct,c_correct_00,UNSUPPORTED
+Pule la puntuación final.,EDITOR_CONTROL,correct,c_correct_00,UNSUPPORTED
+Corta este fragmento.,EDITOR_CONTROL,cut,c_cut_00,UNSUPPORTED
+Recorta la introducción.,EDITOR_CONTROL,cut,c_cut_00,UNSUPPORTED
+Corta y pega esto al final.,EDITOR_CONTROL,cut,c_cut_00,UNSUPPORTED
+Mueve este bloque más arriba.,EDITOR_CONTROL,cut,c_cut_00,UNSUPPORTED
+Hazlo.,EDITOR_CONTROL,deictico,c_deictico_00,SUPPORTED
+Hazlo diferente.,EDITOR_CONTROL,deictico,c_deictico_01,SUPPORTED
+Esto quítalo.,EDITOR_CONTROL,deictico,c_deictico_01,SUPPORTED
+Eso cámbialo.,EDITOR_CONTROL,deictico,c_deictico_01,SUPPORTED
+Arregla eso.,EDITOR_CONTROL,deictico,c_deictico_01,SUPPORTED
+Mejora esto.,EDITOR_CONTROL,deictico,c_deictico_01,SUPPORTED
+Mueve eso aquí.,EDITOR_CONTROL,deictico,c_deictico_02,SUPPORTED
+Copia esto abajo.,EDITOR_CONTROL,deictico,c_deictico_02,SUPPORTED
+Guarda el documento.,EDITOR_CONTROL,deictico,c_deictico_02,SUPPORTED
+Haz eso.,EDITOR_CONTROL,deictico,c_deictico_02,SUPPORTED
+Cambia aquello.,EDITOR_CONTROL,deictico,c_deictico_02,SUPPORTED
+Ponlo ahí.,EDITOR_CONTROL,deictico,c_deictico_02,SUPPORTED
+Ponle nombre al documento.,EDITOR_CONTROL,document-title,c_doctitle_00,UNSUPPORTED
+Cambia el nombre del archivo.,EDITOR_CONTROL,document-title,c_doctitle_00,UNSUPPORTED
+Renombra el archivo como informe final.,EDITOR_CONTROL,document-title,c_doctitle_00,UNSUPPORTED
+Actualiza las propiedades del documento.,EDITOR_CONTROL,document-title,c_doctitle_00,UNSUPPORTED
+Agrega el autor a los metadatos.,EDITOR_CONTROL,document-title,c_doctitle_00,UNSUPPORTED
+Exporta esto como PDF.,EDITOR_CONTROL,export,c_export_00,UNSUPPORTED
+Exporta el documento como epub.,EDITOR_CONTROL,export,c_export_00,UNSUPPORTED
+Exporta a texto plano.,EDITOR_CONTROL,export,c_export_00,UNSUPPORTED
+Genera el pdf para enviar.,EDITOR_CONTROL,export,c_export_00,UNSUPPORTED
+Convierte el archivo a Word.,EDITOR_CONTROL,export,c_export_00,UNSUPPORTED
+Busca la palabra accesibilidad.,EDITOR_CONTROL,find,c_find_00,UNSUPPORTED
+Busca todas las menciones al autor.,EDITOR_CONTROL,find,c_find_00,UNSUPPORTED
+Encuentra la sección de resultados.,EDITOR_CONTROL,find,c_find_00,UNSUPPORTED
+Localiza la cita que falta.,EDITOR_CONTROL,find,c_find_00,UNSUPPORTED
+Busca el párrafo duplicado.,EDITOR_CONTROL,find,c_find_00,UNSUPPORTED
+Encuentra dónde dice conclusiones.,EDITOR_CONTROL,find,c_find_00,UNSUPPORTED
+Busca comas y reemplázalas por punto y coma.,EDITOR_CONTROL,find-replace,c_findreplace_00,UNSUPPORTED
+Encuentra espacios dobles y elimínalos.,EDITOR_CONTROL,find-replace,c_findreplace_00,UNSUPPORTED
+Busca el nombre viejo y actualízalo en todo el texto.,EDITOR_CONTROL,find-replace,c_findreplace_00,UNSUPPORTED
+Subraya esto.,EDITOR_CONTROL,formato,c_formato_b_00,SUPPORTED
+Quita las negritas de aquí.,EDITOR_CONTROL,formato,c_formato_b_00,SUPPORTED
+Pon el título en mayúsculas.,EDITOR_CONTROL,formato,c_formato_b_00,SUPPORTED
+Convierte esto en una lista.,EDITOR_CONTROL,formato,c_formato_b_00,SUPPORTED
+Centra este encabezado.,EDITOR_CONTROL,formato,c_formato_b_00,SUPPORTED
+Ponlo en negritas.,EDITOR_CONTROL,formato,c_formato_b_00,SUPPORTED
+Inserta una imagen después del título.,EDITOR_CONTROL,insert,c_insert_00,UNSUPPORTED
+Agrega una nota al pie aquí.,EDITOR_CONTROL,insert,c_insert_00,UNSUPPORTED
+Crea una tabla de dos columnas.,EDITOR_CONTROL,insert,c_insert_00,UNSUPPORTED
+Inserta el número de página.,EDITOR_CONTROL,insert,c_insert_00,UNSUPPORTED
+Agrega el encabezado institucional.,EDITOR_CONTROL,insert,c_insert_00,UNSUPPORTED
+Inserta un salto de página.,EDITOR_CONTROL,insert,c_insert_00,UNSUPPORTED
+Abre el archivo anterior.,EDITOR_CONTROL,open,c_open_00,UNSUPPORTED
+Abre el documento adjunto de ayer.,EDITOR_CONTROL,open,c_open_00,UNSUPPORTED
+Abre la carpeta del proyecto.,EDITOR_CONTROL,open,c_open_00,UNSUPPORTED
+Abre el último borrador.,EDITOR_CONTROL,open,c_open_00,UNSUPPORTED
+Abre el pdf de referencia.,EDITOR_CONTROL,open,c_open_00,UNSUPPORTED
+Abre una ventana nueva.,EDITOR_CONTROL,open,c_open_00,UNSUPPORTED
+Pega lo que copiaste.,EDITOR_CONTROL,paste,c_paste_00,UNSUPPORTED
+Pega aquí el texto.,EDITOR_CONTROL,paste,c_paste_00,UNSUPPORTED
+Pega sin formato.,EDITOR_CONTROL,paste,c_paste_00,UNSUPPORTED
+Inserta lo del portapapeles.,EDITOR_CONTROL,paste,c_paste_00,UNSUPPORTED
+Imprime esta página.,EDITOR_CONTROL,print,c_print_00,UNSUPPORTED
+Imprime solamente las páginas pares.,EDITOR_CONTROL,print,c_print_00,UNSUPPORTED
+Imprime el documento completo.,EDITOR_CONTROL,print,c_print_00,UNSUPPORTED
+Manda a imprimir dos copias.,EDITOR_CONTROL,print,c_print_00,UNSUPPORTED
+Previsualiza antes de imprimir.,EDITOR_CONTROL,print,c_print_00,UNSUPPORTED
+Léeme este párrafo.,EDITOR_CONTROL,read-aloud,c_readaloud_00,UNSUPPORTED
+Lee en voz alta lo seleccionado.,EDITOR_CONTROL,read-aloud,c_readaloud_00,UNSUPPORTED
+Lee desde aquí hasta el final.,EDITOR_CONTROL,read-aloud,c_readaloud_00,UNSUPPORTED
+Reproduce la lectura del capítulo.,EDITOR_CONTROL,read-aloud,c_readaloud_00,UNSUPPORTED
+Léeme el resumen en voz alta.,EDITOR_CONTROL,read-aloud,c_readaloud_00,UNSUPPORTED
+Rehaz el cambio anterior.,EDITOR_CONTROL,redo,c_redo_00,SUPPORTED
+Vuelve a aplicar lo que deshiciste.,EDITOR_CONTROL,redo,c_redo_00,SUPPORTED
+Rehaz eso.,EDITOR_CONTROL,redo,c_redo_00,SUPPORTED
+Recupera lo que deshiciste.,EDITOR_CONTROL,redo,c_redo_00,SUPPORTED
+Deshaz el deshacer.,EDITOR_CONTROL,redo,c_redo_00,SUPPORTED
+Rehaz la última acción.,EDITOR_CONTROL,redo,c_redo_01,SUPPORTED
+Repite lo que quitaste.,EDITOR_CONTROL,redo,c_redo_01,SUPPORTED
+Reemplaza esta palabra por dificultades.,EDITOR_CONTROL,reemplazar,c_reemplazar_00,SUPPORTED
+Sustituye esta palabra por dificultades.,EDITOR_CONTROL,reemplazar,c_reemplazar_00,SUPPORTED
+Cambia esta palabra por interfaz.,EDITOR_CONTROL,reemplazar,c_reemplazar_00,SUPPORTED
+Reemplaza esta palabra por interfaz.,EDITOR_CONTROL,reemplazar,c_reemplazar_00,SUPPORTED
+Sustituye esta palabra por interfaz.,EDITOR_CONTROL,reemplazar,c_reemplazar_00,SUPPORTED
+Cambia esta palabra por accesibilidad.,EDITOR_CONTROL,reemplazar,c_reemplazar_01,SUPPORTED
+Reemplaza esta palabra por accesibilidad.,EDITOR_CONTROL,reemplazar,c_reemplazar_01,SUPPORTED
+Sustituye esta palabra por accesibilidad.,EDITOR_CONTROL,reemplazar,c_reemplazar_01,SUPPORTED
+Cambia esta palabra por sistema.,EDITOR_CONTROL,reemplazar,c_reemplazar_01,SUPPORTED
+Reemplaza esta palabra por sistema.,EDITOR_CONTROL,reemplazar,c_reemplazar_01,SUPPORTED
+Sustituye esta palabra por sistema.,EDITOR_CONTROL,reemplazar,c_reemplazar_01,SUPPORTED
+Cambia esta palabra por diseño.,EDITOR_CONTROL,reemplazar,c_reemplazar_02,SUPPORTED
+Reemplaza esta palabra por diseño.,EDITOR_CONTROL,reemplazar,c_reemplazar_02,SUPPORTED
+Sustituye esta palabra por diseño.,EDITOR_CONTROL,reemplazar,c_reemplazar_02,SUPPORTED
+Cambia esta palabra por término.,EDITOR_CONTROL,reemplazar,c_reemplazar_02,SUPPORTED
+Reemplaza esta palabra por término.,EDITOR_CONTROL,reemplazar,c_reemplazar_02,SUPPORTED
+Sustituye esta palabra por término.,EDITOR_CONTROL,reemplazar,c_reemplazar_02,SUPPORTED
+Sustituye esa expresión por algo más claro.,EDITOR_CONTROL,reemplazar,c_reemplazar_b_00,SUPPORTED
+Reemplaza este término en todo el documento.,EDITOR_CONTROL,reemplazar,c_reemplazar_b_00,SUPPORTED
+Pon dificultades donde dice problemas.,EDITOR_CONTROL,reemplazar,c_reemplazar_b_00,SUPPORTED
+Intercambia el orden de estos dos párrafos.,EDITOR_CONTROL,reemplazar,c_reemplazar_b_00,SUPPORTED
+Cambia las comillas inglesas por latinas.,EDITOR_CONTROL,reemplazar,c_reemplazar_b_00,SUPPORTED
+Donde dice error pon errata.,EDITOR_CONTROL,reemplazar,c_reemplazar_b_00,SUPPORTED
+Haz este párrafo más corto.,EDITOR_CONTROL,reformular,c_reformular_00,SUPPORTED
+Reescribe lo seleccionado más corto.,EDITOR_CONTROL,reformular,c_reformular_00,SUPPORTED
+Hazlo más formal.,EDITOR_CONTROL,reformular,c_reformular_00,SUPPORTED
+Haz este párrafo más formal.,EDITOR_CONTROL,reformular,c_reformular_00,SUPPORTED
+Reescribe lo seleccionado más formal.,EDITOR_CONTROL,reformular,c_reformular_00,SUPPORTED
+Hazlo más claro.,EDITOR_CONTROL,reformular,c_reformular_01,SUPPORTED
+Reescribe lo seleccionado más claro.,EDITOR_CONTROL,reformular,c_reformular_01,SUPPORTED
+Hazlo menos absoluto.,EDITOR_CONTROL,reformular,c_reformular_01,SUPPORTED
+Haz este párrafo menos absoluto.,EDITOR_CONTROL,reformular,c_reformular_01,SUPPORTED
+Reescribe lo seleccionado menos absoluto.,EDITOR_CONTROL,reformular,c_reformular_01,SUPPORTED
+Haz este párrafo más breve.,EDITOR_CONTROL,reformular,c_reformular_02,SUPPORTED
+Reescribe lo seleccionado más breve.,EDITOR_CONTROL,reformular,c_reformular_02,SUPPORTED
+Hazlo más directo.,EDITOR_CONTROL,reformular,c_reformular_02,SUPPORTED
+Haz este párrafo más directo.,EDITOR_CONTROL,reformular,c_reformular_02,SUPPORTED
+Reescribe lo seleccionado más directo.,EDITOR_CONTROL,reformular,c_reformular_02,SUPPORTED
+Hazlo más sencillo.,EDITOR_CONTROL,reformular,c_reformular_03,SUPPORTED
+Haz este párrafo más sencillo.,EDITOR_CONTROL,reformular,c_reformular_03,SUPPORTED
+Reescribe lo seleccionado más sencillo.,EDITOR_CONTROL,reformular,c_reformular_03,SUPPORTED
+Hazlo más académico.,EDITOR_CONTROL,reformular,c_reformular_03,SUPPORTED
+Haz este párrafo más académico.,EDITOR_CONTROL,reformular,c_reformular_03,SUPPORTED
+Reescribe lo seleccionado más académico.,EDITOR_CONTROL,reformular,c_reformular_03,SUPPORTED
+Hazlo más persuasivo.,EDITOR_CONTROL,reformular,c_reformular_04,SUPPORTED
+Haz este párrafo más persuasivo.,EDITOR_CONTROL,reformular,c_reformular_04,SUPPORTED
+Reescribe lo seleccionado más persuasivo.,EDITOR_CONTROL,reformular,c_reformular_04,SUPPORTED
+Hazlo más neutro.,EDITOR_CONTROL,reformular,c_reformular_04,SUPPORTED
+Haz este párrafo más neutro.,EDITOR_CONTROL,reformular,c_reformular_04,SUPPORTED
+Reescribe lo seleccionado más neutro.,EDITOR_CONTROL,reformular,c_reformular_04,SUPPORTED
+Dale otra redacción a esta parte.,EDITOR_CONTROL,reformular,c_reformular_b_00,SUPPORTED
+Mejora la redacción de lo seleccionado.,EDITOR_CONTROL,reformular,c_reformular_b_00,SUPPORTED
+Suaviza el tono de este párrafo.,EDITOR_CONTROL,reformular,c_reformular_b_00,SUPPORTED
+Acorta este párrafo.,EDITOR_CONTROL,reformular,c_reformular_b_00,SUPPORTED
+Condensa estas tres frases en una.,EDITOR_CONTROL,reformular,c_reformular_b_00,SUPPORTED
+Resume este documento en un párrafo.,EDITOR_CONTROL,reformular,c_reformular_b_01,SUPPORTED
+Sintetiza las ideas principales.,EDITOR_CONTROL,reformular,c_reformular_b_01,SUPPORTED
+Expande esta sección con más detalles.,EDITOR_CONTROL,reformular,c_reformular_b_01,SUPPORTED
+Añade un ejemplo a este párrafo.,EDITOR_CONTROL,reformular,c_reformular_b_01,SUPPORTED
+Guarda el documento.,EDITOR_CONTROL,save,c_save_00,UNSUPPORTED
+Guarda los cambios.,EDITOR_CONTROL,save,c_save_00,UNSUPPORTED
+Guarda una copia.,EDITOR_CONTROL,save,c_save_00,UNSUPPORTED
+Guarda antes de salir.,EDITOR_CONTROL,save,c_save_00,UNSUPPORTED
+Guarda el archivo con otro nombre.,EDITOR_CONTROL,save,c_save_00,UNSUPPORTED
+Guarda el progreso hasta aquí.,EDITOR_CONTROL,save,c_save_00,UNSUPPORTED
+Guarda como pdf.,EDITOR_CONTROL,save-as,c_saveas_00,UNSUPPORTED
+Guarda una copia en el escritorio.,EDITOR_CONTROL,save-as,c_saveas_00,UNSUPPORTED
+Exporta una copia de respaldo.,EDITOR_CONTROL,save-as,c_saveas_00,UNSUPPORTED
+Guarda con el nombre final.,EDITOR_CONTROL,save-as,c_saveas_00,UNSUPPORTED
+Duplica el archivo con fecha de hoy.,EDITOR_CONTROL,save-as,c_saveas_00,UNSUPPORTED
+Selecciona el segundo párrafo.,EDITOR_CONTROL,seleccion,c_seleccion_00,SUPPORTED
+Marca el segundo párrafo.,EDITOR_CONTROL,seleccion,c_seleccion_00,SUPPORTED
+Selecciona la última sección.,EDITOR_CONTROL,seleccion,c_seleccion_00,SUPPORTED
+Marca la última sección.,EDITOR_CONTROL,seleccion,c_seleccion_00,SUPPORTED
+Selecciona el primer capítulo.,EDITOR_CONTROL,seleccion,c_seleccion_00,SUPPORTED
+Marca el primer capítulo.,EDITOR_CONTROL,seleccion,c_seleccion_00,SUPPORTED
+Selecciona desde aquí hasta el final.,EDITOR_CONTROL,select,c_select2_00,SUPPORTED
+Marca la oración completa.,EDITOR_CONTROL,select,c_select2_00,SUPPORTED
+Elige todo el capítulo.,EDITOR_CONTROL,select,c_select2_00,SUPPORTED
+Selecciona la tabla entera.,EDITOR_CONTROL,select,c_select2_00,SUPPORTED
+Pon como título Metodología.,EDITOR_CONTROL,titulo,c_titulo_00,SUPPORTED
+Cámbiale el título a Metodología.,EDITOR_CONTROL,titulo,c_titulo_00,SUPPORTED
+Actualiza el título a Metodología.,EDITOR_CONTROL,titulo,c_titulo_00,SUPPORTED
+Quiero que cambies el título a Metodología.,EDITOR_CONTROL,titulo,c_titulo_00,SUPPORTED
+Pon como título Resultados.,EDITOR_CONTROL,titulo,c_titulo_01,SUPPORTED
+Cámbiale el título a Resultados.,EDITOR_CONTROL,titulo,c_titulo_01,SUPPORTED
+Actualiza el título a Resultados.,EDITOR_CONTROL,titulo,c_titulo_01,SUPPORTED
+Quiero que cambies el título a Resultados.,EDITOR_CONTROL,titulo,c_titulo_01,SUPPORTED
+Cambia el título a Introducción.,EDITOR_CONTROL,titulo,c_titulo_01,SUPPORTED
+Pon como título Introducción.,EDITOR_CONTROL,titulo,c_titulo_01,SUPPORTED
+Cámbiale el título a Introducción.,EDITOR_CONTROL,titulo,c_titulo_02,SUPPORTED
+Actualiza el título a Introducción.,EDITOR_CONTROL,titulo,c_titulo_02,SUPPORTED
+Quiero que cambies el título a Introducción.,EDITOR_CONTROL,titulo,c_titulo_02,SUPPORTED
+Cambia el título a Conclusiones.,EDITOR_CONTROL,titulo,c_titulo_02,SUPPORTED
+Pon como título Conclusiones.,EDITOR_CONTROL,titulo,c_titulo_02,SUPPORTED
+Cámbiale el título a Conclusiones.,EDITOR_CONTROL,titulo,c_titulo_02,SUPPORTED
+Actualiza el título a Conclusiones.,EDITOR_CONTROL,titulo,c_titulo_03,SUPPORTED
+Quiero que cambies el título a Conclusiones.,EDITOR_CONTROL,titulo,c_titulo_03,SUPPORTED
+Cambia el título a Evaluación.,EDITOR_CONTROL,titulo,c_titulo_03,SUPPORTED
+Pon como título Evaluación.,EDITOR_CONTROL,titulo,c_titulo_03,SUPPORTED
+Cámbiale el título a Evaluación.,EDITOR_CONTROL,titulo,c_titulo_03,SUPPORTED
+Actualiza el título a Evaluación.,EDITOR_CONTROL,titulo,c_titulo_03,SUPPORTED
+Quiero que cambies el título a Evaluación.,EDITOR_CONTROL,titulo,c_titulo_04,SUPPORTED
+Cambia el título a Discusión.,EDITOR_CONTROL,titulo,c_titulo_04,SUPPORTED
+Pon como título Discusión.,EDITOR_CONTROL,titulo,c_titulo_04,SUPPORTED
+Cámbiale el título a Discusión.,EDITOR_CONTROL,titulo,c_titulo_04,SUPPORTED
+Actualiza el título a Discusión.,EDITOR_CONTROL,titulo,c_titulo_04,SUPPORTED
+Quiero que cambies el título a Discusión.,EDITOR_CONTROL,titulo,c_titulo_04,SUPPORTED
+Cambia el título a Resumen.,EDITOR_CONTROL,titulo,c_titulo_05,SUPPORTED
+Pon como título Resumen.,EDITOR_CONTROL,titulo,c_titulo_05,SUPPORTED
+Cámbiale el título a Resumen.,EDITOR_CONTROL,titulo,c_titulo_05,SUPPORTED
+Actualiza el título a Resumen.,EDITOR_CONTROL,titulo,c_titulo_05,SUPPORTED
+Quiero que cambies el título a Resumen.,EDITOR_CONTROL,titulo,c_titulo_05,SUPPORTED
+Cambia el título a Hallazgos.,EDITOR_CONTROL,titulo,c_titulo_05,SUPPORTED
+Pon como título Hallazgos.,EDITOR_CONTROL,titulo,c_titulo_06,SUPPORTED
+Cámbiale el título a Hallazgos.,EDITOR_CONTROL,titulo,c_titulo_06,SUPPORTED
+Actualiza el título a Hallazgos.,EDITOR_CONTROL,titulo,c_titulo_06,SUPPORTED
+Quiero que cambies el título a Hallazgos.,EDITOR_CONTROL,titulo,c_titulo_06,SUPPORTED
+Cambia el título a Propuesta.,EDITOR_CONTROL,titulo,c_titulo_06,SUPPORTED
+Pon como título Propuesta.,EDITOR_CONTROL,titulo,c_titulo_06,SUPPORTED
+Cámbiale el título a Propuesta.,EDITOR_CONTROL,titulo,c_titulo_07,SUPPORTED
+Actualiza el título a Propuesta.,EDITOR_CONTROL,titulo,c_titulo_07,SUPPORTED
+Quiero que cambies el título a Propuesta.,EDITOR_CONTROL,titulo,c_titulo_07,SUPPORTED
+Cambia el título a Síntesis.,EDITOR_CONTROL,titulo,c_titulo_07,SUPPORTED
+Pon como título Síntesis.,EDITOR_CONTROL,titulo,c_titulo_07,SUPPORTED
+Cámbiale el título a Síntesis.,EDITOR_CONTROL,titulo,c_titulo_07,SUPPORTED
+Actualiza el título a Síntesis.,EDITOR_CONTROL,titulo,c_titulo_08,SUPPORTED
+Quiero que cambies el título a Síntesis.,EDITOR_CONTROL,titulo,c_titulo_08,SUPPORTED
+Cambia el título a Antecedentes.,EDITOR_CONTROL,titulo,c_titulo_08,SUPPORTED
+Pon como título Antecedentes.,EDITOR_CONTROL,titulo,c_titulo_08,SUPPORTED
+Cámbiale el título a Antecedentes.,EDITOR_CONTROL,titulo,c_titulo_08,SUPPORTED
+Actualiza el título a Antecedentes.,EDITOR_CONTROL,titulo,c_titulo_08,SUPPORTED
+Quiero que cambies el título a Antecedentes.,EDITOR_CONTROL,titulo,c_titulo_09,SUPPORTED
+¿Puedes ponerle título a este documento?,EDITOR_CONTROL,titulo,c_titulo_b_00,SUPPORTED
+Reescribe el título para que sea más descriptivo.,EDITOR_CONTROL,titulo,c_titulo_b_00,SUPPORTED
+"Corrige el título, tiene una errata.",EDITOR_CONTROL,titulo,c_titulo_b_00,SUPPORTED
+Haz el título más corto.,EDITOR_CONTROL,titulo,c_titulo_b_00,SUPPORTED
+Titula esto como Apéndice.,EDITOR_CONTROL,titulo,c_titulo_b_00,SUPPORTED
+Renombra el encabezado principal.,EDITOR_CONTROL,titulo,c_titulo_b_00,SUPPORTED
+Haz esto más formal.,EDITOR_CONTROL,tone,c_tone_00,UNSUPPORTED
+Dale un tono más cercano.,EDITOR_CONTROL,tone,c_tone_00,UNSUPPORTED
+Hazlo más técnico.,EDITOR_CONTROL,tone,c_tone_00,UNSUPPORTED
+Hazlo más divulgativo.,EDITOR_CONTROL,tone,c_tone_00,UNSUPPORTED
+Hazlo sonar más seguro.,EDITOR_CONTROL,tone,c_tone_00,UNSUPPORTED
+Hazlo menos ambiguo.,EDITOR_CONTROL,tone,c_tone_00,UNSUPPORTED
+Deshaz eso.,EDITOR_CONTROL,undo,c_undo_00,SUPPORTED
+Vuelve a como estaba.,EDITOR_CONTROL,undo,c_undo_00,SUPPORTED
+"No, déjalo como estaba.",EDITOR_CONTROL,undo,c_undo_00,SUPPORTED
+Revierte lo último que hiciste.,EDITOR_CONTROL,undo,c_undo_00,SUPPORTED
+Cancela la última edición.,EDITOR_CONTROL,undo,c_undo_00,SUPPORTED
+Anula lo que acabas de hacer.,EDITOR_CONTROL,undo,c_undo_01,SUPPORTED
+Échalo para atrás.,EDITOR_CONTROL,undo,c_undo_01,SUPPORTED
+Vuelve atrás.,EDITOR_CONTROL,undo,c_undo_01,SUPPORTED
+Recupera la versión previa.,EDITOR_CONTROL,undo,c_undo_01,SUPPORTED
+La tesis aborda órdenes habladas ambiguas.,DICTATION,academico,d_acad2_a_00,
+La tesis cuantifica interrupciones al redactar.,DICTATION,academico,d_acad2_a_00,
+La tesis compara estrategias de confirmación.,DICTATION,academico,d_acad2_a_00,
+La tesis documenta errores del dictado.,DICTATION,academico,d_acad2_a_00,
+El informe aborda órdenes habladas ambiguas.,DICTATION,academico,d_acad2_a_00,
+El informe cuantifica interrupciones al redactar.,DICTATION,academico,d_acad2_a_00,
+El informe compara estrategias de confirmación.,DICTATION,academico,d_acad2_a_01,
+El informe documenta errores del dictado.,DICTATION,academico,d_acad2_a_01,
+La prueba piloto aborda órdenes habladas ambiguas.,DICTATION,academico,d_acad2_a_01,
+La prueba piloto cuantifica interrupciones al redactar.,DICTATION,academico,d_acad2_a_01,
+La prueba piloto compara estrategias de confirmación.,DICTATION,academico,d_acad2_a_01,
+La prueba piloto documenta errores del dictado.,DICTATION,academico,d_acad2_a_01,
+El taller compara estrategias de confirmación.,DICTATION,academico,d_acad2_a_03,
+El taller documenta errores del dictado.,DICTATION,academico,d_acad2_a_03,
+El seminario aborda órdenes habladas ambiguas.,DICTATION,academico,d_acad2_a_03,
+El seminario cuantifica interrupciones al redactar.,DICTATION,academico,d_acad2_a_03,
+El seminario compara estrategias de confirmación.,DICTATION,academico,d_acad2_a_03,
+El seminario documenta errores del dictado.,DICTATION,academico,d_acad2_a_03,
+La demo aborda órdenes habladas ambiguas.,DICTATION,academico,d_acad2_a_04,
+La demo cuantifica interrupciones al redactar.,DICTATION,academico,d_acad2_a_04,
+La demo compara estrategias de confirmación.,DICTATION,academico,d_acad2_a_04,
+La demo documenta errores del dictado.,DICTATION,academico,d_acad2_a_04,
+El manual aborda órdenes habladas ambiguas.,DICTATION,academico,d_acad2_a_04,
+El manual cuantifica interrupciones al redactar.,DICTATION,academico,d_acad2_a_04,
+El manual compara estrategias de confirmación.,DICTATION,academico,d_acad2_a_05,
+El manual documenta errores del dictado.,DICTATION,academico,d_acad2_a_05,
+La encuesta aborda órdenes habladas ambiguas.,DICTATION,academico,d_acad2_a_05,
+La encuesta cuantifica interrupciones al redactar.,DICTATION,academico,d_acad2_a_05,
+La encuesta compara estrategias de confirmación.,DICTATION,academico,d_acad2_a_05,
+La encuesta documenta errores del dictado.,DICTATION,academico,d_acad2_a_05,
+El registro aborda órdenes habladas ambiguas.,DICTATION,academico,d_acad2_a_06,
+El registro cuantifica interrupciones al redactar.,DICTATION,academico,d_acad2_a_06,
+El registro compara estrategias de confirmación.,DICTATION,academico,d_acad2_a_06,
+El registro documenta errores del dictado.,DICTATION,academico,d_acad2_a_06,
+La tesis propone umbrales conservadores.,DICTATION,academico,d_acad2_b_00,
+La tesis evalúa satisfacción con escalas.,DICTATION,academico,d_acad2_b_00,
+La tesis registra correcciones por minuto.,DICTATION,academico,d_acad2_b_00,
+La tesis cierra con pautas de diseño.,DICTATION,academico,d_acad2_b_00,
+El informe propone umbrales conservadores.,DICTATION,academico,d_acad2_b_00,
+El informe evalúa satisfacción con escalas.,DICTATION,academico,d_acad2_b_00,
+El informe registra correcciones por minuto.,DICTATION,academico,d_acad2_b_01,
+El informe cierra con pautas de diseño.,DICTATION,academico,d_acad2_b_01,
+La prueba piloto propone umbrales conservadores.,DICTATION,academico,d_acad2_b_01,
+La prueba piloto evalúa satisfacción con escalas.,DICTATION,academico,d_acad2_b_01,
+La prueba piloto registra correcciones por minuto.,DICTATION,academico,d_acad2_b_01,
+La prueba piloto cierra con pautas de diseño.,DICTATION,academico,d_acad2_b_01,
+El grupo focal propone umbrales conservadores.,DICTATION,academico,d_acad2_b_02,
+El grupo focal evalúa satisfacción con escalas.,DICTATION,academico,d_acad2_b_02,
+El grupo focal registra correcciones por minuto.,DICTATION,academico,d_acad2_b_02,
+El grupo focal cierra con pautas de diseño.,DICTATION,academico,d_acad2_b_02,
+El taller propone umbrales conservadores.,DICTATION,academico,d_acad2_b_02,
+El taller evalúa satisfacción con escalas.,DICTATION,academico,d_acad2_b_02,
+El registro propone umbrales conservadores.,DICTATION,academico,d_acad2_b_06,
+El registro evalúa satisfacción con escalas.,DICTATION,academico,d_acad2_b_06,
+El registro registra correcciones por minuto.,DICTATION,academico,d_acad2_b_06,
+El registro cierra con pautas de diseño.,DICTATION,academico,d_acad2_b_06,
+El estudio muestra mejoras en velocidad de escritura.,DICTATION,academico,d_acad_suj_a_00,
+El estudio confirma el valor del contexto al dictar.,DICTATION,academico,d_acad_suj_a_00,
+El estudio revela patrones de uso de la voz.,DICTATION,academico,d_acad_suj_a_00,
+El estudio sugiere líneas de trabajo futuro.,DICTATION,academico,d_acad_suj_a_00,
+La investigación muestra mejoras en velocidad de escritura.,DICTATION,academico,d_acad_suj_a_00,
+La investigación confirma el valor del contexto al dictar.,DICTATION,academico,d_acad_suj_a_00,
+El experimento muestra mejoras en velocidad de escritura.,DICTATION,academico,d_acad_suj_a_02,
+El experimento confirma el valor del contexto al dictar.,DICTATION,academico,d_acad_suj_a_02,
+El experimento revela patrones de uso de la voz.,DICTATION,academico,d_acad_suj_a_02,
+El experimento sugiere líneas de trabajo futuro.,DICTATION,academico,d_acad_suj_a_02,
+La evaluación muestra mejoras en velocidad de escritura.,DICTATION,academico,d_acad_suj_a_02,
+La evaluación confirma el valor del contexto al dictar.,DICTATION,academico,d_acad_suj_a_02,
+La evaluación revela patrones de uso de la voz.,DICTATION,academico,d_acad_suj_a_03,
+La evaluación sugiere líneas de trabajo futuro.,DICTATION,academico,d_acad_suj_a_03,
+El prototipo muestra mejoras en velocidad de escritura.,DICTATION,academico,d_acad_suj_a_03,
+El prototipo confirma el valor del contexto al dictar.,DICTATION,academico,d_acad_suj_a_03,
+El prototipo revela patrones de uso de la voz.,DICTATION,academico,d_acad_suj_a_03,
+El prototipo sugiere líneas de trabajo futuro.,DICTATION,academico,d_acad_suj_a_03,
+La tesis muestra mejoras en velocidad de escritura.,DICTATION,academico,d_acad_suj_a_04,
+La tesis confirma el valor del contexto al dictar.,DICTATION,academico,d_acad_suj_a_04,
+La tesis revela patrones de uso de la voz.,DICTATION,academico,d_acad_suj_a_04,
+La tesis sugiere líneas de trabajo futuro.,DICTATION,academico,d_acad_suj_a_04,
+El informe muestra mejoras en velocidad de escritura.,DICTATION,academico,d_acad_suj_a_04,
+El informe confirma el valor del contexto al dictar.,DICTATION,academico,d_acad_suj_a_04,
+El informe revela patrones de uso de la voz.,DICTATION,academico,d_acad_suj_a_05,
+El informe sugiere líneas de trabajo futuro.,DICTATION,academico,d_acad_suj_a_05,
+El estudio destaca la accesibilidad cognitiva.,DICTATION,academico,d_acad_suj_b_00,
+El estudio aporta evidencia sobre fatiga prolongada.,DICTATION,academico,d_acad_suj_b_00,
+El estudio propone evaluar editores multimodales.,DICTATION,academico,d_acad_suj_b_00,
+El estudio documenta errores del dictado automático.,DICTATION,academico,d_acad_suj_b_00,
+La investigación destaca la accesibilidad cognitiva.,DICTATION,academico,d_acad_suj_b_00,
+La investigación aporta evidencia sobre fatiga prolongada.,DICTATION,academico,d_acad_suj_b_00,
+La evaluación propone evaluar editores multimodales.,DICTATION,academico,d_acad_suj_b_03,
+La evaluación documenta errores del dictado automático.,DICTATION,academico,d_acad_suj_b_03,
+El prototipo destaca la accesibilidad cognitiva.,DICTATION,academico,d_acad_suj_b_03,
+El prototipo aporta evidencia sobre fatiga prolongada.,DICTATION,academico,d_acad_suj_b_03,
+El prototipo propone evaluar editores multimodales.,DICTATION,academico,d_acad_suj_b_03,
+El prototipo documenta errores del dictado automático.,DICTATION,academico,d_acad_suj_b_03,
+El informe propone evaluar editores multimodales.,DICTATION,academico,d_acad_suj_b_05,
+El informe documenta errores del dictado automático.,DICTATION,academico,d_acad_suj_b_05,
+La interacción humano computadora estudia los sistemas interactivos.,DICTATION,academico,d_academico_00,
+Durante los últimos años surgieron interfaces multimodales.,DICTATION,academico,d_academico_00,
+Mi proyecto propone un editor para personas con TDAH.,DICTATION,academico,d_academico_00,
+Las sesiones prolongadas de escritura generan fatiga.,DICTATION,academico,d_academico_00,
+La accesibilidad cognitiva reduce la carga mental.,DICTATION,academico,d_academico_00,
+El reconocimiento de voz permite dictar sin teclado.,DICTATION,academico,d_academico_00,
+Un estudio evaluó interrupciones durante la redacción.,DICTATION,academico,d_academico_01,
+La multimodalidad distribuye la atención del usuario.,DICTATION,academico,d_academico_01,
+El diseño centrado en el usuario exige pruebas reales.,DICTATION,academico,d_academico_01,
+Los correctores automáticos mejoran cada año.,DICTATION,academico,d_academico_01,
+La tesis analiza barreras en herramientas de productividad.,DICTATION,academico,d_academico_01,
+La muestra incluyó estudiantes con diagnóstico de TDAH.,DICTATION,academico,d_academico_01,
+Las métricas cubrieron tiempo y errores por tarea.,DICTATION,academico,d_academico_02,
+El dictado continuo tolera pausas y titubeos.,DICTATION,academico,d_academico_02,
+La confirmación explícita evita cambios accidentales.,DICTATION,academico,d_academico_02,
+Guardar versiones intermedias protege el trabajo.,DICTATION,academico,d_academico_02,
+La lectura en voz alta detecta frases largas.,DICTATION,academico,d_academico_02,
+El portapapeles múltiple agiliza reorganizar texto.,DICTATION,academico,d_academico_02,
+Exportar a varios formatos evita fricciones.,DICTATION,academico,d_academico_03,
+El control de cambios colorea ediciones recientes.,DICTATION,academico,d_academico_03,
+La sincronización en la nube plantea dilemas de privacidad.,DICTATION,academico,d_academico_03,
+La autocorrección agresiva altera palabras correctas.,DICTATION,academico,d_academico_03,
+Abrir archivos grandes puede requerir más memoria.,DICTATION,academico,d_academico_03,
+Imprimir documentos sigue siendo necesario en algunos contextos.,DICTATION,academico,d_academico_03,
+Buscar información es frecuente durante la escritura.,DICTATION,academico,d_academico_04,
+Leer en voz alta ayuda durante la revisión.,DICTATION,academico,d_academico_04,
+Copiar y pegar texto puede producir duplicados.,DICTATION,academico,d_academico_04,
+"La maestra escribió ""abran el libro"" en el pizarrón.",DICTATION,hard-cita,d_cita2_00,
+"El reglamento dice ""guarden silencio"".",DICTATION,hard-cita,d_cita2_00,
+"El anuncio pide ""no pisar el césped"".",DICTATION,hard-cita,d_cita2_00,
+"La carta termina con ""atentamente"".",DICTATION,hard-cita,d_cita2_00,
+"El examen indica ""justifique su respuesta"".",DICTATION,hard-cita,d_cita2_00,
+"El cartel reza ""cerrado por inventario"".",DICTATION,hard-cita,d_cita2_00,
+"El instructivo advierte ""no agitar"".",DICTATION,hard-cita,d_cita2_01,
+"La pantalla muestra ""cargando"".",DICTATION,hard-cita,d_cita2_01,
+"El lema reza ""trabajo y constancia"".",DICTATION,hard-cita,d_cita3_00,
+"La lápida dice ""siempre en lucha"".",DICTATION,hard-cita,d_cita3_00,
+"El grafiti grita ""ni perdón ni olvido"".",DICTATION,hard-cita,d_cita3_00,
+"La manta exige ""agua para todos"".",DICTATION,hard-cita,d_cita3_00,
+"El volante anuncia ""gran kermés"".",DICTATION,hard-cita,d_cita3_00,
+"La convocatoria llama ""a defender el barrio"".",DICTATION,hard-cita,d_cita3_00,
+"El himno canta ""victoria o muerte"".",DICTATION,hard-cita,d_cita3_01,
+"El pregón ofrece ""tamales oaxaqueños"".",DICTATION,hard-cita,d_cita3_01,
+El teclado mecánico suena al escribir.,DICTATION,general,d_gen2_00,
+La pantalla refleja luz por la tarde.,DICTATION,general,d_gen2_00,
+El seminario reúne varias carreras.,DICTATION,general,d_gen2_00,
+La biblioteca cierra en vacaciones.,DICTATION,general,d_gen2_00,
+El laboratorio tiene equipos nuevos.,DICTATION,general,d_gen2_00,
+El comedor ofrece menús vegetarianos.,DICTATION,general,d_gen2_00,
+El puente quedó iluminado.,DICTATION,general,d_gen2_02,
+El zoológico liberó cóndores.,DICTATION,general,d_gen2_02,
+La pista recibe mantenimiento.,DICTATION,general,d_gen2_02,
+El coro participará en primavera.,DICTATION,general,d_gen2_02,
+El banco necesita donadores.,DICTATION,general,d_gen2_02,
+El mercado abre los domingos.,DICTATION,general,d_gen2_02,
+El parque protege especies.,DICTATION,general,d_gen2_03,
+La red conecta cinco alcaldías.,DICTATION,general,d_gen2_03,
+El acuario renovó el tanque.,DICTATION,general,d_gen2_03,
+Los viernes hay cine al aire libre.,DICTATION,general,d_gen2_03,
+El observatorio organiza visitas.,DICTATION,general,d_gen2_03,
+Las clases terminan de noche.,DICTATION,general,d_gen2_03,
+El gimnasio abre al amanecer.,DICTATION,general,d_gen2_04,
+La cafetería amplió su horario.,DICTATION,general,d_gen2_04,
+El club compite a nivel nacional.,DICTATION,general,d_gen2_04,
+La librería guarda joyas.,DICTATION,general,d_gen2_04,
+Los talleres fomentan lectura.,DICTATION,general,d_gen2_04,
+Las noches permiten ver estrellas.,DICTATION,general,d_gen2_04,
+El informe quedó listo ayer.,DICTATION,general,d_general_00,
+La propuesta incluye tres secciones.,DICTATION,general,d_general_00,
+El artículo será revisado por pares.,DICTATION,general,d_general_00,
+La carta circula entre asistentes.,DICTATION,general,d_general_00,
+El ensayo necesita una última lectura.,DICTATION,general,d_general_00,
+La memoria describe el proceso.,DICTATION,general,d_general_00,
+El acta apareció publicada hoy.,DICTATION,general,d_general_01,
+La reseña recibió buenos comentarios.,DICTATION,general,d_general_01,
+El boletín saldrá el próximo mes.,DICTATION,general,d_general_01,
+La gaceta agotó su edición.,DICTATION,general,d_general_01,
+El museo inaugura una sala interactiva.,DICTATION,general,d_general_01,
+La orquesta dará un concierto.,DICTATION,general,d_general_01,
+El mercado abre solo los domingos.,DICTATION,general,d_general_02,
+El tren amplió su recorrido.,DICTATION,general,d_general_02,
+La feria reunió a decenas de editoriales.,DICTATION,general,d_general_02,
+El hospital atiende urgencias.,DICTATION,general,d_general_02,
+El puente quedó iluminado con led.,DICTATION,general,d_general_02,
+El zoológico liberó tres cóndores.,DICTATION,general,d_general_02,
+"El ejemplo ""abre el archivo"" ilustra el tema.",DICTATION,hard-cita,d_hard_cita_01,
+"La guía cita ""imprime dos copias"".",DICTATION,hard-cita,d_hard_cita_01,
+"El aviso reza ""no borrar este mensaje"".",DICTATION,hard-cita,d_hard_cita_01,
+"La etiqueta pide ""seleccionar una opción"".",DICTATION,hard-cita,d_hard_cita_01,
+Leer en voz alta puede ayudar durante la revisión.,DICTATION,hard-archivo,d_hard_file_01,
+Guardar información automáticamente reduce la pérdida de datos.,DICTATION,hard-archivo,d_hard_file_01,
+Abrir varias ventanas facilita comparar versiones.,DICTATION,hard-archivo,d_hard_file_01,
+Imprimir borradores ayuda a revisar con distancia.,DICTATION,hard-archivo,d_hard_file_01,
+Buscar definiciones interrumpe menos que preguntar.,DICTATION,hard-archivo,d_hard_file_01,
+Copiar citas textuales exige referenciar la fuente.,DICTATION,hard-archivo,d_hard_file_02,
+Exportar en pdf congela el formato final.,DICTATION,hard-archivo,d_hard_file_02,
+Leer poesía en voz alta mejora la dicción.,DICTATION,hard-archivo,d_hard_file_02,
+Pegar capturas ilustra mejor el procedimiento.,DICTATION,hard-archivo,d_hard_file_02,
+Guardar silencio también comunica en una reunión.,DICTATION,hard-archivo,d_hard_file_02,
+Abrir debate sobre el tema enriqueció la clase.,DICTATION,hard-archivo,d_hard_file_02,
+Borrar archivos viejos libera espacio útil.,DICTATION,hard-infinitivo,d_hard_inf_00,
+Cambiar el formato sin avisar confunde.,DICTATION,hard-infinitivo,d_hard_inf_00,
+Seleccionar la muestra determina la validez.,DICTATION,hard-infinitivo,d_hard_inf_00,
+Reemplazar palabras sin criterio empobrece.,DICTATION,hard-infinitivo,d_hard_inf_00,
+Deshacer acciones forma parte del aprendizaje.,DICTATION,hard-infinitivo,d_hard_inf_00,
+Poner títulos descriptivos facilita navegar.,DICTATION,hard-infinitivo,d_hard_inf_00,
+Copiar a mano fija mejor los conceptos.,DICTATION,hard-infinitivo,d_hard_inf_02,
+Exportar datos crudos permite auditarlos.,DICTATION,hard-infinitivo,d_hard_inf_02,
+Leer contratos completos evita sorpresas.,DICTATION,hard-infinitivo,d_hard_inf_02,
+Pegar con formato arrastra estilos indeseados.,DICTATION,hard-infinitivo,d_hard_inf_02,
+Modificar horarios exige negociar antes.,DICTATION,hard-infinitivo,d_hard_inf_02,
+Subrayar ideas clave facilita repasar.,DICTATION,hard-infinitivo,d_hard_inf_02,
+El comando borrar elimina la selección.,DICTATION,hard-metalenguaje,d_hard_meta_00,
+La función deshacer restaura el cambio.,DICTATION,hard-metalenguaje,d_hard_meta_00,
+La opción reemplazar busca coincidencias.,DICTATION,hard-metalenguaje,d_hard_meta_00,
+El botón guardar conserva copias.,DICTATION,hard-metalenguaje,d_hard_meta_00,
+El menú formato agrupa estilos.,DICTATION,hard-metalenguaje,d_hard_meta_00,
+El historial registra cada edición.,DICTATION,hard-metalenguaje,d_hard_meta_00,
+El corrector sugiere alternativas.,DICTATION,hard-metalenguaje,d_hard_meta_01,
+El modo dictado desactiva atajos.,DICTATION,hard-metalenguaje,d_hard_meta_01,
+La papelera conserva eliminados treinta días.,DICTATION,hard-metalenguaje,d_hard_meta_01,
+El atajo de deshacer es casi universal.,DICTATION,hard-metalenguaje,d_hard_meta_01,
+El reemplazo expande abreviaturas.,DICTATION,hard-metalenguaje,d_hard_meta_01,
+El panel de estilos centraliza títulos.,DICTATION,hard-metalenguaje,d_hard_meta_01,
+Es importante cambiar cómo diseñamos interfaces.,DICTATION,hard-mixto,d_hard_mix_00,
+El título debe comunicar el objetivo.,DICTATION,hard-mixto,d_hard_mix_00,
+Deshacer tratos genera desconfianza.,DICTATION,hard-mixto,d_hard_mix_00,
+Reemplazó la bombilla antes del anochecer.,DICTATION,hard-mixto,d_hard_mix_00,
+Cambiaron la cerradura tras el incidente.,DICTATION,hard-mixto,d_hard_mix_00,
+El jurado cambió el veredicto.,DICTATION,hard-mixto,d_hard_mix_00,
+Seleccionar al azar garantiza imparcialidad.,DICTATION,hard-mixto,d_hard_mix_01,
+Guardaron silencio durante el homenaje.,DICTATION,hard-mixto,d_hard_mix_01,
+Abrieron debate tras la ponencia.,DICTATION,hard-mixto,d_hard_mix_01,
+Imprimieron carteles para el festival.,DICTATION,hard-mixto,d_hard_mix_01,
+Buscaron consenso hasta la madrugada.,DICTATION,hard-mixto,d_hard_mix_01,
+Copiaron el esquema en sus cuadernos.,DICTATION,hard-mixto,d_hard_mix_01,
+Pegaron los avisos en la entrada.,DICTATION,hard-mixto,d_hard_mix_02,
+Leyeron el manifiesto en voz alta.,DICTATION,hard-mixto,d_hard_mix_02,
+Guardar agua en tinacos previene escasez.,DICTATION,hard-mixto,d_hard_news_00,
+Abrir segundos frentes divide recursos.,DICTATION,hard-mixto,d_hard_news_00,
+Imprimir boletas electorales exige seguridad.,DICTATION,hard-mixto,d_hard_news_00,
+Buscar agua subterránea requiere estudios.,DICTATION,hard-mixto,d_hard_news_00,
+Copiar recetas antiguas preserva sabores.,DICTATION,hard-mixto,d_hard_news_00,
+Pegar carteles anima las calles.,DICTATION,hard-mixto,d_hard_news_00,
+Leer mapas topográficos orienta excursiones.,DICTATION,hard-mixto,d_hard_news_01,
+Exportar aguacate genera divisas.,DICTATION,hard-mixto,d_hard_news_01,
+Seleccionar jueces independientes fortalece la corte.,DICTATION,hard-mixto,d_hard_news_01,
+Borrar deudas viejas alivia finanzas.,DICTATION,hard-mixto,d_hard_news_01,
+Cambiar focos públicos ahorra millones.,DICTATION,hard-mixto,d_hard_news_01,
+Poner topes reduce accidentes.,DICTATION,hard-mixto,d_hard_news_01,
+Deshacer entuertos antiguos dignifica.,DICTATION,hard-mixto,d_hard_news_02,
+Rehacer vialidades tarda sexenios.,DICTATION,hard-mixto,d_hard_news_02,
+Abrir con método ahorra horas cada semana.,DICTATION,hard-archivo,d_hf2_abrir_00,
+Quien sabe abrir bien rinde el doble.,DICTATION,hard-archivo,d_hf2_abrir_00,
+Conviene abrir antes de que anochezca.,DICTATION,hard-archivo,d_hf2_abrir_00,
+Me enseñaron a abrir desde chico.,DICTATION,hard-archivo,d_hf2_abrir_00,
+Archivar con método ahorra horas cada semana.,DICTATION,hard-archivo,d_hf2_archivar_00,
+Quien sabe archivar bien rinde el doble.,DICTATION,hard-archivo,d_hf2_archivar_00,
+Conviene archivar antes de que anochezca.,DICTATION,hard-archivo,d_hf2_archivar_00,
+Me enseñaron a archivar desde chico.,DICTATION,hard-archivo,d_hf2_archivar_00,
+Buscar con método ahorra horas cada semana.,DICTATION,hard-archivo,d_hf2_buscar_00,
+Quien sabe buscar bien rinde el doble.,DICTATION,hard-archivo,d_hf2_buscar_00,
+Conviene buscar antes de que anochezca.,DICTATION,hard-archivo,d_hf2_buscar_00,
+Me enseñaron a buscar desde chico.,DICTATION,hard-archivo,d_hf2_buscar_00,
+Clasificar con método ahorra horas cada semana.,DICTATION,hard-archivo,d_hf2_clasificar_00,
+Quien sabe clasificar bien rinde el doble.,DICTATION,hard-archivo,d_hf2_clasificar_00,
+Conviene clasificar antes de que anochezca.,DICTATION,hard-archivo,d_hf2_clasificar_00,
+Me enseñaron a clasificar desde chico.,DICTATION,hard-archivo,d_hf2_clasificar_00,
+Firmar con método ahorra horas cada semana.,DICTATION,hard-archivo,d_hf2_firmar_00,
+Quien sabe firmar bien rinde el doble.,DICTATION,hard-archivo,d_hf2_firmar_00,
+Conviene firmar antes de que anochezca.,DICTATION,hard-archivo,d_hf2_firmar_00,
+Me enseñaron a firmar desde chico.,DICTATION,hard-archivo,d_hf2_firmar_00,
+Imprimir con método ahorra horas cada semana.,DICTATION,hard-archivo,d_hf2_imprimir_00,
+Quien sabe imprimir bien rinde el doble.,DICTATION,hard-archivo,d_hf2_imprimir_00,
+Conviene imprimir antes de que anochezca.,DICTATION,hard-archivo,d_hf2_imprimir_00,
+Me enseñaron a imprimir desde chico.,DICTATION,hard-archivo,d_hf2_imprimir_00,
+Ordenar con método ahorra horas cada semana.,DICTATION,hard-archivo,d_hf2_ordenar_00,
+Quien sabe ordenar bien rinde el doble.,DICTATION,hard-archivo,d_hf2_ordenar_00,
+Conviene ordenar antes de que anochezca.,DICTATION,hard-archivo,d_hf2_ordenar_00,
+Me enseñaron a ordenar desde chico.,DICTATION,hard-archivo,d_hf2_ordenar_00,
+Abrir a diario mantiene el orden del taller.,DICTATION,hard-archivo,d_hf_abrir_00,
+Saber abrir bien distingue a los profesionales.,DICTATION,hard-archivo,d_hf_abrir_00,
+Dicen que abrir con calma evita errores.,DICTATION,hard-archivo,d_hf_abrir_00,
+Aprender a abrir lleva unas semanas.,DICTATION,hard-archivo,d_hf_abrir_00,
+Buscar a diario mantiene el orden del taller.,DICTATION,hard-archivo,d_hf_buscar_00,
+Saber buscar bien distingue a los profesionales.,DICTATION,hard-archivo,d_hf_buscar_00,
+Dicen que buscar con calma evita errores.,DICTATION,hard-archivo,d_hf_buscar_00,
+Aprender a buscar lleva unas semanas.,DICTATION,hard-archivo,d_hf_buscar_00,
+Copiar a diario mantiene el orden del taller.,DICTATION,hard-archivo,d_hf_copiar_00,
+Saber copiar bien distingue a los profesionales.,DICTATION,hard-archivo,d_hf_copiar_00,
+Dicen que copiar con calma evita errores.,DICTATION,hard-archivo,d_hf_copiar_00,
+Aprender a copiar lleva unas semanas.,DICTATION,hard-archivo,d_hf_copiar_00,
+Exportar a diario mantiene el orden del taller.,DICTATION,hard-archivo,d_hf_exportar_00,
+Saber exportar bien distingue a los profesionales.,DICTATION,hard-archivo,d_hf_exportar_00,
+Dicen que exportar con calma evita errores.,DICTATION,hard-archivo,d_hf_exportar_00,
+Aprender a exportar lleva unas semanas.,DICTATION,hard-archivo,d_hf_exportar_00,
+Guardar a diario mantiene el orden del taller.,DICTATION,hard-archivo,d_hf_guardar_00,
+Saber guardar bien distingue a los profesionales.,DICTATION,hard-archivo,d_hf_guardar_00,
+Dicen que guardar con calma evita errores.,DICTATION,hard-archivo,d_hf_guardar_00,
+Aprender a guardar lleva unas semanas.,DICTATION,hard-archivo,d_hf_guardar_00,
+Imprimir a diario mantiene el orden del taller.,DICTATION,hard-archivo,d_hf_imprimir_00,
+Saber imprimir bien distingue a los profesionales.,DICTATION,hard-archivo,d_hf_imprimir_00,
+Dicen que imprimir con calma evita errores.,DICTATION,hard-archivo,d_hf_imprimir_00,
+Aprender a imprimir lleva unas semanas.,DICTATION,hard-archivo,d_hf_imprimir_00,
+Pegar a diario mantiene el orden del taller.,DICTATION,hard-archivo,d_hf_pegar_00,
+Saber pegar bien distingue a los profesionales.,DICTATION,hard-archivo,d_hf_pegar_00,
+Dicen que pegar con calma evita errores.,DICTATION,hard-archivo,d_hf_pegar_00,
+Aprender a pegar lleva unas semanas.,DICTATION,hard-archivo,d_hf_pegar_00,
+Meter con cuidado evita accidentes.,DICTATION,hard-infinitivo,d_hi2_meter_00,
+Hay que meter sin prisas.,DICTATION,hard-infinitivo,d_hi2_meter_00,
+Dicen que meter de a poco sale mejor.,DICTATION,hard-infinitivo,d_hi2_meter_00,
+Conviene meter solo si hace falta.,DICTATION,hard-infinitivo,d_hi2_meter_00,
+Mover con cuidado evita accidentes.,DICTATION,hard-infinitivo,d_hi2_mover_00,
+Hay que mover sin prisas.,DICTATION,hard-infinitivo,d_hi2_mover_00,
+Dicen que mover de a poco sale mejor.,DICTATION,hard-infinitivo,d_hi2_mover_00,
+Conviene mover solo si hace falta.,DICTATION,hard-infinitivo,d_hi2_mover_00,
+Poner con cuidado evita accidentes.,DICTATION,hard-infinitivo,d_hi2_poner_00,
+Hay que poner sin prisas.,DICTATION,hard-infinitivo,d_hi2_poner_00,
+Dicen que poner de a poco sale mejor.,DICTATION,hard-infinitivo,d_hi2_poner_00,
+Conviene poner solo si hace falta.,DICTATION,hard-infinitivo,d_hi2_poner_00,
+Quitar con cuidado evita accidentes.,DICTATION,hard-infinitivo,d_hi2_quitar_00,
+Hay que quitar sin prisas.,DICTATION,hard-infinitivo,d_hi2_quitar_00,
+Dicen que quitar de a poco sale mejor.,DICTATION,hard-infinitivo,d_hi2_quitar_00,
+Conviene quitar solo si hace falta.,DICTATION,hard-infinitivo,d_hi2_quitar_00,
+Sacar con cuidado evita accidentes.,DICTATION,hard-infinitivo,d_hi2_sacar_00,
+Hay que sacar sin prisas.,DICTATION,hard-infinitivo,d_hi2_sacar_00,
+Dicen que sacar de a poco sale mejor.,DICTATION,hard-infinitivo,d_hi2_sacar_00,
+Conviene sacar solo si hace falta.,DICTATION,hard-infinitivo,d_hi2_sacar_00,
+Borrar sin pensar trae consecuencias.,DICTATION,hard-infinitivo,d_hi_borrar_00,
+Conviene borrar solo cuando hace falta.,DICTATION,hard-infinitivo,d_hi_borrar_00,
+Dicen que borrar de a poco funciona mejor.,DICTATION,hard-infinitivo,d_hi_borrar_00,
+Hay que borrar con cuidado siempre.,DICTATION,hard-infinitivo,d_hi_borrar_00,
+Cambiar sin pensar trae consecuencias.,DICTATION,hard-infinitivo,d_hi_cambiar_00,
+Conviene cambiar solo cuando hace falta.,DICTATION,hard-infinitivo,d_hi_cambiar_00,
+Dicen que cambiar de a poco funciona mejor.,DICTATION,hard-infinitivo,d_hi_cambiar_00,
+Hay que cambiar con cuidado siempre.,DICTATION,hard-infinitivo,d_hi_cambiar_00,
+Deshacer sin pensar trae consecuencias.,DICTATION,hard-infinitivo,d_hi_deshacer_00,
+Conviene deshacer solo cuando hace falta.,DICTATION,hard-infinitivo,d_hi_deshacer_00,
+Dicen que deshacer de a poco funciona mejor.,DICTATION,hard-infinitivo,d_hi_deshacer_00,
+Hay que deshacer con cuidado siempre.,DICTATION,hard-infinitivo,d_hi_deshacer_00,
+Eliminar sin pensar trae consecuencias.,DICTATION,hard-infinitivo,d_hi_eliminar_00,
+Conviene eliminar solo cuando hace falta.,DICTATION,hard-infinitivo,d_hi_eliminar_00,
+Dicen que eliminar de a poco funciona mejor.,DICTATION,hard-infinitivo,d_hi_eliminar_00,
+Hay que eliminar con cuidado siempre.,DICTATION,hard-infinitivo,d_hi_eliminar_00,
+Modificar sin pensar trae consecuencias.,DICTATION,hard-infinitivo,d_hi_modificar_00,
+Conviene modificar solo cuando hace falta.,DICTATION,hard-infinitivo,d_hi_modificar_00,
+Dicen que modificar de a poco funciona mejor.,DICTATION,hard-infinitivo,d_hi_modificar_00,
+Hay que modificar con cuidado siempre.,DICTATION,hard-infinitivo,d_hi_modificar_00,
+Reemplazar sin pensar trae consecuencias.,DICTATION,hard-infinitivo,d_hi_reemplazar_00,
+Conviene reemplazar solo cuando hace falta.,DICTATION,hard-infinitivo,d_hi_reemplazar_00,
+Dicen que reemplazar de a poco funciona mejor.,DICTATION,hard-infinitivo,d_hi_reemplazar_00,
+Hay que reemplazar con cuidado siempre.,DICTATION,hard-infinitivo,d_hi_reemplazar_00,
+Rehacer sin pensar trae consecuencias.,DICTATION,hard-infinitivo,d_hi_rehacer_00,
+Conviene rehacer solo cuando hace falta.,DICTATION,hard-infinitivo,d_hi_rehacer_00,
+Dicen que rehacer de a poco funciona mejor.,DICTATION,hard-infinitivo,d_hi_rehacer_00,
+Hay que rehacer con cuidado siempre.,DICTATION,hard-infinitivo,d_hi_rehacer_00,
+Seleccionar sin pensar trae consecuencias.,DICTATION,hard-infinitivo,d_hi_seleccionar_00,
+Conviene seleccionar solo cuando hace falta.,DICTATION,hard-infinitivo,d_hi_seleccionar_00,
+Dicen que seleccionar de a poco funciona mejor.,DICTATION,hard-infinitivo,d_hi_seleccionar_00,
+Hay que seleccionar con cuidado siempre.,DICTATION,hard-infinitivo,d_hi_seleccionar_00,
+El verbo guardar rige preposición en algunos usos.,DICTATION,hard-metalenguaje,d_meta2_00,
+El sustantivo título lleva tilde por ser esdrújula.,DICTATION,hard-metalenguaje,d_meta2_00,
+Borrar es un verbo regular de la primera conjugación.,DICTATION,hard-metalenguaje,d_meta2_00,
+Seleccionar implica elegir entre opciones.,DICTATION,hard-metalenguaje,d_meta2_00,
+El imperativo usa formas propias en cada persona.,DICTATION,hard-metalenguaje,d_meta2_00,
+Imprimir viene del latín premere.,DICTATION,hard-metalenguaje,d_meta2_00,
+Buscar y encontrar no son sinónimos exactos.,DICTATION,hard-metalenguaje,d_meta2_01,
+Copiar en exámenes se sanciona con cero.,DICTATION,hard-metalenguaje,d_meta2_01,
+El prefijo re- indica repetición.,DICTATION,hard-metalenguaje,d_meta3_00,
+El sufijo -ero denota oficio.,DICTATION,hard-metalenguaje,d_meta3_00,
+Guardar es verbo irregular en su uso pronominal.,DICTATION,hard-metalenguaje,d_meta3_00,
+Abrir rige la preposición a veces.,DICTATION,hard-metalenguaje,d_meta3_00,
+El participio impreso alterna con imprimido.,DICTATION,hard-metalenguaje,d_meta3_00,
+Buscar se conjuga regularmente.,DICTATION,hard-metalenguaje,d_meta3_00,
+El gerundio copiando exige tilde.,DICTATION,hard-metalenguaje,d_meta3_01,
+Pegar como verbo admite varios sentidos.,DICTATION,hard-metalenguaje,d_meta3_01,
+Guardaron las sobras para mañana.,DICTATION,hard-mixto,d_mix2_00,
+Abrieron la tienda muy temprano.,DICTATION,hard-mixto,d_mix2_00,
+Imprimieron volantes para la marcha.,DICTATION,hard-mixto,d_mix2_00,
+Buscaron al perro hasta tarde.,DICTATION,hard-mixto,d_mix2_00,
+Copiaron las llaves de emergencia.,DICTATION,hard-mixto,d_mix2_00,
+Pegaron estampas en el álbum.,DICTATION,hard-mixto,d_mix2_00,
+Leyeron cuentos antes de dormir.,DICTATION,hard-mixto,d_mix2_01,
+Exportaron café de altura.,DICTATION,hard-mixto,d_mix2_01,
+Seleccionaron a los finalistas ayer.,DICTATION,hard-mixto,d_mix2_01,
+Borraron las fotos movidas.,DICTATION,hard-mixto,d_mix2_01,
+El censo contó millones de viviendas.,DICTATION,general,d_news_00,
+La sequía afectó tres estados.,DICTATION,general,d_news_00,
+El sismo se sintió en la capital.,DICTATION,general,d_news_00,
+La cosecha superó lo esperado.,DICTATION,general,d_news_00,
+El eclipse será visible al norte.,DICTATION,general,d_news_00,
+La vacuna llegó a las clínicas.,DICTATION,general,d_news_00,
+El censo será en marzo próximo.,DICTATION,general,d_news_01,
+La tormenta derribó varios árboles.,DICTATION,general,d_news_01,
+El rescate duró toda la noche.,DICTATION,general,d_news_01,
+La campaña vacunó a miles.,DICTATION,general,d_news_01,
+El incendio consumió dos hectáreas.,DICTATION,general,d_news_01,
+El desfile reunió multitudes.,DICTATION,general,d_news_01,
+La obra durará dieciocho meses.,DICTATION,general,d_news_02,
+El túnel conecta dos valles.,DICTATION,general,d_news_02,
+La presa alcanzó su nivel máximo.,DICTATION,general,d_news_02,
+El puerto recibe cruceros.,DICTATION,general,d_news_02,
+El aeropuerto estrenó terminal.,DICTATION,general,d_news_02,
+La carretera quedó bloqueada.,DICTATION,general,d_news_02,
+El volcán registra actividad leve.,DICTATION,general,d_news_03,
+El río creció con las lluvias.,DICTATION,general,d_news_03,
+El observatorio sesiona cada quince días.,DICTATION,general,d_org_a_00,
+El observatorio publicó su informe anual.,DICTATION,general,d_org_a_00,
+El observatorio renovó su directiva.,DICTATION,general,d_org_a_00,
+El observatorio organizó una colecta.,DICTATION,general,d_org_a_00,
+El observatorio repartió despensas.,DICTATION,general,d_org_a_00,
+El taller literario sesiona cada quince días.,DICTATION,general,d_org_a_00,
+El taller literario publicó su informe anual.,DICTATION,general,d_org_a_01,
+El taller literario renovó su directiva.,DICTATION,general,d_org_a_01,
+El taller literario organizó una colecta.,DICTATION,general,d_org_a_01,
+El taller literario repartió despensas.,DICTATION,general,d_org_a_01,
+La mesa de diálogo sesiona cada quince días.,DICTATION,general,d_org_a_01,
+La mesa de diálogo publicó su informe anual.,DICTATION,general,d_org_a_01,
+La mesa de diálogo renovó su directiva.,DICTATION,general,d_org_a_02,
+La mesa de diálogo organizó una colecta.,DICTATION,general,d_org_a_02,
+La mesa de diálogo repartió despensas.,DICTATION,general,d_org_a_02,
+El coro mixto sesiona cada quince días.,DICTATION,general,d_org_a_02,
+El coro mixto publicó su informe anual.,DICTATION,general,d_org_a_02,
+El coro mixto renovó su directiva.,DICTATION,general,d_org_a_02,
+La brigada repartió despensas.,DICTATION,general,d_org_a_04,
+El colectivo sesiona cada quince días.,DICTATION,general,d_org_a_04,
+El colectivo publicó su informe anual.,DICTATION,general,d_org_a_04,
+El colectivo renovó su directiva.,DICTATION,general,d_org_a_04,
+El colectivo organizó una colecta.,DICTATION,general,d_org_a_04,
+El colectivo repartió despensas.,DICTATION,general,d_org_a_04,
+La asamblea vecinal sesiona cada quince días.,DICTATION,general,d_org_a_05,
+La asamblea vecinal publicó su informe anual.,DICTATION,general,d_org_a_05,
+La asamblea vecinal renovó su directiva.,DICTATION,general,d_org_a_05,
+La asamblea vecinal organizó una colecta.,DICTATION,general,d_org_a_05,
+La asamblea vecinal repartió despensas.,DICTATION,general,d_org_a_05,
+El patronato sesiona cada quince días.,DICTATION,general,d_org_a_05,
+El patronato publicó su informe anual.,DICTATION,general,d_org_a_06,
+El patronato renovó su directiva.,DICTATION,general,d_org_a_06,
+El patronato organizó una colecta.,DICTATION,general,d_org_a_06,
+El patronato repartió despensas.,DICTATION,general,d_org_a_06,
+La fundación sesiona cada quince días.,DICTATION,general,d_org_a_06,
+La fundación publicó su informe anual.,DICTATION,general,d_org_a_06,
+La fundación renovó su directiva.,DICTATION,general,d_org_a_07,
+La fundación organizó una colecta.,DICTATION,general,d_org_a_07,
+La fundación repartió despensas.,DICTATION,general,d_org_a_07,
+El fideicomiso sesiona cada quince días.,DICTATION,general,d_org_a_07,
+El fideicomiso publicó su informe anual.,DICTATION,general,d_org_a_07,
+El fideicomiso renovó su directiva.,DICTATION,general,d_org_a_07,
+La cooperativa repartió despensas.,DICTATION,general,d_org_a_09,
+El sindicato sesiona cada quince días.,DICTATION,general,d_org_a_09,
+El sindicato publicó su informe anual.,DICTATION,general,d_org_a_09,
+El sindicato renovó su directiva.,DICTATION,general,d_org_a_09,
+El sindicato organizó una colecta.,DICTATION,general,d_org_a_09,
+El sindicato repartió despensas.,DICTATION,general,d_org_a_09,
+El observatorio pintó la fachada.,DICTATION,general,d_org_b_00,
+El observatorio sembró árboles nativos.,DICTATION,general,d_org_b_00,
+El observatorio limpió el canal.,DICTATION,general,d_org_b_00,
+El observatorio abrió un comedor.,DICTATION,general,d_org_b_00,
+El observatorio becó a diez jóvenes.,DICTATION,general,d_org_b_00,
+El observatorio editó una memoria.,DICTATION,general,d_org_b_00,
+El observatorio cumplió veinte años.,DICTATION,general,d_org_b_01,
+El taller literario pintó la fachada.,DICTATION,general,d_org_b_01,
+El taller literario sembró árboles nativos.,DICTATION,general,d_org_b_01,
+El taller literario limpió el canal.,DICTATION,general,d_org_b_01,
+El taller literario abrió un comedor.,DICTATION,general,d_org_b_01,
+El taller literario becó a diez jóvenes.,DICTATION,general,d_org_b_01,
+El taller literario editó una memoria.,DICTATION,general,d_org_b_02,
+El taller literario cumplió veinte años.,DICTATION,general,d_org_b_02,
+La mesa de diálogo pintó la fachada.,DICTATION,general,d_org_b_02,
+La mesa de diálogo sembró árboles nativos.,DICTATION,general,d_org_b_02,
+La mesa de diálogo limpió el canal.,DICTATION,general,d_org_b_02,
+La mesa de diálogo abrió un comedor.,DICTATION,general,d_org_b_02,
+La mesa de diálogo becó a diez jóvenes.,DICTATION,general,d_org_b_03,
+La mesa de diálogo editó una memoria.,DICTATION,general,d_org_b_03,
+La mesa de diálogo cumplió veinte años.,DICTATION,general,d_org_b_03,
+El coro mixto pintó la fachada.,DICTATION,general,d_org_b_03,
+El coro mixto sembró árboles nativos.,DICTATION,general,d_org_b_03,
+El coro mixto limpió el canal.,DICTATION,general,d_org_b_03,
+El coro mixto abrió un comedor.,DICTATION,general,d_org_b_04,
+El coro mixto becó a diez jóvenes.,DICTATION,general,d_org_b_04,
+El coro mixto editó una memoria.,DICTATION,general,d_org_b_04,
+El coro mixto cumplió veinte años.,DICTATION,general,d_org_b_04,
+La brigada pintó la fachada.,DICTATION,general,d_org_b_04,
+La brigada sembró árboles nativos.,DICTATION,general,d_org_b_04,
+La brigada limpió el canal.,DICTATION,general,d_org_b_05,
+La brigada abrió un comedor.,DICTATION,general,d_org_b_05,
+La brigada becó a diez jóvenes.,DICTATION,general,d_org_b_05,
+La brigada editó una memoria.,DICTATION,general,d_org_b_05,
+La brigada cumplió veinte años.,DICTATION,general,d_org_b_05,
+El colectivo pintó la fachada.,DICTATION,general,d_org_b_05,
+La asamblea vecinal pintó la fachada.,DICTATION,general,d_org_b_07,
+La asamblea vecinal sembró árboles nativos.,DICTATION,general,d_org_b_07,
+La asamblea vecinal limpió el canal.,DICTATION,general,d_org_b_07,
+La asamblea vecinal abrió un comedor.,DICTATION,general,d_org_b_07,
+La asamblea vecinal becó a diez jóvenes.,DICTATION,general,d_org_b_07,
+La asamblea vecinal editó una memoria.,DICTATION,general,d_org_b_07,
+La asamblea vecinal cumplió veinte años.,DICTATION,general,d_org_b_08,
+El patronato pintó la fachada.,DICTATION,general,d_org_b_08,
+El patronato sembró árboles nativos.,DICTATION,general,d_org_b_08,
+El patronato limpió el canal.,DICTATION,general,d_org_b_08,
+El patronato abrió un comedor.,DICTATION,general,d_org_b_08,
+El patronato becó a diez jóvenes.,DICTATION,general,d_org_b_08,
+El patronato editó una memoria.,DICTATION,general,d_org_b_09,
+El patronato cumplió veinte años.,DICTATION,general,d_org_b_09,
+La fundación pintó la fachada.,DICTATION,general,d_org_b_09,
+La fundación sembró árboles nativos.,DICTATION,general,d_org_b_09,
+La fundación limpió el canal.,DICTATION,general,d_org_b_09,
+La fundación abrió un comedor.,DICTATION,general,d_org_b_09,
+La fundación becó a diez jóvenes.,DICTATION,general,d_org_b_10,
+La fundación editó una memoria.,DICTATION,general,d_org_b_10,
+La fundación cumplió veinte años.,DICTATION,general,d_org_b_10,
+El fideicomiso pintó la fachada.,DICTATION,general,d_org_b_10,
+El fideicomiso sembró árboles nativos.,DICTATION,general,d_org_b_10,
+El fideicomiso limpió el canal.,DICTATION,general,d_org_b_10,
+El fideicomiso abrió un comedor.,DICTATION,general,d_org_b_11,
+El fideicomiso becó a diez jóvenes.,DICTATION,general,d_org_b_11,
+El fideicomiso editó una memoria.,DICTATION,general,d_org_b_11,
+El fideicomiso cumplió veinte años.,DICTATION,general,d_org_b_11,
+La cooperativa pintó la fachada.,DICTATION,general,d_org_b_11,
+La cooperativa sembró árboles nativos.,DICTATION,general,d_org_b_11,
+La cooperativa limpió el canal.,DICTATION,general,d_org_b_12,
+La cooperativa abrió un comedor.,DICTATION,general,d_org_b_12,
+La cooperativa becó a diez jóvenes.,DICTATION,general,d_org_b_12,
+La cooperativa editó una memoria.,DICTATION,general,d_org_b_12,
+La cooperativa cumplió veinte años.,DICTATION,general,d_org_b_12,
+El sindicato pintó la fachada.,DICTATION,general,d_org_b_12,
+El sindicato sembró árboles nativos.,DICTATION,general,d_org_b_13,
+El sindicato limpió el canal.,DICTATION,general,d_org_b_13,
+El sindicato abrió un comedor.,DICTATION,general,d_org_b_13,
+El sindicato becó a diez jóvenes.,DICTATION,general,d_org_b_13,
+El sindicato editó una memoria.,DICTATION,general,d_org_b_13,
+El sindicato cumplió veinte años.,DICTATION,general,d_org_b_13,
+La gaceta oficial destacó la nota roja.,DICTATION,general,d_prensa_00,
+La gaceta oficial entrevistó al rector.,DICTATION,general,d_prensa_00,
+La gaceta oficial cubrió la marcha.,DICTATION,general,d_prensa_00,
+La gaceta oficial reseñó la temporada.,DICTATION,general,d_prensa_00,
+La gaceta oficial denunció el ecocidio.,DICTATION,general,d_prensa_00,
+La gaceta oficial premió la crónica.,DICTATION,general,d_prensa_00,
+El diario matutino destacó la nota roja.,DICTATION,general,d_prensa_01,
+El diario matutino entrevistó al rector.,DICTATION,general,d_prensa_01,
+El diario matutino cubrió la marcha.,DICTATION,general,d_prensa_01,
+El diario matutino reseñó la temporada.,DICTATION,general,d_prensa_01,
+El diario matutino denunció el ecocidio.,DICTATION,general,d_prensa_01,
+El diario matutino premió la crónica.,DICTATION,general,d_prensa_01,
+El boletín sindical destacó la nota roja.,DICTATION,general,d_prensa_04,
+El boletín sindical entrevistó al rector.,DICTATION,general,d_prensa_04,
+El boletín sindical cubrió la marcha.,DICTATION,general,d_prensa_04,
+El boletín sindical reseñó la temporada.,DICTATION,general,d_prensa_04,
+El boletín sindical denunció el ecocidio.,DICTATION,general,d_prensa_04,
+El boletín sindical premió la crónica.,DICTATION,general,d_prensa_04,
+No sé.,NO_ACTION,conversacion,n_conv_a_00,
+A ver.,NO_ACTION,conversacion,n_conv_a_00,
+Espera un momento.,NO_ACTION,conversacion,n_conv_a_00,
+Ya veo.,NO_ACTION,conversacion,n_conv_a_01,
+Entiendo.,NO_ACTION,conversacion,n_conv_a_01,
+De acuerdo.,NO_ACTION,conversacion,n_conv_a_01,
+Interesante.,NO_ACTION,conversacion,n_conv_a_01,
+Vaya.,NO_ACTION,conversacion,n_conv_a_01,
+Mmm.,NO_ACTION,conversacion,n_conv_a_01,
+Vale.,NO_ACTION,conversacion,n_conv_a_02,
+Ni idea.,NO_ACTION,conversacion,n_conv_a_02,
+Puede ser.,NO_ACTION,conversacion,n_conv_a_02,
+Supongo.,NO_ACTION,conversacion,n_conv_a_02,
+Oye.,NO_ACTION,conversacion,n_conv_a_02,
+Mira.,NO_ACTION,conversacion,n_conv_a_02,
+Eh.,NO_ACTION,conversacion,n_conv_a_03,
+Pues.,NO_ACTION,conversacion,n_conv_a_03,
+Ya casi.,NO_ACTION,conversacion,n_conv_a_03,
+Falta poco.,NO_ACTION,conversacion,n_conv_a_03,
+Sigo pensando.,NO_ACTION,conversacion,n_conv_a_03,
+Déjame ver.,NO_ACTION,conversacion,n_conv_a_03,
+Claro que sí.,NO_ACTION,conversacion,n_conv_a_04,
+Desde luego.,NO_ACTION,conversacion,n_conv_a_04,
+Qué bien.,NO_ACTION,conversacion,n_conv_a_04,
+No estoy seguro.,NO_ACTION,conversacion,n_conv_a_04,
+Depende.,NO_ACTION,conversacion,n_conv_a_04,
+Así está bien por ahora.,NO_ACTION,conversacion,n_conv_b_00,
+No importa.,NO_ACTION,conversacion,n_conv_b_00,
+Olvídalo.,NO_ACTION,conversacion,n_conv_b_01,
+Ya veremos.,NO_ACTION,conversacion,n_conv_b_01,
+Está pasable.,NO_ACTION,conversacion,n_conv_b_01,
+No me convence.,NO_ACTION,conversacion,n_conv_b_01,
+Pues no sé.,NO_ACTION,conversacion,n_conv_b_01,
+"Ah, ya entiendo.",NO_ACTION,conversacion,n_conv_b_01,
+"Sí, eso mero.",NO_ACTION,conversacion,n_conv_b_02,
+Ni modo.,NO_ACTION,conversacion,n_conv_b_02,
+Pues bueno.,NO_ACTION,conversacion,n_conv_b_02,
+Este...,NO_ACTION,conversacion,n_conv_b_02,
+Nada más.,NO_ACTION,conversacion,n_conv_b_02,
+Eso es todo.,NO_ACTION,conversacion,n_conv_b_02,
+Fin del párrafo.,NO_ACTION,conversacion,n_conv_b_03,
+Punto final.,NO_ACTION,conversacion,n_conv_b_03,
+No sé todavía.,NO_ACTION,conversacion,n_conv_b_03,
+Tal vez sí.,NO_ACTION,conversacion,n_conv_b_03,
+Tal vez después.,NO_ACTION,conversacion,n_conv_b_03,
+Creo que no.,NO_ACTION,conversacion,n_conv_b_03,
+No estoy convencido.,NO_ACTION,conversacion,n_conv_b_04,
+Podría ser.,NO_ACTION,conversacion,n_conv_b_04,
+Quién sabe todavía.,NO_ACTION,conversacion,n_conv_b_04,
+Suena razonable.,NO_ACTION,conversacion,n_conv_b_04,
+Déjame pensarlo.,NO_ACTION,conversacion,n_conv_b_04,
+Mejor lo pienso.,NO_ACTION,conversacion,n_conv_b_04,
+Está bien así.,NO_ACTION,conversacion,n_conv_c_00,
+"No, así no.",NO_ACTION,conversacion,n_conv_c_00,
+Mejor déjalo.,NO_ACTION,conversacion,n_conv_c_00,
+Creo que no.,NO_ACTION,conversacion,n_conv_c_00,
+No estoy convencido.,NO_ACTION,conversacion,n_conv_c_00,
+Podría ser.,NO_ACTION,conversacion,n_conv_c_00,
+Quién sabe todavía.,NO_ACTION,conversacion,n_conv_c_01,
+No sé aún.,NO_ACTION,conversacion,n_conv_c_01,
+Tal vez después.,NO_ACTION,conversacion,n_conv_c_01,
+Eso está mejor.,NO_ACTION,conversacion,n_conv_c_01,
+"No, mejor no.",NO_ACTION,conversacion,n_conv_c_01,
+Me parece bien.,NO_ACTION,conversacion,n_conv_c_01,
+Suena razonable.,NO_ACTION,conversacion,n_conv_c_02,
+Ya veremos.,NO_ACTION,conversacion,n_conv_c_02,
+Está pasable.,NO_ACTION,conversacion,n_conv_c_02,
+"Mmm, tal vez.",NO_ACTION,conversacion,n_conv_c_02,
+"Bueno, ya qué.",NO_ACTION,conversacion,n_conv_c_02,
+Pues no sé.,NO_ACTION,conversacion,n_conv_c_02,
+"Ah, ya entiendo.",NO_ACTION,conversacion,n_conv_c_03,
+"Claro, claro.",NO_ACTION,conversacion,n_conv_c_03,
+"Sí, eso mero.",NO_ACTION,conversacion,n_conv_c_03,
+Nel.,NO_ACTION,conversacion,n_conv_c_03,
+Simón.,NO_ACTION,conversacion,n_conv_c_03,
+Órale.,NO_ACTION,conversacion,n_conv_c_03,
+Chido.,NO_ACTION,conversacion,n_conv_c_04,
+Ni modo.,NO_ACTION,conversacion,n_conv_c_04,
+Pues bueno.,NO_ACTION,conversacion,n_conv_c_04,
+Este...,NO_ACTION,conversacion,n_conv_c_04,
+"Ajá, ajá.",NO_ACTION,conversacion,n_conv_c_04,
+Ya ni modo.,NO_ACTION,conversacion,n_conv_c_04,
+"No, mejor déjalo.",NO_ACTION,conversacion,n_conv_c_05,
+Está bien por ahora.,NO_ACTION,conversacion,n_conv_c_05,
+Ya casi termino.,NO_ACTION,conversacion,n_conv_c_05,
+Permíteme un segundo.,NO_ACTION,conversacion,n_conv_d_00,
+Dame chance de revisar.,NO_ACTION,conversacion,n_conv_d_00,
+Aguántame tantito.,NO_ACTION,conversacion,n_conv_d_00,
+"Espérame, ya voy.",NO_ACTION,conversacion,n_conv_d_00,
+Ahorita lo veo.,NO_ACTION,conversacion,n_conv_d_00,
+Al rato lo checamos.,NO_ACTION,conversacion,n_conv_d_00,
+Luego lo platicamos.,NO_ACTION,conversacion,n_conv_d_01,
+Mañana lo decidimos.,NO_ACTION,conversacion,n_conv_d_01,
+En un momento te digo.,NO_ACTION,conversacion,n_conv_d_01,
+Deja termino esto.,NO_ACTION,conversacion,n_conv_d_01,
+Ya merito acabo.,NO_ACTION,conversacion,n_conv_d_01,
+"Casi, casi.",NO_ACTION,conversacion,n_conv_d_01,
+Ahí va quedando.,NO_ACTION,conversacion,n_conv_d_02,
+Va tomando forma.,NO_ACTION,conversacion,n_conv_d_02,
+Ya se está armando.,NO_ACTION,conversacion,n_conv_d_02,
+Esto promete.,NO_ACTION,conversacion,n_conv_d_02,
+Pinta bien.,NO_ACTION,conversacion,n_conv_d_02,
+Huele a éxito.,NO_ACTION,conversacion,n_conv_d_02,
+Se ve prometedor.,NO_ACTION,conversacion,n_conv_d_03,
+Tiene potencial.,NO_ACTION,conversacion,n_conv_d_03,
+Hay que pulirlo.,NO_ACTION,conversacion,n_conv_d_03,
+Le falta sazón.,NO_ACTION,conversacion,n_conv_d_03,
+Está crudo todavía.,NO_ACTION,conversacion,n_conv_d_03,
+Ya madurará.,NO_ACTION,conversacion,n_conv_d_03,
+Dale tiempo.,NO_ACTION,conversacion,n_conv_d_04,
+Sin prisa.,NO_ACTION,conversacion,n_conv_d_04,
+Con calma.,NO_ACTION,conversacion,n_conv_d_04,
+Paso a paso.,NO_ACTION,conversacion,n_conv_d_04,
+Poco a poco.,NO_ACTION,conversacion,n_conv_d_04,
+Día a día.,NO_ACTION,conversacion,n_conv_d_04,
+Échale ganas.,NO_ACTION,conversacion,n_cot2_00_01,
+Tú puedes.,NO_ACTION,conversacion,n_cot2_00_01,
+"Ánimo, campeón.",NO_ACTION,conversacion,n_cot2_00_01,
+Vas muy bien.,NO_ACTION,conversacion,n_cot2_00_01,
+Qué onda.,NO_ACTION,conversacion,n_cot2_01_00,
+Cómo andas.,NO_ACTION,conversacion,n_cot2_01_00,
+Cuánto tiempo.,NO_ACTION,conversacion,n_cot2_01_00,
+Qué milagro.,NO_ACTION,conversacion,n_cot2_01_00,
+Pásale.,NO_ACTION,conversacion,n_cot2_01_00,
+Siéntete en casa.,NO_ACTION,conversacion,n_cot2_01_00,
+La casa invita.,NO_ACTION,conversacion,n_cot2_01_01,
+Sírvete algo.,NO_ACTION,conversacion,n_cot2_01_01,
+Ponte cómodo.,NO_ACTION,conversacion,n_cot2_01_01,
+Bienvenido seas.,NO_ACTION,conversacion,n_cot2_01_01,
+Con permiso.,NO_ACTION,conversacion,n_cot2_02_00,
+Disculpe usted.,NO_ACTION,conversacion,n_cot2_02_00,
+Perdón por llegar tarde.,NO_ACTION,conversacion,n_cot2_02_00,
+Gracias por todo.,NO_ACTION,conversacion,n_cot2_02_00,
+Muy amable.,NO_ACTION,conversacion,n_cot2_02_00,
+Qué detallazo.,NO_ACTION,conversacion,n_cot2_02_00,
+Te debo una.,NO_ACTION,conversacion,n_cot2_02_01,
+Estamos en contacto.,NO_ACTION,conversacion,n_cot2_02_01,
+Nos escribimos.,NO_ACTION,conversacion,n_cot2_02_01,
+Salúdame a todos.,NO_ACTION,conversacion,n_cot2_02_01,
+Refrescó bastante.,NO_ACTION,conversacion,n_cot2_03_01,
+Caló fuerte el sol.,NO_ACTION,conversacion,n_cot2_03_01,
+Llovizna apenas.,NO_ACTION,conversacion,n_cot2_03_01,
+Granizó en el norte.,NO_ACTION,conversacion,n_cot2_03_01,
+Está lloviendo otra vez.,NO_ACTION,conversacion,n_cot_00_00,
+Qué calor hace hoy.,NO_ACTION,conversacion,n_cot_00_00,
+El tráfico está imposible.,NO_ACTION,conversacion,n_cot_00_00,
+Se fue la luz un rato.,NO_ACTION,conversacion,n_cot_00_00,
+Ya casi es quincena.,NO_ACTION,conversacion,n_cot_00_00,
+El lunes es festivo.,NO_ACTION,conversacion,n_cot_00_00,
+Hace frío esta mañana.,NO_ACTION,conversacion,n_cot_00_01,
+El metro va llenísimo.,NO_ACTION,conversacion,n_cot_00_01,
+Qué largo estuvo el día.,NO_ACTION,conversacion,n_cot_00_01,
+Por fin es viernes.,NO_ACTION,conversacion,n_cot_00_01,
+Compré pan dulce.,NO_ACTION,conversacion,n_cot_01_00,
+Se acabó el café.,NO_ACTION,conversacion,n_cot_01_00,
+Hay pozole el domingo.,NO_ACTION,conversacion,n_cot_01_00,
+La salsa quedó picosa.,NO_ACTION,conversacion,n_cot_01_00,
+El pastel es de tres leches.,NO_ACTION,conversacion,n_cot_01_00,
+Cenamos tacos al pastor.,NO_ACTION,conversacion,n_cot_01_00,
+El caldo está caliente.,NO_ACTION,conversacion,n_cot_01_01,
+Faltan tortillas.,NO_ACTION,conversacion,n_cot_01_01,
+El postre es flan.,NO_ACTION,conversacion,n_cot_01_01,
+Qué rico huele.,NO_ACTION,conversacion,n_cot_01_01,
+Mi mamá llamó ayer.,NO_ACTION,conversacion,n_cot_02_00,
+El bebé ya camina.,NO_ACTION,conversacion,n_cot_02_00,
+Mi hermano se casa en junio.,NO_ACTION,conversacion,n_cot_02_00,
+La abuela cumplió noventa.,NO_ACTION,conversacion,n_cot_02_00,
+El primo vive en Monterrey.,NO_ACTION,conversacion,n_cot_02_00,
+Mi tía cocina delicioso.,NO_ACTION,conversacion,n_cot_02_00,
+El sobrino perdió un diente.,NO_ACTION,conversacion,n_cot_02_01,
+La familia se reúne en diciembre.,NO_ACTION,conversacion,n_cot_02_01,
+Mi papá arregló el coche.,NO_ACTION,conversacion,n_cot_02_01,
+La prima estudia medicina.,NO_ACTION,conversacion,n_cot_02_01,
+La final será en diciembre.,NO_ACTION,conversacion,n_cot_03_01,
+El portero atajó todo.,NO_ACTION,conversacion,n_cot_03_01,
+Qué golazo metió.,NO_ACTION,conversacion,n_cot_03_01,
+El árbitro pitó el final.,NO_ACTION,conversacion,n_cot_03_01,
+Saca al perro.,NO_ACTION,conversacion,n_cot_04_01,
+Trapea la cocina.,NO_ACTION,conversacion,n_cot_04_01,
+Limpia los vidrios.,NO_ACTION,conversacion,n_cot_04_01,
+Ordena tu cuarto.,NO_ACTION,conversacion,n_cot_04_01,
+El examen es mañana.,NO_ACTION,conversacion,n_cot_05_00,
+La tarea es para el viernes.,NO_ACTION,conversacion,n_cot_05_00,
+Hay junta a las tres.,NO_ACTION,conversacion,n_cot_05_00,
+El curso empieza en agosto.,NO_ACTION,conversacion,n_cot_05_00,
+La clase se movió al salón dos.,NO_ACTION,conversacion,n_cot_05_00,
+El proyecto se entrega hoy.,NO_ACTION,conversacion,n_cot_05_00,
+Hay ensayo general.,NO_ACTION,conversacion,n_cot_05_01,
+El taller cuesta quinientos.,NO_ACTION,conversacion,n_cot_05_01,
+La beca ya salió.,NO_ACTION,conversacion,n_cot_05_01,
+El diplomado dura un año.,NO_ACTION,conversacion,n_cot_05_01,
+Aguanta un momento.,NO_ACTION,imperative-like,n_imp_a_01,
+"Escucha, todavía falta una parte.",NO_ACTION,imperative-like,n_imp_a_01,
+Fíjate que no me decido.,NO_ACTION,imperative-like,n_imp_a_01,
+"Anda, déjame ordenar mis ideas.",NO_ACTION,imperative-like,n_imp_a_01,
+"Venga, que ya casi lo tengo.",NO_ACTION,imperative-like,n_imp_a_01,
+"Para, que me estoy liando.",NO_ACTION,imperative-like,n_imp_a_01,
+Acuérdate de respirar de vez en cuando.,NO_ACTION,imperative-like,n_imp_a_03,
+Imagínate que no funciona.,NO_ACTION,imperative-like,n_imp_a_03,
+Supón que tenemos que empezar de cero.,NO_ACTION,imperative-like,n_imp_a_03,
+Dime tú qué harías.,NO_ACTION,imperative-like,n_imp_a_03,
+Cuenta hasta diez antes de responder.,NO_ACTION,imperative-like,n_imp_a_03,
+Mira bien antes de opinar.,NO_ACTION,imperative-like,n_imp_a_03,
+"Perdona, estaba distraído.",NO_ACTION,imperative-like,n_imp_b_00,
+"Disculpa, ¿decías algo?",NO_ACTION,imperative-like,n_imp_b_00,
+"Repite eso último, por favor.",NO_ACTION,imperative-like,n_imp_b_00,
+"Habla más despacio, por favor.",NO_ACTION,imperative-like,n_imp_b_00,
+Deja que lo anote primero.,NO_ACTION,imperative-like,n_imp_b_00,
+Permíteme dudar de ese dato.,NO_ACTION,imperative-like,n_imp_b_00,
+Cambia de tema un momento.,NO_ACTION,imperative-like,n_imp_b_02,
+Vuelve a eso más tarde.,NO_ACTION,imperative-like,n_imp_b_02,
+Guarda silencio mientras pienso.,NO_ACTION,imperative-like,n_imp_b_02,
+Abre tu mente a otra opción.,NO_ACTION,imperative-like,n_imp_b_02,
+Cierra los ojos e imagina el resultado.,NO_ACTION,imperative-like,n_imp_b_02,
+Haz como si no hubiera pasado.,NO_ACTION,imperative-like,n_imp_b_02,
+Barre la entrada por favor.,NO_ACTION,imperative-like,n_imp_c_02,
+Riega las plantas del patio.,NO_ACTION,imperative-like,n_imp_c_02,
+Saca la basura esta noche.,NO_ACTION,imperative-like,n_imp_c_02,
+Tiende la ropa tendida.,NO_ACTION,imperative-like,n_imp_c_02,
+Haz la tarea temprano.,NO_ACTION,imperative-like,n_imp_c_02,
+Estudia para el examen.,NO_ACTION,imperative-like,n_imp_c_02,
+Baja en la siguiente parada.,NO_ACTION,imperative-like,n_imp_c_04,
+Sube las escaleras despacio.,NO_ACTION,imperative-like,n_imp_c_04,
+No te preocupes por eso.,NO_ACTION,imperative-like,n_imp_d_00,
+No hagas caso de los rumores.,NO_ACTION,imperative-like,n_imp_d_00,
+No corras antes de caminar.,NO_ACTION,imperative-like,n_imp_d_00,
+No cantes victoria todavía.,NO_ACTION,imperative-like,n_imp_d_00,
+No vendas la piel del oso.,NO_ACTION,imperative-like,n_imp_d_00,
+No cuentes los pollos.,NO_ACTION,imperative-like,n_imp_d_00,
+No temas preguntar.,NO_ACTION,imperative-like,n_imp_d_02,
+No dudes en llamar.,NO_ACTION,imperative-like,n_imp_d_02,
+No tardes mucho.,NO_ACTION,imperative-like,n_imp_d_02,
+No te entretengas.,NO_ACTION,imperative-like,n_imp_d_02,
+Perdona el desorden.,NO_ACTION,imperative-like,n_imp_d_02,
+Disculpa la tardanza.,NO_ACTION,imperative-like,n_imp_d_02,
+"Con permiso, voy pasando.",NO_ACTION,imperative-like,n_imp_d_03,
+"Salud, por los buenos tiempos.",NO_ACTION,imperative-like,n_imp_d_03,
+Felicidades por tu logro.,NO_ACTION,imperative-like,n_imp_d_03,
+Bienvenido a bordo.,NO_ACTION,imperative-like,n_imp_d_03,
+"Hasta luego, nos vemos.",NO_ACTION,imperative-like,n_imp_d_03,
+Que descanses esta noche.,NO_ACTION,imperative-like,n_imp_d_03,
+Cuídate mucho.,NO_ACTION,imperative-like,n_imp_d_04,
+Pórtate bien.,NO_ACTION,imperative-like,n_imp_d_04,
+Éxito en todo.,NO_ACTION,imperative-like,n_imp_d_04,
+Apaga las luces.,NO_ACTION,imperative-like,n_impc2_00_01,
+Desconecta la plancha.,NO_ACTION,imperative-like,n_impc2_00_01,
+Guarda los trastes.,NO_ACTION,imperative-like,n_impc2_00_01,
+Barre debajo de la cama.,NO_ACTION,imperative-like,n_impc2_00_01,
+Paga la luz.,NO_ACTION,imperative-like,n_impc2_01_00,
+Deposita la renta.,NO_ACTION,imperative-like,n_impc2_01_00,
+Retira efectivo.,NO_ACTION,imperative-like,n_impc2_01_00,
+Checa tu saldo.,NO_ACTION,imperative-like,n_impc2_01_00,
+Ahorra cada mes.,NO_ACTION,imperative-like,n_impc2_01_00,
+Aparta para emergencias.,NO_ACTION,imperative-like,n_impc2_01_00,
+Paga puntual.,NO_ACTION,imperative-like,n_impc2_01_01,
+Evita deudas.,NO_ACTION,imperative-like,n_impc2_01_01,
+Compara precios.,NO_ACTION,imperative-like,n_impc2_01_01,
+Pide factura.,NO_ACTION,imperative-like,n_impc2_01_01,
+Estudia diario.,NO_ACTION,imperative-like,n_impc2_02_00,
+Repasa apuntes.,NO_ACTION,imperative-like,n_impc2_02_00,
+Haz resúmenes.,NO_ACTION,imperative-like,n_impc2_02_00,
+Subraya ideas.,NO_ACTION,imperative-like,n_impc2_02_00,
+Pregunta dudas.,NO_ACTION,imperative-like,n_impc2_02_00,
+Entrega a tiempo.,NO_ACTION,imperative-like,n_impc2_02_00,
+Asiste siempre.,NO_ACTION,imperative-like,n_impc2_02_01,
+Participa en clase.,NO_ACTION,imperative-like,n_impc2_02_01,
+Lee el capítulo.,NO_ACTION,imperative-like,n_impc2_02_01,
+Memoriza fechas.,NO_ACTION,imperative-like,n_impc2_02_01,
+Come verduras.,NO_ACTION,imperative-like,n_impc2_03_00,
+Toma agua.,NO_ACTION,imperative-like,n_impc2_03_00,
+Duerme temprano.,NO_ACTION,imperative-like,n_impc2_03_00,
+Haz ejercicio.,NO_ACTION,imperative-like,n_impc2_03_00,
+Camina diario.,NO_ACTION,imperative-like,n_impc2_03_00,
+Evita refrescos.,NO_ACTION,imperative-like,n_impc2_03_00,
+Desayuna bien.,NO_ACTION,imperative-like,n_impc2_03_01,
+Cena ligero.,NO_ACTION,imperative-like,n_impc2_03_01,
+Lávate las manos.,NO_ACTION,imperative-like,n_impc2_03_01,
+Abrígate hoy.,NO_ACTION,imperative-like,n_impc2_03_01,
+Cierra la ventana.,NO_ACTION,imperative-like,n_impc_00_00,
+Apaga el ventilador.,NO_ACTION,imperative-like,n_impc_00_00,
+Prende la luz del patio.,NO_ACTION,imperative-like,n_impc_00_00,
+Abre la puerta trasera.,NO_ACTION,imperative-like,n_impc_00_00,
+Baja las persianas.,NO_ACTION,imperative-like,n_impc_00_00,
+Sube el volumen.,NO_ACTION,imperative-like,n_impc_00_00,
+Baja el volumen.,NO_ACTION,imperative-like,n_impc_00_01,
+Apaga la tele.,NO_ACTION,imperative-like,n_impc_00_01,
+Prende el boiler.,NO_ACTION,imperative-like,n_impc_00_01,
+Cierra la llave.,NO_ACTION,imperative-like,n_impc_00_01,
+Cruza con cuidado.,NO_ACTION,imperative-like,n_impc_01_00,
+Espera el verde.,NO_ACTION,imperative-like,n_impc_01_00,
+Toma la ruta larga.,NO_ACTION,imperative-like,n_impc_01_00,
+Baja dos cuadras.,NO_ACTION,imperative-like,n_impc_01_00,
+Sube al puente.,NO_ACTION,imperative-like,n_impc_01_00,
+Evita el centro.,NO_ACTION,imperative-like,n_impc_01_00,
+Toma un atajo.,NO_ACTION,imperative-like,n_impc_01_01,
+Sigue derecho.,NO_ACTION,imperative-like,n_impc_01_01,
+Da vuelta aquí.,NO_ACTION,imperative-like,n_impc_01_01,
+Estaciónate allá.,NO_ACTION,imperative-like,n_impc_01_01,
+Tómate la medicina.,NO_ACTION,imperative-like,n_impc_02_00,
+Guarda reposo.,NO_ACTION,imperative-like,n_impc_02_00,
+Toma muchos líquidos.,NO_ACTION,imperative-like,n_impc_02_00,
+Abrígate bien.,NO_ACTION,imperative-like,n_impc_02_00,
+Come a tus horas.,NO_ACTION,imperative-like,n_impc_02_00,
+Duerme ocho horas.,NO_ACTION,imperative-like,n_impc_02_00,
+Camina diario.,NO_ACTION,imperative-like,n_impc_02_01,
+Respira profundo.,NO_ACTION,imperative-like,n_impc_02_01,
+Relaja los hombros.,NO_ACTION,imperative-like,n_impc_02_01,
+Descansa la vista.,NO_ACTION,imperative-like,n_impc_02_01,
+Felicita a tu hermana.,NO_ACTION,imperative-like,n_impc_03_00,
+Agradece el favor.,NO_ACTION,imperative-like,n_impc_03_00,
+Pide disculpas.,NO_ACTION,imperative-like,n_impc_03_00,
+Saluda al llegar.,NO_ACTION,imperative-like,n_impc_03_00,
+Despídete bien.,NO_ACTION,imperative-like,n_impc_03_00,
+Presenta a tus amigos.,NO_ACTION,imperative-like,n_impc_03_00,
+Invita a tus primos.,NO_ACTION,imperative-like,n_impc_03_01,
+Visita a los abuelos.,NO_ACTION,imperative-like,n_impc_03_01,
+Llama a tu mamá.,NO_ACTION,imperative-like,n_impc_03_01,
+Escríbele pronto.,NO_ACTION,imperative-like,n_impc_03_01,
+No llegues tarde.,NO_ACTION,imperative-like,n_impc_04_00,
+No olvides las llaves.,NO_ACTION,imperative-like,n_impc_04_00,
+No dejes la estufa prendida.,NO_ACTION,imperative-like,n_impc_04_00,
+No hables con extraños.,NO_ACTION,imperative-like,n_impc_04_00,
+No cruces en rojo.,NO_ACTION,imperative-like,n_impc_04_00,
+No tires basura.,NO_ACTION,imperative-like,n_impc_04_00,
+Cuida a tu hermanito.,NO_ACTION,imperative-like,n_impc_05_00,
+Alimenta al gato.,NO_ACTION,imperative-like,n_impc_05_00,
+Pasea al perro.,NO_ACTION,imperative-like,n_impc_05_00,
+Riega el jardín.,NO_ACTION,imperative-like,n_impc_05_00,
+Podas las rosas.,NO_ACTION,imperative-like,n_impc_05_00,
+Limpia la pecera.,NO_ACTION,imperative-like,n_impc_05_00,
+Cepilla al conejo.,NO_ACTION,imperative-like,n_impc_05_01,
+Dale agua a las plantas.,NO_ACTION,imperative-like,n_impc_05_01,
+Recoge las hojas.,NO_ACTION,imperative-like,n_impc_05_01,
+Guarda la bicicleta.,NO_ACTION,imperative-like,n_impc_05_01,
+Borra el colofón.,EDITOR_CONTROL,borrar,x_bor_colofón_00,SUPPORTED
+Elimina el colofón por favor.,EDITOR_CONTROL,borrar,x_bor_colofón_00,SUPPORTED
+Quita el colofón de aquí.,EDITOR_CONTROL,borrar,x_bor_colofón_00,SUPPORTED
+Suprime el colofón sin falta.,EDITOR_CONTROL,borrar,x_bor_colofón_00,SUPPORTED
+Borra la dedicatoria.,EDITOR_CONTROL,borrar,x_bor_dedicatoria_00,SUPPORTED
+Elimina la dedicatoria por favor.,EDITOR_CONTROL,borrar,x_bor_dedicatoria_00,SUPPORTED
+Quita la dedicatoria de aquí.,EDITOR_CONTROL,borrar,x_bor_dedicatoria_00,SUPPORTED
+Suprime la dedicatoria sin falta.,EDITOR_CONTROL,borrar,x_bor_dedicatoria_00,SUPPORTED
+Borra el epígrafe.,EDITOR_CONTROL,borrar,x_bor_epígrafe_00,SUPPORTED
+Elimina el epígrafe por favor.,EDITOR_CONTROL,borrar,x_bor_epígrafe_00,SUPPORTED
+Quita el epígrafe de aquí.,EDITOR_CONTROL,borrar,x_bor_epígrafe_00,SUPPORTED
+Suprime el epígrafe sin falta.,EDITOR_CONTROL,borrar,x_bor_epígrafe_00,SUPPORTED
+Borra la fe de erratas.,EDITOR_CONTROL,borrar,x_bor_erratas_00,SUPPORTED
+Elimina la fe de erratas por favor.,EDITOR_CONTROL,borrar,x_bor_erratas_00,SUPPORTED
+Quita la fe de erratas de aquí.,EDITOR_CONTROL,borrar,x_bor_erratas_00,SUPPORTED
+Suprime la fe de erratas sin falta.,EDITOR_CONTROL,borrar,x_bor_erratas_00,SUPPORTED
+Borra la primera línea.,EDITOR_CONTROL,borrar,x_bor_línea_00,SUPPORTED
+Elimina la primera línea por favor.,EDITOR_CONTROL,borrar,x_bor_línea_00,SUPPORTED
+Quita la primera línea de aquí.,EDITOR_CONTROL,borrar,x_bor_línea_00,SUPPORTED
+Suprime la primera línea sin falta.,EDITOR_CONTROL,borrar,x_bor_línea_00,SUPPORTED
+Borra el último renglón.,EDITOR_CONTROL,borrar,x_bor_renglón_00,SUPPORTED
+Elimina el último renglón por favor.,EDITOR_CONTROL,borrar,x_bor_renglón_00,SUPPORTED
+Quita el último renglón de aquí.,EDITOR_CONTROL,borrar,x_bor_renglón_00,SUPPORTED
+Suprime el último renglón sin falta.,EDITOR_CONTROL,borrar,x_bor_renglón_00,SUPPORTED
+Borra el subtítulo.,EDITOR_CONTROL,borrar,x_bor_subtítulo_00,SUPPORTED
+Elimina el subtítulo por favor.,EDITOR_CONTROL,borrar,x_bor_subtítulo_00,SUPPORTED
+Quita el subtítulo de aquí.,EDITOR_CONTROL,borrar,x_bor_subtítulo_00,SUPPORTED
+Suprime el subtítulo sin falta.,EDITOR_CONTROL,borrar,x_bor_subtítulo_00,SUPPORTED
+Borra el sumario.,EDITOR_CONTROL,borrar,x_bor_sumario_00,SUPPORTED
+Elimina el sumario por favor.,EDITOR_CONTROL,borrar,x_bor_sumario_00,SUPPORTED
+Quita el sumario de aquí.,EDITOR_CONTROL,borrar,x_bor_sumario_00,SUPPORTED
+Suprime el sumario sin falta.,EDITOR_CONTROL,borrar,x_bor_sumario_00,SUPPORTED
+Arregla aquello otro.,EDITOR_CONTROL,deictico,x_dx_Arregla_00,SUPPORTED
+"Por favor, arregla aquello otro.",EDITOR_CONTROL,deictico,x_dx_Arregla_00,SUPPORTED
+Bórralo completo.,EDITOR_CONTROL,deictico,x_dx_Bórralo_00,SUPPORTED
+"Por favor, bórralo completo.",EDITOR_CONTROL,deictico,x_dx_Bórralo_00,SUPPORTED
+Cambia aquello.,EDITOR_CONTROL,deictico,x_dx_Cambia_00,SUPPORTED
+"Por favor, cambia aquello.",EDITOR_CONTROL,deictico,x_dx_Cambia_00,SUPPORTED
+Copia eso también.,EDITOR_CONTROL,deictico,x_dx_Copia_00,SUPPORTED
+"Por favor, copia eso también.",EDITOR_CONTROL,deictico,x_dx_Copia_00,SUPPORTED
+Envíalo.,EDITOR_CONTROL,deictico,x_dx_Envíalo._00,SUPPORTED
+"Por favor, envíalo.",EDITOR_CONTROL,deictico,x_dx_Envíalo._00,SUPPORTED
+Guárdalo.,EDITOR_CONTROL,deictico,x_dx_Guárdalo._00,SUPPORTED
+"Por favor, guárdalo.",EDITOR_CONTROL,deictico,x_dx_Guárdalo._00,SUPPORTED
+Haz eso ya.,EDITOR_CONTROL,deictico,x_dx_Haz_00,SUPPORTED
+"Por favor, haz eso ya.",EDITOR_CONTROL,deictico,x_dx_Haz_00,SUPPORTED
+Hazlo de nuevo.,EDITOR_CONTROL,deictico,x_dx_Hazlo_00,SUPPORTED
+"Por favor, hazlo de nuevo.",EDITOR_CONTROL,deictico,x_dx_Hazlo_00,SUPPORTED
+Imprímelo.,EDITOR_CONTROL,deictico,x_dx_Imprímelo._00,SUPPORTED
+"Por favor, imprímelo.",EDITOR_CONTROL,deictico,x_dx_Imprímelo._00,SUPPORTED
+Mueve esto para allá.,EDITOR_CONTROL,deictico,x_dx_Mueve_00,SUPPORTED
+"Por favor, mueve esto para allá.",EDITOR_CONTROL,deictico,x_dx_Mueve_00,SUPPORTED
+Ponlo ahí mismo.,EDITOR_CONTROL,deictico,x_dx_Ponlo_00,SUPPORTED
+"Por favor, ponlo ahí mismo.",EDITOR_CONTROL,deictico,x_dx_Ponlo_00,SUPPORTED
+Quítalo ya.,EDITOR_CONTROL,deictico,x_dx_Quítalo_00,SUPPORTED
+"Por favor, quítalo ya.",EDITOR_CONTROL,deictico,x_dx_Quítalo_00,SUPPORTED
+Revísalo.,EDITOR_CONTROL,deictico,x_dx_Revísalo._00,SUPPORTED
+"Por favor, revísalo.",EDITOR_CONTROL,deictico,x_dx_Revísalo._00,SUPPORTED
+Tómalo y muévelo.,EDITOR_CONTROL,deictico,x_dx_Tómalo_00,SUPPORTED
+"Por favor, tómalo y muévelo.",EDITOR_CONTROL,deictico,x_dx_Tómalo_00,SUPPORTED
+Ahora copia este bloque.,EDITOR_CONTROL,edicion,x_ev_copia_00,UNSUPPORTED
+Por favor copia el fragmento.,EDITOR_CONTROL,edicion,x_ev_copia_00,UNSUPPORTED
+Necesito que copia eso.,EDITOR_CONTROL,edicion,x_ev_copia_00,UNSUPPORTED
+¿Puedes copia la selección?,EDITOR_CONTROL,edicion,x_ev_copia_00,UNSUPPORTED
+Ahora corta este bloque.,EDITOR_CONTROL,edicion,x_ev_corta_00,UNSUPPORTED
+Por favor corta el fragmento.,EDITOR_CONTROL,edicion,x_ev_corta_00,UNSUPPORTED
+Necesito que corta eso.,EDITOR_CONTROL,edicion,x_ev_corta_00,UNSUPPORTED
+¿Puedes corta la selección?,EDITOR_CONTROL,edicion,x_ev_corta_00,UNSUPPORTED
+Ahora duplica este bloque.,EDITOR_CONTROL,edicion,x_ev_duplica_00,UNSUPPORTED
+Por favor duplica el fragmento.,EDITOR_CONTROL,edicion,x_ev_duplica_00,UNSUPPORTED
+Necesito que duplica eso.,EDITOR_CONTROL,edicion,x_ev_duplica_00,UNSUPPORTED
+¿Puedes duplica la selección?,EDITOR_CONTROL,edicion,x_ev_duplica_00,UNSUPPORTED
+Ahora mueve este bloque.,EDITOR_CONTROL,edicion,x_ev_mueve_00,UNSUPPORTED
+Por favor mueve el fragmento.,EDITOR_CONTROL,edicion,x_ev_mueve_00,UNSUPPORTED
+Necesito que mueve eso.,EDITOR_CONTROL,edicion,x_ev_mueve_00,UNSUPPORTED
+¿Puedes mueve la selección?,EDITOR_CONTROL,edicion,x_ev_mueve_00,UNSUPPORTED
+Ahora pega este bloque.,EDITOR_CONTROL,edicion,x_ev_pega_00,UNSUPPORTED
+Por favor pega el fragmento.,EDITOR_CONTROL,edicion,x_ev_pega_00,UNSUPPORTED
+Necesito que pega eso.,EDITOR_CONTROL,edicion,x_ev_pega_00,UNSUPPORTED
+¿Puedes pega la selección?,EDITOR_CONTROL,edicion,x_ev_pega_00,UNSUPPORTED
+Ahora selecciona este bloque.,EDITOR_CONTROL,edicion,x_ev_selecciona_00,UNSUPPORTED
+Por favor selecciona el fragmento.,EDITOR_CONTROL,edicion,x_ev_selecciona_00,UNSUPPORTED
+Necesito que selecciona eso.,EDITOR_CONTROL,edicion,x_ev_selecciona_00,UNSUPPORTED
+¿Puedes selecciona la selección?,EDITOR_CONTROL,edicion,x_ev_selecciona_00,UNSUPPORTED
+Pon los subtítulos en negritas.,EDITOR_CONTROL,formato,x_fm_negr_00,SUPPORTED
+Aplica negritas a los subtítulos.,EDITOR_CONTROL,formato,x_fm_negr_00,SUPPORTED
+Marca los subtítulos con negritas.,EDITOR_CONTROL,formato,x_fm_negr_00,SUPPORTED
+Pon los enlaces en subrayado.,EDITOR_CONTROL,formato,x_fm_subr_00,SUPPORTED
+Aplica subrayado a los enlaces.,EDITOR_CONTROL,formato,x_fm_subr_00,SUPPORTED
+Marca los enlaces con subrayado.,EDITOR_CONTROL,formato,x_fm_subr_00,SUPPORTED
+Ahora abre el documento.,EDITOR_CONTROL,archivo,x_fv_abre_00,UNSUPPORTED
+Por favor abre el archivo.,EDITOR_CONTROL,archivo,x_fv_abre_00,UNSUPPORTED
+Necesito que abre esto ya.,EDITOR_CONTROL,archivo,x_fv_abre_00,UNSUPPORTED
+¿Puedes abre el documento?,EDITOR_CONTROL,archivo,x_fv_abre_00,UNSUPPORTED
+Ahora busca el documento.,EDITOR_CONTROL,archivo,x_fv_busca_00,UNSUPPORTED
+Por favor busca el archivo.,EDITOR_CONTROL,archivo,x_fv_busca_00,UNSUPPORTED
+Necesito que busca esto ya.,EDITOR_CONTROL,archivo,x_fv_busca_00,UNSUPPORTED
+¿Puedes busca el documento?,EDITOR_CONTROL,archivo,x_fv_busca_00,UNSUPPORTED
+Ahora comparte el documento.,EDITOR_CONTROL,archivo,x_fv_comparte_00,UNSUPPORTED
+Por favor comparte el archivo.,EDITOR_CONTROL,archivo,x_fv_comparte_00,UNSUPPORTED
+Necesito que comparte esto ya.,EDITOR_CONTROL,archivo,x_fv_comparte_00,UNSUPPORTED
+¿Puedes comparte el documento?,EDITOR_CONTROL,archivo,x_fv_comparte_00,UNSUPPORTED
+Ahora exporta el documento.,EDITOR_CONTROL,archivo,x_fv_exporta_00,UNSUPPORTED
+Por favor exporta el archivo.,EDITOR_CONTROL,archivo,x_fv_exporta_00,UNSUPPORTED
+Necesito que exporta esto ya.,EDITOR_CONTROL,archivo,x_fv_exporta_00,UNSUPPORTED
+¿Puedes exporta el documento?,EDITOR_CONTROL,archivo,x_fv_exporta_00,UNSUPPORTED
+Ahora guarda el documento.,EDITOR_CONTROL,archivo,x_fv_guarda_00,UNSUPPORTED
+Por favor guarda el archivo.,EDITOR_CONTROL,archivo,x_fv_guarda_00,UNSUPPORTED
+Necesito que guarda esto ya.,EDITOR_CONTROL,archivo,x_fv_guarda_00,UNSUPPORTED
+¿Puedes guarda el documento?,EDITOR_CONTROL,archivo,x_fv_guarda_00,UNSUPPORTED
+Ahora imprime el documento.,EDITOR_CONTROL,archivo,x_fv_imprime_00,UNSUPPORTED
+Por favor imprime el archivo.,EDITOR_CONTROL,archivo,x_fv_imprime_00,UNSUPPORTED
+Necesito que imprime esto ya.,EDITOR_CONTROL,archivo,x_fv_imprime_00,UNSUPPORTED
+¿Puedes imprime el documento?,EDITOR_CONTROL,archivo,x_fv_imprime_00,UNSUPPORTED
+Adelante con lo deshecho.,EDITOR_CONTROL,redo,x_re2_Adelante_00,SUPPORTED
+"Por favor, adelante con lo deshecho.",EDITOR_CONTROL,redo,x_re2_Adelante_00,SUPPORTED
+Recupera lo deshecho.,EDITOR_CONTROL,redo,x_re2_Recupera_00,SUPPORTED
+"Por favor, recupera lo deshecho.",EDITOR_CONTROL,redo,x_re2_Recupera_00,SUPPORTED
+Repite la acción.,EDITOR_CONTROL,redo,x_re2_Repite_00,SUPPORTED
+"Por favor, repite la acción.",EDITOR_CONTROL,redo,x_re2_Repite_00,SUPPORTED
+Restaura la edición.,EDITOR_CONTROL,redo,x_re2_Restaura_00,SUPPORTED
+"Por favor, restaura la edición.",EDITOR_CONTROL,redo,x_re2_Restaura_00,SUPPORTED
+Vuelve a hacer lo anterior.,EDITOR_CONTROL,redo,x_re2_Vuelve_00,SUPPORTED
+"Por favor, vuelve a hacer lo anterior.",EDITOR_CONTROL,redo,x_re2_Vuelve_00,SUPPORTED
+Cambia cita por referencia.,EDITOR_CONTROL,reemplazar,x_re_cita_00,SUPPORTED
+Sustituye cita por referencia.,EDITOR_CONTROL,reemplazar,x_re_cita_00,SUPPORTED
+Donde ponga cita escribe referencia.,EDITOR_CONTROL,reemplazar,x_re_cita_00,SUPPORTED
+Troca cita por referencia.,EDITOR_CONTROL,reemplazar,x_re_cita_00,SUPPORTED
+Cambia epílogo por cierre.,EDITOR_CONTROL,reemplazar,x_re_epíl_00,SUPPORTED
+Sustituye epílogo por cierre.,EDITOR_CONTROL,reemplazar,x_re_epíl_00,SUPPORTED
+Donde ponga epílogo escribe cierre.,EDITOR_CONTROL,reemplazar,x_re_epíl_00,SUPPORTED
+Troca epílogo por cierre.,EDITOR_CONTROL,reemplazar,x_re_epíl_00,SUPPORTED
+Cambia esquema por diagrama.,EDITOR_CONTROL,reemplazar,x_re_esqu_00,SUPPORTED
+Sustituye esquema por diagrama.,EDITOR_CONTROL,reemplazar,x_re_esqu_00,SUPPORTED
+Donde ponga esquema escribe diagrama.,EDITOR_CONTROL,reemplazar,x_re_esqu_00,SUPPORTED
+Troca esquema por diagrama.,EDITOR_CONTROL,reemplazar,x_re_esqu_00,SUPPORTED
+Cambia prólogo por introducción.,EDITOR_CONTROL,reemplazar,x_re_pról_00,SUPPORTED
+Sustituye prólogo por introducción.,EDITOR_CONTROL,reemplazar,x_re_pról_00,SUPPORTED
+Donde ponga prólogo escribe introducción.,EDITOR_CONTROL,reemplazar,x_re_pról_00,SUPPORTED
+Troca prólogo por introducción.,EDITOR_CONTROL,reemplazar,x_re_pról_00,SUPPORTED
+Cambia versículo por párrafo.,EDITOR_CONTROL,reemplazar,x_re_vers_00,SUPPORTED
+Sustituye versículo por párrafo.,EDITOR_CONTROL,reemplazar,x_re_vers_00,SUPPORTED
+Donde ponga versículo escribe párrafo.,EDITOR_CONTROL,reemplazar,x_re_vers_00,SUPPORTED
+Troca versículo por párrafo.,EDITOR_CONTROL,reemplazar,x_re_vers_00,SUPPORTED
+Hazlo más sobrio.,EDITOR_CONTROL,reformular,x_rf_sobrio_00,SUPPORTED
+Reformula esto más sobrio.,EDITOR_CONTROL,reformular,x_rf_sobrio_00,SUPPORTED
+Dale un aire más sobrio al texto.,EDITOR_CONTROL,reformular,x_rf_sobrio_00,SUPPORTED
+Vuelve el párrafo más sobrio.,EDITOR_CONTROL,reformular,x_rf_sobrio_00,SUPPORTED
+Cambia el título a Agradecimientos.,EDITOR_CONTROL,titulo,x_tit_Agra_00,SUPPORTED
+Pon Agradecimientos como título.,EDITOR_CONTROL,titulo,x_tit_Agra_00,SUPPORTED
+El documento se titulará Agradecimientos.,EDITOR_CONTROL,titulo,x_tit_Agra_00,SUPPORTED
+Actualiza el encabezado a Agradecimientos.,EDITOR_CONTROL,titulo,x_tit_Agra_00,SUPPORTED
+Cambia el título a Antología.,EDITOR_CONTROL,titulo,x_tit_Anto_00,SUPPORTED
+Pon Antología como título.,EDITOR_CONTROL,titulo,x_tit_Anto_00,SUPPORTED
+El documento se titulará Antología.,EDITOR_CONTROL,titulo,x_tit_Anto_00,SUPPORTED
+Actualiza el encabezado a Antología.,EDITOR_CONTROL,titulo,x_tit_Anto_00,SUPPORTED
+Cambia el título a Atlas.,EDITOR_CONTROL,titulo,x_tit_Atla_00,SUPPORTED
+Pon Atlas como título.,EDITOR_CONTROL,titulo,x_tit_Atla_00,SUPPORTED
+El documento se titulará Atlas.,EDITOR_CONTROL,titulo,x_tit_Atla_00,SUPPORTED
+Actualiza el encabezado a Atlas.,EDITOR_CONTROL,titulo,x_tit_Atla_00,SUPPORTED
+Cambia el título a Compendio.,EDITOR_CONTROL,titulo,x_tit_Comp_00,SUPPORTED
+Pon Compendio como título.,EDITOR_CONTROL,titulo,x_tit_Comp_00,SUPPORTED
+El documento se titulará Compendio.,EDITOR_CONTROL,titulo,x_tit_Comp_00,SUPPORTED
+Actualiza el encabezado a Compendio.,EDITOR_CONTROL,titulo,x_tit_Comp_00,SUPPORTED
+Cambia el título a Cronología.,EDITOR_CONTROL,titulo,x_tit_Cron_00,SUPPORTED
+Pon Cronología como título.,EDITOR_CONTROL,titulo,x_tit_Cron_00,SUPPORTED
+El documento se titulará Cronología.,EDITOR_CONTROL,titulo,x_tit_Cron_00,SUPPORTED
+Actualiza el encabezado a Cronología.,EDITOR_CONTROL,titulo,x_tit_Cron_00,SUPPORTED
+Cambia el título a Genealogía.,EDITOR_CONTROL,titulo,x_tit_Gene_00,SUPPORTED
+Pon Genealogía como título.,EDITOR_CONTROL,titulo,x_tit_Gene_00,SUPPORTED
+El documento se titulará Genealogía.,EDITOR_CONTROL,titulo,x_tit_Gene_00,SUPPORTED
+Actualiza el encabezado a Genealogía.,EDITOR_CONTROL,titulo,x_tit_Gene_00,SUPPORTED
+Cambia el título a Glosario.,EDITOR_CONTROL,titulo,x_tit_Glos_00,SUPPORTED
+Pon Glosario como título.,EDITOR_CONTROL,titulo,x_tit_Glos_00,SUPPORTED
+El documento se titulará Glosario.,EDITOR_CONTROL,titulo,x_tit_Glos_00,SUPPORTED
+Actualiza el encabezado a Glosario.,EDITOR_CONTROL,titulo,x_tit_Glos_00,SUPPORTED
+Cambia el título a Memorias.,EDITOR_CONTROL,titulo,x_tit_Memo_00,SUPPORTED
+Pon Memorias como título.,EDITOR_CONTROL,titulo,x_tit_Memo_00,SUPPORTED
+El documento se titulará Memorias.,EDITOR_CONTROL,titulo,x_tit_Memo_00,SUPPORTED
+Actualiza el encabezado a Memorias.,EDITOR_CONTROL,titulo,x_tit_Memo_00,SUPPORTED
+Anula la modificación.,EDITOR_CONTROL,undo,x_un_Anula_00,SUPPORTED
+"Anula la modificación, por favor.",EDITOR_CONTROL,undo,x_un_Anula_00,SUPPORTED
+Da un paso atrás.,EDITOR_CONTROL,undo,x_un_Da_00,SUPPORTED
+"Da un paso atrás, por favor.",EDITOR_CONTROL,undo,x_un_Da_00,SUPPORTED
+Deshaz lo último.,EDITOR_CONTROL,undo,x_un_Deshaz_00,SUPPORTED
+"Deshaz lo último, por favor.",EDITOR_CONTROL,undo,x_un_Deshaz_00,SUPPORTED
+Retrocede un cambio.,EDITOR_CONTROL,undo,x_un_Retrocede_00,SUPPORTED
+"Retrocede un cambio, por favor.",EDITOR_CONTROL,undo,x_un_Retrocede_00,SUPPORTED
+Ahora corrige este texto.,EDITOR_CONTROL,transformar,x_xv_corrige_00,UNSUPPORTED
+Por favor corrige el párrafo.,EDITOR_CONTROL,transformar,x_xv_corrige_00,UNSUPPORTED
+Necesito que corrige la sección.,EDITOR_CONTROL,transformar,x_xv_corrige_00,UNSUPPORTED
+¿Puedes corrige esto?,EDITOR_CONTROL,transformar,x_xv_corrige_00,UNSUPPORTED
+Ahora expande este texto.,EDITOR_CONTROL,transformar,x_xv_expande_00,UNSUPPORTED
+Por favor expande el párrafo.,EDITOR_CONTROL,transformar,x_xv_expande_00,UNSUPPORTED
+Necesito que expande la sección.,EDITOR_CONTROL,transformar,x_xv_expande_00,UNSUPPORTED
+¿Puedes expande esto?,EDITOR_CONTROL,transformar,x_xv_expande_00,UNSUPPORTED
+Ahora lee este texto.,EDITOR_CONTROL,transformar,x_xv_lee_00,UNSUPPORTED
+Por favor lee el párrafo.,EDITOR_CONTROL,transformar,x_xv_lee_00,UNSUPPORTED
+Necesito que lee la sección.,EDITOR_CONTROL,transformar,x_xv_lee_00,UNSUPPORTED
+¿Puedes lee esto?,EDITOR_CONTROL,transformar,x_xv_lee_00,UNSUPPORTED
+Ahora numera este texto.,EDITOR_CONTROL,transformar,x_xv_numera_00,UNSUPPORTED
+Por favor numera el párrafo.,EDITOR_CONTROL,transformar,x_xv_numera_00,UNSUPPORTED
+Necesito que numera la sección.,EDITOR_CONTROL,transformar,x_xv_numera_00,UNSUPPORTED
+¿Puedes numera esto?,EDITOR_CONTROL,transformar,x_xv_numera_00,UNSUPPORTED
+Ahora resume este texto.,EDITOR_CONTROL,transformar,x_xv_resume_00,UNSUPPORTED
+Por favor resume el párrafo.,EDITOR_CONTROL,transformar,x_xv_resume_00,UNSUPPORTED
+Necesito que resume la sección.,EDITOR_CONTROL,transformar,x_xv_resume_00,UNSUPPORTED
+¿Puedes resume esto?,EDITOR_CONTROL,transformar,x_xv_resume_00,UNSUPPORTED
+Copia este párrafo.,EDITOR_CONTROL,copy,y_cp_Copia_00,UNSUPPORTED
+Copia la dirección.,EDITOR_CONTROL,copy,y_cp_Copia_00,UNSUPPORTED
+Copia el teléfono.,EDITOR_CONTROL,copy,y_cp_Copia_00,UNSUPPORTED
+Copia la referencia.,EDITOR_CONTROL,copy,y_cp_Copia_00,UNSUPPORTED
+Copia el enlace.,EDITOR_CONTROL,copy,y_cp_Copia_00,UNSUPPORTED
+Copia este párrafo por favor.,EDITOR_CONTROL,copy,y_cp_Copia_00,UNSUPPORTED
+Copia la dirección por favor.,EDITOR_CONTROL,copy,y_cp_Copia_00,UNSUPPORTED
+Copia el teléfono por favor.,EDITOR_CONTROL,copy,y_cp_Copia_00,UNSUPPORTED
+Corta este párrafo.,EDITOR_CONTROL,cut,y_cp_Corta_00,UNSUPPORTED
+Corta la dirección.,EDITOR_CONTROL,cut,y_cp_Corta_00,UNSUPPORTED
+Corta el teléfono.,EDITOR_CONTROL,cut,y_cp_Corta_00,UNSUPPORTED
+Corta la referencia.,EDITOR_CONTROL,cut,y_cp_Corta_00,UNSUPPORTED
+Corta el enlace.,EDITOR_CONTROL,cut,y_cp_Corta_00,UNSUPPORTED
+Corta este párrafo por favor.,EDITOR_CONTROL,cut,y_cp_Corta_00,UNSUPPORTED
+Corta la dirección por favor.,EDITOR_CONTROL,cut,y_cp_Corta_00,UNSUPPORTED
+Corta el teléfono por favor.,EDITOR_CONTROL,cut,y_cp_Corta_00,UNSUPPORTED
+Duplica este párrafo.,EDITOR_CONTROL,copy,y_cp_Duplica_00,UNSUPPORTED
+Duplica la dirección.,EDITOR_CONTROL,copy,y_cp_Duplica_00,UNSUPPORTED
+Duplica el teléfono.,EDITOR_CONTROL,copy,y_cp_Duplica_00,UNSUPPORTED
+Duplica la referencia.,EDITOR_CONTROL,copy,y_cp_Duplica_00,UNSUPPORTED
+Duplica el enlace.,EDITOR_CONTROL,copy,y_cp_Duplica_00,UNSUPPORTED
+Duplica este párrafo por favor.,EDITOR_CONTROL,copy,y_cp_Duplica_00,UNSUPPORTED
+Duplica la dirección por favor.,EDITOR_CONTROL,copy,y_cp_Duplica_00,UNSUPPORTED
+Duplica el teléfono por favor.,EDITOR_CONTROL,copy,y_cp_Duplica_00,UNSUPPORTED
+Pega este párrafo.,EDITOR_CONTROL,paste,y_cp_Pega_00,UNSUPPORTED
+Pega la dirección.,EDITOR_CONTROL,paste,y_cp_Pega_00,UNSUPPORTED
+Pega el teléfono.,EDITOR_CONTROL,paste,y_cp_Pega_00,UNSUPPORTED
+Pega la referencia.,EDITOR_CONTROL,paste,y_cp_Pega_00,UNSUPPORTED
+Pega el enlace.,EDITOR_CONTROL,paste,y_cp_Pega_00,UNSUPPORTED
+Pega este párrafo por favor.,EDITOR_CONTROL,paste,y_cp_Pega_00,UNSUPPORTED
+Pega la dirección por favor.,EDITOR_CONTROL,paste,y_cp_Pega_00,UNSUPPORTED
+Pega el teléfono por favor.,EDITOR_CONTROL,paste,y_cp_Pega_00,UNSUPPORTED
+Convierte el informe a Word.,EDITOR_CONTROL,archivo,y_export_Convie_00,UNSUPPORTED
+Convierte la tesis a Word.,EDITOR_CONTROL,archivo,y_export_Convie_00,UNSUPPORTED
+Convierte el manual a Word.,EDITOR_CONTROL,archivo,y_export_Convie_00,UNSUPPORTED
+Convierte el folleto a Word.,EDITOR_CONTROL,archivo,y_export_Convie_00,UNSUPPORTED
+Convierte la propuesta a Word.,EDITOR_CONTROL,archivo,y_export_Convie_00,UNSUPPORTED
+Exporta el informe como pdf.,EDITOR_CONTROL,archivo,y_export_Export_00,UNSUPPORTED
+Exporta la tesis como pdf.,EDITOR_CONTROL,archivo,y_export_Export_00,UNSUPPORTED
+Exporta el manual como pdf.,EDITOR_CONTROL,archivo,y_export_Export_00,UNSUPPORTED
+Exporta el folleto como pdf.,EDITOR_CONTROL,archivo,y_export_Export_00,UNSUPPORTED
+Exporta la propuesta como pdf.,EDITOR_CONTROL,archivo,y_export_Export_00,UNSUPPORTED
+Exporta el informe a texto plano.,EDITOR_CONTROL,archivo,y_export_Export_00,UNSUPPORTED
+Exporta la tesis a texto plano.,EDITOR_CONTROL,archivo,y_export_Export_00,UNSUPPORTED
+Exporta el manual a texto plano.,EDITOR_CONTROL,archivo,y_export_Export_00,UNSUPPORTED
+Exporta el folleto a texto plano.,EDITOR_CONTROL,archivo,y_export_Export_00,UNSUPPORTED
+Exporta la propuesta a texto plano.,EDITOR_CONTROL,archivo,y_export_Export_00,UNSUPPORTED
+Encuentra la palabra resumen por favor.,EDITOR_CONTROL,buscar,y_find_Encuen_00,UNSUPPORTED
+Encuentra el nombre del autor por favor.,EDITOR_CONTROL,buscar,y_find_Encuen_00,UNSUPPORTED
+Encuentra la fecha de entrega por favor.,EDITOR_CONTROL,buscar,y_find_Encuen_00,UNSUPPORTED
+Encuentra el párrafo repetido por favor.,EDITOR_CONTROL,buscar,y_find_Encuen_00,UNSUPPORTED
+Encuentra la cita pendiente por favor.,EDITOR_CONTROL,buscar,y_find_Encuen_00,UNSUPPORTED
+Encuentra los errores de dedo por favor.,EDITOR_CONTROL,buscar,y_find_Encuen_00,UNSUPPORTED
+Localiza la palabra resumen en el texto.,EDITOR_CONTROL,buscar,y_find_Locali_00,UNSUPPORTED
+Localiza el nombre del autor en el texto.,EDITOR_CONTROL,buscar,y_find_Locali_00,UNSUPPORTED
+Localiza la fecha de entrega en el texto.,EDITOR_CONTROL,buscar,y_find_Locali_00,UNSUPPORTED
+Localiza el párrafo repetido en el texto.,EDITOR_CONTROL,buscar,y_find_Locali_00,UNSUPPORTED
+Localiza la cita pendiente en el texto.,EDITOR_CONTROL,buscar,y_find_Locali_00,UNSUPPORTED
+Localiza los errores de dedo en el texto.,EDITOR_CONTROL,buscar,y_find_Locali_00,UNSUPPORTED
+Baja al índice.,EDITOR_CONTROL,navegacion,y_nav_Baja_00,UNSUPPORTED
+Baja a la bibliografía.,EDITOR_CONTROL,navegacion,y_nav_Baja_00,UNSUPPORTED
+Baja al apéndice.,EDITOR_CONTROL,navegacion,y_nav_Baja_00,UNSUPPORTED
+Baja al glosario.,EDITOR_CONTROL,navegacion,y_nav_Baja_00,UNSUPPORTED
+Baja al prólogo.,EDITOR_CONTROL,navegacion,y_nav_Baja_00,UNSUPPORTED
+Baja a los agradecimientos.,EDITOR_CONTROL,navegacion,y_nav_Baja_00,UNSUPPORTED
+Baja a la primera nota.,EDITOR_CONTROL,navegacion,y_nav_Baja_00,UNSUPPORTED
+Baja al último cuadro.,EDITOR_CONTROL,navegacion,y_nav_Baja_00,UNSUPPORTED
+Salta al índice.,EDITOR_CONTROL,navegacion,y_nav_Salta_00,UNSUPPORTED
+Salta a la bibliografía.,EDITOR_CONTROL,navegacion,y_nav_Salta_00,UNSUPPORTED
+Salta al apéndice.,EDITOR_CONTROL,navegacion,y_nav_Salta_00,UNSUPPORTED
+Salta al glosario.,EDITOR_CONTROL,navegacion,y_nav_Salta_00,UNSUPPORTED
+Salta al prólogo.,EDITOR_CONTROL,navegacion,y_nav_Salta_00,UNSUPPORTED
+Salta a los agradecimientos.,EDITOR_CONTROL,navegacion,y_nav_Salta_00,UNSUPPORTED
+Salta a la primera nota.,EDITOR_CONTROL,navegacion,y_nav_Salta_00,UNSUPPORTED
+Salta al último cuadro.,EDITOR_CONTROL,navegacion,y_nav_Salta_00,UNSUPPORTED
+Necesito que abras el informe de ayer.,EDITOR_CONTROL,archivo,y_open_Necesi_00,UNSUPPORTED
+Necesito que abras la hoja de cálculo.,EDITOR_CONTROL,archivo,y_open_Necesi_00,UNSUPPORTED
+Necesito que abras el contrato final.,EDITOR_CONTROL,archivo,y_open_Necesi_00,UNSUPPORTED
+Necesito que abras el borrador.,EDITOR_CONTROL,archivo,y_open_Necesi_00,UNSUPPORTED
+Necesito que abras la presentación.,EDITOR_CONTROL,archivo,y_open_Necesi_00,UNSUPPORTED
+Necesito que abras el archivo adjunto.,EDITOR_CONTROL,archivo,y_open_Necesi_00,UNSUPPORTED
+Necesito que abras el manual.,EDITOR_CONTROL,archivo,y_open_Necesi_00,UNSUPPORTED
+Necesito que abras la tesis.,EDITOR_CONTROL,archivo,y_open_Necesi_00,UNSUPPORTED
+Imprime esta página,EDITOR_CONTROL,archivo,y_print_Imprim_00,UNSUPPORTED
+Imprime el informe,EDITOR_CONTROL,archivo,y_print_Imprim_00,UNSUPPORTED
+Imprime el contrato,EDITOR_CONTROL,archivo,y_print_Imprim_00,UNSUPPORTED
+Imprime las primeras páginas,EDITOR_CONTROL,archivo,y_print_Imprim_00,UNSUPPORTED
+Imprime el borrador,EDITOR_CONTROL,archivo,y_print_Imprim_00,UNSUPPORTED
+Imprime la propuesta,EDITOR_CONTROL,archivo,y_print_Imprim_00,UNSUPPORTED
+Imprime el anexo,EDITOR_CONTROL,archivo,y_print_Imprim_00,UNSUPPORTED
+Imprime dos copias,EDITOR_CONTROL,archivo,y_print_Imprim_00,UNSUPPORTED
+Imprime esta página por favor.,EDITOR_CONTROL,archivo,y_print_Imprim_00,UNSUPPORTED
+Imprime el informe por favor.,EDITOR_CONTROL,archivo,y_print_Imprim_00,UNSUPPORTED
+Imprime el contrato por favor.,EDITOR_CONTROL,archivo,y_print_Imprim_00,UNSUPPORTED
+Imprime las primeras páginas por favor.,EDITOR_CONTROL,archivo,y_print_Imprim_00,UNSUPPORTED
+Imprime el borrador por favor.,EDITOR_CONTROL,archivo,y_print_Imprim_00,UNSUPPORTED
+Imprime la propuesta por favor.,EDITOR_CONTROL,archivo,y_print_Imprim_00,UNSUPPORTED
+Imprime el anexo por favor.,EDITOR_CONTROL,archivo,y_print_Imprim_00,UNSUPPORTED
+Imprime dos copias por favor.,EDITOR_CONTROL,archivo,y_print_Imprim_00,UNSUPPORTED
+Manda a imprimir esta página.,EDITOR_CONTROL,archivo,y_print_Manda_00,UNSUPPORTED
+Manda a imprimir el informe.,EDITOR_CONTROL,archivo,y_print_Manda_00,UNSUPPORTED
+Manda a imprimir el contrato.,EDITOR_CONTROL,archivo,y_print_Manda_00,UNSUPPORTED
+Manda a imprimir las primeras páginas.,EDITOR_CONTROL,archivo,y_print_Manda_00,UNSUPPORTED
+Manda a imprimir el borrador.,EDITOR_CONTROL,archivo,y_print_Manda_00,UNSUPPORTED
+Manda a imprimir la propuesta.,EDITOR_CONTROL,archivo,y_print_Manda_00,UNSUPPORTED
+Manda a imprimir el anexo.,EDITOR_CONTROL,archivo,y_print_Manda_00,UNSUPPORTED
+Manda a imprimir dos copias.,EDITOR_CONTROL,archivo,y_print_Manda_00,UNSUPPORTED
+Saca una copia impresa de esta página.,EDITOR_CONTROL,archivo,y_print_Saca u_00,UNSUPPORTED
+Saca una copia impresa de el informe.,EDITOR_CONTROL,archivo,y_print_Saca u_00,UNSUPPORTED
+Saca una copia impresa de el contrato.,EDITOR_CONTROL,archivo,y_print_Saca u_00,UNSUPPORTED
+Saca una copia impresa de las primeras páginas.,EDITOR_CONTROL,archivo,y_print_Saca u_00,UNSUPPORTED
+Saca una copia impresa de el borrador.,EDITOR_CONTROL,archivo,y_print_Saca u_00,UNSUPPORTED
+Saca una copia impresa de la propuesta.,EDITOR_CONTROL,archivo,y_print_Saca u_00,UNSUPPORTED
+Saca una copia impresa de el anexo.,EDITOR_CONTROL,archivo,y_print_Saca u_00,UNSUPPORTED
+Saca una copia impresa de dos copias.,EDITOR_CONTROL,archivo,y_print_Saca u_00,UNSUPPORTED
+Lee este párrafo en voz alta.,EDITOR_CONTROL,lectura,y_read_Lee {}_00,UNSUPPORTED
+Lee la introducción en voz alta.,EDITOR_CONTROL,lectura,y_read_Lee {}_00,UNSUPPORTED
+Lee el resumen en voz alta.,EDITOR_CONTROL,lectura,y_read_Lee {}_00,UNSUPPORTED
+Lee lo seleccionado en voz alta.,EDITOR_CONTROL,lectura,y_read_Lee {}_00,UNSUPPORTED
+Lee el primer capítulo en voz alta.,EDITOR_CONTROL,lectura,y_read_Lee {}_00,UNSUPPORTED
+Léeme este párrafo,EDITOR_CONTROL,lectura,y_read_Léeme_00,UNSUPPORTED
+Léeme la introducción,EDITOR_CONTROL,lectura,y_read_Léeme_00,UNSUPPORTED
+Léeme el resumen,EDITOR_CONTROL,lectura,y_read_Léeme_00,UNSUPPORTED
+Léeme lo seleccionado,EDITOR_CONTROL,lectura,y_read_Léeme_00,UNSUPPORTED
+Léeme el primer capítulo,EDITOR_CONTROL,lectura,y_read_Léeme_00,UNSUPPORTED
+Guarda el documento,EDITOR_CONTROL,archivo,y_save_Guarda_00,UNSUPPORTED
+Guarda los cambios,EDITOR_CONTROL,archivo,y_save_Guarda_00,UNSUPPORTED
+Guarda el borrador,EDITOR_CONTROL,archivo,y_save_Guarda_00,UNSUPPORTED
+Guarda el informe,EDITOR_CONTROL,archivo,y_save_Guarda_00,UNSUPPORTED
+Guarda esta versión,EDITOR_CONTROL,archivo,y_save_Guarda_00,UNSUPPORTED
+Guarda el archivo,EDITOR_CONTROL,archivo,y_save_Guarda_00,UNSUPPORTED
+Guarda tu avance,EDITOR_CONTROL,archivo,y_save_Guarda_00,UNSUPPORTED
+Guarda la carta,EDITOR_CONTROL,archivo,y_save_Guarda_00,UNSUPPORTED
+Guarda el documento por favor.,EDITOR_CONTROL,archivo,y_save_Guarda_00,UNSUPPORTED
+Guarda los cambios por favor.,EDITOR_CONTROL,archivo,y_save_Guarda_00,UNSUPPORTED
+Guarda el borrador por favor.,EDITOR_CONTROL,archivo,y_save_Guarda_00,UNSUPPORTED
+Guarda el informe por favor.,EDITOR_CONTROL,archivo,y_save_Guarda_00,UNSUPPORTED
+Guarda esta versión por favor.,EDITOR_CONTROL,archivo,y_save_Guarda_00,UNSUPPORTED
+Guarda el archivo por favor.,EDITOR_CONTROL,archivo,y_save_Guarda_00,UNSUPPORTED
+Guarda tu avance por favor.,EDITOR_CONTROL,archivo,y_save_Guarda_00,UNSUPPORTED
+Guarda la carta por favor.,EDITOR_CONTROL,archivo,y_save_Guarda_00,UNSUPPORTED
+Guarda el documento antes de cerrar.,EDITOR_CONTROL,archivo,y_save_Guarda_00,UNSUPPORTED
+Guarda los cambios antes de cerrar.,EDITOR_CONTROL,archivo,y_save_Guarda_00,UNSUPPORTED
+Guarda el borrador antes de cerrar.,EDITOR_CONTROL,archivo,y_save_Guarda_00,UNSUPPORTED
+Guarda el informe antes de cerrar.,EDITOR_CONTROL,archivo,y_save_Guarda_00,UNSUPPORTED
+Guarda esta versión antes de cerrar.,EDITOR_CONTROL,archivo,y_save_Guarda_00,UNSUPPORTED
+Guarda el archivo antes de cerrar.,EDITOR_CONTROL,archivo,y_save_Guarda_00,UNSUPPORTED
+Guarda tu avance antes de cerrar.,EDITOR_CONTROL,archivo,y_save_Guarda_00,UNSUPPORTED
+Guarda la carta antes de cerrar.,EDITOR_CONTROL,archivo,y_save_Guarda_00,UNSUPPORTED
+No olvides guardar el documento.,EDITOR_CONTROL,archivo,y_save_No olv_00,UNSUPPORTED
+No olvides guardar los cambios.,EDITOR_CONTROL,archivo,y_save_No olv_00,UNSUPPORTED
+No olvides guardar el borrador.,EDITOR_CONTROL,archivo,y_save_No olv_00,UNSUPPORTED
+No olvides guardar el informe.,EDITOR_CONTROL,archivo,y_save_No olv_00,UNSUPPORTED
+No olvides guardar esta versión.,EDITOR_CONTROL,archivo,y_save_No olv_00,UNSUPPORTED
+No olvides guardar el archivo.,EDITOR_CONTROL,archivo,y_save_No olv_00,UNSUPPORTED
+No olvides guardar tu avance.,EDITOR_CONTROL,archivo,y_save_No olv_00,UNSUPPORTED
+No olvides guardar la carta.,EDITOR_CONTROL,archivo,y_save_No olv_00,UNSUPPORTED
+Elige la tabla por favor.,EDITOR_CONTROL,seleccion,y_sel_Elige_00,SUPPORTED
+Elige el gráfico por favor.,EDITOR_CONTROL,seleccion,y_sel_Elige_00,SUPPORTED
+Elige el recuadro por favor.,EDITOR_CONTROL,seleccion,y_sel_Elige_00,SUPPORTED
+Elige la imagen por favor.,EDITOR_CONTROL,seleccion,y_sel_Elige_00,SUPPORTED
+Elige el diagrama por favor.,EDITOR_CONTROL,seleccion,y_sel_Elige_00,SUPPORTED
+Elige el mapa por favor.,EDITOR_CONTROL,seleccion,y_sel_Elige_00,SUPPORTED
+Marca la tabla completo.,EDITOR_CONTROL,seleccion,y_sel_Marca_00,SUPPORTED
+Marca el gráfico completo.,EDITOR_CONTROL,seleccion,y_sel_Marca_00,SUPPORTED
+Marca el recuadro completo.,EDITOR_CONTROL,seleccion,y_sel_Marca_00,SUPPORTED
+Marca la imagen completo.,EDITOR_CONTROL,seleccion,y_sel_Marca_00,SUPPORTED
+Marca el diagrama completo.,EDITOR_CONTROL,seleccion,y_sel_Marca_00,SUPPORTED
+Marca el mapa completo.,EDITOR_CONTROL,seleccion,y_sel_Marca_00,SUPPORTED
+Resalta la tabla.,EDITOR_CONTROL,seleccion,y_sel_Resalta_00,SUPPORTED
+Resalta el gráfico.,EDITOR_CONTROL,seleccion,y_sel_Resalta_00,SUPPORTED
+Resalta el recuadro.,EDITOR_CONTROL,seleccion,y_sel_Resalta_00,SUPPORTED
+Resalta la imagen.,EDITOR_CONTROL,seleccion,y_sel_Resalta_00,SUPPORTED
+Resalta el diagrama.,EDITOR_CONTROL,seleccion,y_sel_Resalta_00,SUPPORTED
+Resalta el mapa.,EDITOR_CONTROL,seleccion,y_sel_Resalta_00,SUPPORTED
+Selecciona la tabla.,EDITOR_CONTROL,seleccion,y_sel_Selecciona_00,SUPPORTED
+Selecciona el gráfico.,EDITOR_CONTROL,seleccion,y_sel_Selecciona_00,SUPPORTED
+Selecciona el recuadro.,EDITOR_CONTROL,seleccion,y_sel_Selecciona_00,SUPPORTED
+Selecciona la imagen.,EDITOR_CONTROL,seleccion,y_sel_Selecciona_00,SUPPORTED
+Selecciona el diagrama.,EDITOR_CONTROL,seleccion,y_sel_Selecciona_00,SUPPORTED
+Selecciona el mapa.,EDITOR_CONTROL,seleccion,y_sel_Selecciona_00,SUPPORTED
+Anula el formato aplicado.,EDITOR_CONTROL,undo,y_un_Anula_00,SUPPORTED
+Anula la inserción.,EDITOR_CONTROL,undo,y_un_Anula_00,SUPPORTED
+Anula el pegado.,EDITOR_CONTROL,undo,y_un_Anula_00,SUPPORTED
+Anula la sustitución.,EDITOR_CONTROL,undo,y_un_Anula_00,SUPPORTED
+Anula el borrado accidental.,EDITOR_CONTROL,undo,y_un_Anula_00,SUPPORTED
+Anula el cambio de estilo.,EDITOR_CONTROL,undo,y_un_Anula_00,SUPPORTED
+Revierte el formato aplicado.,EDITOR_CONTROL,undo,y_un_Revierte_00,SUPPORTED
+Revierte la inserción.,EDITOR_CONTROL,undo,y_un_Revierte_00,SUPPORTED
+Revierte el pegado.,EDITOR_CONTROL,undo,y_un_Revierte_00,SUPPORTED
+Revierte la sustitución.,EDITOR_CONTROL,undo,y_un_Revierte_00,SUPPORTED
+Revierte el borrado accidental.,EDITOR_CONTROL,undo,y_un_Revierte_00,SUPPORTED
+Revierte el cambio de estilo.,EDITOR_CONTROL,undo,y_un_Revierte_00,SUPPORTED
