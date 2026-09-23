@@ -4,6 +4,8 @@ import AppKit
 @testable import DocumentKit
 @testable import EditorEngine
 import DesignSystem
+import PDFKit
+@testable import ExportFeature
 
 final class EditorTests: XCTestCase {
     func testUTF8RoundTripAndInvalidData() throws {
@@ -127,5 +129,214 @@ final class MarkdownExperienceTests: XCTestCase {
         session.send(.insertText("No debe escribirse"))
         XCTAssertEqual(view.string, formatted)
         session.stop()
+    }
+
+    @MainActor func testWritingStyleFamilyAppliesToBodyAndHeadings() {
+        let expectedFragment = [
+            "serif": "Georgia",
+            "palatino": "Palatino",
+            "helvetica": "Helvetica",
+            "verdana": "Verdana",
+            "mono": "Mono",
+        ]
+        XCTAssertEqual(Set(WritingStyle.availableFamilies.map(\.id)),
+                       ["system", "serif", "palatino", "helvetica", "verdana", "mono"])
+        for option in WritingStyle.availableFamilies {
+            let style = WritingStyle(size: 18, family: option.id, spacing: 6)
+            let source = "# Título\n\nCuerpo con texto."
+            let document = MarkdownDocument(source)
+            let storage = NSMutableAttributedString(string: source)
+            MarkdownAppearance.decorate(storage, document: document, style: style)
+            let heading = storage.attribute(.font, at: 0, effectiveRange: nil) as? NSFont
+            let bodyRange = (source as NSString).range(of: "Cuerpo")
+            let body = storage.attribute(.font, at: bodyRange.location, effectiveRange: nil) as? NSFont
+            if let fragment = expectedFragment[option.id] {
+                XCTAssertTrue(body?.fontName.contains(fragment) == true, "\(option.id): \(body?.fontName ?? "?")")
+                XCTAssertTrue(heading?.fontName.contains(fragment) == true, "\(option.id): \(heading?.fontName ?? "?")")
+                XCTAssertGreaterThan(heading?.pointSize ?? 0, body?.pointSize ?? 0)
+            } else {
+                XCTAssertNotNil(body)
+                XCTAssertGreaterThan(heading?.pointSize ?? 0, 18)
+            }
+            let reading = MarkdownAppearance.readingText(source, document: document, style: style)
+            let readingHeading = reading.attribute(.font, at: 0, effectiveRange: nil) as? NSFont
+            if let fragment = expectedFragment[option.id] {
+                XCTAssertTrue(readingHeading?.fontName.contains(fragment) == true, "lectura \(option.id): \(readingHeading?.fontName ?? "?")")
+            }
+        }
+    }
+
+    @MainActor func testWritingStyleParagraphSpacing() {
+        let style = WritingStyle(size: 18, family: "system", spacing: 6, paragraph: 8)
+        let paragraphStyle = style.attributes[.paragraphStyle] as? NSParagraphStyle
+        XCTAssertEqual(paragraphStyle?.paragraphSpacing, 8)
+        XCTAssertEqual(style.paragraph, 8)
+        XCTAssertEqual(WritingStyle().paragraph, 0)
+    }
+}
+
+
+final class ExportTests: XCTestCase {
+    @MainActor func testMultipagePDFContainsFirstAndLastParagraph() throws {
+        _ = NSApplication.shared
+        let text = (1...50).map { "## Sección \($0)\n\nUna frase con **negrita** y café.\n\n" }.joined()
+        let operation = PrintDocument.makeOperation(text: text, title: "Prueba de exportación")
+        let url = FileManager.default.temporaryDirectory.appendingPathComponent("EditorFinal-export-test.pdf")
+        operation.showsPrintPanel = false
+        operation.showsProgressPanel = false
+        operation.printInfo.jobDisposition = .save
+        operation.printInfo.dictionary()[NSPrintInfo.AttributeKey.jobSavingURL] = url
+        XCTAssertTrue(operation.run())
+        let document = try XCTUnwrap(PDFDocument(url: url))
+        XCTAssertGreaterThan(document.pageCount, 1)
+        XCTAssertTrue(document.string?.contains("Sección 1") == true)
+        XCTAssertTrue(document.string?.contains("Sección 50") == true)
+        XCTAssertTrue(document.string?.contains("café") == true)
+        XCTAssertFalse(document.string?.contains("**negrita**") == true)
+        for index in 0..<document.pageCount {
+            let lastLine = document.page(at: index)?.string?.split(separator: "\n").last
+            XCTAssertFalse(lastLine?.hasPrefix("Sección ") == true, "Título aislado al final de la página \(index + 1)")
+        }
+    }
+}
+
+final class MarkdownRenderingImprovementsTests: XCTestCase {
+    func testClosedHeadingsStripSuffix() {
+        let source = "## Título ##\n# Solo #\n####### No\n"
+        let document = MarkdownDocument(source)
+        XCTAssertEqual(document.headings.map(\.title), ["Título", "Solo"])
+        XCTAssertEqual(document.headings.map(\.level), [2, 1])
+        XCTAssertGreaterThan(document.lines[0].trailingLength, 0)
+        XCTAssertGreaterThan(document.lines[1].trailingLength, 0)
+        XCTAssertEqual(document.lines[2].kind, .text)
+    }
+
+    func testSetextHeadings() {
+        let source = "Título\n===\n\nSub\n---\n"
+        let document = MarkdownDocument(source)
+        XCTAssertEqual(document.headings.map(\.title), ["Título", "Sub"])
+        XCTAssertEqual(document.headings.map(\.level), [1, 2])
+        XCTAssertEqual(document.lines.filter { $0.kind == .hidden }.count, 2)
+    }
+
+    func testQuotesWithoutSpaceAndNested() {
+        let source = ">Cita\n>> Anidada\n> \n>\n"
+        let document = MarkdownDocument(source)
+        XCTAssertEqual(document.lines.filter { $0.kind == .quote }.count, 4)
+        XCTAssertEqual(document.lines[0].content, "Cita")
+        XCTAssertEqual(document.lines[1].content, "Anidada")
+    }
+
+    func testOrderedAndTaskLists() {
+        let source = "1. Uno\n2) Dos\n10. Diez\n"
+        let document = MarkdownDocument(source)
+        XCTAssertEqual(document.lines[0].kind, .orderedList(number: 1))
+        XCTAssertEqual(document.lines[1].kind, .orderedList(number: 2))
+        XCTAssertEqual(document.lines[2].kind, .orderedList(number: 10))
+        let tasks = MarkdownDocument("- [ ] Todo\n- [x] Hecho\n- [X] Hecho2\n1. [ ] Ordenada\n")
+        XCTAssertEqual(tasks.lines[0].kind, .taskList(checked: false, number: nil))
+        XCTAssertEqual(tasks.lines[1].kind, .taskList(checked: true, number: nil))
+        XCTAssertEqual(tasks.lines[2].kind, .taskList(checked: true, number: nil))
+        XCTAssertEqual(tasks.lines[3].kind, .taskList(checked: false, number: 1))
+        XCTAssertEqual(tasks.lines[0].content, "Todo")
+    }
+
+    func testThematicBreaksWithSpaces() {
+        let source = "---\n***\n___\n* * *\n- - -\n"
+        let document = MarkdownDocument(source)
+        XCTAssertTrue(document.lines.allSatisfy { $0.kind == .rule })
+    }
+
+    @MainActor func testInlineDecorationVariants() {
+        let source = "**a** __b__ *c* _d_ ***e*** ___f___ ~~g~~ `h` ``i`` [t](https://example.com) <https://example.com> \\*j\\* foo_bar_baz"
+        let document = MarkdownDocument(source)
+        let storage = NSMutableAttributedString(string: source)
+        MarkdownAppearance.decorate(storage, document: document, style: WritingStyle())
+        XCTAssertEqual(storage.string, source)
+        func traits(of substring: String) -> NSFontTraitMask {
+            let range = (source as NSString).range(of: substring)
+            XCTAssertNotEqual(range.location, NSNotFound, substring)
+            let font = storage.attribute(.font, at: range.location, effectiveRange: nil) as? NSFont
+            return font.map { NSFontManager.shared.traits(of: $0) } ?? []
+        }
+        XCTAssertTrue(traits(of: "a").contains(.boldFontMask))
+        XCTAssertTrue(traits(of: "__b__").contains(.boldFontMask))
+        XCTAssertTrue(traits(of: "c").contains(.italicFontMask))
+        XCTAssertTrue(traits(of: "_d_").contains(.italicFontMask))
+        let both = traits(of: "***e***")
+        XCTAssertTrue(both.contains(.boldFontMask) && both.contains(.italicFontMask))
+        let strikeRange = (source as NSString).range(of: "g")
+        XCTAssertNotNil(storage.attribute(.strikethroughStyle, at: strikeRange.location, effectiveRange: nil))
+        let codeRange = (source as NSString).range(of: "h")
+        XCTAssertNotNil(storage.attribute(.backgroundColor, at: codeRange.location, effectiveRange: nil))
+        let linkRange = (source as NSString).range(of: "t](")
+        // El texto del enlace va en acento y subrayado; la URL atenuada.
+        let labelRange = (source as NSString).range(of: "[t]")
+        let labelColor = storage.attribute(.foregroundColor, at: labelRange.location + 1, effectiveRange: nil) as? NSColor
+        XCTAssertNotNil(labelColor)
+        _ = linkRange
+        // `_` dentro de palabra no es énfasis.
+        let barRange = (source as NSString).range(of: "bar")
+        XCTAssertFalse(traits(of: "bar").contains(.italicFontMask), "foo_bar_baz no debe cursivar: \(barRange)")
+        // Escape: `j` no debe ir en cursiva/negrita.
+        XCTAssertFalse(traits(of: "j").contains(.italicFontMask))
+        XCTAssertFalse(traits(of: "j").contains(.boldFontMask))
+    }
+
+    @MainActor func testReadingJoinsSoftBreaksAndLists() {
+        let style = WritingStyle()
+        var document = MarkdownDocument("Línea uno\nLínea dos\n\nNuevo párrafo\n")
+        var reading = MarkdownAppearance.readingText("", document: document, style: style)
+        XCTAssertTrue(reading.string.contains("Línea uno Línea dos\n"))
+        XCTAssertTrue(reading.string.contains("Nuevo párrafo\n"))
+        document = MarkdownDocument("1. Uno\n2. Dos\n\n- [ ] Todo\n- [x] Hecho\n")
+        reading = MarkdownAppearance.readingText("", document: document, style: style)
+        XCTAssertTrue(reading.string.contains("1. Uno"))
+        XCTAssertTrue(reading.string.contains("2. Dos"))
+        XCTAssertTrue(reading.string.contains("☐ Todo"))
+        XCTAssertTrue(reading.string.contains("☑ Hecho"))
+        document = MarkdownDocument("> Cita uno\n> Cita dos\n")
+        reading = MarkdownAppearance.readingText("", document: document, style: style)
+        XCTAssertTrue(reading.string.contains("│"))
+        XCTAssertTrue(reading.string.contains("Cita uno Cita dos"))
+        document = MarkdownDocument("## Título ##\n")
+        reading = MarkdownAppearance.readingText("", document: document, style: style)
+        XCTAssertTrue(reading.string.hasPrefix("Título\n"))
+        XCTAssertFalse(reading.string.contains("##"))
+        document = MarkdownDocument("Título\n===\n")
+        reading = MarkdownAppearance.readingText("", document: document, style: style)
+        XCTAssertTrue(reading.string.hasPrefix("Título\n"))
+    }
+
+    @MainActor func testCuadernoSampleRendersWithoutMarkerGaps() {
+        let style = WritingStyle(size: 19, family: "ABC Areal", spacing: 6)
+        let source = "A veces basta cambiar *rápido* por *deprisa*. Otras veces conviene dejar la frase.\n\nEste cuaderno admite **negritas**, *cursivas*, `código` y [enlaces](https://es.wikipedia.org/wiki/Felis_catus). La vista de lectura los presenta sin los marcadores.\n"
+        let document = MarkdownDocument(source)
+        let reading = MarkdownAppearance.readingText(source, document: document, style: style)
+        XCTAssertFalse(reading.string.contains("  "), "dobles espacios en: \(reading.string.debugDescription)")
+        XCTAssertTrue(reading.string.contains("negritas,"))
+        XCTAssertTrue(reading.string.contains("cursivas,"))
+        XCTAssertTrue(reading.string.contains("enlaces."))
+        let linkRange = (reading.string as NSString).range(of: "enlaces")
+        XCTAssertNotNil(reading.attribute(.link, at: linkRange.location, effectiveRange: nil))
+        let codeRange = (reading.string as NSString).range(of: "código")
+        XCTAssertNotNil(reading.attribute(.backgroundColor, at: codeRange.location, effectiveRange: nil))
+    }
+
+    @MainActor func testReadingCombinedEmphasisAndLinks() {        let style = WritingStyle()
+        var document = MarkdownDocument("***ambas***\n")
+        var reading = MarkdownAppearance.readingText("", document: document, style: style)
+        let range = (reading.string as NSString).range(of: "ambas")
+        let font = reading.attribute(.font, at: range.location, effectiveRange: nil) as? NSFont
+        let traits = font.map { NSFontManager.shared.traits(of: $0) } ?? []
+        XCTAssertTrue(traits.contains(.boldFontMask) && traits.contains(.italicFontMask), "\(String(describing: font))")
+        document = MarkdownDocument("[Seguro](https://example.com)\n")
+        reading = MarkdownAppearance.readingText("", document: document, style: style)
+        let linkRange = (reading.string as NSString).range(of: "Seguro")
+        XCTAssertNotNil(reading.attribute(.link, at: linkRange.location, effectiveRange: nil))
+        XCTAssertNotNil(reading.attribute(.underlineStyle, at: linkRange.location, effectiveRange: nil))
+        document = MarkdownDocument("---\n")
+        reading = MarkdownAppearance.readingText("", document: document, style: style)
+        XCTAssertTrue(reading.string.contains("────────────"))
     }
 }

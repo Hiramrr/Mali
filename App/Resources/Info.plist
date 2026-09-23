@@ -48,6 +48,13 @@
 	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
 	<key>NSHighResolutionCapable</key>
 	<true/>
+	<!-- Pieza Lego: Gestos. Solo se muestra al activar la cámara desde su panel. -->
+	<key>NSCameraUsageDescription</key>
+	<string>La cámara detecta gestos de la mano (elegir palabra, pinza, dos manos) para controlar el editor. El vídeo se procesa en este Mac y no se guarda.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>El dictado por voz necesita el micrófono solo mientras dictas. Todo se procesa en este Mac.</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>El dictado por voz transcribe lo que hablas para insertarlo en tu documento. Todo se procesa en este Mac.</string>
 	<key>NSHumanReadableCopyright</key>
 	<string></string>
 	<key>NSPrincipalClass</key>

@@ -1,0 +1,651 @@
+id,text,expected
+A001,Titula el informe como Balance anual.,RENAME_TITLE
+A002,Ponle Metodología al capítulo dos.,RENAME_TITLE
+A003,El encabezado debe decir Discusión.,RENAME_TITLE
+A004,Cambia el nombre a Anexo estadístico.,RENAME_TITLE
+A005,Que el título sea Evaluación de IHC.,RENAME_TITLE
+A006,Bautiza este archivo como Borrador final.,RENAME_TITLE
+A007,El título nuevo es Accesibilidad 2026.,RENAME_TITLE
+A008,Nombra esta versión como Entrega tres.,RENAME_TITLE
+A009,Pon como encabezado Trabajo futuro.,RENAME_TITLE
+A010,Actualiza la carátula a Informe TDAH.,RENAME_TITLE
+A011,El rótulo será Sesión plenaria.,RENAME_TITLE
+A012,Titula la minuta como Acuerdos mayo.,RENAME_TITLE
+A013,Cambia la portada a Índice.,RENAME_TITLE
+A014,Que diga Conclusiones preliminares arriba.,RENAME_TITLE
+A015,El membrete debe decir Universidad.,RENAME_TITLE
+A016,Tacha este renglón.,DELETE_SELECTION
+A017,Elimina la nota al pie.,DELETE_SELECTION
+A018,Suprime el considerando.,DELETE_SELECTION
+A019,Corta el epígrafe.,DELETE_SELECTION
+A020,Descarta el apéndice.,DELETE_SELECTION
+A021,Anula este inciso.,DELETE_SELECTION
+A022,Remueve la dedicatoria.,DELETE_SELECTION
+A023,Quita el colofón.,DELETE_SELECTION
+A024,Limpia el borrador tachado.,DELETE_SELECTION
+A025,Vacía este recuadro.,DELETE_SELECTION
+A026,Retira la cita larga.,DELETE_SELECTION
+A027,Suprime el ejemplo.,DELETE_SELECTION
+A028,Elimina el resumen viejo.,DELETE_SELECTION
+A029,Descarta el glosario.,DELETE_SELECTION
+A030,Borra la fe de erratas.,DELETE_SELECTION
+A031,Troca error por errata aquí.,REPLACE_SELECTION
+A032,Donde dice cosa pon asunto.,REPLACE_SELECTION
+A033,Sustituye la cifra vieja por 42.,REPLACE_SELECTION
+A034,Cambia TDAH por TDA-H en este renglón.,REPLACE_SELECTION
+A035,Pon niños donde dice menores.,REPLACE_SELECTION
+A036,Reemplaza 2024 por 2026 aquí.,REPLACE_SELECTION
+A037,Escribe Diseñó con ñ donde falta.,REPLACE_SELECTION
+A038,Cambia IHC por interacción.,REPLACE_SELECTION
+A039,Sustituye el anglicismo por su traducción.,REPLACE_SELECTION
+A040,Corrige Vallejo por Vallejos.,REPLACE_SELECTION
+A041,Actualiza Núñez con acento.,REPLACE_SELECTION
+A042,Pon María donde dice Maria.,REPLACE_SELECTION
+A043,Cambia el 5% por cinco por ciento.,REPLACE_SELECTION
+A044,Reemplaza comillas dobles por latinas.,REPLACE_SELECTION
+A045,Troca el guion por raya.,REPLACE_SELECTION
+A046,Acorta la bienvenida.,REWRITE_SELECTION
+A047,Alarga la despedida.,REWRITE_SELECTION
+A048,Endulza el reclamo.,REWRITE_SELECTION
+A049,Tensa el cierre.,REWRITE_SELECTION
+A050,Aclara la propuesta.,REWRITE_SELECTION
+A051,Oscurece el final.,REWRITE_SELECTION
+A052,Enciende la polémica.,REWRITE_SELECTION
+A053,Calma las críticas.,REWRITE_SELECTION
+A054,Agita el debate.,REWRITE_SELECTION
+A055,Ordena los argumentos.,REWRITE_SELECTION
+A056,Invierte el orden.,REWRITE_SELECTION
+A057,Resume en una línea.,REWRITE_SELECTION
+A058,Amplía con datos.,REWRITE_SELECTION
+A059,Reduce a la mitad.,REWRITE_SELECTION
+A060,Suaviza el regaño.,REWRITE_SELECTION
+A061,Remarca en negrita los totales.,FORMAT_SELECTION
+A062,Cursiva los latinajos.,FORMAT_SELECTION
+A063,Subraya los plazos.,FORMAT_SELECTION
+A064,Negrita los nombres propios.,FORMAT_SELECTION
+A065,Cursiva las citas textuales.,FORMAT_SELECTION
+A066,Subraya las fechas límite.,FORMAT_SELECTION
+A067,Marca en negrita el monto.,FORMAT_SELECTION
+A068,Pon en cursiva el epígrafe.,FORMAT_SELECTION
+A069,Subraya al deudor.,FORMAT_SELECTION
+A070,Resalta en negrita el fallo.,FORMAT_SELECTION
+A071,Enfatiza en cursiva el matiz.,FORMAT_SELECTION
+A072,Recalca subrayando el acuerdo.,FORMAT_SELECTION
+A073,Negrita los considerandos.,FORMAT_SELECTION
+A074,Cursiva el testamento citado.,FORMAT_SELECTION
+A075,Subraya la firma requerida.,FORMAT_SELECTION
+A076,Retrocede la edición.,UNDO
+A077,Anula mi último cambio.,UNDO
+A078,Vuelve al borrador previo.,UNDO
+A079,Cancela lo que pegué.,UNDO
+A080,Revierte el formato.,UNDO
+A081,Quita lo último que escribí.,UNDO
+A082,Borra mi edición reciente.,UNDO
+A083,Desarma el cambio.,UNDO
+A084,Regresa una versión.,UNDO
+A085,Echa atrás lo de hoy.,UNDO
+A086,Deshaz lo pegado.,UNDO
+A087,Anula el reemplazo.,UNDO
+A088,Cancela el borrado.,UNDO
+A089,Revierte lo movido.,UNDO
+A090,Vuelve al párrafo anterior.,UNDO
+A091,Reaplica el formato.,REDO
+A092,Vuelve a pegar eso.,REDO
+A093,Repite el reemplazo.,REDO
+A094,Restaura mi edición.,REDO
+A095,Recupera el borrado.,REDO
+A096,Rehaz lo movido.,REDO
+A097,Vuelve a poner las negritas.,REDO
+A098,Reaplica el subrayado.,REDO
+A099,Repite la sustitución.,REDO
+A100,Restaura el título.,REDO
+A101,Vuelve a numerar.,REDO
+A102,Repite el pegado.,REDO
+A103,Rehaz el centrado.,REDO
+A104,Restaura el interlineado.,REDO
+A105,Vuelve a justificar.,REDO
+A106,Elige la tabla completa.,SELECT_TEXT
+A107,Marca el recuadro gris.,SELECT_TEXT
+A108,Resalta el diagrama.,SELECT_TEXT
+A109,Toma el mapa anexo.,SELECT_TEXT
+A110,Aparta el gráfico dos.,SELECT_TEXT
+A111,Señala la imagen central.,SELECT_TEXT
+A112,Encierra el ejemplo.,SELECT_TEXT
+A113,Enmarca el considerando.,SELECT_TEXT
+A114,Aísla el cómputo.,SELECT_TEXT
+A115,Delimita el extracto.,SELECT_TEXT
+A116,Recorta visualmente la cita.,SELECT_TEXT
+A117,Enfoca el inciso b.,SELECT_TEXT
+A118,Apunta al anexo tres.,SELECT_TEXT
+A119,Localiza el otrosí.,SELECT_TEXT
+A120,Ubica la rúbrica.,SELECT_TEXT
+A121,Halla TDAH en el texto.,FIND_TEXT
+A122,Ubica la palabra metodología.,FIND_TEXT
+A123,Rastrea el folio 042.,FIND_TEXT
+A124,Detecta dobles espacios.,FIND_TEXT
+A125,Caza erratas obvias.,FIND_TEXT
+A126,Encuentra Núñez sin acento.,FIND_TEXT
+A127,Localiza el IHC mal escrito.,FIND_TEXT
+A128,Busca el signo de pesos.,FIND_TEXT
+A129,Halla el 5% mencionado.,FIND_TEXT
+A130,Ubica comillas simples.,FIND_TEXT
+A131,Rastrea el término accesibilidad cognitiva.,FIND_TEXT
+A132,Detecta la sigla INEGI.,FIND_TEXT
+A133,Halla Diseño con mayúscula.,FIND_TEXT
+A134,Ubica la ñ faltante.,FIND_TEXT
+A135,Encuentra el guion largo.,FIND_TEXT
+A136,Respalda el avance.,SAVE_DOCUMENT
+A137,Archiva el tanto firmado.,SAVE_DOCUMENT
+A138,Consigna el legajo.,SAVE_DOCUMENT
+A139,Asienta los cambios.,SAVE_DOCUMENT
+A140,Deja constancia guardada.,SAVE_DOCUMENT
+A141,Preserva esta redacción.,SAVE_DOCUMENT
+A142,Asegura el archivo.,SAVE_DOCUMENT
+A143,Fija esta versión.,SAVE_DOCUMENT
+A144,Congela el borrador.,SAVE_DOCUMENT
+A145,Salvaguarda lo escrito.,SAVE_DOCUMENT
+A146,Registra el progreso.,SAVE_DOCUMENT
+A147,Deposita el tanto.,SAVE_DOCUMENT
+A148,Custodia el original.,SAVE_DOCUMENT
+A149,Pon a salvo el texto.,SAVE_DOCUMENT
+A150,Deja todo guardado.,SAVE_DOCUMENT
+A151,Recupera el acta vieja.,OPEN_DOCUMENT
+A152,Desempolva el expediente.,OPEN_DOCUMENT
+A153,Reabre la minuta.,OPEN_DOCUMENT
+A154,Carga el informe 2024.,OPEN_DOCUMENT
+A155,Jala el archivo del otro día.,OPEN_DOCUMENT
+A156,Trae el contrato firmado.,OPEN_DOCUMENT
+A157,Muéstrame la tesis de Ana.,OPEN_DOCUMENT
+A158,Presenta el Balance 2025.,OPEN_DOCUMENT
+A159,Desarchiva el legajo.,OPEN_DOCUMENT
+A160,Recobra el borrador.,OPEN_DOCUMENT
+A161,Vuelve a abrir el anexo.,OPEN_DOCUMENT
+A162,Retoma el acta.,OPEN_DOCUMENT
+A163,Exhibe el padrón.,OPEN_DOCUMENT
+A164,Despliega el mapa.,OPEN_DOCUMENT
+A165,Proyecta la tabla.,OPEN_DOCUMENT
+A166,Saca el informe en pdf.,EXPORT_DOCUMENT
+A167,Baja el acta en texto plano.,EXPORT_DOCUMENT
+A168,Genera versión enriquecida.,EXPORT_DOCUMENT
+A169,Pásalo a Word.,EXPORT_DOCUMENT
+A170,Produce el pdf final.,EXPORT_DOCUMENT
+A171,Rinde el texto sin formato.,EXPORT_DOCUMENT
+A172,Emite copia enriquecida.,EXPORT_DOCUMENT
+A173,Vierte a Word el acta.,EXPORT_DOCUMENT
+A174,Imprime en pdf virtual.,EXPORT_DOCUMENT
+A175,Guarda copia plana aparte.,EXPORT_DOCUMENT
+A176,Entrega versión con formato.,EXPORT_DOCUMENT
+A177,Migra el tanto a Word.,EXPORT_DOCUMENT
+A178,Funde el pdf maestro.,EXPORT_DOCUMENT
+A179,Extrae el puro texto.,EXPORT_DOCUMENT
+A180,Publica la versión final rica.,EXPORT_DOCUMENT
+B001,Rúbrica el examen ajeno.,UNSUPPORTED
+B002,Timbra la factura electrónica.,UNSUPPORTED
+B003,Notaría el documento mañana.,UNSUPPORTED
+B004,Manda flores a la oficina.,UNSUPPORTED
+B005,Pide dos pizzas grandes.,UNSUPPORTED
+B006,Reserva mesa para ocho.,UNSUPPORTED
+B007,Compra boletos de avión.,UNSUPPORTED
+B008,Renta un coche compacto.,UNSUPPORTED
+B009,Agenda cita con el dentista.,UNSUPPORTED
+B010,Llama a mamá más tarde.,UNSUPPORTED
+B011,Riega las plantas del patio.,UNSUPPORTED
+B012,Saca al perro al parque.,UNSUPPORTED
+B013,Tiende la ropa tendida.,UNSUPPORTED
+B014,Barre la banqueta.,UNSUPPORTED
+B015,Lava el coche el sábado.,UNSUPPORTED
+B016,Poda el limonero seco.,UNSUPPORTED
+B017,Pinta la fachada de azul.,UNSUPPORTED
+B018,Arregla la gotera.,UNSUPPORTED
+B019,Cambia la llanta ponchada.,UNSUPPORTED
+B020,Lleva el coche al taller.,UNSUPPORTED
+B021,Paga la luz vencida.,UNSUPPORTED
+B022,Deposita la renta.,UNSUPPORTED
+B023,Retira efectivo del cajero.,UNSUPPORTED
+B024,Transfiere el saldo.,UNSUPPORTED
+B025,Firma cheques en blanco.,UNSUPPORTED
+B026,Endosa el pagaré.,UNSUPPORTED
+B027,Hipoteca la casa.,UNSUPPORTED
+B028,Vende el terreno ejidal.,UNSUPPORTED
+B029,Compra dólares baratos.,UNSUPPORTED
+B030,Invierte en cetes.,UNSUPPORTED
+B031,Declara impuestos atrasados.,UNSUPPORTED
+B032,Factura el servicio.,UNSUPPORTED
+B033,Cotiza el seguro del auto.,UNSUPPORTED
+B034,Contrata internet rápido.,UNSUPPORTED
+B035,Cancela la tarjeta robada.,UNSUPPORTED
+B036,Reporta el robo.,UNSUPPORTED
+B037,Denuncia al vecino.,UNSUPPORTED
+B038,Demanda por daños.,UNSUPPORTED
+B039,Apela la sentencia.,UNSUPPORTED
+B040,Testifica mañana.,UNSUPPORTED
+B041,Perjura sin pudor.,UNSUPPORTED
+B042,Soborna al inspector.,UNSUPPORTED
+B043,Extorsiona al tendero.,UNSUPPORTED
+B044,Secuestra la información.,UNSUPPORTED
+B045,Hackea la cuenta.,UNSUPPORTED
+B046,Crackea el programa.,UNSUPPORTED
+B047,Minéa criptomonedas.,UNSUPPORTED
+B048,Ejecuta el script.,UNSUPPORTED
+B049,Compila el kernel.,UNSUPPORTED
+B050,Despliega a producción.,UNSUPPORTED
+B051,Reinicia el servidor.,UNSUPPORTED
+B052,Formatea el disco.,UNSUPPORTED
+B053,Particiona la unidad.,UNSUPPORTED
+B054,Instala Linux.,UNSUPPORTED
+B055,Configura el router.,UNSUPPORTED
+B056,Cablea la oficina.,UNSUPPORTED
+B057,Suelda los pines.,UNSUPPORTED
+B058,Taladra el muro.,UNSUPPORTED
+B059,Lija la puerta.,UNSUPPORTED
+B060,Barniza la mesa.,UNSUPPORTED
+B061,Tapiza el sillón.,UNSUPPORTED
+B062,Repara el boiler.,UNSUPPORTED
+B063,Destapa el caño.,UNSUPPORTED
+B064,Impermeabiliza la azotea.,UNSUPPORTED
+B065,Fumiga la cocina.,UNSUPPORTED
+B066,Extermina las cucarachas.,UNSUPPORTED
+B067,Captura al ratón.,UNSUPPORTED
+B068,Adopta un perro.,UNSUPPORTED
+B069,Vacuna al gato.,UNSUPPORTED
+B070,Esteriliza a la perra.,UNSUPPORTED
+B071,Baña al loro.,UNSUPPORTED
+B072,Pasea al conejo.,UNSUPPORTED
+B073,Alimenta peces tropicales.,UNSUPPORTED
+B074,Riega el cactus.,UNSUPPORTED
+B075,Trasplanta el rosal.,UNSUPPORTED
+B076,Abona el huerto.,UNSUPPORTED
+B077,Cosecha jitomates.,UNSUPPORTED
+B078,Ordeña la vaca.,UNSUPPORTED
+B079,Esquila la oveja.,UNSUPPORTED
+B080,Arrea el ganado.,UNSUPPORTED
+C001,Ya merito queda el texto.,NO_ACTION
+C002,"Aguanta, ya casi termino.",NO_ACTION
+C003,"No te awites, va bien.",NO_ACTION
+C004,Échale ganas al informe.,NO_ACTION
+C005,Qué onda con el acta.,NO_ACTION
+C006,"Con permiso, sigo escribiendo.",NO_ACTION
+C007,Se hizo de noche y sigo.,NO_ACTION
+C008,Escampó pero continúa la minuta.,NO_ACTION
+C009,Caló el sol en la oficina.,NO_ACTION
+C010,Granizó sobre el archivo.,NO_ACTION
+C011,Permíteme tantito más.,NO_ACTION
+C012,"Dame chance, ya voy.",NO_ACTION
+C013,Ahorita lo reviso.,NO_ACTION
+C014,Al rato lo checo.,NO_ACTION
+C015,Luego lo platicamos.,NO_ACTION
+C016,Mañana lo decidimos.,NO_ACTION
+C017,En un momento te aviso.,NO_ACTION
+C018,"Casi, casi listo.",NO_ACTION
+C019,Ahí va quedando el capítulo.,NO_ACTION
+C020,Va tomando forma.,NO_ACTION
+C021,Pinta bien el borrador.,NO_ACTION
+C022,Huele a éxito este texto.,NO_ACTION
+C023,Tiene potencial la idea.,NO_ACTION
+C024,Le falta sazón al cierre.,NO_ACTION
+C025,Ya madurará el argumento.,NO_ACTION
+C026,Dale tiempo al capítulo.,NO_ACTION
+C027,Sin prisa con la tesis.,NO_ACTION
+C028,Paso a paso con el acta.,NO_ACTION
+C029,Ahí la llevamos con el informe.,NO_ACTION
+C030,El examen me dejó pensando.,NO_ACTION
+C031,La junta se alargó.,NO_ACTION
+C032,El curso superó expectativas.,NO_ACTION
+C033,Traigo sueño atrasado.,NO_ACTION
+C034,Ando desvelado.,NO_ACTION
+C035,Me duele la espalda de escribir.,NO_ACTION
+C036,Tengo hambre ya.,NO_ACTION
+C037,Muero de sed.,NO_ACTION
+C038,Qué calorón en la sala.,NO_ACTION
+C039,Mi equipo perdió otra vez.,NO_ACTION
+C040,El arbitraje fue pésimo.,NO_ACTION
+C041,El celular se traba.,NO_ACTION
+C042,Se acabó la pila.,NO_ACTION
+C043,No hay señal aquí.,NO_ACTION
+C044,El internet está lento.,NO_ACTION
+C045,Se cayó el sistema.,NO_ACTION
+C046,La impresora no jala.,NO_ACTION
+C047,Olvidé mi contraseña.,NO_ACTION
+C048,El coche no arranca.,NO_ACTION
+C049,Poncharon la llanta.,NO_ACTION
+C050,El camión no pasó.,NO_ACTION
+C051,El campesino aró desde el alba.,NO_ACTION
+C052,La cosecha de maíz superó marcas.,NO_ACTION
+C053,El granero guarda semilla criolla.,NO_ACTION
+C054,La yunta avanzó pareja.,NO_ACTION
+C055,El temporal anegó parcelas.,NO_ACTION
+C056,La helada quemó floración.,NO_ACTION
+C057,El agave tarda años en madurar.,NO_ACTION
+C058,La zafra empezó en noviembre.,NO_ACTION
+C059,El trapiche muele caña dulce.,NO_ACTION
+C060,El piloncillo endulza atoles.,NO_ACTION
+C061,La panela oscura rinde más.,NO_ACTION
+C062,El café de altura cotiza alto.,NO_ACTION
+C063,La roya afectó cafetales.,NO_ACTION
+C064,El cacao fermenta en cajas.,NO_ACTION
+C065,La vainilla beneficia a Papantla.,NO_ACTION
+C066,La pimienta gorda perfuma moles.,NO_ACTION
+C067,El achiote tiñe cochinita.,NO_ACTION
+C068,El epazote sazona quesadillas.,NO_ACTION
+C069,La hoja santa envuelve tamales.,NO_ACTION
+C070,El pápalo acompaña cemitas.,NO_ACTION
+C071,La tlayuda cruje con asiento.,NO_ACTION
+C072,El chapulín salta entre milpas.,NO_ACTION
+C073,La luciérnaga alumbra veredas.,NO_ACTION
+C074,El coyote aúlla en cerros.,NO_ACTION
+C075,La zorra cuida madrigueras.,NO_ACTION
+C076,El tlacuache finge estar muerto.,NO_ACTION
+C077,El armadillo excava rápido.,NO_ACTION
+C078,La iguana asoleada descansa.,NO_ACTION
+C079,El cenote esconde tortugas.,NO_ACTION
+C080,El manatí pasta en ríos.,NO_ACTION
+C081,La vaquita nada en el golfo.,NO_ACTION
+C082,El jaguar ronda reservas.,NO_ACTION
+C083,El ocelote caza de noche.,NO_ACTION
+C084,El tapir cruza veredas.,NO_ACTION
+C085,El mono araña cuelga alto.,NO_ACTION
+C086,El quetzal luce cola larga.,NO_ACTION
+C087,El colibrí liba flores.,NO_ACTION
+C088,El cenzontle imita cantos.,NO_ACTION
+C089,La calandria teje nidos.,NO_ACTION
+C090,El cardenal rojo canta al alba.,NO_ACTION
+C091,La primavera trae golondrinas.,NO_ACTION
+C092,El otoño tiñe bosques.,NO_ACTION
+C093,El invierno calla sierras.,NO_ACTION
+C094,El verano quema llanuras.,NO_ACTION
+C095,La canícula aprieta en agosto.,NO_ACTION
+C096,El norte azota puertos.,NO_ACTION
+C097,La surada calienta tardes.,NO_ACTION
+C098,El chipichipi moja banquetas.,NO_ACTION
+C099,La tormenta eléctrica asusta.,NO_ACTION
+C100,El arcoíris sale tras llover.,NO_ACTION
+D001,Borra esto de aquí.,DELETE_SELECTION
+D002,Quita la nota.,DELETE_SELECTION
+D003,Elimina el inciso.,DELETE_SELECTION
+D004,Suprime el ejemplo.,DELETE_SELECTION
+D005,Descarta el párrafo.,DELETE_SELECTION
+D006,Tacha el renglón.,DELETE_SELECTION
+D007,Corta el fragmento.,DELETE_SELECTION
+D008,Limpia lo marcado.,DELETE_SELECTION
+D009,Vacía el recuadro.,DELETE_SELECTION
+D010,Retira la cita.,DELETE_SELECTION
+D011,Remárcalo en negritas.,FORMAT_SELECTION
+D012,Cursiva el título.,FORMAT_SELECTION
+D013,Subraya el monto.,FORMAT_SELECTION
+D014,Remarca el fallo.,FORMAT_SELECTION
+D015,Enfatiza el matiz.,FORMAT_SELECTION
+D016,Hazlo todavía más breve.,REWRITE_SELECTION
+D017,Acorta el considerando.,REWRITE_SELECTION
+D018,Condensa el informe.,REWRITE_SELECTION
+D019,Resume la minuta.,REWRITE_SELECTION
+D020,Aclara el acuerdo.,REWRITE_SELECTION
+D021,Troca pesos por dólares.,REPLACE_SELECTION
+D022,Pon 2026 donde dice 2025.,REPLACE_SELECTION
+D023,Cambia Ana por Anita.,REPLACE_SELECTION
+D024,Sustituye coma por punto.,REPLACE_SELECTION
+D025,Escribe Ñoño con eñe.,REPLACE_SELECTION
+D026,Deshaz esta mañana.,UNDO
+D027,Anula lo de ayer.,UNDO
+D028,Revierte el pegado.,UNDO
+D029,Cancela el borrado.,UNDO
+D030,Echa atrás el envío.,UNDO
+D031,Rehaz el pegado.,REDO
+D032,Reaplica el título.,REDO
+D033,Repite el borrado.,REDO
+D034,Restaura el formato.,REDO
+D035,Vuelve a centrar.,REDO
+D036,Selecciona la tabla.,SELECT_TEXT
+D037,Marca el diagrama.,SELECT_TEXT
+D038,Toma el gráfico.,SELECT_TEXT
+D039,Delimita el extracto.,SELECT_TEXT
+D040,Ubica la rúbrica.,SELECT_TEXT
+D041,Halla el folio 7.,FIND_TEXT
+D042,Ubica la ñ.,FIND_TEXT
+D043,Rastrea el 10%.,FIND_TEXT
+D044,Detecta el guion.,FIND_TEXT
+D045,Caza la errata.,FIND_TEXT
+D046,Guarda el tanto.,SAVE_DOCUMENT
+D047,Archiva el oficio.,SAVE_DOCUMENT
+D048,Consigna el avance.,SAVE_DOCUMENT
+D049,Recupera el expediente.,OPEN_DOCUMENT
+D050,Reabre el acta.,OPEN_DOCUMENT
+E001,Titula la crónica como Ida y vuelta.,RENAME_TITLE
+E002,El membrete dirá Casa TDAH.,RENAME_TITLE
+E003,Nombra el anexo Ñandú común.,RENAME_TITLE
+E004,Que el título cite IHC 2026.,RENAME_TITLE
+E005,Ponle 100 años de soledad.,RENAME_TITLE
+E006,El encabezado: ¿Qué sigue?.,RENAME_TITLE
+E007,Titula ¡Manos a la obra!.,RENAME_TITLE
+E008,Nombre: María-José Pérez.,RENAME_TITLE
+E009,Título con número 7.5%.,RENAME_TITLE
+E010,Ponle e-mail: contacto@ejemplo.mx.,RENAME_TITLE
+E011,Sustituye pez por pez globo.,REPLACE_SELECTION
+E012,Cambia CDMX por Ciudad de México.,REPLACE_SELECTION
+E013,Pon co-autor con guion.,REPLACE_SELECTION
+E014,Escribe 3.1416 completo.,REPLACE_SELECTION
+E015,Troca $100 por cien pesos.,REPLACE_SELECTION
+E016,Cambia #Etiqueta por etiqueta.,REPLACE_SELECTION
+E017,Pon (sic) tras la cita.,REPLACE_SELECTION
+E018,Sustituye etc. por etcétera.,REPLACE_SELECTION
+E019,Escribe Niño Héroe.,REPLACE_SELECTION
+E020,Cambia Sr. por Señor.,REPLACE_SELECTION
+E021,Halla la palabra pingüino.,FIND_TEXT
+E022,Ubica el símbolo €.,FIND_TEXT
+E023,Rastrea el hashtag #TDAH.,FIND_TEXT
+E024,Detecta la arroba del correo.,FIND_TEXT
+E025,Caza el 3.5% restante.,FIND_TEXT
+E026,Encuentra la diéresis.,FIND_TEXT
+E027,Localiza la eñe perdida.,FIND_TEXT
+E028,Busca el dos puntos.,FIND_TEXT
+E029,Halla comillas «latinas».,FIND_TEXT
+E030,Ubica el asterisco.,FIND_TEXT
+E031,Selecciona el otrosí tercero.,SELECT_TEXT
+E032,Marca el inciso ñ).,SELECT_TEXT
+E033,Toma la gráfica 5-A.,SELECT_TEXT
+E034,Elige el considerando 12º.,SELECT_TEXT
+E035,Aparta la foja 007.,SELECT_TEXT
+E036,Señala a María Félix.,SELECT_TEXT
+E037,Encierra al Ñoño.,SELECT_TEXT
+E038,Delimita IHC vs HCI.,SELECT_TEXT
+E039,Enfoca el § 4o.,SELECT_TEXT
+E040,Ubica TDAH-I.,SELECT_TEXT
+E041,Abre el acta Ño. 5.,OPEN_DOCUMENT
+E042,Carga Fotos 2026/01.,OPEN_DOCUMENT
+E043,Jala el .zip adjunto.,OPEN_DOCUMENT
+E044,Trae el CV de Muñoz.,OPEN_DOCUMENT
+E045,Muéstrame Los de abajo.pdf.,OPEN_DOCUMENT
+E046,Desempolva ñoñerías.doc.,OPEN_DOCUMENT
+E047,Reabre Tesis_Ñoño_v2.,OPEN_DOCUMENT
+E048,Presenta el 5º informe.,OPEN_DOCUMENT
+E049,Exhibe el cartel ¡Ya!.,OPEN_DOCUMENT
+E050,Desarchiva e-mails '24.,OPEN_DOCUMENT
+E051,Remarca en negrita Ñoño.,FORMAT_SELECTION
+E052,Cursiva el e-mail.,FORMAT_SELECTION
+E053,Subraya el 100%.,FORMAT_SELECTION
+E054,Negrita TDAH-I.,FORMAT_SELECTION
+E055,Cursiva nº 5.,FORMAT_SELECTION
+E056,Deshaz el pegado de ayer.,UNDO
+E057,Anula la firma digital.,UNDO
+E058,Revierte ^Z.,UNDO
+E059,Cancela ctrl+Z.,UNDO
+E060,Vuelve al .bak.,UNDO
+E061,Rehaz el ctrl+Y.,REDO
+E062,Reaplica el ^Y.,REDO
+E063,Repite el F4.,REDO
+E064,Restaura el .tmp.,REDO
+E065,Vuelve a ponerlo –así–.,REDO
+E066,Respalda el .docx.,SAVE_DOCUMENT
+E067,Archiva el .pdf firmado.,SAVE_DOCUMENT
+E068,Consigna el .zip.,SAVE_DOCUMENT
+E069,Deposita el .bak.,SAVE_DOCUMENT
+E070,Fija la v2.1.,SAVE_DOCUMENT
+E071,Saca el acta en .pdf.,EXPORT_DOCUMENT
+E072,Baja el .txt plano.,EXPORT_DOCUMENT
+E073,Genera .rtf enriquecido.,EXPORT_DOCUMENT
+E074,Vierte a .docx.,EXPORT_DOCUMENT
+E075,Rinde _borrador_.,EXPORT_DOCUMENT
+E076,Reescribe el considerando.,REWRITE_SELECTION
+E077,Condensa el altri pormenores.,REWRITE_SELECTION
+E078,Aclara el otrosí.,REWRITE_SELECTION
+E079,Abrevia el proemio.,REWRITE_SELECTION
+E080,Expón el petitorio.,REWRITE_SELECTION
+F001,Titula como Balance y guarda copia.,MULTI_ACTION
+F002,Pon Metodología de título y exporta en pdf.,MULTI_ACTION
+F003,Borra la nota y deshaz lo anterior.,MULTI_ACTION
+F004,Quita el inciso y guarda el tanto.,MULTI_ACTION
+F005,Subraya el monto y archiva el oficio.,MULTI_ACTION
+F006,Cursiva la cita y exporta en texto plano.,MULTI_ACTION
+F007,Remarca el fallo y pon Discusión de título.,MULTI_ACTION
+F008,Hazlo breve y guarda el acta.,MULTI_ACTION
+F009,Aclara el acuerdo y exporta en Word.,MULTI_ACTION
+F010,Troca pesos por dólares y archiva.,MULTI_ACTION
+F011,Pon 2026 donde dice 2025 y guarda.,MULTI_ACTION
+F012,Cambia Ana por Anita y exporta en pdf.,MULTI_ACTION
+F013,Busca el folio 7 y marca la foja.,MULTI_ACTION
+F014,Halla TDAH y selecciona el renglón.,MULTI_ACTION
+F015,Ubica la ñ y toma la palabra.,MULTI_ACTION
+F016,Selecciona la tabla y ponla en negritas.,MULTI_ACTION
+F017,Marca el diagrama y subraya el total.,MULTI_ACTION
+F018,Toma el gráfico y expórtalo en pdf.,MULTI_ACTION
+F019,Deshaz el pegado y rehace la numeración.,MULTI_ACTION
+F020,Anula la firma y restaura el formato.,MULTI_ACTION
+F021,Revierte el borrado y guarda el tanto.,MULTI_ACTION
+F022,Cancela el envío y archiva el oficio.,MULTI_ACTION
+F023,Abre el acta vieja y busca el folio.,MULTI_ACTION
+F024,Carga el informe 2024 y selecciona la tabla.,MULTI_ACTION
+F025,Jala el adjunto y exporta en texto plano.,MULTI_ACTION
+F026,Trae el contrato y ponlo en negritas.,MULTI_ACTION
+F027,Muéstrame la tesis de Ana y guarda copia.,MULTI_ACTION
+F028,Desarchiva el legajo y numera las fojas.,MULTI_ACTION
+F029,"Borra el renglón, deshazlo y guarda.",MULTI_ACTION
+F030,"Pon Claridad de título, subraya el acuerdo y exporta en pdf.",MULTI_ACTION
+F031,"Busca IHC, selecciona el renglón y ponlo en cursivas.",MULTI_ACTION
+F032,"Cambia CDMX por Ciudad de México, guarda y exporta en Word.",MULTI_ACTION
+F033,"Hazlo breve, titula como Síntesis y archiva el tanto.",MULTI_ACTION
+F034,Tacha el renglón y ponlo en negritas.,MULTI_ACTION
+F035,Endereza la línea y centra el título.,MULTI_ACTION
+F036,Limpia los tachones y guarda el acta.,MULTI_ACTION
+F037,Quita el corrector viejo y deshaz el cambio.,MULTI_ACTION
+F038,Pule la portada y exporta en pdf.,MULTI_ACTION
+F039,Retoca la foto y archiva el legajo.,MULTI_ACTION
+F040,Enmarca la cita y subraya al deudor.,MULTI_ACTION
+F041,Colorea los títulos y guarda el informe.,MULTI_ACTION
+F042,Decora el encabezado y titula como Fiesta.,MULTI_ACTION
+F043,Grafica resultados y exporta en Word.,MULTI_ACTION
+F044,Tabula respuestas y guarda la minuta.,MULTI_ACTION
+F045,Esquematiza el capítulo y ponle Índice.,MULTI_ACTION
+F046,Resume en viñetas y archiva.,MULTI_ACTION
+F047,Sintetiza el argumento y titula Tesis.,MULTI_ACTION
+F048,Condensa la crónica y exporta en pdf.,MULTI_ACTION
+F049,Desarrolla el nudo y guarda copia.,MULTI_ACTION
+F050,Amplía el desenlace y ponlo en cursivas.,MULTI_ACTION
+F051,Recorta el diálogo y subraya el final.,MULTI_ACTION
+F052,Poda adjetivos y hazlo más breve.,MULTI_ACTION
+F053,Quita muletillas y guarda el capítulo.,MULTI_ACTION
+F054,Elimina repeticiones y exporta en texto plano.,MULTI_ACTION
+F055,Anota al margen y guarda el oficio.,MULTI_ACTION
+F056,Glosa el término y subraya la fecha.,MULTI_ACTION
+F057,Firma con rúbrica y sella con lacre.,MULTI_ACTION
+F058,Franquea la carta y certifica el envío.,MULTI_ACTION
+F059,Acusa recibo y archiva el comprobante.,MULTI_ACTION
+F060,Digitaliza el legajo y escanea a color.,MULTI_ACTION
+G001,Hazlo un poco más corto.,REWRITE_SELECTION
+G002,Déjalo en negritas.,FORMAT_SELECTION
+G003,Reemplázalo por esta frase corta y clara.,REPLACE_SELECTION
+G004,Borra esto mismo.,DELETE_SELECTION
+G005,Quita la muletilla.,DELETE_SELECTION
+G006,Endereza el renglón.,DELETE_SELECTION
+G007,Tacha el duplicado.,DELETE_SELECTION
+G008,Recorta el excedente.,DELETE_SELECTION
+G009,Subraya el acuerdo.,FORMAT_SELECTION
+G010,Cursiva la cita larga.,FORMAT_SELECTION
+G011,Remarca el monto final.,FORMAT_SELECTION
+G012,Aplica viñetas al listado.,FORMAT_SELECTION
+G013,Condensa el informe.,REWRITE_SELECTION
+G014,Aclara el otrosí.,REWRITE_SELECTION
+G015,Abrevia el proemio.,REWRITE_SELECTION
+G016,Expón el petitorio.,REWRITE_SELECTION
+G017,Troca el saldo viejo.,REPLACE_SELECTION
+G018,Pon el folio nuevo.,REPLACE_SELECTION
+G019,Actualiza la cifra.,REPLACE_SELECTION
+G020,Corrige al deudor.,REPLACE_SELECTION
+G021,Deshaz el formato.,UNDO
+G022,Anula el pegado.,UNDO
+G023,Revierte el centrado.,UNDO
+G024,Rehaz la sangría.,REDO
+G025,Reaplica el estilo.,REDO
+G026,Restaura el margen.,REDO
+G027,Selecciona el considerando.,SELECT_TEXT
+G028,Marca el anexo.,SELECT_TEXT
+G029,Halla el otrosí.,FIND_TEXT
+G030,Ubica la foja.,FIND_TEXT
+H001,Deshaz la sangría.,UNDO
+H002,Anula el pegado de ayer.,UNDO
+H003,Revierte lo centrado.,UNDO
+H004,Cancela el subrayado.,UNDO
+H005,Echa atrás el pegado.,UNDO
+H006,Da un paso atrás.,UNDO
+H007,Vuelve al texto previo.,UNDO
+H008,Recupera el párrafo.,UNDO
+H009,Restaura lo borrado.,UNDO
+H010,Vuelve a poner lo quitado.,UNDO
+H011,Reaplica lo deshecho.,REDO
+H012,Vuelve a aplicar el borrado.,REDO
+H013,Repite lo anulado.,REDO
+H014,Rehaz lo revertido.,REDO
+H015,Restaura lo anulado.,REDO
+H016,Vuelve a quitar lo puesto.,REDO
+H017,Repite el deshacer.,REDO
+H018,Reaplica lo cancelado.,REDO
+H019,Restaura lo revertido.,REDO
+H020,Vuelve a anular lo activo.,REDO
+H021,Regresa atrás otra vez.,UNDO
+H022,Devuelve el cambio previo.,UNDO
+H023,Retorna al estado anterior.,UNDO
+H024,Deshaz lo último otra vez.,UNDO
+H025,Cancela de nuevo.,UNDO
+H026,Rehaz una vez más.,REDO
+H027,Otra vez rehacer.,REDO
+H028,De nuevo deshacer.,UNDO
+H029,Restaurar lo deshecho ya.,REDO
+H030,Recuperar lo anterior ya.,UNDO
+I001,Halla el considerando quinto.,FIND_TEXT
+I002,Busca el otrosí final.,FIND_TEXT
+I003,Rastrea la foja 12.,FIND_TEXT
+I004,Detecta el inciso b.,FIND_TEXT
+I005,Ubica la rúbrica faltante.,FIND_TEXT
+I006,Encuentra el sello borroso.,FIND_TEXT
+I007,Localiza el folio roto.,FIND_TEXT
+I008,Caza la coma asesina.,FIND_TEXT
+I009,Persigue el error.,FIND_TEXT
+I010,Sigue el rastro del duplicado.,FIND_TEXT
+I011,Elige el otrosí.,SELECT_TEXT
+I012,Aparta el considerando.,SELECT_TEXT
+I013,Toma la foja.,SELECT_TEXT
+I014,Aísla el inciso.,SELECT_TEXT
+I015,Recorta la cita a mano.,SELECT_TEXT
+I016,Enfoca el artículo.,SELECT_TEXT
+I017,Apunta el anexo.,SELECT_TEXT
+I018,Señala el diagrama.,SELECT_TEXT
+I019,Delimita el párrafo.,SELECT_TEXT
+I020,Enmarca el recuadro.,SELECT_TEXT
+I021,Remarca los totales.,FORMAT_SELECTION
+I022,Enfatiza el matiz.,FORMAT_SELECTION
+I023,Recalca el acuerdo.,FORMAT_SELECTION
+I024,Subraya los nombres.,FORMAT_SELECTION
+I025,Cursiva los títulos.,FORMAT_SELECTION
+I026,Negrita los montos.,FORMAT_SELECTION
+I027,Marca en negro el fallo.,FORMAT_SELECTION
+I028,Pon en itálica el matiz.,FORMAT_SELECTION
+I029,Traza línea bajo el acuerdo.,FORMAT_SELECTION
+I030,Resalta el considerando.,FORMAT_SELECTION
+I031,Halla el fallo y márcalo.,MULTI_ACTION
+I032,Busca el anexo y tómalo.,MULTI_ACTION
+I033,Ubica la foja y apártala.,MULTI_ACTION
+I034,Detecta el inciso y aíslalo.,MULTI_ACTION
+I035,Encuentra el sello y enmárcalo.,MULTI_ACTION
+I036,Elige el considerando y subráyalo.,MULTI_ACTION
+I037,Toma la foja y ponla en negritas.,MULTI_ACTION
+I038,Aparta el anexo y ponlo en cursivas.,MULTI_ACTION
+I039,Marca el diagrama y archívalo.,MULTI_ACTION
+I040,Halla el otrosí y expórtalo en pdf.,MULTI_ACTION

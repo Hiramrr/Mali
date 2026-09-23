@@ -16,7 +16,7 @@ public struct MarkdownReader: NSViewRepresentable {
         scroll.hasVerticalScroller = true
         scroll.autohidesScrollers = true
         scroll.drawsBackground = false
-        let view = NSTextView(usingTextLayoutManager: true)
+        let view = ReadingTextView(usingTextLayoutManager: true)
         view.isEditable = false
         view.isSelectable = true
         view.usesFindBar = true
@@ -26,14 +26,18 @@ public struct MarkdownReader: NSViewRepresentable {
         view.textContainer?.widthTracksTextView = true
         view.textContainer?.containerSize = NSSize(width: 0, height: CGFloat.greatestFiniteMagnitude)
         view.textContainerInset = NSSize(width: 28, height: 24)
-        view.backgroundColor = .textBackgroundColor
+        view.backgroundColor = style.effectiveBackgroundColor
+        view.textColor = style.effectiveTextColor
         view.setAccessibilityLabel("Vista de lectura")
         scroll.documentView = view
         return scroll
     }
     public func updateNSView(_ scroll: NSScrollView, context: Context) {
-        guard let view = scroll.documentView as? NSTextView,
-              context.coordinator.text != text || context.coordinator.style != style else { return }
+        guard let view = scroll.documentView as? NSTextView else { return }
+        view.backgroundColor = style.effectiveBackgroundColor
+        view.textColor = style.effectiveTextColor
+        view.insertionPointColor = style.effectiveTextColor
+        guard context.coordinator.text != text || context.coordinator.style != style else { return }
         context.coordinator.text = text
         context.coordinator.style = style
         view.textStorage?.setAttributedString(MarkdownAppearance.readingText(text, document: MarkdownDocument(text), style: style))
@@ -41,5 +45,16 @@ public struct MarkdownReader: NSViewRepresentable {
     @MainActor public final class Coordinator {
         var text: String?
         var style: WritingStyle?
+    }
+}
+
+@MainActor private final class ReadingTextView: NSTextView {
+    override func viewDidMoveToWindow() {
+        super.viewDidMoveToWindow()
+        guard window != nil else { return }
+        Task { @MainActor [weak self] in
+            guard let self else { return }
+            self.window?.makeFirstResponder(self)
+        }
     }
 }

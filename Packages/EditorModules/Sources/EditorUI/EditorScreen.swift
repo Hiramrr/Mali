@@ -1,87 +1,470 @@
 import SwiftUI
 import AppKit
+import UniformTypeIdentifiers
 import EditorCore
 import EditorEngine
 import DesignSystem
 import ExportFeature
+import ModuleKit
+import DocumentKit
 
 public struct EditorScreen: View {
+    private struct LibraryRequest: Hashable {
+        let folders: [URL]
+        let revision: Int
+    }
+
+    /// Una pantalla visitada: la biblioteca de `destination` (lista de notas)
+    /// o la nota abierta. Con esto el botón Volver regresa al sitio exacto.
+    private struct ScreenSnapshot: Equatable {
+        let destination: LibraryDestination
+        let inNote: Bool
+    }
+
+    private enum LibraryDestination: Hashable {
+        case home, recents, favorites, archived, drafts, trash
+        case folder(URL)
+
+        var title: String {
+            switch self {
+            case .home: "Inicio"
+            case .recents: "Recientes"
+            case .favorites: "Favoritos"
+            case .archived: "Archivado"
+            case .drafts: "Borradores"
+            case .trash: "Basura"
+            case .folder(let url): url.lastPathComponent
+            }
+        }
+    }
+
     @Binding private var text: String
-    private let title: String
+    @State private var documentTitle: String
+    private let currentURL: URL?
     private let recentURLs: [URL]
     private let openFile: (URL) -> Void
+    private let startOnHome: Bool
+    // Pieza Lego: Voz. `commandBus` recibe los comandos de cualquier módulo
+    // de entrada; `voicePanel` es la vista del módulo (`AnyView` para no
+    // depender de VoiceModule) o `nil` si la pieza está quitada.
+    private let commandBus: EditorCommandBus
+    private let voicePanel: AnyView?
+    private let modules: ModuleRegistry
+    // Pieza Lego: Gestos. `gesturePanel` es el botón+popover de la cámara y
+    // `gestureCards` las tarjetas flotantes de sesión (`AnyView` para no
+    // depender de GestureModule). `onGestureDocument` empuja texto+selección
+    // al módulo; `nil` sin la pieza.
+    private let gesturePanel: AnyView?
+    private let gestureCards: AnyView?
+    private let onGestureDocument: ((String, NSRange) -> Void)?
     @State private var session = EditorSession()
     @State private var showSidebar = true
-    @State private var showLibrary = false
+    @State private var showHome: Bool
+    @State private var hasAppeared = false
+    @State private var launchHome: Bool
+    @State private var hasChosenDocument = false
+    @State private var destination = LibraryDestination.home
     @State private var search = ""
     @State private var showReadingControls = false
-    @State private var showStatistics = false
+    @State private var showInspector = true
     @AppStorage("editor.fontSize") private var fontSize = 18.0
     @AppStorage("editor.fontFamily") private var family = "system"
+    @AppStorage("editor.fontWeight") private var fontWeight = "regular"
     @AppStorage("editor.lineSpacing") private var spacing = 6.0
+    @AppStorage("editor.paragraphSpacing") private var paragraph = 0.0
+    @AppStorage("editor.tracking") private var tracking = 0.0
+    @AppStorage("editor.alignment") private var alignment = "natural"
+    @AppStorage("editor.textColor") private var lightTextHex = "auto"
+    @AppStorage("editor.backgroundColor") private var lightBackgroundHex = "auto"
+    @AppStorage("editor.accentColor") private var lightAccentHex = "auto"
+    @AppStorage("editor.textColorDark") private var darkTextHex = "auto"
+    @AppStorage("editor.backgroundColorDark") private var darkBackgroundHex = "auto"
+    @AppStorage("editor.accentColorDark") private var darkAccentHex = "auto"
     @AppStorage("editor.readingWidth") private var width = 760.0
     @AppStorage("editor.syntax") private var syntax = true
     @AppStorage("editor.statistics") private var statistics = true
     @AppStorage("editor.appearance") private var appearance = "system"
+    @AppStorage("editor.customFolders") private var customFolderPaths = ""
+    @AppStorage("editor.favorites") private var favoritePaths = ""
+    @AppStorage("editor.archived") private var archivedPaths = ""
+    @AppStorage("editor.trashed") private var trashedPaths = ""
+    @State private var autosaveWorkItem: DispatchWorkItem?
+    @State private var folderDocuments: [URL] = []
+    @State private var libraryRevision = 0
+    // Pantallas anteriores, de la más reciente a la más antigua, para volver.
+    @State private var screenHistory: [ScreenSnapshot] = []
+    @State private var singleWindow = SingleWindowCoordinator.shared
 
-    public init(text: Binding<String>, title: String, recentURLs: [URL], openFile: @escaping (URL) -> Void) {
+    public init(text: Binding<String>, title: String, currentURL: URL?, recentURLs: [URL], openFile: @escaping (URL) -> Void, startOnHome: Bool = false, commandBus: EditorCommandBus = EditorCommandBus(), voicePanel: AnyView? = nil, modules: ModuleRegistry = ModuleRegistry(), gesturePanel: AnyView? = nil, gestureCards: AnyView? = nil, onGestureDocument: ((String, NSRange) -> Void)? = nil) {
         _text = text
-        self.title = title
+        _documentTitle = State(initialValue: title)
+        self.currentURL = currentURL
         self.recentURLs = recentURLs
         self.openFile = openFile
+        self.startOnHome = startOnHome
+        self.commandBus = commandBus
+        self.voicePanel = voicePanel
+        self.modules = modules
+        self.gesturePanel = gesturePanel
+        self.gestureCards = gestureCards
+        self.onGestureDocument = onGestureDocument
+        _showHome = State(initialValue: startOnHome || (currentURL == nil && text.wrappedValue.isEmpty))
+        _launchHome = State(initialValue: startOnHome)
     }
 
-    private var style: WritingStyle { WritingStyle(size: fontSize, family: family, spacing: spacing, syntax: syntax) }
-    private var activeHeading: Int? { session.headings.last(where: { $0.offset <= session.cursorOffset })?.id }
-    private var filteredHeadings: [DocumentHeading] { session.headings.filter { search.isEmpty || $0.title.localizedStandardContains(search) } }
-    private var filteredURLs: [URL] { recentURLs.filter { search.isEmpty || $0.lastPathComponent.localizedStandardContains(search) } }
+    private var style: WritingStyle {
+        WritingStyle(
+            size: fontSize, family: family, spacing: spacing, paragraph: paragraph,
+            syntax: syntax, tracking: tracking, alignment: alignment, weight: fontWeight,
+            textHex: resolvedTextHex, backgroundHex: resolvedBackgroundHex, accentHex: resolvedAccentHex
+        )
+    }
 
-    public var body: some View {
-        GeometryReader { geometry in
-            HStack(spacing: 0) {
-                if showSidebar && !session.focusMode {
-                    sidebar
-                        .frame(width: EditorMetrics.sidebarWidth)
-                        .glassEffect(.regular, in: RoundedRectangle(cornerRadius: 20))
-                        .padding(10)
-                    if !showLibrary && geometry.size.width >= 1000 {
-                        outline.frame(width: EditorMetrics.outlineWidth)
-                        Divider()
-                    }
-                }
-                ZStack {
-                    writingCanvas
-                        .opacity(showLibrary ? 0 : 1)
-                        .accessibilityHidden(showLibrary)
-                        .allowsHitTesting(!showLibrary)
-                    if showLibrary { library }
-                }
-                .background(Color(nsColor: .textBackgroundColor))
+    @Environment(\.colorScheme) private var systemScheme
+
+    /// Con Tema en Sistema se sigue al Mac; con Claro/Oscuro se fuerza el modo.
+    private var resolvedIsDark: Bool {
+        if appearance == "dark" { return true }
+        if appearance == "light" { return false }
+        return systemScheme == .dark
+    }
+
+    private var resolvedTextHex: String { resolvedIsDark ? darkTextHex : lightTextHex }
+    private var resolvedBackgroundHex: String { resolvedIsDark ? darkBackgroundHex : lightBackgroundHex }
+    private var resolvedAccentHex: String { resolvedIsDark ? darkAccentHex : lightAccentHex }
+
+    /// El popover siempre edita los colores del modo que se está viendo.
+    private var popoverText: Binding<String> {
+        Binding(
+            get: { resolvedIsDark ? darkTextHex : lightTextHex },
+            set: { if resolvedIsDark { darkTextHex = $0 } else { lightTextHex = $0 } }
+        )
+    }
+
+    private var popoverBackground: Binding<String> {
+        Binding(
+            get: { resolvedIsDark ? darkBackgroundHex : lightBackgroundHex },
+            set: { if resolvedIsDark { darkBackgroundHex = $0 } else { lightBackgroundHex = $0 } }
+        )
+    }
+
+    private var popoverAccent: Binding<String> {
+        Binding(
+            get: { resolvedIsDark ? darkAccentHex : lightAccentHex },
+            set: { if resolvedIsDark { darkAccentHex = $0 } else { lightAccentHex = $0 } }
+        )
+    }
+
+    // MARK: - Cromado con el tema (texto/fondo/acento personalizados)
+    private var chromePrimary: Color {
+        style.usesCustomText ? Color(nsColor: style.effectiveTextColor) : .primary
+    }
+    private var chromeSecondary: Color {
+        style.usesCustomText ? Color(nsColor: style.secondaryTextColor) : .secondary
+    }
+    private var chromeTertiary: Color {
+        style.usesCustomText ? Color(nsColor: style.tertiaryTextColor) : Color(nsColor: .tertiaryLabelColor)
+    }
+    private var themeAccent: Color {
+        style.usesCustomAccent ? Color(nsColor: style.effectiveAccentColor) : .accentColor
+    }
+    private var homeBackground: Color {
+        style.usesCustomBackground ? Color(nsColor: style.effectiveBackgroundColor) : Color(nsColor: .textBackgroundColor)
+    }
+    private var cardBackground: Color {
+        style.usesCustomBackground ? Color(nsColor: style.chromeCard) : Color(nsColor: .controlBackgroundColor)
+    }
+    private var cardBorder: Color {
+        style.usesCustomBackground ? Color(nsColor: style.chromeCardBorder) : Color.primary.opacity(0.10)
+    }
+    private var isShowingHome: Bool { showHome || (startOnHome && !hasChosenDocument) }
+    /// Pantalla que se está viendo ahora (biblioteca o nota abierta).
+    private var currentScreen: ScreenSnapshot {
+        ScreenSnapshot(destination: destination, inNote: !isShowingHome)
+    }
+    private var activeDocument: NSDocument? {
+        NSDocumentController.shared.currentDocument ?? NSDocumentController.shared.documents.first
+    }
+    /// Documento propio de esta ventana (no el global "current", que puede ser
+    /// de otra ventana cuando hay una secundaria). Se usa para no cerrar la
+    /// ventana equivocada al imponer ventana única.
+    private var ownDocument: NSDocument? {
+        if let window = session.textView?.window {
+            let controller = NSDocumentController.shared
+            if let mine = controller.documents.first(where: { document in
+                document.windowControllers.contains(where: { $0.window == window })
+            }) {
+                return mine
             }
         }
-        .background(Color(nsColor: .textBackgroundColor))
-        .frame(minWidth: 720, minHeight: 480)
+        return activeDocument
+    }
+    private var activeHeading: Int? { session.headings.last(where: { $0.offset <= session.cursorOffset })?.id }
+    private var savedFolders: [URL] {
+        customFolderPaths.split(separator: "|").map { URL(fileURLWithPath: String($0)) }
+    }
+    private var sampleFolder: URL? {
+        Bundle.main.url(forResource: "Samples", withExtension: nil)
+    }
+    private var folders: [URL] {
+        let candidates = Array(Set((sampleFolder.map { [$0] } ?? []) + savedFolders + recentURLs.compactMap { url in
+            guard url.isFileURL else { return nil }
+            return url.deletingLastPathComponent().standardizedFileURL
+        } + (currentURL.map { [$0.deletingLastPathComponent().standardizedFileURL] } ?? [])))
+        let writableNames = Set(candidates.filter { !$0.path.hasPrefix(Bundle.main.bundleURL.path) }.map(\.lastPathComponent))
+        return candidates.filter { !$0.path.hasPrefix(Bundle.main.bundleURL.path) || !writableNames.contains($0.lastPathComponent) }
+        .sorted { $0.lastPathComponent.localizedStandardCompare($1.lastPathComponent) == .orderedAscending }
+    }
+    private var availableURLs: [URL] {
+        let urls = Array(Set(recentURLs + folderDocuments + (currentURL.map { [$0] } ?? [])))
+        let writableNames = Set(urls.filter { !$0.path.hasPrefix(Bundle.main.bundleURL.path) }.map(\.lastPathComponent))
+        return urls.filter { !$0.path.hasPrefix(Bundle.main.bundleURL.path) || !writableNames.contains($0.lastPathComponent) }
+    }
+    private func storedSet(_ raw: String) -> Set<String> {
+        Set(raw.split(separator: "|").map { String($0) }.filter { !$0.isEmpty })
+    }
+    private var favoriteKeys: Set<String> { storedSet(favoritePaths) }
+    private var archivedKeys: Set<String> { storedSet(archivedPaths) }
+    private var trashedKeys: Set<String> { storedSet(trashedPaths) }
+    private func storageKey(for url: URL) -> String { url.standardizedFileURL.path }
+    private func isFavorite(_ url: URL) -> Bool { favoriteKeys.contains(storageKey(for: url)) }
+    private func isArchived(_ url: URL) -> Bool { archivedKeys.contains(storageKey(for: url)) }
+    private func isTrashed(_ url: URL) -> Bool { trashedKeys.contains(storageKey(for: url)) }
+    private func toggleStored(_ raw: String, key: String) -> String {
+        var set = storedSet(raw)
+        if set.contains(key) { set.remove(key) } else { set.insert(key) }
+        return set.sorted().joined(separator: "|")
+    }
+    private func setStored(_ raw: String, key: String, present: Bool) -> String {
+        var set = storedSet(raw)
+        if present { set.insert(key) } else { set.remove(key) }
+        return set.sorted().joined(separator: "|")
+    }
+    private var activeURLs: [URL] {
+        availableURLs.filter { !isTrashed($0) && !isArchived($0) }
+    }
+    private var orderedRecentURLs: [URL] {
+        var seen = Set<String>()
+        var ordered: [URL] = []
+        let candidates = (currentURL.map { [$0] } ?? []) + recentURLs
+        for url in candidates {
+            let key = storageKey(for: url)
+            guard !seen.contains(key) else { continue }
+            seen.insert(key)
+            guard availableURLs.contains(where: { storageKey(for: $0) == key }) else { continue }
+            guard !isTrashed(url) && !isArchived(url) else { continue }
+            if let match = availableURLs.first(where: { storageKey(for: $0) == key }) {
+                ordered.append(match)
+            }
+        }
+        return ordered
+    }
+    private var draftURLs: [URL] {
+        activeURLs.filter { $0.deletingPathExtension().lastPathComponent.hasPrefix("Sin título") }
+    }
+    private func baseURLs(for dest: LibraryDestination) -> [URL] {
+        switch dest {
+        case .home:
+            return activeURLs
+        case .recents:
+            return orderedRecentURLs
+        case .favorites:
+            return activeURLs.filter { isFavorite($0) }
+        case .archived:
+            return availableURLs.filter { isArchived($0) && !isTrashed($0) }
+        case .drafts:
+            return draftURLs
+        case .trash:
+            return availableURLs.filter { isTrashed($0) }
+        case .folder(let folder):
+            return availableURLs.filter {
+                $0.deletingLastPathComponent().standardizedFileURL == folder && !isTrashed($0)
+            }
+        }
+    }
+    private var homeURLs: [URL] {
+        let base = baseURLs(for: destination)
+        let filtered = base.filter { search.isEmpty || $0.deletingPathExtension().lastPathComponent.localizedStandardContains(search) }
+        if destination == .recents && search.isEmpty {
+            return filtered
+        }
+        return filtered.sorted { $0.lastPathComponent.localizedStandardCompare($1.lastPathComponent) == .orderedAscending }
+    }
+    private func count(for dest: LibraryDestination) -> Int {
+        if dest == .drafts && currentURL == nil && !text.isEmpty { return baseURLs(for: dest).count + 1 }
+        return baseURLs(for: dest).count
+    }
+    private func toggleFavorite(_ url: URL) {
+        favoritePaths = toggleStored(favoritePaths, key: storageKey(for: url))
+    }
+    private func setArchived(_ url: URL, archived: Bool) {
+        archivedPaths = setStored(archivedPaths, key: storageKey(for: url), present: archived)
+    }
+    private func setTrashed(_ url: URL, trashed: Bool) {
+        trashedPaths = setStored(trashedPaths, key: storageKey(for: url), present: trashed)
+    }
+    private func restore(_ url: URL) {
+        trashedPaths = setStored(trashedPaths, key: storageKey(for: url), present: false)
+        archivedPaths = setStored(archivedPaths, key: storageKey(for: url), present: false)
+    }
+    private func deletePermanently(_ url: URL) {
+        let key = storageKey(for: url)
+        if currentURL?.standardizedFileURL.path == key {
+            NSApplication.shared.presentError(NSError(
+                domain: NSCocoaErrorDomain,
+                code: NSFileWriteFileExistsError,
+                userInfo: [NSLocalizedDescriptionKey: "No se puede eliminar el documento abierto. Ciérralo primero."]
+            ))
+            return
+        }
+        do {
+            if FileManager.default.fileExists(atPath: url.path) {
+                try FileManager.default.trashItem(at: url, resultingItemURL: nil)
+            }
+        } catch {
+            NSApplication.shared.presentError(error)
+            return
+        }
+        favoritePaths = setStored(favoritePaths, key: key, present: false)
+        archivedPaths = setStored(archivedPaths, key: key, present: false)
+        trashedPaths = setStored(trashedPaths, key: key, present: false)
+        libraryRevision += 1
+    }
+    private func emptyTrash() {
+        for url in baseURLs(for: .trash) {
+            let key = storageKey(for: url)
+            if currentURL?.standardizedFileURL.path == key { continue }
+            if FileManager.default.fileExists(atPath: url.path) {
+                try? FileManager.default.trashItem(at: url, resultingItemURL: nil)
+            }
+        }
+        let currentKey = currentURL.map { storageKey(for: $0) }
+        let remaining = storedSet(trashedPaths).intersection(currentKey.map { Set([$0]) } ?? [])
+        trashedPaths = remaining.sorted().joined(separator: "|")
+        libraryRevision += 1
+    }
+    private func revealInFinder(_ url: URL) {
+        NSWorkspace.shared.activateFileViewerSelecting([url])
+    }
+
+    public var body: some View {
+        HSplitView {
+            if showSidebar && !session.focusMode {
+                sidebar
+                    .frame(minWidth: 230, idealWidth: 260, maxWidth: 320)
+            }
+            if isShowingHome {
+                home
+                    .frame(minWidth: 560, maxWidth: .infinity, maxHeight: .infinity)
+            } else {
+                documentOutline
+                    .frame(minWidth: 230, idealWidth: 270, maxWidth: 340)
+                writingCanvas
+                    .frame(minWidth: 360, maxWidth: .infinity, maxHeight: .infinity)
+                    .background(Color(nsColor: style.effectiveBackgroundColor))
+            }
+        }
+        .inspector(isPresented: Binding(
+            get: { showInspector && !session.focusMode && !isShowingHome },
+            set: { if !session.focusMode { showInspector = $0 } }
+        )) {
+            inspector.inspectorColumnWidth(min: 220, ideal: 250, max: 320)
+        }
+        .background(Color(nsColor: style.effectiveBackgroundColor))
+        // La barra superior (titlebar) no hereda el fondo del contenido y se
+        // veía blanca con temas personalizados: se tiñe igual que el lienzo.
+        // En "auto" se conserva la barra nativa del sistema.
+        .toolbarBackground(Color(nsColor: style.effectiveBackgroundColor), for: .windowToolbar)
+        .toolbarBackgroundVisibility(style.usesCustomBackground ? .visible : .automatic, for: .windowToolbar)
+        .frame(minWidth: 780, minHeight: 480)
         .preferredColorScheme(appearance == "light" ? .light : appearance == "dark" ? .dark : nil)
         .focusedSceneValue(\.writingSession, session)
-        .focusedSceneValue(\.writingTitle, title)
-        .onChange(of: showLibrary) { _, showing in
-            if showing { session.textView?.window?.makeFirstResponder(nil) }
-            else { focusEditor() }
+        .focusedSceneValue(\.writingTitle, documentTitle)
+        .focusedSceneValue(\.newDocument, createDocument)
+        .onChange(of: currentURL) { _, newURL in
+            libraryRevision += 1
+            documentTitle = newURL?.deletingPathExtension().lastPathComponent ?? "Sin título"
+            if hasAppeared && !launchHome { showHome = newURL == nil && text.isEmpty }
         }
         .onChange(of: session.readingMode) { _, reading in
-            showLibrary = false
-            if reading { session.textView?.window?.makeFirstResponder(nil) }
-            else { focusEditor() }
+            if !reading { focusEditor() }
         }
-        .onChange(of: session.focusMode) { _, _ in showLibrary = false }
+        .onChange(of: text) { _, newText in
+            scheduleAutosave()
+            // Pieza Lego: Gestos. El módulo trabaja sobre instantáneas; sin
+            // este empuje no vería cambios programáticos (abrir documento).
+            if let push = onGestureDocument {
+                let sel = session.textView?.selectedRange()
+                    ?? NSRange(location: min(session.cursorOffset, max(newText.utf16.count - 1, 0)), length: 0)
+                push(newText, sel)
+            }
+        }
+        .onChange(of: singleWindow.pendingOpen) { _, request in
+            guard let request else { return }
+            applySameWindowOpen(url: request.url, text: request.text)
+        }
+        .onChange(of: singleWindow.newDocumentRevision) { _, _ in
+            createDocument()
+        }
+        .task(id: LibraryRequest(folders: folders, revision: libraryRevision)) {
+            let documents = await DocumentLibrary.documents(in: folders)
+            guard !Task.isCancelled else { return }
+            folderDocuments = documents
+        }
+        .onChange(of: isShowingHome) { _, showing in
+            if showing { libraryRevision += 1 }
+        }
+        // Cada cambio de pantalla guarda la anterior: así el botón Volver
+        // regresa a la última pantalla en la que se estaba.
+        .onChange(of: currentScreen) { previous, _ in
+            guard previous != currentScreen else { return }
+            screenHistory.append(previous)
+            if screenHistory.count > 50 {
+                screenHistory.removeFirst(screenHistory.count - 50)
+            }
+        }
+        .onReceive(NotificationCenter.default.publisher(for: NSApplication.didBecomeActiveNotification)) { _ in
+            libraryRevision += 1
+        }
+        // Los módulos (voz, gestos) publican intenciones aquí; el editor las
+        // aplica a la sesión activa sin saber de qué pieza vinieron.
+        .task {
+            for await command in await commandBus.commands() {
+                session.send(command)
+            }
+        }
+        .onAppear {
+            hasAppeared = true
+            if startOnHome { launchHome = true; showHome = true }
+            if currentURL == nil && text.isEmpty { showHome = true }
+            mergeExtraWindowIfNeeded()
+            // Pieza Lego: Gestos. Instantánea inicial para sesiones manuales
+            // antes de la primera pulsación.
+            if let push = onGestureDocument {
+                let sel = session.textView?.selectedRange() ?? NSRange(location: 0, length: 0)
+                push(text, sel)
+            }
+        }
         .toolbar { toolbar }
     }
 
     private var writingCanvas: some View {
         VStack(spacing: 0) {
             VStack(alignment: .leading, spacing: 0) {
+                if statistics && !session.focusMode {
+                    HStack {
+                        Spacer()
+                        Text("\(session.statistics.words.formatted()) palabras")
+                            .font(.caption).foregroundStyle(Color(nsColor: style.secondaryTextColor)).monospacedDigit()
+                    }.padding(.horizontal, 32).padding(.top, 16)
+                }
                 HStack(alignment: .firstTextBaseline) {
-                    Text(title).font(.system(size: 32, weight: .semibold)).lineLimit(2).textSelection(.enabled)
+                    TextField("Título", text: $documentTitle, onCommit: commitTitle)
+                        .textFieldStyle(.plain)
+                        .font(.system(size: 32, weight: .semibold))
+                        .foregroundStyle(Color(nsColor: style.effectiveTextColor))
+                        .lineLimit(2)
+                        .accessibilityLabel("Título del documento")
                     Spacer(minLength: 12)
                     if session.readingMode {
                         Button("Editar") { session.readingMode = false }.buttonStyle(.glass)
@@ -89,155 +472,306 @@ public struct EditorScreen: View {
                 }
                 .padding(.horizontal, 32).padding(.top, session.focusMode ? 20 : 28).padding(.bottom, 8)
                 ZStack(alignment: .topLeading) {
-                    NativeTextEditor(text: $text, session: session, style: style)
+                    NativeTextEditor(text: $text, session: session, style: style, onTextActivity: onGestureDocument)
                         .opacity(session.readingMode ? 0 : 1)
                         .allowsHitTesting(!session.readingMode)
                         .accessibilityHidden(session.readingMode)
                     if text.isEmpty && !session.readingMode {
                         Text("Escribe aquí…")
-                            .font(.system(size: fontSize)).foregroundStyle(.tertiary)
+                            .font(.system(size: fontSize)).foregroundStyle(Color(nsColor: style.tertiaryTextColor))
                             .padding(.leading, 33).padding(.top, 25).allowsHitTesting(false)
                     }
                     if session.readingMode {
                         MarkdownReader(text: text, style: style)
                     }
+                    // Pieza Lego: Gestos. Las tarjetas se pintan solas solo
+                    // cuando hay sesión o aviso; sin la pieza no hay nada.
+                    if let gestureCards {
+                        VStack {
+                            Spacer()
+                            HStack {
+                                Spacer()
+                                gestureCards
+                                Spacer()
+                            }
+                        }
+                        .padding(.bottom, 24)
+                        .allowsHitTesting(true)
+                    }
                 }
             }
             .frame(maxWidth: max(480, width))
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            if statistics && !session.focusMode { statusBar }
+
         }
+        .background(Color(nsColor: style.effectiveBackgroundColor))
     }
 
     @ToolbarContentBuilder private var toolbar: some ToolbarContent {
+        // Volver: regresa a la última pantalla vista (lista de notas o nota).
+        ToolbarItem(placement: .navigation) {
+            Button { goBack() } label: { Image(systemName: "chevron.left") }
+                .help("Volver a la pantalla anterior · ⌘[")
+                .accessibilityLabel("Volver a la pantalla anterior")
+                .keyboardShortcut("[", modifiers: .command)
+                .disabled(screenHistory.isEmpty && isShowingHome)
+        }
         ToolbarItem(placement: .navigation) {
             Button { showSidebar.toggle() } label: { Image(systemName: "sidebar.left") }
-                .help("Mostrar u ocultar navegación").accessibilityLabel("Mostrar u ocultar navegación")
+                .help("Mostrar u ocultar navegación · ⌃⌘S").accessibilityLabel("Mostrar u ocultar navegación")
+                .keyboardShortcut("s", modifiers: [.control, .command])
                 .disabled(session.focusMode)
         }
-        ToolbarItem(placement: .primaryAction) {
-            Button { NSDocumentController.shared.newDocument(nil) } label: { Image(systemName: "plus") }
+        ToolbarItem(placement: .navigation) {
+            Button { createDocument() } label: { Image(systemName: "plus") }
                 .help("Nuevo documento · ⌘N").accessibilityLabel("Nuevo documento")
         }
-        ToolbarSpacer(.fixed, placement: .primaryAction)
-        ToolbarItemGroup(placement: .primaryAction) {
-            Button { session.readingMode.toggle() } label: { Image(systemName: session.readingMode ? "square.and.pencil" : "book") }
-                .help(session.readingMode ? "Volver a escribir · ⇧⌘R" : "Vista de lectura · ⇧⌘R")
-                .accessibilityLabel(session.readingMode ? "Volver a escribir" : "Vista de lectura")
-            Button { session.focusMode.toggle() } label: { Image(systemName: session.focusMode ? "eye.slash" : "eye") }
-                .help(session.focusMode ? "Salir de concentración · ⇧⌘F" : "Concentración · ⇧⌘F")
-                .accessibilityLabel(session.focusMode ? "Salir de concentración" : "Concentración")
-            Button { showReadingControls.toggle() } label: { Image(systemName: "textformat.size") }
-                .help("Lectura y concentración").accessibilityLabel("Lectura y concentración")
-                .popover(isPresented: $showReadingControls, arrowEdge: .bottom) { readingControls }
+        if !isShowingHome {
+            ToolbarItemGroup(placement: .primaryAction) {
+                Button { session.send(.toggleBold) } label: { Image(systemName: "bold") }
+                    .help("Negrita · ⌘B").accessibilityLabel("Negrita").disabled(session.readingMode)
+                Button { session.send(.toggleItalic) } label: { Image(systemName: "italic") }
+                    .help("Cursiva · ⌘I").accessibilityLabel("Cursiva").disabled(session.readingMode)
+                Button { session.send(.insertLink) } label: { Image(systemName: "link") }
+                    .help("Insertar enlace · ⌘K").accessibilityLabel("Insertar enlace").disabled(session.readingMode)
+            }
+            ToolbarSpacer(.fixed, placement: .primaryAction)
+            ToolbarItem(placement: .primaryAction) {
+                if let url = currentURL {
+                    Button { toggleFavorite(url) } label: { Image(systemName: isFavorite(url) ? "star.fill" : "star") }
+                        .help(isFavorite(url) ? "Quitar de favoritos" : "Añadir a favoritos")
+                        .accessibilityLabel(isFavorite(url) ? "Quitar de favoritos" : "Añadir a favoritos")
+                        .foregroundStyle(isFavorite(url) ? .yellow : chromePrimary)
+                } else {
+                    Button {} label: { Image(systemName: "star") }
+                        .disabled(true)
+                        .accessibilityLabel("Añadir a favoritos")
+                }
+            }
+            ToolbarSpacer(.fixed, placement: .primaryAction)
+            ToolbarItemGroup(placement: .primaryAction) {
+                Button { session.readingMode.toggle() } label: { Image(systemName: session.readingMode ? "square.and.pencil" : "book") }
+                    .help(session.readingMode ? "Volver a escribir · ⇧⌘R" : "Vista de lectura · ⇧⌘R")
+                    .accessibilityLabel(session.readingMode ? "Volver a escribir" : "Vista de lectura")
+                Button { session.focusMode.toggle() } label: { Image(systemName: session.focusMode ? "eye.slash" : "eye") }
+                    .help(session.focusMode ? "Salir de concentración · ⇧⌘F" : "Concentración · ⇧⌘F")
+                    .accessibilityLabel(session.focusMode ? "Salir de concentración" : "Concentración")
+                Button { showReadingControls.toggle() } label: { Image(systemName: "textformat.size") }
+                    .help("Lectura y concentración").accessibilityLabel("Lectura y concentración")
+                    .popover(isPresented: $showReadingControls, arrowEdge: .bottom) { readingControls }
+            }
+            ToolbarSpacer(.fixed, placement: .primaryAction)
+            ToolbarItem(placement: .primaryAction) {
+                Button { showInspector.toggle() } label: { Image(systemName: "sidebar.right") }
+                    .help("Mostrar u ocultar inspector · ⌥⌘0").accessibilityLabel("Mostrar u ocultar inspector")
+                    .keyboardShortcut("0", modifiers: [.option, .command])
+                    .disabled(session.focusMode)
+            }
+            // Pieza Lego: Voz. Sin módulo no se muestra ningún control falso.
+            if let voicePanel {
+                ToolbarSpacer(.fixed, placement: .primaryAction)
+                ToolbarItem(placement: .primaryAction) {
+                    voicePanel
+                }
+            }
+            // Pieza Lego: Gestos. Sin módulo no se muestra ningún control falso
+            // y el editor jamás pide permiso de cámara.
+            if let gesturePanel {
+                ToolbarSpacer(.fixed, placement: .primaryAction)
+                ToolbarItem(placement: .primaryAction) {
+                    gesturePanel
+                }
+            }
         }
+
     }
 
     private var sidebar: some View {
-        VStack(alignment: .leading, spacing: 22) {
-            HStack(spacing: 6) {
-                Image(systemName: "magnifyingglass").foregroundStyle(.secondary)
-                TextField(showLibrary ? "Buscar documento" : "Buscar sección", text: $search).textFieldStyle(.plain)
+        VStack(alignment: .leading, spacing: 18) {
+            HStack(spacing: 8) {
+                Image(systemName: "magnifyingglass").foregroundStyle(chromeSecondary)
+                TextField("Buscar", text: $search).textFieldStyle(.plain)
+                    .foregroundStyle(chromePrimary)
+                    .accessibilityLabel("Buscar")
                 if !search.isEmpty {
-                    Button { search = "" } label: { Image(systemName: "xmark.circle.fill") }.buttonStyle(.plain).accessibilityLabel("Borrar búsqueda")
+                    Button { search = "" } label: { Image(systemName: "xmark.circle.fill") }
+                        .buttonStyle(.plain).foregroundStyle(chromeSecondary).accessibilityLabel("Borrar búsqueda")
                 }
-            }.padding(10).background(.primary.opacity(0.04), in: Capsule())
-            VStack(alignment: .leading, spacing: 5) {
-                Text("General").font(.caption).foregroundStyle(.secondary).padding(.leading, 8).padding(.bottom, 4)
-                navigationButton("Documento", symbol: "doc.text", selected: !showLibrary) { showLibrary = false }
-                navigationButton("Recientes", symbol: "clock", selected: showLibrary) { showLibrary = true }
-                navigationButton("Abrir archivo…", symbol: "folder", selected: false) { NSDocumentController.shared.openDocument(nil) }
             }
-            VStack(alignment: .leading, spacing: 10) {
-                Text("En este documento").font(.caption).foregroundStyle(.secondary)
-                Label(title, systemImage: "doc.text").lineLimit(2).font(.callout)
-                if !session.headings.isEmpty {
-                    Menu("Ir a una sección") {
-                        ForEach(session.headings) { heading in
-                            Button(heading.title) { navigate(to: heading) }
-                        }
-                    }.menuStyle(.borderlessButton).font(.callout)
-                }
-            }.padding(.horizontal, 8)
-            Spacer()
-            SettingsLink { Label("Configuración", systemImage: "gearshape") }
-                .buttonStyle(.plain).font(.callout).padding(.horizontal, 8)
-        }
-        .padding(12).padding(.top, 6).padding(.bottom, 8)
+            .padding(.horizontal, 11).padding(.vertical, 9)
+            .background(style.usesCustomBackground ? Color(nsColor: style.chromeSearchFill) : Color.primary.opacity(0.05), in: RoundedRectangle(cornerRadius: 10))
 
+            ScrollView {
+                VStack(alignment: .leading, spacing: 18) {
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text("General").font(.headline).foregroundStyle(chromeSecondary)
+                            .padding(.leading, 8).padding(.bottom, 6)
+                        navigationButton("Inicio", symbol: "house", destination: .home)
+                        navigationButton("Recientes", symbol: "clock", destination: .recents)
+                        navigationButton("Favoritos", symbol: "star", destination: .favorites)
+                        navigationButton("Archivado", symbol: "archivebox", destination: .archived)
+                        navigationButton("Borradores", symbol: "doc.text", destination: .drafts)
+                        navigationButton("Basura", symbol: "trash", destination: .trash)
+                    }
+                    if !folders.isEmpty {
+                        VStack(alignment: .leading, spacing: 4) {
+                            HStack {
+                                Text("Carpetas").font(.headline).foregroundStyle(chromeSecondary)
+                                Spacer()
+                                Button { createFolder() } label: {
+                                    Image(systemName: "folder.badge.plus")
+                                        .frame(minWidth: 32, minHeight: 32)
+                                        .contentShape(Rectangle())
+                                }
+                                    .buttonStyle(.plain)
+                                    .foregroundStyle(chromeSecondary)
+                                    .accessibilityLabel("Crear carpeta")
+                            }
+                            .padding(.leading, 8).padding(.bottom, 6)
+                            ForEach(folders, id: \.self) { folder in
+                                navigationButton(folder.lastPathComponent, symbol: "folder", destination: .folder(folder))
+                                    .help(folder.path)
+                            }
+                        }
+                    }
+                    if folders.isEmpty {
+                        Button { createFolder() } label: {
+                            Label("Crear carpeta", systemImage: "folder.badge.plus")
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding(.vertical, 10).padding(.horizontal, 12)
+                                .contentShape(RoundedRectangle(cornerRadius: 8))
+                        }
+                        .buttonStyle(.plain)
+                    }
+                }
+            }
+            Spacer()
+            HStack {
+                Button { NSDocumentController.shared.openDocument(nil) } label: {
+                    Label("Abrir archivo…", systemImage: "folder.badge.plus")
+                        .padding(.vertical, 8).padding(.horizontal, 8)
+                        .contentShape(Rectangle())
+                }
+                Spacer()
+                SettingsLink {
+                    Image(systemName: "gearshape")
+                        .frame(minWidth: 32, minHeight: 32)
+                        .contentShape(Rectangle())
+                }
+                    .accessibilityLabel("Configuración")
+            }.buttonStyle(.plain).font(.callout).foregroundStyle(chromeSecondary).padding(.horizontal, 8).padding(.vertical, 4)
+        }
+        .padding(12).padding(.top, 14).padding(.bottom, 8)
+        .frame(maxHeight: .infinity)
+        .foregroundStyle(chromePrimary)
+        .background {
+            if style.usesCustomBackground {
+                Color(nsColor: style.chromeSidebar)
+            } else {
+                Rectangle().fill(.regularMaterial)
+            }
+        }
     }
 
-    private func navigationButton(_ name: String, symbol: String, selected: Bool, action: @escaping () -> Void) -> some View {
-        Button(action: action) {
-            Label {
-                Text(name)
-            } icon: {
-                Image(systemName: symbol).foregroundStyle(Color.accentColor)
+    private func navigationButton(_ name: String, symbol: String, destination newDestination: LibraryDestination) -> some View {
+        let selected = destination == newDestination
+        let badge = count(for: newDestination)
+        return Button {
+            destination = newDestination
+            launchHome = false
+            showHome = true
+        } label: {
+            HStack(spacing: 10) {
+                Label {
+                    Text(name).lineLimit(1).foregroundStyle(chromePrimary)
+                } icon: {
+                    Image(systemName: symbol).foregroundStyle(themeAccent)
+                }
+                .font(.system(size: 15, weight: selected ? .semibold : .regular))
+                Spacer(minLength: 4)
+                if badge > 0 {
+                    Text("\(badge)")
+                        .font(.caption).monospacedDigit()
+                        .foregroundStyle(chromeSecondary)
+                        .padding(.horizontal, 7).padding(.vertical, 2)
+                        .background(chromePrimary.opacity(0.08), in: Capsule())
+                        .accessibilityLabel("\(badge) documentos")
+                }
             }
-                .font(.system(size: 13, weight: selected ? .semibold : .regular))
-                .frame(maxWidth: .infinity, alignment: .leading).padding(.vertical, 8).padding(.horizontal, 8)
-                .background(selected ? Color.accentColor.opacity(0.12) : .clear, in: RoundedRectangle(cornerRadius: 10))
+            .frame(maxWidth: .infinity, alignment: .leading).padding(.vertical, 11).padding(.horizontal, 12)
+            .background(selected ? themeAccent.opacity(0.14) : .clear, in: RoundedRectangle(cornerRadius: 8))
+            .contentShape(RoundedRectangle(cornerRadius: 8))
         }.buttonStyle(.plain)
         .accessibilityAddTraits(selected ? [.isSelected] : [])
     }
 
-    private var outline: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: 8) {
-                HStack {
-                    Text("Secciones")
-                    Spacer()
-                    Text("\(session.headings.count)").monospacedDigit()
-                }.font(.caption).foregroundStyle(.secondary).padding(.horizontal, 10).padding(.bottom, 14)
-                if session.headings.isEmpty {
-                    Text("Escribe # antes de un título para organizar el documento.")
-                        .font(.callout).foregroundStyle(.secondary).padding(.horizontal, 10)
-                } else if filteredHeadings.isEmpty {
-                    Text("No hay secciones con ese nombre.").font(.callout).foregroundStyle(.secondary).padding(.horizontal, 10)
-                }
-                ForEach(filteredHeadings) { heading in
-                    Button { navigate(to: heading) } label: {
-                        HStack(alignment: .top, spacing: 8) {
-                            RoundedRectangle(cornerRadius: 1).fill(activeHeading == heading.id ? Color.accentColor : .clear).frame(width: 2)
-                            Text(heading.title.isEmpty ? "Sin título" : heading.title)
-                                .font(.system(size: 14, weight: activeHeading == heading.id ? .semibold : .regular))
-                                .foregroundStyle(activeHeading == heading.id ? .primary : .secondary)
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                        }
-                        .padding(.vertical, 10).padding(.trailing, 8).padding(.leading, CGFloat(max(0, heading.level - 1)) * 6)
-                        .background(activeHeading == heading.id ? Color.primary.opacity(0.04) : .clear, in: RoundedRectangle(cornerRadius: 4))
-                        .contentShape(Rectangle())
-                    }.buttonStyle(.plain).accessibilityAddTraits(activeHeading == heading.id ? [.isSelected] : [])
-                }
-            }.padding(.horizontal, 12).padding(.top, 22)
-        }.background(Color(nsColor: .textBackgroundColor))
+    private var filteredHeadings: [DocumentHeading] {
+        guard !search.isEmpty else { return session.headings }
+        return session.headings.filter { $0.title.localizedStandardContains(search) }
     }
 
-    private var statusBar: some View {
-        HStack(spacing: 16) {
-            Button { showStatistics.toggle() } label: {
-                Text("\(session.statistics.words.formatted()) palabras").monospacedDigit()
-            }.buttonStyle(.plain).popover(isPresented: $showStatistics) {
-                VStack(alignment: .leading, spacing: 12) {
-                    Text("Este documento").font(.headline)
-                    LabeledContent("Palabras", value: session.statistics.words.formatted())
-                    LabeledContent("Caracteres", value: session.statistics.characters.formatted())
-                    LabeledContent("Párrafos", value: session.statistics.paragraphs.formatted())
-                    LabeledContent("Lectura estimada", value: "\(session.statistics.readingMinutes) min")
-                }.padding(20).frame(width: 260)
+    private func outlineRow(for heading: DocumentHeading) -> some View {
+        Button { navigate(to: heading) } label: {
+            HStack(alignment: .top, spacing: 8) {
+                RoundedRectangle(cornerRadius: 1).fill(activeHeading == heading.id ? themeAccent : .clear).frame(width: 2)
+                Text(heading.title.isEmpty ? "Sin título" : heading.title)
+                    .font(.system(size: 14, weight: activeHeading == heading.id ? .semibold : .regular))
+                    .foregroundStyle(activeHeading == heading.id ? chromePrimary : chromeSecondary)
+                    .frame(maxWidth: .infinity, alignment: .leading)
             }
-            if session.selectedCharacters > 0 && !session.readingMode {
-                Text("\(session.selectedCharacters) caracteres seleccionados")
+            .padding(.vertical, 10).padding(.trailing, 8).padding(.leading, CGFloat(max(0, heading.level - 1)) * 6)
+            .background(activeHeading == heading.id ? chromePrimary.opacity(0.06) : .clear, in: RoundedRectangle(cornerRadius: 4))
+            .contentShape(Rectangle())
+        }.buttonStyle(.plain).accessibilityAddTraits(activeHeading == heading.id ? [.isSelected] : [])
+    }
+
+    private var inspector: some View {
+        VStack(alignment: .leading, spacing: 0) {
+            Label("Documento", systemImage: "slider.horizontal.3")
+                .font(.headline).foregroundStyle(chromePrimary).padding(20)
+            Divider()
+            if statistics {
+                VStack(alignment: .leading, spacing: 12) {
+                    Text("Estadísticas").font(.caption).foregroundStyle(chromeSecondary)
+                    Grid(alignment: .leading, verticalSpacing: 10) {
+                        GridRow {
+                            Text("Caracteres")
+                            Text(session.statistics.characters.formatted())
+                                .frame(maxWidth: .infinity, alignment: .trailing)
+                                .gridColumnAlignment(.trailing)
+                        }
+                        GridRow {
+                            Text("Palabras")
+                            Text(session.statistics.words.formatted())
+                        }
+                        GridRow {
+                            Text("Párrafos")
+                            Text(session.statistics.paragraphs.formatted())
+                        }
+                        GridRow {
+                            Text("Lectura")
+                            Text("\(session.statistics.readingMinutes) min")
+                        }
+                        if session.selectedCharacters > 0 {
+                            GridRow {
+                                Text("Selección")
+                                Text(session.selectedCharacters.formatted())
+                            }
+                        }
+                    }
+
+                }.font(.callout).monospacedDigit().foregroundStyle(chromePrimary).padding(20)
             }
             Spacer()
-            if session.paragraphFocus { Image(systemName: "paragraphsign").help("Foco de párrafo activo") }
-            if session.typewriterMode { Image(systemName: "text.line.first.and.arrowtriangle.forward").help("Máquina de escribir activa") }
-            Text(session.readingMode ? "Lectura" : "Markdown")
         }
-        .font(.caption).foregroundStyle(.secondary)
-        .padding(.horizontal, 18).padding(.vertical, 10)
-        .glassEffect(.regular, in: Capsule())
-        .padding(.horizontal, 24).padding(.bottom, 12)
+        .frame(maxHeight: .infinity)
+        .background {
+            if style.usesCustomBackground {
+                Color(nsColor: style.chromeSidebar)
+            } else {
+                Rectangle().fill(.regularMaterial)
+            }
+        }
     }
 
     private var readingControls: some View {
@@ -245,10 +779,27 @@ public struct EditorScreen: View {
         return VStack(alignment: .leading, spacing: 18) {
             Text("Lectura y concentración").font(.headline)
             Picker("Tipografía", selection: $family) {
-                Text("Sistema").tag("system")
-                Text("Georgia").tag("serif")
-                Text("Mono").tag("mono")
-            }.pickerStyle(.segmented)
+                Section("Estilos rápidos") {
+                    ForEach(WritingStyle.availableFamilies, id: \.id) { option in
+                        Text(option.name).tag(option.id)
+                    }
+                }
+                Section("Fuentes del sistema") {
+                    ForEach(WritingStyle.systemFontFamilies, id: \.self) { name in
+                        Text(name).tag(name)
+                    }
+                }
+            }.pickerStyle(.menu)
+            Picker("Grosor", selection: $fontWeight) {
+                ForEach(WritingStyle.availableWeights, id: \.id) { option in
+                    Text(option.name).tag(option.id)
+                }
+            }.pickerStyle(.menu)
+            Picker("Alineación", selection: $alignment) {
+                ForEach(WritingStyle.availableAlignments, id: \.id) { option in
+                    Text(option.name).tag(option.id)
+                }
+            }.pickerStyle(.menu)
             HStack {
                 Text("Tamaño del texto")
                 Spacer()
@@ -261,6 +812,22 @@ public struct EditorScreen: View {
                 Text("Medio").tag(760.0)
                 Text("Amplio").tag(920.0)
             }
+            HStack {
+                Text("Colores del modo \(resolvedIsDark ? "oscuro" : "claro")")
+                    .font(.caption).foregroundStyle(.secondary)
+                Spacer()
+                SettingsLink { Label("Editar…", systemImage: "gearshape").font(.caption) }
+            }
+            HStack {
+                Text("Texto")
+                Spacer()
+                MiniHexPicker(hex: popoverText)
+                Text("Fondo")
+                MiniHexPicker(hex: popoverBackground)
+                Text("Acento")
+                MiniHexPicker(hex: popoverAccent)
+            }
+            .font(.callout)
             Divider()
             Toggle("Resaltar el párrafo actual", isOn: $settings.paragraphFocus)
             Toggle("Modo máquina de escribir", isOn: $settings.typewriterMode)
@@ -269,38 +836,238 @@ public struct EditorScreen: View {
             Divider()
             Button("Imprimir o guardar PDF…") {
                 showReadingControls = false
-                PrintDocument.run(text: text, title: title, window: session.textView?.window)
+                PrintDocument.run(text: text, title: documentTitle, window: session.textView?.window)
             }
-        }.padding(22).frame(width: 320)
+        }.padding(22).frame(width: 340)
     }
 
-    private var library: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: 28) {
-                Button { showLibrary = false } label: { Label("Volver al documento", systemImage: "chevron.left") }.buttonStyle(.glass)
-                Text("Recientes").font(.largeTitle.weight(.semibold))
-                if filteredURLs.isEmpty {
-                    ContentUnavailableView(search.isEmpty ? "Todavía no hay archivos recientes" : "Sin coincidencias", systemImage: search.isEmpty ? "doc" : "magnifyingglass", description: Text(search.isEmpty ? "Abre o guarda un documento para encontrarlo aquí." : "Prueba con otro nombre."))
-                }
-                LazyVGrid(columns: [GridItem(.adaptive(minimum: 180, maximum: 240))], alignment: .leading, spacing: 20) {
-                    ForEach(filteredURLs, id: \.self) { url in
-                        Button { openFile(url) } label: {
-                            VStack(alignment: .leading, spacing: 16) {
-                                Image(systemName: "doc.text").font(.system(size: 28, weight: .light)).foregroundStyle(Color.accentColor)
-                                Text(url.deletingPathExtension().lastPathComponent).font(.headline).lineLimit(3)
-                                Spacer(minLength: 0)
-                                Text(url.deletingLastPathComponent().lastPathComponent).font(.caption).foregroundStyle(.secondary).lineLimit(1)
-                            }
-                            .padding(20).frame(maxWidth: .infinity, alignment: .leading).frame(height: 145)
-                            .background(Color(nsColor: .controlBackgroundColor), in: RoundedRectangle(cornerRadius: 22))
-                            .overlay(RoundedRectangle(cornerRadius: 22).stroke(.quaternary, lineWidth: 1))
+    private var documentOutline: some View {
+        VStack(alignment: .leading, spacing: 0) {
+            VStack(alignment: .leading, spacing: 4) {
+                Text(documentTitle.isEmpty ? "Sin título" : documentTitle)
+                    .font(.headline).foregroundStyle(chromePrimary).lineLimit(2)
+                Text(session.headings.isEmpty ? "Sin secciones" : "\(session.headings.count) secciones")
+                    .font(.caption).foregroundStyle(chromeSecondary)
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(20)
+            Divider()
+            ScrollView {
+                LazyVStack(alignment: .leading, spacing: 8) {
+                    if session.headings.isEmpty {
+                        Text("Escribe # antes de un título para organizar el documento.")
+                            .font(.callout).foregroundStyle(chromeSecondary)
+                            .padding(14)
+                    } else if filteredHeadings.isEmpty {
+                        Text("Sin coincidencias.")
+                            .font(.callout).foregroundStyle(chromeSecondary)
+                            .padding(14)
+                    }
+                    ForEach(filteredHeadings) { heading in
+                        outlineRow(for: heading)
+                    }
+                }.padding(10)
+            }
+        }
+        .background(style.usesCustomBackground ? Color(nsColor: style.chromeOutline) : Color(nsColor: .controlBackgroundColor))
+    }
 
-                        }.buttonStyle(.plain).help(url.path)
-                        .accessibilityLabel("Abrir \(url.deletingPathExtension().lastPathComponent)")
+    private var destinationSubtitle: String {
+        switch destination {
+        case .home: "Elige un escrito o empieza uno nuevo."
+        case .recents: "Tus documentos abiertos recientemente."
+        case .favorites: "Tus escritos marcados con estrella."
+        case .archived: "Documentos guardados fuera de Inicio."
+        case .drafts: "Borradores y escritos sin título."
+        case .trash: "Puedes restaurarlos o eliminarlos definitivamente."
+        case .folder(let url): "Documentos en \(url.lastPathComponent)."
+        }
+    }
+    private var destinationSymbol: String {
+        switch destination {
+        case .home: "house"
+        case .recents: "clock"
+        case .favorites: "star"
+        case .archived: "archivebox"
+        case .drafts: "doc.text"
+        case .trash: "trash"
+        case .folder: "folder"
+        }
+    }
+    private var showsNewCard: Bool {
+        switch destination {
+        case .home, .drafts, .folder: true
+        case .recents, .favorites, .archived, .trash: false
+        }
+    }
+    private var emptyTitle: String {
+        if !search.isEmpty { return "Sin coincidencias" }
+        switch destination {
+        case .home: return "No hay documentos"
+        case .recents: return "Sin recientes"
+        case .favorites: return "Sin favoritos"
+        case .archived: return "Nada archivado"
+        case .drafts: return "Sin borradores"
+        case .trash: return "Basura vacía"
+        case .folder: return "Carpeta vacía"
+        }
+    }
+    private var emptyMessage: String {
+        if !search.isEmpty { return "Prueba con otro texto." }
+        switch destination {
+        case .home: return "Crea tu primer escrito con Nuevo escrito."
+        case .recents: return "Abre un documento y aparecerá aquí."
+        case .favorites: return "Marca un escrito con estrella para verlo aquí."
+        case .archived: return "Archiva un documento para limpiar Inicio sin borrarlo."
+        case .drafts: return "Empieza un escrito sin guardar para verlo aquí."
+        case .trash: return "Mueve un documento a la basura para verlo aquí."
+        case .folder: return "No hay escritos en esta carpeta."
+        }
+    }
+    private var hasVirtualDraft: Bool { currentURL == nil && !text.isEmpty }
+    private func open(url: URL) {
+        if url == currentURL {
+            hasChosenDocument = true
+            launchHome = false
+            showHome = false
+            focusEditor()
+        } else {
+            hasChosenDocument = true
+            launchHome = false
+            openFile(url)
+        }
+    }
+    private func documentCard(for url: URL) -> some View {
+        Button { open(url: url) } label: {
+            VStack(alignment: .leading, spacing: 10) {
+                HStack(alignment: .firstTextBaseline, spacing: 6) {
+                    Text(url.deletingPathExtension().lastPathComponent)
+                        .font(.system(size: 20, weight: .semibold))
+                        .foregroundStyle(chromePrimary)
+                        .lineLimit(2)
+                    Spacer(minLength: 4)
+                    if isFavorite(url) {
+                        Image(systemName: "star.fill")
+                            .font(.caption)
+                            .foregroundStyle(.yellow)
+                            .accessibilityLabel("Favorito")
                     }
                 }
-            }.padding(32)
-        }.background(Color(nsColor: .textBackgroundColor))
+                Spacer(minLength: 8)
+                Text(url.deletingLastPathComponent().lastPathComponent)
+                    .font(.callout).foregroundStyle(chromeSecondary).lineLimit(1)
+                HStack(spacing: 6) {
+                    Text(url.pathExtension.isEmpty ? "Escrito" : url.pathExtension.uppercased())
+                    if isArchived(url) && destination != .archived {
+                        Text("Archivado")
+                    }
+                }
+                .font(.caption).foregroundStyle(chromeSecondary)
+            }
+            .frame(maxWidth: .infinity, minHeight: 170, alignment: .topLeading)
+            .padding(22)
+            .background(cardBackground, in: RoundedRectangle(cornerRadius: 16))
+            .overlay(RoundedRectangle(cornerRadius: 16).stroke(cardBorder))
+            .shadow(color: .black.opacity(0.10), radius: 12, y: 8)
+        }
+        .buttonStyle(.plain)
+        .help(url.path)
+        .contextMenu {
+            if destination == .trash {
+                Button("Restaurar") { restore(url) }
+                Button("Eliminar definitivamente", role: .destructive) { deletePermanently(url) }
+            } else {
+                Button(isFavorite(url) ? "Quitar de favoritos" : "Añadir a favoritos") { toggleFavorite(url) }
+                Button(isArchived(url) ? "Desarchivar" : "Archivar") { setArchived(url, archived: !isArchived(url)) }
+                Button("Mover a la basura", role: .destructive) { setTrashed(url, trashed: true) }
+            }
+            Button("Mostrar en el Finder") { revealInFinder(url) }
+        }
+    }
+    private var home: some View {
+        VStack(alignment: .leading, spacing: 0) {
+            HStack(alignment: .firstTextBaseline) {
+                VStack(alignment: .leading, spacing: 6) {
+                    Text(destination.title).font(.system(size: 30, weight: .semibold)).foregroundStyle(chromePrimary)
+                    Text(destinationSubtitle)
+                        .font(.callout).foregroundStyle(chromeSecondary)
+                    Text("\(homeURLs.count) escritos")
+                        .font(.caption).foregroundStyle(chromeSecondary).monospacedDigit()
+                }
+                Spacer()
+                if destination == .trash {
+                    if !baseURLs(for: .trash).isEmpty {
+                        Button("Vaciar basura", systemImage: "trash", role: .destructive, action: emptyTrash)
+                            .buttonStyle(.bordered)
+                    }
+                } else if showsNewCard {
+                    Button("Nuevo escrito", systemImage: "plus", action: createDocument)
+                        .buttonStyle(.borderedProminent)
+                }
+            }
+            .padding(.horizontal, 32).padding(.top, 28).padding(.bottom, 24)
+            Divider()
+            ScrollView {
+                LazyVGrid(columns: [GridItem(.adaptive(minimum: 210, maximum: 280), spacing: 24)], spacing: 24) {
+                    if showsNewCard {
+                        Button(action: createDocument) {
+                            VStack(alignment: .leading, spacing: 14) {
+                                Image(systemName: "plus.circle")
+                                    .font(.system(size: 30, weight: .light))
+                                    .foregroundStyle(themeAccent)
+                                Text("Nuevo escrito")
+                                    .font(.system(size: 20, weight: .semibold))
+                                    .foregroundStyle(chromePrimary)
+                                Text("Crear un documento en blanco")
+                                    .font(.callout).foregroundStyle(chromeSecondary)
+                            }
+                            .frame(maxWidth: .infinity, minHeight: 170, alignment: .topLeading)
+                            .padding(22)
+                            .background(themeAccent.opacity(0.08), in: RoundedRectangle(cornerRadius: 16))
+                            .overlay(RoundedRectangle(cornerRadius: 16).stroke(themeAccent.opacity(0.35), style: StrokeStyle(lineWidth: 1, dash: [6])))
+                        }
+                        .buttonStyle(.plain)
+                        .accessibilityLabel("Crear un nuevo escrito")
+                    }
+                    if hasVirtualDraft && (destination == .home || destination == .drafts) {
+                        Button {
+                            hasChosenDocument = true
+                            launchHome = false
+                            showHome = false
+                            focusEditor()
+                        } label: {
+                            VStack(alignment: .leading, spacing: 10) {
+                                Text(documentTitle).font(.system(size: 20, weight: .semibold)).foregroundStyle(chromePrimary).lineLimit(2)
+                                Spacer(minLength: 8)
+                                Text(String(text.prefix(140))).font(.callout).foregroundStyle(chromeSecondary).lineLimit(4)
+                                Text("Borrador sin guardar").font(.caption).foregroundStyle(chromeSecondary)
+                            }
+                            .frame(maxWidth: .infinity, minHeight: 170, alignment: .topLeading)
+                            .padding(22)
+                            .background(themeAccent.opacity(0.10), in: RoundedRectangle(cornerRadius: 16))
+                            .overlay(RoundedRectangle(cornerRadius: 16).stroke(themeAccent.opacity(0.25)))
+                        }
+                        .buttonStyle(.plain)
+                        .accessibilityLabel("Abrir borrador sin guardar")
+                    }
+                    ForEach(homeURLs, id: \.self) { url in
+                        documentCard(for: url)
+                    }
+                    if homeURLs.isEmpty && !(hasVirtualDraft && (destination == .home || destination == .drafts)) {
+                        ContentUnavailableView(
+                            emptyTitle,
+                            systemImage: search.isEmpty ? destinationSymbol : "magnifyingglass",
+                            description: Text(emptyMessage)
+                        )
+                        .frame(maxWidth: .infinity)
+                        .padding(.top, 40)
+                    }
+                }
+                .padding(32)
+            }
+        }
+        .background(homeBackground)
+        .foregroundStyle(chromePrimary)
     }
 
     private func focusEditor() {
@@ -308,9 +1075,288 @@ public struct EditorScreen: View {
         view.window?.makeFirstResponder(view)
     }
 
+    /// Regresa a la pantalla anterior: la última lista de notas vista o la
+    /// nota que estaba abierta. Sin historial vuelve a Inicio.
+    private func goBack() {
+        guard let previous = screenHistory.popLast() else {
+            guard !isShowingHome else { return }
+            launchHome = false
+            showHome = true
+            return
+        }
+        launchHome = false
+        destination = previous.destination
+        showHome = !previous.inNote
+        if previous.inNote { focusEditor() }
+    }
+
+    /// Carga un archivo en esta misma ventana, sin crear ventana ni documento nuevos.
+    private func applySameWindowOpen(url: URL, text newText: String) {
+        let controller = NSDocumentController.shared
+        let mine = ownDocument ?? activeDocument
+        let myURL = mine?.fileURL ?? currentURL
+        if let myURL, myURL.standardizedFileURL == url.standardizedFileURL {
+            hasChosenDocument = true
+            launchHome = false
+            showHome = false
+            focusEditor()
+            return
+        }
+        let loadNew = {
+            self.text = newText
+            self.documentTitle = url.deletingPathExtension().lastPathComponent
+            self.hasChosenDocument = true
+            self.launchHome = false
+            self.showHome = false
+            self.session.textView?.undoManager?.removeAllActions()
+            controller.noteNewRecentDocumentURL(url)
+            if let document = self.ownDocument ?? self.activeDocument {
+                document.save(
+                    to: url,
+                    ofType: document.fileType ?? UTType.plainText.identifier,
+                    for: .saveAsOperation
+                ) { error in
+                    if let error { NSApplication.shared.presentError(error) }
+                    self.closeExtraWindows()
+                    self.focusEditor()
+                }
+            } else {
+                self.closeExtraWindows()
+                self.focusEditor()
+            }
+        }
+        if let document = mine,
+           let oldURL = document.fileURL ?? currentURL,
+           document.isDocumentEdited {
+            document.save(
+                to: oldURL,
+                ofType: document.fileType ?? UTType.plainText.identifier,
+                for: .saveOperation
+            ) { error in
+                if let error {
+                    NSApplication.shared.presentError(error)
+                } else {
+                    loadNew()
+                }
+            }
+        } else {
+            loadNew()
+        }
+    }
+
+    /// Cierra ventanas sobrantes sin arriesgar trabajo sin guardar.
+    private func closeExtraWindows() {
+        let controller = NSDocumentController.shared
+        guard let mine = ownDocument ?? activeDocument else { return }
+        for document in controller.documents where document !== mine {
+            if !document.isDocumentEdited {
+                document.close()
+            }
+        }
+    }
+
+    /// Red de seguridad: si el sistema llegó a crear una ventana extra, reenvía
+    /// su archivo a la ventana principal para que lo cargue en el mismo sitio.
+    /// La principal lo aplica y cierra las sobrantes; aquí no se cierra nada.
+    private func mergeExtraWindowIfNeeded() {
+        DispatchQueue.main.async {
+            let controller = NSDocumentController.shared
+            guard controller.documents.count > 1 else { return }
+            let firstURL = controller.documents.first?.fileURL?.standardizedFileURL
+            let myURL = self.currentURL?.standardizedFileURL
+            if myURL != firstURL, let fileURL = self.currentURL {
+                SingleWindowCoordinator.shared.requestOpen(url: fileURL, text: self.text)
+                return
+            }
+            if myURL == firstURL,
+               let keyWindow = NSApp.keyWindow,
+               let duplicate = controller.documents.first(where: { document in
+                   document.windowControllers.contains(where: { $0.window == keyWindow })
+               }),
+               duplicate !== controller.documents.first,
+               !duplicate.isDocumentEdited {
+                duplicate.close()
+            }
+        }
+    }
+
+    private func createDocument() {
+        guard let document = activeDocument else { return }
+        hasChosenDocument = true
+        launchHome = false
+        let suggestedDirectory = currentURL?.deletingLastPathComponent()
+            ?? folders.first
+            ?? FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let directory = suggestedDirectory.path.hasPrefix(Bundle.main.bundleURL.path)
+            ? FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("Samples", isDirectory: true)
+            : suggestedDirectory
+        try? FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
+        let baseURL = directory.appendingPathComponent("Sin título.md")
+        var url = baseURL
+        var suffix = 2
+        while FileManager.default.fileExists(atPath: url.path) {
+            url = directory.appendingPathComponent("Sin título \(suffix).md")
+            suffix += 1
+        }
+
+        let startWriting = {
+            text = ""
+            documentTitle = url.deletingPathExtension().lastPathComponent
+            destination = .home
+            showHome = false
+            document.save(
+                to: url,
+                ofType: document.fileType ?? UTType.plainText.identifier,
+                for: .saveAsOperation
+            ) { error in
+                if let error { NSApplication.shared.presentError(error) }
+            }
+        }
+
+        if let oldURL = document.fileURL ?? currentURL {
+            document.save(to: oldURL, ofType: document.fileType ?? UTType.plainText.identifier, for: .saveOperation) { error in
+                if let error {
+                    NSApplication.shared.presentError(error)
+                } else {
+                    startWriting()
+                }
+            }
+        } else {
+            startWriting()
+        }
+    }
+
+    private func scheduleAutosave() {
+        autosaveWorkItem?.cancel()
+        guard let document = activeDocument,
+              document.fileURL != nil || currentURL != nil else { return }
+        let workItem = DispatchWorkItem { [weak document] in
+            guard let document, let url = document.fileURL ?? currentURL else { return }
+            document.save(to: url, ofType: document.fileType ?? UTType.plainText.identifier, for: .saveOperation) { error in
+                if let error { NSApplication.shared.presentError(error) }
+            }
+        }
+        autosaveWorkItem = workItem
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: workItem)
+    }
+
+    private func createFolder() {
+        let panel = NSOpenPanel()
+        panel.canChooseFiles = false
+        panel.canChooseDirectories = true
+        panel.canCreateDirectories = true
+        panel.allowsMultipleSelection = false
+        panel.prompt = "Elegir ubicación"
+        panel.message = "Elige la carpeta donde se creará la nueva carpeta."
+        panel.begin { response in
+            guard response == .OK, let parent = panel.url else { return }
+            let hasAccess = parent.startAccessingSecurityScopedResource()
+            defer { if hasAccess { parent.stopAccessingSecurityScopedResource() } }
+
+            let alert = NSAlert()
+            alert.messageText = "Nueva carpeta"
+            alert.informativeText = "Escribe un nombre para la carpeta."
+            let field = NSTextField(string: "Nueva carpeta")
+            field.frame = NSRect(x: 0, y: 0, width: 260, height: 24)
+            alert.accessoryView = field
+            alert.addButton(withTitle: "Crear")
+            alert.addButton(withTitle: "Cancelar")
+            guard alert.runModal() == .alertFirstButtonReturn else { return }
+
+            let name = field.stringValue.trimmingCharacters(in: .whitespacesAndNewlines)
+            guard !name.isEmpty, !name.contains("/"), !name.contains(":") else { return }
+            let folder = parent.appendingPathComponent(name, isDirectory: true)
+            do {
+                try FileManager.default.createDirectory(at: folder, withIntermediateDirectories: false)
+                customFolderPaths = Array(Set(savedFolders.map(\.path) + [folder.path])).sorted().joined(separator: "|")
+            } catch {
+                NSApplication.shared.presentError(error)
+            }
+        }
+    }
+
+    private func commitTitle() {
+        guard let document = activeDocument else { return }
+        let documentURL = document.fileURL ?? currentURL
+        let oldTitle = documentURL?.deletingPathExtension().lastPathComponent ?? "Sin título"
+        let name = documentTitle.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !name.isEmpty, !name.contains("/"), !name.contains(":") else {
+            documentTitle = oldTitle
+            return
+        }
+        guard let documentURL else {
+            let panel = NSSavePanel()
+            panel.allowedContentTypes = [UTType(filenameExtension: "md") ?? .plainText]
+            panel.nameFieldStringValue = "\(name).md"
+            panel.begin { response in
+                guard response == .OK, let url = panel.url else { return }
+                document.save(to: url, ofType: document.fileType ?? UTType.plainText.identifier, for: .saveAsOperation) { error in
+                    if let error {
+                        NSApplication.shared.presentError(error)
+                    } else {
+                        documentTitle = url.deletingPathExtension().lastPathComponent
+                    }
+                }
+            }
+            return
+        }
+
+        let extensionName = documentURL.pathExtension
+        let fileName = extensionName.isEmpty || name.hasSuffix(".\(extensionName)") ? name : "\(name).\(extensionName)"
+        let destination = documentURL.deletingLastPathComponent().appendingPathComponent(fileName)
+        guard destination != documentURL else { return }
+        guard !FileManager.default.fileExists(atPath: destination.path) else {
+            NSApplication.shared.presentError(NSError(
+                domain: NSCocoaErrorDomain,
+                code: NSFileWriteFileExistsError,
+                userInfo: [NSLocalizedDescriptionKey: "Ya existe un documento con ese título."]
+            ))
+            documentTitle = oldTitle
+            return
+        }
+
+        document.move(to: destination) { error in
+            if let error {
+                NSApplication.shared.presentError(error)
+                documentTitle = oldTitle
+            } else {
+                documentTitle = destination.deletingPathExtension().lastPathComponent
+            }
+        }
+    }
+
     private func navigate(to heading: DocumentHeading) {
-        showLibrary = false
         session.readingMode = false
         session.send(.selectRange(TextRange(location: heading.offset, length: 0)))
+    }
+}
+
+struct MiniHexPicker: View {
+    @Binding var hex: String
+    var body: some View {
+        HStack(spacing: 4) {
+            ColorPicker("", selection: Binding(
+                get: { WritingStyle.swiftUIColor(fromHex: hex) ?? Color.gray },
+                set: { hex = WritingStyle.hex(from: $0) }
+            ))
+            .labelsHidden()
+            .frame(width: 22)
+            Button {
+                hex = "auto"
+            } label: {
+                Image(systemName: hex == "auto" ? "sparkles" : "arrow.uturn.backward")
+                    .font(.caption)
+                    .foregroundStyle(hex == "auto" ? .secondary : .primary)
+            }
+            .buttonStyle(.plain)
+            .help(hex == "auto" ? "Automático" : "Volver a automático (\(hex))")
+        }
+    }
+}
+
+struct QuickColorDot: View {
+    @Binding var hex: String
+    var body: some View {
+        MiniHexPicker(hex: $hex)
     }
 }

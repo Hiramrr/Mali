@@ -7,11 +7,15 @@ public struct NativeTextEditor: NSViewRepresentable {
     @Binding private var text: String
     private let session: EditorSession
     private let style: WritingStyle
+    /// Pieza Lego (gestos): informa texto+selección para instantáneas del
+    /// documento. `nil` sin la pieza; el editor funciona igual.
+    private let onTextActivity: ((String, NSRange) -> Void)?
 
-    public init(text: Binding<String>, session: EditorSession, style: WritingStyle = WritingStyle()) {
+    public init(text: Binding<String>, session: EditorSession, style: WritingStyle = WritingStyle(), onTextActivity: ((String, NSRange) -> Void)? = nil) {
         _text = text
         self.session = session
         self.style = style
+        self.onTextActivity = onTextActivity
     }
 
     public func makeCoordinator() -> Coordinator { Coordinator(self) }
@@ -37,23 +41,25 @@ public struct NativeTextEditor: NSViewRepresentable {
         view.textContainer?.containerSize = NSSize(width: 0, height: CGFloat.greatestFiniteMagnitude)
         view.textContainerInset = NSSize(width: 28, height: 24)
         view.style = style
-        view.font = style.font
-        view.defaultParagraphStyle = style.attributes[.paragraphStyle] as? NSParagraphStyle
-        view.textColor = .textColor
-        view.backgroundColor = .textBackgroundColor
+        WritingTextView.apply(style: style, to: view)
         view.string = text
         view.setAccessibilityLabel("Contenido del documento")
         view.delegate = context.coordinator
         scroll.documentView = view
         session.textView = view
         session.refreshOutline(text)
+        session.onPreviewCommitted = { [weak coordinator = context.coordinator] committed in
+            coordinator?.syncPreview(committed)
+        }
         return scroll
     }
 
     public func updateNSView(_ scroll: NSScrollView, context: Context) {
         context.coordinator.parent = self
         guard let view = scroll.documentView as? WritingTextView else { return }
-        if view.string != text {
+        // Durante la preview el NSTextView manda: reescribirlo borraría la
+        // opción provisional. Al terminar, syncPreview ya actualizó el binding.
+        if !session.isPreviewing, view.string != text {
             let selection = view.selectedRange()
             view.string = text
             view.setSelectedRange(NSRange(location: min(selection.location, text.utf16.count), length: 0))
@@ -61,7 +67,8 @@ public struct NativeTextEditor: NSViewRepresentable {
         }
         if view.style != style {
             view.style = style
-            view.applyAnalysis(MarkdownDocument(view.string))
+            WritingTextView.apply(style: style, to: view)
+            session.refreshOutline(view.string)
         }
         if view.paragraphFocus != session.paragraphFocus {
             view.paragraphFocus = session.paragraphFocus
@@ -71,8 +78,13 @@ public struct NativeTextEditor: NSViewRepresentable {
             view.typewriterMode = session.typewriterMode
             view.updateInsets()
             if view.typewriterMode { view.centerInsertionPoint() }
+            view.updateParagraphHighlight()
         }
+        let wasHidden = scroll.isHidden
+        scroll.isHidden = session.readingMode
         view.isEditable = !session.readingMode
+        view.isSelectable = !session.readingMode
+        if wasHidden && !scroll.isHidden { view.window?.makeFirstResponder(view) }
     }
 
     public static func dismantleNSView(_ scroll: NSScrollView, coordinator: Coordinator) {
@@ -86,23 +98,58 @@ public struct NativeTextEditor: NSViewRepresentable {
 
         public func textDidChange(_ notification: Notification) {
             guard let view = notification.object as? WritingTextView else { return }
+            // La preview no toca el binding ni el índice: es provisional hasta
+            // confirmar o cancelar (entonces syncPreview sincroniza).
+            guard !parent.session.isPreviewing else { return }
             parent.text = view.string
             parent.session.refreshOutline(view.string)
+            parent.onTextActivity?(view.string, view.selectedRange())
             view.typingAttributes = parent.style.attributes
             if view.typewriterMode && !view.hasMarkedText() { view.centerInsertionPoint() }
         }
 
         public func textViewDidChangeSelection(_ notification: Notification) {
             parent.session.selectionChanged()
+            // Durante la preview el texto es provisional: empujarlo haría que
+            // el módulo lo confundiera con una edición externa y cancelara la
+            // sesión al primer movimiento. Al terminar, syncPreview empuja.
+            if !parent.session.isPreviewing, let view = notification.object as? WritingTextView {
+                parent.onTextActivity?(view.string, view.selectedRange())
+            }
+        }
+
+        /// Sincroniza el binding tras confirmar o cancelar una preview.
+        func syncPreview(_ committed: String) {
+            parent.text = committed
+            parent.session.refreshOutline(committed)
+            if let view = parent.session.textView {
+                parent.onTextActivity?(committed, view.selectedRange())
+            }
         }
     }
 }
 
-@MainActor final class WritingTextView: NSTextView {
+@MainActor final class WritingTextView: NSTextView, @MainActor NSTextStorageDelegate {
     var style = WritingStyle()
     var paragraphFocus = false
     var typewriterMode = false
     private var paragraphRect = NSRect.zero
+    private var decoratedLines: [MarkdownLine] = []
+    private var decoratedStyle: WritingStyle?
+    private var changedRange: NSRange?
+
+    static func apply(style: WritingStyle, to view: NSTextView) {
+        view.font = style.font
+        view.defaultParagraphStyle = style.attributes[.paragraphStyle] as? NSParagraphStyle
+        view.typingAttributes = style.attributes
+        view.textColor = style.effectiveTextColor
+        view.backgroundColor = style.effectiveBackgroundColor
+        view.insertionPointColor = style.accentHex == "auto" ? style.effectiveTextColor : style.effectiveAccentColor
+        view.selectedTextAttributes = [
+            .backgroundColor: style.effectiveAccentColor.withAlphaComponent(0.28),
+            .foregroundColor: style.effectiveTextColor,
+        ]
+    }
 
     override func viewDidMoveToWindow() {
         super.viewDidMoveToWindow()
@@ -115,12 +162,51 @@ public struct NativeTextEditor: NSViewRepresentable {
 
     func applyAnalysis(_ document: MarkdownDocument) {
         guard !hasMarkedText(), let storage = textStorage else { return }
+        var first = 0
+        var last = document.lines.count
+        if decoratedStyle == style {
+            let dirty = changedRange ?? NSRange(location: storage.length, length: 0)
+            while first < min(last, decoratedLines.count),
+                  NSMaxRange(document.lines[first].range) < dirty.location,
+                  document.lines[first] == decoratedLines[first] {
+                first += 1
+            }
+            var oldLast = decoratedLines.count
+            while last > first, oldLast > first {
+                let line = document.lines[last - 1]
+                let previous = decoratedLines[oldLast - 1]
+                guard line.range.location > NSMaxRange(dirty),
+                      line.range.length == previous.range.length,
+                      line.content == previous.content, line.kind == previous.kind,
+                      line.prefixLength == previous.prefixLength,
+                      line.trailingLength == previous.trailingLength else { break }
+                last -= 1
+                oldLast -= 1
+            }
+        }
         // Presentation attributes do not replace text or participate in its undo history.
         storage.beginEditing()
-        MarkdownAppearance.decorate(storage, document: document, style: style)
+        MarkdownAppearance.decorate(storage, document: document, style: style, lines: first..<last)
         storage.endEditing()
+        decoratedLines = document.lines
+        decoratedStyle = style
+        changedRange = nil
+        storage.delegate = self
         typingAttributes = style.attributes
         updateParagraphHighlight()
+    }
+
+    func textStorage(_ textStorage: NSTextStorage, didProcessEditing editedMask: NSTextStorageEditActions,
+                     range editedRange: NSRange, changeInLength delta: Int) {
+        guard editedMask.contains(.editedCharacters) else { return }
+        if let previous = changedRange {
+            // El rango anterior sigue a las inserciones y borrados antes de él.
+            let start = min(previous.location, editedRange.location)
+            let end = max(NSMaxRange(editedRange), NSMaxRange(previous) + delta)
+            changedRange = NSRange(location: start, length: end - start)
+        } else {
+            changedRange = editedRange
+        }
     }
 
     func updateInsets() {
@@ -130,8 +216,12 @@ public struct NativeTextEditor: NSViewRepresentable {
     }
 
     override func setFrameSize(_ newSize: NSSize) {
+        let changedWidth = frame.width != newSize.width
         super.setFrameSize(newSize)
         updateInsets()
+        if changedWidth && paragraphFocus {
+            Task { @MainActor [weak self] in self?.updateParagraphHighlight() }
+        }
     }
 
     func centerInsertionPoint() {
@@ -160,7 +250,8 @@ public struct NativeTextEditor: NSViewRepresentable {
     override func drawBackground(in rect: NSRect) {
         super.drawBackground(in: rect)
         guard paragraphFocus, !paragraphRect.isEmpty else { return }
-        NSColor.controlAccentColor.withAlphaComponent(NSWorkspace.shared.accessibilityDisplayShouldIncreaseContrast ? 0.17 : 0.06).setFill()
+        let base = style.accentHex == "auto" ? NSColor.controlAccentColor : style.effectiveAccentColor
+        base.withAlphaComponent(NSWorkspace.shared.accessibilityDisplayShouldIncreaseContrast ? 0.17 : 0.06).setFill()
         NSBezierPath(roundedRect: paragraphRect, xRadius: 4, yRadius: 4).fill()
     }
 }

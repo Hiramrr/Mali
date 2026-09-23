@@ -4,6 +4,7 @@ import ExportFeature
 
 private struct SessionKey: FocusedValueKey { typealias Value = EditorSession }
 private struct TitleKey: FocusedValueKey { typealias Value = String }
+private struct NewDocumentKey: FocusedValueKey { typealias Value = () -> Void }
 extension FocusedValues {
     var writingSession: EditorSession? {
         get { self[SessionKey.self] }
@@ -13,13 +14,23 @@ extension FocusedValues {
         get { self[TitleKey.self] }
         set { self[TitleKey.self] = newValue }
     }
+    var newDocument: (() -> Void)? {
+        get { self[NewDocumentKey.self] }
+        set { self[NewDocumentKey.self] = newValue }
+    }
 }
 
 public struct EditorMenus: Commands {
     @FocusedValue(\.writingSession) private var session
     @FocusedValue(\.writingTitle) private var title
+    @FocusedValue(\.newDocument) private var newDocument
     public init() {}
     public var body: some Commands {
+        CommandGroup(replacing: .newItem) {
+            Button("Nuevo escrito") { newDocument?() }
+                .keyboardShortcut("n")
+                .disabled(newDocument == nil)
+        }
         CommandMenu("Formato") {
             Group {
             Button("Negrita") { session?.send(.toggleBold) }.keyboardShortcut("b")

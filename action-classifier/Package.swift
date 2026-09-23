@@ -7,5 +7,6 @@ let package = Package(
     targets: [
         .executableTarget(name: "TrainGate", path: "Sources/TrainGate"),
         .executableTarget(name: "EvalGate", path: "Sources/EvalGate"),
+        .executableTarget(name: "Regression", path: "Sources/Regression"),
     ]
 )

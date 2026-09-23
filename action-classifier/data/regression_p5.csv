@@ -1,0 +1,256 @@
+id,text,expected
+C001,Cambia el título a Metodología.,RENAME_TITLE
+C002,Pon como título Arquitectura del sistema.,RENAME_TITLE
+C003,Cambia el título a Claridad.,RENAME_TITLE
+C004,Ponle de título Resultados.,RENAME_TITLE
+C005,El nuevo título será Interacción humano computadora.,RENAME_TITLE
+C006,Actualiza el título a Accesibilidad cognitiva.,RENAME_TITLE
+C007,Titula esto como Conclusiones.,RENAME_TITLE
+C008,Quiero que el título sea Metodología.,RENAME_TITLE
+C009,Cambia el encabezado a Introducción.,RENAME_TITLE
+C010,Modifica el título a Diseño del sistema.,RENAME_TITLE
+C011,Borra esto.,DELETE_SELECTION
+C012,Elimina este párrafo.,DELETE_SELECTION
+C013,Quita esta oración.,DELETE_SELECTION
+C014,Borra este texto.,DELETE_SELECTION
+C015,Suprime lo seleccionado.,DELETE_SELECTION
+C016,"Esto no va, bórralo.",DELETE_SELECTION
+C017,Descarta esta parte.,DELETE_SELECTION
+C018,Limpia este párrafo.,DELETE_SELECTION
+C019,Borra esta palabra.,DELETE_SELECTION
+C020,Quita eso.,DELETE_SELECTION
+C021,Cambia esta palabra por dificultades.,REPLACE_SELECTION
+C022,Sustituye esta expresión por algo más claro.,REPLACE_SELECTION
+C023,Pon errata donde dice error.,REPLACE_SELECTION
+C024,Reemplaza este término en todo el documento.,REPLACE_SELECTION
+C025,Cambia cosa por elemento.,REPLACE_SELECTION
+C026,Corrige el nombre del modelo aquí.,REPLACE_SELECTION
+C027,Cambia uso por utilización.,REPLACE_SELECTION
+C028,Intercambia el orden de estos párrafos.,REPLACE_SELECTION
+C029,Cambia accesibilidad por inclusión.,REPLACE_SELECTION
+C030,Sustituye los números por letras.,REPLACE_SELECTION
+C031,Hazlo más corto.,REWRITE_SELECTION
+C032,Hazlo menos absoluto.,REWRITE_SELECTION
+C033,Haz este párrafo más claro.,REWRITE_SELECTION
+C034,Reescribe esto más formal.,REWRITE_SELECTION
+C035,Hazlo más breve.,REWRITE_SELECTION
+C036,Reescribe con tono más formal.,REWRITE_SELECTION
+C037,Hazlo más directo.,REWRITE_SELECTION
+C038,Simplifica la explicación.,REWRITE_SELECTION
+C039,Dale otra redacción.,REWRITE_SELECTION
+C040,Mejora la redacción.,REWRITE_SELECTION
+C041,Ponlo en negritas.,FORMAT_SELECTION
+C042,Ponlo en cursivas.,FORMAT_SELECTION
+C043,Subraya esto.,FORMAT_SELECTION
+C044,Pon esto en negritas.,FORMAT_SELECTION
+C045,Pon este texto en cursivas.,FORMAT_SELECTION
+C046,Subraya esta parte.,FORMAT_SELECTION
+C047,Marca esto en negritas.,FORMAT_SELECTION
+C048,Aplica cursivas aquí.,FORMAT_SELECTION
+C049,Resalta en negritas.,FORMAT_SELECTION
+C050,Ponle subrayado.,FORMAT_SELECTION
+C051,Deshaz el último cambio.,UNDO
+C052,Deshaz eso.,UNDO
+C053,Vuelve a como estaba.,UNDO
+C054,"No, déjalo como estaba.",UNDO
+C055,Revierte lo último.,UNDO
+C056,Cancela la última edición.,UNDO
+C057,Anula lo que hiciste.,UNDO
+C058,Regresa al estado anterior.,UNDO
+C059,Échalo para atrás.,UNDO
+C060,Deshaz el cambio.,UNDO
+C061,Rehaz el cambio anterior.,REDO
+C062,Rehaz eso.,REDO
+C063,Vuelve a aplicar lo deshecho.,REDO
+C064,Repite la última acción.,REDO
+C065,Recupera lo deshecho.,REDO
+C066,Deshaz el deshacer.,REDO
+C067,Rehaz la edición.,REDO
+C068,Adelante con el cambio.,REDO
+C069,Reaplica el cambio.,REDO
+C070,Rehaz lo anterior.,REDO
+C071,Selecciona el segundo párrafo.,SELECT_TEXT
+C072,Selecciona todo el documento.,SELECT_TEXT
+C073,Marca esta oración.,SELECT_TEXT
+C074,Elige el tercer párrafo.,SELECT_TEXT
+C075,Selecciona desde aquí hasta el final.,SELECT_TEXT
+C076,Marca todo lo que sigue.,SELECT_TEXT
+C077,Selecciona la palabra anterior.,SELECT_TEXT
+C078,Elige el primer capítulo.,SELECT_TEXT
+C079,Selecciona la cita.,SELECT_TEXT
+C080,Marca el título.,SELECT_TEXT
+C081,Busca la palabra accesibilidad.,FIND_TEXT
+C082,Encuentra la sección de resultados.,FIND_TEXT
+C083,Localiza la cita que falta.,FIND_TEXT
+C084,Busca el párrafo duplicado.,FIND_TEXT
+C085,Encuentra dónde dice conclusiones.,FIND_TEXT
+C086,Busca todas las menciones al autor.,FIND_TEXT
+C087,Localiza el error de dedo.,FIND_TEXT
+C088,Busca la fecha de entrega.,FIND_TEXT
+C089,Encuentra el nombre del modelo.,FIND_TEXT
+C090,Busca comas mal puestas.,FIND_TEXT
+C091,Guarda el documento.,SAVE_DOCUMENT
+C092,Guarda los cambios.,SAVE_DOCUMENT
+C093,Guarda una copia.,SAVE_DOCUMENT
+C094,Guarda antes de salir.,SAVE_DOCUMENT
+C095,Guarda el archivo.,SAVE_DOCUMENT
+C096,Guarda el progreso.,SAVE_DOCUMENT
+C097,Guarda el informe.,SAVE_DOCUMENT
+C098,Guarda esta versión.,SAVE_DOCUMENT
+C099,Guarda la carta.,SAVE_DOCUMENT
+C100,Guarda el acta.,SAVE_DOCUMENT
+C101,Abre el archivo anterior.,OPEN_DOCUMENT
+C102,Abre el documento adjunto.,OPEN_DOCUMENT
+C103,Abre la carpeta del proyecto.,OPEN_DOCUMENT
+C104,Abre el último borrador.,OPEN_DOCUMENT
+C105,Abre el pdf de referencia.,OPEN_DOCUMENT
+C106,Abre una ventana nueva.,OPEN_DOCUMENT
+C107,Abre el contrato.,OPEN_DOCUMENT
+C108,Abre la tesis.,OPEN_DOCUMENT
+C109,Abre el manual.,OPEN_DOCUMENT
+C110,Abre el informe de ayer.,OPEN_DOCUMENT
+C111,Exporta el documento.,EXPORT_DOCUMENT
+C112,Exporta como pdf.,EXPORT_DOCUMENT
+C113,Exporta a texto plano.,EXPORT_DOCUMENT
+C114,Genera el pdf para enviar.,EXPORT_DOCUMENT
+C115,Convierte el archivo a Word.,EXPORT_DOCUMENT
+C116,Exporta la presentación.,EXPORT_DOCUMENT
+C117,Exporta la tesis.,EXPORT_DOCUMENT
+C118,Exporta el manual.,EXPORT_DOCUMENT
+C119,Exporta el folleto.,EXPORT_DOCUMENT
+C120,Exporta el informe final.,EXPORT_DOCUMENT
+D01,Borra esto.,DELETE_SELECTION
+D02,Pon esto en negritas.,FORMAT_SELECTION
+D03,Hazlo más corto.,REWRITE_SELECTION
+D04,Cambia esta palabra por dificultades.,REPLACE_SELECTION
+D05,Deshaz el último cambio.,UNDO
+D06,Vuelve a como estaba.,UNDO
+D07,Rehaz el cambio.,REDO
+D08,Rehaz lo anterior.,REDO
+D09,Guarda el documento.,SAVE_DOCUMENT
+D10,Exporta el informe.,EXPORT_DOCUMENT
+D11,Borra eso.,DELETE_SELECTION
+D12,Ponlo en cursivas.,FORMAT_SELECTION
+E001,Déjame pensarlo.,NO_ACTION
+E002,"Hmm, no.",NO_ACTION
+E003,La interacción humano computadora estudia sistemas.,NO_ACTION
+E004,Borrar información accidentalmente puede afectar.,NO_ACTION
+E005,No estoy seguro.,NO_ACTION
+E006,Espera.,NO_ACTION
+E007,No sé.,NO_ACTION
+E008,Tal vez.,NO_ACTION
+E009,Bueno.,NO_ACTION
+E010,Eso no.,NO_ACTION
+E011,Mejor.,NO_ACTION
+E012,Ese.,NO_ACTION
+E013,No me gusta.,NO_ACTION
+E014,Así está bien.,NO_ACTION
+E015,Déjalo.,NO_ACTION
+E016,Hmm.,NO_ACTION
+E017,A ver.,NO_ACTION
+E018,Ya veo.,NO_ACTION
+E019,Entiendo.,NO_ACTION
+E020,De acuerdo.,NO_ACTION
+E021,Interesante.,NO_ACTION
+E022,Vaya.,NO_ACTION
+E023,Mmm.,NO_ACTION
+E024,Vale.,NO_ACTION
+E025,Exacto.,NO_ACTION
+E026,Ajá.,NO_ACTION
+E027,Oh.,NO_ACTION
+E028,Bien.,NO_ACTION
+E029,Ni idea.,NO_ACTION
+E030,Quién sabe.,NO_ACTION
+E031,Puede ser.,NO_ACTION
+E032,Ya.,NO_ACTION
+E033,Listo.,NO_ACTION
+E034,Siguiente.,NO_ACTION
+E035,Continúa.,NO_ACTION
+E036,Te escucho.,NO_ACTION
+E037,Dime.,NO_ACTION
+E038,Un momento.,NO_ACTION
+E039,Pausa.,NO_ACTION
+E040,Sigo.,NO_ACTION
+E041,Adelante.,NO_ACTION
+E042,Durante los últimos años hay interfaces nuevas.,NO_ACTION
+E043,Mi proyecto diseña un editor para TDAH.,NO_ACTION
+E044,Las personas tienen dificultades al escribir.,NO_ACTION
+E045,Guardar documentos reduce el riesgo.,NO_ACTION
+E046,Abrir archivos consume memoria.,NO_ACTION
+E047,Imprimir documentos consume papel.,NO_ACTION
+E048,Buscar información toma tiempo.,NO_ACTION
+E049,Copiar texto introduce duplicados.,NO_ACTION
+E050,Leer en voz alta apoya.,NO_ACTION
+E051,El gerente cambió al proveedor.,NO_ACTION
+E052,La maestra borró el pizarrón.,NO_ACTION
+E053,El mecánico reemplazó la bomba.,NO_ACTION
+E054,Los vecinos cambiaron el nombre.,NO_ACTION
+E055,El comité puso fecha.,NO_ACTION
+E056,El sindicato deshizo recortes.,NO_ACTION
+E057,El restaurante cambió su carta.,NO_ACTION
+E058,Borrar cintas libera estanterías.,NO_ACTION
+E059,Cambiar pañales evita irritaciones.,NO_ACTION
+E060,Poner sal acelera.,NO_ACTION
+E061,Reemplazar la batería extendió la vida.,NO_ACTION
+E062,Eliminar duplicados ordenó todo.,NO_ACTION
+E063,Seleccionar frutas se aprende.,NO_ACTION
+E064,Poner límites evita malentendidos.,NO_ACTION
+E065,El jurado cambió el veredicto.,NO_ACTION
+E066,Seleccionar al azar es imparcial.,NO_ACTION
+E067,El modo dictado desactiva atajos.,NO_ACTION
+E068,La papelera conserva eliminados.,NO_ACTION
+E069,El reemplazo expande abreviaturas.,NO_ACTION
+E070,El corrector sugiere alternativas.,NO_ACTION
+E071,Voy a narrar que cambiar enseña.,NO_ACTION
+E072,Quiero relatar que borrar alivia.,NO_ACTION
+E073,La vista colapsa secciones.,NO_ACTION
+E074,El registro muestra ediciones.,NO_ACTION
+E075,El informe quedó listo ayer.,NO_ACTION
+E076,La propuesta incluye secciones.,NO_ACTION
+E077,El artículo será revisado.,NO_ACTION
+E078,La carta circula.,NO_ACTION
+E079,El ensayo necesita lectura.,NO_ACTION
+E080,La memoria describe el proceso.,NO_ACTION
+E081,El acta apareció hoy.,NO_ACTION
+E082,La reseña recibió comentarios.,NO_ACTION
+E083,El boletín saldrá pronto.,NO_ACTION
+E084,El museo inaugura sala.,NO_ACTION
+E085,El tren amplió recorrido.,NO_ACTION
+E086,La feria reunió editoriales.,NO_ACTION
+E087,El hospital atiende urgencias.,NO_ACTION
+E088,El puente quedó iluminado.,NO_ACTION
+E089,El banco necesita donadores.,NO_ACTION
+E090,El mercado abre domingos.,NO_ACTION
+E091,El parque protege especies.,NO_ACTION
+E092,El acuario renovó el tanque.,NO_ACTION
+E093,Los viernes hay cine.,NO_ACTION
+E094,El observatorio organiza visitas.,NO_ACTION
+E095,El gimnasio abre temprano.,NO_ACTION
+E096,El club compite nacional.,NO_ACTION
+E097,La librería guarda joyas.,NO_ACTION
+E098,Los talleres fomentan lectura.,NO_ACTION
+E099,Las noches permiten ver estrellas.,NO_ACTION
+E100,El pan sigue tibio.,NO_ACTION
+F01,Comparte esto por correo.,UNSUPPORTED
+F02,Agéndame una revisión mañana.,UNSUPPORTED
+F03,Sube el documento a Drive.,UNSUPPORTED
+F04,Firma este archivo.,UNSUPPORTED
+F05,Comprime el documento.,UNSUPPORTED
+F06,Envía esto por mensaje.,UNSUPPORTED
+F07,Programa un recordatorio.,UNSUPPORTED
+F08,Traduce esto al inglés.,UNSUPPORTED
+F09,Cifra el documento.,UNSUPPORTED
+F10,Imprime en color.,UNSUPPORTED
+F11,Publica en el blog.,UNSUPPORTED
+F12,Respalda en disco externo.,UNSUPPORTED
+F13,Convierte a mayúsculas todo.,UNSUPPORTED
+F14,Cuenta las palabras.,UNSUPPORTED
+F15,Dicta el siguiente párrafo.,UNSUPPORTED
+G01,Cambia el título a Resultados y pon el texto seleccionado en negritas.,MULTI_ACTION
+G02,Reemplaza esta palabra por accesibilidad y guarda el documento.,MULTI_ACTION
+G03,Borra esto y deshaz el cambio anterior.,MULTI_ACTION
+G04,Ponlo en cursivas y guarda el documento.,MULTI_ACTION
+G05,Hazlo más corto y exporta el informe.,MULTI_ACTION
+G06,Busca la palabra resumen y selecciona el primer resultado.,MULTI_ACTION
+G07,Subraya esto y pon el título a Metodología.,MULTI_ACTION
+G08,Deshaz el último cambio y guarda el documento.,MULTI_ACTION

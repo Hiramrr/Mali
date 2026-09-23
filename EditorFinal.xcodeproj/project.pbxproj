@@ -1,370 +1,339 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>archiveVersion</key>
-	<string>1</string>
-	<key>classes</key>
-	<dict/>
-	<key>objectVersion</key>
-	<string>60</string>
-	<key>objects</key>
-	<dict>
-		<key>16EEAF57BAFC2A41CAB7C99A</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>234E6F310150B4E179D017F0</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 14.0</string>
-			<key>developmentRegion</key>
-			<string>es</string>
-			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>es</string>
-				<string>en</string>
-			</array>
-			<key>mainGroup</key>
-			<string>77E7E78B05578758626744DC</string>
-			<key>packageReferences</key>
-			<array>
-				<string>6E778BD20EB20EC966352F37</string>
-			</array>
-			<key>productRefGroup</key>
-			<string>7162250E0FAA4FDEE70FDEA1</string>
-			<key>projectDirPath</key>
-			<string></string>
-			<key>projectRoot</key>
-			<string></string>
-			<key>targets</key>
-			<array>
-				<string>AA16061E7815CA19A57C9DB8</string>
-			</array>
-		</dict>
-		<key>234E6F310150B4E179D017F0</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>9399D7B00B09465008AA6B91</string>
-				<string>A703241CFF86CB3EF3123F02</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<integer>0</integer>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>4A27B29D91B9AFBED5201D7D</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>productRef</key>
-			<string>92ED52DADA39FB200AB2F2C3</string>
-		</dict>
-		<key>4C601C08AEF4B73D6FCD3BB9</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CODE_SIGN_ENTITLEMENTS</key>
-				<string>App/Resources/EditorFinal.entitlements</string>
-				<key>CODE_SIGN_IDENTITY</key>
-				<string>-</string>
-				<key>CODE_SIGN_STYLE</key>
-				<string>Manual</string>
-				<key>ENABLE_APP_SANDBOX</key>
-				<string>YES</string>
-				<key>ENABLE_HARDENED_RUNTIME</key>
-				<string>YES</string>
-				<key>INFOPLIST_FILE</key>
-				<string>App/Resources/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/../Frameworks</string>
-				<key>MACOSX_DEPLOYMENT_TARGET</key>
-				<string>26.0</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>com.hiram.EditorFinal</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SDKROOT</key>
-				<string>macosx</string>
-				<key>SWIFT_OPTIMIZATION_LEVEL</key>
-				<string>-O</string>
-				<key>SWIFT_STRICT_CONCURRENCY</key>
-				<string>complete</string>
-				<key>SWIFT_VERSION</key>
-				<string>6.0</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>6E778BD20EB20EC966352F37</key>
-		<dict>
-			<key>isa</key>
-			<string>XCLocalSwiftPackageReference</string>
-			<key>relativePath</key>
-			<string>Packages/EditorModules</string>
-		</dict>
-		<key>7162250E0FAA4FDEE70FDEA1</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>964BD5656C7A016EF0C9ADA7</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>74A269442A8CCE85B767802F</key>
-		<dict>
-			<key>fileRef</key>
-			<string>E9AE0ED784FA4B84AE7B592F</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>77E7E78B05578758626744DC</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>E9AE0ED784FA4B84AE7B592F</string>
-				<string>84A1ADBEE1321BC20135C0D8</string>
-				<string>7162250E0FAA4FDEE70FDEA1</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>84A1ADBEE1321BC20135C0D8</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>folder</string>
-			<key>path</key>
-			<string>App/Resources</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>92ED52DADA39FB200AB2F2C3</key>
-		<dict>
-			<key>isa</key>
-			<string>XCSwiftPackageProductDependency</string>
-			<key>productName</key>
-			<string>DocumentKit</string>
-		</dict>
-		<key>9399D7B00B09465008AA6B91</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>MACOSX_DEPLOYMENT_TARGET</key>
-				<string>26.0</string>
-				<key>SDKROOT</key>
-				<string>macosx</string>
-				<key>SWIFT_OPTIMIZATION_LEVEL</key>
-				<string>-Onone</string>
-				<key>SWIFT_STRICT_CONCURRENCY</key>
-				<string>complete</string>
-				<key>SWIFT_VERSION</key>
-				<string>6.0</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>964BD5656C7A016EF0C9ADA7</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.application</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>EditorFinal.app</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>968AE785D675073DACF6AE0A</key>
-		<dict>
-			<key>buildActionMask</key>
-			<integer>2147483647</integer>
-			<key>files</key>
-			<array>
-				<string>C8D778E235C4B0F29862B5DB</string>
-				<string>4A27B29D91B9AFBED5201D7D</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<integer>0</integer>
-		</dict>
-		<key>9D57875196C613785A1EEE01</key>
-		<dict>
-			<key>isa</key>
-			<string>XCSwiftPackageProductDependency</string>
-			<key>productName</key>
-			<string>EditorUI</string>
-		</dict>
-		<key>A703241CFF86CB3EF3123F02</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>MACOSX_DEPLOYMENT_TARGET</key>
-				<string>26.0</string>
-				<key>SDKROOT</key>
-				<string>macosx</string>
-				<key>SWIFT_OPTIMIZATION_LEVEL</key>
-				<string>-O</string>
-				<key>SWIFT_STRICT_CONCURRENCY</key>
-				<string>complete</string>
-				<key>SWIFT_VERSION</key>
-				<string>6.0</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>AA16061E7815CA19A57C9DB8</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>F98F78AD057CCE6D8FD2A547</string>
-			<key>buildPhases</key>
-			<array>
-				<string>CBE1FEED5CD18DD4A4CCC0A6</string>
-				<string>968AE785D675073DACF6AE0A</string>
-				<string>DB0F30F5BDF8F66201D913FE</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>EditorFinal</string>
-			<key>packageProductDependencies</key>
-			<array>
-				<string>9D57875196C613785A1EEE01</string>
-				<string>92ED52DADA39FB200AB2F2C3</string>
-			</array>
-			<key>productName</key>
-			<string>EditorFinal</string>
-			<key>productReference</key>
-			<string>964BD5656C7A016EF0C9ADA7</string>
-			<key>productType</key>
-			<string>com.apple.product-type.application</string>
-		</dict>
-		<key>C8D778E235C4B0F29862B5DB</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>productRef</key>
-			<string>9D57875196C613785A1EEE01</string>
-		</dict>
-		<key>CBE1FEED5CD18DD4A4CCC0A6</key>
-		<dict>
-			<key>buildActionMask</key>
-			<integer>2147483647</integer>
-			<key>files</key>
-			<array>
-				<string>74A269442A8CCE85B767802F</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<integer>0</integer>
-		</dict>
-		<key>DB0F30F5BDF8F66201D913FE</key>
-		<dict>
-			<key>buildActionMask</key>
-			<integer>2147483647</integer>
-			<key>files</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<integer>0</integer>
-		</dict>
-		<key>E7574E2951F8A93971E9C8BE</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CODE_SIGN_ENTITLEMENTS</key>
-				<string>App/Resources/EditorFinal.entitlements</string>
-				<key>CODE_SIGN_IDENTITY</key>
-				<string>-</string>
-				<key>CODE_SIGN_STYLE</key>
-				<string>Manual</string>
-				<key>ENABLE_APP_SANDBOX</key>
-				<string>YES</string>
-				<key>ENABLE_HARDENED_RUNTIME</key>
-				<string>YES</string>
-				<key>INFOPLIST_FILE</key>
-				<string>App/Resources/Info.plist</string>
-				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/../Frameworks</string>
-				<key>MACOSX_DEPLOYMENT_TARGET</key>
-				<string>26.0</string>
-				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
-				<string>com.hiram.EditorFinal</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>SDKROOT</key>
-				<string>macosx</string>
-				<key>SWIFT_OPTIMIZATION_LEVEL</key>
-				<string>-Onone</string>
-				<key>SWIFT_STRICT_CONCURRENCY</key>
-				<string>complete</string>
-				<key>SWIFT_VERSION</key>
-				<string>6.0</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>E9AE0ED784FA4B84AE7B592F</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>App/EditorApp.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>F98F78AD057CCE6D8FD2A547</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>E7574E2951F8A93971E9C8BE</string>
-				<string>4C601C08AEF4B73D6FCD3BB9</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<integer>0</integer>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-	</dict>
-	<key>rootObject</key>
-	<string>16EEAF57BAFC2A41CAB7C99A</string>
-</dict>
-</plist>
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 60;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4A27B29D91B9AFBED5201D7D /* DocumentKit in Frameworks */ = {isa = PBXBuildFile; productRef = 92ED52DADA39FB200AB2F2C3 /* DocumentKit */; };
+		5B38C49E02C1DFEED6312E8E /* ModuleKit in Frameworks */ = {isa = PBXBuildFile; productRef = A3BD42E5C6D708A1F5E33D44 /* ModuleKit */; };
+		6C49D5AF13D2E0FFD7423F9F /* VoiceModule in Frameworks */ = {isa = PBXBuildFile; productRef = B4CE53F6D7E819B206F44E55 /* VoiceModule */; };
+		7D50A61B24E3F1089345C7D2 /* GestureModule in Frameworks */ = {isa = PBXBuildFile; productRef = 8E61B72C35F4A2190456D8E3 /* GestureModule */; };
+		74A269442A8CCE85B767802F /* App/EditorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AE0ED784FA4B84AE7B592F /* App/EditorApp.swift */; };
+		B1C2D3E4F5061728394A5B6C /* Samples in Resources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60718293A4B5C /* Samples */; };
+		C1D2E3F405162738495A6B7C /* App/Resources/EditorTDAH.icon in Resources */ = {isa = PBXBuildFile; fileRef = C0D1E2F30415263748596A7B /* App/Resources/EditorTDAH.icon */; };
+		C8D778E235C4B0F29862B5DB /* EditorUI in Frameworks */ = {isa = PBXBuildFile; productRef = 9D57875196C613785A1EEE01 /* EditorUI */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		84A1ADBEE1321BC20135C0D8 /* App/Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = App/Resources; sourceTree = "<group>"; };
+		964BD5656C7A016EF0C9ADA7 /* EditorFinal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = EditorFinal.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1B2C3D4E5F60718293A4B5C /* Samples */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Samples; sourceTree = "<group>"; };
+		C0D1E2F30415263748596A7B /* App/Resources/EditorTDAH.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = App/Resources/EditorTDAH.icon; sourceTree = "<group>"; };
+		E9AE0ED784FA4B84AE7B592F /* App/EditorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App/EditorApp.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		968AE785D675073DACF6AE0A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C8D778E235C4B0F29862B5DB /* EditorUI in Frameworks */,
+				4A27B29D91B9AFBED5201D7D /* DocumentKit in Frameworks */,
+				5B38C49E02C1DFEED6312E8E /* ModuleKit in Frameworks */,
+				6C49D5AF13D2E0FFD7423F9F /* VoiceModule in Frameworks */,
+				7D50A61B24E3F1089345C7D2 /* GestureModule in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7162250E0FAA4FDEE70FDEA1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				964BD5656C7A016EF0C9ADA7 /* EditorFinal.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		77E7E78B05578758626744DC = {
+			isa = PBXGroup;
+			children = (
+				E9AE0ED784FA4B84AE7B592F /* App/EditorApp.swift */,
+				84A1ADBEE1321BC20135C0D8 /* App/Resources */,
+				C0D1E2F30415263748596A7B /* App/Resources/EditorTDAH.icon */,
+				7162250E0FAA4FDEE70FDEA1 /* Products */,
+				A1B2C3D4E5F60718293A4B5C /* Samples */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AA16061E7815CA19A57C9DB8 /* EditorFinal */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F98F78AD057CCE6D8FD2A547 /* Build configuration list for PBXNativeTarget "EditorFinal" */;
+			buildPhases = (
+				CBE1FEED5CD18DD4A4CCC0A6 /* Sources */,
+				968AE785D675073DACF6AE0A /* Frameworks */,
+				DB0F30F5BDF8F66201D913FE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EditorFinal;
+			packageProductDependencies = (
+				9D57875196C613785A1EEE01 /* EditorUI */,
+				92ED52DADA39FB200AB2F2C3 /* DocumentKit */,
+				A3BD42E5C6D708A1F5E33D44 /* ModuleKit */,
+				B4CE53F6D7E819B206F44E55 /* VoiceModule */,
+				8E61B72C35F4A2190456D8E3 /* GestureModule */,
+			);
+			productName = EditorFinal;
+			productReference = 964BD5656C7A016EF0C9ADA7 /* EditorFinal.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		16EEAF57BAFC2A41CAB7C99A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 2700;
+			};
+			buildConfigurationList = 234E6F310150B4E179D017F0 /* Build configuration list for PBXProject "EditorFinal" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = es;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				es,
+				en,
+			);
+			mainGroup = 77E7E78B05578758626744DC;
+			packageReferences = (
+				6E778BD20EB20EC966352F37 /* XCLocalSwiftPackageReference "Packages/EditorModules" */,
+			);
+			productRefGroup = 7162250E0FAA4FDEE70FDEA1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AA16061E7815CA19A57C9DB8 /* EditorFinal */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DB0F30F5BDF8F66201D913FE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1D2E3F405162738495A6B7C /* App/Resources/EditorTDAH.icon in Resources */,
+				B1C2D3E4F5061728394A5B6C /* Samples in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CBE1FEED5CD18DD4A4CCC0A6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74A269442A8CCE85B767802F /* App/EditorApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		4C601C08AEF4B73D6FCD3BB9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = EditorTDAH;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_ENTITLEMENTS = App/Resources/EditorFinal.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				DEAD_CODE_STRIPPING = YES;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = App/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hiram.EditorFinal;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		9399D7B00B09465008AA6B91 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = EditorTDAH;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DEAD_CODE_STRIPPING = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		A703241CFF86CB3EF3123F02 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DEAD_CODE_STRIPPING = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		E7574E2951F8A93971E9C8BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_ENTITLEMENTS = App/Resources/EditorFinal.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				DEAD_CODE_STRIPPING = YES;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = App/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hiram.EditorFinal;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		234E6F310150B4E179D017F0 /* Build configuration list for PBXProject "EditorFinal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9399D7B00B09465008AA6B91 /* Debug */,
+				A703241CFF86CB3EF3123F02 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F98F78AD057CCE6D8FD2A547 /* Build configuration list for PBXNativeTarget "EditorFinal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E7574E2951F8A93971E9C8BE /* Debug */,
+				4C601C08AEF4B73D6FCD3BB9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		6E778BD20EB20EC966352F37 /* XCLocalSwiftPackageReference "Packages/EditorModules" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/EditorModules;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		92ED52DADA39FB200AB2F2C3 /* DocumentKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DocumentKit;
+		};
+		9D57875196C613785A1EEE01 /* EditorUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = EditorUI;
+		};
+		A3BD42E5C6D708A1F5E33D44 /* ModuleKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ModuleKit;
+		};
+		B4CE53F6D7E819B206F44E55 /* VoiceModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = VoiceModule;
+		};
+		8E61B72C35F4A2190456D8E3 /* GestureModule */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = GestureModule;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 16EEAF57BAFC2A41CAB7C99A /* Project object */;
+}

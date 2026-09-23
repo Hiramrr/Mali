@@ -37,6 +37,14 @@ public enum EditorCommand: Equatable, Sendable {
     case bulletList
     case quote
     case insertLink
+    // Previsualización atómica para módulos (gestos). Mientras dura, el texto
+    // mostrado no toca el binding, el guardado ni el historial: confirmar
+    // registra un único undo (o ninguno si no hubo cambio) y cancelar
+    // restaura el original. Perder el seguimiento cancela, nunca confirma.
+    case beginPreview(TextRange)
+    case showPreview(String)
+    case commitPreview
+    case cancelPreview
 }
 
 public struct DocumentHeading: Identifiable, Equatable, Sendable {
