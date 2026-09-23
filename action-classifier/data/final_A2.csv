@@ -1,0 +1,326 @@
+id,group,text,expected,family_id,uns,conf,para,short
+SL001,A,Toma el altri completo.,SELECT_TEXT,f5_sl_altri,0,0,0,0
+SL002,A,Aparta el otrosí viejo.,SELECT_TEXT,f5_sl_otrosi,0,0,0,0
+SL003,A,Elige la foja rota.,SELECT_TEXT,f5_sl_foja,0,0,0,0
+SL004,A,Marca el legajo base.,SELECT_TEXT,f5_sl_legajo,0,0,0,0
+SL005,A,Resalta la minuta madre.,SELECT_TEXT,f5_sl_minuta,0,0,0,0
+SL006,A,Señala el oficio circular.,SELECT_TEXT,f5_sl_oficio,0,0,0,0
+SL007,A,Aísla la circular vieja.,SELECT_TEXT,f5_sl_circular,0,0,0,0
+SL008,A,Delimita el boletín.,SELECT_TEXT,f5_sl_boletin,0,0,0,0
+SL009,A,Enfoca la gaceta.,SELECT_TEXT,f5_sl_gaceta,0,0,0,0
+SL010,A,Apunta el diario.,SELECT_TEXT,f5_sl_diario,0,0,0,0
+SL011,A,Ubica el semanario.,SELECT_TEXT,f5_sl_semanario,0,0,0,0
+SL012,A,Localiza el anuario.,SELECT_TEXT,f5_sl_anuario,0,0,0,0
+SL013,A,Encierra el prontuario.,SELECT_TEXT,f5_sl_prontuario,0,0,0,0
+SL014,A,Enmarca el memorial.,SELECT_TEXT,f5_sl_memorial,0,0,0,0
+SL015,A,Recorta el expediente.,SELECT_TEXT,f5_sl_expediente,0,0,0,0
+SL016,A,Toma el membrete.,SELECT_TEXT,f5_sl_membrete,0,0,0,0
+SL017,A,Aparta el sello seco.,SELECT_TEXT,f5_sl_sello,0,0,0,0
+SL018,A,Elige la firma.,SELECT_TEXT,f5_sl_firma,0,0,0,0
+SL019,A,Marca el folio nuevo.,SELECT_TEXT,f5_sl_folio,0,0,0,0
+SL020,A,Resalta la rúbrica.,SELECT_TEXT,f5_sl_rubrica,0,0,0,0
+SL021,A,Señala el acuse.,SELECT_TEXT,f5_sl_acuse,0,0,0,0
+SL022,A,Aísla el comprobante.,SELECT_TEXT,f5_sl_comprobante,0,0,0,0
+SL023,A,Delimita el recibo.,SELECT_TEXT,f5_sl_recibo,0,0,0,0
+SL024,A,Enfoca la factura.,SELECT_TEXT,f5_sl_factura,0,0,0,0
+SL025,A,Apunta el vale.,SELECT_TEXT,f5_sl_vale,0,0,0,0
+SL026,A,Ubica el pagaré vencido.,SELECT_TEXT,f5_sl_pagare,0,0,0,0
+SL027,A,Localiza el contrato.,SELECT_TEXT,f5_sl_contrato,0,0,0,0
+SL028,A,Encierra el convenio.,SELECT_TEXT,f5_sl_convenio,0,0,0,0
+SL029,A,Enmarca el anexo.,SELECT_TEXT,f5_sl_anexo,0,0,0,0
+SL030,A,Recorta el apéndice.,SELECT_TEXT,f5_sl_apendice,0,0,0,0
+SL031,A,Toma la minuta nueva.,SELECT_TEXT,f5_sl_minutan,0,0,0,0
+SL032,A,Aparta el oficio base.,SELECT_TEXT,f5_sl_oficiob,0,0,0,0
+SL033,A,Elige el tanto final.,SELECT_TEXT,f5_sl_tanto,0,0,0,0
+SL034,A,Marca el legajo madre.,SELECT_TEXT,f5_sl_legajom,0,0,0,0
+SL035,A,Resalta la foja rota.,SELECT_TEXT,f5_sl_fojar,0,0,0,0
+SL036,A,Señala el otrosí nuevo.,SELECT_TEXT,f5_sl_otrosin,0,0,0,0
+SL037,A,Aísla el altri viejo.,SELECT_TEXT,f5_sl_altriv,0,0,0,0
+SL038,A,Delimita el visto bueno.,SELECT_TEXT,f5_sl_visto,0,0,0,0
+SL039,A,Enfoca el resultando.,SELECT_TEXT,f5_sl_resultando,0,0,0,0
+SL040,A,Apunta el exordio.,SELECT_TEXT,f5_sl_exordio,0,0,0,0
+SL041,A,Ubica la coda.,SELECT_TEXT,f5_sl_coda,0,0,0,0
+SL042,A,Localiza el interludio musical.,SELECT_TEXT,f5_sl_interludio,0,0,0,0
+SL043,A,Encierra la peroración.,SELECT_TEXT,f5_sl_peroracion,0,0,0,0
+SL044,A,Enmarca la adenda.,SELECT_TEXT,f5_sl_adenda,0,0,0,0
+SL045,A,Recorta el colofón.,SELECT_TEXT,f5_sl_colofon,0,0,0,0
+SL046,A,Toma el epígrafe.,SELECT_TEXT,f5_sl_epigrafe,0,0,0,0
+SL047,A,Aparta la fe de erratas.,SELECT_TEXT,f5_sl_fe,0,0,0,0
+SL048,A,Elige el considerando.,SELECT_TEXT,f5_sl_considerando,0,1,0,0
+SL049,A,Marca el resolutivo.,SELECT_TEXT,f5_sl_resolutivo,0,1,0,0
+SL050,A,Resalta el visto final.,SELECT_TEXT,f5_sl_visto2,0,1,0,0
+SL051,A,Señala el resultando.,SELECT_TEXT,f5_sl_resultando2,0,1,0,0
+SL052,A,Aísla el exordio.,SELECT_TEXT,f5_sl_exordio2,0,1,0,0
+SL053,A,Delimita la coda.,SELECT_TEXT,f5_sl_coda2,0,1,0,0
+SL054,A,Enfoca el interludio.,SELECT_TEXT,f5_sl_interludio2,0,1,0,0
+SL055,A,Apunta la peroración.,SELECT_TEXT,f5_sl_peroracion2,0,1,0,0
+SL056,A,Ubica la adenda.,SELECT_TEXT,f5_sl_adenda2,0,1,0,0
+SL057,A,Localiza el colofón chico.,SELECT_TEXT,f5_sl_colofon2,0,1,0,0
+SL058,A,Encierra el epígrafe.,SELECT_TEXT,f5_sl_epigrafe2,0,1,0,0
+SL059,A,Enmarca la fe.,SELECT_TEXT,f5_sl_fe2,0,1,0,0
+SL060,A,Recorta el intervento.,SELECT_TEXT,f5_sl_intervento,0,1,0,0
+SL061,A,Toma el altri.,SELECT_TEXT,f5_sl_tomaaltri,0,0,0,1
+SL062,A,Marca eso.,SELECT_TEXT,f5_sl_marcaeso,0,0,0,1
+SL063,A,Elige esto.,SELECT_TEXT,f5_sl_eligeesto,0,0,0,1
+SL064,A,Señala aquí.,SELECT_TEXT,f5_sl_aqui,0,0,0,1
+SL065,A,Aparta eso.,SELECT_TEXT,f5_sl_apartaeso,0,0,0,1
+FN001,A,Halla el altri segundo.,FIND_TEXT,f5_fn_altri,0,0,0,0
+FN002,A,Ubica el otrosí final.,FIND_TEXT,f5_fn_otrosi,0,0,0,0
+FN003,A,Encuentra la foja.,FIND_TEXT,f5_fn_foja,0,0,0,0
+FN004,A,Localiza el legajo viejo.,FIND_TEXT,f5_fn_legajo,0,0,0,0
+FN005,A,Rastrea la minuta.,FIND_TEXT,f5_fn_minuta,0,0,0,0
+FN006,A,Detecta el oficio.,FIND_TEXT,f5_fn_oficio,0,0,0,0
+FN007,A,Caza la circular.,FIND_TEXT,f5_fn_circular,0,0,0,0
+FN008,A,Persigue el boletín.,FIND_TEXT,f5_fn_boletin,0,0,0,0
+FN009,A,Sigue la gaceta.,FIND_TEXT,f5_fn_gaceta,0,0,0,0
+FN010,A,Halla el diario.,FIND_TEXT,f5_fn_diario,0,0,0,0
+FN011,A,Ubica el semanario.,FIND_TEXT,f5_fn_semanario,0,0,0,0
+FN012,A,Encuentra el anuario.,FIND_TEXT,f5_fn_anuario,0,0,0,0
+FN013,A,Localiza el prontuario.,FIND_TEXT,f5_fn_prontuario,0,0,0,0
+FN014,A,Rastrea el memorial.,FIND_TEXT,f5_fn_memorial,0,0,0,0
+FN015,A,Detecta el expediente.,FIND_TEXT,f5_fn_expediente,0,0,0,0
+FN016,A,Caza el membrete.,FIND_TEXT,f5_fn_membrete,0,0,0,0
+FN017,A,Persigue el sello.,FIND_TEXT,f5_fn_sello,0,0,0,0
+FN018,A,Sigue la firma.,FIND_TEXT,f5_fn_firma,0,0,0,0
+FN019,A,Halla el folio nuevo.,FIND_TEXT,f5_fn_folio,0,0,0,0
+FN020,A,Ubica la rúbrica clara.,FIND_TEXT,f5_fn_rubrica,0,0,0,0
+FN021,A,Encuentra el acuse.,FIND_TEXT,f5_fn_acuse,0,0,0,0
+FN022,A,Localiza el comprobante.,FIND_TEXT,f5_fn_comprobante,0,0,0,0
+FN023,A,Rastrea el recibo.,FIND_TEXT,f5_fn_recibo,0,0,0,0
+FN024,A,Detecta la factura.,FIND_TEXT,f5_fn_factura,0,0,0,0
+FN025,A,Caza el vale.,FIND_TEXT,f5_fn_vale,0,0,0,0
+FN026,A,Persigue el pagaré.,FIND_TEXT,f5_fn_pagare,0,0,0,0
+FN027,A,Sigue el contrato.,FIND_TEXT,f5_fn_contrato,0,0,0,0
+FN028,A,Halla el convenio.,FIND_TEXT,f5_fn_convenio,0,0,0,0
+FN029,A,Ubica el anexo B.,FIND_TEXT,f5_fn_anexo,0,0,0,0
+FN030,A,Encuentra el apéndice.,FIND_TEXT,f5_fn_apendice,0,0,0,0
+FN031,A,Localiza la minuta nueva.,FIND_TEXT,f5_fn_minutan,0,0,0,0
+FN032,A,Rastrea el oficio base.,FIND_TEXT,f5_fn_oficiob,0,0,0,0
+FN033,A,Detecta el tanto final.,FIND_TEXT,f5_fn_tanto,0,0,0,0
+FN034,A,Caza el legajo madre.,FIND_TEXT,f5_fn_legajom,0,0,0,0
+FN035,A,Persigue la foja rota.,FIND_TEXT,f5_fn_fojar,0,0,0,0
+FN036,A,Encuentra dónde aparece TDAH.,FIND_TEXT,f5_fn_tdah,0,1,1,0
+FN037,A,Localiza la palabra metodología.,FIND_TEXT,f5_fn_metodologia,0,1,1,0
+FN038,A,Halla accesibilidad mal escrita.,FIND_TEXT,f5_fn_accesibilidad,0,1,1,0
+FN039,A,Ubica la cita pendiente.,FIND_TEXT,f5_fn_cita,0,1,1,0
+FN040,A,Rastrea el término exacto.,FIND_TEXT,f5_fn_termino,0,1,1,0
+FN041,A,Detecta el considerando.,FIND_TEXT,f5_fn_considerando,0,1,0,0
+FN042,A,Caza el resolutivo.,FIND_TEXT,f5_fn_resolutivo,0,1,0,0
+FN043,A,Persigue el visto.,FIND_TEXT,f5_fn_visto,0,1,0,0
+FN044,A,Sigue el resultando.,FIND_TEXT,f5_fn_resultando,0,1,0,0
+FN045,A,Halla el exordio.,FIND_TEXT,f5_fn_exordio,0,1,0,0
+FN046,A,Ubica la coda.,FIND_TEXT,f5_fn_coda,0,1,0,0
+FN047,A,Encuentra el interludio.,FIND_TEXT,f5_fn_interludio,0,1,0,0
+FN048,A,Localiza la peroración breve.,FIND_TEXT,f5_fn_peroracion,0,1,0,0
+FN049,A,Rastrea la adenda.,FIND_TEXT,f5_fn_adenda,0,1,0,0
+FN050,A,Detecta el colofón.,FIND_TEXT,f5_fn_colofon,0,1,0,0
+FN051,A,Caza el epígrafe.,FIND_TEXT,f5_fn_epigrafe,0,1,0,0
+FN052,A,Persigue la fe de erratas.,FIND_TEXT,f5_fn_fe,0,1,0,0
+FN053,A,Sigue el visto bueno.,FIND_TEXT,f5_fn_vistobueno,0,1,0,0
+FN054,A,Halla el resultando segundo.,FIND_TEXT,f5_fn_resultando2,0,1,0,0
+FN055,A,Ubica el exordio nuevo.,FIND_TEXT,f5_fn_exordio2,0,1,0,0
+FN056,A,Encuentra la coda final.,FIND_TEXT,f5_fn_coda2,0,1,0,0
+FN057,A,Localiza el interludio breve.,FIND_TEXT,f5_fn_interludio2,0,1,0,0
+FN058,A,Rastrea la peroración larga.,FIND_TEXT,f5_fn_peroracion2,0,1,0,0
+FN059,A,Detecta la adenda última.,FIND_TEXT,f5_fn_adenda2,0,1,0,0
+FN060,A,Caza el colofón chico.,FIND_TEXT,f5_fn_colofon2,0,1,0,0
+FN061,A,Búscalo arriba.,FIND_TEXT,f5_fn_arriba,0,0,0,1
+FN062,A,Encuéntralo ya.,FIND_TEXT,f5_fn_ya,0,0,0,1
+FN063,A,Hállalo pronto.,FIND_TEXT,f5_fn_pronto,0,0,0,1
+FN064,A,Localízalo aquí.,FIND_TEXT,f5_fn_aqui,0,0,0,1
+FN065,A,Búscalo bien.,FIND_TEXT,f5_fn_bien,0,0,0,1
+SV001,A,Deposita el altri viejo.,SAVE_DOCUMENT,f5_sv_altri,0,0,0,0
+SV002,A,Custodia el otrosí final.,SAVE_DOCUMENT,f5_sv_otrosi,0,0,0,0
+SV003,A,Asegura la foja.,SAVE_DOCUMENT,f5_sv_foja,0,0,0,0
+SV004,A,Preserva el legajo.,SAVE_DOCUMENT,f5_sv_legajo,0,0,0,0
+SV005,A,Fija la minuta.,SAVE_DOCUMENT,f5_sv_minuta,0,0,0,0
+SV006,A,Congela el oficio.,SAVE_DOCUMENT,f5_sv_oficio,0,0,0,0
+SV007,A,Salvaguarda la circular.,SAVE_DOCUMENT,f5_sv_circular,0,0,0,0
+SV008,A,Registra el boletín.,SAVE_DOCUMENT,f5_sv_boletin,0,0,0,0
+SV009,A,Asienta la gaceta.,SAVE_DOCUMENT,f5_sv_gaceta,0,0,0,0
+SV010,A,Deja constancia del diario.,SAVE_DOCUMENT,f5_sv_diario,0,0,0,0
+SV011,A,Preserva el semanario.,SAVE_DOCUMENT,f5_sv_semanario,0,0,0,0
+SV012,A,Asegura el anuario.,SAVE_DOCUMENT,f5_sv_anuario,0,0,0,0
+SV013,A,Fija el prontuario.,SAVE_DOCUMENT,f5_sv_prontuario,0,0,0,0
+SV014,A,Congela el memorial.,SAVE_DOCUMENT,f5_sv_memorial,0,0,0,0
+SV015,A,Salvaguarda el expediente.,SAVE_DOCUMENT,f5_sv_expediente,0,0,0,0
+SV016,A,Registra el altri segundo.,SAVE_DOCUMENT,f5_sv_altri2,0,0,0,0
+SV017,A,Asienta el otrosí nuevo.,SAVE_DOCUMENT,f5_sv_otrosi2,0,0,0,0
+SV018,A,Deja constancia de la foja.,SAVE_DOCUMENT,f5_sv_foja2,0,0,0,0
+SV019,A,Preserva el legajo madre.,SAVE_DOCUMENT,f5_sv_legajo2,0,0,0,0
+SV020,A,Asegura la minuta final.,SAVE_DOCUMENT,f5_sv_minuta2,0,0,0,0
+SV021,A,Fija el oficio base.,SAVE_DOCUMENT,f5_sv_oficio2,0,0,0,0
+SV022,A,Congela la circular vieja.,SAVE_DOCUMENT,f5_sv_circular2,0,0,0,0
+SV023,A,Salvaguarda el boletín extra.,SAVE_DOCUMENT,f5_sv_boletin2,0,0,0,0
+SV024,A,Registra la gaceta nueva.,SAVE_DOCUMENT,f5_sv_gaceta2,0,0,0,0
+SV025,A,Asienta el diario actual.,SAVE_DOCUMENT,f5_sv_diario2,0,0,0,0
+SV026,A,Guarda el considerando.,SAVE_DOCUMENT,f5_sv_considerando,0,1,0,0
+SV027,A,Archiva el resolutivo.,SAVE_DOCUMENT,f5_sv_resolutivo,0,1,0,0
+SV028,A,Consigna el visto.,SAVE_DOCUMENT,f5_sv_visto,0,1,0,0
+SV029,A,Deposita el resultando.,SAVE_DOCUMENT,f5_sv_resultando,0,1,0,0
+SV030,A,Custodia el exordio.,SAVE_DOCUMENT,f5_sv_exordio,0,1,0,0
+SV031,A,Asegura la coda.,SAVE_DOCUMENT,f5_sv_coda,0,1,0,0
+SV032,A,Preserva el interludio.,SAVE_DOCUMENT,f5_sv_interludio,0,1,0,0
+SV033,A,Fija la peroración.,SAVE_DOCUMENT,f5_sv_peroracion,0,1,0,0
+SV034,A,Congela la adenda.,SAVE_DOCUMENT,f5_sv_adenda,0,1,0,0
+SV035,A,Salvaguarda el colofón.,SAVE_DOCUMENT,f5_sv_colofon,0,1,0,0
+SV036,A,Registra el epígrafe nuevo.,SAVE_DOCUMENT,f5_sv_epigrafe,0,1,0,0
+SV037,A,Asienta la fe de erratas.,SAVE_DOCUMENT,f5_sv_fe,0,1,0,0
+SV038,A,Deja constancia del visto.,SAVE_DOCUMENT,f5_sv_visto2,0,1,0,0
+SV039,A,Preserva el resultando.,SAVE_DOCUMENT,f5_sv_resultando2,0,1,0,0
+SV040,A,Asegura el exordio.,SAVE_DOCUMENT,f5_sv_exordio2,0,1,0,0
+SV041,A,Fija la coda.,SAVE_DOCUMENT,f5_sv_coda2,0,1,0,0
+SV042,A,Congela el interludio.,SAVE_DOCUMENT,f5_sv_interludio2,0,1,0,0
+SV043,A,Salvaguarda la peroración.,SAVE_DOCUMENT,f5_sv_peroracion2,0,1,0,0
+SV044,A,Registra la adenda última.,SAVE_DOCUMENT,f5_sv_adenda2,0,1,0,0
+SV045,A,Asienta el colofón.,SAVE_DOCUMENT,f5_sv_colofon2,0,1,0,0
+SV046,A,Deja constancia del epígrafe.,SAVE_DOCUMENT,f5_sv_epigrafe2,0,1,0,0
+SV047,A,Preserva la fe.,SAVE_DOCUMENT,f5_sv_fe2,0,1,0,0
+SV048,A,Guarda el visto bueno.,SAVE_DOCUMENT,f5_sv_vistobueno,0,1,0,0
+SV049,A,Archiva el resultando.,SAVE_DOCUMENT,f5_sv_resultando3,0,1,0,0
+SV050,A,Consigna el exordio.,SAVE_DOCUMENT,f5_sv_exordio3,0,1,0,0
+SV051,A,Guárdalo bien.,SAVE_DOCUMENT,f5_sv_bien,0,0,0,1
+SV052,A,Archiva ya.,SAVE_DOCUMENT,f5_sv_ya,0,0,0,1
+SV053,A,Guarda eso.,SAVE_DOCUMENT,f5_sv_eso,0,0,0,1
+SV054,A,Consigna ya.,SAVE_DOCUMENT,f5_sv_consigna,0,0,0,1
+SV055,A,Deposita ahora.,SAVE_DOCUMENT,f5_sv_deposita,0,0,0,1
+SV056,A,Respalda el considerando.,SAVE_DOCUMENT,f5_sv_considerando2,0,1,0,0
+SV057,A,Asegura el resolutivo.,SAVE_DOCUMENT,f5_sv_resolutivo2,0,1,0,0
+SV058,A,Fija el visto.,SAVE_DOCUMENT,f5_sv_visto3,0,1,0,0
+SV059,A,Congela el resultando.,SAVE_DOCUMENT,f5_sv_resultando4,0,1,0,0
+SV060,A,Salvaguarda el exordio.,SAVE_DOCUMENT,f5_sv_exordio4,0,1,0,0
+SV061,A,Registra la coda final.,SAVE_DOCUMENT,f5_sv_coda3,0,1,0,0
+SV062,A,Asienta el interludio.,SAVE_DOCUMENT,f5_sv_interludio3,0,1,0,0
+SV063,A,Deja constancia de la peroración.,SAVE_DOCUMENT,f5_sv_peroracion3,0,1,0,0
+SV064,A,Preserva la adenda.,SAVE_DOCUMENT,f5_sv_adenda3,0,1,0,0
+SV065,A,Asegura el colofón.,SAVE_DOCUMENT,f5_sv_colofon3,0,1,0,0
+OP001,A,Exhibe el altri.,OPEN_DOCUMENT,f5_op_altri,0,0,0,0
+OP002,A,Presenta el otrosí.,OPEN_DOCUMENT,f5_op_otrosi,0,0,0,0
+OP003,A,Despliega la foja.,OPEN_DOCUMENT,f5_op_foja,0,0,0,0
+OP004,A,Proyecta el legajo.,OPEN_DOCUMENT,f5_op_legajo,0,0,0,0
+OP005,A,Muestra la minuta.,OPEN_DOCUMENT,f5_op_minuta,0,0,0,0
+OP006,A,Desempolva el oficio.,OPEN_DOCUMENT,f5_op_oficio,0,0,0,0
+OP007,A,Reabre la circular.,OPEN_DOCUMENT,f5_op_circular,0,0,0,0
+OP008,A,Recobra el boletín.,OPEN_DOCUMENT,f5_op_boletin,0,0,0,0
+OP009,A,Retoma la gaceta.,OPEN_DOCUMENT,f5_op_gaceta,0,0,0,0
+OP010,A,Vuelve a abrir el diario.,OPEN_DOCUMENT,f5_op_diario,0,0,0,0
+OP011,A,Recupera el semanario.,OPEN_DOCUMENT,f5_op_semanario,0,0,0,0
+OP012,A,Carga el anuario.,OPEN_DOCUMENT,f5_op_anuario,0,0,0,0
+OP013,A,Jala el prontuario.,OPEN_DOCUMENT,f5_op_prontuario,0,0,0,0
+OP014,A,Trae el memorial.,OPEN_DOCUMENT,f5_op_memorial,0,0,0,0
+OP015,A,Desarchiva el expediente.,OPEN_DOCUMENT,f5_op_expediente,0,0,0,0
+OP016,A,Exhibe el altri nuevo.,OPEN_DOCUMENT,f5_op_altri2,0,0,0,0
+OP017,A,Presenta el otrosí viejo.,OPEN_DOCUMENT,f5_op_otrosi2,0,0,0,0
+OP018,A,Despliega la foja rota.,OPEN_DOCUMENT,f5_op_foja2,0,0,0,0
+OP019,A,Proyecta el legajo madre.,OPEN_DOCUMENT,f5_op_legajo2,0,0,0,0
+OP020,A,Muestra la minuta final.,OPEN_DOCUMENT,f5_op_minuta2,0,0,0,0
+OP021,A,Desempolva el oficio base.,OPEN_DOCUMENT,f5_op_oficio2,0,0,0,0
+OP022,A,Reabre la circular vieja.,OPEN_DOCUMENT,f5_op_circular2,0,0,0,0
+OP023,A,Recobra el boletín extra.,OPEN_DOCUMENT,f5_op_boletin2,0,0,0,0
+OP024,A,Retoma la gaceta nueva.,OPEN_DOCUMENT,f5_op_gaceta2,0,0,0,0
+OP025,A,Vuelve a abrir el diario actual.,OPEN_DOCUMENT,f5_op_diario2,0,0,0,0
+OP026,A,Recupera el considerando.,OPEN_DOCUMENT,f5_op_considerando,0,1,0,0
+OP027,A,Carga el resolutivo nuevo.,OPEN_DOCUMENT,f5_op_resolutivo,0,1,0,0
+OP028,A,Jala el visto.,OPEN_DOCUMENT,f5_op_visto,0,1,0,0
+OP029,A,Trae el resultando.,OPEN_DOCUMENT,f5_op_resultando,0,1,0,0
+OP030,A,Muestra el exordio.,OPEN_DOCUMENT,f5_op_exordio,0,1,0,0
+OP031,A,Desempolva la coda.,OPEN_DOCUMENT,f5_op_coda,0,1,0,0
+OP032,A,Reabre el interludio.,OPEN_DOCUMENT,f5_op_interludio,0,1,0,0
+OP033,A,Recobra la peroración.,OPEN_DOCUMENT,f5_op_peroracion,0,1,0,0
+OP034,A,Retoma la adenda.,OPEN_DOCUMENT,f5_op_adenda,0,1,0,0
+OP035,A,Vuelve a abrir el colofón.,OPEN_DOCUMENT,f5_op_colofon,0,1,0,0
+OP036,A,Recupera el epígrafe.,OPEN_DOCUMENT,f5_op_epigrafe,0,1,0,0
+OP037,A,Carga la fe de erratas.,OPEN_DOCUMENT,f5_op_fe,0,1,0,0
+OP038,A,Jala el visto bueno.,OPEN_DOCUMENT,f5_op_vistobueno,0,1,0,0
+OP039,A,Trae el resultando.,OPEN_DOCUMENT,f5_op_resultando2,0,1,0,0
+OP040,A,Muestra el exordio.,OPEN_DOCUMENT,f5_op_exordio2,0,1,0,0
+OP041,A,Desempolva la coda.,OPEN_DOCUMENT,f5_op_coda2,0,1,0,0
+OP042,A,Reabre el interludio.,OPEN_DOCUMENT,f5_op_interludio2,0,1,0,0
+OP043,A,Recobra la peroración.,OPEN_DOCUMENT,f5_op_peroracion2,0,1,0,0
+OP044,A,Retoma la adenda.,OPEN_DOCUMENT,f5_op_adenda2,0,1,0,0
+OP045,A,Vuelve a abrir el colofón.,OPEN_DOCUMENT,f5_op_colofon2,0,1,0,0
+OP046,A,Recupera el epígrafe.,OPEN_DOCUMENT,f5_op_epigrafe2,0,1,0,0
+OP047,A,Carga la fe.,OPEN_DOCUMENT,f5_op_fe2,0,1,0,0
+OP048,A,Ábrelo ya.,OPEN_DOCUMENT,f5_op_ya,0,0,0,1
+OP049,A,Muéstralo en pantalla.,OPEN_DOCUMENT,f5_op_muestra,0,0,0,1
+OP050,A,Tráelo impreso.,OPEN_DOCUMENT,f5_op_trae,0,0,0,1
+OP051,A,Jálalo del correo.,OPEN_DOCUMENT,f5_op_jala,0,0,0,1
+OP052,A,Desarchiva ya.,OPEN_DOCUMENT,f5_op_desarchiva,0,0,0,1
+OP053,A,Recupera el considerando.,OPEN_DOCUMENT,f5_op_considerando2,0,1,0,0
+OP054,A,Carga el resolutivo viejo.,OPEN_DOCUMENT,f5_op_resolutivo2,0,1,0,0
+OP055,A,Jala el visto.,OPEN_DOCUMENT,f5_op_visto2,0,1,0,0
+OP056,A,Trae el resultando.,OPEN_DOCUMENT,f5_op_resultando3,0,1,0,0
+OP057,A,Muestra el exordio.,OPEN_DOCUMENT,f5_op_exordio3,0,1,0,0
+OP058,A,Desempolva la coda.,OPEN_DOCUMENT,f5_op_coda3,0,1,0,0
+OP059,A,Reabre el interludio.,OPEN_DOCUMENT,f5_op_interludio3,0,1,0,0
+OP060,A,Recobra la peroración.,OPEN_DOCUMENT,f5_op_peroracion3,0,1,0,0
+OP061,A,Retoma la adenda.,OPEN_DOCUMENT,f5_op_adenda3,0,1,0,0
+OP062,A,Vuelve a abrir el colofón.,OPEN_DOCUMENT,f5_op_colofon3,0,1,0,0
+OP063,A,Recupera el epígrafe.,OPEN_DOCUMENT,f5_op_epigrafe3,0,1,0,0
+OP064,A,Carga la fe.,OPEN_DOCUMENT,f5_op_fe3,0,1,0,0
+OP065,A,Recupera el visto bueno.,OPEN_DOCUMENT,f5_op_vistobueno2,0,1,0,0
+EX001,A,Emite el altri en pdf.,EXPORT_DOCUMENT,f5_ex_altri,0,0,0,0
+EX002,A,Produce el otrosí final.,EXPORT_DOCUMENT,f5_ex_otrosi,0,0,0,0
+EX003,A,Rinde la foja en txt.,EXPORT_DOCUMENT,f5_ex_foja,0,0,0,0
+EX004,A,Saca el legajo en Word.,EXPORT_DOCUMENT,f5_ex_legajo,0,0,0,0
+EX005,A,Baja la minuta en pdf.,EXPORT_DOCUMENT,f5_ex_minuta,0,0,0,0
+EX006,A,Genera el oficio enriquecido.,EXPORT_DOCUMENT,f5_ex_oficio,0,0,0,0
+EX007,A,Vierte la circular a texto.,EXPORT_DOCUMENT,f5_ex_circular,0,0,0,0
+EX008,A,Migra el boletín a Word.,EXPORT_DOCUMENT,f5_ex_boletin,0,0,0,0
+EX009,A,Funde la gaceta en pdf.,EXPORT_DOCUMENT,f5_ex_gaceta,0,0,0,0
+EX010,A,Extrae el diario en texto.,EXPORT_DOCUMENT,f5_ex_diario,0,0,0,0
+EX011,A,Publica el semanario rico.,EXPORT_DOCUMENT,f5_ex_semanario,0,0,0,0
+EX012,A,Entrega el anuario final.,EXPORT_DOCUMENT,f5_ex_anuario,0,0,0,0
+EX013,A,Rinde el prontuario en pdf.,EXPORT_DOCUMENT,f5_ex_prontuario,0,0,0,0
+EX014,A,Saca el memorial en texto.,EXPORT_DOCUMENT,f5_ex_memorial,0,0,0,0
+EX015,A,Baja el expediente en Word.,EXPORT_DOCUMENT,f5_ex_expediente,0,0,0,0
+EX016,A,Emite el altri nuevo en pdf.,EXPORT_DOCUMENT,f5_ex_altri2,0,0,0,0
+EX017,A,Produce el otrosí viejo final.,EXPORT_DOCUMENT,f5_ex_otrosi2,0,0,0,0
+EX018,A,Rinde la foja rota en texto.,EXPORT_DOCUMENT,f5_ex_foja2,0,0,0,0
+EX019,A,Saca el legajo madre en Word.,EXPORT_DOCUMENT,f5_ex_legajo2,0,0,0,0
+EX020,A,Baja la minuta final en pdf.,EXPORT_DOCUMENT,f5_ex_minuta2,0,0,0,0
+EX021,A,Genera el oficio base enriquecido.,EXPORT_DOCUMENT,f5_ex_oficio2,0,0,0,0
+EX022,A,Vierte la circular vieja a texto.,EXPORT_DOCUMENT,f5_ex_circular2,0,0,0,0
+EX023,A,Migra el boletín extra a Word.,EXPORT_DOCUMENT,f5_ex_boletin2,0,0,0,0
+EX024,A,Funde la gaceta nueva en pdf.,EXPORT_DOCUMENT,f5_ex_gaceta2,0,0,0,0
+EX025,A,Extrae el diario actual en texto.,EXPORT_DOCUMENT,f5_ex_diario2,0,0,0,0
+EX026,A,Guarda copia plana del considerando.,EXPORT_DOCUMENT,f5_ex_considerando,0,1,0,0
+EX027,A,Archiva copia Word del resolutivo.,EXPORT_DOCUMENT,f5_ex_resolutivo,0,1,0,0
+EX028,A,Imprime en pdf virtual el visto.,EXPORT_DOCUMENT,f5_ex_visto,0,1,0,0
+EX029,A,Convierte y guarda el resultando.,EXPORT_DOCUMENT,f5_ex_resultando,0,1,0,0
+EX030,A,Respalda en formato pdf el exordio.,EXPORT_DOCUMENT,f5_ex_exordio,0,1,0,0
+EX031,A,Emite el considerando en pdf.,EXPORT_DOCUMENT,f5_ex_considerando2,0,1,0,0
+EX032,A,Produce el resolutivo final.,EXPORT_DOCUMENT,f5_ex_resolutivo2,0,1,0,0
+EX033,A,Rinde el visto en texto.,EXPORT_DOCUMENT,f5_ex_visto2,0,1,0,0
+EX034,A,Saca el resultando en Word.,EXPORT_DOCUMENT,f5_ex_resultando2,0,1,0,0
+EX035,A,Baja el exordio en pdf.,EXPORT_DOCUMENT,f5_ex_exordio2,0,1,0,0
+EX036,A,Genera la coda enriquecida.,EXPORT_DOCUMENT,f5_ex_coda2,0,1,0,0
+EX037,A,Vierte el interludio a texto.,EXPORT_DOCUMENT,f5_ex_interludio2,0,1,0,0
+EX038,A,Migra la peroración a Word.,EXPORT_DOCUMENT,f5_ex_peroracion2,0,1,0,0
+EX039,A,Funde la adenda en pdf.,EXPORT_DOCUMENT,f5_ex_adenda2,0,1,0,0
+EX040,A,Extrae el colofón en texto.,EXPORT_DOCUMENT,f5_ex_colofon2,0,1,0,0
+EX041,A,Publica el epígrafe rico.,EXPORT_DOCUMENT,f5_ex_epigrafe2,0,1,0,0
+EX042,A,Entrega la fe final.,EXPORT_DOCUMENT,f5_ex_fe2,0,1,0,0
+EX043,A,Rinde el visto bueno en pdf.,EXPORT_DOCUMENT,f5_ex_vistobueno2,0,1,0,0
+EX044,A,Saca el resultando en Word.,EXPORT_DOCUMENT,f5_ex_resultando3,0,1,0,0
+EX045,A,Baja el exordio en Word.,EXPORT_DOCUMENT,f5_ex_exordio3,0,1,0,0
+EX046,A,Emite la coda en pdf.,EXPORT_DOCUMENT,f5_ex_coda3,0,1,0,0
+EX047,A,Produce el interludio final.,EXPORT_DOCUMENT,f5_ex_interludio3,0,1,0,0
+EX048,A,Rinde la peroración en texto.,EXPORT_DOCUMENT,f5_ex_peroracion3,0,1,0,0
+EX049,A,Saca la adenda en Word.,EXPORT_DOCUMENT,f5_ex_adenda3,0,1,0,0
+EX050,A,Baja el colofón en pdf.,EXPORT_DOCUMENT,f5_ex_colofon3,0,1,0,0
+EX051,A,Genera el epígrafe enriquecido.,EXPORT_DOCUMENT,f5_ex_epigrafe3,0,1,0,0
+EX052,A,Vierte la fe a texto.,EXPORT_DOCUMENT,f5_ex_fe3,0,1,0,0
+EX053,A,Migra el visto a Word.,EXPORT_DOCUMENT,f5_ex_visto4,0,1,0,0
+EX054,A,Funde el resultando en pdf.,EXPORT_DOCUMENT,f5_ex_resultando4,0,1,0,0
+EX055,A,Extrae el exordio en texto.,EXPORT_DOCUMENT,f5_ex_exordio4,0,1,0,0
+EX056,A,Guarda como pdf ya.,EXPORT_DOCUMENT,f5_ex_ya,0,0,0,1
+EX057,A,Exporta ahora.,EXPORT_DOCUMENT,f5_ex_ahora,0,0,0,1
+EX058,A,Saca copia.,EXPORT_DOCUMENT,f5_ex_copia,0,0,0,1
+EX059,A,Rinde final.,EXPORT_DOCUMENT,f5_ex_final,0,0,0,1
+EX060,A,Baja el tanto.,EXPORT_DOCUMENT,f5_ex_tanto,0,0,0,1
+EX061,A,Emite el considerando en pdf.,EXPORT_DOCUMENT,f5_ex_considerando3,0,1,0,0
+EX062,A,Produce el resolutivo final.,EXPORT_DOCUMENT,f5_ex_resolutivo3,0,1,0,0
+EX063,A,Rinde el visto en texto.,EXPORT_DOCUMENT,f5_ex_visto3,0,1,0,0
+EX064,A,Saca el resultando en Word.,EXPORT_DOCUMENT,f5_ex_resultando4,0,1,0,0
+EX065,A,Baja el exordio en pdf.,EXPORT_DOCUMENT,f5_ex_exordio4,0,1,0,0

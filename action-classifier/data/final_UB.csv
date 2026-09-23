@@ -1,0 +1,471 @@
+id,group,text,expected,family_id,uns,conf,para,short
+U001,U,Rúbrica el pliego.,UNSUPPORTED,f5_u_pliego,1,0,0,0
+U002,U,Timbra el comprobante.,UNSUPPORTED,f5_u_timbra,1,0,0,0
+U003,U,Notaría el poder.,UNSUPPORTED,f5_u_notaria,1,0,0,0
+U004,U,Manda flores hoy.,UNSUPPORTED,f5_u_flores,1,0,0,0
+U005,U,Pide dos lugares.,UNSUPPORTED,f5_u_lugares,1,0,0,0
+U006,U,Reserva el salón.,UNSUPPORTED,f5_u_salon,1,0,0,0
+U007,U,Compra los boletos.,UNSUPPORTED,f5_u_boletos,1,0,0,0
+U008,U,Renta la camioneta.,UNSUPPORTED,f5_u_camioneta,1,0,0,0
+U009,U,Llama al cerrajero.,UNSUPPORTED,f5_u_cerrajero,1,0,0,0
+U010,U,Riega la huerta.,UNSUPPORTED,f5_u_huerto,1,0,0,0
+U011,U,Saca cita médica.,UNSUPPORTED,f5_u_cita,1,0,0,0
+U012,U,Tiende la ropa limpia.,UNSUPPORTED,f5_u_ropa,1,0,0,0
+U013,U,Barre el local.,UNSUPPORTED,f5_u_local,1,0,0,0
+U014,U,Lava la fachada.,UNSUPPORTED,f5_u_fachada,1,0,0,0
+U015,U,Poda el rosal.,UNSUPPORTED,f5_u_arbol,1,0,0,0
+U016,U,Pinta la barda.,UNSUPPORTED,f5_u_reja,1,0,0,0
+U017,U,Arregla la chapa.,UNSUPPORTED,f5_u_chapa,1,0,0,0
+U018,U,Cambia el tanque.,UNSUPPORTED,f5_u_tanque,1,0,0,0
+U019,U,Lleva el auto al servicio.,UNSUPPORTED,f5_u_servicio,1,0,0,0
+U020,U,Paga el predial.,UNSUPPORTED,f5_u_predial,1,0,0,0
+U021,U,Deposita el cheque.,UNSUPPORTED,f5_u_cheque,1,0,0,0
+U022,U,Retira la lana.,UNSUPPORTED,f5_u_lana,1,0,0,0
+U023,U,Transfiere hoy mismo.,UNSUPPORTED,f5_u_transfiere,1,0,0,0
+U024,U,Firma en blanco.,UNSUPPORTED,f5_u_blanco,1,0,0,0
+U025,U,Endosa al portador.,UNSUPPORTED,f5_u_portador,1,0,0,0
+U026,U,Hipoteca el local.,UNSUPPORTED,f5_u_hipoteca,1,0,0,0
+U027,U,Vende la parcela.,UNSUPPORTED,f5_u_parcela,1,0,0,0
+U028,U,Compra acciones.,UNSUPPORTED,f5_u_acciones,1,0,0,0
+U029,U,Invierte en oro.,UNSUPPORTED,f5_u_oro,1,0,0,0
+U030,U,Declara el ISR.,UNSUPPORTED,f5_u_isr,1,0,0,0
+U031,U,Factura sin IVA.,UNSUPPORTED,f5_u_iva,1,0,0,0
+U032,U,Cotiza el flete.,UNSUPPORTED,f5_u_flete,1,0,0,0
+U033,U,Contrata velador.,UNSUPPORTED,f5_u_velador,1,0,0,0
+U034,U,Cancela el viaje.,UNSUPPORTED,f5_u_viaje,1,0,0,0
+U035,U,Reporta la fuga.,UNSUPPORTED,f5_u_fuga,1,0,0,0
+U036,U,Denuncia el robo.,UNSUPPORTED,f5_u_denuncia,1,0,0,0
+U037,U,Demanda el pago.,UNSUPPORTED,f5_u_demanda,1,0,0,0
+U038,U,Apela el fallo.,UNSUPPORTED,f5_u_fallo,1,0,0,0
+U039,U,Testifica el jueves.,UNSUPPORTED,f5_u_jueves,1,0,0,0
+U040,U,Soborna al cliente.,UNSUPPORTED,f5_u_cliente,1,0,0,0
+U041,U,Extorsiona al deudor.,UNSUPPORTED,f5_u_deudor,1,0,0,0
+U042,U,Hackea el wifi.,UNSUPPORTED,f5_u_wifi,1,0,0,0
+U043,U,Crackea la clave.,UNSUPPORTED,f5_u_clave,1,0,0,0
+U044,U,Minéa ether.,UNSUPPORTED,f5_u_ether,1,0,0,0
+U045,U,Ejecuta el backup.,UNSUPPORTED,f5_u_backup,1,0,0,0
+U046,U,Compila de nuevo.,UNSUPPORTED,f5_u_compila,1,0,0,0
+U047,U,Despliega el viernes.,UNSUPPORTED,f5_u_viernes,1,0,0,0
+U048,U,Reinicia el modem.,UNSUPPORTED,f5_u_modem,1,0,0,0
+U049,U,Formatea la USB.,UNSUPPORTED,f5_u_usb,1,0,0,0
+U050,U,Particiona el disco.,UNSUPPORTED,f5_u_disco,1,0,0,0
+U051,U,Instala la impresora.,UNSUPPORTED,f5_u_impresora,1,0,0,0
+U052,U,Configura el correo.,UNSUPPORTED,f5_u_correo2,1,0,0,0
+U053,U,Cablea el switch.,UNSUPPORTED,f5_u_switch,1,0,0,0
+U054,U,Suelda el cable.,UNSUPPORTED,f5_u_cable,1,0,0,0
+U055,U,Taladra la repisa.,UNSUPPORTED,f5_u_repisa,1,0,0,0
+U056,U,Lija el marco.,UNSUPPORTED,f5_u_marco,1,0,0,0
+U057,U,Barniza el closet.,UNSUPPORTED,f5_u_closet,1,0,0,0
+U058,U,Tapiza la silla.,UNSUPPORTED,f5_u_silla,1,0,0,0
+U059,U,Repara el refri.,UNSUPPORTED,f5_u_refri,1,0,0,0
+U060,U,Destapa el drenaje.,UNSUPPORTED,f5_u_drenaje,1,0,0,0
+U061,U,Impermeabiliza el techo.,UNSUPPORTED,f5_u_techo,1,0,0,0
+U062,U,Fumiga el jardín.,UNSUPPORTED,f5_u_jardin,1,0,0,0
+U063,U,Captura la iguana.,UNSUPPORTED,f5_u_iguana,1,0,0,0
+U064,U,Adopta otro gato.,UNSUPPORTED,f5_u_gato,1,0,0,0
+U065,U,Vacuna al perro.,UNSUPPORTED,f5_u_perro,1,0,0,0
+U066,U,Baña al perico.,UNSUPPORTED,f5_u_perico,1,0,0,0
+U067,U,Alimenta tortugas.,UNSUPPORTED,f5_u_tortugas,1,0,0,0
+U068,U,Riega el jardín hoy.,UNSUPPORTED,f5_u_pasto,1,0,0,0
+U069,U,Trasplanta el limón.,UNSUPPORTED,f5_u_limon,1,0,0,0
+U070,U,Abona las rosas.,UNSUPPORTED,f5_u_rosas,1,0,0,0
+U071,U,Cosecha mangos.,UNSUPPORTED,f5_u_mangos,1,0,0,0
+U072,U,Ordeña al alba.,UNSUPPORTED,f5_u_temprano,1,0,0,0
+U073,U,Arrea las chivas.,UNSUPPORTED,f5_u_chivas,1,0,0,0
+U074,U,Planta el pino.,UNSUPPORTED,f5_u_pino,1,0,0,0
+U075,U,Riega milpa.,UNSUPPORTED,f5_u_milpa,1,0,0,0
+U076,U,Cosecha el frijol.,UNSUPPORTED,f5_u_frijol,1,0,0,0
+U077,U,Guarda la cosecha.,UNSUPPORTED,f5_u_cosecha,1,0,0,0
+U078,U,Limpia el establo.,UNSUPPORTED,f5_u_establo,1,0,0,0
+U079,U,Repara el tractor.,UNSUPPORTED,f5_u_tractor,1,0,0,0
+U080,U,Carga el camión.,UNSUPPORTED,f5_u_camion,1,0,0,0
+U081,U,Borda el mantel.,UNSUPPORTED,f5_u_mantel,1,0,0,0
+U082,U,Teje la bufanda.,UNSUPPORTED,f5_u_bufanda,1,0,0,0
+U083,U,Cose el dobladillo.,UNSUPPORTED,f5_u_dobladillo,1,0,0,0
+U084,U,Zurce el calcetín.,UNSUPPORTED,f5_u_calcetin,1,0,0,0
+U085,U,Remienda el pantalón.,UNSUPPORTED,f5_u_pantalon,1,0,0,0
+U086,U,Hornea las conchas.,UNSUPPORTED,f5_u_conchas,1,0,0,0
+U087,U,Bate el merengue.,UNSUPPORTED,f5_u_merengue,1,0,0,0
+U088,U,Decora el pastel.,UNSUPPORTED,f5_u_pastel,1,0,0,0
+U089,U,Enfría la gelatina.,UNSUPPORTED,f5_u_gelatina,1,0,0,0
+U090,U,Derrite la manteca.,UNSUPPORTED,f5_u_manteca,1,0,0,0
+U091,U,Monta la crema.,UNSUPPORTED,f5_u_crema,1,0,0,0
+U092,U,Espolvorea azúcar.,UNSUPPORTED,f5_u_azucar,1,0,0,0
+U093,U,Ralla el coco.,UNSUPPORTED,f5_u_coco,1,0,0,0
+U094,U,Exprime limones.,UNSUPPORTED,f5_u_limones,1,0,0,0
+U095,U,Licua la papaya.,UNSUPPORTED,f5_u_papaya,1,0,0,0
+U096,U,Cuela el atole.,UNSUPPORTED,f5_u_atole,1,0,0,0
+U097,U,Sirve caliente.,UNSUPPORTED,f5_u_caliente,1,0,0,0
+U098,U,Calienta la birria.,UNSUPPORTED,f5_u_birria,1,0,0,0
+U099,U,Recalienta el pozole.,UNSUPPORTED,f5_u_pozole,1,0,0,0
+U100,U,Tapa el pozole.,UNSUPPORTED,f5_u_cazuela,1,0,0,0
+U101,U,Destapa la cazuela.,UNSUPPORTED,f5_u_olla,1,0,0,0
+U102,U,Prueba el caldo.,UNSUPPORTED,f5_u_caldo,1,0,0,0
+U103,U,Sazona con sal.,UNSUPPORTED,f5_u_sal,1,0,0,0
+U104,U,Apaga la estufa.,UNSUPPORTED,f5_u_estufa,1,0,0,0
+U105,U,Deja hervir.,UNSUPPORTED,f5_u_hervir,1,0,0,0
+U106,U,Memoriza el poema.,UNSUPPORTED,f5_u_poema,1,0,0,0
+U107,U,Ensaya la obra.,UNSUPPORTED,f5_u_obra,1,0,0,0
+U108,U,Repasa la escena.,UNSUPPORTED,f5_u_escena,1,0,0,0
+U109,U,Estudia el guion.,UNSUPPORTED,f5_u_guion,1,0,0,0
+U110,U,Practica el solo.,UNSUPPORTED,f5_u_solo,1,0,0,0
+U111,U,Prepara la clase.,UNSUPPORTED,f5_u_clase,1,0,0,0
+U112,U,Organiza el festival.,UNSUPPORTED,f5_u_festival,1,0,0,0
+U113,U,Clasifica fotos viejas.,UNSUPPORTED,f5_u_fotos,1,0,0,0
+U114,U,Ordena facturas.,UNSUPPORTED,f5_u_recibos,1,0,0,0
+U115,U,Digitaliza cintas.,UNSUPPORTED,f5_u_cintas,1,0,0,0
+U116,U,Etiqueta frascos.,UNSUPPORTED,f5_u_frascos,1,0,0,0
+U117,U,Archiva cartas.,UNSUPPORTED,f5_u_cartas,1,0,0,0
+U118,U,Responde whatsapps.,UNSUPPORTED,f5_u_whatsapps,1,0,0,0
+U119,U,Devuelve la llamada.,UNSUPPORTED,f5_u_llamada,1,0,0,0
+U120,U,Confirma el vuelo.,UNSUPPORTED,f5_u_vuelo,1,0,0,0
+U121,U,Reprograma el dentista.,UNSUPPORTED,f5_u_dentista,1,0,0,0
+U122,U,Cancela Netflix.,UNSUPPORTED,f5_u_netflix,1,0,0,0
+U123,U,Rastrea mi pedido.,UNSUPPORTED,f5_u_pedido,1,0,0,0
+U124,U,Recoge el paquete.,UNSUPPORTED,f5_u_paquete,1,0,0,0
+U125,U,Deja propina.,UNSUPPORTED,f5_u_propina,1,0,0,0
+U126,U,Firma el voucher.,UNSUPPORTED,f5_u_voucher,1,0,1,0
+U127,U,Traduce la postal.,UNSUPPORTED,f5_u_menu,1,0,1,0
+U128,U,Comparte el uber.,UNSUPPORTED,f5_u_uber,1,0,1,0
+U129,U,Imprime el pase.,UNSUPPORTED,f5_u_pase,1,0,1,0
+U130,U,Agenda el corte.,UNSUPPORTED,f5_u_corte,1,0,1,0
+U131,U,Cifra el chat.,UNSUPPORTED,f5_u_chat,1,0,1,0
+U132,U,Comprime la carpeta.,UNSUPPORTED,f5_u_video,1,0,1,0
+U133,U,Ejecuta la macro.,UNSUPPORTED,f5_u_macro,1,0,1,0
+U134,U,Convierte el video.,UNSUPPORTED,f5_u_audio,1,0,1,0
+U135,U,Envía la foto.,UNSUPPORTED,f5_u_foto,1,0,1,0
+U136,U,Sube la historia.,UNSUPPORTED,f5_u_historia,1,0,1,0
+U137,U,Baja el episodio.,UNSUPPORTED,f5_u_episodio,1,0,1,0
+U138,U,Actualiza la app.,UNSUPPORTED,f5_u_app,1,0,1,0
+U139,U,Cambia tu foto.,UNSUPPORTED,f5_u_tufoto,1,0,1,0
+U140,U,Silencia el chat.,UNSUPPORTED,f5_u_silencia,1,0,1,0
+U141,U,Fija el aviso.,UNSUPPORTED,f5_u_aviso,1,0,1,0
+U142,U,Reenvía el sticker.,UNSUPPORTED,f5_u_sticker,1,0,1,0
+U143,U,Guarda el meme.,UNSUPPORTED,f5_u_meme,1,0,1,0
+U144,U,Crea el chat.,UNSUPPORTED,f5_u_grupo,1,0,1,0
+U145,U,Elimina el mensaje.,UNSUPPORTED,f5_u_mensaje,1,0,1,0
+U146,U,Bloquea el número.,UNSUPPORTED,f5_u_numero,1,0,1,0
+U147,U,Reporta el spam.,UNSUPPORTED,f5_u_spam,1,0,1,0
+U148,U,Desinstala el juego.,UNSUPPORTED,f5_u_juego,1,0,1,0
+U149,U,Califica la app.,UNSUPPORTED,f5_u_califica,1,0,1,0
+U150,U,Recarga saldo.,UNSUPPORTED,f5_u_saldo,1,0,1,0
+U151,U,Pide un uber.,UNSUPPORTED,f5_u_taxi,1,0,1,0
+U152,U,Ordena helado.,UNSUPPORTED,f5_u_helado,1,0,1,0
+U153,U,Reserva cine.,UNSUPPORTED,f5_u_cine,1,0,1,0
+U154,U,Compra pan.,UNSUPPORTED,f5_u_pan,1,0,1,0
+U155,U,Pide las cuentas.,UNSUPPORTED,f5_u_cuentas,1,0,1,0
+U156,U,Divide la cuenta.,UNSUPPORTED,f5_u_divide,1,0,1,0
+U157,U,Propón brindis.,UNSUPPORTED,f5_u_brindis,1,0,1,0
+U158,U,Canta las mañanitas.,UNSUPPORTED,f5_u_mananitas,1,0,1,0
+U159,U,Sopla las velas.,UNSUPPORTED,f5_u_velas,1,0,1,0
+U160,U,Parte el pastel.,UNSUPPORTED,f5_u_pastel2,1,0,1,0
+U161,U,Reparte dulces.,UNSUPPORTED,f5_u_dulces,1,0,1,0
+U162,U,Rompe la piñata.,UNSUPPORTED,f5_u_pinata,1,0,1,0
+U163,U,Dale al burro.,UNSUPPORTED,f5_u_burro,1,0,1,0
+U164,U,Juega lotería.,UNSUPPORTED,f5_u_loteria,1,0,1,0
+U165,U,Canta bingo.,UNSUPPORTED,f5_u_bingo,1,0,1,0
+U166,U,Baila el vals.,UNSUPPORTED,f5_u_vals,1,0,1,0
+U167,U,Brinda por ellos.,UNSUPPORTED,f5_u_ellos,1,0,1,0
+U168,U,Abraza al quinceañero.,UNSUPPORTED,f5_u_quince,1,0,1,0
+U169,U,Felicita a la novia.,UNSUPPORTED,f5_u_novia,1,0,1,0
+U170,U,Lanza arroz.,UNSUPPORTED,f5_u_arroz,1,0,1,0
+U171,U,Riega flores.,UNSUPPORTED,f5_u_flores,1,0,1,0
+U172,U,Barre confeti.,UNSUPPORTED,f5_u_confeti,1,0,1,0
+U173,U,Recoge serpentinas.,UNSUPPORTED,f5_u_serpentinas,1,0,1,0
+U174,U,Guarda recuerdos.,UNSUPPORTED,f5_u_recuerdos,1,0,1,0
+U175,U,Imprime fotos.,UNSUPPORTED,f5_u_fotosfiesta,1,0,1,0
+U176,U,Comparte el álbum.,UNSUPPORTED,f5_u_album,1,0,1,0
+U177,U,Sube el video.,UNSUPPORTED,f5_u_videofiesta,1,0,1,0
+U178,U,Etiqueta a todos.,UNSUPPORTED,f5_u_todos,1,0,1,0
+U179,U,Da like.,UNSUPPORTED,f5_u_like,1,0,1,0
+U180,U,Comenta bonito.,UNSUPPORTED,f5_u_bonito,1,0,1,0
+U181,U,Firma la cartulina.,UNSUPPORTED,f5_u_cartulina,1,0,1,0
+U182,U,Traduce la tarjeta.,UNSUPPORTED,f5_u_tarjeta,1,0,1,0
+U183,U,Envuelve el regalo.,UNSUPPORTED,f5_u_regalo,1,0,1,0
+U184,U,Moña la caja.,UNSUPPORTED,f5_u_caja,1,0,1,0
+U185,U,Esconde el regalo.,UNSUPPORTED,f5_u_esconde,1,0,1,0
+U186,U,Sorprende al cumpleañero.,UNSUPPORTED,f5_u_cumple,1,0,1,0
+U187,U,Apaga las velitas.,UNSUPPORTED,f5_u_velitas,1,0,1,0
+U188,U,Pide un deseo.,UNSUPPORTED,f5_u_deseo,1,0,1,0
+U189,U,Muerde el pastel.,UNSUPPORTED,f5_u_muerde,1,0,1,0
+U190,U,Embarra al festejado.,UNSUPPORTED,f5_u_festejado,1,0,1,0
+U191,U,Limpia el merengue.,UNSUPPORTED,f5_u_merengue,1,0,1,0
+U192,U,Barre el salón.,UNSUPPORTED,f5_u_salon,1,0,1,0
+U193,U,Recoge sillas.,UNSUPPORTED,f5_u_sillas,1,0,1,0
+U194,U,Dobla manteles.,UNSUPPORTED,f5_u_manteles,1,0,1,0
+U195,U,Guarda trastes.,UNSUPPORTED,f5_u_trastes,1,0,1,0
+U196,U,Lava ollas.,UNSUPPORTED,f5_u_ollas,1,0,1,0
+U197,U,Seca vasos.,UNSUPPORTED,f5_u_vasos,1,0,1,0
+U198,U,Acomoda sillas.,UNSUPPORTED,f5_u_sillas2,1,0,1,0
+U199,U,Apaga luces.,UNSUPPORTED,f5_u_luces,1,0,1,0
+U200,U,Cierra el local.,UNSUPPORTED,f5_u_local,1,0,1,0
+U201,U,Pon alarma.,UNSUPPORTED,f5_u_alarma,1,0,1,0
+U202,U,Llama un taxi.,UNSUPPORTED,f5_u_taxi2,1,0,1,0
+U203,U,Camina a casa.,UNSUPPORTED,f5_u_casa,1,0,1,0
+U204,U,Duerme bien.,UNSUPPORTED,f5_u_duerme,1,0,1,0
+U205,U,Descansa mañana.,UNSUPPORTED,f5_u_manana,1,0,1,0
+U206,U,Sueña bonito.,UNSUPPORTED,f5_u_bonito2,1,0,1,0
+U207,U,Despierta temprano.,UNSUPPORTED,f5_u_temprano,1,0,1,0
+U208,U,Desayuna fuerte.,UNSUPPORTED,f5_u_fuerte,1,0,1,0
+U209,U,Arranca el día.,UNSUPPORTED,f5_u_dia,1,0,1,0
+U210,U,Échale ganas hoy.,UNSUPPORTED,f5_u_hoy,1,0,1,0
+N001,N,El parte avisa granizo.,NO_ACTION,f5_n_parte,0,0,0,0
+N002,N,La cartelera cambia jueves.,NO_ACTION,f5_n_cartelera,0,0,0,0
+N003,N,El mercado subió hoy.,NO_ACTION,f5_n_mercado,0,0,0,0
+N004,N,La liga pausa en fecha FIFA.,NO_ACTION,f5_n_liga,0,0,0,0
+N005,N,El censo inicia lunes.,NO_ACTION,f5_n_censo,0,0,0,0
+N006,N,La feria dura una semana.,NO_ACTION,f5_n_feria,0,0,0,0
+N007,N,El desfile será corto.,NO_ACTION,f5_n_desfile,0,0,0,0
+N008,N,La verbena abre tarde.,NO_ACTION,f5_n_verbena,0,0,0,0
+N009,N,El concierto se llenó.,NO_ACTION,f5_n_concierto,0,0,0,0
+N010,N,La obra sigue en pie.,NO_ACTION,f5_n_obra,0,0,0,0
+N011,N,El museo presta piezas.,NO_ACTION,f5_n_museo,0,0,0,0
+N012,N,El curso quedó lleno.,NO_ACTION,f5_n_curso,0,0,0,0
+N013,N,La beca paga transporte.,NO_ACTION,f5_n_beca,0,0,0,0
+N014,N,El taller huele a madera.,NO_ACTION,f5_n_taller,0,0,0,0
+N015,N,El diplomado es caro.,NO_ACTION,f5_n_diplomado,0,0,0,0
+N016,N,Traigo prisa siempre.,NO_ACTION,f5_n_prisa,0,0,0,0
+N017,N,Ando molido hoy.,NO_ACTION,f5_n_molido,0,0,0,0
+N018,N,Hace un vientazo.,NO_ACTION,f5_n_vientazo,0,0,0,0
+N019,N,Ya merito llueve.,NO_ACTION,f5_n_merito,0,0,0,0
+N020,N,Mañana hay puente.,NO_ACTION,f5_n_puente,0,0,0,0
+N021,N,El camión ya pasó.,NO_ACTION,f5_n_camion,0,0,0,0
+N022,N,La fila no avanza.,NO_ACTION,f5_n_fila,0,0,0,0
+N023,N,El trámite tardó horas.,NO_ACTION,f5_n_tramite,0,0,0,0
+N024,N,La cita se movió sola.,NO_ACTION,f5_n_cita,0,0,0,0
+N025,N,El doctor no vino.,NO_ACTION,f5_n_doctor,0,0,0,0
+N026,N,La rosca partió récord.,NO_ACTION,f5_n_rosca,0,0,0,0
+N027,N,El encierro duró poco.,NO_ACTION,f5_n_encierro,0,0,0,0
+N028,N,La verbena sigue viva.,NO_ACTION,f5_n_verbena2,0,0,0,0
+N029,N,El baile prendió tarde.,NO_ACTION,f5_n_baile,0,0,0,0
+N030,N,La kermés recaudó bien.,NO_ACTION,f5_n_kermes,0,0,0,0
+N031,N,El jaripeo gustó mucho.,NO_ACTION,f5_n_jaripeo,0,0,0,0
+N032,N,La charreada puntúa al final.,NO_ACTION,f5_n_charreada,0,0,0,0
+N033,N,El coleadero levanta tierra.,NO_ACTION,f5_n_coleadero,0,0,0,0
+N034,N,La escaramuza ensaya diario.,NO_ACTION,f5_n_escaramuza,0,0,0,0
+N035,N,El mariachi cobra caro.,NO_ACTION,f5_n_mariachi,0,0,0,0
+N036,N,La banda toca recio.,NO_ACTION,f5_n_banda,0,0,0,0
+N037,N,El norteño lloró dos.,NO_ACTION,f5_n_norteno,0,0,0,0
+N038,N,La cumbia prendió sola.,NO_ACTION,f5_n_cumbia,0,0,0,0
+N039,N,El danzón ordenó filas.,NO_ACTION,f5_n_danzon,0,0,0,0
+N040,N,El mambo aceleró todo.,NO_ACTION,f5_n_mambo,0,0,0,0
+N041,N,Borrar es terapéutico a veces.,NO_ACTION,f5_n_terapeutico,0,0,0,0
+N042,N,Cambiar da miedo siempre.,NO_ACTION,f5_n_miedo,0,0,0,0
+N043,N,Guardar recuerdos multitude.,NO_ACTION,f5_n_multitude,0,0,0,0
+N044,N,Abrir regalos ilusiona.,NO_ACTION,f5_n_regalos,0,0,0,0
+N045,N,Imprimir fotos viejas conmueve.,NO_ACTION,f5_n_fotos,0,0,0,0
+N046,N,Buscar señales confunde.,NO_ACTION,f5_n_senales,0,0,0,0
+N047,N,Copiar gestos delata.,NO_ACTION,f5_n_gestos,0,0,0,0
+N048,N,Pegar gritos altera.,NO_ACTION,f5_n_gritos,0,0,0,0
+N049,N,Leer miradas cansa.,NO_ACTION,f5_n_miradas,0,0,0,0
+N050,N,Exportar tristezas alivia.,NO_ACTION,f5_n_tristezas,0,0,0,0
+N051,N,Cerrar ciclos sana.,NO_ACTION,f5_n_ciclos,0,0,0,0
+N052,N,Guardar rencores enferma.,NO_ACTION,f5_n_rencores,0,0,0,0
+N053,N,Abrir heridas duele.,NO_ACTION,f5_n_heridas,0,0,0,0
+N054,N,Imprimir versos emociona.,NO_ACTION,f5_n_versos,0,0,0,0
+N055,N,Buscar atajos ahorra.,NO_ACTION,f5_n_atajos,0,0,0,0
+N056,N,Copiar sonrisas cansa.,NO_ACTION,f5_n_sonrisas,0,0,0,0
+N057,N,Pegar chicles asquea.,NO_ACTION,f5_n_chicles,0,0,0,0
+N058,N,Leer cartas conmueve.,NO_ACTION,f5_n_cartas,0,0,0,0
+N059,N,Exportar café perfuma.,NO_ACTION,f5_n_cafe,0,0,0,0
+N060,N,Cerrar puertas tranquiliza.,NO_ACTION,f5_n_puertas,0,0,0,0
+N061,N,Guardar turnos agota.,NO_ACTION,f5_n_turnos,0,0,0,0
+N062,N,Abrir regalos indispone.,NO_ACTION,f5_n_regalos2,0,0,0,0
+N063,N,Imprimir lonas cuesta.,NO_ACTION,f5_n_lonas,0,0,0,0
+N064,N,Buscar pareja madura.,NO_ACTION,f5_n_pareja,0,0,0,0
+N065,N,Copiar firmas falsifica.,NO_ACTION,f5_n_firmas,0,0,0,0
+N066,N,Pegar pestañas tarda.,NO_ACTION,f5_n_pestanas,0,0,0,0
+N067,N,Leer horóscopos entretiene.,NO_ACTION,f5_n_horoscopos,0,0,0,0
+N068,N,Exportar miel endulza.,NO_ACTION,f5_n_miel,0,0,0,0
+N069,N,Cerrar ventas festeja.,NO_ACTION,f5_n_ventas,0,0,0,0
+N070,N,Guardar semillas preserva.,NO_ACTION,f5_n_semillas,0,0,0,0
+N071,N,Abrir cocos refresca.,NO_ACTION,f5_n_cocos,0,0,0,0
+N072,N,El tianguis abre los martes.,NO_ACTION,f5_n_tianguis,0,0,0,0
+N073,N,La lucha llena la arena.,NO_ACTION,f5_n_lucha,0,0,0,0
+N074,N,El mariachi ameniza fiestas.,NO_ACTION,f5_n_mariachi2,0,0,0,0
+N075,N,La piñata se rompió pronto.,NO_ACTION,f5_n_pinata,0,0,0,0
+N076,N,El pozole lleva aguacate.,NO_ACTION,f5_n_pozole,0,0,0,0
+N077,N,Los tamales pican rico.,NO_ACTION,f5_n_tamales,0,0,0,0
+N078,N,El café de olla huele bien.,NO_ACTION,f5_n_cafeolla,0,0,0,0
+N079,N,La tortilla no necesita nada.,NO_ACTION,f5_n_tortilla,0,0,0,0
+N080,N,El mole lleva chocolate.,NO_ACTION,f5_n_mole,0,0,0,0
+N081,N,Los alebrijes brillan.,NO_ACTION,f5_n_alebrijes,0,0,0,0
+N082,N,La talavera decora cocinas.,NO_ACTION,f5_n_talavera,0,0,0,0
+N083,N,Las trajineras flotan lento.,NO_ACTION,f5_n_trajineras,0,0,0,0
+N084,N,El zócalo se llena.,NO_ACTION,f5_n_zocalo,0,0,0,0
+N085,N,La pirámide recibe miles.,NO_ACTION,f5_n_piramide,0,0,0,0
+N086,N,El cenote refleja el cielo.,NO_ACTION,f5_n_cenote,0,0,0,0
+N087,N,Las monarcas llegan ya.,NO_ACTION,f5_n_monarcas,0,0,0,0
+N088,N,El ajolote sonríe.,NO_ACTION,f5_n_ajolote,0,0,0,0
+N089,N,El quetzal anida alto.,NO_ACTION,f5_n_quetzal,0,0,0,0
+N090,N,La vainilla perfuma todo.,NO_ACTION,f5_n_vainilla,0,0,0,0
+N091,N,El cacao da chocolate.,NO_ACTION,f5_n_cacao,0,0,0,0
+N092,N,La cochinita tarda horas.,NO_ACTION,f5_n_cochinita,0,0,0,0
+N093,N,Los chiles visten bandera.,NO_ACTION,f5_n_chiles,0,0,0,0
+N094,N,El pan de muerto huele.,NO_ACTION,f5_n_panmuerto,0,0,0,0
+N095,N,La rosca esconde muñecos.,NO_ACTION,f5_n_rosca,0,0,0,0
+N096,N,El atole calienta mañanas.,NO_ACTION,f5_n_atole,0,0,0,0
+N097,N,Los esquites llevan queso.,NO_ACTION,f5_n_esquites,0,0,0,0
+N098,N,El elote se vende entero.,NO_ACTION,f5_n_elote,0,0,0,0
+N099,N,La horchata refresca.,NO_ACTION,f5_n_horchata,0,0,0,0
+N100,N,El agua de jamaica mancha.,NO_ACTION,f5_n_jamaica,0,0,0,0
+N101,N,Los buñuelos crujen rico.,NO_ACTION,f5_n_bunuelos,0,0,0,0
+N102,N,El rompope espesa.,NO_ACTION,f5_n_rompope,0,0,0,0
+N103,N,La cajeta endulza.,NO_ACTION,f5_n_cajeta,0,0,0,0
+N104,N,El ate acompaña queso.,NO_ACTION,f5_n_ate,0,0,0,0
+N105,N,Las cocadas doran.,NO_ACTION,f5_n_cocadas,0,0,0,0
+N106,N,El jamoncillo cuaja.,NO_ACTION,f5_n_jamoncillo,0,0,0,0
+N107,N,La alegría cruje.,NO_ACTION,f5_n_alegria,0,0,0,0
+N108,N,El merengue se dora.,NO_ACTION,f5_n_merengue,0,0,0,0
+N109,N,La jericalla cuaja lento.,NO_ACTION,f5_n_jericalla,0,0,0,0
+N110,N,El flan tiembla.,NO_ACTION,f5_n_flan,0,0,0,0
+N111,N,La capirotada aprovecha pan.,NO_ACTION,f5_n_capirotada,0,0,0,0
+N112,N,Los churros gotean.,NO_ACTION,f5_n_churros,0,0,0,0
+N113,N,El chocolate espuma.,NO_ACTION,f5_n_chocolate,0,0,0,0
+N114,N,La tlayuda cruje.,NO_ACTION,f5_n_tlayuda,0,0,0,0
+N115,N,El tasajo se asa.,NO_ACTION,f5_n_tasajo,0,0,0,0
+N116,N,La barbacoa tarda noche.,NO_ACTION,f5_n_barbacoa,0,0,0,0
+N117,N,Piensa antes de opinar.,NO_ACTION,f5_n_piensa,0,0,0,0
+N118,N,Respira antes de firmar.,NO_ACTION,f5_n_respira,0,0,0,0
+N119,N,Calma antes de decidir.,NO_ACTION,f5_n_calma,0,0,0,0
+N120,N,Frena antes de borrar.,NO_ACTION,f5_n_frena,0,0,0,0
+N121,N,Aguanta antes de enviar.,NO_ACTION,f5_n_aguanta,0,0,0,0
+N122,N,Espera antes de imprimir.,NO_ACTION,f5_n_espera,0,0,0,0
+N123,N,Duda antes de aceptar.,NO_ACTION,f5_n_duda,0,0,0,0
+N124,N,Tantea antes de firmar.,NO_ACTION,f5_n_tantea,0,0,0,0
+N125,N,Lee antes de borrar.,NO_ACTION,f5_n_lee,0,0,0,0
+N126,N,Relee antes de enviar.,NO_ACTION,f5_n_relee,0,0,0,0
+N127,N,El rayo no aplica.,NO_ACTION,f5_n_thunder,0,0,0,0
+N128,N,Guarda calma siempre.,NO_ACTION,f5_n_guacalma,0,0,0,0
+N129,N,Abre debate serio.,NO_ACTION,f5_n_abredebate,0,0,0,0
+N130,N,Imprime ideas claras.,NO_ACTION,f5_n_imprideas,0,0,0,0
+N131,N,Busca tu centro.,NO_ACTION,f5_n_centro,0,0,0,0
+N132,N,Copia lo bueno.,NO_ACTION,f5_n_bueno,0,0,0,0
+N133,N,Pega risas.,NO_ACTION,f5_n_risas,0,0,0,0
+N134,N,Lee el ambiente.,NO_ACTION,f5_n_ambiente,0,0,0,0
+N135,N,Exporta vibras.,NO_ACTION,f5_n_vibras,0,0,0,0
+N136,N,Cierra ciclos con amor.,NO_ACTION,f5_n_amor,0,0,0,0
+N137,N,Guarda recuerdos bonitos.,NO_ACTION,f5_n_bonitos,0,0,0,0
+N138,N,Abre tu corazón.,NO_ACTION,f5_n_corazon,0,0,0,0
+N139,N,Imprime sonrisas.,NO_ACTION,f5_n_sonrisas,0,0,0,0
+N140,N,Busca la felicidad.,NO_ACTION,f5_n_felicidad,0,0,0,0
+N141,N,Copiar abrazos reconforta.,NO_ACTION,f5_n_abrazos,0,0,0,0
+N142,N,Pegar estampas alegra.,NO_ACTION,f5_n_estampas,0,0,0,0
+N143,N,Leer poesía eleva.,NO_ACTION,f5_n_poesia,0,0,0,0
+N144,N,Exportar bondad multiplica.,NO_ACTION,f5_n_bondad,0,0,0,0
+N145,N,Seleccionar batallas cansa.,NO_ACTION,f5_n_batallas,0,0,0,0
+N146,N,Borrar mensajes viejos libera.,NO_ACTION,f5_n_mensajes,0,0,0,0
+N147,N,Cambiar hábitos cuesta.,NO_ACTION,f5_n_habitos,0,0,0,0
+N148,N,Guardar fotos viejas conmueve.,NO_ACTION,f5_n_fotosv,0,0,0,0
+N149,N,Abrir regalos emociona.,NO_ACTION,f5_n_regalos,0,0,0,0
+N150,N,Imprimir recuerdos decora.,NO_ACTION,f5_n_recuerdos,0,0,0,0
+M001,M,Titula y guarda el acta.,MULTI_ACTION,f5_m_titula,0,0,0,0
+M002,M,Borra y archiva el tanto.,MULTI_ACTION,f5_m_borra,0,0,0,0
+M003,M,Busca y marca el folio.,MULTI_ACTION,f5_m_busca,0,0,0,0
+M004,M,Copia y pega el texto.,MULTI_ACTION,f5_m_copia,0,0,0,0
+M005,M,Lee y corrige la minuta.,MULTI_ACTION,f5_m_lee,0,0,0,0
+M006,M,Abre y revisa el oficio.,MULTI_ACTION,f5_m_abre,0,0,0,0
+M007,M,Resume y titula Síntesis.,MULTI_ACTION,f5_m_resume,0,0,0,0
+M008,M,Formatea el acta y expórtala.,MULTI_ACTION,f5_m_formatea,0,0,0,0
+M009,M,Deshaz y guarda copia.,MULTI_ACTION,f5_m_deshaz,0,0,0,0
+M010,M,Selecciona y subraya el acuerdo.,MULTI_ACTION,f5_m_selecciona,0,0,0,0
+M011,M,Encuentra y elimina duplicados.,MULTI_ACTION,f5_m_encuentra,0,0,0,0
+M012,M,Numera e imprime fojas.,MULTI_ACTION,f5_m_numera,0,0,0,0
+M013,M,Centra y guarda el título.,MULTI_ACTION,f5_m_centra,0,0,0,0
+M014,M,Firma y sella el acta.,MULTI_ACTION,f5_m_firma,0,0,0,0
+M015,M,Escanea y archiva el legajo.,MULTI_ACTION,f5_m_escanea,0,0,0,0
+M016,M,Recorta y pega el recuadro.,MULTI_ACTION,f5_m_recorta,0,0,0,0
+M017,M,Justifica y exporta el texto.,MULTI_ACTION,f5_m_justifica,0,0,0,0
+M018,M,Sangra y numera incisos.,MULTI_ACTION,f5_m_sangra,0,0,0,0
+M019,M,Cursiva y guarda la cita.,MULTI_ACTION,f5_m_cursiva,0,0,0,0
+M020,M,Subraya y archiva el acuerdo.,MULTI_ACTION,f5_m_subraya,0,0,0,0
+M021,M,"Anota, subraya y turna.",MULTI_ACTION,f5_m_anota,0,0,0,0
+M022,M,Glosa el término y archívalo.,MULTI_ACTION,f5_m_glosa,0,0,0,0
+M023,M,Digitaliza fotos y nómbralas.,MULTI_ACTION,f5_m_digitaliza,0,0,0,0
+M024,M,Folía actas y guárdalas.,MULTI_ACTION,f5_m_folia,0,0,0,0
+M025,M,Turna asuntos y fírmalos.,MULTI_ACTION,f5_m_turna,0,0,0,0
+M026,M,Revisa tareas y envíalas.,MULTI_ACTION,f5_m_revisa,0,0,0,0
+M027,M,Rubrica cheques y túrnalos.,MULTI_ACTION,f5_m_rubrica,0,0,0,0
+M028,M,Sella sobres y archívalos.,MULTI_ACTION,f5_m_sella,0,0,0,0
+M029,M,Folía recibos y envíalos.,MULTI_ACTION,f5_m_folia2,0,0,0,0
+M030,M,Turna oficios y guárdalos.,MULTI_ACTION,f5_m_turna2,0,0,0,0
+M031,M,Recaba firmas y archívalas.,MULTI_ACTION,f5_m_recaba,0,0,0,0
+M032,M,Revisa actas y envíalas.,MULTI_ACTION,f5_m_revisa2,0,0,0,0
+M033,M,Titula fotos y guárdalas.,MULTI_ACTION,f5_m_titula2,0,0,0,0
+M034,M,Borra borradores y archiva.,MULTI_ACTION,f5_m_borra2,0,0,0,0
+M035,M,Busca folios y márcalos.,MULTI_ACTION,f5_m_busca2,0,0,0,0
+M036,M,Lee reportes y fírmalos.,MULTI_ACTION,f5_m_lee2,0,0,0,0
+M037,M,Abre cartas y archívalas.,MULTI_ACTION,f5_m_abre2,0,0,0,0
+M038,M,Resume textos y envíalos.,MULTI_ACTION,f5_m_resume2,0,0,0,0
+M039,M,Formatea tablas y guárdalas.,MULTI_ACTION,f5_m_formatea2,0,0,0,0
+M040,M,Selecciona fotos y márcalas.,MULTI_ACTION,f5_m_selecciona2,0,0,0,0
+M041,M,Encuentra errores y corrígelos.,MULTI_ACTION,f5_m_encuentra2,0,0,0,0
+M042,M,Centra títulos y guárdalos.,MULTI_ACTION,f5_m_centra2,0,0,0,0
+M043,M,Recorta fotos y pégalas.,MULTI_ACTION,f5_m_recorta2,0,0,0,0
+M044,M,Justifica textos y envíalos.,MULTI_ACTION,f5_m_justifica2,0,0,0,0
+M045,M,Sangra versos y numéralos.,MULTI_ACTION,f5_m_sangra2,0,0,0,0
+M046,M,Cursiva citas y guárdalas.,MULTI_ACTION,f5_m_cursiva2,0,0,0,0
+M047,M,Subraya nombres y archívalos.,MULTI_ACTION,f5_m_subraya2,0,0,0,0
+M048,M,Anota ideas y guárdalas.,MULTI_ACTION,f5_m_anota2,0,0,0,0
+M049,M,Glosa versos y envíalos.,MULTI_ACTION,f5_m_glosa2,0,0,0,0
+M050,M,Digitaliza cartas y súbelas.,MULTI_ACTION,f5_m_digitaliza2,0,0,0,0
+M051,M,Escanea fotos y mándalas.,MULTI_ACTION,f5_m_escanea2,0,0,0,0
+M052,M,Engrapa hojas y entrégalas.,MULTI_ACTION,f5_m_engrapa2,0,0,0,0
+M053,M,Perfora tarjetas y archívalas.,MULTI_ACTION,f5_m_perfora2,0,0,0,0
+M054,M,Recorta cupones y úsalos.,MULTI_ACTION,f5_m_recorta3,0,0,0,0
+M055,M,Dobla ropa y guárdala.,MULTI_ACTION,f5_m_dobla,0,0,0,0
+M056,M,Franquea sobres y despáchalos.,MULTI_ACTION,f5_m_franquea,0,0,0,0
+M057,M,Certifica copias y entrégalas.,MULTI_ACTION,f5_m_certifica,0,0,0,0
+M058,M,Apostilla actas y llévalas.,MULTI_ACTION,f5_m_apostilla,0,0,0,0
+M059,M,Fedata firmas y archívalas.,MULTI_ACTION,f5_m_fedata,0,0,0,0
+M060,M,Protocoliza actas y guárdalas.,MULTI_ACTION,f5_m_protocoliza,0,0,0,0
+M061,M,Testimonia firmas y registra.,MULTI_ACTION,f5_m_testimonia,0,0,0,0
+M062,M,"Coteja, rubrica y envía.",MULTI_ACTION,f5_m_coteja,0,0,0,0
+M063,M,"Rubrica, sella y turna cada foja.",MULTI_ACTION,f5_m_rubrica2,0,0,0,0
+M064,M,"Sella, firma y archiva el tanto.",MULTI_ACTION,f5_m_sella2,0,0,0,0
+M065,M,"Folía, rubrica y envía el legajo.",MULTI_ACTION,f5_m_folia3,0,0,0,0
+M066,M,"Turna, sella y guarda el oficio.",MULTI_ACTION,f5_m_turna3,0,0,0,0
+M067,M,"Recaba, folía y turna firmas.",MULTI_ACTION,f5_m_recaba2,0,0,0,0
+M068,M,"Revisa, sella y turna el acta.",MULTI_ACTION,f5_m_revisa3,0,0,0,0
+M069,M,"Anota, rubrica y archiva notas.",MULTI_ACTION,f5_m_anota3,0,0,0,0
+M070,M,"Glosa, sella y turna el otrosí.",MULTI_ACTION,f5_m_glosa3,0,0,0,0
+M071,M,"Digitaliza, nombra y turna el pdf.",MULTI_ACTION,f5_m_digitaliza3,0,0,0,0
+M072,M,"Escanea, folía y archiva copias.",MULTI_ACTION,f5_m_escanea3,0,0,0,0
+M073,M,"Engrapa, sella y envía tantos.",MULTI_ACTION,f5_m_engrapa3,0,0,0,0
+M074,M,"Perfora, folía y archiva fojas.",MULTI_ACTION,f5_m_perfora3,0,0,0,0
+M075,M,"Recorta, sella y turna recortes.",MULTI_ACTION,f5_m_recorta4,0,0,0,0
+M076,M,"Dobla, ensobra y despacha oficios.",MULTI_ACTION,f5_m_dobla2,0,0,0,0
+M077,M,"Franquea, sella y envía cartas.",MULTI_ACTION,f5_m_franquea2,0,0,0,0
+M078,M,"Certifica, folía y archiva actas.",MULTI_ACTION,f5_m_certifica2,0,0,0,0
+M079,M,"Apostilla, sella y turna títulos.",MULTI_ACTION,f5_m_apostilla2,0,0,0,0
+M080,M,"Fedata, rubrica y guarda copias.",MULTI_ACTION,f5_m_fedata2,0,0,0,0
+M081,M,"Protocoliza, folía y archiva poderes.",MULTI_ACTION,f5_m_protocoliza2,0,0,0,0
+M082,M,"Testimonia, sella y turna firmas.",MULTI_ACTION,f5_m_testimonia2,0,0,0,0
+M083,M,"Coteja, rubrica y envía tantos.",MULTI_ACTION,f5_m_coteja2,0,0,0,0
+M084,M,"Cambia el título, guarda y exporta.",MULTI_ACTION,f5_m_cambia,0,0,0,0
+M085,M,"Borra la nota, deshaz y archiva.",MULTI_ACTION,f5_m_borra,0,0,0,0
+M086,M,"Busca el folio, márcalo y subráyalo.",MULTI_ACTION,f5_m_busca,0,0,0,0
+M087,M,"Copia el texto, pégalo y guarda.",MULTI_ACTION,f5_m_copia,0,0,0,0
+M088,M,"Lee la minuta, corrígela y archiva.",MULTI_ACTION,f5_m_lee3,0,0,0,0
+M089,M,"Abre el oficio, revísalo y fírmalo.",MULTI_ACTION,f5_m_abre3,0,0,0,0
+M090,M,"Resume el informe, titúlalo y envíalo.",MULTI_ACTION,f5_m_resume3,0,0,0,0
+M091,M,"Formatea el acta, imprímela y archívala.",MULTI_ACTION,f5_m_formatea3,0,0,0,0
+M092,M,"Deshaz el cambio, rehazlo y guarda.",MULTI_ACTION,f5_m_deshaz,0,0,0,0
+M093,M,"Selecciona todo, cópialo y pégalo.",MULTI_ACTION,f5_m_selecciona3,0,0,0,0
+M094,M,"Encuentra duplicados, bórralos y guarda.",MULTI_ACTION,f5_m_encuentra3,0,0,0,0
+M095,M,"Numera fojas, imprímelas y archívalas.",MULTI_ACTION,f5_m_numera,0,0,0,0
+M096,M,"Centra el título, guárdalo y expórtalo.",MULTI_ACTION,f5_m_centra3,0,0,0,0
+M097,M,"Recorta el excedente, engrapa y turna.",MULTI_ACTION,f5_m_recorta5,0,0,0,0
+M098,M,"Justifica el texto, fólialo y envíalo.",MULTI_ACTION,f5_m_justifica3,0,0,0,0
+M099,M,"Sangra incisos, numéralos y archiva.",MULTI_ACTION,f5_m_sangra3,0,0,0,0
+M100,M,"Cursiva citas, guarda y exporta.",MULTI_ACTION,f5_m_cursiva3,0,0,0,0
+M101,M,"Subraya acuerdos, rubrica y turna.",MULTI_ACTION,f5_m_subraya3,0,0,0,0
+M102,M,"Anota márgenes, folía y archiva.",MULTI_ACTION,f5_m_anota4,0,0,0,0
+M103,M,"Glosa términos, sella y turna.",MULTI_ACTION,f5_m_glosa4,0,0,0,0
+M104,M,"Digitaliza fojas, nómbralas y súbelas.",MULTI_ACTION,f5_m_digitaliza4,0,0,0,0
+M105,M,"Escanea tantos, fólialos y archívalos.",MULTI_ACTION,f5_m_escanea4,0,0,0,0
+M106,M,"Engrapa copias, séllalas y envíalas.",MULTI_ACTION,f5_m_engrapa4,0,0,0,0
+M107,M,"Perfora tantos, fólialos y túrnalos.",MULTI_ACTION,f5_m_perfora4,0,0,0,0
+M108,M,"Recorta sobrantes, engrapa y archiva.",MULTI_ACTION,f5_m_recorta6,0,0,0,0
+M109,M,"Dobla oficios, ensóbralos y despacha.",MULTI_ACTION,f5_m_dobla3,0,0,0,0
+M110,M,"Franquea cartas, séllalas y envíalas.",MULTI_ACTION,f5_m_franquea3,0,0,0,0

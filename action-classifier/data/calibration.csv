@@ -1,0 +1,797 @@
+text,label,category,family_id
+Borra esta parte.,DELETE_SELECTION,borrar,a_dl_a_01
+Elimina esta parte.,DELETE_SELECTION,borrar,a_dl_a_01
+Quita esta parte.,DELETE_SELECTION,borrar,a_dl_a_01
+Borra esta oración.,DELETE_SELECTION,borrar,a_dl_a_01
+Elimina esta oración.,DELETE_SELECTION,borrar,a_dl_a_01
+Quita esta oración.,DELETE_SELECTION,borrar,a_dl_a_01
+Suprime lo seleccionado.,DELETE_SELECTION,borrar,a_dl_b_04
+Descarta lo seleccionado.,DELETE_SELECTION,borrar,a_dl_b_04
+Tacha lo seleccionado.,DELETE_SELECTION,borrar,a_dl_b_04
+Suprime esa sección.,DELETE_SELECTION,borrar,a_dl_b_04
+Descarta esa sección.,DELETE_SELECTION,borrar,a_dl_b_04
+Tacha esa sección.,DELETE_SELECTION,borrar,a_dl_b_04
+Retira la cita.,DELETE_SELECTION,borrar,a_dl_c_02
+Tacha el duplicado.,DELETE_SELECTION,borrar,a_dl_c_02
+Corta el epígrafe.,DELETE_SELECTION,borrar,a_dl_c_02
+Haz que esto desaparezca.,DELETE_SELECTION,borrar,a_dl_c_02
+Desaparece este bloque.,DELETE_SELECTION,borrar,a_dl_c_02
+Fúmate esta línea.,DELETE_SELECTION,borrar,a_dl_c_02
+Bórralo.,DELETE_SELECTION,corto,a_dl_short_00
+Borralo.,DELETE_SELECTION,corto,a_dl_short_00
+Elimínalo.,DELETE_SELECTION,corto,a_dl_short_00
+Quítalo.,DELETE_SELECTION,corto,a_dl_short_00
+Táchalo.,DELETE_SELECTION,corto,a_dl_short_00
+Córtalo.,DELETE_SELECTION,corto,a_dl_short_00
+Exporta la tesis.,EXPORT_DOCUMENT,exportar,a_ex_a_01
+Exporta el manual.,EXPORT_DOCUMENT,exportar,a_ex_a_01
+Exporta el folleto.,EXPORT_DOCUMENT,exportar,a_ex_a_01
+Exporta el informe final.,EXPORT_DOCUMENT,exportar,a_ex_a_01
+Saca el acta en pdf.,EXPORT_DOCUMENT,exportar,a_ex_a_01
+Baja el txt plano.,EXPORT_DOCUMENT,exportar,a_ex_a_01
+Subraya esto.,FORMAT_SELECTION,formato,a_fm_b_00
+Subraya esta parte.,FORMAT_SELECTION,formato,a_fm_b_00
+Quita las negritas.,FORMAT_SELECTION,formato,a_fm_b_00
+Pon el título en mayúsculas.,FORMAT_SELECTION,formato,a_fm_b_00
+Convierte esto en una lista.,FORMAT_SELECTION,formato,a_fm_b_00
+Centra el encabezado.,FORMAT_SELECTION,formato,a_fm_b_00
+Detecta dobles espacios.,FIND_TEXT,buscar,a_fn_b_00
+Caza erratas.,FIND_TEXT,buscar,a_fn_b_00
+Rastrea el término accesibilidad cognitiva.,FIND_TEXT,buscar,a_fn_b_00
+Ubica comillas simples.,FIND_TEXT,buscar,a_fn_b_00
+Halla Diseño con mayúscula.,FIND_TEXT,buscar,a_fn_b_00
+Encuentra el guion largo.,FIND_TEXT,buscar,a_fn_b_00
+Rastrea el 10%.,FIND_TEXT,buscar,a_fn_b_02
+Detecta el guion.,FIND_TEXT,buscar,a_fn_b_02
+Caza la errata.,FIND_TEXT,buscar,a_fn_b_02
+Persigue el error.,FIND_TEXT,buscar,a_fn_b_02
+Anota al margen y guarda.,MULTI_ACTION,multi,a_mu_a_05
+Glosa y subraya la fecha.,MULTI_ACTION,multi,a_mu_a_05
+"Firma, sella y archiva.",MULTI_ACTION,multi,a_mu_a_05
+Digitaliza y escanea a color.,MULTI_ACTION,multi,a_mu_a_05
+"Engrapa, perfora y archiva.",MULTI_ACTION,multi,a_mu_a_05
+"Recorta, dobla y ensobra.",MULTI_ACTION,multi,a_mu_a_05
+Selecciona todo y cópialo.,MULTI_ACTION,multi,a_mu_b_01
+Encuentra el error y bórralo.,MULTI_ACTION,multi,a_mu_b_01
+Cambia el título y avisa al equipo.,MULTI_ACTION,multi,a_mu_b_01
+Pon negritas y subraya el total.,MULTI_ACTION,multi,a_mu_b_01
+Hazlo corto y tradúcelo.,MULTI_ACTION,multi,a_mu_b_01
+Resume y envía la minuta.,MULTI_ACTION,multi,a_mu_b_01
+Déjame pensarlo.,NO_ACTION,conversacion,a_na_conv_00
+No estoy seguro.,NO_ACTION,conversacion,a_na_conv_00
+Hmm.,NO_ACTION,conversacion,a_na_conv_00
+Espera un momento.,NO_ACTION,conversacion,a_na_conv_00
+Bueno.,NO_ACTION,conversacion,a_na_conv_00
+Tal vez.,NO_ACTION,conversacion,a_na_conv_00
+Huele a éxito.,NO_ACTION,conversacion,a_na_conv_08
+Tiene potencial.,NO_ACTION,conversacion,a_na_conv_08
+Le falta sazón.,NO_ACTION,conversacion,a_na_conv_08
+Ya madurará.,NO_ACTION,conversacion,a_na_conv_08
+Dale tiempo.,NO_ACTION,conversacion,a_na_conv_08
+Sin prisa.,NO_ACTION,conversacion,a_na_conv_08
+Borrar información accidentalmente afecta la experiencia.,NO_ACTION,dictado,a_na_dict_00
+Guardar documentos automáticamente reduce pérdidas.,NO_ACTION,dictado,a_na_dict_00
+"La frase ""guarda el documento"" es un ejemplo.",NO_ACTION,dictado,a_na_dict_00
+Deshacer una acción debería ser sencillo.,NO_ACTION,dictado,a_na_dict_00
+Imprimir documentos consume papel.,NO_ACTION,dictado,a_na_dict_00
+El editor cambia el título desde la barra.,NO_ACTION,dictado,a_na_dict_00
+Renombrar calles confunde.,NO_ACTION,dictado,a_na_dict_07
+Duplicar recetas une.,NO_ACTION,dictado,a_na_dict_07
+Traducir poesía pierde rimas.,NO_ACTION,dictado,a_na_dict_07
+Contar ovejas no duerme.,NO_ACTION,dictado,a_na_dict_07
+Ordenar cajones relaja.,NO_ACTION,dictado,a_na_dict_07
+Insertar pausas mejora discursos.,NO_ACTION,dictado,a_na_dict_07
+Cruza por el puente.,NO_ACTION,imperative-like,a_na_imp_04
+Toma el camión.,NO_ACTION,imperative-like,a_na_imp_04
+No llegues tarde.,NO_ACTION,imperative-like,a_na_imp_04
+No olvides las llaves.,NO_ACTION,imperative-like,a_na_imp_04
+No tires la toalla.,NO_ACTION,imperative-like,a_na_imp_04
+No pierdas la calma.,NO_ACTION,imperative-like,a_na_imp_04
+No te rindas.,NO_ACTION,imperative-like,a_na_imp_05
+Cuida a tu hermanito.,NO_ACTION,imperative-like,a_na_imp_05
+Alimenta al gato.,NO_ACTION,imperative-like,a_na_imp_05
+Pasea al perro.,NO_ACTION,imperative-like,a_na_imp_05
+Limpia la pecera.,NO_ACTION,imperative-like,a_na_imp_05
+Recoge las hojas.,NO_ACTION,imperative-like,a_na_imp_05
+Guarda la bicicleta.,NO_ACTION,imperative-like,a_na_imp_06
+Tiende la ropa.,NO_ACTION,imperative-like,a_na_imp_06
+Dobla las sábanas.,NO_ACTION,imperative-like,a_na_imp_06
+Lava el baño.,NO_ACTION,imperative-like,a_na_imp_06
+Enciende el boiler.,NO_ACTION,imperative-like,a_na_imp_06
+Paga la luz.,NO_ACTION,imperative-like,a_na_imp_06
+Deposita la renta.,NO_ACTION,imperative-like,a_na_imp_07
+Ahorra cada mes.,NO_ACTION,imperative-like,a_na_imp_07
+Come verduras.,NO_ACTION,imperative-like,a_na_imp_07
+Toma agua.,NO_ACTION,imperative-like,a_na_imp_07
+Duerme temprano.,NO_ACTION,imperative-like,a_na_imp_07
+Pela las papas.,NO_ACTION,imperative-like,a_na_imp_07
+Como la vez pasada.,REDO,redo,a_rd_b_04
+Tal como estaba planeado.,REDO,redo,a_rd_b_04
+Según lo acordado.,REDO,redo,a_rd_b_04
+Como habíamos dicho.,REDO,redo,a_rd_b_04
+Tal cual lo dejaste.,REDO,redo,a_rd_b_04
+Mismo cambio otra vez.,REDO,redo,a_rd_b_05
+Dale.,REDO,corto,a_rd_short_02
+Sigue.,REDO,corto,a_rd_short_02
+Otra.,REDO,corto,a_rd_short_02
+Re.,REDO,corto,a_rd_short_02
+Va de nuevo.,REDO,corto,a_rd_short_02
+Rehaz.,REDO,corto,a_rd_short_02
+Titula esto como Evaluación.,RENAME_TITLE,titulo,a_rn_a_03
+Actualiza el título a Evaluación.,RENAME_TITLE,titulo,a_rn_a_03
+Cambia el título a Resumen.,RENAME_TITLE,titulo,a_rn_a_03
+Pon como título Resumen.,RENAME_TITLE,titulo,a_rn_a_03
+Titula esto como Resumen.,RENAME_TITLE,titulo,a_rn_a_03
+Actualiza el título a Resumen.,RENAME_TITLE,titulo,a_rn_a_03
+Titula esto como Marco teórico.,RENAME_TITLE,titulo,a_rn_a_07
+Actualiza el título a Marco teórico.,RENAME_TITLE,titulo,a_rn_a_07
+Cambia el título a Trabajo futuro.,RENAME_TITLE,titulo,a_rn_a_07
+Pon como título Trabajo futuro.,RENAME_TITLE,titulo,a_rn_a_07
+Titula esto como Trabajo futuro.,RENAME_TITLE,titulo,a_rn_a_07
+Actualiza el título a Trabajo futuro.,RENAME_TITLE,titulo,a_rn_a_07
+Cámbiale el título a Metodología.,RENAME_TITLE,titulo,a_rn_b_00
+Ponle de título Metodología.,RENAME_TITLE,titulo,a_rn_b_00
+El nuevo título será Metodología.,RENAME_TITLE,titulo,a_rn_b_00
+Quiero que cambies el título a Metodología.,RENAME_TITLE,titulo,a_rn_b_00
+Cámbiale el título a Resultados.,RENAME_TITLE,titulo,a_rn_b_00
+Ponle de título Resultados.,RENAME_TITLE,titulo,a_rn_b_00
+El nuevo título será Propuesta.,RENAME_TITLE,titulo,a_rn_b_05
+Quiero que cambies el título a Propuesta.,RENAME_TITLE,titulo,a_rn_b_05
+Cámbiale el título a Hallazgos.,RENAME_TITLE,titulo,a_rn_b_05
+Ponle de título Hallazgos.,RENAME_TITLE,titulo,a_rn_b_05
+El nuevo título será Hallazgos.,RENAME_TITLE,titulo,a_rn_b_05
+Quiero que cambies el título a Hallazgos.,RENAME_TITLE,titulo,a_rn_b_05
+Bautiza el archivo como Entrega.,RENAME_TITLE,titulo,a_rn_c_01
+Nombra la versión final.,RENAME_TITLE,titulo,a_rn_c_01
+Actualiza la carátula.,RENAME_TITLE,titulo,a_rn_c_01
+El rótulo será Acta.,RENAME_TITLE,titulo,a_rn_c_01
+Titula la minuta.,RENAME_TITLE,titulo,a_rn_c_01
+Cambia el encabezado principal.,RENAME_TITLE,titulo,a_rn_c_01
+Cambia error por errata.,REPLACE_SELECTION,reemplazar,a_rp_a_00
+Sustituye error por errata.,REPLACE_SELECTION,reemplazar,a_rp_a_00
+Reemplaza error por errata.,REPLACE_SELECTION,reemplazar,a_rp_a_00
+Donde dice error pon errata.,REPLACE_SELECTION,reemplazar,a_rp_a_00
+Cambia problema por dificultad.,REPLACE_SELECTION,reemplazar,a_rp_a_00
+Sustituye problema por dificultad.,REPLACE_SELECTION,reemplazar,a_rp_a_00
+Reemplaza problema por dificultad.,REPLACE_SELECTION,reemplazar,a_rp_a_01
+Donde dice problema pon dificultad.,REPLACE_SELECTION,reemplazar,a_rp_a_01
+Cambia uso por utilización.,REPLACE_SELECTION,reemplazar,a_rp_a_01
+Sustituye uso por utilización.,REPLACE_SELECTION,reemplazar,a_rp_a_01
+Reemplaza uso por utilización.,REPLACE_SELECTION,reemplazar,a_rp_a_01
+Donde dice uso pon utilización.,REPLACE_SELECTION,reemplazar,a_rp_a_01
+Reemplaza nota por aclaración.,REPLACE_SELECTION,reemplazar,a_rp_a_07
+Donde dice nota pon aclaración.,REPLACE_SELECTION,reemplazar,a_rp_a_07
+Cambia resumen por síntesis.,REPLACE_SELECTION,reemplazar,a_rp_a_07
+Sustituye resumen por síntesis.,REPLACE_SELECTION,reemplazar,a_rp_a_07
+Reemplaza resumen por síntesis.,REPLACE_SELECTION,reemplazar,a_rp_a_07
+Donde dice resumen pon síntesis.,REPLACE_SELECTION,reemplazar,a_rp_a_07
+Reescribe esto con tono formal.,REWRITE_SELECTION,reformular,a_rw_b_00
+Dale otra redacción a esta parte.,REWRITE_SELECTION,reformular,a_rw_b_00
+Mejora la redacción.,REWRITE_SELECTION,reformular,a_rw_b_00
+Suaviza el tono.,REWRITE_SELECTION,reformular,a_rw_b_00
+Endurece la conclusión.,REWRITE_SELECTION,reformular,a_rw_b_00
+Acorta este párrafo.,REWRITE_SELECTION,reformular,a_rw_b_00
+Selecciona el segundo párrafo.,SELECT_TEXT,seleccion,a_sl_a_00
+Marca el segundo párrafo.,SELECT_TEXT,seleccion,a_sl_a_00
+Elige el segundo párrafo.,SELECT_TEXT,seleccion,a_sl_a_00
+Selecciona la última sección.,SELECT_TEXT,seleccion,a_sl_a_00
+Marca la última sección.,SELECT_TEXT,seleccion,a_sl_a_00
+Elige la última sección.,SELECT_TEXT,seleccion,a_sl_a_00
+Selecciona el primer capítulo.,SELECT_TEXT,seleccion,a_sl_a_01
+Marca el primer capítulo.,SELECT_TEXT,seleccion,a_sl_a_01
+Elige el primer capítulo.,SELECT_TEXT,seleccion,a_sl_a_01
+Selecciona toda la página.,SELECT_TEXT,seleccion,a_sl_a_01
+Marca toda la página.,SELECT_TEXT,seleccion,a_sl_a_01
+Elige toda la página.,SELECT_TEXT,seleccion,a_sl_a_01
+Marca la palabra metodología.,SELECT_TEXT,confusion,a_sl_cf_00
+Selecciona accesibilidad aquí.,SELECT_TEXT,confusion,a_sl_cf_00
+Marca este título para buscarlo.,SELECT_TEXT,confusion,a_sl_cf_00
+Elige el término y encuéntralo.,SELECT_TEXT,confusion,a_sl_cf_00
+Selecciona la cita para revisarla.,SELECT_TEXT,confusion,a_sl_cf_00
+Marca la fecha y localízala.,SELECT_TEXT,confusion,a_sl_cf_00
+Guárdalo.,SAVE_DOCUMENT,corto,a_sv_short_00
+Guardalo.,SAVE_DOCUMENT,corto,a_sv_short_00
+Archívalo.,SAVE_DOCUMENT,corto,a_sv_short_00
+Respáldalo.,SAVE_DOCUMENT,corto,a_sv_short_00
+Fíjalo.,SAVE_DOCUMENT,corto,a_sv_short_00
+Guarda.,SAVE_DOCUMENT,corto,a_sv_short_00
+Anula lo que hiciste.,UNDO,undo,a_un_a_01
+Regresa al estado anterior.,UNDO,undo,a_un_a_01
+Échalo para atrás.,UNDO,undo,a_un_a_01
+Vuelve atrás.,UNDO,undo,a_un_a_01
+Deshaz lo último.,UNDO,undo,a_un_a_01
+Anula la modificación.,UNDO,undo,a_un_a_01
+Olvida lo que acabo de hacer.,UNDO,undo,a_un_b_00
+Como si no hubiera pasado.,UNDO,undo,a_un_b_00
+Déjalo como estaba antes.,UNDO,undo,a_un_b_00
+Restaura lo anterior.,UNDO,undo,a_un_b_00
+Vuelve al punto previo.,UNDO,undo,a_un_b_00
+Deshaz esta mañana.,UNDO,undo,a_un_b_00
+Retira lo puesto.,UNDO,undo,a_un_b_05
+Saca lo agregado.,UNDO,undo,a_un_b_05
+Convoca a junta.,UNSUPPORTED,unsup-agenda,a_us_agenda_01
+Cita a las partes.,UNSUPPORTED,unsup-agenda,a_us_agenda_01
+Programa el envío.,UNSUPPORTED,unsup-agenda,a_us_agenda_01
+Recuérdame mañana.,UNSUPPORTED,unsup-agenda,a_us_agenda_01
+Avisa con tiempo.,UNSUPPORTED,unsup-agenda,a_us_agenda_01
+Coordina horarios.,UNSUPPORTED,unsup-agenda,a_us_agenda_01
+Reserva la sala.,UNSUPPORTED,unsup-agenda,a_us_agenda_02
+Aparta fecha.,UNSUPPORTED,unsup-agenda,a_us_agenda_02
+Calendariza la revisión.,UNSUPPORTED,unsup-agenda,a_us_agenda_02
+Reagenda lo de hoy.,UNSUPPORTED,unsup-agenda,a_us_agenda_02
+Pospón la audiencia.,UNSUPPORTED,unsup-agenda,a_us_agenda_02
+Anticipa el taller.,UNSUPPORTED,unsup-agenda,a_us_agenda_02
+Organiza el evento.,UNSUPPORTED,unsup-agenda,a_us_agenda_03
+Planea la semana.,UNSUPPORTED,unsup-agenda,a_us_agenda_03
+Codifica el mensaje.,UNSUPPORTED,unsup-cifrar,a_us_cifrar_01
+Cifra la carpeta.,UNSUPPORTED,unsup-cifrar,a_us_cifrar_01
+Ponle candado digital.,UNSUPPORTED,unsup-cifrar,a_us_cifrar_01
+Asegura con contraseña.,UNSUPPORTED,unsup-cifrar,a_us_cifrar_01
+Cifra de extremo a extremo.,UNSUPPORTED,unsup-cifrar,a_us_cifrar_01
+Encripta la copia.,UNSUPPORTED,unsup-cifrar,a_us_cifrar_01
+Zipéalo.,UNSUPPORTED,unsup-comprimir,a_us_comprimir_01
+Comprímelo ya.,UNSUPPORTED,unsup-comprimir,a_us_comprimir_01
+Achica el pdf.,UNSUPPORTED,unsup-comprimir,a_us_comprimir_01
+Comprime el anexo.,UNSUPPORTED,unsup-comprimir,a_us_comprimir_01
+Empaca los archivos.,UNSUPPORTED,unsup-comprimir,a_us_comprimir_01
+Comprime la tesis.,UNSUPPORTED,unsup-comprimir,a_us_comprimir_01
+Comparte pantalla.,UNSUPPORTED,unsup-varios,a_us_varios_00
+Graba la reunión.,UNSUPPORTED,unsup-varios,a_us_varios_00
+Toma captura.,UNSUPPORTED,unsup-varios,a_us_varios_00
+Dicta el siguiente párrafo.,UNSUPPORTED,unsup-varios,a_us_varios_00
+Lee este mensaje.,UNSUPPORTED,unsup-varios,a_us_varios_00
+Llama a soporte.,UNSUPPORTED,unsup-varios,a_us_varios_00
+Activa el wifi.,UNSUPPORTED,unsup-varios,a_us_varios_02
+Apaga el bluetooth.,UNSUPPORTED,unsup-varios,a_us_varios_02
+Carga la batería.,UNSUPPORTED,unsup-varios,a_us_varios_02
+Actualiza el sistema.,UNSUPPORTED,unsup-varios,a_us_varios_02
+Sincroniza el reloj.,UNSUPPORTED,unsup-varios,a_us_varios_02
+Cambia el fondo.,UNSUPPORTED,unsup-varios,a_us_varios_02
+Saca el contrato en pdf ya.,EXPORT_DOCUMENT,exportar,v_ex_contrato_00
+Saca el vale en pdf ya.,EXPORT_DOCUMENT,exportar,v_ex_vale_00
+Rinde el vale final.,EXPORT_DOCUMENT,exportar,v_ex_vale_00
+"Certifica, sella y archiva.",MULTI_ACTION,multi,"v_mu_Certifica,_00"
+"Certifica, sella y archiva por favor.",MULTI_ACTION,multi,"v_mu_Certifica,_00"
+"Turna, sella y guarda.",MULTI_ACTION,multi,"v_mu_Turna,_00"
+"Turna, sella y guarda por favor.",MULTI_ACTION,multi,"v_mu_Turna,_00"
+La rosca partió plaza.,NO_ACTION,conversacion,v_na_La_00
+"Mira, la rosca partió plaza.",NO_ACTION,conversacion,v_na_La_00
+La verbena sigue hasta tarde.,NO_ACTION,conversacion,v_na_La_00
+"Mira, la verbena sigue hasta tarde.",NO_ACTION,conversacion,v_na_La_00
+La kermés juntó fondos.,NO_ACTION,conversacion,v_na_La_00
+"Mira, la kermés juntó fondos.",NO_ACTION,conversacion,v_na_La_00
+La charreada puntúa suertes.,NO_ACTION,conversacion,v_na_La_00
+"Mira, la charreada puntúa suertes.",NO_ACTION,conversacion,v_na_La_00
+La escaramuza galopa.,NO_ACTION,conversacion,v_na_La_00
+"Mira, la escaramuza galopa.",NO_ACTION,conversacion,v_na_La_00
+La banda retumba lejos.,NO_ACTION,conversacion,v_na_La_00
+"Mira, la banda retumba lejos.",NO_ACTION,conversacion,v_na_La_00
+La cumbia mueve caderas.,NO_ACTION,conversacion,v_na_La_00
+"Mira, la cumbia mueve caderas.",NO_ACTION,conversacion,v_na_La_00
+La salsa calienta pistas.,NO_ACTION,conversacion,v_na_La_00
+"Mira, la salsa calienta pistas.",NO_ACTION,conversacion,v_na_La_00
+La guaracha alegra barrios.,NO_ACTION,conversacion,v_na_La_00
+"Mira, la guaracha alegra barrios.",NO_ACTION,conversacion,v_na_La_00
+La chilena prende fandangos.,NO_ACTION,conversacion,v_na_La_00
+"Mira, la chilena prende fandangos.",NO_ACTION,conversacion,v_na_La_00
+Pon tanto donde dice ejemplar.,REPLACE_SELECTION,reemplazar,v_rp_ejem_00
+Troca ejemplar por tanto ya.,REPLACE_SELECTION,reemplazar,v_rp_ejem_00
+Pon legajo donde dice fajo.,REPLACE_SELECTION,reemplazar,v_rp_fajo_00
+Troca fajo por legajo ya.,REPLACE_SELECTION,reemplazar,v_rp_fajo_00
+Pon firma donde dice rúbrica.,REPLACE_SELECTION,reemplazar,v_rp_rúbr_00
+Troca rúbrica por firma ya.,REPLACE_SELECTION,reemplazar,v_rp_rúbr_00
+Pon sello donde dice timbre.,REPLACE_SELECTION,reemplazar,v_rp_timb_00
+Troca timbre por sello ya.,REPLACE_SELECTION,reemplazar,v_rp_timb_00
+Déjalo menos enredado aún.,REWRITE_SELECTION,reformular,v_rw_aún_00
+Ponlo menos enredado aún.,REWRITE_SELECTION,reformular,v_rw_aún_00
+Déjalo más simple aún.,REWRITE_SELECTION,reformular,v_rw_aún_00
+Ponlo más simple aún.,REWRITE_SELECTION,reformular,v_rw_aún_00
+Guarda el pagaré en orden.,SAVE_DOCUMENT,guardar,v_sv_pagaré_00
+Archiva el pagaré ya.,SAVE_DOCUMENT,guardar,v_sv_pagaré_00
+Limpia el granero.,UNSUPPORTED,unsup-rural,v_us_Limpia_00
+Limpia el granero por favor.,UNSUPPORTED,unsup-rural,v_us_Limpia_00
+Marca las reses.,UNSUPPORTED,unsup-rural,v_us_Marca_00
+Marca las reses por favor.,UNSUPPORTED,unsup-rural,v_us_Marca_00
+Ordeña temprano.,UNSUPPORTED,unsup-rural,v_us_Ordeña_00
+Ordeña temprano por favor.,UNSUPPORTED,unsup-rural,v_us_Ordeña_00
+Planta el árbol.,UNSUPPORTED,unsup-rural,v_us_Planta_00
+Planta el árbol por favor.,UNSUPPORTED,unsup-rural,v_us_Planta_00
+Repara la cerca.,UNSUPPORTED,unsup-rural,v_us_Repara_00
+Repara la cerca por favor.,UNSUPPORTED,unsup-rural,v_us_Repara_00
+Sopla las brasas.,UNSUPPORTED,unsup-rural,v_us_Sopla_00
+Sopla las brasas por favor.,UNSUPPORTED,unsup-rural,v_us_Sopla_00
+Pegar cierres.,UNSUPPORTED,unsup-costura,v_usc_Pegar_00
+Pegar cierres ya.,UNSUPPORTED,unsup-costura,v_usc_Pegar_00
+Probar el vestido.,UNSUPPORTED,unsup-costura,v_usc_Probar_00
+Probar el vestido ya.,UNSUPPORTED,unsup-costura,v_usc_Probar_00
+Quitar pelusa.,UNSUPPORTED,unsup-costura,v_usc_Quitar_00
+Quitar pelusa ya.,UNSUPPORTED,unsup-costura,v_usc_Quitar_00
+Tejer bufandas.,UNSUPPORTED,unsup-costura,v_usc_Tejer_00
+Tejer bufandas ya.,UNSUPPORTED,unsup-costura,v_usc_Tejer_00
+Borra el acuse del tanto.,DELETE_SELECTION,borrar,w_dl_acuse_00
+Quita el acuse ya.,DELETE_SELECTION,borrar,w_dl_acuse_00
+Elimina el acuse.,DELETE_SELECTION,borrar,w_dl_acuse_00
+Borra el comprobante del tanto.,DELETE_SELECTION,borrar,w_dl_comprobante_00
+Quita el comprobante ya.,DELETE_SELECTION,borrar,w_dl_comprobante_00
+Elimina el comprobante.,DELETE_SELECTION,borrar,w_dl_comprobante_00
+Borra el membrete del tanto.,DELETE_SELECTION,borrar,w_dl_membrete_00
+Quita el membrete ya.,DELETE_SELECTION,borrar,w_dl_membrete_00
+Elimina el membrete.,DELETE_SELECTION,borrar,w_dl_membrete_00
+Borra el recibo del tanto.,DELETE_SELECTION,borrar,w_dl_recibo_00
+Quita el recibo ya.,DELETE_SELECTION,borrar,w_dl_recibo_00
+Elimina el recibo.,DELETE_SELECTION,borrar,w_dl_recibo_00
+Borra la rúbrica del tanto.,DELETE_SELECTION,borrar,w_dl_rúbrica_00
+Quita la rúbrica ya.,DELETE_SELECTION,borrar,w_dl_rúbrica_00
+Elimina la rúbrica.,DELETE_SELECTION,borrar,w_dl_rúbrica_00
+Emite el apéndice en pdf.,EXPORT_DOCUMENT,exportar,w_ex_apéndice_00
+Produce el apéndice final.,EXPORT_DOCUMENT,exportar,w_ex_apéndice_00
+Emite la factura en pdf.,EXPORT_DOCUMENT,exportar,w_ex_factura_00
+Produce la factura final.,EXPORT_DOCUMENT,exportar,w_ex_factura_00
+Emite el pagaré en pdf.,EXPORT_DOCUMENT,exportar,w_ex_pagaré_00
+Produce el pagaré final.,EXPORT_DOCUMENT,exportar,w_ex_pagaré_00
+Emite el recibo en pdf.,EXPORT_DOCUMENT,exportar,w_ex_recibo_00
+Produce el recibo final.,EXPORT_DOCUMENT,exportar,w_ex_recibo_00
+Marca el recibo en negritas.,FORMAT_SELECTION,formato,w_fm_recibo_00
+Subraya el recibo.,FORMAT_SELECTION,formato,w_fm_recibo_00
+Halla la firma ya.,FIND_TEXT,buscar,w_fn_firma_00
+Halla el membrete ya.,FIND_TEXT,buscar,w_fn_membrete_00
+Ubica el membrete.,FIND_TEXT,buscar,w_fn_membrete_00
+"Anota, sella y turna.",MULTI_ACTION,multi,"w_mu_Anota,_00"
+"Anota, sella y turna ahora.",MULTI_ACTION,multi,"w_mu_Anota,_00"
+"Formatea, folía y archiva.",MULTI_ACTION,multi,"w_mu_Formatea,_00"
+"Formatea, folía y archiva ahora.",MULTI_ACTION,multi,"w_mu_Formatea,_00"
+"Justifica, rubrica y envía.",MULTI_ACTION,multi,"w_mu_Justifica,_00"
+"Justifica, rubrica y envía ahora.",MULTI_ACTION,multi,"w_mu_Justifica,_00"
+"Turna, rubrica y archiva.",MULTI_ACTION,multi,"w_mu_Turna,_00"
+"Turna, rubrica y archiva ahora.",MULTI_ACTION,multi,"w_mu_Turna,_00"
+Exhibe el apéndice.,OPEN_DOCUMENT,abrir,w_op_apéndice_00
+Presenta el apéndice.,OPEN_DOCUMENT,abrir,w_op_apéndice_00
+Exhibe el contrato.,OPEN_DOCUMENT,abrir,w_op_contrato_00
+Presenta el contrato.,OPEN_DOCUMENT,abrir,w_op_contrato_00
+Exhibe el pagaré.,OPEN_DOCUMENT,abrir,w_op_pagaré_00
+Presenta el pagaré.,OPEN_DOCUMENT,abrir,w_op_pagaré_00
+Rehaz el acuse puesto.,REDO,redo,w_rd_acuse_00
+Repite el acuse ya.,REDO,redo,w_rd_acuse_00
+Rehaz el comprobante puesto.,REDO,redo,w_rd_comprobante_00
+Repite el comprobante ya.,REDO,redo,w_rd_comprobante_00
+Rehaz el sello puesto.,REDO,redo,w_rd_sello_00
+Repite el sello ya.,REDO,redo,w_rd_sello_00
+Cambia vale por recibo.,REPLACE_SELECTION,reemplazar,w_rp_vale_00
+Sustituye vale por recibo.,REPLACE_SELECTION,reemplazar,w_rp_vale_00
+Ponlo más audaz.,REWRITE_SELECTION,reformular,w_rw_audaz_00
+Hazlo más audaz.,REWRITE_SELECTION,reformular,w_rw_audaz_00
+Déjalo más audaz.,REWRITE_SELECTION,reformular,w_rw_audaz_00
+Ponlo más cálido.,REWRITE_SELECTION,reformular,w_rw_cálido_00
+Hazlo más cálido.,REWRITE_SELECTION,reformular,w_rw_cálido_00
+Ponlo más ejecutivo.,REWRITE_SELECTION,reformular,w_rw_ejecutivo_00
+Hazlo más ejecutivo.,REWRITE_SELECTION,reformular,w_rw_ejecutivo_00
+Déjalo más ejecutivo.,REWRITE_SELECTION,reformular,w_rw_ejecutivo_00
+Ponlo más sobrio.,REWRITE_SELECTION,reformular,w_rw_sobrio_00
+Hazlo más sobrio.,REWRITE_SELECTION,reformular,w_rw_sobrio_00
+Elige el folio ya.,SELECT_TEXT,seleccion,w_sl_folio_00
+Marca el folio.,SELECT_TEXT,seleccion,w_sl_folio_00
+Elige el membrete ya.,SELECT_TEXT,seleccion,w_sl_membrete_00
+Marca el membrete.,SELECT_TEXT,seleccion,w_sl_membrete_00
+Deposita la minuta.,SAVE_DOCUMENT,guardar,w_sv_minuta_00
+Custodia la minuta.,SAVE_DOCUMENT,guardar,w_sv_minuta_00
+Deshaz la firma puesto.,UNDO,undo,w_un_firma_00
+Anula la firma ya.,UNDO,undo,w_un_firma_00
+Deshaz el folio puesto.,UNDO,undo,w_un_folio_00
+Anula el folio ya.,UNDO,undo,w_un_folio_00
+Aspira interiores.,UNSUPPORTED,unsup-auto,w_us_Aspira_00
+Aspira interiores por favor.,UNSUPPORTED,unsup-auto,w_us_Aspira_00
+Lava el garaje.,UNSUPPORTED,unsup-auto,w_us_Lava_00
+Lava el garaje por favor.,UNSUPPORTED,unsup-auto,w_us_Lava_00
+Lava el motor.,UNSUPPORTED,unsup-auto,w_us_Lava_00
+Lava el motor por favor.,UNSUPPORTED,unsup-auto,w_us_Lava_00
+Pasa corriente.,UNSUPPORTED,unsup-auto,w_us_Pasa_00
+Pasa corriente por favor.,UNSUPPORTED,unsup-auto,w_us_Pasa_00
+Pinta el portón.,UNSUPPORTED,unsup-auto,w_us_Pinta_00
+Pinta el portón por favor.,UNSUPPORTED,unsup-auto,w_us_Pinta_00
+Revisa frenos.,UNSUPPORTED,unsup-auto,w_us_Revisa_00
+Revisa frenos por favor.,UNSUPPORTED,unsup-auto,w_us_Revisa_00
+Revisa suspensión.,UNSUPPORTED,unsup-auto,w_us_Revisa_00
+Revisa suspensión por favor.,UNSUPPORTED,unsup-auto,w_us_Revisa_00
+Deja reposar.,UNSUPPORTED,unsup-cocina,w_usc_Deja_00
+Deja reposar ya.,UNSUPPORTED,unsup-cocina,w_usc_Deja_00
+Enfría el flan.,UNSUPPORTED,unsup-cocina,w_usc_Enfría_00
+Enfría el flan ya.,UNSUPPORTED,unsup-cocina,w_usc_Enfría_00
+Licua el mango.,UNSUPPORTED,unsup-cocina,w_usc_Licua_00
+Licua el mango ya.,UNSUPPORTED,unsup-cocina,w_usc_Licua_00
+Borra la frase completo.,DELETE_SELECTION,borrar,x_dl_frase_00
+Elimina la frase ya.,DELETE_SELECTION,borrar,x_dl_frase_00
+Quita la frase por favor.,DELETE_SELECTION,borrar,x_dl_frase_00
+Deshazte de la frase.,DELETE_SELECTION,borrar,x_dl_frase_00
+Suprime la frase ahora.,DELETE_SELECTION,borrar,x_dl_frase_00
+Exporta el acta en pdf.,EXPORT_DOCUMENT,exportar,x_ex_acta_00
+Saca el acta en texto.,EXPORT_DOCUMENT,exportar,x_ex_acta_00
+Genera el acta en Word.,EXPORT_DOCUMENT,exportar,x_ex_acta_00
+Rinde el acta final.,EXPORT_DOCUMENT,exportar,x_ex_acta_00
+Exporta el informe en pdf.,EXPORT_DOCUMENT,exportar,x_ex_informe_00
+Saca el informe en texto.,EXPORT_DOCUMENT,exportar,x_ex_informe_00
+Genera el informe en Word.,EXPORT_DOCUMENT,exportar,x_ex_informe_00
+Rinde el informe final.,EXPORT_DOCUMENT,exportar,x_ex_informe_00
+Exporta el padrón en pdf.,EXPORT_DOCUMENT,exportar,x_ex_padrón_00
+Saca el padrón en texto.,EXPORT_DOCUMENT,exportar,x_ex_padrón_00
+Genera el padrón en Word.,EXPORT_DOCUMENT,exportar,x_ex_padrón_00
+Rinde el padrón final.,EXPORT_DOCUMENT,exportar,x_ex_padrón_00
+Marca el nombre en negritas.,FORMAT_SELECTION,formato,x_fm_nombre_00
+Pon el nombre en cursivas.,FORMAT_SELECTION,formato,x_fm_nombre_00
+Subraya el nombre.,FORMAT_SELECTION,formato,x_fm_nombre_00
+Destaca el nombre con formato.,FORMAT_SELECTION,formato,x_fm_nombre_00
+Marca el subtítulo en negritas.,FORMAT_SELECTION,formato,x_fm_subtítulo_00
+Pon el subtítulo en cursivas.,FORMAT_SELECTION,formato,x_fm_subtítulo_00
+Subraya el subtítulo.,FORMAT_SELECTION,formato,x_fm_subtítulo_00
+Destaca el subtítulo con formato.,FORMAT_SELECTION,formato,x_fm_subtítulo_00
+Busca el nombre exacto.,FIND_TEXT,buscar,x_fn_nombre_00
+Encuentra el nombre ya.,FIND_TEXT,buscar,x_fn_nombre_00
+Localiza el nombre ahora.,FIND_TEXT,buscar,x_fn_nombre_00
+Halla el nombre rápido.,FIND_TEXT,buscar,x_fn_nombre_00
+Deshaz y guarda.,MULTI_ACTION,multi,x_mu_Deshaz_00
+Deshaz y guarda ahora.,MULTI_ACTION,multi,x_mu_Deshaz_00
+Recorta y pega.,MULTI_ACTION,multi,x_mu_Recorta_00
+Recorta y pega ahora.,MULTI_ACTION,multi,x_mu_Recorta_00
+Selecciona y subraya.,MULTI_ACTION,multi,x_mu_Selecciona_00
+Selecciona y subraya ahora.,MULTI_ACTION,multi,x_mu_Selecciona_00
+Abre el informe 2023.,OPEN_DOCUMENT,abrir,x_op_informe_00
+Recupera el informe 2023.,OPEN_DOCUMENT,abrir,x_op_informe_00
+Carga el informe 2023 ahora.,OPEN_DOCUMENT,abrir,x_op_informe_00
+Desarchiva el informe 2023.,OPEN_DOCUMENT,abrir,x_op_informe_00
+Abre el padrón.,OPEN_DOCUMENT,abrir,x_op_padrón_00
+Recupera el padrón.,OPEN_DOCUMENT,abrir,x_op_padrón_00
+Carga el padrón ahora.,OPEN_DOCUMENT,abrir,x_op_padrón_00
+Desarchiva el padrón.,OPEN_DOCUMENT,abrir,x_op_padrón_00
+Rehaz lo cancelado.,REDO,redo,x_rd_cancelado_00
+Restaura lo cancelado.,REDO,redo,x_rd_cancelado_00
+Repite lo cancelado.,REDO,redo,x_rd_cancelado_00
+El título será Epílogo.,RENAME_TITLE,titulo,x_rn_Epíl_00
+Pon de nombre Epílogo.,RENAME_TITLE,titulo,x_rn_Epíl_00
+Llama a esto Epílogo.,RENAME_TITLE,titulo,x_rn_Epíl_00
+Denomina el archivo Epílogo.,RENAME_TITLE,titulo,x_rn_Epíl_00
+Intitula como Epílogo.,RENAME_TITLE,titulo,x_rn_Epíl_00
+Encabeza con Epílogo.,RENAME_TITLE,titulo,x_rn_Epíl_00
+El título será Hallazgos.,RENAME_TITLE,titulo,x_rn_Hall_00
+Pon de nombre Hallazgos.,RENAME_TITLE,titulo,x_rn_Hall_00
+Llama a esto Hallazgos.,RENAME_TITLE,titulo,x_rn_Hall_00
+Denomina el archivo Hallazgos.,RENAME_TITLE,titulo,x_rn_Hall_00
+Intitula como Hallazgos.,RENAME_TITLE,titulo,x_rn_Hall_00
+Encabeza con Hallazgos.,RENAME_TITLE,titulo,x_rn_Hall_00
+El título será Propuesta.,RENAME_TITLE,titulo,x_rn_Prop_00
+Pon de nombre Propuesta.,RENAME_TITLE,titulo,x_rn_Prop_00
+Llama a esto Propuesta.,RENAME_TITLE,titulo,x_rn_Prop_00
+Denomina el archivo Propuesta.,RENAME_TITLE,titulo,x_rn_Prop_00
+Intitula como Propuesta.,RENAME_TITLE,titulo,x_rn_Prop_00
+Encabeza con Propuesta.,RENAME_TITLE,titulo,x_rn_Prop_00
+Cambia monto por cantidad.,REPLACE_SELECTION,reemplazar,x_rp_mont_00
+Pon cantidad en vez de monto.,REPLACE_SELECTION,reemplazar,x_rp_mont_00
+Sustituye monto con cantidad.,REPLACE_SELECTION,reemplazar,x_rp_mont_00
+Troca monto a cantidad.,REPLACE_SELECTION,reemplazar,x_rp_mont_00
+Déjalo más cálido.,REWRITE_SELECTION,reformular,x_rw_cálido_00
+Vuelve esto más cálido.,REWRITE_SELECTION,reformular,x_rw_cálido_00
+Transfórmalo a más cálido.,REWRITE_SELECTION,reformular,x_rw_cálido_00
+Adáptalo a más cálido.,REWRITE_SELECTION,reformular,x_rw_cálido_00
+Déjalo más sobrio.,REWRITE_SELECTION,reformular,x_rw_sobrio_00
+Vuelve esto más sobrio.,REWRITE_SELECTION,reformular,x_rw_sobrio_00
+Transfórmalo a más sobrio.,REWRITE_SELECTION,reformular,x_rw_sobrio_00
+Adáptalo a más sobrio.,REWRITE_SELECTION,reformular,x_rw_sobrio_00
+Déjalo más vivo.,REWRITE_SELECTION,reformular,x_rw_vivo_00
+Vuelve esto más vivo.,REWRITE_SELECTION,reformular,x_rw_vivo_00
+Transfórmalo a más vivo.,REWRITE_SELECTION,reformular,x_rw_vivo_00
+Adáptalo a más vivo.,REWRITE_SELECTION,reformular,x_rw_vivo_00
+Selecciona el anexo completo.,SELECT_TEXT,seleccion,x_sl_anexo_00
+Marca el anexo entero.,SELECT_TEXT,seleccion,x_sl_anexo_00
+Toma el anexo todo.,SELECT_TEXT,seleccion,x_sl_anexo_00
+Aísla el anexo.,SELECT_TEXT,seleccion,x_sl_anexo_00
+Selecciona la rúbrica completo.,SELECT_TEXT,seleccion,x_sl_rúbrica_00
+Marca la rúbrica entero.,SELECT_TEXT,seleccion,x_sl_rúbrica_00
+Toma la rúbrica todo.,SELECT_TEXT,seleccion,x_sl_rúbrica_00
+Aísla la rúbrica.,SELECT_TEXT,seleccion,x_sl_rúbrica_00
+Guarda la minuta ya.,SAVE_DOCUMENT,guardar,x_sv_minuta_00
+Archiva la minuta por favor.,SAVE_DOCUMENT,guardar,x_sv_minuta_00
+Consigna la minuta ahora.,SAVE_DOCUMENT,guardar,x_sv_minuta_00
+Registra la minuta.,SAVE_DOCUMENT,guardar,x_sv_minuta_00
+Guarda el oficio ya.,SAVE_DOCUMENT,guardar,x_sv_oficio_00
+Archiva el oficio por favor.,SAVE_DOCUMENT,guardar,x_sv_oficio_00
+Consigna el oficio ahora.,SAVE_DOCUMENT,guardar,x_sv_oficio_00
+Registra el oficio.,SAVE_DOCUMENT,guardar,x_sv_oficio_00
+Deshaz el cambio bueno.,UNDO,undo,x_un_cambio_00
+Anula el cambio bueno.,UNDO,undo,x_un_cambio_00
+Revierte el cambio bueno.,UNDO,undo,x_un_cambio_00
+Cancela el cambio bueno.,UNDO,undo,x_un_cambio_00
+Agenda dentista.,UNSUPPORTED,unsup-vida,x_us_Agenda_00
+"Agenda dentista, por favor.",UNSUPPORTED,unsup-vida,x_us_Agenda_00
+Barre el patio.,UNSUPPORTED,unsup-vida,x_us_Barre_00
+"Barre el patio, por favor.",UNSUPPORTED,unsup-vida,x_us_Barre_00
+Ordena cena.,UNSUPPORTED,unsup-vida,x_us_Ordena_00
+"Ordena cena, por favor.",UNSUPPORTED,unsup-vida,x_us_Ordena_00
+Plancha camisas.,UNSUPPORTED,unsup-vida,x_us_Plancha_00
+"Plancha camisas, por favor.",UNSUPPORTED,unsup-vida,x_us_Plancha_00
+Riega el jardín.,UNSUPPORTED,unsup-vida,x_us_Riega_00
+"Riega el jardín, por favor.",UNSUPPORTED,unsup-vida,x_us_Riega_00
+Riega plantas.,UNSUPPORTED,unsup-vida,x_us_Riega_00
+"Riega plantas, por favor.",UNSUPPORTED,unsup-vida,x_us_Riega_00
+Borra el otrosí ya.,DELETE_SELECTION,borrar,y_dl_otrosí_00
+Quita el otrosí ahora.,DELETE_SELECTION,borrar,y_dl_otrosí_00
+Elimina el otrosí por favor.,DELETE_SELECTION,borrar,y_dl_otrosí_00
+Tacha el otrosí.,DELETE_SELECTION,borrar,y_dl_otrosí_00
+Saca el altri en pdf.,EXPORT_DOCUMENT,exportar,y_ex_altri_00
+Rinde el altri en texto.,EXPORT_DOCUMENT,exportar,y_ex_altri_00
+Genera el altri en Word.,EXPORT_DOCUMENT,exportar,y_ex_altri_00
+Saca la foja en pdf.,EXPORT_DOCUMENT,exportar,y_ex_foja_00
+Rinde la foja en texto.,EXPORT_DOCUMENT,exportar,y_ex_foja_00
+Genera la foja en Word.,EXPORT_DOCUMENT,exportar,y_ex_foja_00
+Saca la minuta en pdf.,EXPORT_DOCUMENT,exportar,y_ex_minuta_00
+Rinde la minuta en texto.,EXPORT_DOCUMENT,exportar,y_ex_minuta_00
+Resalta el legajo en negritas.,FORMAT_SELECTION,formato,y_fm_legajo_00
+Pon el legajo en cursiva.,FORMAT_SELECTION,formato,y_fm_legajo_00
+Subraya el legajo ya.,FORMAT_SELECTION,formato,y_fm_legajo_00
+Resalta la rúbrica en negritas.,FORMAT_SELECTION,formato,y_fm_rúbrica_00
+Pon la rúbrica en cursiva.,FORMAT_SELECTION,formato,y_fm_rúbrica_00
+Subraya la rúbrica ya.,FORMAT_SELECTION,formato,y_fm_rúbrica_00
+Resalta el sello en negritas.,FORMAT_SELECTION,formato,y_fm_sello_00
+Pon el sello en cursiva.,FORMAT_SELECTION,formato,y_fm_sello_00
+Subraya el sello ya.,FORMAT_SELECTION,formato,y_fm_sello_00
+Halla la firma.,FIND_TEXT,buscar,y_fn_firma_00
+Ubica la firma.,FIND_TEXT,buscar,y_fn_firma_00
+Encuentra la firma ya.,FIND_TEXT,buscar,y_fn_firma_00
+Halla el otrosí.,FIND_TEXT,buscar,y_fn_otrosí_00
+Ubica el otrosí.,FIND_TEXT,buscar,y_fn_otrosí_00
+Encuentra el otrosí ya.,FIND_TEXT,buscar,y_fn_otrosí_00
+"Abre, revisa y firma.",MULTI_ACTION,multi,"y_mu_Abre,_00"
+"Abre, revisa y firma por favor.",MULTI_ACTION,multi,"y_mu_Abre,_00"
+"Centra, justifica y exporta.",MULTI_ACTION,multi,"y_mu_Centra,_00"
+"Centra, justifica y exporta por favor.",MULTI_ACTION,multi,"y_mu_Centra,_00"
+"Encuentra, reemplaza y guarda.",MULTI_ACTION,multi,"y_mu_Encuentra,_00"
+"Encuentra, reemplaza y guarda por favor.",MULTI_ACTION,multi,"y_mu_Encuentra,_00"
+"Formatea, guarda y comparte.",MULTI_ACTION,multi,"y_mu_Formatea,_00"
+"Formatea, guarda y comparte por favor.",MULTI_ACTION,multi,"y_mu_Formatea,_00"
+"Lee, corrige y guarda.",MULTI_ACTION,multi,"y_mu_Lee,_00"
+"Lee, corrige y guarda por favor.",MULTI_ACTION,multi,"y_mu_Lee,_00"
+"Resume, titula y envía.",MULTI_ACTION,multi,"y_mu_Resume,_00"
+"Resume, titula y envía por favor.",MULTI_ACTION,multi,"y_mu_Resume,_00"
+"Titula, guarda y exporta.",MULTI_ACTION,multi,"y_mu_Titula,_00"
+"Titula, guarda y exporta por favor.",MULTI_ACTION,multi,"y_mu_Titula,_00"
+Hace un calorón.,NO_ACTION,conversacion,y_na_Hace_00
+"Oye, hace un calorón.",NO_ACTION,conversacion,y_na_Hace_00
+Recupera el boletín.,OPEN_DOCUMENT,abrir,y_op_boletín_00
+Desarchiva el boletín.,OPEN_DOCUMENT,abrir,y_op_boletín_00
+Abre el boletín ya.,OPEN_DOCUMENT,abrir,y_op_boletín_00
+Recupera la foja.,OPEN_DOCUMENT,abrir,y_op_foja_00
+Desarchiva la foja.,OPEN_DOCUMENT,abrir,y_op_foja_00
+Abre la foja ya.,OPEN_DOCUMENT,abrir,y_op_foja_00
+Rehaz lo centrado.,REDO,redo,y_rd_centrado_00
+Repite lo centrado.,REDO,redo,y_rd_centrado_00
+Restaura lo centrado.,REDO,redo,y_rd_centrado_00
+Ponle Acta de nombre.,RENAME_TITLE,titulo,y_rn_Acta_00
+Titúlalo Acta.,RENAME_TITLE,titulo,y_rn_Acta_00
+Denomínalo Acta.,RENAME_TITLE,titulo,y_rn_Acta_00
+Rotúlalo como Acta.,RENAME_TITLE,titulo,y_rn_Acta_00
+Ponle Circular de nombre.,RENAME_TITLE,titulo,y_rn_Circ_00
+Titúlalo Circular.,RENAME_TITLE,titulo,y_rn_Circ_00
+Denomínalo Circular.,RENAME_TITLE,titulo,y_rn_Circ_00
+Rotúlalo como Circular.,RENAME_TITLE,titulo,y_rn_Circ_00
+Ponle Foja de nombre.,RENAME_TITLE,titulo,y_rn_Foja_00
+Titúlalo Foja.,RENAME_TITLE,titulo,y_rn_Foja_00
+Denomínalo Foja.,RENAME_TITLE,titulo,y_rn_Foja_00
+Rotúlalo como Foja.,RENAME_TITLE,titulo,y_rn_Foja_00
+Ponle Minuta de nombre.,RENAME_TITLE,titulo,y_rn_Minu_00
+Titúlalo Minuta.,RENAME_TITLE,titulo,y_rn_Minu_00
+Denomínalo Minuta.,RENAME_TITLE,titulo,y_rn_Minu_00
+Rotúlalo como Minuta.,RENAME_TITLE,titulo,y_rn_Minu_00
+Ponle Prontuario de nombre.,RENAME_TITLE,titulo,y_rn_Pron_00
+Titúlalo Prontuario.,RENAME_TITLE,titulo,y_rn_Pron_00
+Denomínalo Prontuario.,RENAME_TITLE,titulo,y_rn_Pron_00
+Rotúlalo como Prontuario.,RENAME_TITLE,titulo,y_rn_Pron_00
+Ponle Resolutivo de nombre.,RENAME_TITLE,titulo,y_rn_Reso_00
+Titúlalo Resolutivo.,RENAME_TITLE,titulo,y_rn_Reso_00
+Denomínalo Resolutivo.,RENAME_TITLE,titulo,y_rn_Reso_00
+Rotúlalo como Resolutivo.,RENAME_TITLE,titulo,y_rn_Reso_00
+Ponlo más plano.,REWRITE_SELECTION,reformular,y_rw_plano_00
+Hazlo más plano ya.,REWRITE_SELECTION,reformular,y_rw_plano_00
+Déjalo más plano.,REWRITE_SELECTION,reformular,y_rw_plano_00
+Ponlo más breve todavía.,REWRITE_SELECTION,reformular,y_rw_todavía_00
+Hazlo más breve todavía ya.,REWRITE_SELECTION,reformular,y_rw_todavía_00
+Déjalo más breve todavía.,REWRITE_SELECTION,reformular,y_rw_todavía_00
+Elige el oficio.,SELECT_TEXT,seleccion,y_sl_oficio_00
+Aparta el oficio.,SELECT_TEXT,seleccion,y_sl_oficio_00
+Marca el oficio ya.,SELECT_TEXT,seleccion,y_sl_oficio_00
+Archiva el acuse.,SAVE_DOCUMENT,guardar,y_sv_acuse_00
+Guarda el acuse bien.,SAVE_DOCUMENT,guardar,y_sv_acuse_00
+Consigna el acuse.,SAVE_DOCUMENT,guardar,y_sv_acuse_00
+Archiva la minuta.,SAVE_DOCUMENT,guardar,y_sv_minuta_00
+Guarda la minuta bien.,SAVE_DOCUMENT,guardar,y_sv_minuta_00
+Consigna la minuta.,SAVE_DOCUMENT,guardar,y_sv_minuta_00
+Guarda el tanto bien.,SAVE_DOCUMENT,guardar,y_sv_tanto_00
+Consigna el tanto.,SAVE_DOCUMENT,guardar,y_sv_tanto_00
+Deshaz la última línea.,UNDO,undo,y_un_última_00
+Cancela la última línea.,UNDO,undo,y_un_última_00
+Anula la última línea.,UNDO,undo,y_un_última_00
+Deshaz el último paso.,UNDO,undo,y_un_último_00
+Cancela el último paso.,UNDO,undo,y_un_último_00
+Anula el último paso.,UNDO,undo,y_un_último_00
+Destapa el baño.,UNSUPPORTED,unsup-hogar,y_us_Destapa_00
+"Por favor, destapa el baño.",UNSUPPORTED,unsup-hogar,y_us_Destapa_00
+Actualiza el perfil.,UNSUPPORTED,unsup-cercano,y_usc_Actualiza_00
+Actualiza el perfil ya.,UNSUPPORTED,unsup-cercano,y_usc_Actualiza_00
+Elimina el chat.,UNSUPPORTED,unsup-cercano,y_usc_Elimina_00
+Elimina el chat ya.,UNSUPPORTED,unsup-cercano,y_usc_Elimina_00
+Firma la lista.,UNSUPPORTED,unsup-cercano,y_usc_Firma_00
+Firma la lista ya.,UNSUPPORTED,unsup-cercano,y_usc_Firma_00
+Borra la coda ya.,DELETE_SELECTION,borrar,z_dl_coda_00
+Quita la coda.,DELETE_SELECTION,borrar,z_dl_coda_00
+Borra el exordio ya.,DELETE_SELECTION,borrar,z_dl_exordio_00
+Quita el exordio.,DELETE_SELECTION,borrar,z_dl_exordio_00
+Exporta el exordio en pdf.,EXPORT_DOCUMENT,exportar,z_ex_exordio_00
+Saca el exordio en texto.,EXPORT_DOCUMENT,exportar,z_ex_exordio_00
+Rinde el exordio en Word.,EXPORT_DOCUMENT,exportar,z_ex_exordio_00
+Aplica negritas a el legajo.,FORMAT_SELECTION,formato,z_fm2_legajo_00
+Marca el legajo en cursiva.,FORMAT_SELECTION,formato,z_fm2_legajo_00
+Resalta el legajo.,FORMAT_SELECTION,formato,z_fm2_legajo_00
+Aplica negritas a la minuta.,FORMAT_SELECTION,formato,z_fm2_minuta_00
+Marca la minuta en cursiva.,FORMAT_SELECTION,formato,z_fm2_minuta_00
+Resalta la minuta.,FORMAT_SELECTION,formato,z_fm2_minuta_00
+Pon el altri en negritas.,FORMAT_SELECTION,formato,z_fm_altri_00
+Pon el altri en cursivas.,FORMAT_SELECTION,formato,z_fm_altri_00
+Subraya el altri por favor.,FORMAT_SELECTION,formato,z_fm_altri_00
+Pon la coda en negritas.,FORMAT_SELECTION,formato,z_fm_coda_00
+Pon la coda en cursivas.,FORMAT_SELECTION,formato,z_fm_coda_00
+Subraya la coda por favor.,FORMAT_SELECTION,formato,z_fm_coda_00
+Pon la peroración en negritas.,FORMAT_SELECTION,formato,z_fm_peroración_00
+Pon la peroración en cursivas.,FORMAT_SELECTION,formato,z_fm_peroración_00
+Subraya la peroración por favor.,FORMAT_SELECTION,formato,z_fm_peroración_00
+Busca la adenda ya.,FIND_TEXT,buscar,z_fn_adenda_00
+Encuentra la adenda por favor.,FIND_TEXT,buscar,z_fn_adenda_00
+Localiza la adenda.,FIND_TEXT,buscar,z_fn_adenda_00
+Busca el epígrafe ya.,FIND_TEXT,buscar,z_fn_epígrafe_00
+Encuentra el epígrafe por favor.,FIND_TEXT,buscar,z_fn_epígrafe_00
+Localiza el epígrafe.,FIND_TEXT,buscar,z_fn_epígrafe_00
+Busca la foja ya.,FIND_TEXT,buscar,z_fn_foja_00
+Encuentra la foja por favor.,FIND_TEXT,buscar,z_fn_foja_00
+Localiza la foja.,FIND_TEXT,buscar,z_fn_foja_00
+Busca la peroración ya.,FIND_TEXT,buscar,z_fn_peroración_00
+Encuentra la peroración por favor.,FIND_TEXT,buscar,z_fn_peroración_00
+Localiza la peroración.,FIND_TEXT,buscar,z_fn_peroración_00
+Busca el visto ya.,FIND_TEXT,buscar,z_fn_visto_00
+Encuentra el visto por favor.,FIND_TEXT,buscar,z_fn_visto_00
+Localiza el visto.,FIND_TEXT,buscar,z_fn_visto_00
+"Borra, firma y sella.",MULTI_ACTION,multi,"z_mu_Borra,_00"
+"Borra, firma y sella ahora mismo.",MULTI_ACTION,multi,"z_mu_Borra,_00"
+"Busca, copia y archiva.",MULTI_ACTION,multi,"z_mu_Busca,_00"
+"Busca, copia y archiva ahora mismo.",MULTI_ACTION,multi,"z_mu_Busca,_00"
+"Centra, sella y guarda.",MULTI_ACTION,multi,"z_mu_Centra,_00"
+"Centra, sella y guarda ahora mismo.",MULTI_ACTION,multi,"z_mu_Centra,_00"
+"Sangra, numera y archiva.",MULTI_ACTION,multi,"z_mu_Sangra,_00"
+"Sangra, numera y archiva ahora mismo.",MULTI_ACTION,multi,"z_mu_Sangra,_00"
+"Subraya, rubrica y turna.",MULTI_ACTION,multi,"z_mu_Subraya,_00"
+"Subraya, rubrica y turna ahora mismo.",MULTI_ACTION,multi,"z_mu_Subraya,_00"
+El mercado cierra temprano.,NO_ACTION,conversacion,z_na_El_00
+"Bueno, el mercado cierra temprano.",NO_ACTION,conversacion,z_na_El_00
+El puente estará cerrado.,NO_ACTION,conversacion,z_na_El_00
+"Bueno, el puente estará cerrado.",NO_ACTION,conversacion,z_na_El_00
+El parque abre tarde.,NO_ACTION,conversacion,z_na_El_00
+"Bueno, el parque abre tarde.",NO_ACTION,conversacion,z_na_El_00
+El museo es gratis hoy.,NO_ACTION,conversacion,z_na_El_00
+"Bueno, el museo es gratis hoy.",NO_ACTION,conversacion,z_na_El_00
+El curso es en línea.,NO_ACTION,conversacion,z_na_El_00
+"Bueno, el curso es en línea.",NO_ACTION,conversacion,z_na_El_00
+El examen es oral.,NO_ACTION,conversacion,z_na_El_00
+"Bueno, el examen es oral.",NO_ACTION,conversacion,z_na_El_00
+El tráfico fluye bien.,NO_ACTION,conversacion,z_na_El_00
+"Bueno, el tráfico fluye bien.",NO_ACTION,conversacion,z_na_El_00
+El trámite quedó listo.,NO_ACTION,conversacion,z_na_El_00
+"Bueno, el trámite quedó listo.",NO_ACTION,conversacion,z_na_El_00
+El doctor canceló.,NO_ACTION,conversacion,z_na_El_00
+"Bueno, el doctor canceló.",NO_ACTION,conversacion,z_na_El_00
+Mañana descansamos.,NO_ACTION,conversacion,z_na_Mañana_00
+"Bueno, mañana descansamos.",NO_ACTION,conversacion,z_na_Mañana_00
+Abre la adenda ya.,OPEN_DOCUMENT,abrir,z_op_adenda_00
+Recupera la adenda por favor.,OPEN_DOCUMENT,abrir,z_op_adenda_00
+Carga la adenda.,OPEN_DOCUMENT,abrir,z_op_adenda_00
+Abre el colofón ya.,OPEN_DOCUMENT,abrir,z_op_colofón_00
+Recupera el colofón por favor.,OPEN_DOCUMENT,abrir,z_op_colofón_00
+Carga el colofón.,OPEN_DOCUMENT,abrir,z_op_colofón_00
+Abre el considerando ya.,OPEN_DOCUMENT,abrir,z_op_considerando_00
+Recupera el considerando por favor.,OPEN_DOCUMENT,abrir,z_op_considerando_00
+Carga el considerando.,OPEN_DOCUMENT,abrir,z_op_considerando_00
+Abre el exordio ya.,OPEN_DOCUMENT,abrir,z_op_exordio_00
+Recupera el exordio por favor.,OPEN_DOCUMENT,abrir,z_op_exordio_00
+Carga el exordio.,OPEN_DOCUMENT,abrir,z_op_exordio_00
+Abre la peroración ya.,OPEN_DOCUMENT,abrir,z_op_peroración_00
+Recupera la peroración por favor.,OPEN_DOCUMENT,abrir,z_op_peroración_00
+Carga la peroración.,OPEN_DOCUMENT,abrir,z_op_peroración_00
+Rehaz el envío ya.,REDO,redo,z_rd_envío_00
+Reaplica el envío por favor.,REDO,redo,z_rd_envío_00
+Restaura el envío.,REDO,redo,z_rd_envío_00
+Rehaz la firma puesta ya.,REDO,redo,z_rd_firma_00
+Reaplica la firma puesta por favor.,REDO,redo,z_rd_firma_00
+Restaura la firma puesta.,REDO,redo,z_rd_firma_00
+Rehaz la numeración ya.,REDO,redo,z_rd_numeración_00
+Reaplica la numeración por favor.,REDO,redo,z_rd_numeración_00
+Restaura la numeración.,REDO,redo,z_rd_numeración_00
+Rehaz el pegado de hoy ya.,REDO,redo,z_rd_pegado_00
+Reaplica el pegado de hoy por favor.,REDO,redo,z_rd_pegado_00
+Restaura el pegado de hoy.,REDO,redo,z_rd_pegado_00
+Rehaz la tabla nueva ya.,REDO,redo,z_rd_tabla_00
+Reaplica la tabla nueva por favor.,REDO,redo,z_rd_tabla_00
+Restaura la tabla nueva.,REDO,redo,z_rd_tabla_00
+Rehaz el título nuevo ya.,REDO,redo,z_rd_título_00
+Reaplica el título nuevo por favor.,REDO,redo,z_rd_título_00
+Restaura el título nuevo.,REDO,redo,z_rd_título_00
+Pon Resolutivo de título.,RENAME_TITLE,titulo,z_rn_Reso_00
+Titula este bloque Resolutivo.,RENAME_TITLE,titulo,z_rn_Reso_00
+Encabeza así: Resolutivo.,RENAME_TITLE,titulo,z_rn_Reso_00
+El rótulo dirá Resolutivo.,RENAME_TITLE,titulo,z_rn_Reso_00
+Cambia coda por final.,REPLACE_SELECTION,reemplazar,z_rp_coda_00
+Pon final en vez de coda.,REPLACE_SELECTION,reemplazar,z_rp_coda_00
+Cambia interludio por pausa.,REPLACE_SELECTION,reemplazar,z_rp_inte_00
+Pon pausa en vez de interludio.,REPLACE_SELECTION,reemplazar,z_rp_inte_00
+Cambia peroración por cierre.,REPLACE_SELECTION,reemplazar,z_rp_pero_00
+Pon cierre en vez de peroración.,REPLACE_SELECTION,reemplazar,z_rp_pero_00
+Ponlo más cortante.,REWRITE_SELECTION,reformular,z_rw_cortante_00
+Hazlo más cortante.,REWRITE_SELECTION,reformular,z_rw_cortante_00
+Ponlo más fluido.,REWRITE_SELECTION,reformular,z_rw_fluido_00
+Hazlo más fluido.,REWRITE_SELECTION,reformular,z_rw_fluido_00
+Ponlo más leve.,REWRITE_SELECTION,reformular,z_rw_leve_00
+Hazlo más leve.,REWRITE_SELECTION,reformular,z_rw_leve_00
+Selecciona la coda ya.,SELECT_TEXT,seleccion,z_sl_coda_00
+Marca la coda completo.,SELECT_TEXT,seleccion,z_sl_coda_00
+Elige la coda por favor.,SELECT_TEXT,seleccion,z_sl_coda_00
+Selecciona el legajo ya.,SELECT_TEXT,seleccion,z_sl_legajo_00
+Marca el legajo completo.,SELECT_TEXT,seleccion,z_sl_legajo_00
+Elige el legajo por favor.,SELECT_TEXT,seleccion,z_sl_legajo_00
+Selecciona la minuta ya.,SELECT_TEXT,seleccion,z_sl_minuta_00
+Marca la minuta completo.,SELECT_TEXT,seleccion,z_sl_minuta_00
+Elige la minuta por favor.,SELECT_TEXT,seleccion,z_sl_minuta_00
+Selecciona el resultando ya.,SELECT_TEXT,seleccion,z_sl_resultando_00
+Marca el resultando completo.,SELECT_TEXT,seleccion,z_sl_resultando_00
+Elige el resultando por favor.,SELECT_TEXT,seleccion,z_sl_resultando_00
+Guarda la coda ya.,SAVE_DOCUMENT,guardar,z_sv_coda_00
+Archiva la coda por favor.,SAVE_DOCUMENT,guardar,z_sv_coda_00
+Registra la coda.,SAVE_DOCUMENT,guardar,z_sv_coda_00
+Guarda el epígrafe ya.,SAVE_DOCUMENT,guardar,z_sv_epígrafe_00
+Archiva el epígrafe por favor.,SAVE_DOCUMENT,guardar,z_sv_epígrafe_00
+Registra el epígrafe.,SAVE_DOCUMENT,guardar,z_sv_epígrafe_00
+Guarda la foja ya.,SAVE_DOCUMENT,guardar,z_sv_foja_00
+Archiva la foja por favor.,SAVE_DOCUMENT,guardar,z_sv_foja_00
+Registra la foja.,SAVE_DOCUMENT,guardar,z_sv_foja_00
+Guarda el resultando ya.,SAVE_DOCUMENT,guardar,z_sv_resultando_00
+Archiva el resultando por favor.,SAVE_DOCUMENT,guardar,z_sv_resultando_00
+Registra el resultando.,SAVE_DOCUMENT,guardar,z_sv_resultando_00
+Deshaz el borrado útil ya.,UNDO,undo,z_un_borrado_00
+Anula el borrado útil por favor.,UNDO,undo,z_un_borrado_00
+Echa atrás el borrado útil.,UNDO,undo,z_un_borrado_00
+Deshaz la cursiva ya.,UNDO,undo,z_un_cursiva_00
+Anula la cursiva por favor.,UNDO,undo,z_un_cursiva_00
+Echa atrás la cursiva.,UNDO,undo,z_un_cursiva_00
+Deshaz la justificación ya.,UNDO,undo,z_un_justificación_00
+Anula la justificación por favor.,UNDO,undo,z_un_justificación_00
+Echa atrás la justificación.,UNDO,undo,z_un_justificación_00
+Deshaz la sangría ya.,UNDO,undo,z_un_sangría_00
+Anula la sangría por favor.,UNDO,undo,z_un_sangría_00
+Echa atrás la sangría.,UNDO,undo,z_un_sangría_00
+Lava el patio.,UNSUPPORTED,unsup-hogar2,z_us_Lava_00
+Lava el patio por favor.,UNSUPPORTED,unsup-hogar2,z_us_Lava_00
+Clasifica facturas.,UNSUPPORTED,unsup-cercano2,z_usc_Clasifica_00
+Clasifica facturas ya.,UNSUPPORTED,unsup-cercano2,z_usc_Clasifica_00
+Ensaya la presentación.,UNSUPPORTED,unsup-cercano2,z_usc_Ensaya_00
+Ensaya la presentación ya.,UNSUPPORTED,unsup-cercano2,z_usc_Ensaya_00
+Etiqueta carpetas.,UNSUPPORTED,unsup-cercano2,z_usc_Etiqueta_00
+Etiqueta carpetas ya.,UNSUPPORTED,unsup-cercano2,z_usc_Etiqueta_00
+Memoriza el discurso.,UNSUPPORTED,unsup-cercano2,z_usc_Memoriza_00
+Memoriza el discurso ya.,UNSUPPORTED,unsup-cercano2,z_usc_Memoriza_00
+Ordena recibos.,UNSUPPORTED,unsup-cercano2,z_usc_Ordena_00
+Ordena recibos ya.,UNSUPPORTED,unsup-cercano2,z_usc_Ordena_00
+Recoge el encargo.,UNSUPPORTED,unsup-cercano2,z_usc_Recoge_00
+Recoge el encargo ya.,UNSUPPORTED,unsup-cercano2,z_usc_Recoge_00
+Repasa la lección.,UNSUPPORTED,unsup-cercano2,z_usc_Repasa_00
+Repasa la lección ya.,UNSUPPORTED,unsup-cercano2,z_usc_Repasa_00
+Coteja el original.,UNSUPPORTED,unsup-admin,z_usd_Coteja_00
+"Por favor, coteja el original.",UNSUPPORTED,unsup-admin,z_usd_Coteja_00
+Ejecuta el laudo.,UNSUPPORTED,unsup-admin,z_usd_Ejecuta_00
+"Por favor, ejecuta el laudo.",UNSUPPORTED,unsup-admin,z_usd_Ejecuta_00
+Rubrica la foja.,UNSUPPORTED,unsup-admin,z_usd_Rubrica_00
+"Por favor, rubrica la foja.",UNSUPPORTED,unsup-admin,z_usd_Rubrica_00
+Sella el sobre.,UNSUPPORTED,unsup-admin,z_usd_Sella_00
+"Por favor, sella el sobre.",UNSUPPORTED,unsup-admin,z_usd_Sella_00
+Timbra la carta.,UNSUPPORTED,unsup-admin,z_usd_Timbra_00
+"Por favor, timbra la carta.",UNSUPPORTED,unsup-admin,z_usd_Timbra_00

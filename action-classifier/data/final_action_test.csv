@@ -1,0 +1,1251 @@
+id,group,text,expected,family_id,uns,conf,para,short
+RN001,A,Ponle Balance de comprobación.,RENAME_TITLE,f5_rn_balance,0,0,0,0
+RN002,A,Titula el otrosí como Alcance.,RENAME_TITLE,f5_rn_otrosi,0,0,0,0
+RN003,A,El encabezado dirá Vistos.,RENAME_TITLE,f5_rn_vistos,0,0,0,0
+RN004,A,Denomina el legajo Leg-44.,RENAME_TITLE,f5_rn_leg44,0,0,0,0
+RN005,A,Rotula la caja como 2026-A.,RENAME_TITLE,f5_rn_caja,0,0,0,0
+RN006,A,Intitula el memorial Defensa.,RENAME_TITLE,f5_rn_memorial,0,0,0,0
+RN007,A,Llama al archivo Cierre fiscal.,RENAME_TITLE,f5_rn_cierre,0,0,0,0
+RN008,A,Bautiza la carpeta como Raíz.,RENAME_TITLE,f5_rn_raiz,0,0,0,0
+RN009,A,El membrete será Notaría 12.,RENAME_TITLE,f5_rn_notaria,0,0,0,0
+RN010,A,Ponle al acta Aclaratoria.,RENAME_TITLE,f5_rn_aclaratoria,0,0,0,0
+RN011,A,Cambia la carátula a Reservado.,RENAME_TITLE,f5_rn_reservado,0,0,0,0
+RN012,A,Actualiza el rótulo a Urgente.,RENAME_TITLE,f5_rn_urgente,0,0,0,0
+RN013,A,Modifica el encabezado a Borrador 2.,RENAME_TITLE,f5_rn_borrador2,0,0,0,0
+RN014,A,Reescribe la portada como Índice 2026.,RENAME_TITLE,f5_rn_indice26,0,0,0,0
+RN015,A,Ajusta el título a Fe de erratas.,RENAME_TITLE,f5_rn_feerratas,0,0,0,0
+RN016,A,Define el rótulo del compendio.,RENAME_TITLE,f5_rn_compendio,0,0,0,0
+RN017,A,Fija el nombre del prontuario.,RENAME_TITLE,f5_rn_prontuario,0,0,0,0
+RN018,A,El nuevo nombre será Memorial.,RENAME_TITLE,f5_rn_memorial2,0,0,0,0
+RN019,A,Quiero titularlo Crónica.,RENAME_TITLE,f5_rn_cronica,0,0,0,0
+RN020,A,Que se llame Bitácora final.,RENAME_TITLE,f5_rn_bitacora,0,0,0,0
+RN021,A,Dale por título Relatoría.,RENAME_TITLE,f5_rn_relatoria,0,0,0,0
+RN022,A,Asígnale el nombre Cuaderno.,RENAME_TITLE,f5_rn_cuaderno,0,0,0,0
+RN023,A,El documento llevará por nombre Atlas.,RENAME_TITLE,f5_rn_atlas,0,0,0,0
+RN024,A,Titulémoslo Diario de campo.,RENAME_TITLE,f5_rn_diario,0,0,0,0
+RN025,A,Pongámosle Anales 2026.,RENAME_TITLE,f5_rn_anales,0,0,0,0
+RN026,A,¿Puedes titularlo Gaceta?.,RENAME_TITLE,f5_rn_gaceta,0,0,1,0
+RN027,A,Necesito titular esto ya.,RENAME_TITLE,f5_rn_yatitulo,0,0,1,0
+RN028,A,Haz favor de renombrarlo.,RENAME_TITLE,f5_rn_favor,0,0,1,0
+RN029,A,Te encargo el título nuevo.,RENAME_TITLE,f5_rn_encargo,0,0,1,0
+RN030,A,Me ayudas con el encabezado.,RENAME_TITLE,f5_rn_ayuda,0,0,1,0
+RN031,A,Cámbiame el título por favor.,RENAME_TITLE,f5_rn_cambiame,0,0,1,0
+RN032,A,Ponme otro encabezado.,RENAME_TITLE,f5_rn_ponme,0,0,1,0
+RN033,A,Actualízame la portada.,RENAME_TITLE,f5_rn_actualizame,0,0,1,0
+RN034,A,Corrígeme el rótulo.,RENAME_TITLE,f5_rn corrigeme,0,0,1,0
+RN035,A,Arregla el nombre del archivo.,RENAME_TITLE,f5_rn_arreglanombre,0,0,1,0
+RN036,A,Titula.,RENAME_TITLE,f5_rn_corto1,0,0,0,1
+RN037,A,Pon título.,RENAME_TITLE,f5_rn_corto2,0,0,0,1
+RN038,A,Cambia nombre.,RENAME_TITLE,f5_rn_corto3,0,0,0,1
+RN039,A,Nuevo título.,RENAME_TITLE,f5_rn_corto4,0,0,0,1
+RN040,A,Renombra.,RENAME_TITLE,f5_rn_corto5,0,0,0,1
+RN041,A,"El título, cámbialo.",RENAME_TITLE,f5_rn_inversion,0,0,1,0
+RN042,A,Ya ponle nombre a esto.,RENAME_TITLE,f5_rn_yaponle,0,0,1,0
+RN043,A,A esto le falta título.,RENAME_TITLE,f5_rn_falta,0,0,1,0
+RN044,A,Sin título no se archiva.,RENAME_TITLE,f5_rn_sin,0,0,1,0
+RN045,A,Merece mejor encabezado.,RENAME_TITLE,f5_rn_merece,0,0,1,0
+RN046,A,Urge titular el legajo.,RENAME_TITLE,f5_rn_urge,0,0,1,0
+RN047,A,Falta el rótulo oficial.,RENAME_TITLE,f5_rn_faltarotulo,0,0,1,0
+RN048,A,El encabezado está mal.,RENAME_TITLE,f5_rn_mal,0,0,1,0
+RN049,A,La portada quedó vacía.,RENAME_TITLE,f5_rn_vacia,0,0,1,0
+RN050,A,Hay que nombrar el informe.,RENAME_TITLE,f5_rn_hayque,0,0,1,0
+RN051,A,Titula el anexo como Evidencia B.,RENAME_TITLE,f5_rn_evidencia,0,0,0,0
+RN052,A,Ponle al oficio Asunto urgente.,RENAME_TITLE,f5_rn_asunto,0,0,0,0
+RN053,A,El membrete dirá Lunes 8.,RENAME_TITLE,f5_rn_lunes,0,0,0,0
+RN054,A,Denomina la foja como 12-B.,RENAME_TITLE,f5_rn_foja12b,0,0,0,0
+RN055,A,Llama al tanto Versión cero.,RENAME_TITLE,f5_rn_version0,0,0,0,
+RN056,A,Bautiza el compendio como Sur.,RENAME_TITLE,f5_rn_sur,0,0,0,0
+RN057,A,El rótulo será Legajo madre.,RENAME_TITLE,f5_rn_madre,0,0,0,0
+RN058,A,Ponle al memorial Homenaje.,RENAME_TITLE,f5_rn_homenaje,0,0,0,0
+RN059,A,Cambia la carátula a Pasta dura.,RENAME_TITLE,f5_rn_pasta,0,0,0,0
+RN060,A,Actualiza el rótulo a Rústica.,RENAME_TITLE,f5_rn_rustica,0,0,0,0
+RN061,A,Modifica el encabezado a Media carta.,RENAME_TITLE,f5_rn_mediacarta,0,0,0,0
+RN062,A,Reescribe la portada como Facsimilar.,RENAME_TITLE,f5_rn_facsimilar,0,0,0,0
+RN063,A,Ajusta el título a Segunda época.,RENAME_TITLE,f5_rn_epoca,0,0,0,0
+RN064,A,Define el rótulo del anuario.,RENAME_TITLE,f5_rn_anuario,0,0,0,0
+RN065,A,Fija el nombre del semanario.,RENAME_TITLE,f5_rn_semanario,0,0,0,0
+DL001,A,Borra el considerando.,DELETE_SELECTION,f5_dl_considerando,0,0,0,0
+DL002,A,Tacha el resolutivo.,DELETE_SELECTION,f5_dl_resolutivo,0,0,0,0
+DL003,A,Elimina el visto.,DELETE_SELECTION,f5_dl_visto,0,0,0,0
+DL004,A,Quita el resultando viejo.,DELETE_SELECTION,f5_dl_resultando,0,0,0,0
+DL005,A,Suprime el exordio.,DELETE_SELECTION,f5_dl_exordio,0,0,0,0
+DL006,A,Descarta la coda.,DELETE_SELECTION,f5_dl_coda,0,0,0,0
+DL007,A,Anula el interludio.,DELETE_SELECTION,f5_dl_interludio,0,0,0,0
+DL008,A,Remueve la peroración.,DELETE_SELECTION,f5_dl_peroracion,0,0,0,0
+DL009,A,Retira la adenda.,DELETE_SELECTION,f5_dl_adenda,0,0,0,0
+DL010,A,Limpia el colofón.,DELETE_SELECTION,f5_dl_colofon,0,0,0,0
+DL011,A,Vacía el epígrafe.,DELETE_SELECTION,f5_dl_epigrafe,0,0,0,0
+DL012,A,Rae la fe de erratas.,DELETE_SELECTION,f5_dl_fe,0,0,0,0
+DL013,A,Haz que desaparezca el altri.,DELETE_SELECTION,f5_dl_altri,0,0,1,0
+DL014,A,Devuélveme el texto sin el otrosí.,DELETE_SELECTION,f5_dl_otrosi,0,0,1,0
+DL015,A,Quiero la foja sin tachones.,DELETE_SELECTION,f5_dl_foja,0,0,1,0
+DL016,A,Deja el legajo sin minuta.,DELETE_SELECTION,f5_dl_legajo,0,0,1,0
+DL017,A,Necesito el oficio limpio.,DELETE_SELECTION,f5_dl_oficio,0,0,1,0
+DL018,A,Pon el acta sin anexos.,DELETE_SELECTION,f5_dl_acta,0,0,1,0
+DL019,A,Entrega sin apéndice.,DELETE_SELECTION,f5_dl_apendice,0,0,1,0
+DL020,A,Imprime sin portada.,DELETE_SELECTION,f5_dl_portada,0,0,1,0
+DL021,A,Guarda sin el borrador.,DELETE_SELECTION,f5_dl_borrador,0,0,1,0
+DL022,A,Exporta sin marcas.,DELETE_SELECTION,f5_dl_marcas,0,0,1,0
+DL023,A,Borralo ya mismo.,DELETE_SELECTION,f5_dl_yamismo,0,0,0,1
+DL024,A,Quitalo de una vez.,DELETE_SELECTION,f5_dl_unavez,0,0,0,1
+DL025,A,Fuera esto.,DELETE_SELECTION,f5_dl_fuera,0,0,0,1
+DL026,A,Esto sobra.,DELETE_SELECTION,f5_dl_sobra,0,0,1,0
+DL027,A,Esto estorba.,DELETE_SELECTION,f5_dl_estorba,0,0,1,0
+DL028,A,Esto no va aquí.,DELETE_SELECTION,f5_dl_nova,0,0,1,0
+DL029,A,Sobra este renglón.,DELETE_SELECTION,f5_dl_sobrarenglon,0,0,1,0
+DL030,A,Elimina de raíz.,DELETE_SELECTION,f5_dl_raiz,0,0,1,0
+DL031,A,Corta de tajo.,DELETE_SELECTION,f5_dl_tajo,0,0,1,0
+DL032,A,Quita sin piedad.,DELETE_SELECTION,f5_dl_piedad,0,0,1,0
+DL033,A,Borra sin dejar rastro.,DELETE_SELECTION,f5_dl_rastro,0,0,1,0
+DL034,A,Desaparece la nota.,DELETE_SELECTION,f5_dl_desaparece,0,0,1,0
+DL035,A,Evapora ese párrafo.,DELETE_SELECTION,f5_dl_evapora,0,0,1,0
+DL036,A,Borra el membrete.,DELETE_SELECTION,f5_dl_membrete,0,0,0,0
+DL037,A,Tacha el sello.,DELETE_SELECTION,f5_dl_sello,0,0,0,0
+DL038,A,Elimina la firma puesta.,DELETE_SELECTION,f5_dl_firma,0,0,0,0
+DL039,A,Quita el folio.,DELETE_SELECTION,f5_dl_folio,0,0,0,0
+DL040,A,Suprime la rúbrica.,DELETE_SELECTION,f5_dl_rubrica,0,0,0,0
+DL041,A,Descarta el acuse.,DELETE_SELECTION,f5_dl_acuse,0,0,0,0
+DL042,A,Anula el comprobante.,DELETE_SELECTION,f5_dl_comprobante,0,0,0,0
+DL043,A,Remueve el recibo.,DELETE_SELECTION,f5_dl_recibo,0,0,0,0
+DL044,A,Retira la factura.,DELETE_SELECTION,f5_dl_factura,0,0,0,0
+DL045,A,Limpia el vale.,DELETE_SELECTION,f5_dl_vale,0,0,0,0
+DL046,A,Vacía el pagaré.,DELETE_SELECTION,f5_dl_pagare,0,0,0,0
+DL047,A,Rae el contrato.,DELETE_SELECTION,f5_dl_contrato,0,0,0,0
+DL048,A,Haz desaparecer el convenio.,DELETE_SELECTION,f5_dl_convenio,0,0,1,0
+DL049,A,Quita el anexo completo.,DELETE_SELECTION,f5_dl_anexo,0,0,0,0
+DL050,A,Elimina el apéndice entero.,DELETE_SELECTION,f5_dl_apendice,0,0,0,0
+DL051,A,Borra la minuta vieja.,DELETE_SELECTION,f5_dl_minuta,0,0,0,0
+DL052,A,Tacha el oficio duplicado.,DELETE_SELECTION,f5_dl_oficio,0,0,0,0
+DL053,A,Suprime la circular.,DELETE_SELECTION,f5_dl_circular,0,0,0,0
+DL054,A,Descarta el boletín.,DELETE_SELECTION,f5_dl_boletin,0,0,0,0
+DL055,A,Anula la gaceta.,DELETE_SELECTION,f5_dl_gaceta,0,0,0,0
+DL056,A,Remueve el diario.,DELETE_SELECTION,f5_dl_diario,0,0,0,0
+DL057,A,Retira el semanario.,DELETE_SELECTION,f5_dl_semanario,0,0,0,0
+DL058,A,Limpia el anuario.,DELETE_SELECTION,f5_dl_anuario,0,0,0,0
+DL059,A,Vacía el prontuario.,DELETE_SELECTION,f5_dl_prontuario,0,0,0,0
+DL060,A,Rae el memorial.,DELETE_SELECTION,f5_dl_memorial,0,0,0,0
+DL061,A,Borra el expediente.,DELETE_SELECTION,f5_dl_expediente,0,0,0,0
+DL062,A,Tacha el legajo madre.,DELETE_SELECTION,f5_dl_legajo2,0,0,0,0
+DL063,A,Elimina la foja.,DELETE_SELECTION,f5_dl_foja2,0,0,0,0
+DL064,A,Quita el otrosí.,DELETE_SELECTION,f5_dl_otrosi2,0,0,0,0
+DL065,A,Suprime el altri.,DELETE_SELECTION,f5_dl_altri2,0,0,0,0
+RP001,A,Pon visto donde dice considerando.,REPLACE_SELECTION,f5_rp_visto,0,0,0,0
+RP002,A,Troca resultando por visto.,REPLACE_SELECTION,f5_rp_resultando,0,0,0,0
+RP003,A,Sustituye coda por final.,REPLACE_SELECTION,f5_rp_coda,0,0,0,0
+RP004,A,Cambia exordio por comienzo.,REPLACE_SELECTION,f5_rp_exordio,0,0,0,0
+RP005,A,Reemplaza peroración por cierre.,REPLACE_SELECTION,f5_rp_peroracion,0,0,0,0
+RP006,A,Pon adenda en vez de anexo.,REPLACE_SELECTION,f5_rp_adenda,0,0,0,0
+RP007,A,Troca colofón por cierre.,REPLACE_SELECTION,f5_rp_colofon,0,0,0,0
+RP008,A,Sustituye epígrafe por cita.,REPLACE_SELECTION,f5_rp_epigrafe,0,0,0,0
+RP009,A,Cambia interludio por intervalo.,REPLACE_SELECTION,f5_rp_interludio,0,0,0,0
+RP010,A,Reemplaza fe por constancia.,REPLACE_SELECTION,f5_rp_fe,0,0,0,0
+RP011,A,Pon 2027 donde dice 2026.,REPLACE_SELECTION,f5_rp_2027,0,0,0,0
+RP012,A,Troca lunes por martes.,REPLACE_SELECTION,f5_rp_lunes,0,0,0,0
+RP013,A,Sustituye rojo por azul.,REPLACE_SELECTION,f5_rp_rojo,0,0,0,0
+RP014,A,Cambia norte por sur.,REPLACE_SELECTION,f5_rp_norte,0,0,0,0
+RP015,A,Reemplaza enero por febrero.,REPLACE_SELECTION,f5_rp_enero,0,0,0,0
+RP016,A,Pon mayúsculas donde hay minúsculas.,REPLACE_SELECTION,f5_rp_mayus,0,0,0,0
+RP017,A,Troca singular por plural.,REPLACE_SELECTION,f5_rp_singular,0,0,0,0
+RP018,A,Sustituye presente por pasado.,REPLACE_SELECTION,f5_rp_presente,0,0,0,0
+RP019,A,Cambia activo por pasivo.,REPLACE_SELECTION,f5_rp_activo,0,0,0,0
+RP020,A,Reemplaza afirmativo por negativo.,REPLACE_SELECTION,f5_rp_afirmativo,0,0,0,0
+RP021,A,Haz el cambio de sede por foro.,REPLACE_SELECTION,f5_rp_sede,0,0,1,0
+RP022,A,Mete apéndice en lugar de anexo.,REPLACE_SELECTION,f5_rp_apendice,0,0,1,0
+RP023,A,"Saca considerando, mete visto.",REPLACE_SELECTION,f5_rp_visto2,0,0,1,0
+RP024,A,Quita coda y pon final.,REPLACE_SELECTION,f5_rp_coda2,0,0,1,0
+RP025,A,"En vez de exordio, inicio.",REPLACE_SELECTION,f5_rp_exordio2,0,0,1,0
+RP026,A,"Donde ponga peroración, cierre.",REPLACE_SELECTION,f5_rp_peroracion2,0,0,1,0
+RP027,A,"Si dice adenda, que diga anexo.",REPLACE_SELECTION,f5_rp_adenda2,0,0,1,0
+RP028,A,Corrige colofón a cierre.,REPLACE_SELECTION,f5_rp_colofon2,0,0,1,0
+RP029,A,Enmienda epígrafe por cita.,REPLACE_SELECTION,f5_rp_epigrafe2,0,0,1,0
+RP030,A,Actualiza interludio a pausa.,REPLACE_SELECTION,f5_rp_interludio2,0,0,1,0
+RP031,A,Cambia el membrete por sello.,REPLACE_SELECTION,f5_rp_membrete,0,0,0,0
+RP032,A,Sustituye la firma por rúbrica.,REPLACE_SELECTION,f5_rp_firma,0,0,0,0
+RP033,A,Reemplaza el folio por número.,REPLACE_SELECTION,f5_rp_folio,0,0,0,0
+RP034,A,Troca el acuse por recibo.,REPLACE_SELECTION,f5_rp_acuse,0,0,0,0
+RP035,A,Pon comprobante en vez de vale.,REPLACE_SELECTION,f5_rp_comprobante,0,0,0,0
+RP036,A,Cambia factura por comprobante.,REPLACE_SELECTION,f5_rp_factura,0,0,0,0
+RP037,A,Sustituye pagaré por vale.,REPLACE_SELECTION,f5_rp_pagare,0,0,0,0
+RP038,A,Reemplaza contrato por convenio.,REPLACE_SELECTION,f5_rp_contrato,0,0,0,0
+RP039,A,Troca anexo por apéndice.,REPLACE_SELECTION,f5_rp_anexo,0,0,0,0
+RP040,A,Pon minuta donde dice acta.,REPLACE_SELECTION,f5_rp_minuta,0,0,0,0
+RP041,A,Cambia oficio por atenta nota.,REPLACE_SELECTION,f5_rp_oficio,0,0,0,0
+RP042,A,Sustituye tanto por duplicado.,REPLACE_SELECTION,f5_rp_tanto,0,0,0,0
+RP043,A,Reemplaza foja por hoja.,REPLACE_SELECTION,f5_rp_foja,0,0,0,0
+RP044,A,Troca legajo por fajo.,REPLACE_SELECTION,f5_rp_legajo,0,0,0,0
+RP045,A,Pon visto bueno final.,REPLACE_SELECTION,f5_rp_vistobueno,0,0,0,0
+RP046,A,Cambia el 100% por total.,REPLACE_SELECTION,f5_rp_100,0,0,0,0
+RP047,A,Sustituye Ñ por N.,REPLACE_SELECTION,f5_rp_ene,0,0,0,0
+RP048,A,Reemplaza ü por u.,REPLACE_SELECTION,f5_rp_dieresis,0,0,0,0
+RP049,A,Troca — por -.,REPLACE_SELECTION,f5_rp_raya,0,0,0,0
+RP050,A,"Pon «» en vez de "".",REPLACE_SELECTION,f5_rp_comillas,0,0,0,0
+RP051,A,Cambia & por y.,REPLACE_SELECTION,f5_rp_amp,0,0,0,0
+RP052,A,Sustituye % por ciento.,REPLACE_SELECTION,f5_rp_pct,0,0,0,0
+RP053,A,Reemplaza # por número.,REPLACE_SELECTION,f5_rp_hash,0,0,0,0
+RP054,A,Troca @ por arroba.,REPLACE_SELECTION,f5_rp_arroba,0,0,0,0
+RP055,A,Pon € por euros.,REPLACE_SELECTION,f5_rp_euro,0,0,0,0
+RP056,A,Cambia $ por pesos.,REPLACE_SELECTION,f5_rp_peso,0,0,0,0
+RP057,A,Sustituye ½ por medio.,REPLACE_SELECTION,f5_rp_medio,0,0,0,0
+RP058,A,Reemplaza 1º por primero.,REPLACE_SELECTION,f5_rp_primero,0,0,0,0
+RP059,A,Troca Sr. por Don.,REPLACE_SELECTION,f5_rp_sr,0,0,0,0
+RP060,A,Pon Sra. donde toca.,REPLACE_SELECTION,f5_rp_sra,0,0,0,0
+RP061,A,Cambia Att. por Atentamente.,REPLACE_SELECTION,f5_rp_att,0,0,0,0
+RP062,A,Sustituye P.D. por posdata.,REPLACE_SELECTION,f5_rp_pd,0,0,0,0
+RP063,A,Reemplaza Vd. por usted.,REPLACE_SELECTION,f5_rp_vd,0,0,0,0
+RP064,A,Troca D. por Don.,REPLACE_SELECTION,f5_rp_d,0,0,0,0
+RP065,A,Pon Da. donde va.,REPLACE_SELECTION,f5_rp_da,0,0,0,0
+RW001,A,Ponlo todavía más breve.,REWRITE_SELECTION,f5_rw_breve,0,0,0,0
+RW002,A,Hazlo menos enredado.,REWRITE_SELECTION,f5_rw_enredado,0,0,0,0
+RW003,A,Déjalo más llano.,REWRITE_SELECTION,f5_rw_llano,0,0,0,0
+RW004,A,Vuelve esto más grave.,REWRITE_SELECTION,f5_rw_grave,0,0,0,0
+RW005,A,Ponlo más liviano.,REWRITE_SELECTION,f5_rw_leve,0,0,0,0
+RW006,A,Hazlo con más densidad.,REWRITE_SELECTION,f5_rw_denso,0,0,0,0
+RW007,A,Dale más fluidez.,REWRITE_SELECTION,f5_rw_fluidez,0,0,0,0
+RW008,A,Vuelve esto más cortante.,REWRITE_SELECTION,f5_rw_cortante,0,0,0,0
+RW009,A,Ponlo meloso.,REWRITE_SELECTION,f5_rw_dulce,0,0,0,0
+RW010,A,Hazlo rasposo.,REWRITE_SELECTION,f5_rw_aspero,0,0,0,0
+RW011,A,Dale todavía más claridad.,REWRITE_SELECTION,f5_rw_claridad,0,0,0,0
+RW012,A,Hazlo aún menos ambiguo.,REWRITE_SELECTION,f5_rw_ambiguo,0,0,0,0
+RW013,A,Vuelve el texto más ejecutivo.,REWRITE_SELECTION,f5_rw_ejecutivo,0,0,0,0
+RW014,A,Ponlo sin florituras.,REWRITE_SELECTION,f5_rw_florido,0,0,0,0
+RW015,A,Hazlo acogedor.,REWRITE_SELECTION,f5_rw_calido,0,0,0,0
+RW016,A,Dale un tono más frío.,REWRITE_SELECTION,f5_rw_frio,0,0,0,0
+RW017,A,Vuelve esto más cercano.,REWRITE_SELECTION,f5_rw_cercano,0,0,0,0
+RW018,A,Ponlo alejado.,REWRITE_SELECTION,f5_rw_distante,0,0,0,0
+RW019,A,Hazlo festivo.,REWRITE_SELECTION,f5_rw_alegre,0,0,0,0
+RW020,A,Dale más sobriedad.,REWRITE_SELECTION,f5_rw_sobriedad,0,0,0,0
+RW021,A,Hazlo más claro todavía.,REWRITE_SELECTION,f5_rw_claro2,0,0,0,0
+RW022,A,Ponlo aún menos enredado.,REWRITE_SELECTION,f5_rw_enredado2,0,0,0,0
+RW023,A,Dale más amabilidad.,REWRITE_SELECTION,f5_rw_amabilidad,0,0,0,0
+RW024,A,Vuelve el texto más formal aún.,REWRITE_SELECTION,f5_rw_formal2,0,0,0,0
+RW025,A,Hazlo más corto ya.,REWRITE_SELECTION,f5_rw_cortoya,0,0,0,0
+RW026,A,Dilo con menos palabras.,REWRITE_SELECTION,f5_rw_menospalabras,0,0,1,0
+RW027,A,Exprésalo mejor.,REWRITE_SELECTION,f5_rw_expresalo,0,0,1,0
+RW028,A,Cuéntalo de otra forma.,REWRITE_SELECTION,f5_rw_cuentalo,0,0,1,0
+RW029,A,Nárralo distinto.,REWRITE_SELECTION,f5_rw_narralo,0,0,1,0
+RW030,A,Redáctalo de nuevo.,REWRITE_SELECTION,f5_rw_redactalo,0,0,1,0
+RW031,A,Escríbelo otra vez.,REWRITE_SELECTION,f5_rw_escribelo,0,0,1,0
+RW032,A,Dilo más bonito.,REWRITE_SELECTION,f5_rw_bonito,0,0,1,0
+RW033,A,Ponlo elegante.,REWRITE_SELECTION,f5_rw_elegante,0,0,1,0
+RW034,A,Hazlo presentable.,REWRITE_SELECTION,f5_rw_presentable,0,0,1,0
+RW035,A,Déjalo decente.,REWRITE_SELECTION,f5_rw_decente,0,0,1,0
+RW036,A,Mejora este borrador.,REWRITE_SELECTION,f5_rw_borrador,0,0,0,0
+RW037,A,Pule el considerando.,REWRITE_SELECTION,f5_rw_considerando,0,0,0,0
+RW038,A,Retoca el resolutivo.,REWRITE_SELECTION,f5_rw_resolutivo,0,0,0,0
+RW039,A,Afinar el visto.,REWRITE_SELECTION,f5_rw_visto,0,0,0,0
+RW040,A,Suaviza el resultando.,REWRITE_SELECTION,f5_rw_resultando,0,0,0,0
+RW041,A,Endurece el exordio.,REWRITE_SELECTION,f5_rw_exordio,0,0,0,0
+RW042,A,Aligera la coda.,REWRITE_SELECTION,f5_rw_coda,0,0,0,0
+RW043,A,Densifica el interludio.,REWRITE_SELECTION,f5_rw_interludio,0,0,0,0
+RW044,A,Aclara la peroración.,REWRITE_SELECTION,f5_rw_peroracion,0,0,0,0
+RW045,A,Abrevia la adenda.,REWRITE_SELECTION,f5_rw_adenda,0,0,0,0
+RW046,A,Expande el colofón.,REWRITE_SELECTION,f5_rw_colofon,0,0,0,0
+RW047,A,Condensa el epígrafe.,REWRITE_SELECTION,f5_rw_epigrafe,0,0,0,0
+RW048,A,Ilumina la fe de erratas.,REWRITE_SELECTION,f5_rw_fe,0,0,0,0
+RW049,A,Apaga el altri.,REWRITE_SELECTION,f5_rw_altri,0,0,0,0
+RW050,A,Enciende el otrosí.,REWRITE_SELECTION,f5_rw_otrosi,0,0,0,0
+RW051,A,Calienta la foja.,REWRITE_SELECTION,f5_rw_foja,0,0,0,0
+RW052,A,Enfría el legajo.,REWRITE_SELECTION,f5_rw_legajo,0,0,0,0
+RW053,A,Agita la minuta.,REWRITE_SELECTION,f5_rw_minuta,0,0,0,0
+RW054,A,Calma el oficio.,REWRITE_SELECTION,f5_rw_oficio,0,0,0,0
+RW055,A,Revuelve la circular.,REWRITE_SELECTION,f5_rw_circular,0,0,0,0
+RW056,A,Ordena el boletín.,REWRITE_SELECTION,f5_rw_boletin,0,0,0,0
+RW057,A,Desordena la gaceta.,REWRITE_SELECTION,f5_rw_gaceta,0,0,0,0
+RW058,A,Invierte el diario.,REWRITE_SELECTION,f5_rw_diario,0,0,0,0
+RW059,A,Altera el semanario.,REWRITE_SELECTION,f5_rw_semanario,0,0,0,0
+RW060,A,Rompe el anuario.,REWRITE_SELECTION,f5_rw_anuario,0,0,0,0
+RW061,A,Marca el prontuario.,REWRITE_SELECTION,f5_rw_prontuario,0,0,0,0
+RW062,A,Acelera el memorial.,REWRITE_SELECTION,f5_rw_memorial,0,0,0,0
+RW063,A,Frena el expediente.,REWRITE_SELECTION,f5_rw_expediente,0,0,0,0
+RW064,A,Pausa el legajo.,REWRITE_SELECTION,f5_rw_legajo2,0,0,0,0
+RW065,A,Retoma la foja.,REWRITE_SELECTION,f5_rw_foja2,0,0,0,0
+FM001,A,Pon el altri en negra.,FORMAT_SELECTION,f5_fm_altri,0,0,0,0
+FM002,A,Pon el otrosí en itálica.,FORMAT_SELECTION,f5_fm_otrosi,0,0,0,0
+FM003,A,Subraya la foja.,FORMAT_SELECTION,f5_fm_foja,0,0,0,0
+FM004,A,Remarca el legajo.,FORMAT_SELECTION,f5_fm_legajo,0,0,0,0
+FM005,A,Enfatiza la minuta.,FORMAT_SELECTION,f5_fm_minuta,0,0,0,0
+FM006,A,Recalca el oficio.,FORMAT_SELECTION,f5_fm_oficio,0,0,0,0
+FM007,A,Subraya la circular.,FORMAT_SELECTION,f5_fm_circular,0,0,0,0
+FM008,A,Negrita el boletín.,FORMAT_SELECTION,f5_fm_boletin,0,0,0,0
+FM009,A,Cursiva la gaceta.,FORMAT_SELECTION,f5_fm_gaceta,0,0,0,0
+FM010,A,Marca el diario en negro.,FORMAT_SELECTION,f5_fm_diario,0,0,0,0
+FM011,A,Pon en itálica el semanario.,FORMAT_SELECTION,f5_fm_semanario,0,0,0,0
+FM012,A,Traza línea bajo el anuario.,FORMAT_SELECTION,f5_fm_anuario,0,0,0,0
+FM013,A,Resalta el prontuario.,FORMAT_SELECTION,f5_fm_prontuario,0,0,0,0
+FM014,A,Destaca el memorial.,FORMAT_SELECTION,f5_fm_memorial,0,0,0,0
+FM015,A,Ennegrece el expediente.,FORMAT_SELECTION,f5_fm_expediente,0,0,0,0
+FM016,A,Subraya el visto.,FORMAT_SELECTION,f5_fm_visto,0,0,0,0
+FM017,A,Cursiva el resultando.,FORMAT_SELECTION,f5_fm_resultando,0,0,0,0
+FM018,A,Negrita el exordio.,FORMAT_SELECTION,f5_fm_exordio,0,0,0,0
+FM019,A,Remarca la coda.,FORMAT_SELECTION,f5_fm_coda,0,0,0,0
+FM020,A,Enfatiza el interludio.,FORMAT_SELECTION,f5_fm_interludio,0,0,0,0
+FM021,A,Recalca la peroración.,FORMAT_SELECTION,f5_fm_peroracion,0,0,0,0
+FM022,A,Subraya la adenda.,FORMAT_SELECTION,f5_fm_adenda,0,0,0,0
+FM023,A,Negrita el colofón.,FORMAT_SELECTION,f5_fm_colofon,0,0,0,0
+FM024,A,Cursiva el epígrafe.,FORMAT_SELECTION,f5_fm_epigrafe,0,0,0,0
+FM025,A,Marca la fe de erratas.,FORMAT_SELECTION,f5_fm_fe,0,0,0,0
+FM026,A,Pon el membrete en negritas.,FORMAT_SELECTION,f5_fm_membrete,0,0,0,0
+FM027,A,Pon el sello en cursivas.,FORMAT_SELECTION,f5_fm_sello,0,0,0,0
+FM028,A,Subraya la firma puesta.,FORMAT_SELECTION,f5_fm_firma,0,0,0,0
+FM029,A,Remarca el folio.,FORMAT_SELECTION,f5_fm_folio,0,0,0,0
+FM030,A,Enfatiza la rúbrica.,FORMAT_SELECTION,f5_fm_rubrica,0,0,0,0
+FM031,A,Recalca el acuse.,FORMAT_SELECTION,f5_fm_acuse,0,0,0,0
+FM032,A,Subraya el comprobante nuevo.,FORMAT_SELECTION,f5_fm_comprobante,0,0,0,0
+FM033,A,Negrita el recibo.,FORMAT_SELECTION,f5_fm_recibo,0,0,0,0
+FM034,A,Cursiva la factura.,FORMAT_SELECTION,f5_fm_factura,0,0,0,0
+FM035,A,Marca el vale en negro.,FORMAT_SELECTION,f5_fm_vale,0,0,0,0
+FM036,A,Pon en itálica el pagaré.,FORMAT_SELECTION,f5_fm_pagare,0,0,0,0
+FM037,A,Traza línea bajo el contrato.,FORMAT_SELECTION,f5_fm_contrato,0,0,0,0
+FM038,A,Resalta el convenio.,FORMAT_SELECTION,f5_fm_convenio,0,0,0,0
+FM039,A,Destaca el anexo.,FORMAT_SELECTION,f5_fm_anexo,0,0,0,0
+FM040,A,Ennegrece el apéndice.,FORMAT_SELECTION,f5_fm_apendice,0,0,0,0
+FM041,A,Subraya la minuta.,FORMAT_SELECTION,f5_fm_minuta,0,0,0,0
+FM042,A,Cursiva el oficio.,FORMAT_SELECTION,f5_fm_oficio,0,0,0,0
+FM043,A,Negrita el tanto.,FORMAT_SELECTION,f5_fm_tanto,0,0,0,0
+FM044,A,Remarca el legajo.,FORMAT_SELECTION,f5_fm_legajo,0,0,0,0
+FM045,A,Enfatiza la foja.,FORMAT_SELECTION,f5_fm_foja,0,0,0,0
+FM046,A,Recalca el considerando.,FORMAT_SELECTION,f5_fm_considerando,0,0,0,0
+FM047,A,Subraya el resolutivo.,FORMAT_SELECTION,f5_fm_resolutivo,0,0,0,0
+FM048,A,Negrita la coda.,FORMAT_SELECTION,f5_fm_coda,0,0,0,0
+FM049,A,Cursiva el interludio.,FORMAT_SELECTION,f5_fm_interludio,0,0,0,0
+FM050,A,Marca la peroración.,FORMAT_SELECTION,f5_fm_peroracion,0,0,0,0
+FM051,A,Pon el visto en negra.,FORMAT_SELECTION,f5_fm_visto2,0,0,0,0
+FM052,A,Pon el resultando en itálica.,FORMAT_SELECTION,f5_fm_resultando2,0,0,0,0
+FM053,A,Subraya el exordio ya.,FORMAT_SELECTION,f5_fm_exordio2,0,0,0,0
+FM054,A,Remarca la coda final.,FORMAT_SELECTION,f5_fm_coda2,0,0,0,0
+FM055,A,Enfatiza la adenda nueva.,FORMAT_SELECTION,f5_fm_adenda2,0,0,0,0
+FM056,A,Recalca el colofón breve.,FORMAT_SELECTION,f5_fm_colofon2,0,0,0,0
+FM057,A,Subraya el epígrafe citado.,FORMAT_SELECTION,f5_fm_epigrafe2,0,0,0,0
+FM058,A,Negrita la fe completa.,FORMAT_SELECTION,f5_fm_fe2,0,0,0,0
+FM059,A,Cursiva el altri viejo.,FORMAT_SELECTION,f5_fm_altri2,0,0,0,0
+FM060,A,Marca el otrosí nuevo.,FORMAT_SELECTION,f5_fm_otrosi2,0,0,0,0
+FM061,A,Pon la foja en negra.,FORMAT_SELECTION,f5_fm_foja2,0,0,0,0
+FM062,A,Pon el legajo en itálica.,FORMAT_SELECTION,f5_fm_legajo2,0,0,0,0
+FM063,A,Subraya la minuta entera.,FORMAT_SELECTION,f5_fm_minuta2,0,0,0,0
+FM064,A,Remarca el oficio base.,FORMAT_SELECTION,f5_fm_oficio2,0,0,0,0
+FM065,A,Enfatiza el membrete.,FORMAT_SELECTION,f5_fm_membrete2,0,0,0,0
+UN001,A,Olvida lo de ayer.,UNDO,f5_un_ayer,0,1,0,0
+UN002,A,Como si no hubiera pasado nada.,UNDO,f5_un_nada,0,1,0,0
+UN003,A,Déjalo como estaba anoche.,UNDO,f5_un_anoche,0,1,0,0
+UN004,A,Restaura lo de la mañana.,UNDO,f5_un_manana,0,1,0,0
+UN005,A,Vuelve al punto de ayer.,UNDO,f5_un_punto,0,1,0,0
+UN006,A,"Deshaz lo último, por favor.",UNDO,f5_un_favor,0,1,0,0
+UN007,A,Te pido que anules eso.,UNDO,f5_un_pido,0,1,0,0
+UN008,A,Hazme el favor de revertirlo.,UNDO,f5_un_hazme,0,1,0,0
+UN009,A,¿Puedes deshacerlo?.,UNDO,f5_un_puedes,0,1,0,0
+UN010,A,Necesito anular el cambio.,UNDO,f5_un_necesito,0,1,0,0
+UN011,A,Quiero revertir la edición.,UNDO,f5_un_quiero,0,1,0,0
+UN012,A,"Me arrepiento, quítalo.",UNDO,f5_un_arrepiento,0,1,0,0
+UN013,A,"Fue un error, bórralo todo.",UNDO,f5_un_error,0,1,0,0
+UN014,A,"No era eso, regrésalo.",UNDO,f5_un_noera,0,1,0,0
+UN015,A,"Equivoqué la tecla, anula.",UNDO,f5_un_tecla,0,1,0,0
+UN016,A,"Piqué mal, deshaz.",UNDO,f5_un_pique,0,1,0,0
+UN017,A,Se me fue el dedo.,UNDO,f5_un_dedo,0,1,0,0
+UN018,A,Sin querer lo moví.,UNDO,f5_un_querer,0,1,0,0
+UN019,A,No quise pegarlo.,UNDO,f5_un_quise,0,1,0,0
+UN020,A,Fue sin querer.,UNDO,f5_un_sinquerer,0,1,0,0
+UN021,A,Retira lo puesto hoy.,UNDO,f5_un_hoy,0,1,0,0
+UN022,A,Saca lo agregado ayer.,UNDO,f5_un_agregado,0,1,0,0
+UN023,A,Quita lo de esta semana.,UNDO,f5_un_semana,0,1,0,0
+UN024,A,Borra lo del lunes.,UNDO,f5_un_lunes,0,1,0,0
+UN025,A,Limpia lo del viernes.,UNDO,f5_un_viernes,0,1,0,0
+UN026,A,Vuelve al texto del martes.,UNDO,f5_un_martes,0,1,0,0
+UN027,A,Recupera lo del miércoles.,UNDO,f5_un_miercoles,0,1,0,0
+UN028,A,Restaura lo del jueves.,UNDO,f5_un_jueves,0,1,0,0
+UN029,A,Carga el respaldo del domingo.,UNDO,f5_un_domingo,0,1,0,0
+UN030,A,Abre la versión del sábado.,UNDO,f5_un_sabado,0,1,0,0
+UN031,A,Quiero mi párrafo de antes.,UNDO,f5_un_parrafo,0,1,0,0
+UN032,A,Necesito mi tabla previa.,UNDO,f5_un_tabla,0,1,0,0
+UN033,A,Devuélveme mi título.,UNDO,f5_un_titulo,0,1,0,0
+UN034,A,Regrésame mi lista.,UNDO,f5_un_lista,0,1,0,0
+UN035,A,Pon mi texto como estaba.,UNDO,f5_un_texto,0,1,0,0
+UN036,A,Haz como si nada hubiera pasado.,UNDO,f5_un_nada2,0,1,0,0
+UN037,A,Ignora mi última instrucción.,UNDO,f5_un_ignora,0,1,0,0
+UN038,A,Perdona el cambio hecho.,UNDO,f5_un_perdona,0,1,0,0
+UN039,A,Retira lo ordenado.,UNDO,f5_un_ordenado,0,1,0,0
+UN040,A,Saca lo mandado.,UNDO,f5_un_mandado,0,1,0,0
+UN041,A,Anula la rúbrica puesta.,UNDO,f5_un_rubrica,0,1,0,0
+UN042,A,Revierte el sello.,UNDO,f5_un_sello,0,1,0,0
+UN043,A,Cancela el folio.,UNDO,f5_un_folio,0,1,0,0
+UN044,A,Echa atrás la firma.,UNDO,f5_un_firma,0,1,0,0
+UN045,A,Da marcha atrás al acuse.,UNDO,f5_un_acuse,0,1,0,0
+UN046,A,Retrocede el comprobante.,UNDO,f5_un_comprobante,0,1,0,0
+UN047,A,Vuelve atrás el recibo.,UNDO,f5_un_recibo,0,1,0,0
+UN048,A,Desanda la factura.,UNDO,f5_un_factura,0,1,0,0
+UN049,A,Deshaz el vale.,UNDO,f5_un_vale,0,1,0,0
+UN050,A,Anula el pagaré.,UNDO,f5_un_pagare,0,1,0,0
+UN051,A,Revierte el contrato.,UNDO,f5_un_contrato,0,1,0,0
+UN052,A,Cancela el convenio.,UNDO,f5_un_convenio,0,1,0,0
+UN053,A,Echa atrás el anexo.,UNDO,f5_un_anexo,0,1,0,0
+UN054,A,Da marcha atrás al apéndice.,UNDO,f5_un_apendice,0,1,0,0
+UN055,A,Retrocede la minuta.,UNDO,f5_un_minuta,0,1,0,0
+UN056,A,Vuelve atrás el oficio.,UNDO,f5_un_oficio,0,1,0,0
+UN057,A,Desanda el tanto.,UNDO,f5_un_tanto,0,1,0,0
+UN058,A,Deshaz el legajo.,UNDO,f5_un_legajo,0,1,0,0
+UN059,A,Anula la foja.,UNDO,f5_un_foja,0,1,0,0
+UN060,A,Revierte el otrosí.,UNDO,f5_un_otrosi,0,1,0,0
+UN061,A,Cancela el altri.,UNDO,f5_un_altri,0,1,0,0
+UN062,A,Echa atrás el visto.,UNDO,f5_un_visto,0,1,0,0
+UN063,A,Da marcha atrás al resultando.,UNDO,f5_un_resultando,0,1,0,0
+UN064,A,Retrocede el exordio.,UNDO,f5_un_exordio,0,1,0,0
+UN065,A,Vuelve atrás la coda.,UNDO,f5_un_coda,0,1,0,0
+RD001,A,Hazlo otra vez completo.,REDO,f5_rd_otravez,0,1,0,0
+RD002,A,Repite desde el inicio.,REDO,f5_rd_inicio,0,1,0,0
+RD003,A,Vuelve a empezar el cambio.,REDO,f5_rd_empezar,0,1,0,0
+RD004,A,"Reincide, por favor.",REDO,f5_rd_reincide,0,1,0,0
+RD005,A,Reedita lo de ayer.,REDO,f5_rd_ayer,0,1,0,0
+RD006,A,Reelabora el párrafo.,REDO,f5_rd_parrafo,0,1,0,0
+RD007,A,Recomponlo de nuevo.,REDO,f5_rd_recompon,0,1,0,0
+RD008,A,Repite la jugada completa.,REDO,f5_rd_jugada,0,1,0,0
+RD009,A,"Segunda vuelta, por favor.",REDO,f5_rd_segunda,0,1,0,0
+RD010,A,Reactivar lo de antes.,REDO,f5_rd_reactivar,0,1,0,0
+RD011,A,Reabrir el cambio.,REDO,f5_rd_reabrir,0,1,0,0
+RD012,A,Avanzar otra vez.,REDO,f5_rd_avanzar,0,1,0,0
+RD013,A,Proseguir igual.,REDO,f5_rd_proseguir,0,1,0,0
+RD014,A,Continuar como antes.,REDO,f5_rd_continuar,0,1,0,0
+RD015,A,Retomar lo previo.,REDO,f5_rd_retomar,0,1,0,0
+RD016,A,Reanudar lo pausado.,REDO,f5_rd_reanudar,0,1,0,0
+RD017,A,Reemprender la edición.,REDO,f5_rd_reemprender,0,1,0,0
+RD018,A,Volver a volver atrás.,REDO,f5_rd_volver,0,1,0,0
+RD019,A,Otra ronda del cambio.,REDO,f5_rd_ronda,0,1,0,0
+RD020,A,Tal como se planeó.,REDO,f5_rd_planeo,0,1,0,0
+RD021,A,Igual que la vez pasada.,REDO,f5_rd_vezpasada,0,1,0,0
+RD022,A,Como habíamos quedado.,REDO,f5_rd_quedado,0,1,0,0
+RD023,A,Según lo convenido.,REDO,f5_rd_convenido,0,1,0,0
+RD024,A,Tal cual lo dejamos.,REDO,f5_rd_dejamos,0,1,0,0
+RD025,A,Mismo procedimiento otra vez.,REDO,f5_rd_procedimiento,0,1,0,0
+RD026,A,Repite el considerando.,REDO,f5_rd_considerando,0,1,0,0
+RD027,A,Rehaz el resolutivo.,REDO,f5_rd_resolutivo,0,1,0,0
+RD028,A,Reaplica el visto.,REDO,f5_rd_visto,0,1,0,0
+RD029,A,Restaura el resultando.,REDO,f5_rd_resultando,0,1,0,0
+RD030,A,Repite el exordio.,REDO,f5_rd_exordio,0,1,0,0
+RD031,A,Rehaz la coda.,REDO,f5_rd_coda,0,1,0,0
+RD032,A,Reaplica el interludio.,REDO,f5_rd_interludio,0,1,0,0
+RD033,A,Restaura la peroración.,REDO,f5_rd_peroracion,0,1,0,0
+RD034,A,Repite la adenda.,REDO,f5_rd_adenda,0,1,0,0
+RD035,A,Rehaz el colofón.,REDO,f5_rd_colofon,0,1,0,0
+RD036,A,Reaplica el epígrafe.,REDO,f5_rd_epigrafe,0,1,0,0
+RD037,A,Restaura la fe de erratas.,REDO,f5_rd_fe,0,1,0,0
+RD038,A,Repite el altri.,REDO,f5_rd_altri,0,1,0,0
+RD039,A,Rehaz el otrosí.,REDO,f5_rd_otrosi,0,1,0,0
+RD040,A,Reaplica la foja.,REDO,f5_rd_foja,0,1,0,0
+RD041,A,Restaura el legajo.,REDO,f5_rd_legajo,0,1,0,0
+RD042,A,Repite la minuta.,REDO,f5_rd_minuta,0,1,0,0
+RD043,A,Rehaz el oficio.,REDO,f5_rd_oficio,0,1,0,0
+RD044,A,Reaplica la circular.,REDO,f5_rd_circular,0,1,0,0
+RD045,A,Restaura el boletín.,REDO,f5_rd_boletin,0,1,0,0
+RD046,A,Repite la gaceta.,REDO,f5_rd_gaceta,0,1,0,0
+RD047,A,Rehaz el diario.,REDO,f5_rd_diario,0,1,0,0
+RD048,A,Reaplica el semanario.,REDO,f5_rd_semanario,0,1,0,0
+RD049,A,Restaura el anuario.,REDO,f5_rd_anuario,0,1,0,0
+RD050,A,Repite el prontuario.,REDO,f5_rd_prontuario,0,1,0,0
+RD051,A,Rehaz el memorial.,REDO,f5_rd_memorial,0,1,0,0
+RD052,A,Reaplica el expediente.,REDO,f5_rd_expediente,0,1,0,0
+RD053,A,Restaura el altri segundo.,REDO,f5_rd_altri2,0,1,0,0
+RD054,A,Repite el otrosí final.,REDO,f5_rd_otrosi2,0,1,0,0
+RD055,A,Rehaz la foja rota.,REDO,f5_rd_foja2,0,1,0,0
+RD056,A,Reaplica el legajo base.,REDO,f5_rd_legajo2,0,1,0,0
+RD057,A,Restaura la minuta madre.,REDO,f5_rd_minuta2,0,1,0,0
+RD058,A,Repite el oficio circular.,REDO,f5_rd_oficio2,0,1,0,0
+RD059,A,Rehaz el membrete.,REDO,f5_rd_membrete,0,1,0,0
+RD060,A,Reaplica el sello.,REDO,f5_rd_sello,0,1,0,0
+RD061,A,Restaura la firma.,REDO,f5_rd_firma,0,1,0,0
+RD062,A,Repite el folio.,REDO,f5_rd_folio,0,1,0,0
+RD063,A,Rehaz la rúbrica.,REDO,f5_rd_rubrica,0,1,0,0
+RD064,A,Reaplica el acuse.,REDO,f5_rd_acuse,0,1,0,0
+RD065,A,Restaura el comprobante.,REDO,f5_rd_comprobante,0,1,0,0
+SL001,A,Toma el altri completo.,SELECT_TEXT,f5_sl_altri,0,0,0,0
+SL002,A,Aparta el otrosí viejo.,SELECT_TEXT,f5_sl_otrosi,0,0,0,0
+SL003,A,Elige la foja rota.,SELECT_TEXT,f5_sl_foja,0,0,0,0
+SL004,A,Marca el legajo base.,SELECT_TEXT,f5_sl_legajo,0,0,0,0
+SL005,A,Resalta la minuta madre.,SELECT_TEXT,f5_sl_minuta,0,0,0,0
+SL006,A,Señala el oficio circular.,SELECT_TEXT,f5_sl_oficio,0,0,0,0
+SL007,A,Aísla la circular vieja.,SELECT_TEXT,f5_sl_circular,0,0,0,0
+SL008,A,Delimita el boletín.,SELECT_TEXT,f5_sl_boletin,0,0,0,0
+SL009,A,Enfoca la gaceta.,SELECT_TEXT,f5_sl_gaceta,0,0,0,0
+SL010,A,Apunta el diario.,SELECT_TEXT,f5_sl_diario,0,0,0,0
+SL011,A,Ubica el semanario.,SELECT_TEXT,f5_sl_semanario,0,0,0,0
+SL012,A,Localiza el anuario.,SELECT_TEXT,f5_sl_anuario,0,0,0,0
+SL013,A,Encierra el prontuario.,SELECT_TEXT,f5_sl_prontuario,0,0,0,0
+SL014,A,Enmarca el memorial.,SELECT_TEXT,f5_sl_memorial,0,0,0,0
+SL015,A,Recorta el expediente.,SELECT_TEXT,f5_sl_expediente,0,0,0,0
+SL016,A,Toma el membrete.,SELECT_TEXT,f5_sl_membrete,0,0,0,0
+SL017,A,Aparta el sello seco.,SELECT_TEXT,f5_sl_sello,0,0,0,0
+SL018,A,Elige la firma.,SELECT_TEXT,f5_sl_firma,0,0,0,0
+SL019,A,Marca el folio nuevo.,SELECT_TEXT,f5_sl_folio,0,0,0,0
+SL020,A,Resalta la rúbrica.,SELECT_TEXT,f5_sl_rubrica,0,0,0,0
+SL021,A,Señala el acuse.,SELECT_TEXT,f5_sl_acuse,0,0,0,0
+SL022,A,Aísla el comprobante.,SELECT_TEXT,f5_sl_comprobante,0,0,0,0
+SL023,A,Delimita el recibo.,SELECT_TEXT,f5_sl_recibo,0,0,0,0
+SL024,A,Enfoca la factura.,SELECT_TEXT,f5_sl_factura,0,0,0,0
+SL025,A,Apunta el vale.,SELECT_TEXT,f5_sl_vale,0,0,0,0
+SL026,A,Ubica el pagaré vencido.,SELECT_TEXT,f5_sl_pagare,0,0,0,0
+SL027,A,Localiza el contrato.,SELECT_TEXT,f5_sl_contrato,0,0,0,0
+SL028,A,Encierra el convenio.,SELECT_TEXT,f5_sl_convenio,0,0,0,0
+SL029,A,Enmarca el anexo.,SELECT_TEXT,f5_sl_anexo,0,0,0,0
+SL030,A,Recorta el apéndice.,SELECT_TEXT,f5_sl_apendice,0,0,0,0
+SL031,A,Toma la minuta nueva.,SELECT_TEXT,f5_sl_minutan,0,0,0,0
+SL032,A,Aparta el oficio base.,SELECT_TEXT,f5_sl_oficiob,0,0,0,0
+SL033,A,Elige el tanto final.,SELECT_TEXT,f5_sl_tanto,0,0,0,0
+SL034,A,Marca el legajo madre.,SELECT_TEXT,f5_sl_legajom,0,0,0,0
+SL035,A,Resalta la foja rota.,SELECT_TEXT,f5_sl_fojar,0,0,0,0
+SL036,A,Señala el otrosí nuevo.,SELECT_TEXT,f5_sl_otrosin,0,0,0,0
+SL037,A,Aísla el altri viejo.,SELECT_TEXT,f5_sl_altriv,0,0,0,0
+SL038,A,Delimita el visto bueno.,SELECT_TEXT,f5_sl_visto,0,0,0,0
+SL039,A,Enfoca el resultando.,SELECT_TEXT,f5_sl_resultando,0,0,0,0
+SL040,A,Apunta el exordio.,SELECT_TEXT,f5_sl_exordio,0,0,0,0
+SL041,A,Ubica la coda.,SELECT_TEXT,f5_sl_coda,0,0,0,0
+SL042,A,Localiza el interludio musical.,SELECT_TEXT,f5_sl_interludio,0,0,0,0
+SL043,A,Encierra la peroración.,SELECT_TEXT,f5_sl_peroracion,0,0,0,0
+SL044,A,Enmarca la adenda.,SELECT_TEXT,f5_sl_adenda,0,0,0,0
+SL045,A,Recorta el colofón.,SELECT_TEXT,f5_sl_colofon,0,0,0,0
+SL046,A,Toma el epígrafe.,SELECT_TEXT,f5_sl_epigrafe,0,0,0,0
+SL047,A,Aparta la fe de erratas.,SELECT_TEXT,f5_sl_fe,0,0,0,0
+SL048,A,Elige el considerando.,SELECT_TEXT,f5_sl_considerando,0,1,0,0
+SL049,A,Marca el resolutivo.,SELECT_TEXT,f5_sl_resolutivo,0,1,0,0
+SL050,A,Resalta el visto final.,SELECT_TEXT,f5_sl_visto2,0,1,0,0
+SL051,A,Señala el resultando.,SELECT_TEXT,f5_sl_resultando2,0,1,0,0
+SL052,A,Aísla el exordio.,SELECT_TEXT,f5_sl_exordio2,0,1,0,0
+SL053,A,Delimita la coda.,SELECT_TEXT,f5_sl_coda2,0,1,0,0
+SL054,A,Enfoca el interludio.,SELECT_TEXT,f5_sl_interludio2,0,1,0,0
+SL055,A,Apunta la peroración.,SELECT_TEXT,f5_sl_peroracion2,0,1,0,0
+SL056,A,Ubica la adenda.,SELECT_TEXT,f5_sl_adenda2,0,1,0,0
+SL057,A,Localiza el colofón chico.,SELECT_TEXT,f5_sl_colofon2,0,1,0,0
+SL058,A,Encierra el epígrafe.,SELECT_TEXT,f5_sl_epigrafe2,0,1,0,0
+SL059,A,Enmarca la fe.,SELECT_TEXT,f5_sl_fe2,0,1,0,0
+SL060,A,Recorta el intervento.,SELECT_TEXT,f5_sl_intervento,0,1,0,0
+SL061,A,Toma el altri.,SELECT_TEXT,f5_sl_tomaaltri,0,0,0,1
+SL062,A,Marca eso.,SELECT_TEXT,f5_sl_marcaeso,0,0,0,1
+SL063,A,Elige esto.,SELECT_TEXT,f5_sl_eligeesto,0,0,0,1
+SL064,A,Señala aquí.,SELECT_TEXT,f5_sl_aqui,0,0,0,1
+SL065,A,Aparta eso.,SELECT_TEXT,f5_sl_apartaeso,0,0,0,1
+FN001,A,Halla el altri segundo.,FIND_TEXT,f5_fn_altri,0,0,0,0
+FN002,A,Ubica el otrosí final.,FIND_TEXT,f5_fn_otrosi,0,0,0,0
+FN003,A,Encuentra la foja.,FIND_TEXT,f5_fn_foja,0,0,0,0
+FN004,A,Localiza el legajo viejo.,FIND_TEXT,f5_fn_legajo,0,0,0,0
+FN005,A,Rastrea la minuta.,FIND_TEXT,f5_fn_minuta,0,0,0,0
+FN006,A,Detecta el oficio.,FIND_TEXT,f5_fn_oficio,0,0,0,0
+FN007,A,Caza la circular.,FIND_TEXT,f5_fn_circular,0,0,0,0
+FN008,A,Persigue el boletín.,FIND_TEXT,f5_fn_boletin,0,0,0,0
+FN009,A,Sigue la gaceta.,FIND_TEXT,f5_fn_gaceta,0,0,0,0
+FN010,A,Halla el diario.,FIND_TEXT,f5_fn_diario,0,0,0,0
+FN011,A,Ubica el semanario.,FIND_TEXT,f5_fn_semanario,0,0,0,0
+FN012,A,Encuentra el anuario.,FIND_TEXT,f5_fn_anuario,0,0,0,0
+FN013,A,Localiza el prontuario.,FIND_TEXT,f5_fn_prontuario,0,0,0,0
+FN014,A,Rastrea el memorial.,FIND_TEXT,f5_fn_memorial,0,0,0,0
+FN015,A,Detecta el expediente.,FIND_TEXT,f5_fn_expediente,0,0,0,0
+FN016,A,Caza el membrete.,FIND_TEXT,f5_fn_membrete,0,0,0,0
+FN017,A,Persigue el sello.,FIND_TEXT,f5_fn_sello,0,0,0,0
+FN018,A,Sigue la firma.,FIND_TEXT,f5_fn_firma,0,0,0,0
+FN019,A,Halla el folio nuevo.,FIND_TEXT,f5_fn_folio,0,0,0,0
+FN020,A,Ubica la rúbrica clara.,FIND_TEXT,f5_fn_rubrica,0,0,0,0
+FN021,A,Encuentra el acuse.,FIND_TEXT,f5_fn_acuse,0,0,0,0
+FN022,A,Localiza el comprobante.,FIND_TEXT,f5_fn_comprobante,0,0,0,0
+FN023,A,Rastrea el recibo.,FIND_TEXT,f5_fn_recibo,0,0,0,0
+FN024,A,Detecta la factura.,FIND_TEXT,f5_fn_factura,0,0,0,0
+FN025,A,Caza el vale.,FIND_TEXT,f5_fn_vale,0,0,0,0
+FN026,A,Persigue el pagaré.,FIND_TEXT,f5_fn_pagare,0,0,0,0
+FN027,A,Sigue el contrato.,FIND_TEXT,f5_fn_contrato,0,0,0,0
+FN028,A,Halla el convenio.,FIND_TEXT,f5_fn_convenio,0,0,0,0
+FN029,A,Ubica el anexo B.,FIND_TEXT,f5_fn_anexo,0,0,0,0
+FN030,A,Encuentra el apéndice.,FIND_TEXT,f5_fn_apendice,0,0,0,0
+FN031,A,Localiza la minuta nueva.,FIND_TEXT,f5_fn_minutan,0,0,0,0
+FN032,A,Rastrea el oficio base.,FIND_TEXT,f5_fn_oficiob,0,0,0,0
+FN033,A,Detecta el tanto final.,FIND_TEXT,f5_fn_tanto,0,0,0,0
+FN034,A,Caza el legajo madre.,FIND_TEXT,f5_fn_legajom,0,0,0,0
+FN035,A,Persigue la foja rota.,FIND_TEXT,f5_fn_fojar,0,0,0,0
+FN036,A,Encuentra dónde aparece TDAH.,FIND_TEXT,f5_fn_tdah,0,1,1,0
+FN037,A,Localiza la palabra metodología.,FIND_TEXT,f5_fn_metodologia,0,1,1,0
+FN038,A,Halla accesibilidad mal escrita.,FIND_TEXT,f5_fn_accesibilidad,0,1,1,0
+FN039,A,Ubica la cita pendiente.,FIND_TEXT,f5_fn_cita,0,1,1,0
+FN040,A,Rastrea el término exacto.,FIND_TEXT,f5_fn_termino,0,1,1,0
+FN041,A,Detecta el considerando.,FIND_TEXT,f5_fn_considerando,0,1,0,0
+FN042,A,Caza el resolutivo.,FIND_TEXT,f5_fn_resolutivo,0,1,0,0
+FN043,A,Persigue el visto.,FIND_TEXT,f5_fn_visto,0,1,0,0
+FN044,A,Sigue el resultando.,FIND_TEXT,f5_fn_resultando,0,1,0,0
+FN045,A,Halla el exordio.,FIND_TEXT,f5_fn_exordio,0,1,0,0
+FN046,A,Ubica la coda.,FIND_TEXT,f5_fn_coda,0,1,0,0
+FN047,A,Encuentra el interludio.,FIND_TEXT,f5_fn_interludio,0,1,0,0
+FN048,A,Localiza la peroración breve.,FIND_TEXT,f5_fn_peroracion,0,1,0,0
+FN049,A,Rastrea la adenda.,FIND_TEXT,f5_fn_adenda,0,1,0,0
+FN050,A,Detecta el colofón.,FIND_TEXT,f5_fn_colofon,0,1,0,0
+FN051,A,Caza el epígrafe.,FIND_TEXT,f5_fn_epigrafe,0,1,0,0
+FN052,A,Persigue la fe de erratas.,FIND_TEXT,f5_fn_fe,0,1,0,0
+FN053,A,Sigue el visto bueno.,FIND_TEXT,f5_fn_vistobueno,0,1,0,0
+FN054,A,Halla el resultando segundo.,FIND_TEXT,f5_fn_resultando2,0,1,0,0
+FN055,A,Ubica el exordio nuevo.,FIND_TEXT,f5_fn_exordio2,0,1,0,0
+FN056,A,Encuentra la coda final.,FIND_TEXT,f5_fn_coda2,0,1,0,0
+FN057,A,Localiza el interludio breve.,FIND_TEXT,f5_fn_interludio2,0,1,0,0
+FN058,A,Rastrea la peroración larga.,FIND_TEXT,f5_fn_peroracion2,0,1,0,0
+FN059,A,Detecta la adenda última.,FIND_TEXT,f5_fn_adenda2,0,1,0,0
+FN060,A,Caza el colofón chico.,FIND_TEXT,f5_fn_colofon2,0,1,0,0
+FN061,A,Búscalo arriba.,FIND_TEXT,f5_fn_arriba,0,0,0,1
+FN062,A,Encuéntralo ya.,FIND_TEXT,f5_fn_ya,0,0,0,1
+FN063,A,Hállalo pronto.,FIND_TEXT,f5_fn_pronto,0,0,0,1
+FN064,A,Localízalo aquí.,FIND_TEXT,f5_fn_aqui,0,0,0,1
+FN065,A,Búscalo bien.,FIND_TEXT,f5_fn_bien,0,0,0,1
+SV001,A,Deposita el altri viejo.,SAVE_DOCUMENT,f5_sv_altri,0,0,0,0
+SV002,A,Custodia el otrosí final.,SAVE_DOCUMENT,f5_sv_otrosi,0,0,0,0
+SV003,A,Asegura la foja.,SAVE_DOCUMENT,f5_sv_foja,0,0,0,0
+SV004,A,Preserva el legajo.,SAVE_DOCUMENT,f5_sv_legajo,0,0,0,0
+SV005,A,Fija la minuta.,SAVE_DOCUMENT,f5_sv_minuta,0,0,0,0
+SV006,A,Congela el oficio.,SAVE_DOCUMENT,f5_sv_oficio,0,0,0,0
+SV007,A,Salvaguarda la circular.,SAVE_DOCUMENT,f5_sv_circular,0,0,0,0
+SV008,A,Registra el boletín.,SAVE_DOCUMENT,f5_sv_boletin,0,0,0,0
+SV009,A,Asienta la gaceta.,SAVE_DOCUMENT,f5_sv_gaceta,0,0,0,0
+SV010,A,Deja constancia del diario.,SAVE_DOCUMENT,f5_sv_diario,0,0,0,0
+SV011,A,Preserva el semanario.,SAVE_DOCUMENT,f5_sv_semanario,0,0,0,0
+SV012,A,Asegura el anuario.,SAVE_DOCUMENT,f5_sv_anuario,0,0,0,0
+SV013,A,Fija el prontuario.,SAVE_DOCUMENT,f5_sv_prontuario,0,0,0,0
+SV014,A,Congela el memorial.,SAVE_DOCUMENT,f5_sv_memorial,0,0,0,0
+SV015,A,Salvaguarda el expediente.,SAVE_DOCUMENT,f5_sv_expediente,0,0,0,0
+SV016,A,Registra el altri segundo.,SAVE_DOCUMENT,f5_sv_altri2,0,0,0,0
+SV017,A,Asienta el otrosí nuevo.,SAVE_DOCUMENT,f5_sv_otrosi2,0,0,0,0
+SV018,A,Deja constancia de la foja.,SAVE_DOCUMENT,f5_sv_foja2,0,0,0,0
+SV019,A,Preserva el legajo madre.,SAVE_DOCUMENT,f5_sv_legajo2,0,0,0,0
+SV020,A,Asegura la minuta final.,SAVE_DOCUMENT,f5_sv_minuta2,0,0,0,0
+SV021,A,Fija el oficio base.,SAVE_DOCUMENT,f5_sv_oficio2,0,0,0,0
+SV022,A,Congela la circular vieja.,SAVE_DOCUMENT,f5_sv_circular2,0,0,0,0
+SV023,A,Salvaguarda el boletín extra.,SAVE_DOCUMENT,f5_sv_boletin2,0,0,0,0
+SV024,A,Registra la gaceta nueva.,SAVE_DOCUMENT,f5_sv_gaceta2,0,0,0,0
+SV025,A,Asienta el diario actual.,SAVE_DOCUMENT,f5_sv_diario2,0,0,0,0
+SV026,A,Guarda el considerando.,SAVE_DOCUMENT,f5_sv_considerando,0,1,0,0
+SV027,A,Archiva el resolutivo.,SAVE_DOCUMENT,f5_sv_resolutivo,0,1,0,0
+SV028,A,Consigna el visto.,SAVE_DOCUMENT,f5_sv_visto,0,1,0,0
+SV029,A,Deposita el resultando.,SAVE_DOCUMENT,f5_sv_resultando,0,1,0,0
+SV030,A,Custodia el exordio.,SAVE_DOCUMENT,f5_sv_exordio,0,1,0,0
+SV031,A,Asegura la coda.,SAVE_DOCUMENT,f5_sv_coda,0,1,0,0
+SV032,A,Preserva el interludio.,SAVE_DOCUMENT,f5_sv_interludio,0,1,0,0
+SV033,A,Fija la peroración.,SAVE_DOCUMENT,f5_sv_peroracion,0,1,0,0
+SV034,A,Congela la adenda.,SAVE_DOCUMENT,f5_sv_adenda,0,1,0,0
+SV035,A,Salvaguarda el colofón.,SAVE_DOCUMENT,f5_sv_colofon,0,1,0,0
+SV036,A,Registra el epígrafe nuevo.,SAVE_DOCUMENT,f5_sv_epigrafe,0,1,0,0
+SV037,A,Asienta la fe de erratas.,SAVE_DOCUMENT,f5_sv_fe,0,1,0,0
+SV038,A,Deja constancia del visto.,SAVE_DOCUMENT,f5_sv_visto2,0,1,0,0
+SV039,A,Preserva el resultando.,SAVE_DOCUMENT,f5_sv_resultando2,0,1,0,0
+SV040,A,Asegura el exordio.,SAVE_DOCUMENT,f5_sv_exordio2,0,1,0,0
+SV041,A,Fija la coda.,SAVE_DOCUMENT,f5_sv_coda2,0,1,0,0
+SV042,A,Congela el interludio.,SAVE_DOCUMENT,f5_sv_interludio2,0,1,0,0
+SV043,A,Salvaguarda la peroración.,SAVE_DOCUMENT,f5_sv_peroracion2,0,1,0,0
+SV044,A,Registra la adenda última.,SAVE_DOCUMENT,f5_sv_adenda2,0,1,0,0
+SV045,A,Asienta el colofón.,SAVE_DOCUMENT,f5_sv_colofon2,0,1,0,0
+SV046,A,Deja constancia del epígrafe.,SAVE_DOCUMENT,f5_sv_epigrafe2,0,1,0,0
+SV047,A,Preserva la fe.,SAVE_DOCUMENT,f5_sv_fe2,0,1,0,0
+SV048,A,Guarda el visto bueno.,SAVE_DOCUMENT,f5_sv_vistobueno,0,1,0,0
+SV049,A,Archiva el resultando.,SAVE_DOCUMENT,f5_sv_resultando3,0,1,0,0
+SV050,A,Consigna el exordio.,SAVE_DOCUMENT,f5_sv_exordio3,0,1,0,0
+SV051,A,Guárdalo bien.,SAVE_DOCUMENT,f5_sv_bien,0,0,0,1
+SV052,A,Archiva ya.,SAVE_DOCUMENT,f5_sv_ya,0,0,0,1
+SV053,A,Guarda eso.,SAVE_DOCUMENT,f5_sv_eso,0,0,0,1
+SV054,A,Consigna ya.,SAVE_DOCUMENT,f5_sv_consigna,0,0,0,1
+SV055,A,Deposita ahora.,SAVE_DOCUMENT,f5_sv_deposita,0,0,0,1
+SV056,A,Respalda el considerando.,SAVE_DOCUMENT,f5_sv_considerando2,0,1,0,0
+SV057,A,Asegura el resolutivo.,SAVE_DOCUMENT,f5_sv_resolutivo2,0,1,0,0
+SV058,A,Fija el visto.,SAVE_DOCUMENT,f5_sv_visto3,0,1,0,0
+SV059,A,Congela el resultando.,SAVE_DOCUMENT,f5_sv_resultando4,0,1,0,0
+SV060,A,Salvaguarda el exordio.,SAVE_DOCUMENT,f5_sv_exordio4,0,1,0,0
+SV061,A,Registra la coda final.,SAVE_DOCUMENT,f5_sv_coda3,0,1,0,0
+SV062,A,Asienta el interludio.,SAVE_DOCUMENT,f5_sv_interludio3,0,1,0,0
+SV063,A,Deja constancia de la peroración.,SAVE_DOCUMENT,f5_sv_peroracion3,0,1,0,0
+SV064,A,Preserva la adenda.,SAVE_DOCUMENT,f5_sv_adenda3,0,1,0,0
+SV065,A,Asegura el colofón.,SAVE_DOCUMENT,f5_sv_colofon3,0,1,0,0
+OP001,A,Exhibe el altri.,OPEN_DOCUMENT,f5_op_altri,0,0,0,0
+OP002,A,Presenta el otrosí.,OPEN_DOCUMENT,f5_op_otrosi,0,0,0,0
+OP003,A,Despliega la foja.,OPEN_DOCUMENT,f5_op_foja,0,0,0,0
+OP004,A,Proyecta el legajo.,OPEN_DOCUMENT,f5_op_legajo,0,0,0,0
+OP005,A,Muestra la minuta.,OPEN_DOCUMENT,f5_op_minuta,0,0,0,0
+OP006,A,Desempolva el oficio.,OPEN_DOCUMENT,f5_op_oficio,0,0,0,0
+OP007,A,Reabre la circular.,OPEN_DOCUMENT,f5_op_circular,0,0,0,0
+OP008,A,Recobra el boletín.,OPEN_DOCUMENT,f5_op_boletin,0,0,0,0
+OP009,A,Retoma la gaceta.,OPEN_DOCUMENT,f5_op_gaceta,0,0,0,0
+OP010,A,Vuelve a abrir el diario.,OPEN_DOCUMENT,f5_op_diario,0,0,0,0
+OP011,A,Recupera el semanario.,OPEN_DOCUMENT,f5_op_semanario,0,0,0,0
+OP012,A,Carga el anuario.,OPEN_DOCUMENT,f5_op_anuario,0,0,0,0
+OP013,A,Jala el prontuario.,OPEN_DOCUMENT,f5_op_prontuario,0,0,0,0
+OP014,A,Trae el memorial.,OPEN_DOCUMENT,f5_op_memorial,0,0,0,0
+OP015,A,Desarchiva el expediente.,OPEN_DOCUMENT,f5_op_expediente,0,0,0,0
+OP016,A,Exhibe el altri nuevo.,OPEN_DOCUMENT,f5_op_altri2,0,0,0,0
+OP017,A,Presenta el otrosí viejo.,OPEN_DOCUMENT,f5_op_otrosi2,0,0,0,0
+OP018,A,Despliega la foja rota.,OPEN_DOCUMENT,f5_op_foja2,0,0,0,0
+OP019,A,Proyecta el legajo madre.,OPEN_DOCUMENT,f5_op_legajo2,0,0,0,0
+OP020,A,Muestra la minuta final.,OPEN_DOCUMENT,f5_op_minuta2,0,0,0,0
+OP021,A,Desempolva el oficio base.,OPEN_DOCUMENT,f5_op_oficio2,0,0,0,0
+OP022,A,Reabre la circular vieja.,OPEN_DOCUMENT,f5_op_circular2,0,0,0,0
+OP023,A,Recobra el boletín extra.,OPEN_DOCUMENT,f5_op_boletin2,0,0,0,0
+OP024,A,Retoma la gaceta nueva.,OPEN_DOCUMENT,f5_op_gaceta2,0,0,0,0
+OP025,A,Vuelve a abrir el diario actual.,OPEN_DOCUMENT,f5_op_diario2,0,0,0,0
+OP026,A,Recupera el considerando.,OPEN_DOCUMENT,f5_op_considerando,0,1,0,0
+OP027,A,Carga el resolutivo nuevo.,OPEN_DOCUMENT,f5_op_resolutivo,0,1,0,0
+OP028,A,Jala el visto.,OPEN_DOCUMENT,f5_op_visto,0,1,0,0
+OP029,A,Trae el resultando.,OPEN_DOCUMENT,f5_op_resultando,0,1,0,0
+OP030,A,Muestra el exordio.,OPEN_DOCUMENT,f5_op_exordio,0,1,0,0
+OP031,A,Desempolva la coda.,OPEN_DOCUMENT,f5_op_coda,0,1,0,0
+OP032,A,Reabre el interludio.,OPEN_DOCUMENT,f5_op_interludio,0,1,0,0
+OP033,A,Recobra la peroración.,OPEN_DOCUMENT,f5_op_peroracion,0,1,0,0
+OP034,A,Retoma la adenda.,OPEN_DOCUMENT,f5_op_adenda,0,1,0,0
+OP035,A,Vuelve a abrir el colofón.,OPEN_DOCUMENT,f5_op_colofon,0,1,0,0
+OP036,A,Recupera el epígrafe.,OPEN_DOCUMENT,f5_op_epigrafe,0,1,0,0
+OP037,A,Carga la fe de erratas.,OPEN_DOCUMENT,f5_op_fe,0,1,0,0
+OP038,A,Jala el visto bueno.,OPEN_DOCUMENT,f5_op_vistobueno,0,1,0,0
+OP039,A,Trae el resultando.,OPEN_DOCUMENT,f5_op_resultando2,0,1,0,0
+OP040,A,Muestra el exordio.,OPEN_DOCUMENT,f5_op_exordio2,0,1,0,0
+OP041,A,Desempolva la coda.,OPEN_DOCUMENT,f5_op_coda2,0,1,0,0
+OP042,A,Reabre el interludio.,OPEN_DOCUMENT,f5_op_interludio2,0,1,0,0
+OP043,A,Recobra la peroración.,OPEN_DOCUMENT,f5_op_peroracion2,0,1,0,0
+OP044,A,Retoma la adenda.,OPEN_DOCUMENT,f5_op_adenda2,0,1,0,0
+OP045,A,Vuelve a abrir el colofón.,OPEN_DOCUMENT,f5_op_colofon2,0,1,0,0
+OP046,A,Recupera el epígrafe.,OPEN_DOCUMENT,f5_op_epigrafe2,0,1,0,0
+OP047,A,Carga la fe.,OPEN_DOCUMENT,f5_op_fe2,0,1,0,0
+OP048,A,Ábrelo ya.,OPEN_DOCUMENT,f5_op_ya,0,0,0,1
+OP049,A,Muéstralo en pantalla.,OPEN_DOCUMENT,f5_op_muestra,0,0,0,1
+OP050,A,Tráelo impreso.,OPEN_DOCUMENT,f5_op_trae,0,0,0,1
+OP051,A,Jálalo del correo.,OPEN_DOCUMENT,f5_op_jala,0,0,0,1
+OP052,A,Desarchiva ya.,OPEN_DOCUMENT,f5_op_desarchiva,0,0,0,1
+OP053,A,Recupera el considerando.,OPEN_DOCUMENT,f5_op_considerando2,0,1,0,0
+OP054,A,Carga el resolutivo viejo.,OPEN_DOCUMENT,f5_op_resolutivo2,0,1,0,0
+OP055,A,Jala el visto.,OPEN_DOCUMENT,f5_op_visto2,0,1,0,0
+OP056,A,Trae el resultando.,OPEN_DOCUMENT,f5_op_resultando3,0,1,0,0
+OP057,A,Muestra el exordio.,OPEN_DOCUMENT,f5_op_exordio3,0,1,0,0
+OP058,A,Desempolva la coda.,OPEN_DOCUMENT,f5_op_coda3,0,1,0,0
+OP059,A,Reabre el interludio.,OPEN_DOCUMENT,f5_op_interludio3,0,1,0,0
+OP060,A,Recobra la peroración.,OPEN_DOCUMENT,f5_op_peroracion3,0,1,0,0
+OP061,A,Retoma la adenda.,OPEN_DOCUMENT,f5_op_adenda3,0,1,0,0
+OP062,A,Vuelve a abrir el colofón.,OPEN_DOCUMENT,f5_op_colofon3,0,1,0,0
+OP063,A,Recupera el epígrafe.,OPEN_DOCUMENT,f5_op_epigrafe3,0,1,0,0
+OP064,A,Carga la fe.,OPEN_DOCUMENT,f5_op_fe3,0,1,0,0
+OP065,A,Recupera el visto bueno.,OPEN_DOCUMENT,f5_op_vistobueno2,0,1,0,0
+EX001,A,Emite el altri en pdf.,EXPORT_DOCUMENT,f5_ex_altri,0,0,0,0
+EX002,A,Produce el otrosí final.,EXPORT_DOCUMENT,f5_ex_otrosi,0,0,0,0
+EX003,A,Rinde la foja en txt.,EXPORT_DOCUMENT,f5_ex_foja,0,0,0,0
+EX004,A,Saca el legajo en Word.,EXPORT_DOCUMENT,f5_ex_legajo,0,0,0,0
+EX005,A,Baja la minuta en pdf.,EXPORT_DOCUMENT,f5_ex_minuta,0,0,0,0
+EX006,A,Genera el oficio enriquecido.,EXPORT_DOCUMENT,f5_ex_oficio,0,0,0,0
+EX007,A,Vierte la circular a texto.,EXPORT_DOCUMENT,f5_ex_circular,0,0,0,0
+EX008,A,Migra el boletín a Word.,EXPORT_DOCUMENT,f5_ex_boletin,0,0,0,0
+EX009,A,Funde la gaceta en pdf.,EXPORT_DOCUMENT,f5_ex_gaceta,0,0,0,0
+EX010,A,Extrae el diario en texto.,EXPORT_DOCUMENT,f5_ex_diario,0,0,0,0
+EX011,A,Publica el semanario rico.,EXPORT_DOCUMENT,f5_ex_semanario,0,0,0,0
+EX012,A,Entrega el anuario final.,EXPORT_DOCUMENT,f5_ex_anuario,0,0,0,0
+EX013,A,Rinde el prontuario en pdf.,EXPORT_DOCUMENT,f5_ex_prontuario,0,0,0,0
+EX014,A,Saca el memorial en texto.,EXPORT_DOCUMENT,f5_ex_memorial,0,0,0,0
+EX015,A,Baja el expediente en Word.,EXPORT_DOCUMENT,f5_ex_expediente,0,0,0,0
+EX016,A,Emite el altri nuevo en pdf.,EXPORT_DOCUMENT,f5_ex_altri2,0,0,0,0
+EX017,A,Produce el otrosí viejo final.,EXPORT_DOCUMENT,f5_ex_otrosi2,0,0,0,0
+EX018,A,Rinde la foja rota en texto.,EXPORT_DOCUMENT,f5_ex_foja2,0,0,0,0
+EX019,A,Saca el legajo madre en Word.,EXPORT_DOCUMENT,f5_ex_legajo2,0,0,0,0
+EX020,A,Baja la minuta final en pdf.,EXPORT_DOCUMENT,f5_ex_minuta2,0,0,0,0
+EX021,A,Genera el oficio base enriquecido.,EXPORT_DOCUMENT,f5_ex_oficio2,0,0,0,0
+EX022,A,Vierte la circular vieja a texto.,EXPORT_DOCUMENT,f5_ex_circular2,0,0,0,0
+EX023,A,Migra el boletín extra a Word.,EXPORT_DOCUMENT,f5_ex_boletin2,0,0,0,0
+EX024,A,Funde la gaceta nueva en pdf.,EXPORT_DOCUMENT,f5_ex_gaceta2,0,0,0,0
+EX025,A,Extrae el diario actual en texto.,EXPORT_DOCUMENT,f5_ex_diario2,0,0,0,0
+EX026,A,Guarda copia plana del considerando.,EXPORT_DOCUMENT,f5_ex_considerando,0,1,0,0
+EX027,A,Archiva copia Word del resolutivo.,EXPORT_DOCUMENT,f5_ex_resolutivo,0,1,0,0
+EX028,A,Imprime en pdf virtual el visto.,EXPORT_DOCUMENT,f5_ex_visto,0,1,0,0
+EX029,A,Convierte y guarda el resultando.,EXPORT_DOCUMENT,f5_ex_resultando,0,1,0,0
+EX030,A,Respalda en formato pdf el exordio.,EXPORT_DOCUMENT,f5_ex_exordio,0,1,0,0
+EX031,A,Emite el considerando en pdf.,EXPORT_DOCUMENT,f5_ex_considerando2,0,1,0,0
+EX032,A,Produce el resolutivo final.,EXPORT_DOCUMENT,f5_ex_resolutivo2,0,1,0,0
+EX033,A,Rinde el visto en texto.,EXPORT_DOCUMENT,f5_ex_visto2,0,1,0,0
+EX034,A,Saca el resultando en Word.,EXPORT_DOCUMENT,f5_ex_resultando2,0,1,0,0
+EX035,A,Baja el exordio en pdf.,EXPORT_DOCUMENT,f5_ex_exordio2,0,1,0,0
+EX036,A,Genera la coda enriquecida.,EXPORT_DOCUMENT,f5_ex_coda2,0,1,0,0
+EX037,A,Vierte el interludio a texto.,EXPORT_DOCUMENT,f5_ex_interludio2,0,1,0,0
+EX038,A,Migra la peroración a Word.,EXPORT_DOCUMENT,f5_ex_peroracion2,0,1,0,0
+EX039,A,Funde la adenda en pdf.,EXPORT_DOCUMENT,f5_ex_adenda2,0,1,0,0
+EX040,A,Extrae el colofón en texto.,EXPORT_DOCUMENT,f5_ex_colofon2,0,1,0,0
+EX041,A,Publica el epígrafe rico.,EXPORT_DOCUMENT,f5_ex_epigrafe2,0,1,0,0
+EX042,A,Entrega la fe final.,EXPORT_DOCUMENT,f5_ex_fe2,0,1,0,0
+EX043,A,Rinde el visto bueno en pdf.,EXPORT_DOCUMENT,f5_ex_vistobueno2,0,1,0,0
+EX044,A,Saca el resultando en Word.,EXPORT_DOCUMENT,f5_ex_resultando3,0,1,0,0
+EX045,A,Baja el exordio en Word.,EXPORT_DOCUMENT,f5_ex_exordio3,0,1,0,0
+EX046,A,Emite la coda en pdf.,EXPORT_DOCUMENT,f5_ex_coda3,0,1,0,0
+EX047,A,Produce el interludio final.,EXPORT_DOCUMENT,f5_ex_interludio3,0,1,0,0
+EX048,A,Rinde la peroración en texto.,EXPORT_DOCUMENT,f5_ex_peroracion3,0,1,0,0
+EX049,A,Saca la adenda en Word.,EXPORT_DOCUMENT,f5_ex_adenda3,0,1,0,0
+EX050,A,Baja el colofón en pdf.,EXPORT_DOCUMENT,f5_ex_colofon3,0,1,0,0
+EX051,A,Genera el epígrafe enriquecido.,EXPORT_DOCUMENT,f5_ex_epigrafe3,0,1,0,0
+EX052,A,Vierte la fe a texto.,EXPORT_DOCUMENT,f5_ex_fe3,0,1,0,0
+EX053,A,Migra el visto a Word.,EXPORT_DOCUMENT,f5_ex_visto4,0,1,0,0
+EX054,A,Funde el resultando en pdf.,EXPORT_DOCUMENT,f5_ex_resultando4,0,1,0,0
+EX055,A,Extrae el exordio en texto.,EXPORT_DOCUMENT,f5_ex_exordio4,0,1,0,0
+EX056,A,Guarda como pdf ya.,EXPORT_DOCUMENT,f5_ex_ya,0,0,0,1
+EX057,A,Exporta ahora.,EXPORT_DOCUMENT,f5_ex_ahora,0,0,0,1
+EX058,A,Saca copia.,EXPORT_DOCUMENT,f5_ex_copia,0,0,0,1
+EX059,A,Rinde final.,EXPORT_DOCUMENT,f5_ex_final,0,0,0,1
+EX060,A,Baja el tanto.,EXPORT_DOCUMENT,f5_ex_tanto,0,0,0,1
+EX061,A,Emite el considerando en pdf.,EXPORT_DOCUMENT,f5_ex_considerando3,0,1,0,0
+EX062,A,Produce el resolutivo final.,EXPORT_DOCUMENT,f5_ex_resolutivo3,0,1,0,0
+EX063,A,Rinde el visto en texto.,EXPORT_DOCUMENT,f5_ex_visto3,0,1,0,0
+EX064,A,Saca el resultando en Word.,EXPORT_DOCUMENT,f5_ex_resultando4,0,1,0,0
+EX065,A,Baja el exordio en pdf.,EXPORT_DOCUMENT,f5_ex_exordio4,0,1,0,0
+U001,U,Rúbrica el pliego.,UNSUPPORTED,f5_u_pliego,1,0,0,0
+U002,U,Timbra el comprobante.,UNSUPPORTED,f5_u_timbra,1,0,0,0
+U003,U,Notaría el poder.,UNSUPPORTED,f5_u_notaria,1,0,0,0
+U004,U,Manda flores hoy.,UNSUPPORTED,f5_u_flores,1,0,0,0
+U005,U,Pide dos lugares.,UNSUPPORTED,f5_u_lugares,1,0,0,0
+U006,U,Reserva el salón.,UNSUPPORTED,f5_u_salon,1,0,0,0
+U007,U,Compra los boletos.,UNSUPPORTED,f5_u_boletos,1,0,0,0
+U008,U,Renta la camioneta.,UNSUPPORTED,f5_u_camioneta,1,0,0,0
+U009,U,Llama al cerrajero.,UNSUPPORTED,f5_u_cerrajero,1,0,0,0
+U010,U,Riega la huerta.,UNSUPPORTED,f5_u_huerto,1,0,0,0
+U011,U,Saca cita médica.,UNSUPPORTED,f5_u_cita,1,0,0,0
+U012,U,Tiende la ropa limpia.,UNSUPPORTED,f5_u_ropa,1,0,0,0
+U013,U,Barre el local.,UNSUPPORTED,f5_u_local,1,0,0,0
+U014,U,Lava la fachada.,UNSUPPORTED,f5_u_fachada,1,0,0,0
+U015,U,Poda el rosal.,UNSUPPORTED,f5_u_arbol,1,0,0,0
+U016,U,Pinta la barda.,UNSUPPORTED,f5_u_reja,1,0,0,0
+U017,U,Arregla la chapa.,UNSUPPORTED,f5_u_chapa,1,0,0,0
+U018,U,Cambia el tanque.,UNSUPPORTED,f5_u_tanque,1,0,0,0
+U019,U,Lleva el auto al servicio.,UNSUPPORTED,f5_u_servicio,1,0,0,0
+U020,U,Paga el predial.,UNSUPPORTED,f5_u_predial,1,0,0,0
+U021,U,Deposita el cheque.,UNSUPPORTED,f5_u_cheque,1,0,0,0
+U022,U,Retira la lana.,UNSUPPORTED,f5_u_lana,1,0,0,0
+U023,U,Transfiere hoy mismo.,UNSUPPORTED,f5_u_transfiere,1,0,0,0
+U024,U,Firma en blanco.,UNSUPPORTED,f5_u_blanco,1,0,0,0
+U025,U,Endosa al portador.,UNSUPPORTED,f5_u_portador,1,0,0,0
+U026,U,Hipoteca el local.,UNSUPPORTED,f5_u_hipoteca,1,0,0,0
+U027,U,Vende la parcela.,UNSUPPORTED,f5_u_parcela,1,0,0,0
+U028,U,Compra acciones.,UNSUPPORTED,f5_u_acciones,1,0,0,0
+U029,U,Invierte en oro.,UNSUPPORTED,f5_u_oro,1,0,0,0
+U030,U,Declara el ISR.,UNSUPPORTED,f5_u_isr,1,0,0,0
+U031,U,Factura sin IVA.,UNSUPPORTED,f5_u_iva,1,0,0,0
+U032,U,Cotiza el flete.,UNSUPPORTED,f5_u_flete,1,0,0,0
+U033,U,Contrata velador.,UNSUPPORTED,f5_u_velador,1,0,0,0
+U034,U,Cancela el viaje.,UNSUPPORTED,f5_u_viaje,1,0,0,0
+U035,U,Reporta la fuga.,UNSUPPORTED,f5_u_fuga,1,0,0,0
+U036,U,Denuncia el robo.,UNSUPPORTED,f5_u_denuncia,1,0,0,0
+U037,U,Demanda el pago.,UNSUPPORTED,f5_u_demanda,1,0,0,0
+U038,U,Apela el fallo.,UNSUPPORTED,f5_u_fallo,1,0,0,0
+U039,U,Testifica el jueves.,UNSUPPORTED,f5_u_jueves,1,0,0,0
+U040,U,Soborna al cliente.,UNSUPPORTED,f5_u_cliente,1,0,0,0
+U041,U,Extorsiona al deudor.,UNSUPPORTED,f5_u_deudor,1,0,0,0
+U042,U,Hackea el wifi.,UNSUPPORTED,f5_u_wifi,1,0,0,0
+U043,U,Crackea la clave.,UNSUPPORTED,f5_u_clave,1,0,0,0
+U044,U,Minéa ether.,UNSUPPORTED,f5_u_ether,1,0,0,0
+U045,U,Ejecuta el backup.,UNSUPPORTED,f5_u_backup,1,0,0,0
+U046,U,Compila de nuevo.,UNSUPPORTED,f5_u_compila,1,0,0,0
+U047,U,Despliega el viernes.,UNSUPPORTED,f5_u_viernes,1,0,0,0
+U048,U,Reinicia el modem.,UNSUPPORTED,f5_u_modem,1,0,0,0
+U049,U,Formatea la USB.,UNSUPPORTED,f5_u_usb,1,0,0,0
+U050,U,Particiona el disco.,UNSUPPORTED,f5_u_disco,1,0,0,0
+U051,U,Instala la impresora.,UNSUPPORTED,f5_u_impresora,1,0,0,0
+U052,U,Configura el correo.,UNSUPPORTED,f5_u_correo2,1,0,0,0
+U053,U,Cablea el switch.,UNSUPPORTED,f5_u_switch,1,0,0,0
+U054,U,Suelda el cable.,UNSUPPORTED,f5_u_cable,1,0,0,0
+U055,U,Taladra la repisa.,UNSUPPORTED,f5_u_repisa,1,0,0,0
+U056,U,Lija el marco.,UNSUPPORTED,f5_u_marco,1,0,0,0
+U057,U,Barniza el closet.,UNSUPPORTED,f5_u_closet,1,0,0,0
+U058,U,Tapiza la silla.,UNSUPPORTED,f5_u_silla,1,0,0,0
+U059,U,Repara el refri.,UNSUPPORTED,f5_u_refri,1,0,0,0
+U060,U,Destapa el drenaje.,UNSUPPORTED,f5_u_drenaje,1,0,0,0
+U061,U,Impermeabiliza el techo.,UNSUPPORTED,f5_u_techo,1,0,0,0
+U062,U,Fumiga el jardín.,UNSUPPORTED,f5_u_jardin,1,0,0,0
+U063,U,Captura la iguana.,UNSUPPORTED,f5_u_iguana,1,0,0,0
+U064,U,Adopta otro gato.,UNSUPPORTED,f5_u_gato,1,0,0,0
+U065,U,Vacuna al perro.,UNSUPPORTED,f5_u_perro,1,0,0,0
+U066,U,Baña al perico.,UNSUPPORTED,f5_u_perico,1,0,0,0
+U067,U,Alimenta tortugas.,UNSUPPORTED,f5_u_tortugas,1,0,0,0
+U068,U,Riega el jardín hoy.,UNSUPPORTED,f5_u_pasto,1,0,0,0
+U069,U,Trasplanta el limón.,UNSUPPORTED,f5_u_limon,1,0,0,0
+U070,U,Abona las rosas.,UNSUPPORTED,f5_u_rosas,1,0,0,0
+U071,U,Cosecha mangos.,UNSUPPORTED,f5_u_mangos,1,0,0,0
+U072,U,Ordeña al alba.,UNSUPPORTED,f5_u_temprano,1,0,0,0
+U073,U,Arrea las chivas.,UNSUPPORTED,f5_u_chivas,1,0,0,0
+U074,U,Planta el pino.,UNSUPPORTED,f5_u_pino,1,0,0,0
+U075,U,Riega milpa.,UNSUPPORTED,f5_u_milpa,1,0,0,0
+U076,U,Cosecha el frijol.,UNSUPPORTED,f5_u_frijol,1,0,0,0
+U077,U,Guarda la cosecha.,UNSUPPORTED,f5_u_cosecha,1,0,0,0
+U078,U,Limpia el establo.,UNSUPPORTED,f5_u_establo,1,0,0,0
+U079,U,Repara el tractor.,UNSUPPORTED,f5_u_tractor,1,0,0,0
+U080,U,Carga el camión.,UNSUPPORTED,f5_u_camion,1,0,0,0
+U081,U,Borda el mantel.,UNSUPPORTED,f5_u_mantel,1,0,0,0
+U082,U,Teje la bufanda.,UNSUPPORTED,f5_u_bufanda,1,0,0,0
+U083,U,Cose el dobladillo.,UNSUPPORTED,f5_u_dobladillo,1,0,0,0
+U084,U,Zurce el calcetín.,UNSUPPORTED,f5_u_calcetin,1,0,0,0
+U085,U,Remienda el pantalón.,UNSUPPORTED,f5_u_pantalon,1,0,0,0
+U086,U,Hornea las conchas.,UNSUPPORTED,f5_u_conchas,1,0,0,0
+U087,U,Bate el merengue.,UNSUPPORTED,f5_u_merengue,1,0,0,0
+U088,U,Decora el pastel.,UNSUPPORTED,f5_u_pastel,1,0,0,0
+U089,U,Enfría la gelatina.,UNSUPPORTED,f5_u_gelatina,1,0,0,0
+U090,U,Derrite la manteca.,UNSUPPORTED,f5_u_manteca,1,0,0,0
+U091,U,Monta la crema.,UNSUPPORTED,f5_u_crema,1,0,0,0
+U092,U,Espolvorea azúcar.,UNSUPPORTED,f5_u_azucar,1,0,0,0
+U093,U,Ralla el coco.,UNSUPPORTED,f5_u_coco,1,0,0,0
+U094,U,Exprime limones.,UNSUPPORTED,f5_u_limones,1,0,0,0
+U095,U,Licua la papaya.,UNSUPPORTED,f5_u_papaya,1,0,0,0
+U096,U,Cuela el atole.,UNSUPPORTED,f5_u_atole,1,0,0,0
+U097,U,Sirve caliente.,UNSUPPORTED,f5_u_caliente,1,0,0,0
+U098,U,Calienta la birria.,UNSUPPORTED,f5_u_birria,1,0,0,0
+U099,U,Recalienta el pozole.,UNSUPPORTED,f5_u_pozole,1,0,0,0
+U100,U,Tapa el pozole.,UNSUPPORTED,f5_u_cazuela,1,0,0,0
+U101,U,Destapa la cazuela.,UNSUPPORTED,f5_u_olla,1,0,0,0
+U102,U,Prueba el caldo.,UNSUPPORTED,f5_u_caldo,1,0,0,0
+U103,U,Sazona con sal.,UNSUPPORTED,f5_u_sal,1,0,0,0
+U104,U,Apaga la estufa.,UNSUPPORTED,f5_u_estufa,1,0,0,0
+U105,U,Deja hervir.,UNSUPPORTED,f5_u_hervir,1,0,0,0
+U106,U,Memoriza el poema.,UNSUPPORTED,f5_u_poema,1,0,0,0
+U107,U,Ensaya la obra.,UNSUPPORTED,f5_u_obra,1,0,0,0
+U108,U,Repasa la escena.,UNSUPPORTED,f5_u_escena,1,0,0,0
+U109,U,Estudia el guion.,UNSUPPORTED,f5_u_guion,1,0,0,0
+U110,U,Practica el solo.,UNSUPPORTED,f5_u_solo,1,0,0,0
+U111,U,Prepara la clase.,UNSUPPORTED,f5_u_clase,1,0,0,0
+U112,U,Organiza el festival.,UNSUPPORTED,f5_u_festival,1,0,0,0
+U113,U,Clasifica fotos viejas.,UNSUPPORTED,f5_u_fotos,1,0,0,0
+U114,U,Ordena facturas.,UNSUPPORTED,f5_u_recibos,1,0,0,0
+U115,U,Digitaliza cintas.,UNSUPPORTED,f5_u_cintas,1,0,0,0
+U116,U,Etiqueta frascos.,UNSUPPORTED,f5_u_frascos,1,0,0,0
+U117,U,Archiva cartas.,UNSUPPORTED,f5_u_cartas,1,0,0,0
+U118,U,Responde whatsapps.,UNSUPPORTED,f5_u_whatsapps,1,0,0,0
+U119,U,Devuelve la llamada.,UNSUPPORTED,f5_u_llamada,1,0,0,0
+U120,U,Confirma el vuelo.,UNSUPPORTED,f5_u_vuelo,1,0,0,0
+U121,U,Reprograma el dentista.,UNSUPPORTED,f5_u_dentista,1,0,0,0
+U122,U,Cancela Netflix.,UNSUPPORTED,f5_u_netflix,1,0,0,0
+U123,U,Rastrea mi pedido.,UNSUPPORTED,f5_u_pedido,1,0,0,0
+U124,U,Recoge el paquete.,UNSUPPORTED,f5_u_paquete,1,0,0,0
+U125,U,Deja propina.,UNSUPPORTED,f5_u_propina,1,0,0,0
+U126,U,Firma el voucher.,UNSUPPORTED,f5_u_voucher,1,0,1,0
+U127,U,Traduce la postal.,UNSUPPORTED,f5_u_menu,1,0,1,0
+U128,U,Comparte el uber.,UNSUPPORTED,f5_u_uber,1,0,1,0
+U129,U,Imprime el pase.,UNSUPPORTED,f5_u_pase,1,0,1,0
+U130,U,Agenda el corte.,UNSUPPORTED,f5_u_corte,1,0,1,0
+U131,U,Cifra el chat.,UNSUPPORTED,f5_u_chat,1,0,1,0
+U132,U,Comprime la carpeta.,UNSUPPORTED,f5_u_video,1,0,1,0
+U133,U,Ejecuta la macro.,UNSUPPORTED,f5_u_macro,1,0,1,0
+U134,U,Convierte el video.,UNSUPPORTED,f5_u_audio,1,0,1,0
+U135,U,Envía la foto.,UNSUPPORTED,f5_u_foto,1,0,1,0
+U136,U,Sube la historia.,UNSUPPORTED,f5_u_historia,1,0,1,0
+U137,U,Baja el episodio.,UNSUPPORTED,f5_u_episodio,1,0,1,0
+U138,U,Actualiza la app.,UNSUPPORTED,f5_u_app,1,0,1,0
+U139,U,Cambia tu foto.,UNSUPPORTED,f5_u_tufoto,1,0,1,0
+U140,U,Silencia el chat.,UNSUPPORTED,f5_u_silencia,1,0,1,0
+U141,U,Fija el aviso.,UNSUPPORTED,f5_u_aviso,1,0,1,0
+U142,U,Reenvía el sticker.,UNSUPPORTED,f5_u_sticker,1,0,1,0
+U143,U,Guarda el meme.,UNSUPPORTED,f5_u_meme,1,0,1,0
+U144,U,Crea el chat.,UNSUPPORTED,f5_u_grupo,1,0,1,0
+U145,U,Elimina el mensaje.,UNSUPPORTED,f5_u_mensaje,1,0,1,0
+U146,U,Bloquea el número.,UNSUPPORTED,f5_u_numero,1,0,1,0
+U147,U,Reporta el spam.,UNSUPPORTED,f5_u_spam,1,0,1,0
+U148,U,Desinstala el juego.,UNSUPPORTED,f5_u_juego,1,0,1,0
+U149,U,Califica la app.,UNSUPPORTED,f5_u_califica,1,0,1,0
+U150,U,Recarga saldo.,UNSUPPORTED,f5_u_saldo,1,0,1,0
+U151,U,Pide un uber.,UNSUPPORTED,f5_u_taxi,1,0,1,0
+U152,U,Ordena helado.,UNSUPPORTED,f5_u_helado,1,0,1,0
+U153,U,Reserva cine.,UNSUPPORTED,f5_u_cine,1,0,1,0
+U154,U,Compra pan.,UNSUPPORTED,f5_u_pan,1,0,1,0
+U155,U,Pide las cuentas.,UNSUPPORTED,f5_u_cuentas,1,0,1,0
+U156,U,Divide la cuenta.,UNSUPPORTED,f5_u_divide,1,0,1,0
+U157,U,Propón brindis.,UNSUPPORTED,f5_u_brindis,1,0,1,0
+U158,U,Canta las mañanitas.,UNSUPPORTED,f5_u_mananitas,1,0,1,0
+U159,U,Sopla las velas.,UNSUPPORTED,f5_u_velas,1,0,1,0
+U160,U,Parte el pastel.,UNSUPPORTED,f5_u_pastel2,1,0,1,0
+U161,U,Reparte dulces.,UNSUPPORTED,f5_u_dulces,1,0,1,0
+U162,U,Rompe la piñata.,UNSUPPORTED,f5_u_pinata,1,0,1,0
+U163,U,Dale al burro.,UNSUPPORTED,f5_u_burro,1,0,1,0
+U164,U,Juega lotería.,UNSUPPORTED,f5_u_loteria,1,0,1,0
+U165,U,Canta bingo.,UNSUPPORTED,f5_u_bingo,1,0,1,0
+U166,U,Baila el vals.,UNSUPPORTED,f5_u_vals,1,0,1,0
+U167,U,Brinda por ellos.,UNSUPPORTED,f5_u_ellos,1,0,1,0
+U168,U,Abraza al quinceañero.,UNSUPPORTED,f5_u_quince,1,0,1,0
+U169,U,Felicita a la novia.,UNSUPPORTED,f5_u_novia,1,0,1,0
+U170,U,Lanza arroz.,UNSUPPORTED,f5_u_arroz,1,0,1,0
+U171,U,Riega flores.,UNSUPPORTED,f5_u_flores,1,0,1,0
+U172,U,Barre confeti.,UNSUPPORTED,f5_u_confeti,1,0,1,0
+U173,U,Recoge serpentinas.,UNSUPPORTED,f5_u_serpentinas,1,0,1,0
+U174,U,Guarda recuerdos.,UNSUPPORTED,f5_u_recuerdos,1,0,1,0
+U175,U,Imprime fotos.,UNSUPPORTED,f5_u_fotosfiesta,1,0,1,0
+U176,U,Comparte el álbum.,UNSUPPORTED,f5_u_album,1,0,1,0
+U177,U,Sube el video.,UNSUPPORTED,f5_u_videofiesta,1,0,1,0
+U178,U,Etiqueta a todos.,UNSUPPORTED,f5_u_todos,1,0,1,0
+U179,U,Da like.,UNSUPPORTED,f5_u_like,1,0,1,0
+U180,U,Comenta bonito.,UNSUPPORTED,f5_u_bonito,1,0,1,0
+U181,U,Firma la cartulina.,UNSUPPORTED,f5_u_cartulina,1,0,1,0
+U182,U,Traduce la tarjeta.,UNSUPPORTED,f5_u_tarjeta,1,0,1,0
+U183,U,Envuelve el regalo.,UNSUPPORTED,f5_u_regalo,1,0,1,0
+U184,U,Moña la caja.,UNSUPPORTED,f5_u_caja,1,0,1,0
+U185,U,Esconde el regalo.,UNSUPPORTED,f5_u_esconde,1,0,1,0
+U186,U,Sorprende al cumpleañero.,UNSUPPORTED,f5_u_cumple,1,0,1,0
+U187,U,Apaga las velitas.,UNSUPPORTED,f5_u_velitas,1,0,1,0
+U188,U,Pide un deseo.,UNSUPPORTED,f5_u_deseo,1,0,1,0
+U189,U,Muerde el pastel.,UNSUPPORTED,f5_u_muerde,1,0,1,0
+U190,U,Embarra al festejado.,UNSUPPORTED,f5_u_festejado,1,0,1,0
+U191,U,Limpia el merengue.,UNSUPPORTED,f5_u_merengue,1,0,1,0
+U192,U,Barre el salón.,UNSUPPORTED,f5_u_salon,1,0,1,0
+U193,U,Recoge sillas.,UNSUPPORTED,f5_u_sillas,1,0,1,0
+U194,U,Dobla manteles.,UNSUPPORTED,f5_u_manteles,1,0,1,0
+U195,U,Guarda trastes.,UNSUPPORTED,f5_u_trastes,1,0,1,0
+U196,U,Lava ollas.,UNSUPPORTED,f5_u_ollas,1,0,1,0
+U197,U,Seca vasos.,UNSUPPORTED,f5_u_vasos,1,0,1,0
+U198,U,Acomoda sillas.,UNSUPPORTED,f5_u_sillas2,1,0,1,0
+U199,U,Apaga luces.,UNSUPPORTED,f5_u_luces,1,0,1,0
+U200,U,Cierra el local.,UNSUPPORTED,f5_u_local,1,0,1,0
+U201,U,Pon alarma.,UNSUPPORTED,f5_u_alarma,1,0,1,0
+U202,U,Llama un taxi.,UNSUPPORTED,f5_u_taxi2,1,0,1,0
+U203,U,Camina a casa.,UNSUPPORTED,f5_u_casa,1,0,1,0
+U204,U,Duerme bien.,UNSUPPORTED,f5_u_duerme,1,0,1,0
+U205,U,Descansa mañana.,UNSUPPORTED,f5_u_manana,1,0,1,0
+U206,U,Sueña bonito.,UNSUPPORTED,f5_u_bonito2,1,0,1,0
+U207,U,Despierta temprano.,UNSUPPORTED,f5_u_temprano,1,0,1,0
+U208,U,Desayuna fuerte.,UNSUPPORTED,f5_u_fuerte,1,0,1,0
+U209,U,Arranca el día.,UNSUPPORTED,f5_u_dia,1,0,1,0
+U210,U,Échale ganas hoy.,UNSUPPORTED,f5_u_hoy,1,0,1,0
+N001,N,El parte avisa granizo.,NO_ACTION,f5_n_parte,0,0,0,0
+N002,N,La cartelera cambia jueves.,NO_ACTION,f5_n_cartelera,0,0,0,0
+N003,N,El mercado subió hoy.,NO_ACTION,f5_n_mercado,0,0,0,0
+N004,N,La liga pausa en fecha FIFA.,NO_ACTION,f5_n_liga,0,0,0,0
+N005,N,El censo inicia lunes.,NO_ACTION,f5_n_censo,0,0,0,0
+N006,N,La feria dura una semana.,NO_ACTION,f5_n_feria,0,0,0,0
+N007,N,El desfile será corto.,NO_ACTION,f5_n_desfile,0,0,0,0
+N008,N,La verbena abre tarde.,NO_ACTION,f5_n_verbena,0,0,0,0
+N009,N,El concierto se llenó.,NO_ACTION,f5_n_concierto,0,0,0,0
+N010,N,La obra sigue en pie.,NO_ACTION,f5_n_obra,0,0,0,0
+N011,N,El museo presta piezas.,NO_ACTION,f5_n_museo,0,0,0,0
+N012,N,El curso quedó lleno.,NO_ACTION,f5_n_curso,0,0,0,0
+N013,N,La beca paga transporte.,NO_ACTION,f5_n_beca,0,0,0,0
+N014,N,El taller huele a madera.,NO_ACTION,f5_n_taller,0,0,0,0
+N015,N,El diplomado es caro.,NO_ACTION,f5_n_diplomado,0,0,0,0
+N016,N,Traigo prisa siempre.,NO_ACTION,f5_n_prisa,0,0,0,0
+N017,N,Ando molido hoy.,NO_ACTION,f5_n_molido,0,0,0,0
+N018,N,Hace un vientazo.,NO_ACTION,f5_n_vientazo,0,0,0,0
+N019,N,Ya merito llueve.,NO_ACTION,f5_n_merito,0,0,0,0
+N020,N,Mañana hay puente.,NO_ACTION,f5_n_puente,0,0,0,0
+N021,N,El camión ya pasó.,NO_ACTION,f5_n_camion,0,0,0,0
+N022,N,La fila no avanza.,NO_ACTION,f5_n_fila,0,0,0,0
+N023,N,El trámite tardó horas.,NO_ACTION,f5_n_tramite,0,0,0,0
+N024,N,La cita se movió sola.,NO_ACTION,f5_n_cita,0,0,0,0
+N025,N,El doctor no vino.,NO_ACTION,f5_n_doctor,0,0,0,0
+N026,N,La rosca partió récord.,NO_ACTION,f5_n_rosca,0,0,0,0
+N027,N,El encierro duró poco.,NO_ACTION,f5_n_encierro,0,0,0,0
+N028,N,La verbena sigue viva.,NO_ACTION,f5_n_verbena2,0,0,0,0
+N029,N,El baile prendió tarde.,NO_ACTION,f5_n_baile,0,0,0,0
+N030,N,La kermés recaudó bien.,NO_ACTION,f5_n_kermes,0,0,0,0
+N031,N,El jaripeo gustó mucho.,NO_ACTION,f5_n_jaripeo,0,0,0,0
+N032,N,La charreada puntúa al final.,NO_ACTION,f5_n_charreada,0,0,0,0
+N033,N,El coleadero levanta tierra.,NO_ACTION,f5_n_coleadero,0,0,0,0
+N034,N,La escaramuza ensaya diario.,NO_ACTION,f5_n_escaramuza,0,0,0,0
+N035,N,El mariachi cobra caro.,NO_ACTION,f5_n_mariachi,0,0,0,0
+N036,N,La banda toca recio.,NO_ACTION,f5_n_banda,0,0,0,0
+N037,N,El norteño lloró dos.,NO_ACTION,f5_n_norteno,0,0,0,0
+N038,N,La cumbia prendió sola.,NO_ACTION,f5_n_cumbia,0,0,0,0
+N039,N,El danzón ordenó filas.,NO_ACTION,f5_n_danzon,0,0,0,0
+N040,N,El mambo aceleró todo.,NO_ACTION,f5_n_mambo,0,0,0,0
+N041,N,Borrar es terapéutico a veces.,NO_ACTION,f5_n_terapeutico,0,0,0,0
+N042,N,Cambiar da miedo siempre.,NO_ACTION,f5_n_miedo,0,0,0,0
+N043,N,Guardar recuerdos multitude.,NO_ACTION,f5_n_multitude,0,0,0,0
+N044,N,Abrir regalos ilusiona.,NO_ACTION,f5_n_regalos,0,0,0,0
+N045,N,Imprimir fotos viejas conmueve.,NO_ACTION,f5_n_fotos,0,0,0,0
+N046,N,Buscar señales confunde.,NO_ACTION,f5_n_senales,0,0,0,0
+N047,N,Copiar gestos delata.,NO_ACTION,f5_n_gestos,0,0,0,0
+N048,N,Pegar gritos altera.,NO_ACTION,f5_n_gritos,0,0,0,0
+N049,N,Leer miradas cansa.,NO_ACTION,f5_n_miradas,0,0,0,0
+N050,N,Exportar tristezas alivia.,NO_ACTION,f5_n_tristezas,0,0,0,0
+N051,N,Cerrar ciclos sana.,NO_ACTION,f5_n_ciclos,0,0,0,0
+N052,N,Guardar rencores enferma.,NO_ACTION,f5_n_rencores,0,0,0,0
+N053,N,Abrir heridas duele.,NO_ACTION,f5_n_heridas,0,0,0,0
+N054,N,Imprimir versos emociona.,NO_ACTION,f5_n_versos,0,0,0,0
+N055,N,Buscar atajos ahorra.,NO_ACTION,f5_n_atajos,0,0,0,0
+N056,N,Copiar sonrisas cansa.,NO_ACTION,f5_n_sonrisas,0,0,0,0
+N057,N,Pegar chicles asquea.,NO_ACTION,f5_n_chicles,0,0,0,0
+N058,N,Leer cartas conmueve.,NO_ACTION,f5_n_cartas,0,0,0,0
+N059,N,Exportar café perfuma.,NO_ACTION,f5_n_cafe,0,0,0,0
+N060,N,Cerrar puertas tranquiliza.,NO_ACTION,f5_n_puertas,0,0,0,0
+N061,N,Guardar turnos agota.,NO_ACTION,f5_n_turnos,0,0,0,0
+N062,N,Abrir regalos indispone.,NO_ACTION,f5_n_regalos2,0,0,0,0
+N063,N,Imprimir lonas cuesta.,NO_ACTION,f5_n_lonas,0,0,0,0
+N064,N,Buscar pareja madura.,NO_ACTION,f5_n_pareja,0,0,0,0
+N065,N,Copiar firmas falsifica.,NO_ACTION,f5_n_firmas,0,0,0,0
+N066,N,Pegar pestañas tarda.,NO_ACTION,f5_n_pestanas,0,0,0,0
+N067,N,Leer horóscopos entretiene.,NO_ACTION,f5_n_horoscopos,0,0,0,0
+N068,N,Exportar miel endulza.,NO_ACTION,f5_n_miel,0,0,0,0
+N069,N,Cerrar ventas festeja.,NO_ACTION,f5_n_ventas,0,0,0,0
+N070,N,Guardar semillas preserva.,NO_ACTION,f5_n_semillas,0,0,0,0
+N071,N,Abrir cocos refresca.,NO_ACTION,f5_n_cocos,0,0,0,0
+N072,N,El tianguis abre los martes.,NO_ACTION,f5_n_tianguis,0,0,0,0
+N073,N,La lucha llena la arena.,NO_ACTION,f5_n_lucha,0,0,0,0
+N074,N,El mariachi ameniza fiestas.,NO_ACTION,f5_n_mariachi2,0,0,0,0
+N075,N,La piñata se rompió pronto.,NO_ACTION,f5_n_pinata,0,0,0,0
+N076,N,El pozole lleva aguacate.,NO_ACTION,f5_n_pozole,0,0,0,0
+N077,N,Los tamales pican rico.,NO_ACTION,f5_n_tamales,0,0,0,0
+N078,N,El café de olla huele bien.,NO_ACTION,f5_n_cafeolla,0,0,0,0
+N079,N,La tortilla no necesita nada.,NO_ACTION,f5_n_tortilla,0,0,0,0
+N080,N,El mole lleva chocolate.,NO_ACTION,f5_n_mole,0,0,0,0
+N081,N,Los alebrijes brillan.,NO_ACTION,f5_n_alebrijes,0,0,0,0
+N082,N,La talavera decora cocinas.,NO_ACTION,f5_n_talavera,0,0,0,0
+N083,N,Las trajineras flotan lento.,NO_ACTION,f5_n_trajineras,0,0,0,0
+N084,N,El zócalo se llena.,NO_ACTION,f5_n_zocalo,0,0,0,0
+N085,N,La pirámide recibe miles.,NO_ACTION,f5_n_piramide,0,0,0,0
+N086,N,El cenote refleja el cielo.,NO_ACTION,f5_n_cenote,0,0,0,0
+N087,N,Las monarcas llegan ya.,NO_ACTION,f5_n_monarcas,0,0,0,0
+N088,N,El ajolote sonríe.,NO_ACTION,f5_n_ajolote,0,0,0,0
+N089,N,El quetzal anida alto.,NO_ACTION,f5_n_quetzal,0,0,0,0
+N090,N,La vainilla perfuma todo.,NO_ACTION,f5_n_vainilla,0,0,0,0
+N091,N,El cacao da chocolate.,NO_ACTION,f5_n_cacao,0,0,0,0
+N092,N,La cochinita tarda horas.,NO_ACTION,f5_n_cochinita,0,0,0,0
+N093,N,Los chiles visten bandera.,NO_ACTION,f5_n_chiles,0,0,0,0
+N094,N,El pan de muerto huele.,NO_ACTION,f5_n_panmuerto,0,0,0,0
+N095,N,La rosca esconde muñecos.,NO_ACTION,f5_n_rosca,0,0,0,0
+N096,N,El atole calienta mañanas.,NO_ACTION,f5_n_atole,0,0,0,0
+N097,N,Los esquites llevan queso.,NO_ACTION,f5_n_esquites,0,0,0,0
+N098,N,El elote se vende entero.,NO_ACTION,f5_n_elote,0,0,0,0
+N099,N,La horchata refresca.,NO_ACTION,f5_n_horchata,0,0,0,0
+N100,N,El agua de jamaica mancha.,NO_ACTION,f5_n_jamaica,0,0,0,0
+N101,N,Los buñuelos crujen rico.,NO_ACTION,f5_n_bunuelos,0,0,0,0
+N102,N,El rompope espesa.,NO_ACTION,f5_n_rompope,0,0,0,0
+N103,N,La cajeta endulza.,NO_ACTION,f5_n_cajeta,0,0,0,0
+N104,N,El ate acompaña queso.,NO_ACTION,f5_n_ate,0,0,0,0
+N105,N,Las cocadas doran.,NO_ACTION,f5_n_cocadas,0,0,0,0
+N106,N,El jamoncillo cuaja.,NO_ACTION,f5_n_jamoncillo,0,0,0,0
+N107,N,La alegría cruje.,NO_ACTION,f5_n_alegria,0,0,0,0
+N108,N,El merengue se dora.,NO_ACTION,f5_n_merengue,0,0,0,0
+N109,N,La jericalla cuaja lento.,NO_ACTION,f5_n_jericalla,0,0,0,0
+N110,N,El flan tiembla.,NO_ACTION,f5_n_flan,0,0,0,0
+N111,N,La capirotada aprovecha pan.,NO_ACTION,f5_n_capirotada,0,0,0,0
+N112,N,Los churros gotean.,NO_ACTION,f5_n_churros,0,0,0,0
+N113,N,El chocolate espuma.,NO_ACTION,f5_n_chocolate,0,0,0,0
+N114,N,La tlayuda cruje.,NO_ACTION,f5_n_tlayuda,0,0,0,0
+N115,N,El tasajo se asa.,NO_ACTION,f5_n_tasajo,0,0,0,0
+N116,N,La barbacoa tarda noche.,NO_ACTION,f5_n_barbacoa,0,0,0,0
+N117,N,Piensa antes de opinar.,NO_ACTION,f5_n_piensa,0,0,0,0
+N118,N,Respira antes de firmar.,NO_ACTION,f5_n_respira,0,0,0,0
+N119,N,Calma antes de decidir.,NO_ACTION,f5_n_calma,0,0,0,0
+N120,N,Frena antes de borrar.,NO_ACTION,f5_n_frena,0,0,0,0
+N121,N,Aguanta antes de enviar.,NO_ACTION,f5_n_aguanta,0,0,0,0
+N122,N,Espera antes de imprimir.,NO_ACTION,f5_n_espera,0,0,0,0
+N123,N,Duda antes de aceptar.,NO_ACTION,f5_n_duda,0,0,0,0
+N124,N,Tantea antes de firmar.,NO_ACTION,f5_n_tantea,0,0,0,0
+N125,N,Lee antes de borrar.,NO_ACTION,f5_n_lee,0,0,0,0
+N126,N,Relee antes de enviar.,NO_ACTION,f5_n_relee,0,0,0,0
+N127,N,El rayo no aplica.,NO_ACTION,f5_n_thunder,0,0,0,0
+N128,N,Guarda calma siempre.,NO_ACTION,f5_n_guacalma,0,0,0,0
+N129,N,Abre debate serio.,NO_ACTION,f5_n_abredebate,0,0,0,0
+N130,N,Imprime ideas claras.,NO_ACTION,f5_n_imprideas,0,0,0,0
+N131,N,Busca tu centro.,NO_ACTION,f5_n_centro,0,0,0,0
+N132,N,Copia lo bueno.,NO_ACTION,f5_n_bueno,0,0,0,0
+N133,N,Pega risas.,NO_ACTION,f5_n_risas,0,0,0,0
+N134,N,Lee el ambiente.,NO_ACTION,f5_n_ambiente,0,0,0,0
+N135,N,Exporta vibras.,NO_ACTION,f5_n_vibras,0,0,0,0
+N136,N,Cierra ciclos con amor.,NO_ACTION,f5_n_amor,0,0,0,0
+N137,N,Guarda recuerdos bonitos.,NO_ACTION,f5_n_bonitos,0,0,0,0
+N138,N,Abre tu corazón.,NO_ACTION,f5_n_corazon,0,0,0,0
+N139,N,Imprime sonrisas.,NO_ACTION,f5_n_sonrisas,0,0,0,0
+N140,N,Busca la felicidad.,NO_ACTION,f5_n_felicidad,0,0,0,0
+N141,N,Copiar abrazos reconforta.,NO_ACTION,f5_n_abrazos,0,0,0,0
+N142,N,Pegar estampas alegra.,NO_ACTION,f5_n_estampas,0,0,0,0
+N143,N,Leer poesía eleva.,NO_ACTION,f5_n_poesia,0,0,0,0
+N144,N,Exportar bondad multiplica.,NO_ACTION,f5_n_bondad,0,0,0,0
+N145,N,Seleccionar batallas cansa.,NO_ACTION,f5_n_batallas,0,0,0,0
+N146,N,Borrar mensajes viejos libera.,NO_ACTION,f5_n_mensajes,0,0,0,0
+N147,N,Cambiar hábitos cuesta.,NO_ACTION,f5_n_habitos,0,0,0,0
+N148,N,Guardar fotos viejas conmueve.,NO_ACTION,f5_n_fotosv,0,0,0,0
+N149,N,Abrir regalos emociona.,NO_ACTION,f5_n_regalos,0,0,0,0
+N150,N,Imprimir recuerdos decora.,NO_ACTION,f5_n_recuerdos,0,0,0,0
+M001,M,Titula y guarda el acta.,MULTI_ACTION,f5_m_titula,0,0,0,0
+M002,M,Borra y archiva el tanto.,MULTI_ACTION,f5_m_borra,0,0,0,0
+M003,M,Busca y marca el folio.,MULTI_ACTION,f5_m_busca,0,0,0,0
+M004,M,Copia y pega el texto.,MULTI_ACTION,f5_m_copia,0,0,0,0
+M005,M,Lee y corrige la minuta.,MULTI_ACTION,f5_m_lee,0,0,0,0
+M006,M,Abre y revisa el oficio.,MULTI_ACTION,f5_m_abre,0,0,0,0
+M007,M,Resume y titula Síntesis.,MULTI_ACTION,f5_m_resume,0,0,0,0
+M008,M,Formatea el acta y expórtala.,MULTI_ACTION,f5_m_formatea,0,0,0,0
+M009,M,Deshaz y guarda copia.,MULTI_ACTION,f5_m_deshaz,0,0,0,0
+M010,M,Selecciona y subraya el acuerdo.,MULTI_ACTION,f5_m_selecciona,0,0,0,0
+M011,M,Encuentra y elimina duplicados.,MULTI_ACTION,f5_m_encuentra,0,0,0,0
+M012,M,Numera e imprime fojas.,MULTI_ACTION,f5_m_numera,0,0,0,0
+M013,M,Centra y guarda el título.,MULTI_ACTION,f5_m_centra,0,0,0,0
+M014,M,Firma y sella el acta.,MULTI_ACTION,f5_m_firma,0,0,0,0
+M015,M,Escanea y archiva el legajo.,MULTI_ACTION,f5_m_escanea,0,0,0,0
+M016,M,Recorta y pega el recuadro.,MULTI_ACTION,f5_m_recorta,0,0,0,0
+M017,M,Justifica y exporta el texto.,MULTI_ACTION,f5_m_justifica,0,0,0,0
+M018,M,Sangra y numera incisos.,MULTI_ACTION,f5_m_sangra,0,0,0,0
+M019,M,Cursiva y guarda la cita.,MULTI_ACTION,f5_m_cursiva,0,0,0,0
+M020,M,Subraya y archiva el acuerdo.,MULTI_ACTION,f5_m_subraya,0,0,0,0
+M021,M,"Anota, subraya y turna.",MULTI_ACTION,f5_m_anota,0,0,0,0
+M022,M,Glosa el término y archívalo.,MULTI_ACTION,f5_m_glosa,0,0,0,0
+M023,M,Digitaliza fotos y nómbralas.,MULTI_ACTION,f5_m_digitaliza,0,0,0,0
+M024,M,Folía actas y guárdalas.,MULTI_ACTION,f5_m_folia,0,0,0,0
+M025,M,Turna asuntos y fírmalos.,MULTI_ACTION,f5_m_turna,0,0,0,0
+M026,M,Revisa tareas y envíalas.,MULTI_ACTION,f5_m_revisa,0,0,0,0
+M027,M,Rubrica cheques y túrnalos.,MULTI_ACTION,f5_m_rubrica,0,0,0,0
+M028,M,Sella sobres y archívalos.,MULTI_ACTION,f5_m_sella,0,0,0,0
+M029,M,Folía recibos y envíalos.,MULTI_ACTION,f5_m_folia2,0,0,0,0
+M030,M,Turna oficios y guárdalos.,MULTI_ACTION,f5_m_turna2,0,0,0,0
+M031,M,Recaba firmas y archívalas.,MULTI_ACTION,f5_m_recaba,0,0,0,0
+M032,M,Revisa actas y envíalas.,MULTI_ACTION,f5_m_revisa2,0,0,0,0
+M033,M,Titula fotos y guárdalas.,MULTI_ACTION,f5_m_titula2,0,0,0,0
+M034,M,Borra borradores y archiva.,MULTI_ACTION,f5_m_borra2,0,0,0,0
+M035,M,Busca folios y márcalos.,MULTI_ACTION,f5_m_busca2,0,0,0,0
+M036,M,Lee reportes y fírmalos.,MULTI_ACTION,f5_m_lee2,0,0,0,0
+M037,M,Abre cartas y archívalas.,MULTI_ACTION,f5_m_abre2,0,0,0,0
+M038,M,Resume textos y envíalos.,MULTI_ACTION,f5_m_resume2,0,0,0,0
+M039,M,Formatea tablas y guárdalas.,MULTI_ACTION,f5_m_formatea2,0,0,0,0
+M040,M,Selecciona fotos y márcalas.,MULTI_ACTION,f5_m_selecciona2,0,0,0,0
+M041,M,Encuentra errores y corrígelos.,MULTI_ACTION,f5_m_encuentra2,0,0,0,0
+M042,M,Centra títulos y guárdalos.,MULTI_ACTION,f5_m_centra2,0,0,0,0
+M043,M,Recorta fotos y pégalas.,MULTI_ACTION,f5_m_recorta2,0,0,0,0
+M044,M,Justifica textos y envíalos.,MULTI_ACTION,f5_m_justifica2,0,0,0,0
+M045,M,Sangra versos y numéralos.,MULTI_ACTION,f5_m_sangra2,0,0,0,0
+M046,M,Cursiva citas y guárdalas.,MULTI_ACTION,f5_m_cursiva2,0,0,0,0
+M047,M,Subraya nombres y archívalos.,MULTI_ACTION,f5_m_subraya2,0,0,0,0
+M048,M,Anota ideas y guárdalas.,MULTI_ACTION,f5_m_anota2,0,0,0,0
+M049,M,Glosa versos y envíalos.,MULTI_ACTION,f5_m_glosa2,0,0,0,0
+M050,M,Digitaliza cartas y súbelas.,MULTI_ACTION,f5_m_digitaliza2,0,0,0,0
+M051,M,Escanea fotos y mándalas.,MULTI_ACTION,f5_m_escanea2,0,0,0,0
+M052,M,Engrapa hojas y entrégalas.,MULTI_ACTION,f5_m_engrapa2,0,0,0,0
+M053,M,Perfora tarjetas y archívalas.,MULTI_ACTION,f5_m_perfora2,0,0,0,0
+M054,M,Recorta cupones y úsalos.,MULTI_ACTION,f5_m_recorta3,0,0,0,0
+M055,M,Dobla ropa y guárdala.,MULTI_ACTION,f5_m_dobla,0,0,0,0
+M056,M,Franquea sobres y despáchalos.,MULTI_ACTION,f5_m_franquea,0,0,0,0
+M057,M,Certifica copias y entrégalas.,MULTI_ACTION,f5_m_certifica,0,0,0,0
+M058,M,Apostilla actas y llévalas.,MULTI_ACTION,f5_m_apostilla,0,0,0,0
+M059,M,Fedata firmas y archívalas.,MULTI_ACTION,f5_m_fedata,0,0,0,0
+M060,M,Protocoliza actas y guárdalas.,MULTI_ACTION,f5_m_protocoliza,0,0,0,0
+M061,M,Testimonia firmas y registra.,MULTI_ACTION,f5_m_testimonia,0,0,0,0
+M062,M,"Coteja, rubrica y envía.",MULTI_ACTION,f5_m_coteja,0,0,0,0
+M063,M,"Rubrica, sella y turna cada foja.",MULTI_ACTION,f5_m_rubrica2,0,0,0,0
+M064,M,"Sella, firma y archiva el tanto.",MULTI_ACTION,f5_m_sella2,0,0,0,0
+M065,M,"Folía, rubrica y envía el legajo.",MULTI_ACTION,f5_m_folia3,0,0,0,0
+M066,M,"Turna, sella y guarda el oficio.",MULTI_ACTION,f5_m_turna3,0,0,0,0
+M067,M,"Recaba, folía y turna firmas.",MULTI_ACTION,f5_m_recaba2,0,0,0,0
+M068,M,"Revisa, sella y turna el acta.",MULTI_ACTION,f5_m_revisa3,0,0,0,0
+M069,M,"Anota, rubrica y archiva notas.",MULTI_ACTION,f5_m_anota3,0,0,0,0
+M070,M,"Glosa, sella y turna el otrosí.",MULTI_ACTION,f5_m_glosa3,0,0,0,0
+M071,M,"Digitaliza, nombra y turna el pdf.",MULTI_ACTION,f5_m_digitaliza3,0,0,0,0
+M072,M,"Escanea, folía y archiva copias.",MULTI_ACTION,f5_m_escanea3,0,0,0,0
+M073,M,"Engrapa, sella y envía tantos.",MULTI_ACTION,f5_m_engrapa3,0,0,0,0
+M074,M,"Perfora, folía y archiva fojas.",MULTI_ACTION,f5_m_perfora3,0,0,0,0
+M075,M,"Recorta, sella y turna recortes.",MULTI_ACTION,f5_m_recorta4,0,0,0,0
+M076,M,"Dobla, ensobra y despacha oficios.",MULTI_ACTION,f5_m_dobla2,0,0,0,0
+M077,M,"Franquea, sella y envía cartas.",MULTI_ACTION,f5_m_franquea2,0,0,0,0
+M078,M,"Certifica, folía y archiva actas.",MULTI_ACTION,f5_m_certifica2,0,0,0,0
+M079,M,"Apostilla, sella y turna títulos.",MULTI_ACTION,f5_m_apostilla2,0,0,0,0
+M080,M,"Fedata, rubrica y guarda copias.",MULTI_ACTION,f5_m_fedata2,0,0,0,0
+M081,M,"Protocoliza, folía y archiva poderes.",MULTI_ACTION,f5_m_protocoliza2,0,0,0,0
+M082,M,"Testimonia, sella y turna firmas.",MULTI_ACTION,f5_m_testimonia2,0,0,0,0
+M083,M,"Coteja, rubrica y envía tantos.",MULTI_ACTION,f5_m_coteja2,0,0,0,0
+M084,M,"Cambia el título, guarda y exporta.",MULTI_ACTION,f5_m_cambia,0,0,0,0
+M085,M,"Borra la nota, deshaz y archiva.",MULTI_ACTION,f5_m_borra,0,0,0,0
+M086,M,"Busca el folio, márcalo y subráyalo.",MULTI_ACTION,f5_m_busca,0,0,0,0
+M087,M,"Copia el texto, pégalo y guarda.",MULTI_ACTION,f5_m_copia,0,0,0,0
+M088,M,"Lee la minuta, corrígela y archiva.",MULTI_ACTION,f5_m_lee3,0,0,0,0
+M089,M,"Abre el oficio, revísalo y fírmalo.",MULTI_ACTION,f5_m_abre3,0,0,0,0
+M090,M,"Resume el informe, titúlalo y envíalo.",MULTI_ACTION,f5_m_resume3,0,0,0,0
+M091,M,"Formatea el acta, imprímela y archívala.",MULTI_ACTION,f5_m_formatea3,0,0,0,0
+M092,M,"Deshaz el cambio, rehazlo y guarda.",MULTI_ACTION,f5_m_deshaz,0,0,0,0
+M093,M,"Selecciona todo, cópialo y pégalo.",MULTI_ACTION,f5_m_selecciona3,0,0,0,0
+M094,M,"Encuentra duplicados, bórralos y guarda.",MULTI_ACTION,f5_m_encuentra3,0,0,0,0
+M095,M,"Numera fojas, imprímelas y archívalas.",MULTI_ACTION,f5_m_numera,0,0,0,0
+M096,M,"Centra el título, guárdalo y expórtalo.",MULTI_ACTION,f5_m_centra3,0,0,0,0
+M097,M,"Recorta el excedente, engrapa y turna.",MULTI_ACTION,f5_m_recorta5,0,0,0,0
+M098,M,"Justifica el texto, fólialo y envíalo.",MULTI_ACTION,f5_m_justifica3,0,0,0,0
+M099,M,"Sangra incisos, numéralos y archiva.",MULTI_ACTION,f5_m_sangra3,0,0,0,0
+M100,M,"Cursiva citas, guarda y exporta.",MULTI_ACTION,f5_m_cursiva3,0,0,0,0
+M101,M,"Subraya acuerdos, rubrica y turna.",MULTI_ACTION,f5_m_subraya3,0,0,0,0
+M102,M,"Anota márgenes, folía y archiva.",MULTI_ACTION,f5_m_anota4,0,0,0,0
+M103,M,"Glosa términos, sella y turna.",MULTI_ACTION,f5_m_glosa4,0,0,0,0
+M104,M,"Digitaliza fojas, nómbralas y súbelas.",MULTI_ACTION,f5_m_digitaliza4,0,0,0,0
+M105,M,"Escanea tantos, fólialos y archívalos.",MULTI_ACTION,f5_m_escanea4,0,0,0,0
+M106,M,"Engrapa copias, séllalas y envíalas.",MULTI_ACTION,f5_m_engrapa4,0,0,0,0
+M107,M,"Perfora tantos, fólialos y túrnalos.",MULTI_ACTION,f5_m_perfora4,0,0,0,0
+M108,M,"Recorta sobrantes, engrapa y archiva.",MULTI_ACTION,f5_m_recorta6,0,0,0,0
+M109,M,"Dobla oficios, ensóbralos y despacha.",MULTI_ACTION,f5_m_dobla3,0,0,0,0
+M110,M,"Franquea cartas, séllalas y envíalas.",MULTI_ACTION,f5_m_franquea3,0,0,0,0
