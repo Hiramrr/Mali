@@ -1,0 +1,1182 @@
+text,label,category
+Cambia el título a Introducción.,EDITOR_CONTROL,control/titulo
+Cambia el título a Conclusiones.,EDITOR_CONTROL,control/titulo
+Cambia el título a Marco teórico.,EDITOR_CONTROL,control/titulo
+Cambia el título a Diseño del sistema.,EDITOR_CONTROL,control/titulo
+Cambia el título a Trabajo futuro.,EDITOR_CONTROL,control/titulo
+Cambia el título a Evaluación.,EDITOR_CONTROL,control/titulo
+Cambia el título a Antecedentes.,EDITOR_CONTROL,control/titulo
+Cambia el título a Discusión.,EDITOR_CONTROL,control/titulo
+Cambia el título a Resumen.,EDITOR_CONTROL,control/titulo
+Cambia el título a Bibliografía.,EDITOR_CONTROL,control/titulo
+Pon como título Arquitectura del sistema.,EDITOR_CONTROL,control/titulo
+Pon como título Resultados finales.,EDITOR_CONTROL,control/titulo
+Pon como título Versión revisada.,EDITOR_CONTROL,control/titulo
+Quiero que cambies el título a Introducción.,EDITOR_CONTROL,control/titulo
+Quiero que cambies el título a Conclusiones.,EDITOR_CONTROL,control/titulo
+Quiero que cambies el título a Marco teórico.,EDITOR_CONTROL,control/titulo
+Quiero que cambies el título a Diseño del sistema.,EDITOR_CONTROL,control/titulo
+Quiero que cambies el título a Trabajo futuro.,EDITOR_CONTROL,control/titulo
+Quiero que cambies el título a Evaluación.,EDITOR_CONTROL,control/titulo
+Quiero que cambies el título a Antecedentes.,EDITOR_CONTROL,control/titulo
+Quiero que cambies el título a Discusión.,EDITOR_CONTROL,control/titulo
+El título cámbialo a Marco teórico.,EDITOR_CONTROL,control/titulo
+El título cámbialo a Diseño del sistema.,EDITOR_CONTROL,control/titulo
+El título cámbialo a Trabajo futuro.,EDITOR_CONTROL,control/titulo
+El título cámbialo a Evaluación.,EDITOR_CONTROL,control/titulo
+El título cámbialo a Antecedentes.,EDITOR_CONTROL,control/titulo
+El título cámbialo a Discusión.,EDITOR_CONTROL,control/titulo
+El título cámbialo a Resumen.,EDITOR_CONTROL,control/titulo
+El título cámbialo a Bibliografía.,EDITOR_CONTROL,control/titulo
+¿Puedes ponerle título a este documento?,EDITOR_CONTROL,control/titulo
+Actualiza el encabezado con el nombre del proyecto.,EDITOR_CONTROL,control/titulo
+Cambia el encabezado a Introducción.,EDITOR_CONTROL,control/titulo
+Reescribe el título para que sea más descriptivo.,EDITOR_CONTROL,control/titulo
+"Corrige el título, tiene una errata.",EDITOR_CONTROL,control/titulo
+Haz el título más corto.,EDITOR_CONTROL,control/titulo
+Borra esta parte.,EDITOR_CONTROL,control/borrar
+Borra esta oración.,EDITOR_CONTROL,control/borrar
+Borra este párrafo.,EDITOR_CONTROL,control/borrar
+Borra la última frase.,EDITOR_CONTROL,control/borrar
+Borra esta palabra.,EDITOR_CONTROL,control/borrar
+Borra lo seleccionado.,EDITOR_CONTROL,control/borrar
+Borra esa sección.,EDITOR_CONTROL,control/borrar
+¿Puedes quitar esta parte?,EDITOR_CONTROL,control/borrar
+¿Puedes quitar este fragmento?,EDITOR_CONTROL,control/borrar
+¿Puedes quitar esta oración?,EDITOR_CONTROL,control/borrar
+¿Puedes quitar este párrafo?,EDITOR_CONTROL,control/borrar
+Esto mejor elimínalo: esto sobra.,EDITOR_CONTROL,control/borrar
+Esto mejor elimínalo: esa parte sobra.,EDITOR_CONTROL,control/borrar
+Esto mejor elimínalo: este párrafo sobra.,EDITOR_CONTROL,control/borrar
+Elimina el último párrafo.,EDITOR_CONTROL,control/borrar
+Suprime la sección repetida.,EDITOR_CONTROL,control/borrar
+"Esto no va, bórralo.",EDITOR_CONTROL,control/borrar
+Corta esta parte y pégala al final.,EDITOR_CONTROL,control/borrar
+Limpia este párrafo.,EDITOR_CONTROL,control/borrar
+Vacía esta sección.,EDITOR_CONTROL,control/borrar
+Descarta el último cambio de redacción.,EDITOR_CONTROL,control/borrar
+Quita la palabra repetida.,EDITOR_CONTROL,control/borrar
+Borra desde aquí hasta el final.,EDITOR_CONTROL,control/borrar
+Elimina todo lo que está entre paréntesis.,EDITOR_CONTROL,control/borrar
+Quita los espacios duplicados.,EDITOR_CONTROL,control/borrar
+Cambia esta palabra por interfaz.,EDITOR_CONTROL,control/reemplazar
+Cambia esta palabra por accesibilidad.,EDITOR_CONTROL,control/reemplazar
+Cambia esta palabra por sistema.,EDITOR_CONTROL,control/reemplazar
+Cambia esta palabra por diseño.,EDITOR_CONTROL,control/reemplazar
+Cambia esta palabra por término.,EDITOR_CONTROL,control/reemplazar
+Cambia esta palabra por expresión.,EDITOR_CONTROL,control/reemplazar
+Cambia esta palabra por palabra.,EDITOR_CONTROL,control/reemplazar
+Sustituye error por errata.,EDITOR_CONTROL,control/reemplazar
+Sustituye problema por dificultad.,EDITOR_CONTROL,control/reemplazar
+Sustituye uso por utilización.,EDITOR_CONTROL,control/reemplazar
+Sustituye cosa por elemento.,EDITOR_CONTROL,control/reemplazar
+Sustituye parte por sección.,EDITOR_CONTROL,control/reemplazar
+Reemplaza la última palabra por accesibilidad.,EDITOR_CONTROL,control/reemplazar
+Reemplaza la última palabra por sistema.,EDITOR_CONTROL,control/reemplazar
+Reemplaza la última palabra por diseño.,EDITOR_CONTROL,control/reemplazar
+Reemplaza la última palabra por término.,EDITOR_CONTROL,control/reemplazar
+Reemplaza la última palabra por expresión.,EDITOR_CONTROL,control/reemplazar
+Reemplaza la última palabra por palabra.,EDITOR_CONTROL,control/reemplazar
+Reemplaza la última palabra por concepto.,EDITOR_CONTROL,control/reemplazar
+Sustituye esa expresión por algo más claro.,EDITOR_CONTROL,control/reemplazar
+Cambia todas las menciones al autor anterior.,EDITOR_CONTROL,control/reemplazar
+Reemplaza este término en todo el documento.,EDITOR_CONTROL,control/reemplazar
+Corrige el nombre del modelo en este párrafo.,EDITOR_CONTROL,control/reemplazar
+Pon dificultades donde dice problemas.,EDITOR_CONTROL,control/reemplazar
+Intercambia el orden de estos dos párrafos.,EDITOR_CONTROL,control/reemplazar
+Cambia las comillas inglesas por latinas.,EDITOR_CONTROL,control/reemplazar
+Sustituye los números por letras.,EDITOR_CONTROL,control/reemplazar
+Reemplaza esta palabra por accesibilidad.,EDITOR_CONTROL,control/reemplazar
+Reemplaza esta palabra por interfaz.,EDITOR_CONTROL,control/reemplazar
+Reemplaza esta palabra por sistema.,EDITOR_CONTROL,control/reemplazar
+Hazlo más formal.,EDITOR_CONTROL,control/reformular
+Hazlo más claro.,EDITOR_CONTROL,control/reformular
+Hazlo menos absoluto.,EDITOR_CONTROL,control/reformular
+Hazlo más directo.,EDITOR_CONTROL,control/reformular
+Hazlo más sencillo.,EDITOR_CONTROL,control/reformular
+Hazlo más académico.,EDITOR_CONTROL,control/reformular
+Hazlo menos redundante.,EDITOR_CONTROL,control/reformular
+Haz este párrafo más corto.,EDITOR_CONTROL,control/reformular
+Haz este párrafo más formal.,EDITOR_CONTROL,control/reformular
+Haz este párrafo más breve.,EDITOR_CONTROL,control/reformular
+Reescribe esta oración sin cambiar su significado.,EDITOR_CONTROL,control/reformular
+Reformula el último párrafo.,EDITOR_CONTROL,control/reformular
+Dale otra redacción a esta parte.,EDITOR_CONTROL,control/reformular
+Mejora la redacción de lo seleccionado.,EDITOR_CONTROL,control/reformular
+Haz esta frase más elegante.,EDITOR_CONTROL,control/reformular
+Suaviza el tono de este párrafo.,EDITOR_CONTROL,control/reformular
+Endurece la conclusión.,EDITOR_CONTROL,control/reformular
+Haz esto más persuasivo.,EDITOR_CONTROL,control/reformular
+Simplifica la explicación.,EDITOR_CONTROL,control/reformular
+Acorta este párrafo.,EDITOR_CONTROL,control/reformular
+Extiende un poco esta idea.,EDITOR_CONTROL,control/reformular
+Desarrolla más este argumento.,EDITOR_CONTROL,control/reformular
+Condensa estas tres frases en una.,EDITOR_CONTROL,control/reformular
+Resume este documento en un párrafo.,EDITOR_CONTROL,control/resumir
+Haz un resumen de lo seleccionado.,EDITOR_CONTROL,control/resumir
+Sintetiza las ideas principales.,EDITOR_CONTROL,control/resumir
+Extrae los puntos clave de esta sección.,EDITOR_CONTROL,control/resumir
+Resume lo anterior en dos frases.,EDITOR_CONTROL,control/resumir
+Dame un resumen ejecutivo.,EDITOR_CONTROL,control/resumir
+Expande esta sección con más detalles.,EDITOR_CONTROL,control/expandir
+Alarga la introducción.,EDITOR_CONTROL,control/expandir
+Añade un ejemplo a este párrafo.,EDITOR_CONTROL,control/expandir
+Completa esta idea.,EDITOR_CONTROL,control/expandir
+Agrega una frase de transición aquí.,EDITOR_CONTROL,control/expandir
+Pon esto en negritas.,EDITOR_CONTROL,control/formato
+Pon lo seleccionado en negritas.,EDITOR_CONTROL,control/formato
+Pon esta frase en negritas.,EDITOR_CONTROL,control/formato
+Pon esto en cursivas.,EDITOR_CONTROL,control/formato
+Pon lo seleccionado en cursivas.,EDITOR_CONTROL,control/formato
+Pon esta frase en cursivas.,EDITOR_CONTROL,control/formato
+Subraya esto.,EDITOR_CONTROL,control/formato
+Pon este fragmento en cursivas.,EDITOR_CONTROL,control/formato
+Quita las negritas de aquí.,EDITOR_CONTROL,control/formato
+Aumenta el tamaño de letra del título.,EDITOR_CONTROL,control/formato
+Pon el título en mayúsculas.,EDITOR_CONTROL,control/formato
+Convierte esto en una lista.,EDITOR_CONTROL,control/formato
+Aplica el estilo de cita a este párrafo.,EDITOR_CONTROL,control/formato
+Centra este encabezado.,EDITOR_CONTROL,control/formato
+Justifica el texto seleccionado.,EDITOR_CONTROL,control/formato
+Ponlo en negritas.,EDITOR_CONTROL,control/formato
+Marca esto como importante.,EDITOR_CONTROL,control/formato
+Deshaz el cambio.,EDITOR_CONTROL,control/undo
+Deshaz eso.,EDITOR_CONTROL,control/undo
+Vuelve a como estaba.,EDITOR_CONTROL,control/undo
+"No, déjalo como estaba.",EDITOR_CONTROL,control/undo
+Revierte lo último que hiciste.,EDITOR_CONTROL,control/undo
+Cancela la última edición.,EDITOR_CONTROL,control/undo
+Deshaz la última acción.,EDITOR_CONTROL,control/undo
+Regresa al estado anterior.,EDITOR_CONTROL,control/undo
+Anula lo que acabas de hacer.,EDITOR_CONTROL,control/undo
+Quiero deshacer lo anterior.,EDITOR_CONTROL,control/undo
+Échalo para atrás.,EDITOR_CONTROL,control/undo
+Rehaz el cambio anterior.,EDITOR_CONTROL,control/redo
+Rehaz el cambio.,EDITOR_CONTROL,control/redo
+Vuelve a aplicar lo que deshiciste.,EDITOR_CONTROL,control/redo
+Repite la última acción.,EDITOR_CONTROL,control/redo
+Rehaz eso.,EDITOR_CONTROL,control/redo
+Adelante con el cambio otra vez.,EDITOR_CONTROL,control/redo
+Recupera lo que deshiciste.,EDITOR_CONTROL,control/redo
+Deshaz el deshacer.,EDITOR_CONTROL,control/redo
+Rehaz la edición.,EDITOR_CONTROL,control/redo
+Selecciona el segundo párrafo.,EDITOR_CONTROL,control/seleccion
+Selecciona la última sección.,EDITOR_CONTROL,control/seleccion
+Selecciona el primer capítulo.,EDITOR_CONTROL,control/seleccion
+Selecciona la introducción.,EDITOR_CONTROL,control/seleccion
+Selecciona el resumen.,EDITOR_CONTROL,control/seleccion
+Selecciona esta página.,EDITOR_CONTROL,control/seleccion
+Selecciona todo el documento.,EDITOR_CONTROL,control/seleccion
+Marca esta oración.,EDITOR_CONTROL,control/seleccion
+Elige el tercer párrafo.,EDITOR_CONTROL,control/seleccion
+Selecciona desde aquí hasta el final.,EDITOR_CONTROL,control/seleccion
+Amplía la selección una palabra.,EDITOR_CONTROL,control/seleccion
+Reduce la selección.,EDITOR_CONTROL,control/seleccion
+Selecciona la palabra anterior.,EDITOR_CONTROL,control/seleccion
+Marca todo lo que sigue.,EDITOR_CONTROL,control/seleccion
+Ve al final del documento.,EDITOR_CONTROL,control/navegacion
+Sube al principio.,EDITOR_CONTROL,control/navegacion
+Muévete a la siguiente sección.,EDITOR_CONTROL,control/navegacion
+Baja dos párrafos.,EDITOR_CONTROL,control/navegacion
+Coloca el cursor al inicio.,EDITOR_CONTROL,control/navegacion
+Salta al título.,EDITOR_CONTROL,control/navegacion
+Ve a la página anterior.,EDITOR_CONTROL,control/navegacion
+Desplázate hasta el resumen.,EDITOR_CONTROL,control/navegacion
+Pon el cursor después de esta frase.,EDITOR_CONTROL,control/navegacion
+Lléame a las conclusiones.,EDITOR_CONTROL,control/navegacion
+Corrige esta palabra.,EDITOR_CONTROL,control/correccion
+Corrige la ortografía de lo seleccionado.,EDITOR_CONTROL,control/correccion
+Revisa las tildes de este párrafo.,EDITOR_CONTROL,control/correccion
+Arregla la puntuación.,EDITOR_CONTROL,control/correccion
+"Hay una errata, corrígela.",EDITOR_CONTROL,control/correccion
+Verifica la gramática de esta frase.,EDITOR_CONTROL,control/correccion
+Normaliza las comillas.,EDITOR_CONTROL,control/correccion
+Corrige los espacios dobles.,EDITOR_CONTROL,control/correccion
+Haz esto más formal.,EDITOR_CONTROL,control/tono
+Dale un tono más cercano.,EDITOR_CONTROL,control/tono
+Hazlo más técnico.,EDITOR_CONTROL,control/tono
+Hazlo más divulgativo.,EDITOR_CONTROL,control/tono
+Cambia el tono a neutro.,EDITOR_CONTROL,control/tono
+Hazlo sonar más seguro.,EDITOR_CONTROL,control/tono
+Convierte esto a mayúsculas.,EDITOR_CONTROL,control/transformar
+Pasa este texto a minúsculas.,EDITOR_CONTROL,control/transformar
+Convierte la lista en párrafo.,EDITOR_CONTROL,control/transformar
+Divide este párrafo en dos.,EDITOR_CONTROL,control/transformar
+Une estas dos frases.,EDITOR_CONTROL,control/transformar
+Ordena alfabéticamente esta lista.,EDITOR_CONTROL,control/transformar
+Numera estos puntos.,EDITOR_CONTROL,control/transformar
+Convierte esto en tabla.,EDITOR_CONTROL,control/transformar
+Hazlo.,EDITOR_CONTROL,control/deictico
+Hazlo diferente.,EDITOR_CONTROL,control/deictico
+Esto quítalo.,EDITOR_CONTROL,control/deictico
+Eso cámbialo.,EDITOR_CONTROL,control/deictico
+Ponlo como estaba.,EDITOR_CONTROL,control/deictico
+Esto déjalo igual.,EDITOR_CONTROL,control/deictico
+"Ese no, el otro.",EDITOR_CONTROL,control/deictico
+Arregla eso.,EDITOR_CONTROL,control/deictico
+Mejora esto.,EDITOR_CONTROL,control/deictico
+Cambia esto.,EDITOR_CONTROL,control/deictico
+Mueve eso aquí.,EDITOR_CONTROL,control/deictico
+Copia esto abajo.,EDITOR_CONTROL,control/deictico
+Pega lo que copiaste.,EDITOR_CONTROL,control/deictico
+Guarda el documento.,EDITOR_CONTROL,control/deictico
+La interacción humano computadora estudia la relación entre las personas y los sistemas interactivos.,DICTATION,dict/academico
+Durante los últimos años se han desarrollado nuevas interfaces multimodales.,DICTATION,dict/academico
+Mi proyecto busca diseñar un editor de texto para personas con TDAH.,DICTATION,dict/academico
+Las personas pueden experimentar dificultades durante tareas prolongadas de escritura.,DICTATION,dict/academico
+"Las interfaces multimodales combinan voz, teclado y gestos en un mismo sistema.",DICTATION,dict/academico
+La accesibilidad cognitiva reduce la carga mental durante la escritura.,DICTATION,dict/academico
+Los usuarios con TDAH se benefician de sesiones cortas y retroalimentación inmediata.,DICTATION,dict/academico
+La usabilidad de un editor depende de la claridad de sus mecanismos de control.,DICTATION,dict/academico
+El reconocimiento de voz permite dictar documentos completos sin utilizar el teclado.,DICTATION,dict/academico
+Los gestos táctiles complementan la entrada tradicional en tabletas modernas.,DICTATION,dict/academico
+Un estudio reciente evaluó la fatiga durante tareas de escritura prolongada.,DICTATION,dict/academico
+Los participantes prefirieron interfaces con menos interrupciones visuales.,DICTATION,dict/academico
+La multimodalidad distribuye la atención entre varios canales sensoriales.,DICTATION,dict/academico
+El diseño centrado en el usuario requiere pruebas con personas reales.,DICTATION,dict/academico
+La carga cognitiva aumenta cuando el sistema exige demasiadas decisiones.,DICTATION,dict/academico
+Los editores modernos incorporan correctores automáticos cada vez más precisos.,DICTATION,dict/academico
+La escritura asistida plantea preguntas interesantes sobre autoría y control.,DICTATION,dict/academico
+Un experimento comparó dictado por voz frente a escritura manual.,DICTATION,dict/academico
+Los resultados sugieren menor esfuerzo percibido con entrada multimodal.,DICTATION,dict/academico
+La tesis analiza barreras de acceso en herramientas de productividad.,DICTATION,dict/academico
+El capítulo siguiente describe el protocolo de evaluación con usuarios.,DICTATION,dict/academico
+La muestra incluyó estudiantes universitarios con diagnóstico de TDAH.,DICTATION,dict/academico
+Cada sesión duró aproximadamente cuarenta y cinco minutos.,DICTATION,dict/academico
+Las métricas incluyeron tiempo de tarea y errores cometidos.,DICTATION,dict/academico
+El análisis cualitativo reveló tres temas principales.,DICTATION,dict/academico
+La discusión relaciona los hallazgos con literatura previa sobre accesibilidad.,DICTATION,dict/academico
+El trabajo futuro explorará adaptaciones personalizadas del editor.,DICTATION,dict/academico
+La voz como modalidad principal reduce la dependencia del teclado físico.,DICTATION,dict/academico
+Los sistemas interactivos deben tolerar expresiones incompletas del hablante.,DICTATION,dict/academico
+Una interfaz bien diseñada anticipa las necesidades de quien escribe.,DICTATION,dict/academico
+El estudio muestra mejoras claras en velocidad de escritura.,DICTATION,dict/academico
+El estudio confirma la importancia del contexto durante el dictado.,DICTATION,dict/academico
+El estudio revela patrones interesantes de uso de la voz.,DICTATION,dict/academico
+El estudio sugiere nuevas líneas de trabajo futuro.,DICTATION,dict/academico
+La investigación muestra mejoras claras en velocidad de escritura.,DICTATION,dict/academico
+La investigación confirma la importancia del contexto durante el dictado.,DICTATION,dict/academico
+La investigación revela patrones interesantes de uso de la voz.,DICTATION,dict/academico
+La investigación sugiere nuevas líneas de trabajo futuro.,DICTATION,dict/academico
+El análisis muestra mejoras claras en velocidad de escritura.,DICTATION,dict/academico
+El análisis confirma la importancia del contexto durante el dictado.,DICTATION,dict/academico
+El análisis revela patrones interesantes de uso de la voz.,DICTATION,dict/academico
+El análisis sugiere nuevas líneas de trabajo futuro.,DICTATION,dict/academico
+El experimento muestra mejoras claras en velocidad de escritura.,DICTATION,dict/academico
+El experimento confirma la importancia del contexto durante el dictado.,DICTATION,dict/academico
+El experimento revela patrones interesantes de uso de la voz.,DICTATION,dict/academico
+El experimento sugiere nuevas líneas de trabajo futuro.,DICTATION,dict/academico
+La evaluación muestra mejoras claras en velocidad de escritura.,DICTATION,dict/academico
+La evaluación confirma la importancia del contexto durante el dictado.,DICTATION,dict/academico
+La evaluación revela patrones interesantes de uso de la voz.,DICTATION,dict/academico
+La evaluación sugiere nuevas líneas de trabajo futuro.,DICTATION,dict/academico
+El prototipo muestra mejoras claras en velocidad de escritura.,DICTATION,dict/academico
+El prototipo confirma la importancia del contexto durante el dictado.,DICTATION,dict/academico
+El prototipo revela patrones interesantes de uso de la voz.,DICTATION,dict/academico
+El prototipo sugiere nuevas líneas de trabajo futuro.,DICTATION,dict/academico
+El sistema propuesto muestra mejoras claras en velocidad de escritura.,DICTATION,dict/academico
+El sistema propuesto confirma la importancia del contexto durante el dictado.,DICTATION,dict/academico
+El sistema propuesto revela patrones interesantes de uso de la voz.,DICTATION,dict/academico
+El sistema propuesto sugiere nuevas líneas de trabajo futuro.,DICTATION,dict/academico
+La herramienta muestra mejoras claras en velocidad de escritura.,DICTATION,dict/academico
+La herramienta confirma la importancia del contexto durante el dictado.,DICTATION,dict/academico
+La herramienta revela patrones interesantes de uso de la voz.,DICTATION,dict/academico
+La herramienta sugiere nuevas líneas de trabajo futuro.,DICTATION,dict/academico
+El modelo muestra mejoras claras en velocidad de escritura.,DICTATION,dict/academico
+El modelo confirma la importancia del contexto durante el dictado.,DICTATION,dict/academico
+El modelo revela patrones interesantes de uso de la voz.,DICTATION,dict/academico
+El modelo sugiere nuevas líneas de trabajo futuro.,DICTATION,dict/academico
+La encuesta muestra mejoras claras en velocidad de escritura.,DICTATION,dict/academico
+La encuesta confirma la importancia del contexto durante el dictado.,DICTATION,dict/academico
+La encuesta revela patrones interesantes de uso de la voz.,DICTATION,dict/academico
+La encuesta sugiere nuevas líneas de trabajo futuro.,DICTATION,dict/academico
+El experimento destaca la relevancia de la accesibilidad cognitiva.,DICTATION,dict/academico
+El experimento aporta evidencia sobre fatiga en tareas prolongadas.,DICTATION,dict/academico
+El experimento propone un marco para evaluar editores multimodales.,DICTATION,dict/academico
+El experimento describe limitaciones del reconocimiento automático.,DICTATION,dict/academico
+La evaluación destaca la relevancia de la accesibilidad cognitiva.,DICTATION,dict/academico
+La evaluación aporta evidencia sobre fatiga en tareas prolongadas.,DICTATION,dict/academico
+La evaluación propone un marco para evaluar editores multimodales.,DICTATION,dict/academico
+La evaluación describe limitaciones del reconocimiento automático.,DICTATION,dict/academico
+El prototipo destaca la relevancia de la accesibilidad cognitiva.,DICTATION,dict/academico
+El prototipo aporta evidencia sobre fatiga en tareas prolongadas.,DICTATION,dict/academico
+El prototipo propone un marco para evaluar editores multimodales.,DICTATION,dict/academico
+El prototipo describe limitaciones del reconocimiento automático.,DICTATION,dict/academico
+El sistema propuesto destaca la relevancia de la accesibilidad cognitiva.,DICTATION,dict/academico
+El sistema propuesto aporta evidencia sobre fatiga en tareas prolongadas.,DICTATION,dict/academico
+El sistema propuesto propone un marco para evaluar editores multimodales.,DICTATION,dict/academico
+El sistema propuesto describe limitaciones del reconocimiento automático.,DICTATION,dict/academico
+La herramienta destaca la relevancia de la accesibilidad cognitiva.,DICTATION,dict/academico
+La herramienta aporta evidencia sobre fatiga en tareas prolongadas.,DICTATION,dict/academico
+La herramienta propone un marco para evaluar editores multimodales.,DICTATION,dict/academico
+La herramienta describe limitaciones del reconocimiento automático.,DICTATION,dict/academico
+El prototipo incluye recomendaciones prácticas de diseño.,DICTATION,dict/academico
+El prototipo permitió observar estrategias espontáneas de los participantes.,DICTATION,dict/academico
+El sistema propuesto incluye recomendaciones prácticas de diseño.,DICTATION,dict/academico
+El sistema propuesto permitió observar estrategias espontáneas de los participantes.,DICTATION,dict/academico
+La herramienta incluye recomendaciones prácticas de diseño.,DICTATION,dict/academico
+La herramienta permitió observar estrategias espontáneas de los participantes.,DICTATION,dict/academico
+El modelo propone un marco para evaluar editores multimodales.,DICTATION,dict/academico
+El modelo describe limitaciones del reconocimiento automático.,DICTATION,dict/academico
+El modelo incluye recomendaciones prácticas de diseño.,DICTATION,dict/academico
+El modelo permitió observar estrategias espontáneas de los participantes.,DICTATION,dict/academico
+La encuesta propone un marco para evaluar editores multimodales.,DICTATION,dict/academico
+La encuesta describe limitaciones del reconocimiento automático.,DICTATION,dict/academico
+La encuesta incluye recomendaciones prácticas de diseño.,DICTATION,dict/academico
+La encuesta permitió observar estrategias espontáneas de los participantes.,DICTATION,dict/academico
+El informe quedó listo ayer por la tarde.,DICTATION,dict/general
+El informe incluye tres secciones principales.,DICTATION,dict/general
+El informe será revisado por el equipo editorial.,DICTATION,dict/general
+El informe circula ya entre los asistentes.,DICTATION,dict/general
+La presentación quedó listo ayer por la tarde.,DICTATION,dict/general
+La presentación incluye tres secciones principales.,DICTATION,dict/general
+La presentación será revisado por el equipo editorial.,DICTATION,dict/general
+La presentación circula ya entre los asistentes.,DICTATION,dict/general
+El documento quedó listo ayer por la tarde.,DICTATION,dict/general
+El documento incluye tres secciones principales.,DICTATION,dict/general
+El documento será revisado por el equipo editorial.,DICTATION,dict/general
+El documento circula ya entre los asistentes.,DICTATION,dict/general
+La propuesta quedó listo ayer por la tarde.,DICTATION,dict/general
+La propuesta incluye tres secciones principales.,DICTATION,dict/general
+La propuesta será revisado por el equipo editorial.,DICTATION,dict/general
+La propuesta circula ya entre los asistentes.,DICTATION,dict/general
+El artículo quedó listo ayer por la tarde.,DICTATION,dict/general
+El artículo incluye tres secciones principales.,DICTATION,dict/general
+El artículo será revisado por el equipo editorial.,DICTATION,dict/general
+El artículo circula ya entre los asistentes.,DICTATION,dict/general
+La carta quedó listo ayer por la tarde.,DICTATION,dict/general
+La carta incluye tres secciones principales.,DICTATION,dict/general
+La carta será revisado por el equipo editorial.,DICTATION,dict/general
+La carta circula ya entre los asistentes.,DICTATION,dict/general
+El ensayo quedó listo ayer por la tarde.,DICTATION,dict/general
+El ensayo incluye tres secciones principales.,DICTATION,dict/general
+El ensayo será revisado por el equipo editorial.,DICTATION,dict/general
+El ensayo circula ya entre los asistentes.,DICTATION,dict/general
+La memoria quedó listo ayer por la tarde.,DICTATION,dict/general
+La memoria incluye tres secciones principales.,DICTATION,dict/general
+La memoria será revisado por el equipo editorial.,DICTATION,dict/general
+La memoria circula ya entre los asistentes.,DICTATION,dict/general
+El resumen quedó listo ayer por la tarde.,DICTATION,dict/general
+El resumen incluye tres secciones principales.,DICTATION,dict/general
+El resumen será revisado por el equipo editorial.,DICTATION,dict/general
+El resumen circula ya entre los asistentes.,DICTATION,dict/general
+La crónica quedó listo ayer por la tarde.,DICTATION,dict/general
+La crónica incluye tres secciones principales.,DICTATION,dict/general
+La crónica será revisado por el equipo editorial.,DICTATION,dict/general
+La crónica circula ya entre los asistentes.,DICTATION,dict/general
+El artículo necesita una última lectura atenta.,DICTATION,dict/general
+El artículo describe el proceso con detalle.,DICTATION,dict/general
+El artículo recoge opiniones de varios expertos.,DICTATION,dict/general
+El artículo cierra con una reflexión abierta.,DICTATION,dict/general
+La carta necesita una última lectura atenta.,DICTATION,dict/general
+La carta describe el proceso con detalle.,DICTATION,dict/general
+La carta recoge opiniones de varios expertos.,DICTATION,dict/general
+La carta cierra con una reflexión abierta.,DICTATION,dict/general
+El ensayo necesita una última lectura atenta.,DICTATION,dict/general
+El ensayo describe el proceso con detalle.,DICTATION,dict/general
+El ensayo recoge opiniones de varios expertos.,DICTATION,dict/general
+El ensayo cierra con una reflexión abierta.,DICTATION,dict/general
+La memoria necesita una última lectura atenta.,DICTATION,dict/general
+La memoria describe el proceso con detalle.,DICTATION,dict/general
+La memoria recoge opiniones de varios expertos.,DICTATION,dict/general
+La memoria cierra con una reflexión abierta.,DICTATION,dict/general
+El resumen necesita una última lectura atenta.,DICTATION,dict/general
+El resumen describe el proceso con detalle.,DICTATION,dict/general
+El resumen recoge opiniones de varios expertos.,DICTATION,dict/general
+El resumen cierra con una reflexión abierta.,DICTATION,dict/general
+La crónica necesita una última lectura atenta.,DICTATION,dict/general
+La crónica describe el proceso con detalle.,DICTATION,dict/general
+La crónica recoge opiniones de varios expertos.,DICTATION,dict/general
+La crónica cierra con una reflexión abierta.,DICTATION,dict/general
+El informe recoge opiniones de varios expertos.,DICTATION,dict/general
+El informe cierra con una reflexión abierta.,DICTATION,dict/general
+La presentación recoge opiniones de varios expertos.,DICTATION,dict/general
+La presentación cierra con una reflexión abierta.,DICTATION,dict/general
+El documento recoge opiniones de varios expertos.,DICTATION,dict/general
+El documento cierra con una reflexión abierta.,DICTATION,dict/general
+La propuesta recoge opiniones de varios expertos.,DICTATION,dict/general
+La propuesta cierra con una reflexión abierta.,DICTATION,dict/general
+Borrar archivos accidentalmente puede generar problemas graves.,DICTATION,dict/hard-infinitivo
+Cambiar el formato sin avisar confunde a quien lee.,DICTATION,dict/hard-infinitivo
+Seleccionar adecuadamente la muestra determina la validez del estudio.,DICTATION,dict/hard-infinitivo
+Reemplazar palabras sin criterio empobrece el texto.,DICTATION,dict/hard-infinitivo
+Deshacer acciones forma parte del aprendizaje con herramientas nuevas.,DICTATION,dict/hard-infinitivo
+Poner títulos descriptivos facilita la navegación del documento.,DICTATION,dict/hard-infinitivo
+Eliminar párrafos enteros debería requerir confirmación previa.,DICTATION,dict/hard-infinitivo
+Rehacer un trabajo desde cero consume demasiado tiempo.,DICTATION,dict/hard-infinitivo
+Borrar información accidentalmente puede afectar la experiencia.,DICTATION,dict/hard-infinitivo
+Cambiar el título puede ayudar a comunicar mejor el objetivo.,DICTATION,dict/hard-infinitivo
+Deshacer una acción debería resultar sencillo para cualquier persona.,DICTATION,dict/hard-infinitivo
+Seleccionar participantes correctamente exige criterios explícitos.,DICTATION,dict/hard-infinitivo
+Borrar datos por accidente provoca pérdida de información valiosa.,DICTATION,dict/hard-infinitivo
+Cambiar un encabezado modifica la interpretación de una sección.,DICTATION,dict/hard-infinitivo
+Reemplazar términos automáticamente puede introducir errores sutiles.,DICTATION,dict/hard-infinitivo
+Poner demasiado texto en negritas reduce su utilidad visual.,DICTATION,dict/hard-infinitivo
+Eliminar contenido sin confirmación resulta frustrante.,DICTATION,dict/hard-infinitivo
+Rehacer una acción permite recuperar un cambio revertido.,DICTATION,dict/hard-infinitivo
+Borrar texto accidentalmente es frustrante para cualquiera.,DICTATION,dict/hard-infinitivo
+Cambiar el título mejora la claridad del documento.,DICTATION,dict/hard-infinitivo
+Deshacer modificaciones es una función importante del editor.,DICTATION,dict/hard-infinitivo
+Seleccionar bien las palabras define el tono del mensaje.,DICTATION,dict/hard-infinitivo
+Reemplazar expresiones coloquiales eleva el registro del texto.,DICTATION,dict/hard-infinitivo
+Poner ejemplos concretos ayuda a entender ideas abstractas.,DICTATION,dict/hard-infinitivo
+Cambiar de tema bruscamente desorienta al lector.,DICTATION,dict/hard-infinitivo
+Borrar el pizarrón al final de la clase es costumbre aquí.,DICTATION,dict/hard-infinitivo
+"La frase ""borra esto"" puede resultar ambigua sin contexto.",DICTATION,dict/hard-cita
+"Un ejemplo de comando sería ""pon esto en negritas"".",DICTATION,dict/hard-cita
+"La documentación utiliza la instrucción ""deshaz el cambio"".",DICTATION,dict/hard-cita
+"El manual incluye el ejemplo ""cambia el título a Resultados"".",DICTATION,dict/hard-cita
+"En clase analizamos la orden ""selecciona el segundo párrafo"".",DICTATION,dict/hard-cita
+"El tutorial muestra cómo decir ""hazlo más corto"".",DICTATION,dict/hard-cita
+"La expresión ""cambia esa parte"" aparece en las instrucciones.",DICTATION,dict/hard-cita
+"La consigna ""reescribe este párrafo"" confunde a algunos estudiantes.",DICTATION,dict/hard-cita
+"Escuché a alguien decir ""quita esta oración"" durante la prueba.",DICTATION,dict/hard-cita
+"El artículo cita la instrucción ""subraya esta parte"".",DICTATION,dict/hard-cita
+El comando borrar elimina el contenido seleccionado.,DICTATION,dict/hard-metalenguaje
+La función deshacer restaura el estado anterior del documento.,DICTATION,dict/hard-metalenguaje
+La opción reemplazar busca coincidencias en todo el texto.,DICTATION,dict/hard-metalenguaje
+El botón guardar conserva una copia automáticamente.,DICTATION,dict/hard-metalenguaje
+El menú formato agrupa las opciones de estilo disponibles.,DICTATION,dict/hard-metalenguaje
+La herramienta de selección permite marcar varios fragmentos.,DICTATION,dict/hard-metalenguaje
+El historial de cambios registra cada edición realizada.,DICTATION,dict/hard-metalenguaje
+El corrector sugiere alternativas mientras se escribe.,DICTATION,dict/hard-metalenguaje
+El dictado por voz interpreta pausas como signos de puntuación.,DICTATION,dict/hard-metalenguaje
+El editor permite cambiar el título desde la barra superior.,DICTATION,dict/hard-metalenguaje
+La función deshacer recupera el contenido anterior sin esfuerzo.,DICTATION,dict/hard-metalenguaje
+El corrector automático puede reemplazar palabras mientras escribes.,DICTATION,dict/hard-metalenguaje
+Seleccionar texto con el teclado requiere práctica inicial.,DICTATION,dict/hard-metalenguaje
+El título del documento aparece en la ventana principal.,DICTATION,dict/hard-metalenguaje
+Quiero escribir que el editor puede cambiar el título automáticamente.,DICTATION,dict/hard-primera-persona
+Voy a contar que borrar párrafos me cuesta mucho trabajo.,DICTATION,dict/hard-primera-persona
+Pienso explicar que deshacer cambios tranquiliza a quien escribe.,DICTATION,dict/hard-primera-persona
+Quiero decir que seleccionar bien las ideas ordena el texto.,DICTATION,dict/hard-primera-persona
+Voy a escribir que poner ejemplos mejora cualquier explicación.,DICTATION,dict/hard-primera-persona
+Me gustaría contar que reemplazar términos aclara el mensaje.,DICTATION,dict/hard-primera-persona
+Quiero mencionar que cambiar de enfoque renovó mi proyecto.,DICTATION,dict/hard-primera-persona
+Pienso escribir que el comando deshacer salvó mi documento ayer.,DICTATION,dict/hard-primera-persona
+Es importante cambiar la manera en que diseñamos interfaces.,DICTATION,dict/hard-mixto
+Borrar información sin respaldo es una mala práctica profesional.,DICTATION,dict/hard-mixto
+El título debe comunicar claramente el objetivo del proyecto.,DICTATION,dict/hard-mixto
+Seleccionar correctamente los participantes es importante para el estudio.,DICTATION,dict/hard-mixto
+Deshacer una acción debería ser sencillo para el usuario.,DICTATION,dict/hard-mixto
+Reemplazar el cable dañado resolvió el problema del laboratorio.,DICTATION,dict/hard-mixto
+Poner la mesa antes de cenar es tradición en mi casa.,DICTATION,dict/hard-mixto
+Cambiar de opinión con nuevos datos es señal de criterio.,DICTATION,dict/hard-mixto
+El editor de la revista pidió cambios antes del viernes.,DICTATION,dict/hard-mixto
+Borró su presentación anterior y empezó de nuevo.,DICTATION,dict/hard-mixto
+La ponente cambió el título a última hora.,DICTATION,dict/hard-mixto
+Seleccionaron tres casos para el análisis detallado.,DICTATION,dict/hard-mixto
+El taller enseña a reemplazar piezas defectuosas.,DICTATION,dict/hard-mixto
+Pusieron subtítulos en negritas para cada sección.,DICTATION,dict/hard-mixto
+Deshizo el nudo con paciencia antes de continuar.,DICTATION,dict/hard-mixto
+Ya veo.,DICTATION,dict/fragmento
+Claro.,DICTATION,dict/fragmento
+Entiendo.,DICTATION,dict/fragmento
+De acuerdo.,DICTATION,dict/fragmento
+Perfecto.,DICTATION,dict/fragmento
+Interesante.,DICTATION,dict/fragmento
+Vaya.,DICTATION,dict/fragmento
+"Ah, sí.",DICTATION,dict/fragmento
+Mmm.,DICTATION,dict/fragmento
+Vale.,DICTATION,dict/fragmento
+Exacto.,DICTATION,dict/fragmento
+Correcto.,DICTATION,dict/fragmento
+Ajá.,DICTATION,dict/fragmento
+Oh.,DICTATION,dict/fragmento
+Bien.,DICTATION,dict/fragmento
+Ni idea.,DICTATION,dict/fragmento
+Quién sabe.,DICTATION,dict/fragmento
+Puede ser.,DICTATION,dict/fragmento
+Ya.,DICTATION,dict/fragmento
+Listo.,DICTATION,dict/fragmento
+Hecho.,DICTATION,dict/fragmento
+Siguiente.,DICTATION,dict/fragmento
+Continúa.,DICTATION,dict/fragmento
+Prosigue.,DICTATION,dict/fragmento
+Te escucho.,DICTATION,dict/fragmento
+Dime.,DICTATION,dict/fragmento
+A ver.,DICTATION,dict/fragmento
+Espera.,DICTATION,dict/fragmento
+Un momento.,DICTATION,dict/fragmento
+Pausa.,DICTATION,dict/fragmento
+Sigo.,DICTATION,dict/fragmento
+Adelante.,DICTATION,dict/fragmento
+Cámbiale el título a Metodología.,EDITOR_CONTROL,control/titulo
+Ponle de título Metodología.,EDITOR_CONTROL,control/titulo
+Titula esto como Metodología.,EDITOR_CONTROL,control/titulo
+Actualiza el título a Metodología.,EDITOR_CONTROL,control/titulo
+Cámbiale el título a Resultados.,EDITOR_CONTROL,control/titulo
+Ponle de título Resultados.,EDITOR_CONTROL,control/titulo
+Titula esto como Resultados.,EDITOR_CONTROL,control/titulo
+Actualiza el título a Resultados.,EDITOR_CONTROL,control/titulo
+Cámbiale el título a Conclusiones.,EDITOR_CONTROL,control/titulo
+Ponle de título Conclusiones.,EDITOR_CONTROL,control/titulo
+Titula esto como Conclusiones.,EDITOR_CONTROL,control/titulo
+Actualiza el título a Conclusiones.,EDITOR_CONTROL,control/titulo
+Cámbiale el título a Evaluación.,EDITOR_CONTROL,control/titulo
+Ponle de título Evaluación.,EDITOR_CONTROL,control/titulo
+Titula esto como Evaluación.,EDITOR_CONTROL,control/titulo
+Actualiza el título a Evaluación.,EDITOR_CONTROL,control/titulo
+Cámbiale el título a Discusión.,EDITOR_CONTROL,control/titulo
+Ponle de título Discusión.,EDITOR_CONTROL,control/titulo
+Titula esto como Discusión.,EDITOR_CONTROL,control/titulo
+Actualiza el título a Discusión.,EDITOR_CONTROL,control/titulo
+Cámbiale el título a Resumen.,EDITOR_CONTROL,control/titulo
+Ponle de título Resumen.,EDITOR_CONTROL,control/titulo
+Titula esto como Resumen.,EDITOR_CONTROL,control/titulo
+Actualiza el título a Resumen.,EDITOR_CONTROL,control/titulo
+Cámbiale el título a Anexos.,EDITOR_CONTROL,control/titulo
+Ponle de título Anexos.,EDITOR_CONTROL,control/titulo
+Titula esto como Anexos.,EDITOR_CONTROL,control/titulo
+Actualiza el título a Anexos.,EDITOR_CONTROL,control/titulo
+Cámbiale el título a Propuesta.,EDITOR_CONTROL,control/titulo
+Ponle de título Propuesta.,EDITOR_CONTROL,control/titulo
+Titula esto como Propuesta.,EDITOR_CONTROL,control/titulo
+Actualiza el título a Propuesta.,EDITOR_CONTROL,control/titulo
+Cámbiale el título a Hallazgos.,EDITOR_CONTROL,control/titulo
+Ponle de título Hallazgos.,EDITOR_CONTROL,control/titulo
+Titula esto como Hallazgos.,EDITOR_CONTROL,control/titulo
+Actualiza el título a Hallazgos.,EDITOR_CONTROL,control/titulo
+Cámbiale el título a Limitaciones.,EDITOR_CONTROL,control/titulo
+Ponle de título Limitaciones.,EDITOR_CONTROL,control/titulo
+Titula esto como Limitaciones.,EDITOR_CONTROL,control/titulo
+Actualiza el título a Limitaciones.,EDITOR_CONTROL,control/titulo
+Modifica el título a Metodología.,EDITOR_CONTROL,control/titulo
+Renombra el documento como Metodología.,EDITOR_CONTROL,control/titulo
+El nuevo título será Metodología.,EDITOR_CONTROL,control/titulo
+Modifica el título a Resultados.,EDITOR_CONTROL,control/titulo
+Renombra el documento como Resultados.,EDITOR_CONTROL,control/titulo
+El nuevo título será Resultados.,EDITOR_CONTROL,control/titulo
+Modifica el título a Conclusiones.,EDITOR_CONTROL,control/titulo
+Renombra el documento como Conclusiones.,EDITOR_CONTROL,control/titulo
+El nuevo título será Conclusiones.,EDITOR_CONTROL,control/titulo
+Modifica el título a Evaluación.,EDITOR_CONTROL,control/titulo
+Renombra el documento como Evaluación.,EDITOR_CONTROL,control/titulo
+El nuevo título será Evaluación.,EDITOR_CONTROL,control/titulo
+Modifica el título a Discusión.,EDITOR_CONTROL,control/titulo
+Renombra el documento como Discusión.,EDITOR_CONTROL,control/titulo
+El nuevo título será Discusión.,EDITOR_CONTROL,control/titulo
+Modifica el título a Resumen.,EDITOR_CONTROL,control/titulo
+Renombra el documento como Resumen.,EDITOR_CONTROL,control/titulo
+El nuevo título será Resumen.,EDITOR_CONTROL,control/titulo
+Elimina este párrafo.,EDITOR_CONTROL,control/borrar
+Suprime este párrafo.,EDITOR_CONTROL,control/borrar
+Descarta este párrafo.,EDITOR_CONTROL,control/borrar
+Elimina esta sección.,EDITOR_CONTROL,control/borrar
+Suprime esta sección.,EDITOR_CONTROL,control/borrar
+Descarta esta sección.,EDITOR_CONTROL,control/borrar
+Elimina la cita.,EDITOR_CONTROL,control/borrar
+Suprime la cita.,EDITOR_CONTROL,control/borrar
+Descarta la cita.,EDITOR_CONTROL,control/borrar
+Elimina el ejemplo.,EDITOR_CONTROL,control/borrar
+Suprime el ejemplo.,EDITOR_CONTROL,control/borrar
+Descarta el ejemplo.,EDITOR_CONTROL,control/borrar
+Elimina la nota al pie.,EDITOR_CONTROL,control/borrar
+Suprime la nota al pie.,EDITOR_CONTROL,control/borrar
+Descarta la nota al pie.,EDITOR_CONTROL,control/borrar
+Elimina el encabezado.,EDITOR_CONTROL,control/borrar
+Suprime el encabezado.,EDITOR_CONTROL,control/borrar
+Descarta el encabezado.,EDITOR_CONTROL,control/borrar
+Elimina la lista.,EDITOR_CONTROL,control/borrar
+Suprime la lista.,EDITOR_CONTROL,control/borrar
+Descarta la lista.,EDITOR_CONTROL,control/borrar
+Elimina el último bloque.,EDITOR_CONTROL,control/borrar
+Suprime el último bloque.,EDITOR_CONTROL,control/borrar
+Descarta el último bloque.,EDITOR_CONTROL,control/borrar
+Elimina esta tabla.,EDITOR_CONTROL,control/borrar
+Suprime esta tabla.,EDITOR_CONTROL,control/borrar
+Descarta esta tabla.,EDITOR_CONTROL,control/borrar
+Elimina el apéndice.,EDITOR_CONTROL,control/borrar
+Suprime el apéndice.,EDITOR_CONTROL,control/borrar
+Descarta el apéndice.,EDITOR_CONTROL,control/borrar
+Corta este párrafo.,EDITOR_CONTROL,control/borrar
+Corta esta sección.,EDITOR_CONTROL,control/borrar
+Limpia esta sección.,EDITOR_CONTROL,control/borrar
+Corta la cita.,EDITOR_CONTROL,control/borrar
+Limpia la cita.,EDITOR_CONTROL,control/borrar
+Corta el ejemplo.,EDITOR_CONTROL,control/borrar
+Limpia el ejemplo.,EDITOR_CONTROL,control/borrar
+Corta la nota al pie.,EDITOR_CONTROL,control/borrar
+Limpia la nota al pie.,EDITOR_CONTROL,control/borrar
+Corta el encabezado.,EDITOR_CONTROL,control/borrar
+Limpia el encabezado.,EDITOR_CONTROL,control/borrar
+Cambia título por encabezado en este párrafo.,EDITOR_CONTROL,control/reemplazar
+Sustituye cada título por encabezado.,EDITOR_CONTROL,control/reemplazar
+Cambia inicio por comienzo en este párrafo.,EDITOR_CONTROL,control/reemplazar
+Sustituye cada inicio por comienzo.,EDITOR_CONTROL,control/reemplazar
+Cambia fin por cierre en este párrafo.,EDITOR_CONTROL,control/reemplazar
+Sustituye cada fin por cierre.,EDITOR_CONTROL,control/reemplazar
+Cambia imagen por figura en este párrafo.,EDITOR_CONTROL,control/reemplazar
+Sustituye cada imagen por figura.,EDITOR_CONTROL,control/reemplazar
+Cambia cuadro por tabla en este párrafo.,EDITOR_CONTROL,control/reemplazar
+Sustituye cada cuadro por tabla.,EDITOR_CONTROL,control/reemplazar
+Cambia autor por autora en este párrafo.,EDITOR_CONTROL,control/reemplazar
+Sustituye cada autor por autora.,EDITOR_CONTROL,control/reemplazar
+Cambia capítulo por sección en este párrafo.,EDITOR_CONTROL,control/reemplazar
+Sustituye cada capítulo por sección.,EDITOR_CONTROL,control/reemplazar
+Cambia nota por aclaración en este párrafo.,EDITOR_CONTROL,control/reemplazar
+Sustituye cada nota por aclaración.,EDITOR_CONTROL,control/reemplazar
+Reescribe lo seleccionado más persuasivo.,EDITOR_CONTROL,control/reformular
+Vuelve a redactar esto más persuasivo.,EDITOR_CONTROL,control/reformular
+Reescribe lo seleccionado más neutral.,EDITOR_CONTROL,control/reformular
+Vuelve a redactar esto más neutral.,EDITOR_CONTROL,control/reformular
+Reescribe lo seleccionado más conciso.,EDITOR_CONTROL,control/reformular
+Vuelve a redactar esto más conciso.,EDITOR_CONTROL,control/reformular
+Reescribe lo seleccionado más extenso.,EDITOR_CONTROL,control/reformular
+Vuelve a redactar esto más extenso.,EDITOR_CONTROL,control/reformular
+Reescribe lo seleccionado más crítico.,EDITOR_CONTROL,control/reformular
+Vuelve a redactar esto más crítico.,EDITOR_CONTROL,control/reformular
+Reescribe lo seleccionado más descriptivo.,EDITOR_CONTROL,control/reformular
+Vuelve a redactar esto más descriptivo.,EDITOR_CONTROL,control/reformular
+Reescribe lo seleccionado menos técnico.,EDITOR_CONTROL,control/reformular
+Vuelve a redactar esto menos técnico.,EDITOR_CONTROL,control/reformular
+Reescribe lo seleccionado más urgente.,EDITOR_CONTROL,control/reformular
+Vuelve a redactar esto más urgente.,EDITOR_CONTROL,control/reformular
+Aplica negritas a el título.,EDITOR_CONTROL,control/formato
+Resalta el título en negritas.,EDITOR_CONTROL,control/formato
+Aplica negritas a esta frase.,EDITOR_CONTROL,control/formato
+Resalta esta frase en negritas.,EDITOR_CONTROL,control/formato
+Aplica negritas a el ejemplo.,EDITOR_CONTROL,control/formato
+Resalta el ejemplo en negritas.,EDITOR_CONTROL,control/formato
+Aplica negritas a la conclusión.,EDITOR_CONTROL,control/formato
+Resalta la conclusión en negritas.,EDITOR_CONTROL,control/formato
+Aplica cursiva a el título.,EDITOR_CONTROL,control/formato
+Resalta el título en cursiva.,EDITOR_CONTROL,control/formato
+Aplica cursiva a esta frase.,EDITOR_CONTROL,control/formato
+Resalta esta frase en cursiva.,EDITOR_CONTROL,control/formato
+Aplica cursiva a el ejemplo.,EDITOR_CONTROL,control/formato
+Resalta el ejemplo en cursiva.,EDITOR_CONTROL,control/formato
+Aplica cursiva a la conclusión.,EDITOR_CONTROL,control/formato
+Resalta la conclusión en cursiva.,EDITOR_CONTROL,control/formato
+Pon en cursiva la cita.,EDITOR_CONTROL,control/formato
+Marca la conclusión en negritas.,EDITOR_CONTROL,control/formato
+Deshaz lo último.,EDITOR_CONTROL,control/undo
+Deshaz la edición anterior.,EDITOR_CONTROL,control/undo
+Echa para atrás el cambio.,EDITOR_CONTROL,control/undo
+Anula la última modificación.,EDITOR_CONTROL,control/undo
+Vuelve atrás.,EDITOR_CONTROL,control/undo
+Deshaz lo que hiciste.,EDITOR_CONTROL,control/undo
+Retrocede un paso.,EDITOR_CONTROL,control/undo
+Cancela lo anterior.,EDITOR_CONTROL,control/undo
+Rehaz la última acción.,EDITOR_CONTROL,control/redo
+Reaplica el cambio.,EDITOR_CONTROL,control/redo
+Vuelve a hacer lo anterior.,EDITOR_CONTROL,control/redo
+Adelante con lo deshecho.,EDITOR_CONTROL,control/redo
+Restaura la edición.,EDITOR_CONTROL,control/redo
+Repite lo que quitaste.,EDITOR_CONTROL,control/redo
+Selecciona la cita.,EDITOR_CONTROL,control/seleccion
+Marca la cita.,EDITOR_CONTROL,control/seleccion
+Selecciona el ejemplo.,EDITOR_CONTROL,control/seleccion
+Marca el ejemplo.,EDITOR_CONTROL,control/seleccion
+Selecciona el título.,EDITOR_CONTROL,control/seleccion
+Marca el título.,EDITOR_CONTROL,control/seleccion
+Selecciona toda la página.,EDITOR_CONTROL,control/seleccion
+Marca toda la página.,EDITOR_CONTROL,control/seleccion
+Selecciona este bloque.,EDITOR_CONTROL,control/seleccion
+Marca este bloque.,EDITOR_CONTROL,control/seleccion
+Baja hasta las conclusiones.,EDITOR_CONTROL,control/navegacion
+Sube a la introducción.,EDITOR_CONTROL,control/navegacion
+Salta a la siguiente página.,EDITOR_CONTROL,control/navegacion
+Ve al principio del párrafo.,EDITOR_CONTROL,control/navegacion
+Coloca el cursor al final.,EDITOR_CONTROL,control/navegacion
+Retrocede una sección.,EDITOR_CONTROL,control/navegacion
+Corrige las mayúsculas.,EDITOR_CONTROL,control/correccion
+Revisa la concordancia de este texto.,EDITOR_CONTROL,control/correccion
+Arregla los guiones largos.,EDITOR_CONTROL,control/correccion
+Unifica el formato de fechas.,EDITOR_CONTROL,control/correccion
+Corrige el estilo de las citas.,EDITOR_CONTROL,control/correccion
+Pule la puntuación final.,EDITOR_CONTROL,control/correccion
+Hazlo más solemne.,EDITOR_CONTROL,control/tono
+Hazlo más coloquial.,EDITOR_CONTROL,control/tono
+Dale un aire profesional.,EDITOR_CONTROL,control/tono
+Hazlo más optimista.,EDITOR_CONTROL,control/tono
+Vuelve el tono más serio.,EDITOR_CONTROL,control/tono
+Pasa todo a mayúsculas.,EDITOR_CONTROL,control/transformar
+Pon en minúsculas el título.,EDITOR_CONTROL,control/transformar
+Divide la lista en dos columnas.,EDITOR_CONTROL,control/transformar
+Fusiona estos párrafos.,EDITOR_CONTROL,control/transformar
+Convierte los puntos en lista numerada.,EDITOR_CONTROL,control/transformar
+Parte esta oración larga.,EDITOR_CONTROL,control/transformar
+Haz eso.,EDITOR_CONTROL,control/deictico
+Cambia aquello.,EDITOR_CONTROL,control/deictico
+Quita aquello.,EDITOR_CONTROL,control/deictico
+Ponlo ahí.,EDITOR_CONTROL,control/deictico
+Mueve esto allá.,EDITOR_CONTROL,control/deictico
+Arregla aquello.,EDITOR_CONTROL,control/deictico
+Copia eso.,EDITOR_CONTROL,control/deictico
+Borra aquello.,EDITOR_CONTROL,control/deictico
+"Esto mismo, cámbialo.",EDITOR_CONTROL,control/deictico
+Lo mismo pero más corto.,EDITOR_CONTROL,control/deictico
+Igual pero en formal.,EDITOR_CONTROL,control/deictico
+Repite eso.,EDITOR_CONTROL,control/deictico
+Otra vez.,EDITOR_CONTROL,control/deictico
+"Así no, de la otra forma.",EDITOR_CONTROL,control/deictico
+Como estaba antes.,EDITOR_CONTROL,control/deictico
+Hazle lo mismo a este.,EDITOR_CONTROL,control/deictico
+Igual que el anterior.,EDITOR_CONTROL,control/deictico
+Aplica lo mismo aquí.,EDITOR_CONTROL,control/deictico
+El dictado continuo exige modelos tolerantes a pausas y titubeos.,DICTATION,dict/academico
+La mirada puede complementar la voz como señal deíctica.,DICTATION,dict/academico
+Los comandos hablados reducen el uso del menú en usuarios expertos.,DICTATION,dict/academico
+La confirmación explícita evita modificaciones accidentales del texto.,DICTATION,dict/academico
+El historial de revisiones facilita el trabajo colaborativo asíncrono.,DICTATION,dict/academico
+Las personas mayores prefieren instrucciones paso a paso muy explícitas.,DICTATION,dict/academico
+El contraste alto mejora la legibilidad en pantallas pequeñas.,DICTATION,dict/academico
+La latencia percibida afecta la confianza en el asistente de escritura.,DICTATION,dict/academico
+Un buen editor distingue dictado de órdenes sin pedir aclaraciones.,DICTATION,dict/academico
+La personalización del vocabulario mejora el reconocimiento de nombres propios.,DICTATION,dict/academico
+Los atajos de teclado conviven con la entrada por voz sin conflicto.,DICTATION,dict/academico
+El subrayado automático de errores guía la revisión posterior.,DICTATION,dict/academico
+La lectura en voz alta ayuda a detectar frases demasiado largas.,DICTATION,dict/academico
+El modo sin distracciones oculta barras y menús secundarios.,DICTATION,dict/academico
+Guardar versiones intermedias protege contra pérdidas inesperadas.,DICTATION,dict/academico
+La sincronización en la nube plantea dilemas de privacidad evidentes.,DICTATION,dict/academico
+El tamaño de fuente ajustable beneficia a personas con baja visión.,DICTATION,dict/academico
+Los temas oscuros reducen la fatiga visual en sesiones nocturnas.,DICTATION,dict/academico
+La autocorrección agresiva puede cambiar palabras correctamente escritas.,DICTATION,dict/academico
+El portapapeles múltiple acelera la reorganización de fragmentos.,DICTATION,dict/academico
+Arrastrar y soltar sigue siendo útil junto al control por voz.,DICTATION,dict/academico
+Las plantillas estructuran documentos repetitivos con eficacia.,DICTATION,dict/academico
+El conteo de palabras orienta el cumplimiento de límites editoriales.,DICTATION,dict/academico
+Exportar a varios formatos evita fricciones con coautores.,DICTATION,dict/academico
+La escritura colaborativa necesita indicar quién cambió cada parte.,DICTATION,dict/academico
+El control de cambios colorea inserciones y eliminaciones recientes.,DICTATION,dict/academico
+Aceptar todas las revisiones cierra el ciclo de edición colectiva.,DICTATION,dict/academico
+El bloqueo de secciones evita ediciones simultáneas conflictivas.,DICTATION,dict/academico
+Los comentarios al margen enriquecen la discusión sobre el borrador.,DICTATION,dict/academico
+Resolver comentarios uno por uno ordena la revisión final.,DICTATION,dict/academico
+La tesis aborda la ambigüedad de las órdenes habladas.,DICTATION,dict/academico
+La tesis cuantifica interrupciones durante la redacción.,DICTATION,dict/academico
+La tesis compara tres estrategias de confirmación.,DICTATION,dict/academico
+La tesis documenta errores típicos del dictado automático.,DICTATION,dict/academico
+La tesis propone umbrales conservadores para acciones automáticas.,DICTATION,dict/academico
+El informe aborda la ambigüedad de las órdenes habladas.,DICTATION,dict/academico
+El informe cuantifica interrupciones durante la redacción.,DICTATION,dict/academico
+El informe compara tres estrategias de confirmación.,DICTATION,dict/academico
+El informe documenta errores típicos del dictado automático.,DICTATION,dict/academico
+El informe propone umbrales conservadores para acciones automáticas.,DICTATION,dict/academico
+La prueba piloto aborda la ambigüedad de las órdenes habladas.,DICTATION,dict/academico
+La prueba piloto cuantifica interrupciones durante la redacción.,DICTATION,dict/academico
+La prueba piloto compara tres estrategias de confirmación.,DICTATION,dict/academico
+La prueba piloto documenta errores típicos del dictado automático.,DICTATION,dict/academico
+La prueba piloto propone umbrales conservadores para acciones automáticas.,DICTATION,dict/academico
+El grupo focal aborda la ambigüedad de las órdenes habladas.,DICTATION,dict/academico
+El grupo focal cuantifica interrupciones durante la redacción.,DICTATION,dict/academico
+El grupo focal compara tres estrategias de confirmación.,DICTATION,dict/academico
+El grupo focal documenta errores típicos del dictado automático.,DICTATION,dict/academico
+El grupo focal propone umbrales conservadores para acciones automáticas.,DICTATION,dict/academico
+El cuestionario aborda la ambigüedad de las órdenes habladas.,DICTATION,dict/academico
+El cuestionario cuantifica interrupciones durante la redacción.,DICTATION,dict/academico
+El cuestionario compara tres estrategias de confirmación.,DICTATION,dict/academico
+El cuestionario documenta errores típicos del dictado automático.,DICTATION,dict/academico
+El cuestionario propone umbrales conservadores para acciones automáticas.,DICTATION,dict/academico
+La entrevista aborda la ambigüedad de las órdenes habladas.,DICTATION,dict/academico
+La entrevista cuantifica interrupciones durante la redacción.,DICTATION,dict/academico
+La entrevista compara tres estrategias de confirmación.,DICTATION,dict/academico
+La entrevista documenta errores típicos del dictado automático.,DICTATION,dict/academico
+La entrevista propone umbrales conservadores para acciones automáticas.,DICTATION,dict/academico
+El registro de uso aborda la ambigüedad de las órdenes habladas.,DICTATION,dict/academico
+El registro de uso cuantifica interrupciones durante la redacción.,DICTATION,dict/academico
+El registro de uso compara tres estrategias de confirmación.,DICTATION,dict/academico
+El registro de uso documenta errores típicos del dictado automático.,DICTATION,dict/academico
+El registro de uso propone umbrales conservadores para acciones automáticas.,DICTATION,dict/academico
+La sesión observada aborda la ambigüedad de las órdenes habladas.,DICTATION,dict/academico
+La sesión observada cuantifica interrupciones durante la redacción.,DICTATION,dict/academico
+La sesión observada compara tres estrategias de confirmación.,DICTATION,dict/academico
+La sesión observada documenta errores típicos del dictado automático.,DICTATION,dict/academico
+La sesión observada propone umbrales conservadores para acciones automáticas.,DICTATION,dict/academico
+El corpus aborda la ambigüedad de las órdenes habladas.,DICTATION,dict/academico
+El corpus cuantifica interrupciones durante la redacción.,DICTATION,dict/academico
+El corpus compara tres estrategias de confirmación.,DICTATION,dict/academico
+El corpus documenta errores típicos del dictado automático.,DICTATION,dict/academico
+El corpus propone umbrales conservadores para acciones automáticas.,DICTATION,dict/academico
+El taller aborda la ambigüedad de las órdenes habladas.,DICTATION,dict/academico
+El taller cuantifica interrupciones durante la redacción.,DICTATION,dict/academico
+El taller compara tres estrategias de confirmación.,DICTATION,dict/academico
+El taller documenta errores típicos del dictado automático.,DICTATION,dict/academico
+El taller propone umbrales conservadores para acciones automáticas.,DICTATION,dict/academico
+El cuestionario evalúa satisfacción con escalas validadas.,DICTATION,dict/academico
+El cuestionario registra el número de correcciones por minuto.,DICTATION,dict/academico
+El cuestionario concluye con pautas para diseñadores de editores.,DICTATION,dict/academico
+El cuestionario será publicado como capítulo de libro.,DICTATION,dict/academico
+El cuestionario quedó archivado junto al material suplementario.,DICTATION,dict/academico
+La entrevista evalúa satisfacción con escalas validadas.,DICTATION,dict/academico
+La entrevista registra el número de correcciones por minuto.,DICTATION,dict/academico
+La entrevista concluye con pautas para diseñadores de editores.,DICTATION,dict/academico
+La entrevista será publicado como capítulo de libro.,DICTATION,dict/academico
+La entrevista quedó archivado junto al material suplementario.,DICTATION,dict/academico
+El registro de uso evalúa satisfacción con escalas validadas.,DICTATION,dict/academico
+El registro de uso registra el número de correcciones por minuto.,DICTATION,dict/academico
+El registro de uso concluye con pautas para diseñadores de editores.,DICTATION,dict/academico
+El registro de uso será publicado como capítulo de libro.,DICTATION,dict/academico
+El registro de uso quedó archivado junto al material suplementario.,DICTATION,dict/academico
+La sesión observada evalúa satisfacción con escalas validadas.,DICTATION,dict/academico
+La sesión observada registra el número de correcciones por minuto.,DICTATION,dict/academico
+La sesión observada concluye con pautas para diseñadores de editores.,DICTATION,dict/academico
+La sesión observada será publicado como capítulo de libro.,DICTATION,dict/academico
+La sesión observada quedó archivado junto al material suplementario.,DICTATION,dict/academico
+El corpus evalúa satisfacción con escalas validadas.,DICTATION,dict/academico
+El corpus registra el número de correcciones por minuto.,DICTATION,dict/academico
+El corpus concluye con pautas para diseñadores de editores.,DICTATION,dict/academico
+El corpus será publicado como capítulo de libro.,DICTATION,dict/academico
+El corpus quedó archivado junto al material suplementario.,DICTATION,dict/academico
+El taller evalúa satisfacción con escalas validadas.,DICTATION,dict/academico
+El taller registra el número de correcciones por minuto.,DICTATION,dict/academico
+El taller concluye con pautas para diseñadores de editores.,DICTATION,dict/academico
+El taller será publicado como capítulo de libro.,DICTATION,dict/academico
+El taller quedó archivado junto al material suplementario.,DICTATION,dict/academico
+El acta apareció publicada esta mañana.,DICTATION,dict/general
+El acta recibió comentarios favorables.,DICTATION,dict/general
+El acta será traducida a dos idiomas.,DICTATION,dict/general
+El acta pasó por tres rondas de corrección.,DICTATION,dict/general
+La minuta apareció publicada esta mañana.,DICTATION,dict/general
+La minuta recibió comentarios favorables.,DICTATION,dict/general
+La minuta será traducida a dos idiomas.,DICTATION,dict/general
+La minuta pasó por tres rondas de corrección.,DICTATION,dict/general
+El boletín apareció publicada esta mañana.,DICTATION,dict/general
+El boletín recibió comentarios favorables.,DICTATION,dict/general
+El boletín será traducida a dos idiomas.,DICTATION,dict/general
+El boletín pasó por tres rondas de corrección.,DICTATION,dict/general
+La reseña apareció publicada esta mañana.,DICTATION,dict/general
+La reseña recibió comentarios favorables.,DICTATION,dict/general
+La reseña será traducida a dos idiomas.,DICTATION,dict/general
+La reseña pasó por tres rondas de corrección.,DICTATION,dict/general
+El manifiesto apareció publicada esta mañana.,DICTATION,dict/general
+El manifiesto recibió comentarios favorables.,DICTATION,dict/general
+El manifiesto será traducida a dos idiomas.,DICTATION,dict/general
+El manifiesto pasó por tres rondas de corrección.,DICTATION,dict/general
+La semblanza apareció publicada esta mañana.,DICTATION,dict/general
+La semblanza recibió comentarios favorables.,DICTATION,dict/general
+La semblanza será traducida a dos idiomas.,DICTATION,dict/general
+La semblanza pasó por tres rondas de corrección.,DICTATION,dict/general
+El parte apareció publicada esta mañana.,DICTATION,dict/general
+El parte recibió comentarios favorables.,DICTATION,dict/general
+El parte será traducida a dos idiomas.,DICTATION,dict/general
+El parte pasó por tres rondas de corrección.,DICTATION,dict/general
+La fe de erratas apareció publicada esta mañana.,DICTATION,dict/general
+La fe de erratas recibió comentarios favorables.,DICTATION,dict/general
+La fe de erratas será traducida a dos idiomas.,DICTATION,dict/general
+La fe de erratas pasó por tres rondas de corrección.,DICTATION,dict/general
+El compendio apareció publicada esta mañana.,DICTATION,dict/general
+El compendio recibió comentarios favorables.,DICTATION,dict/general
+El compendio será traducida a dos idiomas.,DICTATION,dict/general
+El compendio pasó por tres rondas de corrección.,DICTATION,dict/general
+La antología apareció publicada esta mañana.,DICTATION,dict/general
+La antología recibió comentarios favorables.,DICTATION,dict/general
+La antología será traducida a dos idiomas.,DICTATION,dict/general
+La antología pasó por tres rondas de corrección.,DICTATION,dict/general
+La semblanza incluye fotografías de archivo.,DICTATION,dict/general
+La semblanza llegó con retraso a la redacción.,DICTATION,dict/general
+La semblanza menciona a varios colaboradores.,DICTATION,dict/general
+La semblanza cierra con agradecimientos.,DICTATION,dict/general
+El parte incluye fotografías de archivo.,DICTATION,dict/general
+El parte llegó con retraso a la redacción.,DICTATION,dict/general
+El parte menciona a varios colaboradores.,DICTATION,dict/general
+El parte cierra con agradecimientos.,DICTATION,dict/general
+La fe de erratas incluye fotografías de archivo.,DICTATION,dict/general
+La fe de erratas llegó con retraso a la redacción.,DICTATION,dict/general
+La fe de erratas menciona a varios colaboradores.,DICTATION,dict/general
+La fe de erratas cierra con agradecimientos.,DICTATION,dict/general
+El compendio incluye fotografías de archivo.,DICTATION,dict/general
+El compendio llegó con retraso a la redacción.,DICTATION,dict/general
+El compendio menciona a varios colaboradores.,DICTATION,dict/general
+El compendio cierra con agradecimientos.,DICTATION,dict/general
+La antología incluye fotografías de archivo.,DICTATION,dict/general
+La antología llegó con retraso a la redacción.,DICTATION,dict/general
+La antología menciona a varios colaboradores.,DICTATION,dict/general
+La antología cierra con agradecimientos.,DICTATION,dict/general
+Borrar mensajes antiguos libera espacio en el teléfono.,DICTATION,dict/hard-infinitivo
+Cambiar contraseñas con frecuencia refuerza la seguridad.,DICTATION,dict/hard-infinitivo
+Seleccionar un buen asiento mejora la experiencia del vuelo.,DICTATION,dict/hard-infinitivo
+Reemplazar la batería extendió la vida del portátil.,DICTATION,dict/hard-infinitivo
+Deshacer la maleta lleva menos tiempo del esperado.,DICTATION,dict/hard-infinitivo
+Poner límites claros evita malentendidos en el equipo.,DICTATION,dict/hard-infinitivo
+Eliminar duplicados ordenó por fin la biblioteca.,DICTATION,dict/hard-infinitivo
+Rehacer el presupuesto trimestral tomó toda la tarde.,DICTATION,dict/hard-infinitivo
+Borrar pizarras digitales requiere un gesto específico.,DICTATION,dict/hard-infinitivo
+Cambiar de carril sin señalizar es peligroso.,DICTATION,dict/hard-infinitivo
+Deshacer nudos marineros exige paciencia y práctica.,DICTATION,dict/hard-infinitivo
+Seleccionar frutas maduras se aprende con la experiencia.,DICTATION,dict/hard-infinitivo
+Poner atención plena transforma cualquier conversación.,DICTATION,dict/hard-infinitivo
+Reemplazar focos fundidos iluminó toda la sala.,DICTATION,dict/hard-infinitivo
+Eliminar barreras arquitectónicas beneficia a toda la comunidad.,DICTATION,dict/hard-infinitivo
+Borrar huellas del navegador protege la privacidad básica.,DICTATION,dict/hard-infinitivo
+Cambiar la ruta habitual descubrió un parque nuevo.,DICTATION,dict/hard-infinitivo
+"El profesor dictó la consigna ""lean el capítulo tres"".",DICTATION,dict/hard-cita
+"El cartel advierte ""no borrar este aviso"".",DICTATION,dict/hard-cita
+"La guía recomienda decir ""siguiente"" para avanzar.",DICTATION,dict/hard-cita
+"El ejemplo del libro usa ""seleccionar todo"" sin comillas simples.",DICTATION,dict/hard-cita
+"La nota al pie aclara ""título provisional sujeto a cambios"".",DICTATION,dict/hard-cita
+"El examen pide ""describa el procedimiento"" en pasado.",DICTATION,dict/hard-cita
+"La rúbrica exige ""cambios justificados"" en cada entrega.",DICTATION,dict/hard-cita
+"El foro discute si ""hacerlo más corto"" pierde matices.",DICTATION,dict/hard-cita
+El modo dictado desactiva temporalmente los atajos de formato.,DICTATION,dict/hard-metalenguaje
+La papelera conserva archivos eliminados durante treinta días.,DICTATION,dict/hard-metalenguaje
+El atajo de deshacer funciona en casi todas las aplicaciones.,DICTATION,dict/hard-metalenguaje
+El selector de idioma aparece en la barra de estado.,DICTATION,dict/hard-metalenguaje
+El reemplazo de texto expande abreviaturas frecuentes.,DICTATION,dict/hard-metalenguaje
+El panel de estilos centraliza títulos y citas.,DICTATION,dict/hard-metalenguaje
+El título de la ventana refleja el archivo abierto.,DICTATION,dict/hard-metalenguaje
+La vista de esquema colapsa secciones completas.,DICTATION,dict/hard-metalenguaje
+Voy a narrar que cambiar de ciudad me enseñó a adaptarme.,DICTATION,dict/hard-primera-persona
+Quiero relatar que borrar aquel mensaje fue un alivio.,DICTATION,dict/hard-primera-persona
+Pienso contar que seleccionar el tema llevó semanas.,DICTATION,dict/hard-primera-persona
+Me propongo escribir que poner límites me ayudó a avanzar.,DICTATION,dict/hard-primera-persona
+Voy a explicar que reemplazar hábitos cuesta varios intentos.,DICTATION,dict/hard-primera-persona
+Cambiaron la cerradura después del incidente.,DICTATION,dict/hard-mixto
+Borraban la pizarra entre clase y clase.,DICTATION,dict/hard-mixto
+Eligieron seleccionar muestras al azar.,DICTATION,dict/hard-mixto
+Reemplazaron al ponente por motivos de agenda.,DICTATION,dict/hard-mixto
+Puso énfasis en Negritas el diseñador del cartel.,DICTATION,dict/hard-mixto
+Deshicieron el trato antes de firmarlo.,DICTATION,dict/hard-mixto
+El título del partido se decidió en penales.,DICTATION,dict/hard-mixto
+Seleccionar es un verbo que describe muy bien el estudio.,DICTATION,dict/hard-mixto
+Borrar es la acción más temida por los novatos.,DICTATION,dict/hard-mixto
+Cambiaron el formato del festival este año.,DICTATION,dict/hard-mixto
+Ya casi.,DICTATION,dict/fragmento
+Falta poco.,DICTATION,dict/fragmento
+Sigo pensando.,DICTATION,dict/fragmento
+Déjame ver.,DICTATION,dict/fragmento
+A ver si entiendo.,DICTATION,dict/fragmento
+Claro que sí.,DICTATION,dict/fragmento
+Por supuesto.,DICTATION,dict/fragmento
+Desde luego.,DICTATION,dict/fragmento
+Qué bien.,DICTATION,dict/fragmento
+Qué raro.,DICTATION,dict/fragmento
+No sé.,DICTATION,dict/fragmento
+No estoy seguro.,DICTATION,dict/fragmento
+Depende.,DICTATION,dict/fragmento
+Más o menos.,DICTATION,dict/fragmento
+Eso creo.,DICTATION,dict/fragmento
+Supongo.,DICTATION,dict/fragmento
+Imagino.,DICTATION,dict/fragmento
+Ojalá.,DICTATION,dict/fragmento
+Oye.,DICTATION,dict/fragmento
+Mira.,DICTATION,dict/fragmento
+Fíjate.,DICTATION,dict/fragmento
+Anda.,DICTATION,dict/fragmento
+Venga.,DICTATION,dict/fragmento
+Hala.,DICTATION,dict/fragmento
+Uf.,DICTATION,dict/fragmento
+Ay.,DICTATION,dict/fragmento
+Eh.,DICTATION,dict/fragmento
+Pues.,DICTATION,dict/fragmento
+"Bueno, sigo.",DICTATION,dict/fragmento
+Nada más.,DICTATION,dict/fragmento
+Eso es todo.,DICTATION,dict/fragmento
+Fin del párrafo.,DICTATION,dict/fragmento
+Punto final.,DICTATION,dict/fragmento
+"Cambia el título a Introducción, por favor.",EDITOR_CONTROL,control/titulo
+Por favor pon como título Introducción.,EDITOR_CONTROL,control/titulo
+Necesito que el título sea Introducción.,EDITOR_CONTROL,control/titulo
+Haz que el título diga Introducción.,EDITOR_CONTROL,control/titulo
+"Cambia el título a Antecedentes, por favor.",EDITOR_CONTROL,control/titulo
+Por favor pon como título Antecedentes.,EDITOR_CONTROL,control/titulo
+Necesito que el título sea Antecedentes.,EDITOR_CONTROL,control/titulo
+Haz que el título diga Antecedentes.,EDITOR_CONTROL,control/titulo
+"Cambia el título a Metodología, por favor.",EDITOR_CONTROL,control/titulo
+Por favor pon como título Metodología.,EDITOR_CONTROL,control/titulo
+Necesito que el título sea Metodología.,EDITOR_CONTROL,control/titulo
+Haz que el título diga Metodología.,EDITOR_CONTROL,control/titulo
+"Cambia el título a Resultados, por favor.",EDITOR_CONTROL,control/titulo
+Por favor pon como título Resultados.,EDITOR_CONTROL,control/titulo
+Necesito que el título sea Resultados.,EDITOR_CONTROL,control/titulo
+Haz que el título diga Resultados.,EDITOR_CONTROL,control/titulo
+"Cambia el título a Discusión, por favor.",EDITOR_CONTROL,control/titulo
+Por favor pon como título Discusión.,EDITOR_CONTROL,control/titulo
+Necesito que el título sea Discusión.,EDITOR_CONTROL,control/titulo
+Haz que el título diga Discusión.,EDITOR_CONTROL,control/titulo
+"Cambia el título a Conclusiones, por favor.",EDITOR_CONTROL,control/titulo
+Por favor pon como título Conclusiones.,EDITOR_CONTROL,control/titulo
+Necesito que el título sea Conclusiones.,EDITOR_CONTROL,control/titulo
+Haz que el título diga Conclusiones.,EDITOR_CONTROL,control/titulo
+"Cambia el título a Referencias, por favor.",EDITOR_CONTROL,control/titulo
+Por favor pon como título Referencias.,EDITOR_CONTROL,control/titulo
+Necesito que el título sea Referencias.,EDITOR_CONTROL,control/titulo
+Haz que el título diga Referencias.,EDITOR_CONTROL,control/titulo
+"Cambia el título a Apéndice, por favor.",EDITOR_CONTROL,control/titulo
+Por favor pon como título Apéndice.,EDITOR_CONTROL,control/titulo
+Necesito que el título sea Apéndice.,EDITOR_CONTROL,control/titulo
+Haz que el título diga Apéndice.,EDITOR_CONTROL,control/titulo
+Borra el borrador.,EDITOR_CONTROL,control/borrar
+Quita el borrador de aquí.,EDITOR_CONTROL,control/borrar
+Elimina el borrador por favor.,EDITOR_CONTROL,control/borrar
+Borra la transcripción.,EDITOR_CONTROL,control/borrar
+Quita la transcripción de aquí.,EDITOR_CONTROL,control/borrar
+Elimina la transcripción por favor.,EDITOR_CONTROL,control/borrar
+Borra el duplicado.,EDITOR_CONTROL,control/borrar
+Quita el duplicado de aquí.,EDITOR_CONTROL,control/borrar
+Elimina el duplicado por favor.,EDITOR_CONTROL,control/borrar
+Borra la versión vieja.,EDITOR_CONTROL,control/borrar
+Quita la versión vieja de aquí.,EDITOR_CONTROL,control/borrar
+Elimina la versión vieja por favor.,EDITOR_CONTROL,control/borrar
+Borra el comentario resuelto.,EDITOR_CONTROL,control/borrar
+Quita el comentario resuelto de aquí.,EDITOR_CONTROL,control/borrar
+Elimina el comentario resuelto por favor.,EDITOR_CONTROL,control/borrar
+Borra la firma.,EDITOR_CONTROL,control/borrar
+Quita la firma de aquí.,EDITOR_CONTROL,control/borrar
+Elimina la firma por favor.,EDITOR_CONTROL,control/borrar
+Borra el sello.,EDITOR_CONTROL,control/borrar
+Quita el sello de aquí.,EDITOR_CONTROL,control/borrar
+Elimina el sello por favor.,EDITOR_CONTROL,control/borrar
+Borra la marca de agua.,EDITOR_CONTROL,control/borrar
+Quita la marca de agua de aquí.,EDITOR_CONTROL,control/borrar
+Elimina la marca de agua por favor.,EDITOR_CONTROL,control/borrar
+Cambia el resumen por síntesis.,EDITOR_CONTROL,control/reemplazar
+Donde dice resumen pon síntesis.,EDITOR_CONTROL,control/reemplazar
+Cambia el objetivo por propósito.,EDITOR_CONTROL,control/reemplazar
+Donde dice objetivo pon propósito.,EDITOR_CONTROL,control/reemplazar
+Cambia el método por procedimiento.,EDITOR_CONTROL,control/reemplazar
+Donde dice método pon procedimiento.,EDITOR_CONTROL,control/reemplazar
+Cambia el dato por cifra.,EDITOR_CONTROL,control/reemplazar
+Donde dice dato pon cifra.,EDITOR_CONTROL,control/reemplazar
+Cambia el gráfico por figura.,EDITOR_CONTROL,control/reemplazar
+Donde dice gráfico pon figura.,EDITOR_CONTROL,control/reemplazar
+Cambia el anexo por apéndice.,EDITOR_CONTROL,control/reemplazar
+Donde dice anexo pon apéndice.,EDITOR_CONTROL,control/reemplazar
+Reformula esto más amable.,EDITOR_CONTROL,control/reformular
+Dale un giro más amable a este texto.,EDITOR_CONTROL,control/reformular
+Reformula esto más enérgico.,EDITOR_CONTROL,control/reformular
+Dale un giro más enérgico a este texto.,EDITOR_CONTROL,control/reformular
+Reformula esto más poético.,EDITOR_CONTROL,control/reformular
+Dale un giro más poético a este texto.,EDITOR_CONTROL,control/reformular
+Reformula esto más sobrio.,EDITOR_CONTROL,control/reformular
+Dale un giro más sobrio a este texto.,EDITOR_CONTROL,control/reformular
+Aplica subrayado a lo seleccionado.,EDITOR_CONTROL,control/formato
+Pon en negrita el primer párrafo.,EDITOR_CONTROL,control/formato
+Convierte la cita en cursivas.,EDITOR_CONTROL,control/formato
+Agranda la letra de esta parte.,EDITOR_CONTROL,control/formato
+Reduce el interlineado.,EDITOR_CONTROL,control/formato
+Aplica viñetas a esta lista.,EDITOR_CONTROL,control/formato
+Sangra este párrafo.,EDITOR_CONTROL,control/formato
+Cambia la fuente del título.,EDITOR_CONTROL,control/formato
+Deshaz la última edición.,EDITOR_CONTROL,control/undo
+Da un paso atrás.,EDITOR_CONTROL,control/undo
+Anula la modificación.,EDITOR_CONTROL,control/undo
+Vuelve al borrador anterior.,EDITOR_CONTROL,control/undo
+Recupera la versión previa.,EDITOR_CONTROL,control/undo
+Rehaz la acción.,EDITOR_CONTROL,control/redo
+Vuelve a aplicar el cambio.,EDITOR_CONTROL,control/redo
+Recupera lo deshecho.,EDITOR_CONTROL,control/redo
+Selecciona el subtítulo.,EDITOR_CONTROL,control/seleccion
+Resalta el subtítulo con el cursor.,EDITOR_CONTROL,control/seleccion
+Selecciona la primera línea.,EDITOR_CONTROL,control/seleccion
+Resalta la primera línea con el cursor.,EDITOR_CONTROL,control/seleccion
+Selecciona el último renglón.,EDITOR_CONTROL,control/seleccion
+Resalta el último renglón con el cursor.,EDITOR_CONTROL,control/seleccion
+Avanza a la conclusión.,EDITOR_CONTROL,control/navegacion
+Retrocede al resumen.,EDITOR_CONTROL,control/navegacion
+Salta dos secciones.,EDITOR_CONTROL,control/navegacion
+Corrige la redacción.,EDITOR_CONTROL,control/correccion
+Pule este texto.,EDITOR_CONTROL,control/correccion
+Ajusta la puntuación.,EDITOR_CONTROL,control/correccion
+Vuelve esto más claro.,EDITOR_CONTROL,control/tono
+Hazlo menos ambiguo.,EDITOR_CONTROL,control/tono
+Mayusculiza cada palabra del título.,EDITOR_CONTROL,control/transformar
+Minusculiza esta oración.,EDITOR_CONTROL,control/transformar
+Cambia eso ya.,EDITOR_CONTROL,control/deictico
+Borra ya esto.,EDITOR_CONTROL,control/deictico
+Hazlo ahora.,EDITOR_CONTROL,control/deictico
+Ponlo ya.,EDITOR_CONTROL,control/deictico
+Quita eso de una vez.,EDITOR_CONTROL,control/deictico
+Arréglalo.,EDITOR_CONTROL,control/deictico
+Modifica esto.,EDITOR_CONTROL,control/deictico
+Edita esa parte.,EDITOR_CONTROL,control/deictico
+Trabaja este párrafo.,EDITOR_CONTROL,control/deictico
+Ocúpate de esta sección.,EDITOR_CONTROL,control/deictico
+Encárgate de esto.,EDITOR_CONTROL,control/deictico
+Borrar historiales antiguos es una práctica recomendada.,DICTATION,dict/hard-infinitivo
+Cambiar tipografías altera la personalidad del documento.,DICTATION,dict/hard-infinitivo
+Seleccionar fondos claros favorece la lectura prolongada.,DICTATION,dict/hard-infinitivo
+Reemplazar conectores repetidos mejora la fluidez.,DICTATION,dict/hard-infinitivo
+Deshacer particiones del disco requiere herramientas especiales.,DICTATION,dict/hard-infinitivo
+Poner subtítulos descriptivos orienta al espectador.,DICTATION,dict/hard-infinitivo
+Eliminar anuncios emergentes agiliza la navegación.,DICTATION,dict/hard-infinitivo
+Rehacer maquetas del proyecto consumió el fin de semana.,DICTATION,dict/hard-infinitivo
+Borrar caché de la aplicación liberó dos gigabytes.,DICTATION,dict/hard-infinitivo
+Cambiar pañales es rutina en la guardería.,DICTATION,dict/hard-infinitivo
+Deshacer costuras permite ajustar el vestido.,DICTATION,dict/hard-infinitivo
+Seleccionar el menú degustación fue un acierto.,DICTATION,dict/hard-infinitivo
+"El aviso dice ""no cambiar la configuración"".",DICTATION,dict/hard-cita
+"La etiqueta indica ""reemplazar cada seis meses"".",DICTATION,dict/hard-cita
+"El letrero pide ""seleccionar una opción"".",DICTATION,dict/hard-cita
+"La receta ordena ""poner a fuego lento"".",DICTATION,dict/hard-cita
+"El formulario solicita ""borrar lo que no aplique"".",DICTATION,dict/hard-cita
+"El guion marca ""pausa y continúa"".",DICTATION,dict/hard-cita
+El corrector de estilo sugiere dividir oraciones largas.,DICTATION,dict/hard-metalenguaje
+El inspector de documento resume estadísticas básicas.,DICTATION,dict/hard-metalenguaje
+El modo control por voz enumera sus comandos disponibles.,DICTATION,dict/hard-metalenguaje
+El asistente de escritura propone reformulaciones opcionales.,DICTATION,dict/hard-metalenguaje
+El panel de navegación lista todos los encabezados.,DICTATION,dict/hard-metalenguaje
+El registro de actividad muestra quién editó cada línea.,DICTATION,dict/hard-metalenguaje
+Voy a describir que poner orden alivió el caos inicial.,DICTATION,dict/hard-primera-persona
+Quiero plasmar que borrar borradores libera espacio mental.,DICTATION,dict/hard-primera-persona
+Pienso relatar que deshacer acuerdos cuesta más que firmarlos.,DICTATION,dict/hard-primera-persona
+Me dispongo a escribir que seleccionar despacio rinde mejor.,DICTATION,dict/hard-primera-persona
+Voy a anotar que reemplazar quejas por propuestas unió al grupo.,DICTATION,dict/hard-primera-persona
+El jurado cambió el veredicto tras la apelación.,DICTATION,dict/hard-mixto
+Borraron grafitis del centro durante la madrugada.,DICTATION,dict/hard-mixto
+Seleccionar al azar garantiza imparcialidad estadística.,DICTATION,dict/hard-mixto
+Reemplazó la bombilla antes de que anocheciera.,DICTATION,dict/hard-mixto
+"Ponen música suave en negritas no, en la sala de espera.",DICTATION,dict/hard-mixto
+Deshicieron las maletas nada más llegar.,DICTATION,dict/hard-mixto
+El título nobiliario recayó en la hija mayor.,DICTATION,dict/hard-mixto
+Poner fin a la reunión llevó otra hora de debate.,DICTATION,dict/hard-mixto
+El taller explica cómo dictar sin mirar la pantalla.,DICTATION,dict/academico
+El taller resume hallazgos sobre control por voz.,DICTATION,dict/academico
+El taller incluye transcripciones anonimizadas.,DICTATION,dict/academico
+El seminario explica cómo dictar sin mirar la pantalla.,DICTATION,dict/academico
+El seminario resume hallazgos sobre control por voz.,DICTATION,dict/academico
+El seminario incluye transcripciones anonimizadas.,DICTATION,dict/academico
+La mesa redonda explica cómo dictar sin mirar la pantalla.,DICTATION,dict/academico
+La mesa redonda resume hallazgos sobre control por voz.,DICTATION,dict/academico
+La mesa redonda incluye transcripciones anonimizadas.,DICTATION,dict/academico
+El póster explica cómo dictar sin mirar la pantalla.,DICTATION,dict/academico
+El póster resume hallazgos sobre control por voz.,DICTATION,dict/academico
+El póster incluye transcripciones anonimizadas.,DICTATION,dict/academico
+La demo explica cómo dictar sin mirar la pantalla.,DICTATION,dict/academico
+La demo resume hallazgos sobre control por voz.,DICTATION,dict/academico
+La demo incluye transcripciones anonimizadas.,DICTATION,dict/academico
+El video explica cómo dictar sin mirar la pantalla.,DICTATION,dict/academico
+El video resume hallazgos sobre control por voz.,DICTATION,dict/academico
+El video incluye transcripciones anonimizadas.,DICTATION,dict/academico
+El podcast explica cómo dictar sin mirar la pantalla.,DICTATION,dict/academico
+El podcast resume hallazgos sobre control por voz.,DICTATION,dict/academico
+El podcast incluye transcripciones anonimizadas.,DICTATION,dict/academico
+El blog explica cómo dictar sin mirar la pantalla.,DICTATION,dict/academico
+El blog resume hallazgos sobre control por voz.,DICTATION,dict/academico
+El blog incluye transcripciones anonimizadas.,DICTATION,dict/academico
+La wiki explica cómo dictar sin mirar la pantalla.,DICTATION,dict/academico
+La wiki resume hallazgos sobre control por voz.,DICTATION,dict/academico
+La wiki incluye transcripciones anonimizadas.,DICTATION,dict/academico
+El manual explica cómo dictar sin mirar la pantalla.,DICTATION,dict/academico
+El manual resume hallazgos sobre control por voz.,DICTATION,dict/academico
+El manual incluye transcripciones anonimizadas.,DICTATION,dict/academico
+El video muestra capturas del prototipo evaluado.,DICTATION,dict/academico
+El video cierra con preguntas abiertas al público.,DICTATION,dict/academico
+El podcast muestra capturas del prototipo evaluado.,DICTATION,dict/academico
+El podcast cierra con preguntas abiertas al público.,DICTATION,dict/academico
+El blog muestra capturas del prototipo evaluado.,DICTATION,dict/academico
+El blog cierra con preguntas abiertas al público.,DICTATION,dict/academico
+La wiki muestra capturas del prototipo evaluado.,DICTATION,dict/academico
+La wiki cierra con preguntas abiertas al público.,DICTATION,dict/academico
+El manual muestra capturas del prototipo evaluado.,DICTATION,dict/academico
+El manual cierra con preguntas abiertas al público.,DICTATION,dict/academico
+La gaceta saldrá el próximo mes.,DICTATION,dict/general
+La gaceta agotó su primera edición.,DICTATION,dict/general
+La gaceta llegó ayer a los suscriptores.,DICTATION,dict/general
+El folleto saldrá el próximo mes.,DICTATION,dict/general
+El folleto agotó su primera edición.,DICTATION,dict/general
+El folleto llegó ayer a los suscriptores.,DICTATION,dict/general
+El tríptico saldrá el próximo mes.,DICTATION,dict/general
+El tríptico agotó su primera edición.,DICTATION,dict/general
+El tríptico llegó ayer a los suscriptores.,DICTATION,dict/general
+La separata saldrá el próximo mes.,DICTATION,dict/general
+La separata agotó su primera edición.,DICTATION,dict/general
+La separata llegó ayer a los suscriptores.,DICTATION,dict/general
+El anuario saldrá el próximo mes.,DICTATION,dict/general
+El anuario agotó su primera edición.,DICTATION,dict/general
+El anuario llegó ayer a los suscriptores.,DICTATION,dict/general
+El tríptico incluye un índice detallado.,DICTATION,dict/general
+La separata incluye un índice detallado.,DICTATION,dict/general
+El anuario incluye un índice detallado.,DICTATION,dict/general

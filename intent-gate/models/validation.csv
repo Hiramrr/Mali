@@ -1,0 +1,238 @@
+text,label,category
+"Pon este fragmento en cursivas.",EDITOR_CONTROL,control/formato
+"Reemplaza esta palabra por accesibilidad.",EDITOR_CONTROL,control/reemplazar
+"Corrige la redacción.",EDITOR_CONTROL,control/correccion
+"Cambia el encabezado a Introducción.",EDITOR_CONTROL,control/titulo
+"Haz este párrafo más corto.",EDITOR_CONTROL,control/reformular
+"Quita aquello.",EDITOR_CONTROL,control/deictico
+"Condensa estas tres frases en una.",EDITOR_CONTROL,control/reformular
+"Haz que el título diga Introducción.",EDITOR_CONTROL,control/titulo
+"Salta al título.",EDITOR_CONTROL,control/navegacion
+"Por favor pon como título Resultados.",EDITOR_CONTROL,control/titulo
+"Divide este párrafo en dos.",EDITOR_CONTROL,control/transformar
+"Cambia el título a Antecedentes.",EDITOR_CONTROL,control/titulo
+"Selecciona el título.",EDITOR_CONTROL,control/seleccion
+"Necesito que el título sea Conclusiones.",EDITOR_CONTROL,control/titulo
+"Reescribe lo seleccionado más conciso.",EDITOR_CONTROL,control/reformular
+"Hazlo menos ambiguo.",EDITOR_CONTROL,control/tono
+"Deshaz eso.",EDITOR_CONTROL,control/undo
+"Quiero que cambies el título a Discusión.",EDITOR_CONTROL,control/titulo
+"Sustituye parte por sección.",EDITOR_CONTROL,control/reemplazar
+"Ponlo ya.",EDITOR_CONTROL,control/deictico
+"Pon esta frase en negritas.",EDITOR_CONTROL,control/formato
+"Sustituye esa expresión por algo más claro.",EDITOR_CONTROL,control/reemplazar
+"Endurece la conclusión.",EDITOR_CONTROL,control/reformular
+"Elimina el borrador por favor.",EDITOR_CONTROL,control/borrar
+"Haz el título más corto.",EDITOR_CONTROL,control/titulo
+"Corta la nota al pie.",EDITOR_CONTROL,control/borrar
+"Aplica subrayado a lo seleccionado.",EDITOR_CONTROL,control/formato
+"Titula esto como Hallazgos.",EDITOR_CONTROL,control/titulo
+"Sustituye cada nota por aclaración.",EDITOR_CONTROL,control/reemplazar
+"Elimina el comentario resuelto por favor.",EDITOR_CONTROL,control/borrar
+"Aplica negritas a esta frase.",EDITOR_CONTROL,control/formato
+"Cambia nota por aclaración en este párrafo.",EDITOR_CONTROL,control/reemplazar
+"Renombra el documento como Resumen.",EDITOR_CONTROL,control/titulo
+"Expande esta sección con más detalles.",EDITOR_CONTROL,control/expandir
+"¿Puedes quitar esta parte?",EDITOR_CONTROL,control/borrar
+"Vuelve a redactar esto menos técnico.",EDITOR_CONTROL,control/reformular
+"Restaura la edición.",EDITOR_CONTROL,control/redo
+"Marca la cita.",EDITOR_CONTROL,control/seleccion
+"Igual pero en formal.",EDITOR_CONTROL,control/deictico
+"Selecciona la última sección.",EDITOR_CONTROL,control/seleccion
+"Selecciona el segundo párrafo.",EDITOR_CONTROL,control/seleccion
+"Vuelve a redactar esto más conciso.",EDITOR_CONTROL,control/reformular
+"Alarga la introducción.",EDITOR_CONTROL,control/expandir
+"Aplica negritas a el título.",EDITOR_CONTROL,control/formato
+"Sintetiza las ideas principales.",EDITOR_CONTROL,control/resumir
+"Modifica el título a Metodología.",EDITOR_CONTROL,control/titulo
+"Selecciona la palabra anterior.",EDITOR_CONTROL,control/seleccion
+"Ocúpate de esta sección.",EDITOR_CONTROL,control/deictico
+"Suprime el último bloque.",EDITOR_CONTROL,control/borrar
+"Reaplica el cambio.",EDITOR_CONTROL,control/redo
+"Completa esta idea.",EDITOR_CONTROL,control/expandir
+"Quiero que cambies el título a Evaluación.",EDITOR_CONTROL,control/titulo
+"Limpia el encabezado.",EDITOR_CONTROL,control/borrar
+"Reescribe lo seleccionado más descriptivo.",EDITOR_CONTROL,control/reformular
+"Elimina el apéndice.",EDITOR_CONTROL,control/borrar
+"Actualiza el título a Metodología.",EDITOR_CONTROL,control/titulo
+"Reescribe lo seleccionado más crítico.",EDITOR_CONTROL,control/reformular
+"El título cámbialo a Evaluación.",EDITOR_CONTROL,control/titulo
+"Cambia el gráfico por figura.",EDITOR_CONTROL,control/reemplazar
+"Unifica el formato de fechas.",EDITOR_CONTROL,control/correccion
+"Cambia el título a Trabajo futuro.",EDITOR_CONTROL,control/titulo
+"Quita la transcripción de aquí.",EDITOR_CONTROL,control/borrar
+"Haz esta frase más elegante.",EDITOR_CONTROL,control/reformular
+"Elimina la versión vieja por favor.",EDITOR_CONTROL,control/borrar
+"Elimina la cita.",EDITOR_CONTROL,control/borrar
+"Selecciona la introducción.",EDITOR_CONTROL,control/seleccion
+"Pega lo que copiaste.",EDITOR_CONTROL,control/deictico
+"Copia eso.",EDITOR_CONTROL,control/deictico
+"Suprime la cita.",EDITOR_CONTROL,control/borrar
+"El nuevo título será Discusión.",EDITOR_CONTROL,control/titulo
+"Hazlo menos absoluto.",EDITOR_CONTROL,control/reformular
+"Corta este párrafo.",EDITOR_CONTROL,control/borrar
+"Donde dice anexo pon apéndice.",EDITOR_CONTROL,control/reemplazar
+"Reescribe el título para que sea más descriptivo.",EDITOR_CONTROL,control/titulo
+"Actualiza el título a Discusión.",EDITOR_CONTROL,control/titulo
+"Borra la marca de agua.",EDITOR_CONTROL,control/borrar
+"Quita la palabra repetida.",EDITOR_CONTROL,control/borrar
+"Divide la lista en dos columnas.",EDITOR_CONTROL,control/transformar
+"Borra aquello.",EDITOR_CONTROL,control/deictico
+"Adelante con lo deshecho.",EDITOR_CONTROL,control/redo
+"Dale un giro más poético a este texto.",EDITOR_CONTROL,control/reformular
+"Sustituye los números por letras.",EDITOR_CONTROL,control/reemplazar
+"Suprime el ejemplo.",EDITOR_CONTROL,control/borrar
+"Haz que el título diga Apéndice.",EDITOR_CONTROL,control/titulo
+"Amplía la selección una palabra.",EDITOR_CONTROL,control/seleccion
+"Actualiza el título a Resultados.",EDITOR_CONTROL,control/titulo
+"Suprime la sección repetida.",EDITOR_CONTROL,control/borrar
+"Repite eso.",EDITOR_CONTROL,control/deictico
+"Cambia el título a Bibliografía.",EDITOR_CONTROL,control/titulo
+"Esto quítalo.",EDITOR_CONTROL,control/deictico
+"Repite la última acción.",EDITOR_CONTROL,control/redo
+"Cambia esta palabra por diseño.",EDITOR_CONTROL,control/reemplazar
+"¿Puedes ponerle título a este documento?",EDITOR_CONTROL,control/titulo
+"Haz eso.",EDITOR_CONTROL,control/deictico
+"Ponle de título Limitaciones.",EDITOR_CONTROL,control/titulo
+"Reemplaza la última palabra por palabra.",EDITOR_CONTROL,control/reemplazar
+"Marca todo lo que sigue.",EDITOR_CONTROL,control/seleccion
+"Renombra el documento como Metodología.",EDITOR_CONTROL,control/titulo
+"Cambia eso ya.",EDITOR_CONTROL,control/deictico
+"Modifica esto.",EDITOR_CONTROL,control/deictico
+"Elimina el último párrafo.",EDITOR_CONTROL,control/borrar
+"Quita el comentario resuelto de aquí.",EDITOR_CONTROL,control/borrar
+"Descarta el último cambio de redacción.",EDITOR_CONTROL,control/borrar
+"Ve al final del documento.",EDITOR_CONTROL,control/navegacion
+"Marca este bloque.",EDITOR_CONTROL,control/seleccion
+"Limpia la cita.",EDITOR_CONTROL,control/borrar
+"Donde dice resumen pon síntesis.",EDITOR_CONTROL,control/reemplazar
+"Convierte los puntos en lista numerada.",EDITOR_CONTROL,control/transformar
+"Salta dos secciones.",EDITOR_CONTROL,control/navegacion
+"Donde dice gráfico pon figura.",EDITOR_CONTROL,control/reemplazar
+"Resalta esta frase en negritas.",EDITOR_CONTROL,control/formato
+"La nota al pie aclara ""título provisional sujeto a cambios"".",DICTATION,dict/hard-cita
+"Reemplazar focos fundidos iluminó toda la sala.",DICTATION,dict/hard-infinitivo
+"Cambiar el título mejora la claridad del documento.",DICTATION,dict/hard-infinitivo
+"El anuario saldrá el próximo mes.",DICTATION,dict/general
+"El parte recibió comentarios favorables.",DICTATION,dict/general
+"Cambiar el formato sin avisar confunde a quien lee.",DICTATION,dict/hard-infinitivo
+"La semblanza apareció publicada esta mañana.",DICTATION,dict/general
+"Cambiar de tema bruscamente desorienta al lector.",DICTATION,dict/hard-infinitivo
+"El foro discute si ""hacerlo más corto"" pierde matices.",DICTATION,dict/hard-cita
+"El guion marca ""pausa y continúa"".",DICTATION,dict/hard-cita
+"La entrevista documenta errores típicos del dictado automático.",DICTATION,dict/academico
+"El informe será revisado por el equipo editorial.",DICTATION,dict/general
+"Ajá.",DICTATION,dict/fragmento
+"Poner subtítulos descriptivos orienta al espectador.",DICTATION,dict/hard-infinitivo
+"Cada sesión duró aproximadamente cuarenta y cinco minutos.",DICTATION,dict/academico
+"Oh.",DICTATION,dict/fragmento
+"La rúbrica exige ""cambios justificados"" en cada entrega.",DICTATION,dict/hard-cita
+"El resumen necesita una última lectura atenta.",DICTATION,dict/general
+"El parte llegó con retraso a la redacción.",DICTATION,dict/general
+"Reemplazar conectores repetidos mejora la fluidez.",DICTATION,dict/hard-infinitivo
+"Pienso relatar que deshacer acuerdos cuesta más que firmarlos.",DICTATION,dict/hard-primera-persona
+"La evaluación propone un marco para evaluar editores multimodales.",DICTATION,dict/academico
+"Quiero decir que seleccionar bien las ideas ordena el texto.",DICTATION,dict/hard-primera-persona
+"El modelo sugiere nuevas líneas de trabajo futuro.",DICTATION,dict/academico
+"Las interfaces multimodales combinan voz, teclado y gestos en un mismo sistema.",DICTATION,dict/academico
+"El subrayado automático de errores guía la revisión posterior.",DICTATION,dict/academico
+"La sincronización en la nube plantea dilemas de privacidad evidentes.",DICTATION,dict/academico
+"El prototipo permitió observar estrategias espontáneas de los participantes.",DICTATION,dict/academico
+"El experimento revela patrones interesantes de uso de la voz.",DICTATION,dict/academico
+"Reemplazó la bombilla antes de que anocheciera.",DICTATION,dict/hard-mixto
+"Adelante.",DICTATION,dict/fragmento
+"La memoria quedó listo ayer por la tarde.",DICTATION,dict/general
+"La escritura asistida plantea preguntas interesantes sobre autoría y control.",DICTATION,dict/academico
+"Borraron grafitis del centro durante la madrugada.",DICTATION,dict/hard-mixto
+"El corpus registra el número de correcciones por minuto.",DICTATION,dict/academico
+"La separata saldrá el próximo mes.",DICTATION,dict/general
+"La fe de erratas llegó con retraso a la redacción.",DICTATION,dict/general
+"La presentación recoge opiniones de varios expertos.",DICTATION,dict/general
+"El manual cierra con preguntas abiertas al público.",DICTATION,dict/academico
+"La función deshacer recupera el contenido anterior sin esfuerzo.",DICTATION,dict/hard-metalenguaje
+"El análisis revela patrones interesantes de uso de la voz.",DICTATION,dict/academico
+"Un estudio reciente evaluó la fatiga durante tareas de escritura prolongada.",DICTATION,dict/academico
+"Eh.",DICTATION,dict/fragmento
+"El experimento propone un marco para evaluar editores multimodales.",DICTATION,dict/academico
+"La carta cierra con una reflexión abierta.",DICTATION,dict/general
+"Aceptar todas las revisiones cierra el ciclo de edición colectiva.",DICTATION,dict/academico
+"El informe aborda la ambigüedad de las órdenes habladas.",DICTATION,dict/academico
+"El tríptico agotó su primera edición.",DICTATION,dict/general
+"Resolver comentarios uno por uno ordena la revisión final.",DICTATION,dict/academico
+"El folleto llegó ayer a los suscriptores.",DICTATION,dict/general
+"La herramienta describe limitaciones del reconocimiento automático.",DICTATION,dict/academico
+"El análisis muestra mejoras claras en velocidad de escritura.",DICTATION,dict/academico
+"El comando borrar elimina el contenido seleccionado.",DICTATION,dict/hard-metalenguaje
+"La separata incluye un índice detallado.",DICTATION,dict/general
+"La latencia percibida afecta la confianza en el asistente de escritura.",DICTATION,dict/academico
+"El modo control por voz enumera sus comandos disponibles.",DICTATION,dict/hard-metalenguaje
+"Borrar archivos accidentalmente puede generar problemas graves.",DICTATION,dict/hard-infinitivo
+"La entrevista cuantifica interrupciones durante la redacción.",DICTATION,dict/academico
+"El modelo propone un marco para evaluar editores multimodales.",DICTATION,dict/academico
+"El bloqueo de secciones evita ediciones simultáneas conflictivas.",DICTATION,dict/academico
+"Rehacer un trabajo desde cero consume demasiado tiempo.",DICTATION,dict/hard-infinitivo
+"Reemplazar palabras sin criterio empobrece el texto.",DICTATION,dict/hard-infinitivo
+"Seleccionar fondos claros favorece la lectura prolongada.",DICTATION,dict/hard-infinitivo
+"El sistema propuesto incluye recomendaciones prácticas de diseño.",DICTATION,dict/academico
+"Cambiar pañales es rutina en la guardería.",DICTATION,dict/hard-infinitivo
+"El cuestionario quedó archivado junto al material suplementario.",DICTATION,dict/academico
+"El manual incluye transcripciones anonimizadas.",DICTATION,dict/academico
+"La memoria circula ya entre los asistentes.",DICTATION,dict/general
+"La evaluación confirma la importancia del contexto durante el dictado.",DICTATION,dict/academico
+"Cambiar un encabezado modifica la interpretación de una sección.",DICTATION,dict/hard-infinitivo
+"El grupo focal cuantifica interrupciones durante la redacción.",DICTATION,dict/academico
+"Borrar texto accidentalmente es frustrante para cualquiera.",DICTATION,dict/hard-infinitivo
+"Mi proyecto busca diseñar un editor de texto para personas con TDAH.",DICTATION,dict/academico
+"El cuestionario aborda la ambigüedad de las órdenes habladas.",DICTATION,dict/academico
+"Pues.",DICTATION,dict/fragmento
+"La presentación será revisado por el equipo editorial.",DICTATION,dict/general
+"La prueba piloto compara tres estrategias de confirmación.",DICTATION,dict/academico
+"La sesión observada propone umbrales conservadores para acciones automáticas.",DICTATION,dict/academico
+"Cambiar de opinión con nuevos datos es señal de criterio.",DICTATION,dict/hard-mixto
+"El artículo recoge opiniones de varios expertos.",DICTATION,dict/general
+"La evaluación aporta evidencia sobre fatiga en tareas prolongadas.",DICTATION,dict/academico
+"La encuesta sugiere nuevas líneas de trabajo futuro.",DICTATION,dict/academico
+"Borrar huellas del navegador protege la privacidad básica.",DICTATION,dict/hard-infinitivo
+"La herramienta destaca la relevancia de la accesibilidad cognitiva.",DICTATION,dict/academico
+"El taller compara tres estrategias de confirmación.",DICTATION,dict/academico
+"La memoria cierra con una reflexión abierta.",DICTATION,dict/general
+"La minuta apareció publicada esta mañana.",DICTATION,dict/general
+"La carta será revisado por el equipo editorial.",DICTATION,dict/general
+"El tríptico llegó ayer a los suscriptores.",DICTATION,dict/general
+"Rehacer una acción permite recuperar un cambio revertido.",DICTATION,dict/hard-infinitivo
+"Venga.",DICTATION,dict/fragmento
+"El documento será revisado por el equipo editorial.",DICTATION,dict/general
+"El reemplazo de texto expande abreviaturas frecuentes.",DICTATION,dict/hard-metalenguaje
+"La prueba piloto aborda la ambigüedad de las órdenes habladas.",DICTATION,dict/academico
+"El modo dictado desactiva temporalmente los atajos de formato.",DICTATION,dict/hard-metalenguaje
+"Pienso contar que seleccionar el tema llevó semanas.",DICTATION,dict/hard-primera-persona
+"La sesión observada registra el número de correcciones por minuto.",DICTATION,dict/academico
+"La confirmación explícita evita modificaciones accidentales del texto.",DICTATION,dict/academico
+"Deshacer modificaciones es una función importante del editor.",DICTATION,dict/hard-infinitivo
+"Deshacer la maleta lleva menos tiempo del esperado.",DICTATION,dict/hard-infinitivo
+"Más o menos.",DICTATION,dict/fragmento
+"La investigación confirma la importancia del contexto durante el dictado.",DICTATION,dict/academico
+"El título del partido se decidió en penales.",DICTATION,dict/hard-mixto
+"El compendio menciona a varios colaboradores.",DICTATION,dict/general
+"El compendio será traducida a dos idiomas.",DICTATION,dict/general
+"El registro de uso cuantifica interrupciones durante la redacción.",DICTATION,dict/academico
+"El artículo será revisado por el equipo editorial.",DICTATION,dict/general
+"La entrevista concluye con pautas para diseñadores de editores.",DICTATION,dict/academico
+"La semblanza recibió comentarios favorables.",DICTATION,dict/general
+"Las métricas incluyeron tiempo de tarea y errores cometidos.",DICTATION,dict/academico
+"Deshacer particiones del disco requiere herramientas especiales.",DICTATION,dict/hard-infinitivo
+"El corpus cuantifica interrupciones durante la redacción.",DICTATION,dict/academico
+"La investigación revela patrones interesantes de uso de la voz.",DICTATION,dict/academico
+"El acta apareció publicada esta mañana.",DICTATION,dict/general
+"El ejemplo del libro usa ""seleccionar todo"" sin comillas simples.",DICTATION,dict/hard-cita
+"Eliminar párrafos enteros debería requerir confirmación previa.",DICTATION,dict/hard-infinitivo
+"El documento circula ya entre los asistentes.",DICTATION,dict/general
+"El corpus compara tres estrategias de confirmación.",DICTATION,dict/academico
+"Quiero mencionar que cambiar de enfoque renovó mi proyecto.",DICTATION,dict/hard-primera-persona
+"La personalización del vocabulario mejora el reconocimiento de nombres propios.",DICTATION,dict/academico
+"La tesis propone umbrales conservadores para acciones automáticas.",DICTATION,dict/academico
+"Ah, sí.",DICTATION,dict/fragmento
+"La encuesta confirma la importancia del contexto durante el dictado.",DICTATION,dict/academico
+"Hecho.",DICTATION,dict/fragmento
+"El ensayo quedó listo ayer por la tarde.",DICTATION,dict/general
+"El título del documento aparece en la ventana principal.",DICTATION,dict/hard-metalenguaje
