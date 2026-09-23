@@ -48,3 +48,21 @@ STT produce minúsculas ("claridad") y errores reales ("Deshaz eso"→"Les hace 
 
 `data/live_protocol.csv`: 48 órdenes ×2 + 15 unsupported + 15 unknown = 126.
 `swift run GrammarTest live` guía y registra en `live_results.csv`.
+
+## Fase B en vivo (2026-09-23, voz humana, 126 utterances)
+
+- WER: 13.5% (51/377 palabras).
+- End-to-end órdenes: 80/96 = 83.3%.
+- Unsupported hablado: 15/15 (0 sustituciones).
+- Unknown hablado: 15/15 (0 acciones).
+- Args literales verbatim del raw: 60/60 = 100%.
+- Parser con transcript limpio: ~94/96 = 97.9%.
+- STT: media 227, mediana 221, p95 259 ms. Parser ~0 ms.
+- Undo/redo: correctos con transcript limpio; fallos solo por STT
+  ("Re hazlo", "Deshace", "Se hace el cambio", "Fe haz eso", truncados).
+- Hallazgos STT: minúsculas ("claridad"), splits ("Pon lo", "Re hazlo"),
+  confusiones ("negritas"->"Netflix", "Rehaz"->"Se hace"),
+  prefijos del hablante ("Hola", "Sí" -> unknown), "Ponle X" de 2 tokens.
+- Criterios voz (>=95% end-to-end, args >=95%): end-to-end NO (83.3%),
+  args SÍ (100%), unsupported SÍ (0), undo/redo parcial por STT.
+  El parser no se modifica tras el protocolo (congelado).

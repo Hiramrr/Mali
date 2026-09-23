@@ -1,0 +1,127 @@
+id,kind,expected_spoken,expected,raw,norm,parsed,stt_ms,parse_ms
+L001,orden-01-r1,"Cambia el título a Metodología.",renameTitle,"Hola cambia el título a Metodología","hola cambia el titulo a metodologia","unknown",506,0.0
+L002,orden-02-r1,"Pon como título Resultados.",renameTitle,"Pon como título resultados","pon como titulo resultados","renameTitle("resultados")",259,0.0
+L003,orden-03-r1,"Borra esto.",deleteSelection,"Borra esto","borra esto","deleteSelection",217,0.0
+L004,orden-04-r1,"Elimina la selección.",deleteSelection,"Elimina la selección","elimina la seleccion","deleteSelection",222,0.0
+L005,orden-05-r1,"Cambia esta palabra por dificultades.",replaceSelection,"Cambia esta palabra por dificultades","cambia esta palabra por dificultades","replaceSelection("dificultades")",248,0.0
+L006,orden-06-r1,"Sustituye esto por algo claro.",replaceSelection,"Sustituye esto por algo claro","sustituye esto por algo claro","replaceSelection("algo claro")",237,0.0
+L007,orden-07-r1,"Hazlo más corto.",rewriteSelection,"Hazlo más corto","hazlo mas corto","rewriteSelection("más corto")",230,0.0
+L008,orden-08-r1,"Ponlo más formal.",rewriteSelection,"Pon lo más formal","pon lo mas formal","unsupported("Pon lo más formal")",241,0.0
+L009,orden-09-r1,"Ponlo en negritas.",formatSelection:bold,"Ponlo en Netflix","ponlo en netflix","unsupported("Ponlo en Netflix")",254,0.0
+L010,orden-10-r1,"Ponlo en cursivas.",formatSelection:italic,"Ponlo en cursivas","ponlo en cursivas","formatSelection(GrammarTest.FormatStyle.italic)",232,0.0
+L011,orden-11-r1,"Subraya esto.",formatSelection:underline,"Subraya esto","subraya esto","formatSelection(GrammarTest.FormatStyle.underline)",217,0.0
+L012,orden-12-r1,"Deshaz el último cambio.",undo,"Deshaz el último cambio","deshaz el ultimo cambio","undo",226,0.0
+L013,orden-13-r1,"Vuelve atrás.",undo,"Vuelve atrás","vuelve atras","undo",212,0.0
+L014,orden-14-r1,"Rehaz el cambio.",redo,"Rehaz el cambio","rehaz el cambio","redo",221,0.0
+L015,orden-15-r1,"Vuelve a aplicar el cambio.",redo,"Vuelve a aplicar el cambio","vuelve a aplicar el cambio","redo",232,0.0
+L016,orden-16-r1,"Selecciona el segundo párrafo.",selectText,"Selecciona el segundo párrafo","selecciona el segundo parrafo","selectText("el segundo párrafo")",244,0.0
+L017,orden-17-r1,"Marca esta frase.",selectText,"Marca esta frase","marca esta frase","selectText("esta frase")",228,0.0
+L018,orden-18-r1,"Busca la palabra accesibilidad.",findText,"Busca la palabra accesibilidad","busca la palabra accesibilidad","findText("accesibilidad")",241,0.0
+L019,orden-19-r1,"Encuentra Metodología.",findText,"Encuentra Metodología","encuentra metodologia","findText("Metodología")",214,0.0
+L020,orden-20-r1,"Guarda el documento.",saveDocument,"Guarda el documento","guarda el documento","saveDocument",219,0.0
+L021,orden-21-r1,"Archiva el tanto.",saveDocument,"Archiva el tanto","archiva el tanto","saveDocument",226,0.0
+L022,orden-22-r1,"Abre el archivo anterior.",openDocument,"Abre el archivo anterior","abre el archivo anterior","openDocument(Optional("el archivo anterior"))",228,0.0
+L023,orden-23-r1,"Recupera el acta vieja.",openDocument,"Recupera el acta vieja","recupera el acta vieja","openDocument(Optional("el acta vieja"))",230,0.0
+L024,orden-24-r1,"Exporta a pdf.",exportDocument:pdf,"Exporta pdf","exporta pdf","exportDocument(GrammarTest.ExportFormat.pdf)",234,0.0
+L025,orden-25-r1,"Guarda una copia como pdf.",exportDocument:pdf,"Guarda una copia, PDF","guarda una copia, pdf","exportDocument(GrammarTest.ExportFormat.pdf)",366,0.0
+L026,orden-26-r1,"Deshaz eso.",undo,"Deshaz esto","deshaz esto","undo",233,0.0
+L027,orden-27-r1,"Rehaz eso.",redo,"Rehaz esto","rehaz esto","redo",281,0.0
+L028,orden-28-r1,"Busca TDAH.",findText,"Busca TDA","busca tda","findText("TDA")",224,0.0
+L029,orden-29-r1,"Selecciona accesibilidad.",selectText,"Selecciona accesibilidad","selecciona accesibilidad","selectText("accesibilidad")",232,0.0
+L030,orden-30-r1,"Pon en negrita el monto.",formatSelection:bold,"Pon en negrita el monto","pon en negrita el monto","formatSelection(GrammarTest.FormatStyle.bold)",243,0.0
+L031,orden-31-r1,"Pon en cursiva la cita.",formatSelection:italic,"Pon en cursiva la cita","pon en cursiva la cita","formatSelection(GrammarTest.FormatStyle.italic)",224,0.0
+L032,orden-32-r1,"Cambia el título a Claridad.",renameTitle,"Cambia el título a claridad","cambia el titulo a claridad","renameTitle("claridad")",227,0.0
+L033,orden-33-r1,"Busca accesibilidad cognitiva.",findText,"Busca accesibilidad cognitiva","busca accesibilidad cognitiva","findText("accesibilidad cognitiva")",224,0.0
+L034,orden-34-r1,"Cambia el título a Evaluación de IHC.",renameTitle,"Cambia el título a evaluación de IH","cambia el titulo a evaluacion de ih","renameTitle("evaluación de IH")",266,0.0
+L035,orden-35-r1,"Reemplaza esto por Diseño centrado.",replaceSelection,"Reemplaza esto por diseño concentrado","reemplaza esto por diseno concentrado","replaceSelection("diseño concentrado")",243,0.0
+L036,orden-36-r1,"Cámbialo.",unknown,"Cámbialo","cambialo","unsupported("Cámbialo")",205,0.0
+L037,orden-37-r1,"Pon eso.",unknown,"Pon eso","pon eso","unsupported("Pon eso")",203,0.0
+L038,orden-38-r1,"Hazlo diferente.",rewriteSelection,"Hazlo diferente","hazlo diferente","rewriteSelection("diferente")",219,0.0
+L039,orden-39-r1,"Bórralo.",deleteSelection,"Bórralo","borralo","deleteSelection",208,0.0
+L040,orden-40-r1,"Guárdalo.",saveDocument,"Guárdalo","guardalo","saveDocument",209,0.0
+L041,orden-41-r1,"Ábrelo.",openDocument:nil,"Ábrelo","abrelo","openDocument(nil)",204,0.0
+L042,orden-42-r1,"Subráyalo.",formatSelection:underline,"Subráyalo","subrayalo","formatSelection(GrammarTest.FormatStyle.underline)",206,0.0
+L043,orden-43-r1,"Deshazlo.",undo,"Deshaz hazlo","deshaz hazlo","undo",204,0.0
+L044,orden-44-r1,"Rehazlo.",redo,"Re hazlo","re hazlo","unknown",228,0.0
+L045,orden-45-r1,"Encuéntralo.",unknown,"Encuéntralo","encuentralo","unknown",206,0.0
+L046,orden-46-r1,"Selecciónalo.",unknown,"Selecciona","selecciona","unknown",204,0.0
+L047,orden-47-r1,"Titula el informe.",renameTitle,"Titula el informe","titula el informe","renameTitle("el informe")",215,0.0
+L048,orden-48-r1,"Ponle Metodología.",renameTitle,"Ponle Metodología","ponle metodologia","unsupported("Ponle Metodología")",317,0.0
+L049,orden-01-r2,"Cambia el título a Metodología.",renameTitle,"Cambia el título a metodología","cambia el titulo a metodologia","renameTitle("metodología")",224,0.0
+L050,orden-02-r2,"Pon como título Resultados.",renameTitle,"Pon como título resultados","pon como titulo resultados","renameTitle("resultados")",233,0.0
+L051,orden-03-r2,"Borra esto.",deleteSelection,"Borra esto","borra esto","deleteSelection",209,0.0
+L052,orden-04-r2,"Elimina la selección.",deleteSelection,"Elimina la selección","elimina la seleccion","deleteSelection",230,0.0
+L053,orden-05-r2,"Cambia esta palabra por dificultades.",replaceSelection,"Cambia esta palabra por dificultades","cambia esta palabra por dificultades","replaceSelection("dificultades")",224,0.0
+L054,orden-06-r2,"Sustituye esto por algo claro.",replaceSelection,"Sustituye esto por algo","sustituye esto por algo","replaceSelection("algo")",215,0.0
+L055,orden-07-r2,"Hazlo más corto.",rewriteSelection,"Haz lo más corta","haz lo mas corta","rewriteSelection("lo más corta")",221,0.0
+L056,orden-08-r2,"Ponlo más formal.",rewriteSelection,"Ponlo más formal","ponlo mas formal","unsupported("Ponlo más formal")",214,0.0
+L057,orden-09-r2,"Ponlo en negritas.",formatSelection:bold,"Ponlo en negritas","ponlo en negritas","formatSelection(GrammarTest.FormatStyle.bold)",215,0.0
+L058,orden-10-r2,"Ponlo en cursivas.",formatSelection:italic,"Ponlo en cursivas","ponlo en cursivas","formatSelection(GrammarTest.FormatStyle.italic)",216,0.0
+L059,orden-11-r2,"Subraya esto.",formatSelection:underline,"Subraya esto","subraya esto","formatSelection(GrammarTest.FormatStyle.underline)",217,0.0
+L060,orden-12-r2,"Deshaz el último cambio.",undo,"Deshace el último cambio","deshace el ultimo cambio","unknown",221,0.0
+L061,orden-13-r2,"Vuelve atrás.",undo,"Vuelve","vuelve","unknown",208,0.0
+L062,orden-14-r2,"Rehaz el cambio.",redo,"Se hace el cambio","se hace el cambio","unknown",258,0.0
+L063,orden-15-r2,"Vuelve a aplicar el cambio.",redo,"Vuelve a aplicar cambio","vuelve a aplicar cambio","redo",221,0.0
+L064,orden-16-r2,"Selecciona el segundo párrafo.",selectText,"Selecciona el segundo párrafo","selecciona el segundo parrafo","selectText("el segundo párrafo")",224,0.0
+L065,orden-17-r2,"Marca esta frase.",selectText,"Marca esta frase","marca esta frase","selectText("esta frase")",219,0.0
+L066,orden-18-r2,"Busca la palabra accesibilidad.",findText,"Busca la palabra accesibilidad","busca la palabra accesibilidad","findText("accesibilidad")",227,0.0
+L067,orden-19-r2,"Encuentra Metodología.",findText,"Encuentra Metodología","encuentra metodologia","findText("Metodología")",220,0.0
+L068,orden-20-r2,"Guarda el documento.",saveDocument,"Guarda el documento","guarda el documento","saveDocument",208,0.0
+L069,orden-21-r2,"Archiva el tanto.",saveDocument,"Archiva","archiva","saveDocument",211,0.0
+L070,orden-22-r2,"Abre el archivo anterior.",openDocument,"Abre el archivo anterior","abre el archivo anterior","openDocument(Optional("el archivo anterior"))",215,0.0
+L071,orden-23-r2,"Recupera el acta vieja.",openDocument,"Recupera el acta vieja","recupera el acta vieja","openDocument(Optional("el acta vieja"))",219,0.0
+L072,orden-24-r2,"Exporta a pdf.",exportDocument:pdf,"Exporta pdf","exporta pdf","exportDocument(GrammarTest.ExportFormat.pdf)",222,0.0
+L073,orden-25-r2,"Guarda una copia como pdf.",exportDocument:pdf,"Guarda una copia como PDF","guarda una copia como pdf","exportDocument(GrammarTest.ExportFormat.pdf)",223,0.0
+L074,orden-26-r2,"Deshaz eso.",undo,"Deshaz ceso","deshaz ceso","undo",225,0.0
+L075,orden-27-r2,"Rehaz eso.",redo,"Fe haz eso","fe haz eso","unknown",226,0.0
+L076,orden-28-r2,"Busca TDAH.",findText,"Busca Tdh","busca tdh","findText("Tdh")",222,0.0
+L077,orden-29-r2,"Selecciona accesibilidad.",selectText,"Selecciona accesibilidad","selecciona accesibilidad","selectText("accesibilidad")",231,0.0
+L078,orden-30-r2,"Pon en negrita el monto.",formatSelection:bold,"Pone negrita el mundo","pone negrita el mundo","unknown",320,0.0
+L079,orden-31-r2,"Pon en cursiva la cita.",formatSelection:italic,"Pon en cursiva la cita","pon en cursiva la cita","formatSelection(GrammarTest.FormatStyle.italic)",216,0.0
+L080,orden-32-r2,"Cambia el título a Claridad.",renameTitle,"Cambia el título a claridad","cambia el titulo a claridad","renameTitle("claridad")",220,0.0
+L081,orden-33-r2,"Busca accesibilidad cognitiva.",findText,"Busca accesibilidad cognitiva","busca accesibilidad cognitiva","findText("accesibilidad cognitiva")",224,0.0
+L082,orden-34-r2,"Cambia el título a Evaluación de IHC.",renameTitle,"Cambia el título a evaluación de IH","cambia el titulo a evaluacion de ih","renameTitle("evaluación de IH")",250,0.0
+L083,orden-35-r2,"Reemplaza esto por Diseño centrado.",replaceSelection,"Reemplaza esto por diseño centrado","reemplaza esto por diseno centrado","replaceSelection("diseño centrado")",243,0.0
+L084,orden-36-r2,"Cámbialo.",unknown,"Cámbialo","cambialo","unsupported("Cámbialo")",204,0.0
+L085,orden-37-r2,"Pon eso.",unknown,"Con eso","con eso","unknown",206,0.0
+L086,orden-38-r2,"Hazlo diferente.",rewriteSelection,"Hazlo diferente","hazlo diferente","rewriteSelection("diferente")",216,0.0
+L087,orden-39-r2,"Bórralo.",deleteSelection,"Bórralo","borralo","deleteSelection",210,0.0
+L088,orden-40-r2,"Guárdalo.",saveDocument,"Guárdalo","guardalo","saveDocument",204,0.0
+L089,orden-41-r2,"Ábrelo.",openDocument:nil,"Ábrelo","abrelo","openDocument(nil)",204,0.0
+L090,orden-42-r2,"Subráyalo.",formatSelection:underline,"Subráyalo","subrayalo","formatSelection(GrammarTest.FormatStyle.underline)",215,0.0
+L091,orden-43-r2,"Deshazlo.",undo,"Deshazla","deshazla","undo",220,0.0
+L092,orden-44-r2,"Rehazlo.",redo,"Sí hazlo","si hazlo","unknown",229,0.0
+L093,orden-45-r2,"Encuéntralo.",unknown,"Encuentra","encuentra","unknown",205,0.0
+L094,orden-46-r2,"Selecciónalo.",unknown,"Selecciónalo","seleccionalo","unknown",213,0.0
+L095,orden-47-r2,"Titula el informe.",renameTitle,"Titula el informe","titula el informe","renameTitle("el informe")",218,0.0
+L096,orden-48-r2,"Ponle Metodología.",renameTitle,"Ponle Metodología","ponle metodologia","unsupported("Ponle Metodología")",225,0.0
+L097,unsupported,"Imprime esto.",unsupported,"Imprime esto","imprime esto","unsupported("Imprime esto")",218,0.0
+L098,unsupported,"Manda esto por correo.",unsupported,"Manda esto por correo","manda esto por correo","unsupported("Manda esto por correo")",228,0.0
+L099,unsupported,"Traduce este párrafo.",unsupported,"Traduce este párrafo","traduce este parrafo","unsupported("Traduce este párrafo")",223,0.0
+L100,unsupported,"Comprime el archivo.",unsupported,"Comprime el archivo","comprime el archivo","unsupported("Comprime el archivo")",220,0.0
+L101,unsupported,"Firma el documento.",unsupported,"Firma el documento","firma el documento","unsupported("Firma el documento")",224,0.0
+L102,unsupported,"Agenda una revisión.",unsupported,"Agenda una revisión","agenda una revision","unsupported("Agenda una revisión")",218,0.0
+L103,unsupported,"Sube el documento a Drive.",unsupported,"Sube el documento Drive","sube el documento drive","unsupported("Sube el documento Drive")",227,0.0
+L104,unsupported,"Cifra el archivo.",unsupported,"Cifra del archivo","cifra del archivo","unsupported("Cifra del archivo")",223,0.0
+L105,unsupported,"Comparte esto.",unsupported,"Comparte esto","comparte esto","unsupported("Comparte esto")",216,0.0
+L106,unsupported,"Programa un recordatorio.",unsupported,"Programa un recordatorio","programa un recordatorio","unsupported("Programa un recordatorio")",226,0.0
+L107,unsupported,"Dicta el siguiente párrafo.",unsupported,"Dicta el siguiente para","dicta el siguiente para","unsupported("Dicta el siguiente para")",233,0.0
+L108,unsupported,"Lee el acta.",unsupported,"Lee el","lee el","unsupported("Lee el")",206,0.0
+L109,unsupported,"Cuenta las palabras.",unsupported,"Cuenta las palabras","cuenta las palabras","unsupported("Cuenta las palabras")",217,0.0
+L110,unsupported,"Convierte a epub.",unsupported,"Convierte a E","convierte a e","unsupported("Convierte a E")",257,0.0
+L111,unsupported,"Busca en internet.",unsupported,"Busca en Internet","busca en internet","unsupported("Busca en Internet")",221,0.0
+L112,unknown,"Hmm, no.",unknown,"No","no","unknown",204,0.0
+L113,unknown,"Eso no.",unknown,"Eso no","eso no","unknown",205,0.0
+L114,unknown,"Déjame pensarlo.",unknown,"Déjame pensarlo","dejame pensarlo","unknown",222,0.0
+L115,unknown,"No estoy seguro.",unknown,"No estoy segura","no estoy segura","unknown",215,0.0
+L116,unknown,"Espera.",unknown,"Espera","espera","unknown",206,0.0
+L117,unknown,"La interacción humano computadora estudia sistemas.",unknown,"La interacción humana computadora estudia sistemas","la interaccion humana computadora estudia sistemas","unknown",257,0.0
+L118,unknown,"Borrar información accidentalmente afecta.",unknown,"Borrar información accidentalmente afecta","borrar informacion accidentalmente afecta","unknown",247,0.0
+L119,unknown,"El gerente cambió al proveedor.",unknown,"El gerente cambió el proveedor","el gerente cambio el proveedor","unknown",221,0.0
+L120,unknown,"Hace calor aquí.",unknown,"Hace calor aquí","hace calor aqui","unknown",216,0.0
+L121,unknown,"El informe quedó listo.",unknown,"El informe quedó listo","el informe quedo listo","unknown",219,0.0
+L122,unknown,"Traigo sueño.",unknown,"Traigo sueño","traigo sueno","unknown",204,0.0
+L123,unknown,"Se acabó la pila.",unknown,"Se acabó la","se acabo la","unknown",206,0.0
+L124,unknown,"No hay señal.",unknown,"No hay señal","no hay senal","unknown",203,0.0
+L125,unknown,"Mañana hablamos.",unknown,"Mañana hablamos","manana hablamos","unknown",211,0.0
+L126,unknown,"Gracias.",unknown,"Gracias","gracias","unknown",199,0.0
