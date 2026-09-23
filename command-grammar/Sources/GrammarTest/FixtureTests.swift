@@ -40,20 +40,24 @@ func runFixtureTests() -> (passed: Int, failed: [UXTestFailure], total: Int) {
             return nil
         }
     }
-    // 4. redo coherente: ejecuta y restaura destino visible
+    // 4. redo coherente: pide confirm (10C) y restaura destino visible tras Enter
     t("fixture-redo-coherente") {
         var s = RiskBasedSession(editor: fixture(for: .redo, index: 0))
         let before = s.editor.title
         s.startListening(); s.receiveTranscript("Rehaz el cambio.")
-        guard case .executed = s.state else { return "redo debió auto: \(s.state)" }
+        guard case .recognized = s.state else { return "redo debió pedir confirm: \(s.state)" }
+        s.confirm()
+        guard case .executed = s.state else { return "redo no ejecutó tras confirm" }
         if s.editor.title == before { return "redo no restauró destino visible" }
         return nil
     }
-    // 5. undo con acción real en pila
+    // 5. undo con acción real en pila (vía confirm en 10C)
     t("fixture-undo-real") {
         var s = RiskBasedSession(editor: fixture(for: .undo, index: 1))
         s.startListening(); s.receiveTranscript("Deshaz el cambio.")
-        guard case .executed = s.state else { return "undo debió auto" }
+        guard case .recognized = s.state else { return "undo debió pedir confirm: \(s.state)" }
+        s.confirm()
+        guard case .executed = s.state else { return "undo no ejecutó" }
         return nil
     }
     return (count - fails.count, fails, count)

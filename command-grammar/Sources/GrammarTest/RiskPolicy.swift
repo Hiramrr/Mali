@@ -1,6 +1,5 @@
-// Fase 10 Risk-Based: solo cambia la política posterior a ParsedCommand.
-// Speech/Grammar/LM/parsing/Foundation Models intactos.
-// navigation + reversible-con-contexto-válido → inmediato; resto → confirm.
+// Fase 10C: solo NAVIGATION es inmediata. Reversible/content/external →
+// confirm. B20 demostró que reversible ≠ seguro para autoejecución.
 import Foundation
 
 // MARK: - Política
@@ -10,10 +9,12 @@ enum ConfirmationPolicy: String, Equatable {
     case confirm
 }
 
+// Fase 10C: AUTO = navigation only. Reversible → CONFIRM (B20: la
+// reversibilidad sola no justifica autoejecución). Riesgos intactos.
 func policyFor(risk: CommandRisk) -> ConfirmationPolicy {
     switch risk {
-    case .navigation, .reversible: return .immediate
-    case .contentChanging, .externalSideEffect: return .confirm
+    case .navigation: return .immediate
+    case .reversible, .contentChanging, .externalSideEffect: return .confirm
     }
 }
 

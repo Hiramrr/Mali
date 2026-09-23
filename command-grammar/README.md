@@ -364,3 +364,25 @@ errores deliberados, 0 trials saltados (FIXTURE READY siempre).
   wrong effects = 1, wrong automatic = 1 → CRITERIO DE CIERRE NO CUMPLIDO.
   No se pasa a Fase 11. Opciones mínimas (fase futura): undo/redo→confirm,
   o affordance de deshacer inmediato tras auto-reversible. Sin implementar.
+
+## Fase Safe-Auto 10C (rama prueba/safe-auto-execution-policy)
+
+Único cambio permitido: `policyFor` reversible→CONFIRM (B20: reversible ≠
+seguro para autoejecutar). Riesgos, validator, gramática y LM intactos.
+AUTO = navigation only (find/select: solo tocan selección/find).
+
+```bash
+cd command-grammar
+swift run GrammarTest safeauto-tests  # 44/44 invariante + B20/B42/V173
+swift run GrammarTest risk-tests      # 406/406 actualizados a 10C
+swift run GrammarTest safeauto-live   # 24 trials (requiere humano+mic)
+```
+
+Suites: safeauto 44 (IMMEDIATE⇒navigation+sin mutar doc/historial/externo;
+UNSAFE_… si falla; B20/B42/V173 piden confirm sin auto; nav sigue inmediata).
+sim-19 bajo 10C (`sim-19-risk` recomputado): NO EFFECT 18, SAFE_NAV_IMM 0,
+WRONG_IMMEDIATE 0, CONFIRMABLE 1 (V173→confirm).
+Live `safeauto_live_protocol.csv` (12 nav + 12 rev con fixture; content/ext
+cubiertos por 10B+tests): PENDIENTE humano. Cierre 10C: wrong-auto 0 +
+wrong 0 + nav-imm 100% + rev-auto 0 + regresiones contenidas → GO FASE 11.
+DETENIDO sin editor real.

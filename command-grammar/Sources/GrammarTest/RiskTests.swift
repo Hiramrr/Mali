@@ -17,11 +17,11 @@ func runRiskTests() -> (passed: Int, failed: [UXTestFailure], total: Int) {
     let mapping: [(ParsedCommand, CommandRisk, ConfirmationPolicy)] = [
         (.findText("x"), .navigation, .immediate),
         (.selectText("x"), .navigation, .immediate),
-        (.undo, .reversible, .immediate),
-        (.redo, .reversible, .immediate),
-        (.formatSelection(.bold), .reversible, .immediate),
-        (.formatSelection(.italic), .reversible, .immediate),
-        (.formatSelection(.underline), .reversible, .immediate),
+        (.undo, .reversible, .confirm),
+        (.redo, .reversible, .confirm),
+        (.formatSelection(.bold), .reversible, .confirm),
+        (.formatSelection(.italic), .reversible, .confirm),
+        (.formatSelection(.underline), .reversible, .confirm),
         (.renameTitle("x"), .contentChanging, .confirm),
         (.deleteSelection, .contentChanging, .confirm),
         (.replaceSelection("x"), .contentChanging, .confirm),
@@ -92,19 +92,22 @@ func runRiskTests() -> (passed: Int, failed: [UXTestFailure], total: Int) {
     let revs = ["Deshaz el cambio.", "Anula el último cambio.", "Vuelve atrás.", "Revierte el cambio.",
                 "Rehaz el cambio.", "Vuelve a aplicar el cambio.", "Reaplica el formato.", "Restaura lo deshecho."]
     for (i, tr) in revs.enumerated() {
-        t("rev-auto \(i)") {
+        t("rev-confirm \(i)") {
             var s = RiskBasedSession(editor: .generous())
             s.startListening(); s.receiveTranscript(tr)
-            guard case .executed = s.state else { return "reversible debió auto-ejecutar: \(s.state)" }
-            if s.autoLog.isEmpty { return "falta AUTO_EXECUTED" }
+            guard case .recognized = s.state else { return "reversible ahora pide confirm: \(s.state)" }
+            if !s.autoLog.isEmpty { return "reversible no debe auto-ejecutar en 10C" }
+            s.confirm()
+            guard case .executed = s.state else { return "confirm debió ejecutar" }
             return nil
         }
         for k in 0..<4 {
-            t("rev-noconfirm \(i)-\(k)") {
+            t("rev-requiere-confirm \(i)-\(k)") {
+                // 10C: reversible SÍ pide confirm; verifica que recibir nunca ejecuta
                 var s = RiskBasedSession(editor: .generous())
                 s.startListening(); s.receiveTranscript(tr)
                 _ = k
-                if case .recognized = s.state { return "reversible no debe pedir confirm" }
+                guard case .recognized = s.state else { return "reversible debe pedir confirm" }
                 return nil
             }
         }
@@ -121,10 +124,13 @@ func runRiskTests() -> (passed: Int, failed: [UXTestFailure], total: Int) {
     let fmts = ["Ponlo en negritas.", "Ponlo en cursivas.", "Subraya la cita.", "Marca el texto en negritas.",
                 "Aplica cursivas a la cita.", "Remarca la conclusión.", "Negritas.", "Subráyalo."]
     for (i, tr) in fmts.enumerated() {
-        t("fmt-auto \(i)") {
+        t("fmt-confirm \(i)") {
             var s = RiskBasedSession(editor: .generous())
             s.startListening(); s.receiveTranscript(tr)
-            guard case .executed = s.state else { return "format debió auto-ejecutar: \(s.state)" }
+            guard case .recognized = s.state else { return "format ahora pide confirm: \(s.state)" }
+            if !s.autoLog.isEmpty { return "format no debe auto en 10C" }
+            s.confirm()
+            guard case .executed = s.state else { return "confirm debió ejecutar" }
             return nil
         }
         t("fmt-sin-sel \(i)") {
@@ -276,10 +282,14 @@ func runRiskTests() -> (passed: Int, failed: [UXTestFailure], total: Int) {
             let before = s.editor
             s.startListening()
             s.receiveTranscript(["Ponlo en negritas.", "Ponlo en cursivas.", "Subraya la cita."][i % 3])
-            guard case .executed = s.state else { return "format no auto" }
-            // undo revierte formato+texto
+            guard case .recognized = s.state else { return "format pide confirm" }
+            s.confirm()
+            guard case .executed = s.state else { return "format no ejecutó" }
+            // undo revierte formato+texto (también vía confirm en 10C)
             s.startListening(); s.receiveTranscript("Deshaz el cambio.")
-            guard case .executed = s.state else { return "undo no auto" }
+            guard case .recognized = s.state else { return "undo pide confirm" }
+            s.confirm()
+            guard case .executed = s.state else { return "undo no ejecutó" }
             if s.editor.text != before.text || s.editor.appliedFormats != before.appliedFormats {
                 return "format→undo no restauró original"
             }
@@ -288,15 +298,19 @@ func runRiskTests() -> (passed: Int, failed: [UXTestFailure], total: Int) {
         t("rollback-undo-redo \(i)") {
             var s = RiskBasedSession(editor: .default())
             s.editor.title = "Base \(i)"
-            // rename (confirm) → undo (auto) → redo (auto) = roundtrip
+            // rename (confirm) → undo (confirm) → redo (confirm) = roundtrip
             s.startListening(); s.receiveTranscript("Cambia el encabezado a Nuevo \(i).")
             guard case .recognized = s.state else { return "rename debe pedir confirm" }
             s.confirm()
             s.startListening(); s.receiveTranscript("Deshaz el cambio.")
-            guard case .executed = s.state else { return "undo auto" }
+            guard case .recognized = s.state else { return "undo pide confirm" }
+            s.confirm()
+            guard case .executed = s.state else { return "undo no ejecutó" }
             if s.editor.title != "Base \(i)" { return "undo no restauró" }
             s.startListening(); s.receiveTranscript("Rehaz el cambio.")
-            guard case .executed = s.state else { return "redo auto" }
+            guard case .recognized = s.state else { return "redo pide confirm" }
+            s.confirm()
+            guard case .executed = s.state else { return "redo no ejecutó" }
             if s.editor.title != "Nuevo \(i)" { return "redo no reaplicó" }
             return nil
         }
@@ -322,14 +336,19 @@ func runRiskTests() -> (passed: Int, failed: [UXTestFailure], total: Int) {
                       "Vuelve atrás.", "Rehaz el cambio.", "Encuentra IHC.", "Subraya la cita.",
                       "Anula el último cambio.", "Selecciona María José."][i]
             s.receiveTranscript(tr)
-            guard case .executed = s.state else { return "debió auto: \(s.state)" }
-            guard let rec = s.autoLog.last else { return "sin AUTO_EXECUTED" }
-            if rec.transcript != tr { return "record transcript mal" }
-            if rec.risk != riskOf(parseCommand(raw: tr)) { return "record risk mal" }
-            if rec.stateBefore == rec.stateAfter && (tr.contains("Busca") || tr.contains("Marca") || tr.contains("Encuentra") || tr.contains("Selecciona")) {
-                return nil // navegación: before==after esperado
+            let cmd = parseCommand(raw: tr)
+            if policyForCommand(cmd) == .immediate {
+                guard case .executed = s.state else { return "debió auto: \(s.state)" }
+                guard let rec = s.autoLog.last else { return "sin AUTO_EXECUTED" }
+                if rec.transcript != tr { return "record transcript mal" }
+                if rec.risk != riskOf(cmd) { return "record risk mal" }
+                return nil
+            } else {
+                // 10C: reversible/content → recognized, sin auto
+                guard case .recognized = s.state else { return "debió pedir confirm: \(s.state)" }
+                if !s.autoLog.isEmpty { return "auto indebido" }
+                return nil
             }
-            return nil
         }
     }
 

@@ -90,17 +90,29 @@ func fixtureKindFor(expected: String) -> FixtureKind {
 }
 
 func runBalancedLive() async {
+    await runBalancedLive(protoFile: "data/balanced_live_protocol.csv",
+                          outFile: "data/balanced_live_results.csv",
+                          title: "BALANCED LIVE")
+}
+
+func runSafeAutoLive() async {
+    await runBalancedLive(protoFile: "data/safeauto_live_protocol.csv",
+                          outFile: "data/safeauto_live_results.csv",
+                          title: "SAFEAUTO LIVE")
+}
+
+func runBalancedLive(protoFile: String, outFile: String, title: String) async {
     let base = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
-    let protoURL = base.appendingPathComponent("data/balanced_live_protocol.csv")
+    let protoURL = base.appendingPathComponent(protoFile)
     guard FileManager.default.fileExists(atPath: protoURL.path) else {
-        print("balanced-live: falta data/balanced_live_protocol.csv"); return
+        print("\(title): falta \(protoFile)"); return
     }
     guard let text = try? String(contentsOf: protoURL, encoding: .utf8) else { return }
     let locale = Locale(identifier: "es_MX")
     let lmConfig: SFSpeechLanguageModel.Configuration?
     do { lmConfig = try loadCustomLMConfiguration() }
     catch { print("balanced-live: \(error)"); return }
-    let outURL = base.appendingPathComponent("data/balanced_live_results.csv")
+    let outURL = base.appendingPathComponent(outFile)
     if !FileManager.default.fileExists(atPath: outURL.path) {
         try? "paso,grupo,instruccion,expected,fixture,speech_start,speech_end,transcript_final,proposal_shown,decision,action_completed,command,risk,policy,context_valid_before,auto_executed,confirmed,repeated,effect_correct,stt_ms,proposal_generation_ms,decision_ms,execution_ms,total_ms\n".write(to: outURL, atomically: true, encoding: .utf8)
     }
@@ -109,7 +121,7 @@ func runBalancedLive() async {
         return f.string(from: d)
     }
     var idx = 0
-    print("=== BALANCED LIVE (fixture fresco por trial; auto=sin Enter; confirm=Enter; esc; r) ===")
+    print("=== \(title) (fixture fresco por trial; auto=sin Enter; confirm=Enter; esc; r) ===")
     for line in text.components(separatedBy: "\n").dropFirst() {
         if line.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty { continue }
         let p = Runner.splitCSVLine(line)
@@ -198,7 +210,7 @@ func runBalancedLive() async {
             print("balanced-live error: \(error)")
         }
     }
-    print("\nSesión completa. Resultados en data/balanced_live_results.csv")
+    print("\nSesión completa. Resultados en \(outFile)")
 }
 
 func runRiskLive() async {
