@@ -50,6 +50,10 @@ struct Runner {
             print("safeauto-tests: \(p)/\(n)")
             for x in f { print("FAIL \(x.name): \(x.detail)") }
             if f.isEmpty { print("SAFEAUTO-INVARIANTS-OK") }
+        } else if args.contains("real-editor-tests") {
+            await MainActor.run { runRealEditorTestsPrinter() }
+        } else if args.contains("real-editor-live") {
+            await runRealEditorLive()
         } else if args.contains("protocol") {
             printLiveProtocol()
         } else if let i = args.firstIndex(of: "transcribe"), i + 1 < args.count {
