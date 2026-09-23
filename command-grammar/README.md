@@ -299,3 +299,23 @@ Live (`data/risk_live_protocol.csv`: 10 nav + 10 rev + 10 content + 5 ext +
 5 error; `risk_live_results.csv` con command/risk/policy y 5 tiempos):
 PENDIENTE humano. Criterios: wrong-auto 0, inválidos 0, éxito ≥98%,
 fricción < 2422 ms med / 1.41 conf/efecto. DETENIDO sin editor real.
+
+## Fase Risk-Based LIVE (2026-09-23, 40/40 voz humana)
+
+`data/risk_live_results.csv`: 9 auto (8 nav + 1 undo) + 7 confirmed (2 content
++ 5 external) = 16 efectos, todos correctos; 0 incorrectos, 0 wrong-auto.
+No-op absorbidos 8 (6 invalid + 2 unknown; confirm ofrecido en inválidos: 0).
+Repeats 16/40=40% (inflado por inválidos de sesión, ver abajo), cancels 0.
+STT med 229 (idéntico Fase 9). Auto med 247 ms (≈STT+ejecución, hipótesis
+confirmada intra-brazo) vs confirm med 2140. Total med 1630 (Fase 9: 2422,
+−33%), p95 8429. Conf/effect 15/16=0.94 (Fase 9: 1.41). Requieren confirm
+7/16=43.75% (Fase 9: 100%).
+
+Caveat de sesión: editor persistente + selectAll único → selects nav fallaron
+(args ausentes) y pilas vacías → 24/40 no-reconocidos válidamente bloqueados
+(validator correcto, pero brazos reversible/content con pocas muestras
+válidas: 1 auto reversible, 2 content). R39 (análogo V173) bloqueado por
+validator sin llegar a confirm. Comparación de fricción válida sobre todo en
+nav; para reversible/content hace falta live con contexto generoso por paso.
+Criterios: wrong-auto 0 ✓, inválidos 0 ✓, éxito 16/16 ✓. Siguiente: ese live
+de contexto-generoso, luego Fase 11 (editor real).
