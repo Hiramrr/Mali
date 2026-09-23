@@ -1,0 +1,797 @@
+id,text,expected
+C0,Borra esta parte.,DELETE_SELECTION
+C1,Elimina esta parte.,DELETE_SELECTION
+C2,Quita esta parte.,DELETE_SELECTION
+C3,Borra esta oración.,DELETE_SELECTION
+C4,Elimina esta oración.,DELETE_SELECTION
+C5,Quita esta oración.,DELETE_SELECTION
+C6,Suprime lo seleccionado.,DELETE_SELECTION
+C7,Descarta lo seleccionado.,DELETE_SELECTION
+C8,Tacha lo seleccionado.,DELETE_SELECTION
+C9,Suprime esa sección.,DELETE_SELECTION
+C10,Descarta esa sección.,DELETE_SELECTION
+C11,Tacha esa sección.,DELETE_SELECTION
+C12,Retira la cita.,DELETE_SELECTION
+C13,Tacha el duplicado.,DELETE_SELECTION
+C14,Corta el epígrafe.,DELETE_SELECTION
+C15,Haz que esto desaparezca.,DELETE_SELECTION
+C16,Desaparece este bloque.,DELETE_SELECTION
+C17,Fúmate esta línea.,DELETE_SELECTION
+C18,Bórralo.,DELETE_SELECTION
+C19,Borralo.,DELETE_SELECTION
+C20,Elimínalo.,DELETE_SELECTION
+C21,Quítalo.,DELETE_SELECTION
+C22,Táchalo.,DELETE_SELECTION
+C23,Córtalo.,DELETE_SELECTION
+C24,Exporta la tesis.,EXPORT_DOCUMENT
+C25,Exporta el manual.,EXPORT_DOCUMENT
+C26,Exporta el folleto.,EXPORT_DOCUMENT
+C27,Exporta el informe final.,EXPORT_DOCUMENT
+C28,Saca el acta en pdf.,EXPORT_DOCUMENT
+C29,Baja el txt plano.,EXPORT_DOCUMENT
+C30,Subraya esto.,FORMAT_SELECTION
+C31,Subraya esta parte.,FORMAT_SELECTION
+C32,Quita las negritas.,FORMAT_SELECTION
+C33,Pon el título en mayúsculas.,FORMAT_SELECTION
+C34,Convierte esto en una lista.,FORMAT_SELECTION
+C35,Centra el encabezado.,FORMAT_SELECTION
+C36,Detecta dobles espacios.,FIND_TEXT
+C37,Caza erratas.,FIND_TEXT
+C38,Rastrea el término accesibilidad cognitiva.,FIND_TEXT
+C39,Ubica comillas simples.,FIND_TEXT
+C40,Halla Diseño con mayúscula.,FIND_TEXT
+C41,Encuentra el guion largo.,FIND_TEXT
+C42,Rastrea el 10%.,FIND_TEXT
+C43,Detecta el guion.,FIND_TEXT
+C44,Caza la errata.,FIND_TEXT
+C45,Persigue el error.,FIND_TEXT
+C46,Anota al margen y guarda.,MULTI_ACTION
+C47,Glosa y subraya la fecha.,MULTI_ACTION
+C48,"Firma, sella y archiva.",MULTI_ACTION
+C49,Digitaliza y escanea a color.,MULTI_ACTION
+C50,"Engrapa, perfora y archiva.",MULTI_ACTION
+C51,"Recorta, dobla y ensobra.",MULTI_ACTION
+C52,Selecciona todo y cópialo.,MULTI_ACTION
+C53,Encuentra el error y bórralo.,MULTI_ACTION
+C54,Cambia el título y avisa al equipo.,MULTI_ACTION
+C55,Pon negritas y subraya el total.,MULTI_ACTION
+C56,Hazlo corto y tradúcelo.,MULTI_ACTION
+C57,Resume y envía la minuta.,MULTI_ACTION
+C58,Déjame pensarlo.,NO_ACTION
+C59,No estoy seguro.,NO_ACTION
+C60,Hmm.,NO_ACTION
+C61,Espera un momento.,NO_ACTION
+C62,Bueno.,NO_ACTION
+C63,Tal vez.,NO_ACTION
+C64,Huele a éxito.,NO_ACTION
+C65,Tiene potencial.,NO_ACTION
+C66,Le falta sazón.,NO_ACTION
+C67,Ya madurará.,NO_ACTION
+C68,Dale tiempo.,NO_ACTION
+C69,Sin prisa.,NO_ACTION
+C70,Borrar información accidentalmente afecta la experiencia.,NO_ACTION
+C71,Guardar documentos automáticamente reduce pérdidas.,NO_ACTION
+C72,"La frase ""guarda el documento"" es un ejemplo.",NO_ACTION
+C73,Deshacer una acción debería ser sencillo.,NO_ACTION
+C74,Imprimir documentos consume papel.,NO_ACTION
+C75,El editor cambia el título desde la barra.,NO_ACTION
+C76,Renombrar calles confunde.,NO_ACTION
+C77,Duplicar recetas une.,NO_ACTION
+C78,Traducir poesía pierde rimas.,NO_ACTION
+C79,Contar ovejas no duerme.,NO_ACTION
+C80,Ordenar cajones relaja.,NO_ACTION
+C81,Insertar pausas mejora discursos.,NO_ACTION
+C82,Cruza por el puente.,NO_ACTION
+C83,Toma el camión.,NO_ACTION
+C84,No llegues tarde.,NO_ACTION
+C85,No olvides las llaves.,NO_ACTION
+C86,No tires la toalla.,NO_ACTION
+C87,No pierdas la calma.,NO_ACTION
+C88,No te rindas.,NO_ACTION
+C89,Cuida a tu hermanito.,NO_ACTION
+C90,Alimenta al gato.,NO_ACTION
+C91,Pasea al perro.,NO_ACTION
+C92,Limpia la pecera.,NO_ACTION
+C93,Recoge las hojas.,NO_ACTION
+C94,Guarda la bicicleta.,NO_ACTION
+C95,Tiende la ropa.,NO_ACTION
+C96,Dobla las sábanas.,NO_ACTION
+C97,Lava el baño.,NO_ACTION
+C98,Enciende el boiler.,NO_ACTION
+C99,Paga la luz.,NO_ACTION
+C100,Deposita la renta.,NO_ACTION
+C101,Ahorra cada mes.,NO_ACTION
+C102,Come verduras.,NO_ACTION
+C103,Toma agua.,NO_ACTION
+C104,Duerme temprano.,NO_ACTION
+C105,Pela las papas.,NO_ACTION
+C106,Como la vez pasada.,REDO
+C107,Tal como estaba planeado.,REDO
+C108,Según lo acordado.,REDO
+C109,Como habíamos dicho.,REDO
+C110,Tal cual lo dejaste.,REDO
+C111,Mismo cambio otra vez.,REDO
+C112,Dale.,REDO
+C113,Sigue.,REDO
+C114,Otra.,REDO
+C115,Re.,REDO
+C116,Va de nuevo.,REDO
+C117,Rehaz.,REDO
+C118,Titula esto como Evaluación.,RENAME_TITLE
+C119,Actualiza el título a Evaluación.,RENAME_TITLE
+C120,Cambia el título a Resumen.,RENAME_TITLE
+C121,Pon como título Resumen.,RENAME_TITLE
+C122,Titula esto como Resumen.,RENAME_TITLE
+C123,Actualiza el título a Resumen.,RENAME_TITLE
+C124,Titula esto como Marco teórico.,RENAME_TITLE
+C125,Actualiza el título a Marco teórico.,RENAME_TITLE
+C126,Cambia el título a Trabajo futuro.,RENAME_TITLE
+C127,Pon como título Trabajo futuro.,RENAME_TITLE
+C128,Titula esto como Trabajo futuro.,RENAME_TITLE
+C129,Actualiza el título a Trabajo futuro.,RENAME_TITLE
+C130,Cámbiale el título a Metodología.,RENAME_TITLE
+C131,Ponle de título Metodología.,RENAME_TITLE
+C132,El nuevo título será Metodología.,RENAME_TITLE
+C133,Quiero que cambies el título a Metodología.,RENAME_TITLE
+C134,Cámbiale el título a Resultados.,RENAME_TITLE
+C135,Ponle de título Resultados.,RENAME_TITLE
+C136,El nuevo título será Propuesta.,RENAME_TITLE
+C137,Quiero que cambies el título a Propuesta.,RENAME_TITLE
+C138,Cámbiale el título a Hallazgos.,RENAME_TITLE
+C139,Ponle de título Hallazgos.,RENAME_TITLE
+C140,El nuevo título será Hallazgos.,RENAME_TITLE
+C141,Quiero que cambies el título a Hallazgos.,RENAME_TITLE
+C142,Bautiza el archivo como Entrega.,RENAME_TITLE
+C143,Nombra la versión final.,RENAME_TITLE
+C144,Actualiza la carátula.,RENAME_TITLE
+C145,El rótulo será Acta.,RENAME_TITLE
+C146,Titula la minuta.,RENAME_TITLE
+C147,Cambia el encabezado principal.,RENAME_TITLE
+C148,Cambia error por errata.,REPLACE_SELECTION
+C149,Sustituye error por errata.,REPLACE_SELECTION
+C150,Reemplaza error por errata.,REPLACE_SELECTION
+C151,Donde dice error pon errata.,REPLACE_SELECTION
+C152,Cambia problema por dificultad.,REPLACE_SELECTION
+C153,Sustituye problema por dificultad.,REPLACE_SELECTION
+C154,Reemplaza problema por dificultad.,REPLACE_SELECTION
+C155,Donde dice problema pon dificultad.,REPLACE_SELECTION
+C156,Cambia uso por utilización.,REPLACE_SELECTION
+C157,Sustituye uso por utilización.,REPLACE_SELECTION
+C158,Reemplaza uso por utilización.,REPLACE_SELECTION
+C159,Donde dice uso pon utilización.,REPLACE_SELECTION
+C160,Reemplaza nota por aclaración.,REPLACE_SELECTION
+C161,Donde dice nota pon aclaración.,REPLACE_SELECTION
+C162,Cambia resumen por síntesis.,REPLACE_SELECTION
+C163,Sustituye resumen por síntesis.,REPLACE_SELECTION
+C164,Reemplaza resumen por síntesis.,REPLACE_SELECTION
+C165,Donde dice resumen pon síntesis.,REPLACE_SELECTION
+C166,Reescribe esto con tono formal.,REWRITE_SELECTION
+C167,Dale otra redacción a esta parte.,REWRITE_SELECTION
+C168,Mejora la redacción.,REWRITE_SELECTION
+C169,Suaviza el tono.,REWRITE_SELECTION
+C170,Endurece la conclusión.,REWRITE_SELECTION
+C171,Acorta este párrafo.,REWRITE_SELECTION
+C172,Selecciona el segundo párrafo.,SELECT_TEXT
+C173,Marca el segundo párrafo.,SELECT_TEXT
+C174,Elige el segundo párrafo.,SELECT_TEXT
+C175,Selecciona la última sección.,SELECT_TEXT
+C176,Marca la última sección.,SELECT_TEXT
+C177,Elige la última sección.,SELECT_TEXT
+C178,Selecciona el primer capítulo.,SELECT_TEXT
+C179,Marca el primer capítulo.,SELECT_TEXT
+C180,Elige el primer capítulo.,SELECT_TEXT
+C181,Selecciona toda la página.,SELECT_TEXT
+C182,Marca toda la página.,SELECT_TEXT
+C183,Elige toda la página.,SELECT_TEXT
+C184,Marca la palabra metodología.,SELECT_TEXT
+C185,Selecciona accesibilidad aquí.,SELECT_TEXT
+C186,Marca este título para buscarlo.,SELECT_TEXT
+C187,Elige el término y encuéntralo.,SELECT_TEXT
+C188,Selecciona la cita para revisarla.,SELECT_TEXT
+C189,Marca la fecha y localízala.,SELECT_TEXT
+C190,Guárdalo.,SAVE_DOCUMENT
+C191,Guardalo.,SAVE_DOCUMENT
+C192,Archívalo.,SAVE_DOCUMENT
+C193,Respáldalo.,SAVE_DOCUMENT
+C194,Fíjalo.,SAVE_DOCUMENT
+C195,Guarda.,SAVE_DOCUMENT
+C196,Anula lo que hiciste.,UNDO
+C197,Regresa al estado anterior.,UNDO
+C198,Échalo para atrás.,UNDO
+C199,Vuelve atrás.,UNDO
+C200,Deshaz lo último.,UNDO
+C201,Anula la modificación.,UNDO
+C202,Olvida lo que acabo de hacer.,UNDO
+C203,Como si no hubiera pasado.,UNDO
+C204,Déjalo como estaba antes.,UNDO
+C205,Restaura lo anterior.,UNDO
+C206,Vuelve al punto previo.,UNDO
+C207,Deshaz esta mañana.,UNDO
+C208,Retira lo puesto.,UNDO
+C209,Saca lo agregado.,UNDO
+C210,Convoca a junta.,UNSUPPORTED
+C211,Cita a las partes.,UNSUPPORTED
+C212,Programa el envío.,UNSUPPORTED
+C213,Recuérdame mañana.,UNSUPPORTED
+C214,Avisa con tiempo.,UNSUPPORTED
+C215,Coordina horarios.,UNSUPPORTED
+C216,Reserva la sala.,UNSUPPORTED
+C217,Aparta fecha.,UNSUPPORTED
+C218,Calendariza la revisión.,UNSUPPORTED
+C219,Reagenda lo de hoy.,UNSUPPORTED
+C220,Pospón la audiencia.,UNSUPPORTED
+C221,Anticipa el taller.,UNSUPPORTED
+C222,Organiza el evento.,UNSUPPORTED
+C223,Planea la semana.,UNSUPPORTED
+C224,Codifica el mensaje.,UNSUPPORTED
+C225,Cifra la carpeta.,UNSUPPORTED
+C226,Ponle candado digital.,UNSUPPORTED
+C227,Asegura con contraseña.,UNSUPPORTED
+C228,Cifra de extremo a extremo.,UNSUPPORTED
+C229,Encripta la copia.,UNSUPPORTED
+C230,Zipéalo.,UNSUPPORTED
+C231,Comprímelo ya.,UNSUPPORTED
+C232,Achica el pdf.,UNSUPPORTED
+C233,Comprime el anexo.,UNSUPPORTED
+C234,Empaca los archivos.,UNSUPPORTED
+C235,Comprime la tesis.,UNSUPPORTED
+C236,Comparte pantalla.,UNSUPPORTED
+C237,Graba la reunión.,UNSUPPORTED
+C238,Toma captura.,UNSUPPORTED
+C239,Dicta el siguiente párrafo.,UNSUPPORTED
+C240,Lee este mensaje.,UNSUPPORTED
+C241,Llama a soporte.,UNSUPPORTED
+C242,Activa el wifi.,UNSUPPORTED
+C243,Apaga el bluetooth.,UNSUPPORTED
+C244,Carga la batería.,UNSUPPORTED
+C245,Actualiza el sistema.,UNSUPPORTED
+C246,Sincroniza el reloj.,UNSUPPORTED
+C247,Cambia el fondo.,UNSUPPORTED
+C248,Saca el contrato en pdf ya.,EXPORT_DOCUMENT
+C249,Saca el vale en pdf ya.,EXPORT_DOCUMENT
+C250,Rinde el vale final.,EXPORT_DOCUMENT
+C251,"Certifica, sella y archiva.",MULTI_ACTION
+C252,"Certifica, sella y archiva por favor.",MULTI_ACTION
+C253,"Turna, sella y guarda.",MULTI_ACTION
+C254,"Turna, sella y guarda por favor.",MULTI_ACTION
+C255,La rosca partió plaza.,NO_ACTION
+C256,"Mira, la rosca partió plaza.",NO_ACTION
+C257,La verbena sigue hasta tarde.,NO_ACTION
+C258,"Mira, la verbena sigue hasta tarde.",NO_ACTION
+C259,La kermés juntó fondos.,NO_ACTION
+C260,"Mira, la kermés juntó fondos.",NO_ACTION
+C261,La charreada puntúa suertes.,NO_ACTION
+C262,"Mira, la charreada puntúa suertes.",NO_ACTION
+C263,La escaramuza galopa.,NO_ACTION
+C264,"Mira, la escaramuza galopa.",NO_ACTION
+C265,La banda retumba lejos.,NO_ACTION
+C266,"Mira, la banda retumba lejos.",NO_ACTION
+C267,La cumbia mueve caderas.,NO_ACTION
+C268,"Mira, la cumbia mueve caderas.",NO_ACTION
+C269,La salsa calienta pistas.,NO_ACTION
+C270,"Mira, la salsa calienta pistas.",NO_ACTION
+C271,La guaracha alegra barrios.,NO_ACTION
+C272,"Mira, la guaracha alegra barrios.",NO_ACTION
+C273,La chilena prende fandangos.,NO_ACTION
+C274,"Mira, la chilena prende fandangos.",NO_ACTION
+C275,Pon tanto donde dice ejemplar.,REPLACE_SELECTION
+C276,Troca ejemplar por tanto ya.,REPLACE_SELECTION
+C277,Pon legajo donde dice fajo.,REPLACE_SELECTION
+C278,Troca fajo por legajo ya.,REPLACE_SELECTION
+C279,Pon firma donde dice rúbrica.,REPLACE_SELECTION
+C280,Troca rúbrica por firma ya.,REPLACE_SELECTION
+C281,Pon sello donde dice timbre.,REPLACE_SELECTION
+C282,Troca timbre por sello ya.,REPLACE_SELECTION
+C283,Déjalo menos enredado aún.,REWRITE_SELECTION
+C284,Ponlo menos enredado aún.,REWRITE_SELECTION
+C285,Déjalo más simple aún.,REWRITE_SELECTION
+C286,Ponlo más simple aún.,REWRITE_SELECTION
+C287,Guarda el pagaré en orden.,SAVE_DOCUMENT
+C288,Archiva el pagaré ya.,SAVE_DOCUMENT
+C289,Limpia el granero.,UNSUPPORTED
+C290,Limpia el granero por favor.,UNSUPPORTED
+C291,Marca las reses.,UNSUPPORTED
+C292,Marca las reses por favor.,UNSUPPORTED
+C293,Ordeña temprano.,UNSUPPORTED
+C294,Ordeña temprano por favor.,UNSUPPORTED
+C295,Planta el árbol.,UNSUPPORTED
+C296,Planta el árbol por favor.,UNSUPPORTED
+C297,Repara la cerca.,UNSUPPORTED
+C298,Repara la cerca por favor.,UNSUPPORTED
+C299,Sopla las brasas.,UNSUPPORTED
+C300,Sopla las brasas por favor.,UNSUPPORTED
+C301,Pegar cierres.,UNSUPPORTED
+C302,Pegar cierres ya.,UNSUPPORTED
+C303,Probar el vestido.,UNSUPPORTED
+C304,Probar el vestido ya.,UNSUPPORTED
+C305,Quitar pelusa.,UNSUPPORTED
+C306,Quitar pelusa ya.,UNSUPPORTED
+C307,Tejer bufandas.,UNSUPPORTED
+C308,Tejer bufandas ya.,UNSUPPORTED
+C309,Borra el acuse del tanto.,DELETE_SELECTION
+C310,Quita el acuse ya.,DELETE_SELECTION
+C311,Elimina el acuse.,DELETE_SELECTION
+C312,Borra el comprobante del tanto.,DELETE_SELECTION
+C313,Quita el comprobante ya.,DELETE_SELECTION
+C314,Elimina el comprobante.,DELETE_SELECTION
+C315,Borra el membrete del tanto.,DELETE_SELECTION
+C316,Quita el membrete ya.,DELETE_SELECTION
+C317,Elimina el membrete.,DELETE_SELECTION
+C318,Borra el recibo del tanto.,DELETE_SELECTION
+C319,Quita el recibo ya.,DELETE_SELECTION
+C320,Elimina el recibo.,DELETE_SELECTION
+C321,Borra la rúbrica del tanto.,DELETE_SELECTION
+C322,Quita la rúbrica ya.,DELETE_SELECTION
+C323,Elimina la rúbrica.,DELETE_SELECTION
+C324,Emite el apéndice en pdf.,EXPORT_DOCUMENT
+C325,Produce el apéndice final.,EXPORT_DOCUMENT
+C326,Emite la factura en pdf.,EXPORT_DOCUMENT
+C327,Produce la factura final.,EXPORT_DOCUMENT
+C328,Emite el pagaré en pdf.,EXPORT_DOCUMENT
+C329,Produce el pagaré final.,EXPORT_DOCUMENT
+C330,Emite el recibo en pdf.,EXPORT_DOCUMENT
+C331,Produce el recibo final.,EXPORT_DOCUMENT
+C332,Marca el recibo en negritas.,FORMAT_SELECTION
+C333,Subraya el recibo.,FORMAT_SELECTION
+C334,Halla la firma ya.,FIND_TEXT
+C335,Halla el membrete ya.,FIND_TEXT
+C336,Ubica el membrete.,FIND_TEXT
+C337,"Anota, sella y turna.",MULTI_ACTION
+C338,"Anota, sella y turna ahora.",MULTI_ACTION
+C339,"Formatea, folía y archiva.",MULTI_ACTION
+C340,"Formatea, folía y archiva ahora.",MULTI_ACTION
+C341,"Justifica, rubrica y envía.",MULTI_ACTION
+C342,"Justifica, rubrica y envía ahora.",MULTI_ACTION
+C343,"Turna, rubrica y archiva.",MULTI_ACTION
+C344,"Turna, rubrica y archiva ahora.",MULTI_ACTION
+C345,Exhibe el apéndice.,OPEN_DOCUMENT
+C346,Presenta el apéndice.,OPEN_DOCUMENT
+C347,Exhibe el contrato.,OPEN_DOCUMENT
+C348,Presenta el contrato.,OPEN_DOCUMENT
+C349,Exhibe el pagaré.,OPEN_DOCUMENT
+C350,Presenta el pagaré.,OPEN_DOCUMENT
+C351,Rehaz el acuse puesto.,REDO
+C352,Repite el acuse ya.,REDO
+C353,Rehaz el comprobante puesto.,REDO
+C354,Repite el comprobante ya.,REDO
+C355,Rehaz el sello puesto.,REDO
+C356,Repite el sello ya.,REDO
+C357,Cambia vale por recibo.,REPLACE_SELECTION
+C358,Sustituye vale por recibo.,REPLACE_SELECTION
+C359,Ponlo más audaz.,REWRITE_SELECTION
+C360,Hazlo más audaz.,REWRITE_SELECTION
+C361,Déjalo más audaz.,REWRITE_SELECTION
+C362,Ponlo más cálido.,REWRITE_SELECTION
+C363,Hazlo más cálido.,REWRITE_SELECTION
+C364,Ponlo más ejecutivo.,REWRITE_SELECTION
+C365,Hazlo más ejecutivo.,REWRITE_SELECTION
+C366,Déjalo más ejecutivo.,REWRITE_SELECTION
+C367,Ponlo más sobrio.,REWRITE_SELECTION
+C368,Hazlo más sobrio.,REWRITE_SELECTION
+C369,Elige el folio ya.,SELECT_TEXT
+C370,Marca el folio.,SELECT_TEXT
+C371,Elige el membrete ya.,SELECT_TEXT
+C372,Marca el membrete.,SELECT_TEXT
+C373,Deposita la minuta.,SAVE_DOCUMENT
+C374,Custodia la minuta.,SAVE_DOCUMENT
+C375,Deshaz la firma puesto.,UNDO
+C376,Anula la firma ya.,UNDO
+C377,Deshaz el folio puesto.,UNDO
+C378,Anula el folio ya.,UNDO
+C379,Aspira interiores.,UNSUPPORTED
+C380,Aspira interiores por favor.,UNSUPPORTED
+C381,Lava el garaje.,UNSUPPORTED
+C382,Lava el garaje por favor.,UNSUPPORTED
+C383,Lava el motor.,UNSUPPORTED
+C384,Lava el motor por favor.,UNSUPPORTED
+C385,Pasa corriente.,UNSUPPORTED
+C386,Pasa corriente por favor.,UNSUPPORTED
+C387,Pinta el portón.,UNSUPPORTED
+C388,Pinta el portón por favor.,UNSUPPORTED
+C389,Revisa frenos.,UNSUPPORTED
+C390,Revisa frenos por favor.,UNSUPPORTED
+C391,Revisa suspensión.,UNSUPPORTED
+C392,Revisa suspensión por favor.,UNSUPPORTED
+C393,Deja reposar.,UNSUPPORTED
+C394,Deja reposar ya.,UNSUPPORTED
+C395,Enfría el flan.,UNSUPPORTED
+C396,Enfría el flan ya.,UNSUPPORTED
+C397,Licua el mango.,UNSUPPORTED
+C398,Licua el mango ya.,UNSUPPORTED
+C399,Borra la frase completo.,DELETE_SELECTION
+C400,Elimina la frase ya.,DELETE_SELECTION
+C401,Quita la frase por favor.,DELETE_SELECTION
+C402,Deshazte de la frase.,DELETE_SELECTION
+C403,Suprime la frase ahora.,DELETE_SELECTION
+C404,Exporta el acta en pdf.,EXPORT_DOCUMENT
+C405,Saca el acta en texto.,EXPORT_DOCUMENT
+C406,Genera el acta en Word.,EXPORT_DOCUMENT
+C407,Rinde el acta final.,EXPORT_DOCUMENT
+C408,Exporta el informe en pdf.,EXPORT_DOCUMENT
+C409,Saca el informe en texto.,EXPORT_DOCUMENT
+C410,Genera el informe en Word.,EXPORT_DOCUMENT
+C411,Rinde el informe final.,EXPORT_DOCUMENT
+C412,Exporta el padrón en pdf.,EXPORT_DOCUMENT
+C413,Saca el padrón en texto.,EXPORT_DOCUMENT
+C414,Genera el padrón en Word.,EXPORT_DOCUMENT
+C415,Rinde el padrón final.,EXPORT_DOCUMENT
+C416,Marca el nombre en negritas.,FORMAT_SELECTION
+C417,Pon el nombre en cursivas.,FORMAT_SELECTION
+C418,Subraya el nombre.,FORMAT_SELECTION
+C419,Destaca el nombre con formato.,FORMAT_SELECTION
+C420,Marca el subtítulo en negritas.,FORMAT_SELECTION
+C421,Pon el subtítulo en cursivas.,FORMAT_SELECTION
+C422,Subraya el subtítulo.,FORMAT_SELECTION
+C423,Destaca el subtítulo con formato.,FORMAT_SELECTION
+C424,Busca el nombre exacto.,FIND_TEXT
+C425,Encuentra el nombre ya.,FIND_TEXT
+C426,Localiza el nombre ahora.,FIND_TEXT
+C427,Halla el nombre rápido.,FIND_TEXT
+C428,Deshaz y guarda.,MULTI_ACTION
+C429,Deshaz y guarda ahora.,MULTI_ACTION
+C430,Recorta y pega.,MULTI_ACTION
+C431,Recorta y pega ahora.,MULTI_ACTION
+C432,Selecciona y subraya.,MULTI_ACTION
+C433,Selecciona y subraya ahora.,MULTI_ACTION
+C434,Abre el informe 2023.,OPEN_DOCUMENT
+C435,Recupera el informe 2023.,OPEN_DOCUMENT
+C436,Carga el informe 2023 ahora.,OPEN_DOCUMENT
+C437,Desarchiva el informe 2023.,OPEN_DOCUMENT
+C438,Abre el padrón.,OPEN_DOCUMENT
+C439,Recupera el padrón.,OPEN_DOCUMENT
+C440,Carga el padrón ahora.,OPEN_DOCUMENT
+C441,Desarchiva el padrón.,OPEN_DOCUMENT
+C442,Rehaz lo cancelado.,REDO
+C443,Restaura lo cancelado.,REDO
+C444,Repite lo cancelado.,REDO
+C445,El título será Epílogo.,RENAME_TITLE
+C446,Pon de nombre Epílogo.,RENAME_TITLE
+C447,Llama a esto Epílogo.,RENAME_TITLE
+C448,Denomina el archivo Epílogo.,RENAME_TITLE
+C449,Intitula como Epílogo.,RENAME_TITLE
+C450,Encabeza con Epílogo.,RENAME_TITLE
+C451,El título será Hallazgos.,RENAME_TITLE
+C452,Pon de nombre Hallazgos.,RENAME_TITLE
+C453,Llama a esto Hallazgos.,RENAME_TITLE
+C454,Denomina el archivo Hallazgos.,RENAME_TITLE
+C455,Intitula como Hallazgos.,RENAME_TITLE
+C456,Encabeza con Hallazgos.,RENAME_TITLE
+C457,El título será Propuesta.,RENAME_TITLE
+C458,Pon de nombre Propuesta.,RENAME_TITLE
+C459,Llama a esto Propuesta.,RENAME_TITLE
+C460,Denomina el archivo Propuesta.,RENAME_TITLE
+C461,Intitula como Propuesta.,RENAME_TITLE
+C462,Encabeza con Propuesta.,RENAME_TITLE
+C463,Cambia monto por cantidad.,REPLACE_SELECTION
+C464,Pon cantidad en vez de monto.,REPLACE_SELECTION
+C465,Sustituye monto con cantidad.,REPLACE_SELECTION
+C466,Troca monto a cantidad.,REPLACE_SELECTION
+C467,Déjalo más cálido.,REWRITE_SELECTION
+C468,Vuelve esto más cálido.,REWRITE_SELECTION
+C469,Transfórmalo a más cálido.,REWRITE_SELECTION
+C470,Adáptalo a más cálido.,REWRITE_SELECTION
+C471,Déjalo más sobrio.,REWRITE_SELECTION
+C472,Vuelve esto más sobrio.,REWRITE_SELECTION
+C473,Transfórmalo a más sobrio.,REWRITE_SELECTION
+C474,Adáptalo a más sobrio.,REWRITE_SELECTION
+C475,Déjalo más vivo.,REWRITE_SELECTION
+C476,Vuelve esto más vivo.,REWRITE_SELECTION
+C477,Transfórmalo a más vivo.,REWRITE_SELECTION
+C478,Adáptalo a más vivo.,REWRITE_SELECTION
+C479,Selecciona el anexo completo.,SELECT_TEXT
+C480,Marca el anexo entero.,SELECT_TEXT
+C481,Toma el anexo todo.,SELECT_TEXT
+C482,Aísla el anexo.,SELECT_TEXT
+C483,Selecciona la rúbrica completo.,SELECT_TEXT
+C484,Marca la rúbrica entero.,SELECT_TEXT
+C485,Toma la rúbrica todo.,SELECT_TEXT
+C486,Aísla la rúbrica.,SELECT_TEXT
+C487,Guarda la minuta ya.,SAVE_DOCUMENT
+C488,Archiva la minuta por favor.,SAVE_DOCUMENT
+C489,Consigna la minuta ahora.,SAVE_DOCUMENT
+C490,Registra la minuta.,SAVE_DOCUMENT
+C491,Guarda el oficio ya.,SAVE_DOCUMENT
+C492,Archiva el oficio por favor.,SAVE_DOCUMENT
+C493,Consigna el oficio ahora.,SAVE_DOCUMENT
+C494,Registra el oficio.,SAVE_DOCUMENT
+C495,Deshaz el cambio bueno.,UNDO
+C496,Anula el cambio bueno.,UNDO
+C497,Revierte el cambio bueno.,UNDO
+C498,Cancela el cambio bueno.,UNDO
+C499,Agenda dentista.,UNSUPPORTED
+C500,"Agenda dentista, por favor.",UNSUPPORTED
+C501,Barre el patio.,UNSUPPORTED
+C502,"Barre el patio, por favor.",UNSUPPORTED
+C503,Ordena cena.,UNSUPPORTED
+C504,"Ordena cena, por favor.",UNSUPPORTED
+C505,Plancha camisas.,UNSUPPORTED
+C506,"Plancha camisas, por favor.",UNSUPPORTED
+C507,Riega el jardín.,UNSUPPORTED
+C508,"Riega el jardín, por favor.",UNSUPPORTED
+C509,Riega plantas.,UNSUPPORTED
+C510,"Riega plantas, por favor.",UNSUPPORTED
+C511,Borra el otrosí ya.,DELETE_SELECTION
+C512,Quita el otrosí ahora.,DELETE_SELECTION
+C513,Elimina el otrosí por favor.,DELETE_SELECTION
+C514,Tacha el otrosí.,DELETE_SELECTION
+C515,Saca el altri en pdf.,EXPORT_DOCUMENT
+C516,Rinde el altri en texto.,EXPORT_DOCUMENT
+C517,Genera el altri en Word.,EXPORT_DOCUMENT
+C518,Saca la foja en pdf.,EXPORT_DOCUMENT
+C519,Rinde la foja en texto.,EXPORT_DOCUMENT
+C520,Genera la foja en Word.,EXPORT_DOCUMENT
+C521,Saca la minuta en pdf.,EXPORT_DOCUMENT
+C522,Rinde la minuta en texto.,EXPORT_DOCUMENT
+C523,Resalta el legajo en negritas.,FORMAT_SELECTION
+C524,Pon el legajo en cursiva.,FORMAT_SELECTION
+C525,Subraya el legajo ya.,FORMAT_SELECTION
+C526,Resalta la rúbrica en negritas.,FORMAT_SELECTION
+C527,Pon la rúbrica en cursiva.,FORMAT_SELECTION
+C528,Subraya la rúbrica ya.,FORMAT_SELECTION
+C529,Resalta el sello en negritas.,FORMAT_SELECTION
+C530,Pon el sello en cursiva.,FORMAT_SELECTION
+C531,Subraya el sello ya.,FORMAT_SELECTION
+C532,Halla la firma.,FIND_TEXT
+C533,Ubica la firma.,FIND_TEXT
+C534,Encuentra la firma ya.,FIND_TEXT
+C535,Halla el otrosí.,FIND_TEXT
+C536,Ubica el otrosí.,FIND_TEXT
+C537,Encuentra el otrosí ya.,FIND_TEXT
+C538,"Abre, revisa y firma.",MULTI_ACTION
+C539,"Abre, revisa y firma por favor.",MULTI_ACTION
+C540,"Centra, justifica y exporta.",MULTI_ACTION
+C541,"Centra, justifica y exporta por favor.",MULTI_ACTION
+C542,"Encuentra, reemplaza y guarda.",MULTI_ACTION
+C543,"Encuentra, reemplaza y guarda por favor.",MULTI_ACTION
+C544,"Formatea, guarda y comparte.",MULTI_ACTION
+C545,"Formatea, guarda y comparte por favor.",MULTI_ACTION
+C546,"Lee, corrige y guarda.",MULTI_ACTION
+C547,"Lee, corrige y guarda por favor.",MULTI_ACTION
+C548,"Resume, titula y envía.",MULTI_ACTION
+C549,"Resume, titula y envía por favor.",MULTI_ACTION
+C550,"Titula, guarda y exporta.",MULTI_ACTION
+C551,"Titula, guarda y exporta por favor.",MULTI_ACTION
+C552,Hace un calorón.,NO_ACTION
+C553,"Oye, hace un calorón.",NO_ACTION
+C554,Recupera el boletín.,OPEN_DOCUMENT
+C555,Desarchiva el boletín.,OPEN_DOCUMENT
+C556,Abre el boletín ya.,OPEN_DOCUMENT
+C557,Recupera la foja.,OPEN_DOCUMENT
+C558,Desarchiva la foja.,OPEN_DOCUMENT
+C559,Abre la foja ya.,OPEN_DOCUMENT
+C560,Rehaz lo centrado.,REDO
+C561,Repite lo centrado.,REDO
+C562,Restaura lo centrado.,REDO
+C563,Ponle Acta de nombre.,RENAME_TITLE
+C564,Titúlalo Acta.,RENAME_TITLE
+C565,Denomínalo Acta.,RENAME_TITLE
+C566,Rotúlalo como Acta.,RENAME_TITLE
+C567,Ponle Circular de nombre.,RENAME_TITLE
+C568,Titúlalo Circular.,RENAME_TITLE
+C569,Denomínalo Circular.,RENAME_TITLE
+C570,Rotúlalo como Circular.,RENAME_TITLE
+C571,Ponle Foja de nombre.,RENAME_TITLE
+C572,Titúlalo Foja.,RENAME_TITLE
+C573,Denomínalo Foja.,RENAME_TITLE
+C574,Rotúlalo como Foja.,RENAME_TITLE
+C575,Ponle Minuta de nombre.,RENAME_TITLE
+C576,Titúlalo Minuta.,RENAME_TITLE
+C577,Denomínalo Minuta.,RENAME_TITLE
+C578,Rotúlalo como Minuta.,RENAME_TITLE
+C579,Ponle Prontuario de nombre.,RENAME_TITLE
+C580,Titúlalo Prontuario.,RENAME_TITLE
+C581,Denomínalo Prontuario.,RENAME_TITLE
+C582,Rotúlalo como Prontuario.,RENAME_TITLE
+C583,Ponle Resolutivo de nombre.,RENAME_TITLE
+C584,Titúlalo Resolutivo.,RENAME_TITLE
+C585,Denomínalo Resolutivo.,RENAME_TITLE
+C586,Rotúlalo como Resolutivo.,RENAME_TITLE
+C587,Ponlo más plano.,REWRITE_SELECTION
+C588,Hazlo más plano ya.,REWRITE_SELECTION
+C589,Déjalo más plano.,REWRITE_SELECTION
+C590,Ponlo más breve todavía.,REWRITE_SELECTION
+C591,Hazlo más breve todavía ya.,REWRITE_SELECTION
+C592,Déjalo más breve todavía.,REWRITE_SELECTION
+C593,Elige el oficio.,SELECT_TEXT
+C594,Aparta el oficio.,SELECT_TEXT
+C595,Marca el oficio ya.,SELECT_TEXT
+C596,Archiva el acuse.,SAVE_DOCUMENT
+C597,Guarda el acuse bien.,SAVE_DOCUMENT
+C598,Consigna el acuse.,SAVE_DOCUMENT
+C599,Archiva la minuta.,SAVE_DOCUMENT
+C600,Guarda la minuta bien.,SAVE_DOCUMENT
+C601,Consigna la minuta.,SAVE_DOCUMENT
+C602,Guarda el tanto bien.,SAVE_DOCUMENT
+C603,Consigna el tanto.,SAVE_DOCUMENT
+C604,Deshaz la última línea.,UNDO
+C605,Cancela la última línea.,UNDO
+C606,Anula la última línea.,UNDO
+C607,Deshaz el último paso.,UNDO
+C608,Cancela el último paso.,UNDO
+C609,Anula el último paso.,UNDO
+C610,Destapa el baño.,UNSUPPORTED
+C611,"Por favor, destapa el baño.",UNSUPPORTED
+C612,Actualiza el perfil.,UNSUPPORTED
+C613,Actualiza el perfil ya.,UNSUPPORTED
+C614,Elimina el chat.,UNSUPPORTED
+C615,Elimina el chat ya.,UNSUPPORTED
+C616,Firma la lista.,UNSUPPORTED
+C617,Firma la lista ya.,UNSUPPORTED
+C618,Borra la coda ya.,DELETE_SELECTION
+C619,Quita la coda.,DELETE_SELECTION
+C620,Borra el exordio ya.,DELETE_SELECTION
+C621,Quita el exordio.,DELETE_SELECTION
+C622,Exporta el exordio en pdf.,EXPORT_DOCUMENT
+C623,Saca el exordio en texto.,EXPORT_DOCUMENT
+C624,Rinde el exordio en Word.,EXPORT_DOCUMENT
+C625,Aplica negritas a el legajo.,FORMAT_SELECTION
+C626,Marca el legajo en cursiva.,FORMAT_SELECTION
+C627,Resalta el legajo.,FORMAT_SELECTION
+C628,Aplica negritas a la minuta.,FORMAT_SELECTION
+C629,Marca la minuta en cursiva.,FORMAT_SELECTION
+C630,Resalta la minuta.,FORMAT_SELECTION
+C631,Pon el altri en negritas.,FORMAT_SELECTION
+C632,Pon el altri en cursivas.,FORMAT_SELECTION
+C633,Subraya el altri por favor.,FORMAT_SELECTION
+C634,Pon la coda en negritas.,FORMAT_SELECTION
+C635,Pon la coda en cursivas.,FORMAT_SELECTION
+C636,Subraya la coda por favor.,FORMAT_SELECTION
+C637,Pon la peroración en negritas.,FORMAT_SELECTION
+C638,Pon la peroración en cursivas.,FORMAT_SELECTION
+C639,Subraya la peroración por favor.,FORMAT_SELECTION
+C640,Busca la adenda ya.,FIND_TEXT
+C641,Encuentra la adenda por favor.,FIND_TEXT
+C642,Localiza la adenda.,FIND_TEXT
+C643,Busca el epígrafe ya.,FIND_TEXT
+C644,Encuentra el epígrafe por favor.,FIND_TEXT
+C645,Localiza el epígrafe.,FIND_TEXT
+C646,Busca la foja ya.,FIND_TEXT
+C647,Encuentra la foja por favor.,FIND_TEXT
+C648,Localiza la foja.,FIND_TEXT
+C649,Busca la peroración ya.,FIND_TEXT
+C650,Encuentra la peroración por favor.,FIND_TEXT
+C651,Localiza la peroración.,FIND_TEXT
+C652,Busca el visto ya.,FIND_TEXT
+C653,Encuentra el visto por favor.,FIND_TEXT
+C654,Localiza el visto.,FIND_TEXT
+C655,"Borra, firma y sella.",MULTI_ACTION
+C656,"Borra, firma y sella ahora mismo.",MULTI_ACTION
+C657,"Busca, copia y archiva.",MULTI_ACTION
+C658,"Busca, copia y archiva ahora mismo.",MULTI_ACTION
+C659,"Centra, sella y guarda.",MULTI_ACTION
+C660,"Centra, sella y guarda ahora mismo.",MULTI_ACTION
+C661,"Sangra, numera y archiva.",MULTI_ACTION
+C662,"Sangra, numera y archiva ahora mismo.",MULTI_ACTION
+C663,"Subraya, rubrica y turna.",MULTI_ACTION
+C664,"Subraya, rubrica y turna ahora mismo.",MULTI_ACTION
+C665,El mercado cierra temprano.,NO_ACTION
+C666,"Bueno, el mercado cierra temprano.",NO_ACTION
+C667,El puente estará cerrado.,NO_ACTION
+C668,"Bueno, el puente estará cerrado.",NO_ACTION
+C669,El parque abre tarde.,NO_ACTION
+C670,"Bueno, el parque abre tarde.",NO_ACTION
+C671,El museo es gratis hoy.,NO_ACTION
+C672,"Bueno, el museo es gratis hoy.",NO_ACTION
+C673,El curso es en línea.,NO_ACTION
+C674,"Bueno, el curso es en línea.",NO_ACTION
+C675,El examen es oral.,NO_ACTION
+C676,"Bueno, el examen es oral.",NO_ACTION
+C677,El tráfico fluye bien.,NO_ACTION
+C678,"Bueno, el tráfico fluye bien.",NO_ACTION
+C679,El trámite quedó listo.,NO_ACTION
+C680,"Bueno, el trámite quedó listo.",NO_ACTION
+C681,El doctor canceló.,NO_ACTION
+C682,"Bueno, el doctor canceló.",NO_ACTION
+C683,Mañana descansamos.,NO_ACTION
+C684,"Bueno, mañana descansamos.",NO_ACTION
+C685,Abre la adenda ya.,OPEN_DOCUMENT
+C686,Recupera la adenda por favor.,OPEN_DOCUMENT
+C687,Carga la adenda.,OPEN_DOCUMENT
+C688,Abre el colofón ya.,OPEN_DOCUMENT
+C689,Recupera el colofón por favor.,OPEN_DOCUMENT
+C690,Carga el colofón.,OPEN_DOCUMENT
+C691,Abre el considerando ya.,OPEN_DOCUMENT
+C692,Recupera el considerando por favor.,OPEN_DOCUMENT
+C693,Carga el considerando.,OPEN_DOCUMENT
+C694,Abre el exordio ya.,OPEN_DOCUMENT
+C695,Recupera el exordio por favor.,OPEN_DOCUMENT
+C696,Carga el exordio.,OPEN_DOCUMENT
+C697,Abre la peroración ya.,OPEN_DOCUMENT
+C698,Recupera la peroración por favor.,OPEN_DOCUMENT
+C699,Carga la peroración.,OPEN_DOCUMENT
+C700,Rehaz el envío ya.,REDO
+C701,Reaplica el envío por favor.,REDO
+C702,Restaura el envío.,REDO
+C703,Rehaz la firma puesta ya.,REDO
+C704,Reaplica la firma puesta por favor.,REDO
+C705,Restaura la firma puesta.,REDO
+C706,Rehaz la numeración ya.,REDO
+C707,Reaplica la numeración por favor.,REDO
+C708,Restaura la numeración.,REDO
+C709,Rehaz el pegado de hoy ya.,REDO
+C710,Reaplica el pegado de hoy por favor.,REDO
+C711,Restaura el pegado de hoy.,REDO
+C712,Rehaz la tabla nueva ya.,REDO
+C713,Reaplica la tabla nueva por favor.,REDO
+C714,Restaura la tabla nueva.,REDO
+C715,Rehaz el título nuevo ya.,REDO
+C716,Reaplica el título nuevo por favor.,REDO
+C717,Restaura el título nuevo.,REDO
+C718,Pon Resolutivo de título.,RENAME_TITLE
+C719,Titula este bloque Resolutivo.,RENAME_TITLE
+C720,Encabeza así: Resolutivo.,RENAME_TITLE
+C721,El rótulo dirá Resolutivo.,RENAME_TITLE
+C722,Cambia coda por final.,REPLACE_SELECTION
+C723,Pon final en vez de coda.,REPLACE_SELECTION
+C724,Cambia interludio por pausa.,REPLACE_SELECTION
+C725,Pon pausa en vez de interludio.,REPLACE_SELECTION
+C726,Cambia peroración por cierre.,REPLACE_SELECTION
+C727,Pon cierre en vez de peroración.,REPLACE_SELECTION
+C728,Ponlo más cortante.,REWRITE_SELECTION
+C729,Hazlo más cortante.,REWRITE_SELECTION
+C730,Ponlo más fluido.,REWRITE_SELECTION
+C731,Hazlo más fluido.,REWRITE_SELECTION
+C732,Ponlo más leve.,REWRITE_SELECTION
+C733,Hazlo más leve.,REWRITE_SELECTION
+C734,Selecciona la coda ya.,SELECT_TEXT
+C735,Marca la coda completo.,SELECT_TEXT
+C736,Elige la coda por favor.,SELECT_TEXT
+C737,Selecciona el legajo ya.,SELECT_TEXT
+C738,Marca el legajo completo.,SELECT_TEXT
+C739,Elige el legajo por favor.,SELECT_TEXT
+C740,Selecciona la minuta ya.,SELECT_TEXT
+C741,Marca la minuta completo.,SELECT_TEXT
+C742,Elige la minuta por favor.,SELECT_TEXT
+C743,Selecciona el resultando ya.,SELECT_TEXT
+C744,Marca el resultando completo.,SELECT_TEXT
+C745,Elige el resultando por favor.,SELECT_TEXT
+C746,Guarda la coda ya.,SAVE_DOCUMENT
+C747,Archiva la coda por favor.,SAVE_DOCUMENT
+C748,Registra la coda.,SAVE_DOCUMENT
+C749,Guarda el epígrafe ya.,SAVE_DOCUMENT
+C750,Archiva el epígrafe por favor.,SAVE_DOCUMENT
+C751,Registra el epígrafe.,SAVE_DOCUMENT
+C752,Guarda la foja ya.,SAVE_DOCUMENT
+C753,Archiva la foja por favor.,SAVE_DOCUMENT
+C754,Registra la foja.,SAVE_DOCUMENT
+C755,Guarda el resultando ya.,SAVE_DOCUMENT
+C756,Archiva el resultando por favor.,SAVE_DOCUMENT
+C757,Registra el resultando.,SAVE_DOCUMENT
+C758,Deshaz el borrado útil ya.,UNDO
+C759,Anula el borrado útil por favor.,UNDO
+C760,Echa atrás el borrado útil.,UNDO
+C761,Deshaz la cursiva ya.,UNDO
+C762,Anula la cursiva por favor.,UNDO
+C763,Echa atrás la cursiva.,UNDO
+C764,Deshaz la justificación ya.,UNDO
+C765,Anula la justificación por favor.,UNDO
+C766,Echa atrás la justificación.,UNDO
+C767,Deshaz la sangría ya.,UNDO
+C768,Anula la sangría por favor.,UNDO
+C769,Echa atrás la sangría.,UNDO
+C770,Lava el patio.,UNSUPPORTED
+C771,Lava el patio por favor.,UNSUPPORTED
+C772,Clasifica facturas.,UNSUPPORTED
+C773,Clasifica facturas ya.,UNSUPPORTED
+C774,Ensaya la presentación.,UNSUPPORTED
+C775,Ensaya la presentación ya.,UNSUPPORTED
+C776,Etiqueta carpetas.,UNSUPPORTED
+C777,Etiqueta carpetas ya.,UNSUPPORTED
+C778,Memoriza el discurso.,UNSUPPORTED
+C779,Memoriza el discurso ya.,UNSUPPORTED
+C780,Ordena recibos.,UNSUPPORTED
+C781,Ordena recibos ya.,UNSUPPORTED
+C782,Recoge el encargo.,UNSUPPORTED
+C783,Recoge el encargo ya.,UNSUPPORTED
+C784,Repasa la lección.,UNSUPPORTED
+C785,Repasa la lección ya.,UNSUPPORTED
+C786,Coteja el original.,UNSUPPORTED
+C787,"Por favor, coteja el original.",UNSUPPORTED
+C788,Ejecuta el laudo.,UNSUPPORTED
+C789,"Por favor, ejecuta el laudo.",UNSUPPORTED
+C790,Rubrica la foja.,UNSUPPORTED
+C791,"Por favor, rubrica la foja.",UNSUPPORTED
+C792,Sella el sobre.,UNSUPPORTED
+C793,"Por favor, sella el sobre.",UNSUPPORTED
+C794,Timbra la carta.,UNSUPPORTED
+C795,"Por favor, timbra la carta.",UNSUPPORTED
