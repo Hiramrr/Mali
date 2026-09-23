@@ -1,0 +1,181 @@
+id,category,expected_spoken,expected,argument_expected,challenge
+V001,rename,"Cambia el encabezado a Resultados 2026.",renameTitle,Resultados 2026,argument;rename
+V002,rename,"Pon como título Capítulo 3.",renameTitle,Capítulo 3,argument;rename
+V003,rename,"Ponle María José al informe.",renameTitle,María José,argument;rename
+V004,rename,"Titula este informe como Metodología.",renameTitle,Metodología,argument;rename
+V005,rename,"Renombra el documento a SwiftUI.",renameTitle,SwiftUI,argument;rename
+V006,rename,"Actualiza el nombre a Evaluación de IHC.",renameTitle,Evaluación de IHC,argument;rename
+V007,rename,"El título dirá Interacción Humano-Computadora.",renameTitle,Interacción Humano-Computadora,argument;rename
+V008,rename,"Nombra el acta como accesibilidad cognitiva.",renameTitle,accesibilidad cognitiva,argument;rename
+V009,rename,"Cambia el nombre a IHC.",renameTitle,IHC,argument;rename;short
+V010,rename,"Ponle de título TDAH.",renameTitle,TDAH,argument;rename
+V011,rename,"Bautiza el informe como María José.",renameTitle,María José,argument;rename
+V012,rename,"Que el título cite Capítulo 3.",renameTitle,Capítulo 3,argument;rename
+V013,rename,"Modifica el encabezado a Metodología.",renameTitle,Metodología,argument;rename
+V014,rename,"El encabezado será Resultados.",renameTitle,Resultados,argument;rename;short
+V015,delete,"Borra la selección.",deleteSelection,,delete
+V016,delete,"Elimina esto.",deleteSelection,,delete
+V017,delete,"Quita esa frase.",deleteSelection,,delete
+V018,delete,"Suprime el párrafo.",deleteSelection,,delete
+V019,delete,"Tacha lo último.",deleteSelection,,delete
+V020,delete,"Corta esta parte.",deleteSelection,,delete
+V021,delete,"Descarta el borrador.",deleteSelection,,delete
+V022,delete,"Bórralo.",deleteSelection,,delete;short
+V023,delete,"Elimínalo.",deleteSelection,,delete;short
+V024,delete,"Quítalo.",deleteSelection,,delete;short
+V025,replace,"Reemplaza esta frase por Interacción Humano-Computadora.",replaceSelection,Interacción Humano-Computadora,argument;replace
+V026,replace,"Sustituye la palabra por SwiftUI.",replaceSelection,SwiftUI,argument;replace
+V027,replace,"Cambia la cita por Metodología.",replaceSelection,Metodología,argument;replace
+V028,replace,"Troca esto por TDAH.",replaceSelection,TDAH,argument;replace
+V029,replace,"Escribe Evaluación de IHC.",replaceSelection,Evaluación de IHC,argument;replace
+V030,replace,"Pon Resultados 2026 donde dice borrador.",replaceSelection,Resultados 2026,argument;replace
+V031,replace,"Pon Capítulo 3 tras la introducción.",replaceSelection,Capítulo 3,argument;replace
+V032,replace,"Reemplázalo por accesibilidad cognitiva.",replaceSelection,accesibilidad cognitiva,argument;replace
+V033,replace,"Sustitúyelo por María José.",replaceSelection,María José,argument;replace
+V034,replace,"Cambia este término por IHC.",replaceSelection,IHC,argument;replace
+V035,rewrite,"Hazlo más breve.",rewriteSelection,más breve,argument;rewrite;short
+V036,rewrite,"Haz esta parte más clara.",rewriteSelection,más clara,argument;rewrite
+V037,rewrite,"Reescribe el párrafo completo.",rewriteSelection,el párrafo completo,argument;rewrite
+V038,rewrite,"Reformula esto más formal.",rewriteSelection,más formal,argument;rewrite
+V039,rewrite,"Hazla más accesible.",rewriteSelection,más accesible,argument;rewrite
+V040,rewrite,"Reescribe esto con otras palabras.",rewriteSelection,con otras palabras,argument;rewrite
+V041,rewrite,"Hazlo en tono académico.",rewriteSelection,en tono académico,argument;rewrite
+V042,rewrite,"Reformula la conclusión.",rewriteSelection,la conclusión,argument;rewrite
+V043,format,"Ponlo en negritas.",formatSelection:bold,,format;undo_redo_format
+V044,format,"Ponlo en cursivas.",formatSelection:italic,,format
+V045,format,"Subraya la cita.",formatSelection:underline,,format
+V046,format,"Pon en negrita el título.",formatSelection:bold,,format
+V047,format,"Pon en cursiva este párrafo.",formatSelection:italic,,format
+V048,format,"Marca el texto en negritas.",formatSelection:bold,,format
+V049,format,"Aplica cursivas a la cita.",formatSelection:italic,,format
+V050,format,"Deja el texto en cursiva.",formatSelection:italic,,format
+V051,format,"Resalta el resultado.",formatSelection:bold,,format
+V052,format,"Remarca la conclusión.",formatSelection:bold,,format
+V053,format,"Ponlo en negrita.",formatSelection:bold,,format;short
+V054,format,"Ponlo en cursiva.",formatSelection:italic,,format;short
+V055,format,"Subráyalo.",formatSelection:underline,,format;short
+V056,format,"Negritas.",formatSelection:bold,,format;short
+V057,format,"Cursivas.",formatSelection:italic,,format;short
+V058,format,"Subrayado.",formatSelection:underline,,format;short
+V059,format,"Hazlo en negritas.",formatSelection:bold,,format
+V060,format,"Pon la cita en cursivas.",formatSelection:italic,,format
+V061,format,"Aplica el subrayado al párrafo.",formatSelection:underline,,format
+V062,format,"Marca esta frase en cursiva.",formatSelection:italic,,format
+V063,format,"Pon el título en negritas.",formatSelection:bold,,format
+V064,format,"Resalta el título en negritas.",formatSelection:bold,,format
+V065,undo,"Deshaz.",undo,,undo_redo;short
+V066,undo,"Deshaz eso.",undo,,undo_redo;short
+V067,undo,"Deshazlo.",undo,,undo_redo;short
+V068,undo,"Deshaz el último cambio.",undo,,undo_redo
+V069,undo,"Vuelve atrás.",undo,,undo_redo
+V070,undo,"Anula el último cambio.",undo,,undo_redo
+V071,undo,"Cancela la edición.",undo,,undo_redo
+V072,undo,"Revierte el cambio.",undo,,undo_redo
+V073,undo,"Vuelve a como estaba.",undo,,undo_redo
+V074,undo,"Regresa al borrador.",undo,,undo_redo
+V075,undo,"Restaura la edición.",undo,,undo_redo
+V076,undo,"Échalo para atrás.",undo,,undo_redo
+V077,undo,"Déjalo como estaba.",undo,,undo_redo
+V078,undo,"Anula eso.",undo,,undo_redo;short
+V079,undo,"Deshaz el cambio.",undo,,undo_redo
+V080,undo,"Vuelve al estado anterior.",undo,,undo_redo
+V081,redo,"Rehaz.",redo,,undo_redo;short
+V082,redo,"Rehaz eso.",redo,,undo_redo;short
+V083,redo,"Rehazlo.",redo,,undo_redo;short
+V084,redo,"Rehaz el último cambio.",redo,,undo_redo
+V085,redo,"Vuelve a aplicar el cambio.",redo,,undo_redo
+V086,redo,"Reaplica el formato.",redo,,undo_redo
+V087,redo,"Restaura lo deshecho.",redo,,undo_redo
+V088,redo,"Vuelve a poner el texto.",redo,,undo_redo
+V089,redo,"Deshaz el deshacer.",redo,,undo_redo
+V090,redo,"Repite el cambio deshecho.",redo,,undo_redo
+V091,redo,"Rehaz el cambio.",redo,,undo_redo
+V092,redo,"Vuelve a aplicar la edición.",redo,,undo_redo
+V093,redo,"Restaura lo que deshice.",redo,,undo_redo
+V094,redo,"Rehace el cambio.",redo,,undo_redo
+V095,redo,"Rehaz la edición.",redo,,undo_redo
+V096,redo,"Vuelve a aplicar eso.",redo,,undo_redo;short
+V097,find,"Busca TDAH.",findText,TDAH,argument;find_select
+V098,find,"Encuentra IHC.",findText,IHC,argument;find_select
+V099,find,"Localiza SwiftUI.",findText,SwiftUI,argument;find_select;short
+V100,find,"Busca accesibilidad cognitiva.",findText,accesibilidad cognitiva,argument;find_select
+V101,find,"Encuentra Metodología.",findText,Metodología,argument;find_select
+V102,find,"Busca la palabra Evaluación de IHC.",findText,Evaluación de IHC,argument;find_select
+V103,find,"Halla Capítulo 3.",findText,Capítulo 3,argument;find_select
+V104,find,"Rastrea María José.",findText,María José,argument;find_select
+V105,find,"Busca Interacción Humano-Computadora.",findText,Interacción Humano-Computadora,argument;find_select
+V106,find,"Encuentra Resultados 2026.",findText,Resultados 2026,argument;find_select
+V107,find,"Detecta la cita duplicada.",findText,la cita duplicada,argument;find_select
+V108,find,"Ubica el segundo párrafo.",findText,el segundo párrafo,argument;find_select
+V109,select,"Selecciona el segundo párrafo.",selectText,el segundo párrafo,argument;find_select
+V110,select,"Marca esta frase.",selectText,esta frase,argument;find_select
+V111,select,"Elige accesibilidad.",selectText,accesibilidad,argument;find_select;short
+V112,select,"Toma el Capítulo 3.",selectText,el Capítulo 3,argument;find_select
+V113,select,"Señala la palabra TDAH.",selectText,la palabra TDAH,argument;find_select
+V114,select,"Selecciona María José.",selectText,María José,argument;find_select
+V115,select,"Marca IHC.",selectText,IHC,argument;find_select;short
+V116,select,"Enfoca la conclusión.",selectText,la conclusión,argument;find_select
+V117,select,"Aparta el párrafo duplicado.",selectText,el párrafo duplicado,argument;find_select
+V118,select,"Delimita Evaluación de IHC.",selectText,Evaluación de IHC,argument;find_select
+V119,save,"Guarda el documento.",saveDocument,,save_export
+V120,save,"Archiva el informe.",saveDocument,,save_export
+V121,save,"Guárdalo.",saveDocument,,save_export;short
+V122,save,"Respalda el borrador.",saveDocument,,save_export
+V123,save,"Preserva los cambios.",saveDocument,,save_export
+V124,save,"Registra el acta.",saveDocument,,save_export
+V125,open,"Abre el archivo anterior.",openDocument,el archivo anterior,argument;save_export
+V126,open,"Recupera el acta vieja.",openDocument,el acta vieja,argument;save_export
+V127,open,"Ábrelo.",openDocument,,save_export;short
+V128,open,"Carga el informe guardado.",openDocument,el informe guardado,argument;save_export
+V129,open,"Muestra el Capítulo 3.",openDocument,el Capítulo 3,argument;save_export
+V130,open,"Trae el documento de María José.",openDocument,el documento de María José,argument;save_export
+V131,export,"Exporta a pdf.",exportDocument:pdf,,save_export;short
+V132,export,"Guarda una copia como pdf.",exportDocument:pdf,,save_export
+V133,export,"Genera el documento en Word.",exportDocument:word,,save_export
+V134,export,"Convierte a texto plano.",exportDocument:plainText,,save_export
+V135,export,"Produce una versión en formato enriquecido.",exportDocument:richText,,save_export
+V136,export,"Saca el acta en pdf.",exportDocument:pdf,,save_export
+V137,unsupported,"Imprime el documento.",unsupported,,unsupported
+V138,unsupported,"Traduce este párrafo al inglés.",unsupported,,unsupported
+V139,unsupported,"Envía esto por correo.",unsupported,,unsupported
+V140,unsupported,"Comprime el archivo final.",unsupported,,unsupported
+V141,unsupported,"Cifra el informe confidencial.",unsupported,,unsupported
+V142,unsupported,"Firma el acta.",unsupported,,unsupported
+V143,unsupported,"Comparte el borrador con el equipo.",unsupported,,unsupported
+V144,unsupported,"Sube el documento a la nube.",unsupported,,unsupported
+V145,unsupported,"Agenda una revisión para mañana.",unsupported,,unsupported
+V146,unsupported,"Programa un recordatorio.",unsupported,,unsupported
+V147,unsupported,"Dicta el siguiente párrafo.",unsupported,,unsupported
+V148,unsupported,"Lee el informe en voz alta.",unsupported,,unsupported
+V149,unsupported,"Cuenta las palabras del texto.",unsupported,,unsupported
+V150,unsupported,"Copia la selección.",unsupported,,unsupported
+V151,unsupported,"Pega el contenido.",unsupported,,unsupported
+V152,unsupported,"Cierra el documento.",unsupported,,unsupported
+V153,unsupported,"Numera las páginas.",unsupported,,unsupported
+V154,unsupported,"Centra el título.",unsupported,,unsupported
+V155,unsupported,"Escanea la página.",unsupported,,unsupported
+V156,unsupported,"Recorta la imagen.",unsupported,,unsupported
+V157,unsupported,"Resume el informe.",unsupported,,unsupported
+V158,unsupported,"Busca en internet.",unsupported,,unsupported
+V159,unknown,"Hmm, no estoy seguro.",unknown,,unknown
+V160,unknown,"Déjame pensarlo un momento.",unknown,,unknown
+V161,unknown,"Espera un segundo.",unknown,,unknown
+V162,unknown,"La interacción humano computadora estudia sistemas.",unknown,,unknown
+V163,unknown,"Hace calor aquí hoy.",unknown,,unknown
+V164,unknown,"El informe quedó listo ayer.",unknown,,unknown
+V165,unknown,"Traigo sueño.",unknown,,unknown
+V166,unknown,"Se acabó la pila.",unknown,,unknown
+V167,unknown,"No hay señal.",unknown,,unknown
+V168,unknown,"Mañana hablamos del proyecto.",unknown,,unknown
+V169,unknown,"Gracias por tu ayuda.",unknown,,unknown
+V170,unknown,"¿Qué hora es?",unknown,,unknown
+V171,unknown,"Ayer llovió mucho.",unknown,,unknown
+V172,unknown,"El gerente cambió al proveedor.",unknown,,unknown
+V173,unknown,"Borrar información accidentalmente afecta.",unknown,,unknown
+V174,unknown,"Qué buen café.",unknown,,unknown
+V175,unknown,"Pues eso creo.",unknown,,unknown
+V176,unknown,"Encuéntralo.",unknown,,unknown
+V177,unknown,"Selecciónalo.",unknown,,unknown
+V178,unknown,"El acta está sobre la mesa.",unknown,,unknown
+V179,unknown,"Hoy es un buen día.",unknown,,unknown
+V180,unknown,"Nos vemos mañana.",unknown,,unknown

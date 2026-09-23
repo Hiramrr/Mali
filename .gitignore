@@ -2,3 +2,4 @@
 build/
 .DS_Store
 xcuserdata/
+command-grammar/data/custom_lm_compiled/

@@ -1,0 +1,25 @@
+templates (body<TAB>count):
+cambia el encabezado a <titulo>	8
+titula ese informe como <titulo>	8
+busca ese <termino> previo	10
+selecciona ese <objetivo> previo	10
+exporta esa acta a <formato>	8
+reemplaza aquello por <nuevoTexto>	8
+pon <nuevoTexto> tras ese parrafo	6
+deshaz <objetoUndo> ya	12
+rehaz <objetoRedo> ya	12
+ponlo con <estilo> ya	10
+<verboGuardar> ese documento previo	8
+abre ese <documento> previo	8
+
+classes:
+<documento> = acta previa | informe previo | anexo | borrador
+<estilo> = negrita | cursiva | subrayado
+<formato> = pdf | word | texto simple | formato simple
+<nuevoTexto> = borrador | resumen | anexo | texto previo
+<objetivo> = apartado | anexo | resumen | folio | parrafo previo
+<objetoRedo> = ese cambio | esta edicion | ese formato | aquello
+<objetoUndo> = ese cambio | esta edicion | aquello | ese formato
+<termino> = folio | resumen | anexo | dato | acta
+<titulo> = borrador | resumen | anexo | acta previa | version final
+<verboGuardar> = guarda | archiva | respalda

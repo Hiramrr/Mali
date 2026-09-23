@@ -7,6 +7,20 @@ struct Runner {
         let args = CommandLine.arguments
         if args.contains("live") {
             await runLive()
+        } else if args.contains("validate-v2") {
+            runValidateV2()
+        } else if args.contains("leakage") {
+            runLeakageCheck()
+        } else if args.contains("prepare-lm") {
+            await runPrepareLM()
+        } else if args.contains("record-v2") {
+            await runRecordV2()
+        } else if args.contains("dump-lm") {
+            runDumpLM()
+        } else if args.contains("eval-v2") {
+            await runEvalV2()
+        } else if let i = args.firstIndex(of: "smoke-ab"), i + 1 < args.count {
+            await runSmokeAB(path: args[i + 1])
         } else if args.contains("protocol") {
             printLiveProtocol()
         } else if let i = args.firstIndex(of: "transcribe"), i + 1 < args.count {

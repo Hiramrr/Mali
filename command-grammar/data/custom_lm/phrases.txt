@@ -1,0 +1,145 @@
+deshaz el cambio ya
+deshaz ese cambio
+deshaz esta edicion
+deshaz aquello ya
+vuelve atras ya
+vuelve a como estaba ya
+anula ese cambio
+cancela esa edicion
+revierte ese cambio
+restaura ese borrador
+echalo para atras ya
+dejalo como estaba ya
+anula aquello ya
+vuelve al estado previo
+regresa a la version previa
+rehaz el cambio ya
+rehaz ese cambio
+rehazlo de nuevo
+rehaz la edicion ya
+vuelve a aplicar ese cambio
+reaplica ese formato
+restaura aquello deshecho
+vuelve a poner ese texto
+deshaz aquello deshecho
+repite ese cambio deshecho
+rehace ese cambio
+restaura aquello que deshice
+ponlo con negritas ya
+dejalo en negrita ya
+aplica negritas al texto
+marca con negrita ya
+usa cursivas aqui
+ponlo con cursiva ya
+deja el texto en cursivas ya
+subraya esa cita
+aplica subrayado al texto
+resalta ese resultado
+remarca esa conclusion
+hazlo con negritas
+pon esa cita en cursivas
+marca ese texto en negrita
+deja esa frase en cursiva
+cambia el encabezado a borrador
+pon como titulo borrador
+ponle ese nombre al acta
+titula ese informe como resumen
+renombra el acta a version previa
+actualiza el nombre a borrador final
+el titulo dira borrador previo
+nombra el anexo como apendice
+borra esa seleccion
+elimina aquello
+quita esa parte
+suprime ese parrafo
+tacha ese renglon
+corta ese fragmento
+descarta ese anexo
+reemplaza esa frase por borrador
+sustituye esa palabra por resumen
+cambia esa cita por borrador
+troca aquello por resumen
+escribe borrador previo
+pon resumen donde dice previo
+hazlo mas breve ya
+haz esa parte mas clara ya
+reescribe ese parrafo completo
+reformula aquello mas formal ya
+busca ese folio
+encuentra ese informe
+localiza ese resumen
+halla ese dato
+rastrea ese nombre
+selecciona ese parrafo
+marca esa frase ya
+elige ese apartado
+toma ese anexo
+guarda ese documento
+archiva ese informe
+respalda ese avance
+abre ese archivo previo
+recupera esa acta previa
+carga ese informe previo
+exporta a pdf ya
+guarda copia como pdf ya
+genera esa acta en word
+convierte ese texto a plano
+produce version en formato simple
+saca esa acta en pdf ya
+pon ese titulo en negritas
+cambia ese titulo a borrador
+busca la palabra resumen
+selecciona la palabra resumen
+vuelve atras sin guardar
+deshaz ultimo cambio ya
+rehaz ultimo cambio ya
+cambia el encabezado a borrador
+cambia el encabezado a resumen
+cambia el encabezado a anexo
+cambia el encabezado a acta previa
+cambia el encabezado a version final
+titula ese informe como borrador
+titula ese informe como resumen
+titula ese informe como anexo
+titula ese informe como acta previa
+titula ese informe como version final
+busca ese folio previo
+busca ese resumen previo
+busca ese anexo previo
+busca ese dato previo
+busca ese acta previo
+selecciona ese apartado previo
+selecciona ese anexo previo
+selecciona ese resumen previo
+selecciona ese folio previo
+selecciona ese parrafo previo previo
+exporta esa acta a pdf
+exporta esa acta a word
+exporta esa acta a texto simple
+exporta esa acta a formato simple
+reemplaza aquello por borrador
+reemplaza aquello por resumen
+reemplaza aquello por anexo
+reemplaza aquello por texto previo
+pon borrador tras ese parrafo
+pon resumen tras ese parrafo
+pon anexo tras ese parrafo
+pon texto previo tras ese parrafo
+deshaz ese cambio ya
+deshaz esta edicion ya
+deshaz aquello ya
+deshaz ese formato ya
+rehaz ese cambio ya
+rehaz esta edicion ya
+rehaz ese formato ya
+rehaz aquello ya
+ponlo con negrita ya
+ponlo con cursiva ya
+ponlo con subrayado ya
+guarda ese documento previo
+archiva ese documento previo
+respalda ese documento previo
+abre ese acta previa previo
+abre ese informe previo previo
+abre ese anexo previo
+abre ese borrador previo
