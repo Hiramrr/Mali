@@ -8,5 +8,6 @@ public enum VoiceIntent: Sendable, Equatable {
     case undo
     case newline
     case paragraph
+    case renameTitle(String)
     case cancel
 }

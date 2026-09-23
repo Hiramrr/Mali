@@ -428,9 +428,15 @@ public struct EditorScreen: View {
         }
         // Los módulos (voz, gestos) publican intenciones aquí; el editor las
         // aplica a la sesión activa sin saber de qué pieza vinieron.
-        .task {
+        // renameTitle lo aplica la pantalla (dueña del documento), no la
+        // sesión: cambiar el título renombra el archivo, no el texto.
+        .task { @MainActor in
             for await command in await commandBus.commands() {
-                session.send(command)
+                if case .renameTitle(let title) = command {
+                    applyVoiceRename(title)
+                } else {
+                    session.send(command)
+                }
             }
         }
         .onAppear {
@@ -1073,6 +1079,33 @@ public struct EditorScreen: View {
     private func focusEditor() {
         guard !session.readingMode, let view = session.textView else { return }
         view.window?.makeFirstResponder(view)
+    }
+
+    /// Renombrar por voz ("Cambia el título a X"): actualiza el encabezado
+    /// de inmediato y, si el documento ya tiene archivo, lo renombra en disco
+    /// vía NSDocument (misma carpeta, misma extensión, sin sobrescribir).
+    /// Sin archivo (borrador sin guardar) el título queda visual hasta el
+    /// primer guardado. El renombrado NO entra al UndoManager del texto:
+    /// se deshace renombrando de nuevo.
+    private func applyVoiceRename(_ raw: String) {
+        let clean = raw.trimmingCharacters(in: .whitespacesAndNewlines)
+            .trimmingCharacters(in: CharacterSet(charactersIn: ".!?"))
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !clean.isEmpty, clean.count <= 80, !clean.contains("/") else { return }
+        documentTitle = clean
+        guard let currentURL else { return }
+        let dest = currentURL.deletingLastPathComponent()
+            .appendingPathComponent(clean)
+            .appendingPathExtension(currentURL.pathExtension)
+        guard dest.standardizedFileURL != currentURL.standardizedFileURL,
+              !FileManager.default.fileExists(atPath: dest.path),
+              let doc = NSDocumentController.shared.documents
+            .first(where: { ($0.fileURL as URL?)?.standardizedFileURL == currentURL.standardizedFileURL })
+        else { return }
+        doc.move(to: dest) { error in
+            guard let nsError = error as NSError? else { return }
+            Task { @MainActor in NSApplication.shared.presentError(nsError) }
+        }
     }
 
     /// Regresa a la pantalla anterior: la última lista de notas vista o la

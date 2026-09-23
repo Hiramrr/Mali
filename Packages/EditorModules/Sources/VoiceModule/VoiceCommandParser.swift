@@ -40,6 +40,9 @@ public struct VoiceCommandParser: Sendable {
         if text == "deshacer" || text == "deshaz" || text == "undo" {
             return .undo
         }
+        if let title = Self.renameTitle(in: transcript), text.count < 120 {
+            return .renameTitle(title)
+        }
         if text.count < 40 {
             if text == "nueva línea" || text == "nueva linea" || text == "salto de línea" || text == "salto de linea" || text == "newline" {
                 return .newline
@@ -47,6 +50,37 @@ public struct VoiceCommandParser: Sendable {
             if text == "nuevo párrafo" || text == "nuevo parrafo" || text == "nuevo parágrafo" || text == "paragraph" || text == "párrafo nuevo" || text == "parrafo nuevo" {
                 return .paragraph
             }
+        }
+        return nil
+    }
+
+    /// "Cambia el título a X" → `X` verbatim (con tildes y mayúsculas del
+    /// hablante). Solo frase completa: el comando debe abrir la frase, el
+    /// argumento no va vacío y no contiene saltos de línea. Sin fuzzy: lo que
+    /// no calza exacto sigue siendo dictado.
+    private static func renameTitle(in transcript: String) -> String? {
+        let raw = transcript.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !raw.isEmpty, !raw.contains("\n") else { return nil }
+        let folded = raw.lowercased()
+            .folding(options: .diacriticInsensitive, locale: Locale(identifier: "es_MX"))
+        let prefixes = [
+            "cambia el titulo a ",
+            "pon como titulo ",
+            "ponle de titulo ",
+            "titula ",
+            "renombra a ",
+            "renombra como ",
+        ]
+        for prefix in prefixes {
+            guard folded.hasPrefix(prefix), folded.count > prefix.count else { continue }
+            // El folding no altera el número de caracteres de estos prefijos:
+            // el argumento se recorta del raw por posición.
+            let arg = String(raw.dropFirst(prefix.count))
+                .trimmingCharacters(in: .whitespacesAndNewlines)
+                .trimmingCharacters(in: CharacterSet(charactersIn: ".!?"))
+                .trimmingCharacters(in: .whitespacesAndNewlines)
+            guard !arg.isEmpty, arg.count <= 60, !arg.contains("\n") else { return nil }
+            return arg
         }
         return nil
     }

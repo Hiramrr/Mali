@@ -37,6 +37,11 @@ public enum EditorCommand: Equatable, Sendable {
     case bulletList
     case quote
     case insertLink
+    /// Cambiar el título del documento. La sesión NO lo aplica directamente
+    /// (no tiene acceso al NSDocument): lo intercepta `EditorScreen`, que sí
+    /// conoce la URL actual y renombra el archivo. Si llega a `send`, se
+    /// ignora para no escribir el título dentro del texto.
+    case renameTitle(String)
     // Previsualización atómica para módulos (gestos). Mientras dura, el texto
     // mostrado no toca el binding, el guardado ni el historial: confirmar
     // registra un único undo (o ninguno si no hubo cambio) y cancelar

@@ -103,6 +103,11 @@ public final class EditorSession {
             commitPreview()
         case .cancelPreview:
             cancelPreview()
+        case .renameTitle:
+            // Lo aplica EditorScreen (dueño del documento). Ver el caso en
+            // EditorCommand: ignorar aquí evita el bug de insertar el título
+            // como texto si algún consumidor reenvía al session.send.
+            break
         }
         view.window?.makeFirstResponder(view)
     }

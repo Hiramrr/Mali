@@ -1,5 +1,7 @@
 import XCTest
+import AppKit
 import EditorCore
+import EditorEngine
 @testable import ModuleKit
 @testable import VoiceModule
 
@@ -40,6 +42,27 @@ final class VoiceCommandParserTests: XCTestCase {
         // Comando mezclado en frase larga: no dispara.
         XCTAssertNil(parser.parse("quiero decir que borra eso por favor y sigue escribiendo mucho más"))
         XCTAssertNil(parser.parse(""))
+    }
+
+    func testRenameTitle() {
+        let parser = VoiceCommandParser()
+        // El caso reportado: antes caía a dictado e insertaba el texto.
+        XCTAssertEqual(parser.parse("Cambia el título a prueba."), .renameTitle("prueba"))
+        XCTAssertEqual(parser.parse("Cambia el titulo a Metodología"), .renameTitle("Metodología"))
+        XCTAssertEqual(parser.parse("Pon como título IHC 2026."), .renameTitle("IHC 2026"))
+        XCTAssertEqual(parser.parse("Ponle de título TDAH"), .renameTitle("TDAH"))
+        XCTAssertEqual(parser.parse("Titula Informe final"), .renameTitle("Informe final"))
+        XCTAssertEqual(parser.parse("Renombra a Borrador 2"), .renameTitle("Borrador 2"))
+    }
+
+    func testRenameTitleGuards() {
+        let parser = VoiceCommandParser()
+        // Sin argumento, vacío efectivo o frase larga: no es comando (dictado).
+        XCTAssertNil(parser.parse("Cambia el título a."))
+        XCTAssertNil(parser.parse("Cambia el título a "))
+        XCTAssertNil(parser.parse("Titula"))
+        XCTAssertNil(parser.parse("quiero que cambies el título a otro porque este no me gusta nada"))
+        XCTAssertNil(parser.parse("hola mundo"))
     }
 }
 
@@ -97,6 +120,8 @@ final class VoiceModuleTests: XCTestCase {
         XCTAssertEqual(module.editorCommands(for: .deleteLastInsertion), [.undo])
         XCTAssertEqual(module.editorCommands(for: .cancel), [])
         XCTAssertEqual(module.editorCommands(for: .dictation("")), [])
+        // Renombrar viaja como comando de título, jamás como insertText.
+        XCTAssertEqual(module.editorCommands(for: .renameTitle("prueba")), [.renameTitle("prueba")])
     }
 
     @MainActor func testProcessPrefersCommands() {
@@ -146,6 +171,25 @@ final class VoiceModuleTests: XCTestCase {
         await bus.finish()
     }
 
+    @MainActor func testRenameTitleTravelsAsRenameNotInsert() async throws {
+        // Regresión del reporte: "Cambia el título a prueba." insertaba texto.
+        let bus = EditorCommandBus()
+        let mock = MockSpeechRecognizer()
+        mock.nextTranscript = "Cambia el título a prueba."
+        let module = VoiceModule(recognizer: mock)
+        try await module.start(context: EditorModuleContext(commandBus: bus))
+        let stream = await bus.commands()
+        await module.begin()
+        await module.finish()
+        var received: EditorCommand?
+        for await command in stream {
+            received = command
+            break
+        }
+        XCTAssertEqual(received, .renameTitle("prueba"))
+        await bus.finish()
+    }
+
     @MainActor func testSilenceDoesNotInsert() async throws {
         let bus = EditorCommandBus()
         let mock = MockSpeechRecognizer()
@@ -160,5 +204,26 @@ final class VoiceModuleTests: XCTestCase {
             XCTFail("Se esperaba estado de silencio, fue \(module.state)")
         }
         await bus.finish()
+    }
+
+    @MainActor func testSessionNeverInsertsTitleAsText() {
+        // Defensa en profundidad: si renameTitle llegara a session.send, el
+        // texto, la selección y el historial quedan intactos.
+        _ = NSApplication.shared
+        let window = NSWindow(contentRect: NSRect(x: 0, y: 0, width: 400, height: 300),
+                              styleMask: [.titled], backing: .buffered, defer: false)
+        let view = NSTextView(usingTextLayoutManager: true)
+        view.isRichText = false
+        view.allowsUndo = true
+        window.contentView = view
+        window.makeFirstResponder(view)
+        view.string = "texto intacto"
+        view.undoManager?.removeAllActions()
+        let session = EditorSession()
+        session.textView = view
+        session.send(.renameTitle("prueba"))
+        XCTAssertEqual(view.string, "texto intacto")
+        XCTAssertFalse(view.undoManager?.canUndo ?? true)
+        window.orderOut(nil)
     }
 }

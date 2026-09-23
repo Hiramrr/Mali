@@ -181,6 +181,8 @@ public final class VoiceModule: EditorInputModule {
             return [.insertText("\n\n")]
         case .undo, .deleteLastInsertion:
             return [.undo]
+        case .renameTitle(let title):
+            return title.isEmpty ? [] : [.renameTitle(title)]
         case .cancel:
             return []
         }
