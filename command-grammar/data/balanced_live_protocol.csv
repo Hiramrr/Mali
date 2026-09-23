@@ -1,0 +1,49 @@
+paso,grupo,instruccion,expected
+B01,navigation,"Busca TDAH.",findText
+B02,navigation,"Encuentra IHC.",findText
+B03,navigation,"Busca accesibilidad cognitiva.",findText
+B04,navigation,"Localiza SwiftUI.",findText
+B05,navigation,"Halla Capítulo 3.",findText
+B06,navigation,"Detecta la cita duplicada.",findText
+B07,navigation,"Marca esta frase.",selectText
+B08,navigation,"Selecciona María José.",selectText
+B09,navigation,"Elige accesibilidad.",selectText
+B10,navigation,"Toma el Capítulo 3.",selectText
+B11,navigation,"Enfoca la conclusión.",selectText
+B12,navigation,"Aparta el párrafo duplicado.",selectText
+B13,reversible,"Deshaz.",undo
+B14,reversible,"Vuelve atrás.",undo
+B15,reversible,"Anula el último cambio.",undo
+B16,reversible,"Revierte el cambio.",undo
+B17,reversible,"Rehaz.",redo
+B18,reversible,"Vuelve a aplicar el cambio.",redo
+B19,reversible,"Reaplica el formato.",redo
+B20,reversible,"Restaura lo deshecho.",redo
+B21,reversible,"Ponlo en negrita.",formatSelection
+B22,reversible,"Ponlo en cursivas.",formatSelection
+B23,reversible,"Subráyalo.",formatSelection
+B24,reversible,"Aplica subrayado al párrafo.",formatSelection
+B25,contentChanging,"Cambia el título a Claridad.",renameTitle
+B26,contentChanging,"Pon como título Resultados 2026.",renameTitle
+B27,contentChanging,"Cambia el nombre a IHC.",renameTitle
+B28,contentChanging,"Bórralo.",deleteSelection
+B29,contentChanging,"Elimina la selección.",deleteSelection
+B30,contentChanging,"Quita esa frase.",deleteSelection
+B31,contentChanging,"Troca esto por TDAH.",replaceSelection
+B32,contentChanging,"Sustituye la palabra por SwiftUI.",replaceSelection
+B33,contentChanging,"Cambia esta palabra por dificultades.",replaceSelection
+B34,contentChanging,"Hazlo más breve.",rewriteSelection
+B35,contentChanging,"Reformula la conclusión.",rewriteSelection
+B36,contentChanging,"Hazla más accesible.",rewriteSelection
+B37,externalSideEffect,"Guarda el documento.",saveDocument
+B38,externalSideEffect,"Archiva el informe.",saveDocument
+B39,externalSideEffect,"Guárdalo.",saveDocument
+B40,externalSideEffect,"Respalda el borrador.",saveDocument
+B41,externalSideEffect,"Abre el archivo anterior.",openDocument
+B42,externalSideEffect,"Recupera el acta vieja.",openDocument
+B43,externalSideEffect,"Carga el informe guardado.",openDocument
+B44,externalSideEffect,"Muestra el Capítulo 3.",openDocument
+B45,externalSideEffect,"Exporta a pdf.",exportDocument
+B46,externalSideEffect,"Genera el documento en Word.",exportDocument
+B47,externalSideEffect,"Convierte a texto plano.",exportDocument
+B48,externalSideEffect,"Saca el acta en pdf.",exportDocument

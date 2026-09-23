@@ -319,3 +319,27 @@ validator sin llegar a confirm. Comparación de fricción válida sobre todo en
 nav; para reversible/content hace falta live con contexto generoso por paso.
 Criterios: wrong-auto 0 ✓, inválidos 0 ✓, éxito 16/16 ✓. Siguiente: ese live
 de contexto-generoso, luego Fase 11 (editor real).
+
+## Fase Risk-Balanced-Live (rama prueba/risk-policy-balanced-live)
+
+Cierra la validación risk-based eliminando el artefacto de estado persistente:
+fixture fresco por trial (`BalancedFixtures.swift`: navigation/format/undo/
+redo/delete/replace/rewrite/rename/external, determinista por índice;
+`fixturePreconditions` imprime FIXTURE READY o INVALID_TEST_FIXTURE y salta
+sin contar como fallo de voz). Política, validator, riesgo y mapping SIN
+cambios. Tests previos intactos (406 + 352 + gramática 447).
+
+```bash
+cd command-grammar
+swift run GrammarTest fixture-tests  # 29/29 creación/independencia/preconds
+swift run GrammarTest balanced-live  # 48 trials (requiere humano+mic)
+```
+
+Protocolo `balanced_live_protocol.csv` (48, sin errores deliberados): 12 nav
+(6 find+6 select), 12 reversible (4 undo+4 redo+4 format, contexto válido),
+12 content (3 rename+3 delete+3 replace+3 rewrite), 12 external (4 save+4
+open+4 export). Logger extendido (`balanced_live_results.csv`): fixture,
+context_valid_before, auto_executed/confirmed/repeated, effect_correct.
+Criterio de cierre: wrong/wrong-auto 0 + ≥10 trials válidos por riesgo +
+latencia nav/rev ≈ STT+ejecución. Si se mantiene, directo a Fase 11.
+DETENIDO sin editor real.

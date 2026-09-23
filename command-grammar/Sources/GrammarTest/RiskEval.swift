@@ -73,7 +73,133 @@ func runSim19Risk() {
     print("CSV: data/ux_risk_sim19.csv")
 }
 
-// MARK: - risk-live: 40 interacciones con logger corregido
+// MARK: - balanced-live: 48 trials con fixture fresco por trial (sin estado persistente)
+
+func fixtureKindFor(expected: String) -> FixtureKind {
+    switch expected {
+    case "findText", "selectText": return .navigation
+    case "undo": return .undo
+    case "redo": return .redo
+    case "formatSelection": return .format
+    case "renameTitle": return .rename
+    case "deleteSelection": return .delete
+    case "replaceSelection": return .replace
+    case "rewriteSelection": return .rewrite
+    default: return .external
+    }
+}
+
+func runBalancedLive() async {
+    let base = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
+    let protoURL = base.appendingPathComponent("data/balanced_live_protocol.csv")
+    guard FileManager.default.fileExists(atPath: protoURL.path) else {
+        print("balanced-live: falta data/balanced_live_protocol.csv"); return
+    }
+    guard let text = try? String(contentsOf: protoURL, encoding: .utf8) else { return }
+    let locale = Locale(identifier: "es_MX")
+    let lmConfig: SFSpeechLanguageModel.Configuration?
+    do { lmConfig = try loadCustomLMConfiguration() }
+    catch { print("balanced-live: \(error)"); return }
+    let outURL = base.appendingPathComponent("data/balanced_live_results.csv")
+    if !FileManager.default.fileExists(atPath: outURL.path) {
+        try? "paso,grupo,instruccion,expected,fixture,speech_start,speech_end,transcript_final,proposal_shown,decision,action_completed,command,risk,policy,context_valid_before,auto_executed,confirmed,repeated,effect_correct,stt_ms,proposal_generation_ms,decision_ms,execution_ms,total_ms\n".write(to: outURL, atomically: true, encoding: .utf8)
+    }
+    let iso: (Date) -> String = { d in
+        let f = ISO8601DateFormatter(); f.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+        return f.string(from: d)
+    }
+    var idx = 0
+    print("=== BALANCED LIVE (fixture fresco por trial; auto=sin Enter; confirm=Enter; esc; r) ===")
+    for line in text.components(separatedBy: "\n").dropFirst() {
+        if line.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty { continue }
+        let p = Runner.splitCSVLine(line)
+        guard p.count >= 4, !p[0].isEmpty else { continue }
+        let (paso, grupo, instruccion, expected) = (p[0], p[1], p[2], p[3])
+        // Estado independiente por trial
+        var session = RiskBasedSession(editor: fixture(for: fixtureKindFor(expected: expected), index: idx))
+        idx += 1
+        let (ready, msg) = fixturePreconditions(for: fixtureKindFor(expected: expected), expected: expected, editor: session.editor)
+        print("\n[\(paso) \(grupo)] DI/HAZ: \(instruccion)")
+        print(msg)
+        guard ready else { continue } // NO contar como fallo del sistema de voz
+        print("Enter para hablar (mic)...")
+        _ = readLine()
+        let wav = FileManager.default.temporaryDirectory.appendingPathComponent("balanced.wav")
+        do {
+            let tSpeechStart = Date()
+            try await recordMic(to: wav)
+            let tSpeechEnd = Date()
+            let (transcript, sttMs) = try await transcribeFileCustom(wav, locale: locale, lmConfig: lmConfig!)
+            let tProp0 = Date()
+            session.startListening()
+            session.receiveTranscript(transcript)
+            let tProp1 = Date()
+            let proposalGenMs = tProp1.timeIntervalSince(tProp0) * 1000.0
+            let parsedNow = parseCommand(raw: transcript)
+            let ctxValid = contextError(for: parsedNow, in: session.editor) == nil
+            // Nota: receiveTranscript ya validó con el fixture; ctxValid se registra tal cual.
+            let shown: String
+            let cmdStr: String
+            let riskStr: String
+            let polStr: String
+            var auto = false
+            switch session.state {
+            case .executed(let prop) where policyForCommand(prop.command) == .immediate:
+                auto = true
+                shown = session.feedback() ?? "✓ Listo"
+                print("\(shown) (auto, sin Enter)")
+                cmdStr = "\(prop.command)"; riskStr = prop.risk.rawValue; polStr = "immediate"
+            case .recognized(let prop):
+                print("Reconocido:\n\(prop.effectDescription)\n[\(prop.risk.rawValue)]")
+                print("Decisión: [Enter] confirmar  [esc] cancelar  [r] repetir")
+                shown = prop.effectDescription.replacingOccurrences(of: "\n", with: " / ")
+                cmdStr = "\(prop.command)"; riskStr = prop.risk.rawValue; polStr = "confirm"
+            case .unsupported: print("Ese comando no está disponible. ([esc] cerrar / [r] repetir)"); shown = "Ese comando no está disponible."; cmdStr = "unsupported"; riskStr = ""; polStr = ""
+            case .notUnderstood: print("No entendí el comando. ([r] repetir / [esc] cancelar)"); shown = "No entendí el comando."; cmdStr = "unknown"; riskStr = ""; polStr = ""
+            case .invalidContext(_, let r): print("\(r) ([r] repetir / [esc] cerrar)"); shown = r; cmdStr = "invalidContext"; riskStr = ""; polStr = ""
+            default: print("Estado: \(session.state)"); shown = "\(session.state)"; cmdStr = ""; riskStr = ""; polStr = ""
+            }
+            var decision = "auto"
+            var decisionMs = 0.0
+            var executionMs = 0.0
+            if !auto {
+                let tD0 = Date()
+                let input = readLine() ?? ""
+                let tE0 = Date()
+                if input.lowercased() == "r" { session.repeatCommand(); decision = "repeat" }
+                else if input.lowercased() == "esc" { session.cancel(); decision = "cancel" }
+                else { session.confirm(); decision = "confirm" }
+                let tEnd = Date()
+                decisionMs = tEnd.timeIntervalSince(tD0) * 1000.0
+                executionMs = tEnd.timeIntervalSince(tE0) * 1000.0
+                let completed: String
+                switch session.state {
+                case .executed: completed = "executed"
+                case .cancelled: completed = "cancelled"
+                case .listening: completed = "listening-repeat"
+                default: completed = "\(session.state)"
+                }
+                let totalMs = tEnd.timeIntervalSince(tSpeechEnd) * 1000.0
+                let correct = (completed == "executed" && canonCommand(parseCommand(raw: transcript)) == expected) ? "yes" : "no"
+                let row = "\(paso),\(grupo),\(csvEscape(instruccion)),\(expected),\(fixtureKindFor(expected: expected).rawValue),\(iso(tSpeechStart)),\(iso(tSpeechEnd)),\(csvEscape(transcript)),\(csvEscape(shown)),\(decision),\(csvEscape(completed)),\(csvEscape(cmdStr)),\(riskStr),\(polStr),\(ctxValid ? 1 : 0),0,\(decision == "confirm" && completed == "executed" ? 1 : 0),\(decision == "repeat" ? 1 : 0),\(correct),\(String(format: "%.0f", sttMs)),\(String(format: "%.3f", proposalGenMs)),\(String(format: "%.0f", decisionMs)),\(String(format: "%.3f", executionMs)),\(String(format: "%.0f", totalMs))\n"
+                if let fh = try? FileHandle(forWritingTo: outURL) {
+                    fh.seekToEndOfFile(); fh.write(Data(row.utf8)); try? fh.close()
+                }
+            } else {
+                let tEnd = Date()
+                let totalMs = tEnd.timeIntervalSince(tSpeechEnd) * 1000.0
+                let correct = canonCommand(parseCommand(raw: transcript)) == expected ? "yes" : "no"
+                let row = "\(paso),\(grupo),\(csvEscape(instruccion)),\(expected),\(fixtureKindFor(expected: expected).rawValue),\(iso(tSpeechStart)),\(iso(tSpeechEnd)),\(csvEscape(transcript)),\(csvEscape(shown)),auto,executed,\(csvEscape(cmdStr)),\(riskStr),\(polStr),\(ctxValid ? 1 : 0),1,0,0,\(correct),\(String(format: "%.0f", sttMs)),\(String(format: "%.3f", proposalGenMs)),0,0,\(String(format: "%.0f", totalMs))\n"
+                if let fh = try? FileHandle(forWritingTo: outURL) {
+                    fh.seekToEndOfFile(); fh.write(Data(row.utf8)); try? fh.close()
+                }
+            }
+        } catch {
+            print("balanced-live error: \(error)")
+        }
+    }
+    print("\nSesión completa. Resultados en data/balanced_live_results.csv")
+}
 
 func runRiskLive() async {
     let base = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)

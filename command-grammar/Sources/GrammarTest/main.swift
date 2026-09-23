@@ -37,6 +37,12 @@ struct Runner {
             runSim19Risk()
         } else if args.contains("risk-live") {
             await runRiskLive()
+        } else if args.contains("fixture-tests") {
+            let (p, f, n) = runFixtureTests()
+            print("fixture-tests: \(p)/\(n)")
+            for x in f { print("FAIL \(x.name): \(x.detail)") }
+        } else if args.contains("balanced-live") {
+            await runBalancedLive()
         } else if args.contains("protocol") {
             printLiveProtocol()
         } else if let i = args.firstIndex(of: "transcribe"), i + 1 < args.count {
