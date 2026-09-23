@@ -263,3 +263,39 @@ exploratorios. Tiempos ms: STT med 228 (L01 506 warmup); proposal≈STT
 24/17=1.41; repeat 20%, cancel 0%. Friction baseline ≈2.4 s/comando.
 Recomendación: Fase 10 risk-based (navigation→inmediato,
 reversible→inmediato+Undo, content/external→confirm). DETENIDO.
+
+## Fase Risk-Based (rama prueba/risk-based-confirmation)
+
+Política post-ParsedCommand: navigation (find/select) + reversible con
+contexto válido (undo/redo/format) → inmediato con feedback; content
+(rename/delete/replace/rewrite) + external (save/open/export) → confirm;
+unknown/unsupported/multi/invalid → sin confirmación ni ejecución.
+Speech/Grammar/LM/parsing/FM intactos (SHA verificados).
+
+```bash
+cd command-grammar
+swift run GrammarTest risk-tests    # 406 tests + invariantes
+swift run GrammarTest sim-19-risk   # 19 fallos bajo risk-based, sin retranscribir
+swift run GrammarTest risk-live     # protocolo 40 (requiere humano+mic)
+```
+
+Cambios: `RiskPolicy.swift` (policy, feedback ✓, AUTO_EXECUTED log,
+`RiskBasedSession`: ParsedCommand→Validator→Policy; inválidos jamás llegan
+a confirm). Logger Fase 9 corregido (proposal pre-decisión; speech_start/end,
+stt/proposal_generation/decision/execution/total independientes; sin cambio
+de comportamiento). Estados existentes reutilizados (`.executed` + log
+`auto_executed` vs `executed`).
+
+Tests 406/406 (`RiskTests.swift`): mapping 30 (UNMAPPED… si falta), nav 120,
+reversible+format 64, content/external 70, no-ops 60, rollback 50
+(format→undo 100%), guardas 12. Invariantes: inmediato solo si
+supported+válido+immediate; 0 efectos en resto.
+
+sim-19-risk (`data/ux_risk_sim19.csv`): NO EFFECT 18, SAFE IMMEDIATE 0,
+WRONG IMMEDIATE 0, CONFIRMABLE WRONG 1. V173 delete=contentChanging→confirm,
+auto=false ✓. Objetivo `wrong content modifications = 0` ✓.
+
+Live (`data/risk_live_protocol.csv`: 10 nav + 10 rev + 10 content + 5 ext +
+5 error; `risk_live_results.csv` con command/risk/policy y 5 tiempos):
+PENDIENTE humano. Criterios: wrong-auto 0, inválidos 0, éxito ≥98%,
+fricción < 2422 ms med / 1.41 conf/efecto. DETENIDO sin editor real.

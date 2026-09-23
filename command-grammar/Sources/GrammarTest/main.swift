@@ -31,6 +31,12 @@ struct Runner {
             runSim19()
         } else if args.contains("confirm-live") {
             await runConfirmLive()
+        } else if args.contains("risk-tests") {
+            runRiskTestsPrinter()
+        } else if args.contains("sim-19-risk") {
+            runSim19Risk()
+        } else if args.contains("risk-live") {
+            await runRiskLive()
         } else if args.contains("protocol") {
             printLiveProtocol()
         } else if let i = args.firstIndex(of: "transcribe"), i + 1 < args.count {

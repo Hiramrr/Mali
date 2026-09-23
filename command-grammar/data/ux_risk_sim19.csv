@@ -1,0 +1,20 @@
+id,expected,top1_transcript,parsed,risk,policy,auto_execute,modifies_content,clase
+V005,renameTitle,"Renombre el documento SwiftUI","unknown",navigation,immediate,0,0,NO EFFECT
+V006,renameTitle,"Actualiza el nombre evaluación de IHC","unknown",navigation,immediate,0,0,NO EFFECT
+V012,renameTitle,"Qué el título si te capítulo tres","unknown",navigation,immediate,0,0,NO EFFECT
+V013,renameTitle,"Modificar el encabezado a metodología","unknown",navigation,immediate,0,0,NO EFFECT
+V034,replaceSelection,"Cambias de término por IHC","unknown",navigation,immediate,0,0,NO EFFECT
+V046,formatSelection:bold,"Pone negrito el","unknown",navigation,immediate,0,0,NO EFFECT
+V059,formatSelection:bold,"Hazle negritas","unknown",navigation,immediate,0,0,NO EFFECT
+V066,undo,"Deshace eso","unknown",navigation,immediate,0,0,NO EFFECT
+V068,undo,"Deshace el último cambio","unknown",navigation,immediate,0,0,NO EFFECT
+V082,redo,"Reto","unknown",navigation,immediate,0,0,NO EFFECT
+V083,redo,"Fea hazlo","unknown",navigation,immediate,0,0,NO EFFECT
+V086,redo,"Aplicar el formato","unknown",navigation,immediate,0,0,NO EFFECT
+V089,redo,"Les haz el deshacer","unknown",navigation,immediate,0,0,NO EFFECT
+V090,redo,"Repite el cambio de desecho","unknown",navigation,immediate,0,0,NO EFFECT
+V094,redo,"Creas el cambio","unknown",navigation,immediate,0,0,NO EFFECT
+V103,findText,"Haya capítulo tres","unknown",navigation,immediate,0,0,NO EFFECT
+V118,selectText,"Te limita evaluación de IH","unknown",navigation,immediate,0,0,NO EFFECT
+V154,unsupported,"Central título","unknown",navigation,immediate,0,0,NO EFFECT
+V173,unknown,"Borra información accidentalmente afecta","deleteSelection",contentChanging,confirm,0,1,CONFIRMABLE WRONG EFFECT

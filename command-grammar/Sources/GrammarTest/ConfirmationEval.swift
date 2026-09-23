@@ -96,11 +96,15 @@ func runConfirmLive() async {
     catch { print("confirm-live: \(error)"); return }
     let outURL = base.appendingPathComponent("data/confirmation_live_results.csv")
     if !FileManager.default.fileExists(atPath: outURL.path) {
-        try? "paso,modo,instruccion,transcript,proposal,decision,riesgo,stt_ms,proposal_ms,decision_ms,total_ms,diag_conf,diag_alts\n".write(to: outURL, atomically: true, encoding: .utf8)
+        try? "paso,modo,instruccion,speech_start,speech_end,transcript_final,proposal_shown,decision,action_completed,command,risk,policy,stt_ms,proposal_generation_ms,decision_ms,execution_ms,total_ms\n".write(to: outURL, atomically: true, encoding: .utf8)
     }
     var session = ConfirmationSession(editor: .default())
     session.editor.selectAll()
     print("=== CONFIRM LIVE (Enter=confirmar, esc=cancelar, r=repetir) ===")
+    let iso: (Date) -> String = { d in
+        let f = ISO8601DateFormatter(); f.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+        return f.string(from: d)
+    }
     for line in text.components(separatedBy: "\n").dropFirst() {
         if line.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty { continue }
         let p = Runner.splitCSVLine(line)
@@ -111,25 +115,34 @@ func runConfirmLive() async {
         _ = readLine()
         let wav = FileManager.default.temporaryDirectory.appendingPathComponent("ux.wav")
         do {
+            let tSpeechStart = Date()
             try await recordMic(to: wav)
             let tSpeechEnd = Date()
             let (transcript, sttMs) = try await transcribeFileCustom(wav, locale: locale, lmConfig: lmConfig!)
-            let tProposal = Date()
+            let tProp0 = Date()
             session.startListening()
             session.receiveTranscript(transcript)
-            // Overlay mínimo
+            let tProp1 = Date()
+            let proposalGenMs = tProp1.timeIntervalSince(tProp0) * 1000.0
+            // Overlay mínimo + captura PRE-decisión (fix logger Fase 9)
+            let shown: String
+            let cmdStr: String
+            let riskStr: String
             switch session.state {
             case .recognized(let prop):
                 print("Reconocido:\n\(prop.effectDescription)\n[\(prop.risk.rawValue)]")
-            case .unsupported: print("Ese comando no está disponible. ([esc] cerrar / [r] repetir)")
-            case .notUnderstood: print("No entendí el comando. ([r] repetir / [esc] cancelar)")
-            case .invalidContext(_, let r): print("\(r)")
-            default: print("Estado: \(session.state)")
+                shown = prop.effectDescription.replacingOccurrences(of: "\n", with: " / ")
+                cmdStr = "\(prop.command)"; riskStr = prop.risk.rawValue
+            case .unsupported: print("Ese comando no está disponible. ([esc] cerrar / [r] repetir)"); shown = "Ese comando no está disponible."; cmdStr = "unsupported"; riskStr = ""
+            case .notUnderstood: print("No entendí el comando. ([r] repetir / [esc] cancelar)"); shown = "No entendí el comando."; cmdStr = "unknown"; riskStr = ""
+            case .invalidContext(_, let r): print("\(r)"); shown = r; cmdStr = "invalidContext"; riskStr = ""
+            default: print("Estado: \(session.state)"); shown = "\(session.state)"; cmdStr = ""; riskStr = ""
             }
             print("Decisión: [Enter] confirmar  [esc] cancelar  [r] repetir")
             let tDecision0 = Date()
             let input = readLine() ?? ""
             let decision: String
+            let tExec0 = Date()
             if input.lowercased() == "r" {
                 session.repeatCommand()
                 decision = "repeat"
@@ -140,14 +153,17 @@ func runConfirmLive() async {
                 session.confirm(); decision = "confirm"
             }
             let tEnd = Date()
-            let proposalMs = tProposal.timeIntervalSince(tSpeechEnd) * 1000.0
+            let executionMs = tEnd.timeIntervalSince(tExec0) * 1000.0
             let decisionMs = tEnd.timeIntervalSince(tDecision0) * 1000.0
             let totalMs = tEnd.timeIntervalSince(tSpeechEnd) * 1000.0
-            let proposal = { () -> String in
-                if case .recognized(let pr) = session.state { return pr.effectDescription }
-                return "\(session.state)"
-            }()
-            let row = "\(paso),\(modo),\(csvEscape(instruccion)),\(csvEscape(transcript)),\(csvEscape(proposal.replacingOccurrences(of: "\n", with: " / "))),\(decision),,\(String(format: "%.0f", sttMs)),\(String(format: "%.0f", proposalMs)),\(String(format: "%.0f", decisionMs)),\(String(format: "%.0f", totalMs)),,\n"
+            let completed: String
+            switch session.state {
+            case .executed: completed = "executed"
+            case .cancelled: completed = "cancelled"
+            case .listening: completed = "listening-repeat"
+            default: completed = "\(session.state)"
+            }
+            let row = "\(paso),\(modo),\(csvEscape(instruccion)),\(iso(tSpeechStart)),\(iso(tSpeechEnd)),\(csvEscape(transcript)),\(csvEscape(shown)),\(decision),\(csvEscape(completed)),\(csvEscape(cmdStr)),\(riskStr),confirm-all,\(String(format: "%.0f", sttMs)),\(String(format: "%.3f", proposalGenMs)),\(String(format: "%.0f", decisionMs)),\(String(format: "%.3f", executionMs)),\(String(format: "%.0f", totalMs))\n"
             if let fh = try? FileHandle(forWritingTo: outURL) {
                 fh.seekToEndOfFile(); fh.write(Data(row.utf8)); try? fh.close()
             }
