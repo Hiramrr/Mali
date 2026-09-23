@@ -1,0 +1,181 @@
+id,group,utterance,hasSelection,canUndo,canRedo,documentIsOpen,expected,expectedArgs,preserveLang
+A001,A,"Titula el informe como Balance anual.",false,false,false,true,renameTitle,newTitle=Balance anual,1
+A002,A,"Ponle Metodología al capítulo dos.",false,false,false,true,renameTitle,newTitle=Metodología,1
+A003,A,"El encabezado debe decir Discusión.",false,false,false,true,renameTitle,newTitle=Discusión,1
+A004,A,"Cambia el nombre a Anexo estadístico.",false,false,false,true,renameTitle,newTitle=Anexo estadístico,1
+A005,A,"Que el título sea Evaluación de IHC.",false,false,false,true,renameTitle,newTitle=Evaluación de IHC,1
+A006,A,"Bautiza este archivo como Borrador final.",false,false,false,true,renameTitle,newTitle=Borrador final,1
+A007,A,"El título nuevo es Accesibilidad 2026.",false,false,false,true,renameTitle,newTitle=Accesibilidad 2026,1
+A008,A,"Nombra esta versión como Entrega tres.",false,false,false,true,renameTitle,newTitle=Entrega tres,1
+A009,A,"Pon como encabezado Trabajo futuro.",false,false,false,true,renameTitle,newTitle=Trabajo futuro,1
+A010,A,"Actualiza la carátula a Informe TDAH.",false,false,false,true,renameTitle,newTitle=Informe TDAH,1
+A011,A,"El rótulo será Sesión plenaria.",false,false,false,true,renameTitle,newTitle=Sesión plenaria,1
+A012,A,"Titula la minuta como Acuerdos mayo.",false,false,false,true,renameTitle,newTitle=Acuerdos mayo,1
+A013,A,"Cambia la portada a Índice.",false,false,false,true,renameTitle,newTitle=Índice,1
+A014,A,"Que diga Conclusiones preliminares arriba.",false,false,false,true,renameTitle,newTitle=Conclusiones preliminares,1
+A015,A,"El membrete debe decir Universidad.",false,false,false,true,renameTitle,newTitle=Universidad,1
+A016,A,"Tacha este renglón.",true,false,false,true,deleteSelection,,0
+A017,A,"Elimina la nota al pie.",true,false,false,true,deleteSelection,,0
+A018,A,"Suprime el considerando.",true,false,false,true,deleteSelection,,0
+A019,A,"Corta el epígrafe.",true,false,false,true,deleteSelection,,0
+A020,A,"Descarta el apéndice.",true,false,false,true,deleteSelection,,0
+A021,A,"Anula este inciso.",true,false,false,true,deleteSelection,,0
+A022,A,"Remueve la dedicatoria.",true,false,false,true,deleteSelection,,0
+A023,A,"Quita el colofón.",true,false,false,true,deleteSelection,,0
+A024,A,"Limpia el borrador tachado.",true,false,false,true,deleteSelection,,0
+A025,A,"Vacía este recuadro.",true,false,false,true,deleteSelection,,0
+A026,A,"Retira la cita larga.",true,false,false,true,deleteSelection,,0
+A027,A,"Suprime el ejemplo.",true,false,false,true,deleteSelection,,0
+A028,A,"Elimina el resumen viejo.",true,false,false,true,deleteSelection,,0
+A029,A,"Descarta el glosario.",true,false,false,true,deleteSelection,,0
+A030,A,"Borra la fe de erratas.",true,false,false,true,deleteSelection,,0
+A031,A,"Troca error por errata aquí.",true,false,false,true,replaceSelection,newText=errata,1
+A032,A,"Donde dice cosa pon asunto.",true,false,false,true,replaceSelection,newText=asunto,1
+A033,A,"Sustituye la cifra vieja por 42.",true,false,false,true,replaceSelection,newText=42,1
+A034,A,"Cambia TDAH por TDA-H en este renglón.",true,false,false,true,replaceSelection,newText=TDA-H,1
+A035,A,"Pon niños donde dice menores.",true,false,false,true,replaceSelection,newText=niños,1
+A036,A,"Reemplaza 2024 por 2026 aquí.",true,false,false,true,replaceSelection,newText=2026,1
+A037,A,"Escribe Diseñó con ñ donde falta.",true,false,false,true,replaceSelection,newText=Diseñó,1
+A038,A,"Cambia IHC por interacción.",true,false,false,true,replaceSelection,newText=interacción,1
+A039,A,"Sustituye el anglicismo por su traducción.",true,false,false,true,replaceSelection,,
+A040,A,"Corrige Vallejo por Vallejos.",true,false,false,true,replaceSelection,newText=Vallejos,1
+A041,A,"Actualiza Núñez con acento.",true,false,false,true,replaceSelection,newText=Núñez,1
+A042,A,"Pon María donde dice Maria.",true,false,false,true,replaceSelection,newText=María,1
+A043,A,"Cambia el 5% por cinco por ciento.",true,false,false,true,replaceSelection,newText=cinco por ciento,1
+A044,A,"Reemplaza comillas dobles por latinas.",true,false,false,true,replaceSelection,,
+A045,A,"Troca el guion por raya.",true,false,false,true,replaceSelection,,
+A046,A,"Acorta la bienvenida.",true,false,false,true,rewriteSelection,,
+A047,A,"Alarga la despedida.",true,false,false,true,rewriteSelection,,
+A048,A,"Endulza el reclamo.",true,false,false,true,rewriteSelection,,
+A049,A,"Tensa el cierre.",true,false,false,true,rewriteSelection,,
+A050,A,"Aclara la propuesta.",true,false,false,true,rewriteSelection,,
+A051,A,"Oscurece el final.",true,false,false,true,rewriteSelection,,
+A052,A,"Enciende la polémica.",true,false,false,true,rewriteSelection,,
+A053,A,"Calma las críticas.",true,false,false,true,rewriteSelection,,
+A054,A,"Agita el debate.",true,false,false,true,rewriteSelection,,
+A055,A,"Ordena los argumentos.",true,false,false,true,rewriteSelection,,
+A056,A,"Invierte el orden.",true,false,false,true,rewriteSelection,,
+A057,A,"Resume en una línea.",true,false,false,true,rewriteSelection,,
+A058,A,"Amplía con datos.",true,false,false,true,rewriteSelection,,
+A059,A,"Reduce a la mitad.",true,false,false,true,rewriteSelection,,
+A060,A,"Suaviza el regaño.",true,false,false,true,rewriteSelection,,
+A061,A,"Remarca en negrita los totales.",true,false,false,true,formatSelection,style=bold,0
+A062,A,"Cursiva los latinajos.",true,false,false,true,formatSelection,style=italic,0
+A063,A,"Subraya los plazos.",true,false,false,true,formatSelection,style=underline,0
+A064,A,"Negrita los nombres propios.",true,false,false,true,formatSelection,style=bold,0
+A065,A,"Cursiva las citas textuales.",true,false,false,true,formatSelection,style=italic,0
+A066,A,"Subraya las fechas límite.",true,false,false,true,formatSelection,style=underline,0
+A067,A,"Marca en negrita el monto.",true,false,false,true,formatSelection,style=bold,0
+A068,A,"Pon en cursiva el epígrafe.",true,false,false,true,formatSelection,style=italic,0
+A069,A,"Subraya al deudor.",true,false,false,true,formatSelection,style=underline,0
+A070,A,"Resalta en negrita el fallo.",true,false,false,true,formatSelection,style=bold,0
+A071,A,"Enfatiza en cursiva el matiz.",true,false,false,true,formatSelection,style=italic,0
+A072,A,"Recalca subrayando el acuerdo.",true,false,false,true,formatSelection,style=underline,0
+A073,A,"Negrita los considerandos.",true,false,false,true,formatSelection,style=bold,0
+A074,A,"Cursiva el testamento citado.",true,false,false,true,formatSelection,style=italic,0
+A075,A,"Subraya la firma requerida.",true,false,false,true,formatSelection,style=underline,0
+A076,A,"Retrocede la edición.",false,true,false,true,undo,,0
+A077,A,"Anula mi último cambio.",false,true,false,true,undo,,0
+A078,A,"Vuelve al borrador previo.",false,true,false,true,undo,,0
+A079,A,"Cancela lo que pegué.",false,true,false,true,undo,,0
+A080,A,"Revierte el formato.",false,true,false,true,undo,,0
+A081,A,"Quita lo último que escribí.",false,true,false,true,undo,,0
+A082,A,"Borra mi edición reciente.",false,true,false,true,undo,,0
+A083,A,"Desarma el cambio.",false,true,false,true,undo,,0
+A084,A,"Regresa una versión.",false,true,false,true,undo,,0
+A085,A,"Echa atrás lo de hoy.",false,true,false,true,undo,,0
+A086,A,"Deshaz lo pegado.",false,true,false,true,undo,,0
+A087,A,"Anula el reemplazo.",false,true,false,true,undo,,0
+A088,A,"Cancela el borrado.",false,true,false,true,undo,,0
+A089,A,"Revierte lo movido.",false,true,false,true,undo,,0
+A090,A,"Vuelve al párrafo anterior.",false,true,false,true,undo,,0
+A091,A,"Reaplica el formato.",false,false,true,true,redo,,0
+A092,A,"Vuelve a pegar eso.",false,false,true,true,redo,,0
+A093,A,"Repite el reemplazo.",false,false,true,true,redo,,0
+A094,A,"Restaura mi edición.",false,false,true,true,redo,,0
+A095,A,"Recupera el borrado.",false,false,true,true,redo,,0
+A096,A,"Rehaz lo movido.",false,false,true,true,redo,,0
+A097,A,"Vuelve a poner las negritas.",false,false,true,true,redo,,0
+A098,A,"Reaplica el subrayado.",false,false,true,true,redo,,0
+A099,A,"Repite la sustitución.",false,false,true,true,redo,,0
+A100,A,"Restaura el título.",false,false,true,true,redo,,0
+A101,A,"Vuelve a numerar.",false,false,true,true,redo,,0
+A102,A,"Repite el pegado.",false,false,true,true,redo,,0
+A103,A,"Rehaz el centrado.",false,false,true,true,redo,,0
+A104,A,"Restaura el interlineado.",false,false,true,true,redo,,0
+A105,A,"Vuelve a justificar.",false,false,true,true,redo,,0
+A106,A,"Elige la tabla completa.",false,false,false,true,selectText,,
+A107,A,"Marca el recuadro gris.",false,false,false,true,selectText,,
+A108,A,"Resalta el diagrama.",false,false,false,true,selectText,,
+A109,A,"Toma el mapa anexo.",false,false,false,true,selectText,,
+A110,A,"Aparta el gráfico dos.",false,false,false,true,selectText,,
+A111,A,"Señala la imagen central.",false,false,false,true,selectText,,
+A112,A,"Encierra el ejemplo.",false,false,false,true,selectText,,
+A113,A,"Enmarca el considerando.",false,false,false,true,selectText,,
+A114,A,"Aísla el cómputo.",false,false,false,true,selectText,,
+A115,A,"Delimita el extracto.",false,false,false,true,selectText,,
+A116,A,"Recorta visualmente la cita.",false,false,false,true,selectText,,
+A117,A,"Enfoca el inciso b.",false,false,false,true,selectText,,
+A118,A,"Apunta al anexo tres.",false,false,false,true,selectText,,
+A119,A,"Localiza el otrosí.",false,false,false,true,selectText,,
+A120,A,"Ubica la rúbrica.",false,false,false,true,selectText,,
+A121,A,"Halla TDAH en el texto.",false,false,false,true,findText,query=TDAH,1
+A122,A,"Ubica la palabra metodología.",false,false,false,true,findText,query=metodología,1
+A123,A,"Rastrea el folio 042.",false,false,false,true,findText,query=042,1
+A124,A,"Detecta dobles espacios.",false,false,false,true,findText,,
+A125,A,"Caza erratas obvias.",false,false,false,true,findText,,
+A126,A,"Encuentra Núñez sin acento.",false,false,false,true,findText,query=Núñez,1
+A127,A,"Localiza el IHC mal escrito.",false,false,false,true,findText,query=IHC,1
+A128,A,"Busca el signo de pesos.",false,false,false,true,findText,query=$,1
+A129,A,"Halla el 5% mencionado.",false,false,false,true,findText,query=5%,1
+A130,A,"Ubica comillas simples.",false,false,false,true,findText,,
+A131,A,"Rastrea el término accesibilidad cognitiva.",false,false,false,true,findText,query=accesibilidad cognitiva,1
+A132,A,"Detecta la sigla INEGI.",false,false,false,true,findText,query=INEGI,1
+A133,A,"Halla Diseño con mayúscula.",false,false,false,true,findText,query=Diseño,1
+A134,A,"Ubica la ñ faltante.",false,false,false,true,findText,query=ñ,1
+A135,A,"Encuentra el guion largo.",false,false,false,true,findText,query=—,1
+A136,A,"Respalda el avance.",false,false,false,true,saveDocument,,0
+A137,A,"Archiva el tanto firmado.",false,false,false,true,saveDocument,,0
+A138,A,"Consigna el legajo.",false,false,false,true,saveDocument,,0
+A139,A,"Asienta los cambios.",false,false,false,true,saveDocument,,0
+A140,A,"Deja constancia guardada.",false,false,false,true,saveDocument,,0
+A141,A,"Preserva esta redacción.",false,false,false,true,saveDocument,,0
+A142,A,"Asegura el archivo.",false,false,false,true,saveDocument,,0
+A143,A,"Fija esta versión.",false,false,false,true,saveDocument,,0
+A144,A,"Congela el borrador.",false,false,false,true,saveDocument,,0
+A145,A,"Salvaguarda lo escrito.",false,false,false,true,saveDocument,,0
+A146,A,"Registra el progreso.",false,false,false,true,saveDocument,,0
+A147,A,"Deposita el tanto.",false,false,false,true,saveDocument,,0
+A148,A,"Custodia el original.",false,false,false,true,saveDocument,,0
+A149,A,"Pon a salvo el texto.",false,false,false,true,saveDocument,,0
+A150,A,"Deja todo guardado.",false,false,false,true,saveDocument,,0
+A151,A,"Recupera el acta vieja.",false,false,false,true,openDocument,reference=el acta vieja,1
+A152,A,"Desempolva el expediente.",false,false,false,true,openDocument,reference=el expediente,1
+A153,A,"Reabre la minuta.",false,false,false,true,openDocument,reference=la minuta,1
+A154,A,"Carga el informe 2024.",false,false,false,true,openDocument,reference=el informe 2024,1
+A155,A,"Jala el archivo del otro día.",false,false,false,true,openDocument,reference=el archivo del otro día,1
+A156,A,"Trae el contrato firmado.",false,false,false,true,openDocument,reference=el contrato firmado,1
+A157,A,"Muéstrame la tesis de Ana.",false,false,false,true,openDocument,reference=la tesis de Ana,1
+A158,A,"Presenta el Balance 2025.",false,false,false,true,openDocument,reference=el Balance 2025,1
+A159,A,"Desarchiva el legajo.",false,false,false,true,openDocument,reference=el legajo,1
+A160,A,"Recobra el borrador.",false,false,false,true,openDocument,reference=el borrador,1
+A161,A,"Vuelve a abrir el anexo.",false,false,false,true,openDocument,reference=el anexo,1
+A162,A,"Retoma el acta.",false,false,false,true,openDocument,reference=el acta,1
+A163,A,"Exhibe el padrón.",false,false,false,true,openDocument,reference=el padrón,1
+A164,A,"Despliega el mapa.",false,false,false,true,openDocument,reference=el mapa,1
+A165,A,"Proyecta la tabla.",false,false,false,true,openDocument,reference=la tabla,1
+A166,A,"Saca el informe en pdf.",false,false,false,true,exportDocument,format=pdf,0
+A167,A,"Baja el acta en texto plano.",false,false,false,true,exportDocument,format=plainText,0
+A168,A,"Genera versión enriquecida.",false,false,false,true,exportDocument,format=richText,0
+A169,A,"Pásalo a Word.",false,false,false,true,exportDocument,format=word,0
+A170,A,"Produce el pdf final.",false,false,false,true,exportDocument,format=pdf,0
+A171,A,"Rinde el texto sin formato.",false,false,false,true,exportDocument,format=plainText,0
+A172,A,"Emite copia enriquecida.",false,false,false,true,exportDocument,format=richText,0
+A173,A,"Vierte a Word el acta.",false,false,false,true,exportDocument,format=word,0
+A174,A,"Imprime en pdf virtual.",false,false,false,true,exportDocument,format=pdf,0
+A175,A,"Guarda copia plana aparte.",false,false,false,true,exportDocument,format=plainText,0
+A176,A,"Entrega versión con formato.",false,false,false,true,exportDocument,format=richText,0
+A177,A,"Migra el tanto a Word.",false,false,false,true,exportDocument,format=word,0
+A178,A,"Funde el pdf maestro.",false,false,false,true,exportDocument,format=pdf,0
+A179,A,"Extrae el puro texto.",false,false,false,true,exportDocument,format=plainText,0
+A180,A,"Publica la versión final rica.",false,false,false,true,exportDocument,format=richText,0

@@ -1,0 +1,161 @@
+id,group,utterance,hasSelection,canUndo,canRedo,documentIsOpen,expected,expectedArgs,preserveLang
+F001,F,"Titula como Balance y guarda copia.",false,false,false,true,renameTitle+saveDocument,newTitle=Balance,1
+F002,F,"Pon Metodología de título y exporta en pdf.",false,false,false,true,renameTitle+exportDocument,newTitle=Metodología|format=pdf,1
+F003,F,"Borra la nota y deshaz lo anterior.",true,true,false,true,deleteSelection+undo,,0
+F004,F,"Quita el inciso y guarda el tanto.",true,false,false,true,deleteSelection+saveDocument,,0
+F005,F,"Subraya el monto y archiva el oficio.",true,false,false,true,formatSelection+saveDocument,style=underline,0
+F006,F,"Cursiva la cita y exporta en texto plano.",true,false,false,true,formatSelection+exportDocument,style=italic|format=plainText,0
+F007,F,"Remarca el fallo y pon Discusión de título.",true,false,false,true,formatSelection+renameTitle,style=bold|newTitle=Discusión,1
+F008,F,"Hazlo breve y guarda el acta.",true,false,false,true,rewriteSelection+saveDocument,,0
+F009,F,"Aclara el acuerdo y exporta en Word.",true,false,false,true,rewriteSelection+exportDocument,format=word,0
+F010,F,"Troca pesos por dólares y archiva.",true,false,false,true,replaceSelection+saveDocument,newText=dólares,1
+F011,F,"Pon 2026 donde dice 2025 y guarda.",true,false,false,true,replaceSelection+saveDocument,newText=2026,1
+F012,F,"Cambia Ana por Anita y exporta en pdf.",true,false,false,true,replaceSelection+exportDocument,newText=Anita|format=pdf,1
+F013,F,"Busca el folio 7 y marca la foja.",false,false,false,true,findText+selectText,query=7,1
+F014,F,"Halla TDAH y selecciona el renglón.",false,false,false,true,findText+selectText,query=TDAH,1
+F015,F,"Ubica la ñ y toma la palabra.",false,false,false,true,findText+selectText,query=ñ,1
+F016,F,"Selecciona la tabla y ponla en negritas.",true,false,false,true,selectText+formatSelection,style=bold,0
+F017,F,"Marca el diagrama y subraya el total.",true,false,false,true,selectText+formatSelection,style=underline,0
+F018,F,"Toma el gráfico y expórtalo en pdf.",true,false,false,true,selectText+exportDocument,format=pdf,0
+F019,F,"Deshaz el pegado y rehace la numeración.",false,true,true,true,undo+redo,,0
+F020,F,"Anula la firma y restaura el formato.",false,true,true,true,undo+redo,,0
+F021,F,"Revierte el borrado y guarda el tanto.",false,true,false,true,undo+saveDocument,,0
+F022,F,"Cancela el envío y archiva el oficio.",false,true,false,true,undo+saveDocument,,0
+F023,F,"Abre el acta vieja y busca el folio.",false,false,false,true,openDocument+findText,reference=el acta vieja,1
+F024,F,"Carga el informe 2024 y selecciona la tabla.",false,false,false,true,openDocument+selectText,reference=el informe 2024,1
+F025,F,"Jala el adjunto y exporta en texto plano.",false,false,false,true,openDocument+exportDocument,reference=el adjunto|format=plainText,1
+F026,F,"Trae el contrato y ponlo en negritas.",true,false,false,true,openDocument+formatSelection,reference=el contrato|style=bold,1
+F027,F,"Muéstrame la tesis de Ana y guarda copia.",false,false,false,true,openDocument+saveDocument,reference=la tesis de Ana,1
+F028,F,"Desarchiva el legajo y numera las fojas.",false,false,false,true,openDocument+saveDocument,reference=el legajo,0
+F029,F,"Borra el renglón, deshazlo y guarda.",true,true,false,true,deleteSelection+undo+saveDocument,,0
+F030,F,"Pon Claridad de título, subraya el acuerdo y exporta en pdf.",true,false,false,true,renameTitle+formatSelection+exportDocument,newTitle=Claridad|style=underline|format=pdf,1
+F031,F,"Busca IHC, selecciona el renglón y ponlo en cursivas.",true,false,false,true,findText+selectText+formatSelection,query=IHC|style=italic,1
+F032,F,"Cambia CDMX por Ciudad de México, guarda y exporta en Word.",true,false,false,true,replaceSelection+saveDocument+exportDocument,newText=Ciudad de México|format=word,1
+F033,F,"Hazlo breve, titula como Síntesis y archiva el tanto.",true,false,false,true,rewriteSelection+renameTitle+saveDocument,newTitle=Síntesis,1
+F034,F,"Tacha el renglón y ponlo en negritas.",true,false,false,true,deleteSelection+formatSelection,style=bold,0
+F035,F,"Endereza la línea y centra el título.",true,false,false,true,deleteSelection+renameTitle,,0
+F036,F,"Limpia los tachones y guarda el acta.",true,false,false,true,deleteSelection+saveDocument,,0
+F037,F,"Quita el corrector viejo y deshaz el cambio.",true,true,false,true,deleteSelection+undo,,0
+F038,F,"Pule la portada y exporta en pdf.",true,false,false,true,deleteSelection+exportDocument,format=pdf,0
+F039,F,"Retoca la foto y archiva el legajo.",true,false,false,true,deleteSelection+saveDocument,,0
+F040,F,"Enmarca la cita y subraya al deudor.",true,false,false,true,selectText+formatSelection,style=underline,0
+F041,F,"Colorea los títulos y guarda el informe.",true,false,false,true,formatSelection+saveDocument,style=bold,0
+F042,F,"Decora el encabezado y titula como Fiesta.",true,false,false,true,formatSelection+renameTitle,style=bold|newTitle=Fiesta,1
+F043,F,"Grafica resultados y exporta en Word.",true,false,false,true,formatSelection+exportDocument,style=bold|format=word,0
+F044,F,"Tabula respuestas y guarda la minuta.",true,false,false,true,formatSelection+saveDocument,style=bold,0
+F045,F,"Esquematiza el capítulo y ponle Índice.",true,false,false,true,formatSelection+renameTitle,style=bold|newTitle=Índice,1
+F046,F,"Resume en viñetas y archiva.",true,false,false,true,rewriteSelection+saveDocument,,0
+F047,F,"Sintetiza el argumento y titula Tesis.",true,false,false,true,rewriteSelection+renameTitle,newTitle=Tesis,1
+F048,F,"Condensa la crónica y exporta en pdf.",true,false,false,true,rewriteSelection+exportDocument,format=pdf,0
+F049,F,"Desarrolla el nudo y guarda copia.",true,false,false,true,rewriteSelection+saveDocument,,0
+F050,F,"Amplía el desenlace y ponlo en cursivas.",true,false,false,true,rewriteSelection+formatSelection,style=italic,0
+F051,F,"Recorta el diálogo y subraya el final.",true,false,false,true,deleteSelection+formatSelection,style=underline,0
+F052,F,"Poda adjetivos y hazlo más breve.",true,false,false,true,deleteSelection+rewriteSelection,,0
+F053,F,"Quita muletillas y guarda el capítulo.",true,false,false,true,deleteSelection+saveDocument,,0
+F054,F,"Elimina repeticiones y exporta en texto plano.",true,false,false,true,deleteSelection+exportDocument,format=plainText,0
+F055,F,"Anota al margen y guarda el oficio.",true,false,false,true,selectText+saveDocument,,0
+F056,F,"Glosa el término y subraya la fecha.",true,false,false,true,selectText+formatSelection,style=underline,0
+F057,F,"Firma con rúbrica y sella con lacre.",false,false,false,true,saveDocument+saveDocument,,0
+F058,F,"Franquea la carta y certifica el envío.",false,false,false,true,saveDocument+saveDocument,,0
+F059,F,"Acusa recibo y archiva el comprobante.",false,false,false,true,saveDocument+saveDocument,,0
+F060,F,"Digitaliza el legajo y escanea a color.",false,false,false,true,saveDocument+saveDocument,,0
+G001,G,"Hazlo más corto.",true,false,false,true,rewriteSelection,,0
+G002,G,"Ponlo en negritas.",true,false,false,true,formatSelection,style=bold,0
+G003,G,"Reemplázalo por esta frase corta y clara.",true,false,false,true,replaceSelection,,0
+G004,G,"Borra esto.",true,false,false,true,deleteSelection,,0
+G005,G,"Quita la muletilla.",true,false,false,true,deleteSelection,,0
+G006,G,"Endereza el renglón.",true,false,false,true,deleteSelection,,0
+G007,G,"Tacha el duplicado.",true,false,false,true,deleteSelection,,0
+G008,G,"Recorta el excedente.",true,false,false,true,deleteSelection,,0
+G009,G,"Subraya el acuerdo.",true,false,false,true,formatSelection,style=underline,0
+G010,G,"Cursiva la cita larga.",true,false,false,true,formatSelection,style=italic,0
+G011,G,"Remarca el monto final.",true,false,false,true,formatSelection,style=bold,0
+G012,G,"Aplica viñetas al listado.",true,false,false,true,formatSelection,,0
+G013,G,"Condensa el informe.",true,false,false,true,rewriteSelection,,0
+G014,G,"Aclara el otrosí.",true,false,false,true,rewriteSelection,,0
+G015,G,"Abrevia el proemio.",true,false,false,true,rewriteSelection,,0
+G016,G,"Expón el petitorio.",true,false,false,true,rewriteSelection,,0
+G017,G,"Troca el saldo viejo.",true,false,false,true,replaceSelection,,0
+G018,G,"Pon el folio nuevo.",true,false,false,true,replaceSelection,,0
+G019,G,"Actualiza la cifra.",true,false,false,true,replaceSelection,,0
+G020,G,"Corrige al deudor.",true,false,false,true,replaceSelection,,0
+G021,G,"Deshaz el formato.",true,true,false,true,undo,,0
+G022,G,"Anula el pegado.",true,true,false,true,undo,,0
+G023,G,"Revierte el centrado.",true,true,false,true,undo,,0
+G024,G,"Rehaz la sangría.",true,false,true,true,redo,,0
+G025,G,"Reaplica el estilo.",true,false,true,true,redo,,0
+G026,G,"Restaura el margen.",true,false,true,true,redo,,0
+G027,G,"Selecciona el considerando.",true,false,false,true,selectText,,0
+G028,G,"Marca el anexo.",true,false,false,true,selectText,,0
+G029,G,"Halla el otrosí.",true,false,false,true,findText,,0
+G030,G,"Ubica la foja.",true,false,false,true,findText,,0
+H001,H,"Deshaz la sangría.",false,false,false,true,undo,,0
+H002,H,"Anula el pegado de ayer.",false,false,false,true,undo,,0
+H003,H,"Revierte lo centrado.",false,false,false,true,undo,,0
+H004,H,"Cancela el subrayado.",false,false,false,true,undo,,0
+H005,H,"Echa atrás el pegado.",false,false,false,true,undo,,0
+H006,H,"Da un paso atrás.",false,false,false,true,undo,,0
+H007,H,"Vuelve al texto previo.",false,false,false,true,undo,,0
+H008,H,"Recupera el párrafo.",false,false,false,true,undo,,0
+H009,H,"Restaura lo borrado.",false,false,false,true,undo,,0
+H010,H,"Vuelve a poner lo quitado.",false,false,false,true,undo,,0
+H011,H,"Reaplica lo deshecho.",false,false,false,true,redo,,0
+H012,H,"Vuelve a aplicar el borrado.",false,false,false,true,redo,,0
+H013,H,"Repite lo anulado.",false,false,false,true,redo,,0
+H014,H,"Rehaz lo revertido.",false,false,false,true,redo,,0
+H015,H,"Restaura lo anulado.",false,false,false,true,redo,,0
+H016,H,"Vuelve a quitar lo puesto.",false,false,false,true,redo,,0
+H017,H,"Repite el deshacer.",false,false,false,true,redo,,0
+H018,H,"Reaplica lo cancelado.",false,false,false,true,redo,,0
+H019,H,"Restaura lo revertido.",false,false,false,true,redo,,0
+H020,H,"Vuelve a anular lo activo.",false,false,false,true,redo,,0
+H021,H,"Regresa atrás otra vez.",false,false,false,true,undo,,0
+H022,H,"Devuelve el cambio previo.",false,false,false,true,undo,,0
+H023,H,"Retorna al estado anterior.",false,false,false,true,undo,,0
+H024,H,"Deshaz lo último otra vez.",false,false,false,true,undo,,0
+H025,H,"Cancela de nuevo.",false,false,false,true,undo,,0
+H026,H,"Rehaz una vez más.",false,false,false,true,redo,,0
+H027,H,"Otra vez rehacer.",false,false,false,true,redo,,0
+H028,H,"De nuevo deshacer.",false,false,false,true,undo,,0
+H029,H,"Restaurar lo deshecho ya.",false,false,false,true,redo,,0
+H030,H,"Recuperar lo anterior ya.",false,false,false,true,undo,,0
+I001,I,"Halla el considerando quinto.",false,false,false,true,findText,,0
+I002,I,"Busca el otrosí final.",false,false,false,true,findText,,0
+I003,I,"Rastrea la foja 12.",false,false,false,true,findText,,0
+I004,I,"Detecta el inciso b.",false,false,false,true,findText,,0
+I005,I,"Ubica la rúbrica faltante.",false,false,false,true,findText,,0
+I006,I,"Encuentra el sello borroso.",false,false,false,true,findText,,0
+I007,I,"Localiza el folio roto.",false,false,false,true,findText,,0
+I008,I,"Caza la coma asesina.",false,false,false,true,findText,,0
+I009,I,"Persigue el error.",false,false,false,true,findText,,0
+I010,I,"Sigue el rastro del duplicado.",false,false,false,true,findText,,0
+I011,I,"Elige el otrosí.",false,false,false,true,selectText,,0
+I012,I,"Aparta el considerando.",false,false,false,true,selectText,,0
+I013,I,"Toma la foja.",false,false,false,true,selectText,,0
+I014,I,"Aísla el inciso.",false,false,false,true,selectText,,0
+I015,I,"Recorta la cita a mano.",false,false,false,true,selectText,,0
+I016,I,"Enfoca el artículo.",false,false,false,true,selectText,,0
+I017,I,"Apunta el anexo.",false,false,false,true,selectText,,0
+I018,I,"Señala el diagrama.",false,false,false,true,selectText,,0
+I019,I,"Delimita el párrafo.",false,false,false,true,selectText,,0
+I020,I,"Enmarca el recuadro.",false,false,false,true,selectText,,0
+I021,I,"Remarca los totales.",false,false,false,true,formatSelection,style=bold,0
+I022,I,"Enfatiza el matiz.",false,false,false,true,formatSelection,style=italic,0
+I023,I,"Recalca el acuerdo.",false,false,false,true,formatSelection,style=underline,0
+I024,I,"Subraya los nombres.",false,false,false,true,formatSelection,style=underline,0
+I025,I,"Cursiva los títulos.",false,false,false,true,formatSelection,style=italic,0
+I026,I,"Negrita los montos.",false,false,false,true,formatSelection,style=bold,0
+I027,I,"Marca en negro el fallo.",false,false,false,true,formatSelection,style=bold,0
+I028,I,"Pon en itálica el matiz.",false,false,false,true,formatSelection,style=italic,0
+I029,I,"Traza línea bajo el acuerdo.",false,false,false,true,formatSelection,style=underline,0
+I030,I,"Resalta el considerando.",false,false,false,true,formatSelection,,0
+I031,I,"Halla el fallo y márcalo.",false,false,false,true,findText+selectText,,0
+I032,I,"Busca el anexo y tómalo.",false,false,false,true,findText+selectText,,0
+I033,I,"Ubica la foja y apártala.",false,false,false,true,findText+selectText,,0
+I034,I,"Detecta el inciso y aíslalo.",false,false,false,true,findText+selectText,,0
+I035,I,"Encuentra el sello y enmárcalo.",false,false,false,true,findText+selectText,,0
+I036,I,"Elige el considerando y subráyalo.",false,false,false,true,selectText+formatSelection,style=underline,0
+I037,I,"Toma la foja y ponla en negritas.",false,false,false,true,selectText+formatSelection,style=bold,0
+I038,I,"Aparta el anexo y ponlo en cursivas.",false,false,false,true,selectText+formatSelection,style=italic,0
+I039,I,"Marca el diagrama y archívalo.",false,false,false,true,selectText+saveDocument,,0
+I040,I,"Halla el otrosí y expórtalo en pdf.",false,false,false,true,findText+exportDocument,format=pdf,0

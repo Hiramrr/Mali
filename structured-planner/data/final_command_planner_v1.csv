@@ -1,0 +1,651 @@
+id,group,utterance,hasSelection,canUndo,canRedo,documentIsOpen,expected,expectedArgs,preserveLang
+A001,A,Titula el informe como Balance anual.,false,false,false,true,renameTitle,newTitle=Balance anual,1
+A002,A,Ponle Metodología al capítulo dos.,false,false,false,true,renameTitle,newTitle=Metodología,1
+A003,A,El encabezado debe decir Discusión.,false,false,false,true,renameTitle,newTitle=Discusión,1
+A004,A,Cambia el nombre a Anexo estadístico.,false,false,false,true,renameTitle,newTitle=Anexo estadístico,1
+A005,A,Que el título sea Evaluación de IHC.,false,false,false,true,renameTitle,newTitle=Evaluación de IHC,1
+A006,A,Bautiza este archivo como Borrador final.,false,false,false,true,renameTitle,newTitle=Borrador final,1
+A007,A,El título nuevo es Accesibilidad 2026.,false,false,false,true,renameTitle,newTitle=Accesibilidad 2026,1
+A008,A,Nombra esta versión como Entrega tres.,false,false,false,true,renameTitle,newTitle=Entrega tres,1
+A009,A,Pon como encabezado Trabajo futuro.,false,false,false,true,renameTitle,newTitle=Trabajo futuro,1
+A010,A,Actualiza la carátula a Informe TDAH.,false,false,false,true,renameTitle,newTitle=Informe TDAH,1
+A011,A,El rótulo será Sesión plenaria.,false,false,false,true,renameTitle,newTitle=Sesión plenaria,1
+A012,A,Titula la minuta como Acuerdos mayo.,false,false,false,true,renameTitle,newTitle=Acuerdos mayo,1
+A013,A,Cambia la portada a Índice.,false,false,false,true,renameTitle,newTitle=Índice,1
+A014,A,Que diga Conclusiones preliminares arriba.,false,false,false,true,renameTitle,newTitle=Conclusiones preliminares,1
+A015,A,El membrete debe decir Universidad.,false,false,false,true,renameTitle,newTitle=Universidad,1
+A016,A,Tacha este renglón.,true,false,false,true,deleteSelection,,0
+A017,A,Elimina la nota al pie.,true,false,false,true,deleteSelection,,0
+A018,A,Suprime el considerando.,true,false,false,true,deleteSelection,,0
+A019,A,Corta el epígrafe.,true,false,false,true,deleteSelection,,0
+A020,A,Descarta el apéndice.,true,false,false,true,deleteSelection,,0
+A021,A,Anula este inciso.,true,false,false,true,deleteSelection,,0
+A022,A,Remueve la dedicatoria.,true,false,false,true,deleteSelection,,0
+A023,A,Quita el colofón.,true,false,false,true,deleteSelection,,0
+A024,A,Limpia el borrador tachado.,true,false,false,true,deleteSelection,,0
+A025,A,Vacía este recuadro.,true,false,false,true,deleteSelection,,0
+A026,A,Retira la cita larga.,true,false,false,true,deleteSelection,,0
+A027,A,Suprime el ejemplo.,true,false,false,true,deleteSelection,,0
+A028,A,Elimina el resumen viejo.,true,false,false,true,deleteSelection,,0
+A029,A,Descarta el glosario.,true,false,false,true,deleteSelection,,0
+A030,A,Borra la fe de erratas.,true,false,false,true,deleteSelection,,0
+A031,A,Troca error por errata aquí.,true,false,false,true,replaceSelection,newText=errata,1
+A032,A,Donde dice cosa pon asunto.,true,false,false,true,replaceSelection,newText=asunto,1
+A033,A,Sustituye la cifra vieja por 42.,true,false,false,true,replaceSelection,newText=42,1
+A034,A,Cambia TDAH por TDA-H en este renglón.,true,false,false,true,replaceSelection,newText=TDA-H,1
+A035,A,Pon niños donde dice menores.,true,false,false,true,replaceSelection,newText=niños,1
+A036,A,Reemplaza 2024 por 2026 aquí.,true,false,false,true,replaceSelection,newText=2026,1
+A037,A,Escribe Diseñó con ñ donde falta.,true,false,false,true,replaceSelection,newText=Diseñó,1
+A038,A,Cambia IHC por interacción.,true,false,false,true,replaceSelection,newText=interacción,1
+A039,A,Sustituye el anglicismo por su traducción.,true,false,false,true,replaceSelection,,
+A040,A,Corrige Vallejo por Vallejos.,true,false,false,true,replaceSelection,newText=Vallejos,1
+A041,A,Actualiza Núñez con acento.,true,false,false,true,replaceSelection,newText=Núñez,1
+A042,A,Pon María donde dice Maria.,true,false,false,true,replaceSelection,newText=María,1
+A043,A,Cambia el 5% por cinco por ciento.,true,false,false,true,replaceSelection,newText=cinco por ciento,1
+A044,A,Reemplaza comillas dobles por latinas.,true,false,false,true,replaceSelection,,
+A045,A,Troca el guion por raya.,true,false,false,true,replaceSelection,,
+A046,A,Acorta la bienvenida.,true,false,false,true,rewriteSelection,,
+A047,A,Alarga la despedida.,true,false,false,true,rewriteSelection,,
+A048,A,Endulza el reclamo.,true,false,false,true,rewriteSelection,,
+A049,A,Tensa el cierre.,true,false,false,true,rewriteSelection,,
+A050,A,Aclara la propuesta.,true,false,false,true,rewriteSelection,,
+A051,A,Oscurece el final.,true,false,false,true,rewriteSelection,,
+A052,A,Enciende la polémica.,true,false,false,true,rewriteSelection,,
+A053,A,Calma las críticas.,true,false,false,true,rewriteSelection,,
+A054,A,Agita el debate.,true,false,false,true,rewriteSelection,,
+A055,A,Ordena los argumentos.,true,false,false,true,rewriteSelection,,
+A056,A,Invierte el orden.,true,false,false,true,rewriteSelection,,
+A057,A,Resume en una línea.,true,false,false,true,rewriteSelection,,
+A058,A,Amplía con datos.,true,false,false,true,rewriteSelection,,
+A059,A,Reduce a la mitad.,true,false,false,true,rewriteSelection,,
+A060,A,Suaviza el regaño.,true,false,false,true,rewriteSelection,,
+A061,A,Remarca en negrita los totales.,true,false,false,true,formatSelection,style=bold,0
+A062,A,Cursiva los latinajos.,true,false,false,true,formatSelection,style=italic,0
+A063,A,Subraya los plazos.,true,false,false,true,formatSelection,style=underline,0
+A064,A,Negrita los nombres propios.,true,false,false,true,formatSelection,style=bold,0
+A065,A,Cursiva las citas textuales.,true,false,false,true,formatSelection,style=italic,0
+A066,A,Subraya las fechas límite.,true,false,false,true,formatSelection,style=underline,0
+A067,A,Marca en negrita el monto.,true,false,false,true,formatSelection,style=bold,0
+A068,A,Pon en cursiva el epígrafe.,true,false,false,true,formatSelection,style=italic,0
+A069,A,Subraya al deudor.,true,false,false,true,formatSelection,style=underline,0
+A070,A,Resalta en negrita el fallo.,true,false,false,true,formatSelection,style=bold,0
+A071,A,Enfatiza en cursiva el matiz.,true,false,false,true,formatSelection,style=italic,0
+A072,A,Recalca subrayando el acuerdo.,true,false,false,true,formatSelection,style=underline,0
+A073,A,Negrita los considerandos.,true,false,false,true,formatSelection,style=bold,0
+A074,A,Cursiva el testamento citado.,true,false,false,true,formatSelection,style=italic,0
+A075,A,Subraya la firma requerida.,true,false,false,true,formatSelection,style=underline,0
+A076,A,Retrocede la edición.,false,true,false,true,undo,,0
+A077,A,Anula mi último cambio.,false,true,false,true,undo,,0
+A078,A,Vuelve al borrador previo.,false,true,false,true,undo,,0
+A079,A,Cancela lo que pegué.,false,true,false,true,undo,,0
+A080,A,Revierte el formato.,false,true,false,true,undo,,0
+A081,A,Quita lo último que escribí.,false,true,false,true,undo,,0
+A082,A,Borra mi edición reciente.,false,true,false,true,undo,,0
+A083,A,Desarma el cambio.,false,true,false,true,undo,,0
+A084,A,Regresa una versión.,false,true,false,true,undo,,0
+A085,A,Echa atrás lo de hoy.,false,true,false,true,undo,,0
+A086,A,Deshaz lo pegado.,false,true,false,true,undo,,0
+A087,A,Anula el reemplazo.,false,true,false,true,undo,,0
+A088,A,Cancela el borrado.,false,true,false,true,undo,,0
+A089,A,Revierte lo movido.,false,true,false,true,undo,,0
+A090,A,Vuelve al párrafo anterior.,false,true,false,true,undo,,0
+A091,A,Reaplica el formato.,false,false,true,true,redo,,0
+A092,A,Vuelve a pegar eso.,false,false,true,true,redo,,0
+A093,A,Repite el reemplazo.,false,false,true,true,redo,,0
+A094,A,Restaura mi edición.,false,false,true,true,redo,,0
+A095,A,Recupera el borrado.,false,false,true,true,redo,,0
+A096,A,Rehaz lo movido.,false,false,true,true,redo,,0
+A097,A,Vuelve a poner las negritas.,false,false,true,true,redo,,0
+A098,A,Reaplica el subrayado.,false,false,true,true,redo,,0
+A099,A,Repite la sustitución.,false,false,true,true,redo,,0
+A100,A,Restaura el título.,false,false,true,true,redo,,0
+A101,A,Vuelve a numerar.,false,false,true,true,redo,,0
+A102,A,Repite el pegado.,false,false,true,true,redo,,0
+A103,A,Rehaz el centrado.,false,false,true,true,redo,,0
+A104,A,Restaura el interlineado.,false,false,true,true,redo,,0
+A105,A,Vuelve a justificar.,false,false,true,true,redo,,0
+A106,A,Elige la tabla completa.,false,false,false,true,selectText,,
+A107,A,Marca el recuadro gris.,false,false,false,true,selectText,,
+A108,A,Resalta el diagrama.,false,false,false,true,selectText,,
+A109,A,Toma el mapa anexo.,false,false,false,true,selectText,,
+A110,A,Aparta el gráfico dos.,false,false,false,true,selectText,,
+A111,A,Señala la imagen central.,false,false,false,true,selectText,,
+A112,A,Encierra el ejemplo.,false,false,false,true,selectText,,
+A113,A,Enmarca el considerando.,false,false,false,true,selectText,,
+A114,A,Aísla el cómputo.,false,false,false,true,selectText,,
+A115,A,Delimita el extracto.,false,false,false,true,selectText,,
+A116,A,Recorta visualmente la cita.,false,false,false,true,selectText,,
+A117,A,Enfoca el inciso b.,false,false,false,true,selectText,,
+A118,A,Apunta al anexo tres.,false,false,false,true,selectText,,
+A119,A,Localiza el otrosí.,false,false,false,true,selectText,,
+A120,A,Ubica la rúbrica.,false,false,false,true,selectText,,
+A121,A,Halla TDAH en el texto.,false,false,false,true,findText,query=TDAH,1
+A122,A,Ubica la palabra metodología.,false,false,false,true,findText,query=metodología,1
+A123,A,Rastrea el folio 042.,false,false,false,true,findText,query=042,1
+A124,A,Detecta dobles espacios.,false,false,false,true,findText,,
+A125,A,Caza erratas obvias.,false,false,false,true,findText,,
+A126,A,Encuentra Núñez sin acento.,false,false,false,true,findText,query=Núñez,1
+A127,A,Localiza el IHC mal escrito.,false,false,false,true,findText,query=IHC,1
+A128,A,Busca el signo de pesos.,false,false,false,true,findText,query=$,1
+A129,A,Halla el 5% mencionado.,false,false,false,true,findText,query=5%,1
+A130,A,Ubica comillas simples.,false,false,false,true,findText,,
+A131,A,Rastrea el término accesibilidad cognitiva.,false,false,false,true,findText,query=accesibilidad cognitiva,1
+A132,A,Detecta la sigla INEGI.,false,false,false,true,findText,query=INEGI,1
+A133,A,Halla Diseño con mayúscula.,false,false,false,true,findText,query=Diseño,1
+A134,A,Ubica la ñ faltante.,false,false,false,true,findText,query=ñ,1
+A135,A,Encuentra el guion largo.,false,false,false,true,findText,query=—,1
+A136,A,Respalda el avance.,false,false,false,true,saveDocument,,0
+A137,A,Archiva el tanto firmado.,false,false,false,true,saveDocument,,0
+A138,A,Consigna el legajo.,false,false,false,true,saveDocument,,0
+A139,A,Asienta los cambios.,false,false,false,true,saveDocument,,0
+A140,A,Deja constancia guardada.,false,false,false,true,saveDocument,,0
+A141,A,Preserva esta redacción.,false,false,false,true,saveDocument,,0
+A142,A,Asegura el archivo.,false,false,false,true,saveDocument,,0
+A143,A,Fija esta versión.,false,false,false,true,saveDocument,,0
+A144,A,Congela el borrador.,false,false,false,true,saveDocument,,0
+A145,A,Salvaguarda lo escrito.,false,false,false,true,saveDocument,,0
+A146,A,Registra el progreso.,false,false,false,true,saveDocument,,0
+A147,A,Deposita el tanto.,false,false,false,true,saveDocument,,0
+A148,A,Custodia el original.,false,false,false,true,saveDocument,,0
+A149,A,Pon a salvo el texto.,false,false,false,true,saveDocument,,0
+A150,A,Deja todo guardado.,false,false,false,true,saveDocument,,0
+A151,A,Recupera el acta vieja.,false,false,false,true,openDocument,reference=el acta vieja,1
+A152,A,Desempolva el expediente.,false,false,false,true,openDocument,reference=el expediente,1
+A153,A,Reabre la minuta.,false,false,false,true,openDocument,reference=la minuta,1
+A154,A,Carga el informe 2024.,false,false,false,true,openDocument,reference=el informe 2024,1
+A155,A,Jala el archivo del otro día.,false,false,false,true,openDocument,reference=el archivo del otro día,1
+A156,A,Trae el contrato firmado.,false,false,false,true,openDocument,reference=el contrato firmado,1
+A157,A,Muéstrame la tesis de Ana.,false,false,false,true,openDocument,reference=la tesis de Ana,1
+A158,A,Presenta el Balance 2025.,false,false,false,true,openDocument,reference=el Balance 2025,1
+A159,A,Desarchiva el legajo.,false,false,false,true,openDocument,reference=el legajo,1
+A160,A,Recobra el borrador.,false,false,false,true,openDocument,reference=el borrador,1
+A161,A,Vuelve a abrir el anexo.,false,false,false,true,openDocument,reference=el anexo,1
+A162,A,Retoma el acta.,false,false,false,true,openDocument,reference=el acta,1
+A163,A,Exhibe el padrón.,false,false,false,true,openDocument,reference=el padrón,1
+A164,A,Despliega el mapa.,false,false,false,true,openDocument,reference=el mapa,1
+A165,A,Proyecta la tabla.,false,false,false,true,openDocument,reference=la tabla,1
+A166,A,Saca el informe en pdf.,false,false,false,true,exportDocument,format=pdf,0
+A167,A,Baja el acta en texto plano.,false,false,false,true,exportDocument,format=plainText,0
+A168,A,Genera versión enriquecida.,false,false,false,true,exportDocument,format=richText,0
+A169,A,Pásalo a Word.,false,false,false,true,exportDocument,format=word,0
+A170,A,Produce el pdf final.,false,false,false,true,exportDocument,format=pdf,0
+A171,A,Rinde el texto sin formato.,false,false,false,true,exportDocument,format=plainText,0
+A172,A,Emite copia enriquecida.,false,false,false,true,exportDocument,format=richText,0
+A173,A,Vierte a Word el acta.,false,false,false,true,exportDocument,format=word,0
+A174,A,Imprime en pdf virtual.,false,false,false,true,exportDocument,format=pdf,0
+A175,A,Guarda copia plana aparte.,false,false,false,true,exportDocument,format=plainText,0
+A176,A,Entrega versión con formato.,false,false,false,true,exportDocument,format=richText,0
+A177,A,Migra el tanto a Word.,false,false,false,true,exportDocument,format=word,0
+A178,A,Funde el pdf maestro.,false,false,false,true,exportDocument,format=pdf,0
+A179,A,Extrae el puro texto.,false,false,false,true,exportDocument,format=plainText,0
+A180,A,Publica la versión final rica.,false,false,false,true,exportDocument,format=richText,0
+B001,B,Rúbrica el examen ajeno.,false,false,false,true,UNSUPPORTED,,0
+B002,B,Timbra la factura electrónica.,false,false,false,true,UNSUPPORTED,,0
+B003,B,Notaría el documento mañana.,false,false,false,true,UNSUPPORTED,,0
+B004,B,Manda flores a la oficina.,false,false,false,true,UNSUPPORTED,,0
+B005,B,Pide dos pizzas grandes.,false,false,false,true,UNSUPPORTED,,0
+B006,B,Reserva mesa para ocho.,false,false,false,true,UNSUPPORTED,,0
+B007,B,Compra boletos de avión.,false,false,false,true,UNSUPPORTED,,0
+B008,B,Renta un coche compacto.,false,false,false,true,UNSUPPORTED,,0
+B009,B,Agenda cita con el dentista.,false,false,false,true,UNSUPPORTED,,0
+B010,B,Llama a mamá más tarde.,false,false,false,true,UNSUPPORTED,,0
+B011,B,Riega las plantas del patio.,false,false,false,true,UNSUPPORTED,,0
+B012,B,Saca al perro al parque.,false,false,false,true,UNSUPPORTED,,0
+B013,B,Tiende la ropa tendida.,false,false,false,true,UNSUPPORTED,,0
+B014,B,Barre la banqueta.,false,false,false,true,UNSUPPORTED,,0
+B015,B,Lava el coche el sábado.,false,false,false,true,UNSUPPORTED,,0
+B016,B,Poda el limonero seco.,false,false,false,true,UNSUPPORTED,,0
+B017,B,Pinta la fachada de azul.,false,false,false,true,UNSUPPORTED,,0
+B018,B,Arregla la gotera.,false,false,false,true,UNSUPPORTED,,0
+B019,B,Cambia la llanta ponchada.,false,false,false,true,UNSUPPORTED,,0
+B020,B,Lleva el coche al taller.,false,false,false,true,UNSUPPORTED,,0
+B021,B,Paga la luz vencida.,false,false,false,true,UNSUPPORTED,,0
+B022,B,Deposita la renta.,false,false,false,true,UNSUPPORTED,,0
+B023,B,Retira efectivo del cajero.,false,false,false,true,UNSUPPORTED,,0
+B024,B,Transfiere el saldo.,false,false,false,true,UNSUPPORTED,,0
+B025,B,Firma cheques en blanco.,false,false,false,true,UNSUPPORTED,,0
+B026,B,Endosa el pagaré.,false,false,false,true,UNSUPPORTED,,0
+B027,B,Hipoteca la casa.,false,false,false,true,UNSUPPORTED,,0
+B028,B,Vende el terreno ejidal.,false,false,false,true,UNSUPPORTED,,0
+B029,B,Compra dólares baratos.,false,false,false,true,UNSUPPORTED,,0
+B030,B,Invierte en cetes.,false,false,false,true,UNSUPPORTED,,0
+B031,B,Declara impuestos atrasados.,false,false,false,true,UNSUPPORTED,,0
+B032,B,Factura el servicio.,false,false,false,true,UNSUPPORTED,,0
+B033,B,Cotiza el seguro del auto.,false,false,false,true,UNSUPPORTED,,0
+B034,B,Contrata internet rápido.,false,false,false,true,UNSUPPORTED,,0
+B035,B,Cancela la tarjeta robada.,false,false,false,true,UNSUPPORTED,,0
+B036,B,Reporta el robo.,false,false,false,true,UNSUPPORTED,,0
+B037,B,Denuncia al vecino.,false,false,false,true,UNSUPPORTED,,0
+B038,B,Demanda por daños.,false,false,false,true,UNSUPPORTED,,0
+B039,B,Apela la sentencia.,false,false,false,true,UNSUPPORTED,,0
+B040,B,Testifica mañana.,false,false,false,true,UNSUPPORTED,,0
+B041,B,Perjura sin pudor.,false,false,false,true,UNSUPPORTED,,0
+B042,B,Soborna al inspector.,false,false,false,true,UNSUPPORTED,,0
+B043,B,Extorsiona al tendero.,false,false,false,true,UNSUPPORTED,,0
+B044,B,Secuestra la información.,false,false,false,true,UNSUPPORTED,,0
+B045,B,Hackea la cuenta.,false,false,false,true,UNSUPPORTED,,0
+B046,B,Crackea el programa.,false,false,false,true,UNSUPPORTED,,0
+B047,B,Minéa criptomonedas.,false,false,false,true,UNSUPPORTED,,0
+B048,B,Ejecuta el script.,false,false,false,true,UNSUPPORTED,,0
+B049,B,Compila el kernel.,false,false,false,true,UNSUPPORTED,,0
+B050,B,Despliega a producción.,false,false,false,true,UNSUPPORTED,,0
+B051,B,Reinicia el servidor.,false,false,false,true,UNSUPPORTED,,0
+B052,B,Formatea el disco.,false,false,false,true,UNSUPPORTED,,0
+B053,B,Particiona la unidad.,false,false,false,true,UNSUPPORTED,,0
+B054,B,Instala Linux.,false,false,false,true,UNSUPPORTED,,0
+B055,B,Configura el router.,false,false,false,true,UNSUPPORTED,,0
+B056,B,Cablea la oficina.,false,false,false,true,UNSUPPORTED,,0
+B057,B,Suelda los pines.,false,false,false,true,UNSUPPORTED,,0
+B058,B,Taladra el muro.,false,false,false,true,UNSUPPORTED,,0
+B059,B,Lija la puerta.,false,false,false,true,UNSUPPORTED,,0
+B060,B,Barniza la mesa.,false,false,false,true,UNSUPPORTED,,0
+B061,B,Tapiza el sillón.,false,false,false,true,UNSUPPORTED,,0
+B062,B,Repara el boiler.,false,false,false,true,UNSUPPORTED,,0
+B063,B,Destapa el caño.,false,false,false,true,UNSUPPORTED,,0
+B064,B,Impermeabiliza la azotea.,false,false,false,true,UNSUPPORTED,,0
+B065,B,Fumiga la cocina.,false,false,false,true,UNSUPPORTED,,0
+B066,B,Extermina las cucarachas.,false,false,false,true,UNSUPPORTED,,0
+B067,B,Captura al ratón.,false,false,false,true,UNSUPPORTED,,0
+B068,B,Adopta un perro.,false,false,false,true,UNSUPPORTED,,0
+B069,B,Vacuna al gato.,false,false,false,true,UNSUPPORTED,,0
+B070,B,Esteriliza a la perra.,false,false,false,true,UNSUPPORTED,,0
+B071,B,Baña al loro.,false,false,false,true,UNSUPPORTED,,0
+B072,B,Pasea al conejo.,false,false,false,true,UNSUPPORTED,,0
+B073,B,Alimenta peces tropicales.,false,false,false,true,UNSUPPORTED,,0
+B074,B,Riega el cactus.,false,false,false,true,UNSUPPORTED,,0
+B075,B,Trasplanta el rosal.,false,false,false,true,UNSUPPORTED,,0
+B076,B,Abona el huerto.,false,false,false,true,UNSUPPORTED,,0
+B077,B,Cosecha jitomates.,false,false,false,true,UNSUPPORTED,,0
+B078,B,Ordeña la vaca.,false,false,false,true,UNSUPPORTED,,0
+B079,B,Esquila la oveja.,false,false,false,true,UNSUPPORTED,,0
+B080,B,Arrea el ganado.,false,false,false,true,UNSUPPORTED,,0
+C001,C,Ya merito queda el texto.,false,false,false,true,NOACTION,,0
+C002,C,"Aguanta, ya casi termino.",false,false,false,true,NOACTION,,0
+C003,C,"No te awites, va bien.",false,false,false,true,NOACTION,,0
+C004,C,Échale ganas al informe.,false,false,false,true,NOACTION,,0
+C005,C,Qué onda con el acta.,false,false,false,true,NOACTION,,0
+C006,C,"Con permiso, sigo escribiendo.",false,false,false,true,NOACTION,,0
+C007,C,Se hizo de noche y sigo.,false,false,false,true,NOACTION,,0
+C008,C,Escampó pero continúa la minuta.,false,false,false,true,NOACTION,,0
+C009,C,Caló el sol en la oficina.,false,false,false,true,NOACTION,,0
+C010,C,Granizó sobre el archivo.,false,false,false,true,NOACTION,,0
+C011,C,Permíteme tantito más.,false,false,false,true,NOACTION,,0
+C012,C,"Dame chance, ya voy.",false,false,false,true,NOACTION,,0
+C013,C,Ahorita lo reviso.,false,false,false,true,NOACTION,,0
+C014,C,Al rato lo checo.,false,false,false,true,NOACTION,,0
+C015,C,Luego lo platicamos.,false,false,false,true,NOACTION,,0
+C016,C,Mañana lo decidimos.,false,false,false,true,NOACTION,,0
+C017,C,En un momento te aviso.,false,false,false,true,NOACTION,,0
+C018,C,"Casi, casi listo.",false,false,false,true,NOACTION,,0
+C019,C,Ahí va quedando el capítulo.,false,false,false,true,NOACTION,,0
+C020,C,Va tomando forma.,false,false,false,true,NOACTION,,0
+C021,C,Pinta bien el borrador.,false,false,false,true,NOACTION,,0
+C022,C,Huele a éxito este texto.,false,false,false,true,NOACTION,,0
+C023,C,Tiene potencial la idea.,false,false,false,true,NOACTION,,0
+C024,C,Le falta sazón al cierre.,false,false,false,true,NOACTION,,0
+C025,C,Ya madurará el argumento.,false,false,false,true,NOACTION,,0
+C026,C,Dale tiempo al capítulo.,false,false,false,true,NOACTION,,0
+C027,C,Sin prisa con la tesis.,false,false,false,true,NOACTION,,0
+C028,C,Paso a paso con el acta.,false,false,false,true,NOACTION,,0
+C029,C,Ahí la llevamos con el informe.,false,false,false,true,NOACTION,,0
+C030,C,El examen me dejó pensando.,false,false,false,true,NOACTION,,0
+C031,C,La junta se alargó.,false,false,false,true,NOACTION,,0
+C032,C,El curso superó expectativas.,false,false,false,true,NOACTION,,0
+C033,C,Traigo sueño atrasado.,false,false,false,true,NOACTION,,0
+C034,C,Ando desvelado.,false,false,false,true,NOACTION,,0
+C035,C,Me duele la espalda de escribir.,false,false,false,true,NOACTION,,0
+C036,C,Tengo hambre ya.,false,false,false,true,NOACTION,,0
+C037,C,Muero de sed.,false,false,false,true,NOACTION,,0
+C038,C,Qué calorón en la sala.,false,false,false,true,NOACTION,,0
+C039,C,Mi equipo perdió otra vez.,false,false,false,true,NOACTION,,0
+C040,C,El arbitraje fue pésimo.,false,false,false,true,NOACTION,,0
+C041,C,El celular se traba.,false,false,false,true,NOACTION,,0
+C042,C,Se acabó la pila.,false,false,false,true,NOACTION,,0
+C043,C,No hay señal aquí.,false,false,false,true,NOACTION,,0
+C044,C,El internet está lento.,false,false,false,true,NOACTION,,0
+C045,C,Se cayó el sistema.,false,false,false,true,NOACTION,,0
+C046,C,La impresora no jala.,false,false,false,true,NOACTION,,0
+C047,C,Olvidé mi contraseña.,false,false,false,true,NOACTION,,0
+C048,C,El coche no arranca.,false,false,false,true,NOACTION,,0
+C049,C,Poncharon la llanta.,false,false,false,true,NOACTION,,0
+C050,C,El camión no pasó.,false,false,false,true,NOACTION,,0
+C051,C,El campesino aró desde el alba.,false,false,false,true,NOACTION,,0
+C052,C,La cosecha de maíz superó marcas.,false,false,false,true,NOACTION,,0
+C053,C,El granero guarda semilla criolla.,false,false,false,true,NOACTION,,0
+C054,C,La yunta avanzó pareja.,false,false,false,true,NOACTION,,0
+C055,C,El temporal anegó parcelas.,false,false,false,true,NOACTION,,0
+C056,C,La helada quemó floración.,false,false,false,true,NOACTION,,0
+C057,C,El agave tarda años en madurar.,false,false,false,true,NOACTION,,0
+C058,C,La zafra empezó en noviembre.,false,false,false,true,NOACTION,,0
+C059,C,El trapiche muele caña dulce.,false,false,false,true,NOACTION,,0
+C060,C,El piloncillo endulza atoles.,false,false,false,true,NOACTION,,0
+C061,C,La panela oscura rinde más.,false,false,false,true,NOACTION,,0
+C062,C,El café de altura cotiza alto.,false,false,false,true,NOACTION,,0
+C063,C,La roya afectó cafetales.,false,false,false,true,NOACTION,,0
+C064,C,El cacao fermenta en cajas.,false,false,false,true,NOACTION,,0
+C065,C,La vainilla beneficia a Papantla.,false,false,false,true,NOACTION,,0
+C066,C,La pimienta gorda perfuma moles.,false,false,false,true,NOACTION,,0
+C067,C,El achiote tiñe cochinita.,false,false,false,true,NOACTION,,0
+C068,C,El epazote sazona quesadillas.,false,false,false,true,NOACTION,,0
+C069,C,La hoja santa envuelve tamales.,false,false,false,true,NOACTION,,0
+C070,C,El pápalo acompaña cemitas.,false,false,false,true,NOACTION,,0
+C071,C,La tlayuda cruje con asiento.,false,false,false,true,NOACTION,,0
+C072,C,El chapulín salta entre milpas.,false,false,false,true,NOACTION,,0
+C073,C,La luciérnaga alumbra veredas.,false,false,false,true,NOACTION,,0
+C074,C,El coyote aúlla en cerros.,false,false,false,true,NOACTION,,0
+C075,C,La zorra cuida madrigueras.,false,false,false,true,NOACTION,,0
+C076,C,El tlacuache finge estar muerto.,false,false,false,true,NOACTION,,0
+C077,C,El armadillo excava rápido.,false,false,false,true,NOACTION,,0
+C078,C,La iguana asoleada descansa.,false,false,false,true,NOACTION,,0
+C079,C,El cenote esconde tortugas.,false,false,false,true,NOACTION,,0
+C080,C,El manatí pasta en ríos.,false,false,false,true,NOACTION,,0
+C081,C,La vaquita nada en el golfo.,false,false,false,true,NOACTION,,0
+C082,C,El jaguar ronda reservas.,false,false,false,true,NOACTION,,0
+C083,C,El ocelote caza de noche.,false,false,false,true,NOACTION,,0
+C084,C,El tapir cruza veredas.,false,false,false,true,NOACTION,,0
+C085,C,El mono araña cuelga alto.,false,false,false,true,NOACTION,,0
+C086,C,El quetzal luce cola larga.,false,false,false,true,NOACTION,,0
+C087,C,El colibrí liba flores.,false,false,false,true,NOACTION,,0
+C088,C,El cenzontle imita cantos.,false,false,false,true,NOACTION,,0
+C089,C,La calandria teje nidos.,false,false,false,true,NOACTION,,0
+C090,C,El cardenal rojo canta al alba.,false,false,false,true,NOACTION,,0
+C091,C,La primavera trae golondrinas.,false,false,false,true,NOACTION,,0
+C092,C,El otoño tiñe bosques.,false,false,false,true,NOACTION,,0
+C093,C,El invierno calla sierras.,false,false,false,true,NOACTION,,0
+C094,C,El verano quema llanuras.,false,false,false,true,NOACTION,,0
+C095,C,La canícula aprieta en agosto.,false,false,false,true,NOACTION,,0
+C096,C,El norte azota puertos.,false,false,false,true,NOACTION,,0
+C097,C,La surada calienta tardes.,false,false,false,true,NOACTION,,0
+C098,C,El chipichipi moja banquetas.,false,false,false,true,NOACTION,,0
+C099,C,La tormenta eléctrica asusta.,false,false,false,true,NOACTION,,0
+C100,C,El arcoíris sale tras llover.,false,false,false,true,NOACTION,,0
+D001,D,Borra esto de aquí.,false,false,false,true,deleteSelection,,0
+D002,D,Quita la nota.,false,false,false,true,deleteSelection,,0
+D003,D,Elimina el inciso.,false,false,false,true,deleteSelection,,0
+D004,D,Suprime el ejemplo.,false,false,false,true,deleteSelection,,0
+D005,D,Descarta el párrafo.,false,false,false,true,deleteSelection,,0
+D006,D,Tacha el renglón.,false,false,false,true,deleteSelection,,0
+D007,D,Corta el fragmento.,false,false,false,true,deleteSelection,,0
+D008,D,Limpia lo marcado.,false,false,false,true,deleteSelection,,0
+D009,D,Vacía el recuadro.,false,false,false,true,deleteSelection,,0
+D010,D,Retira la cita.,false,false,false,true,deleteSelection,,0
+D011,D,Remárcalo en negritas.,false,false,false,true,formatSelection,style=bold,0
+D012,D,Cursiva el título.,false,false,false,true,formatSelection,style=italic,0
+D013,D,Subraya el monto.,false,false,false,true,formatSelection,style=underline,0
+D014,D,Remarca el fallo.,false,false,false,true,formatSelection,style=bold,0
+D015,D,Enfatiza el matiz.,false,false,false,true,formatSelection,style=italic,0
+D016,D,Hazlo todavía más breve.,false,false,false,true,rewriteSelection,,0
+D017,D,Acorta el considerando.,false,false,false,true,rewriteSelection,,0
+D018,D,Condensa el informe.,false,false,false,true,rewriteSelection,,0
+D019,D,Resume la minuta.,false,false,false,true,rewriteSelection,,0
+D020,D,Aclara el acuerdo.,false,false,false,true,rewriteSelection,,0
+D021,D,Troca pesos por dólares.,false,false,false,true,replaceSelection,newText=dólares,1
+D022,D,Pon 2026 donde dice 2025.,false,false,false,true,replaceSelection,newText=2026,1
+D023,D,Cambia Ana por Anita.,false,false,false,true,replaceSelection,newText=Anita,1
+D024,D,Sustituye coma por punto.,false,false,false,true,replaceSelection,newText=punto,1
+D025,D,Escribe Ñoño con eñe.,false,false,false,true,replaceSelection,newText=Ñoño,1
+D026,D,Deshaz esta mañana.,false,false,false,true,undo,,0
+D027,D,Anula lo de ayer.,false,false,false,true,undo,,0
+D028,D,Revierte el pegado.,false,false,false,true,undo,,0
+D029,D,Cancela el borrado.,false,false,false,true,undo,,0
+D030,D,Echa atrás el envío.,false,false,false,true,undo,,0
+D031,D,Rehaz el pegado.,false,false,false,true,redo,,0
+D032,D,Reaplica el título.,false,false,false,true,redo,,0
+D033,D,Repite el borrado.,false,false,false,true,redo,,0
+D034,D,Restaura el formato.,false,false,false,true,redo,,0
+D035,D,Vuelve a centrar.,false,false,false,true,redo,,0
+D036,D,Selecciona la tabla.,false,false,false,true,selectText,,0
+D037,D,Marca el diagrama.,false,false,false,true,selectText,,0
+D038,D,Toma el gráfico.,false,false,false,true,selectText,,0
+D039,D,Delimita el extracto.,false,false,false,true,selectText,,0
+D040,D,Ubica la rúbrica.,false,false,false,true,selectText,,0
+D041,D,Halla el folio 7.,false,false,false,true,findText,query=7,1
+D042,D,Ubica la ñ.,false,false,false,true,findText,query=ñ,1
+D043,D,Rastrea el 10%.,false,false,false,true,findText,query=10%,1
+D044,D,Detecta el guion.,false,false,false,true,findText,,
+D045,D,Caza la errata.,false,false,false,true,findText,,
+D046,D,Guarda el tanto.,false,false,false,true,saveDocument,,0
+D047,D,Archiva el oficio.,false,false,false,true,saveDocument,,0
+D048,D,Consigna el avance.,false,false,false,true,saveDocument,,0
+D049,D,Recupera el expediente.,false,false,false,true,openDocument,reference=el expediente,1
+D050,D,Reabre el acta.,false,false,false,true,openDocument,reference=el acta,1
+E001,E,Titula la crónica como Ida y vuelta.,false,false,false,true,renameTitle,newTitle=Ida y vuelta,1
+E002,E,El membrete dirá Casa TDAH.,false,false,false,true,renameTitle,newTitle=Casa TDAH,1
+E003,E,Nombra el anexo Ñandú común.,false,false,false,true,renameTitle,newTitle=Ñandú común,1
+E004,E,Que el título cite IHC 2026.,false,false,false,true,renameTitle,newTitle=IHC 2026,1
+E005,E,Ponle 100 años de soledad.,false,false,false,true,renameTitle,newTitle=100 años de soledad,1
+E006,E,El encabezado: ¿Qué sigue?.,false,false,false,true,renameTitle,newTitle=¿Qué sigue?,1
+E007,E,Titula ¡Manos a la obra!.,false,false,false,true,renameTitle,newTitle=¡Manos a la obra!,1
+E008,E,Nombre: María-José Pérez.,false,false,false,true,renameTitle,newTitle=María-José Pérez,1
+E009,E,Título con número 7.5%.,false,false,false,true,renameTitle,newTitle=7.5%,1
+E010,E,Ponle e-mail: contacto@ejemplo.mx.,false,false,false,true,renameTitle,newTitle=e-mail: contacto@ejemplo.mx,1
+E011,E,Sustituye pez por pez globo.,true,false,false,true,replaceSelection,newText=pez globo,1
+E012,E,Cambia CDMX por Ciudad de México.,true,false,false,true,replaceSelection,newText=Ciudad de México,1
+E013,E,Pon co-autor con guion.,true,false,false,true,replaceSelection,newText=co-autor,1
+E014,E,Escribe 3.1416 completo.,true,false,false,true,replaceSelection,newText=3.1416,1
+E015,E,Troca $100 por cien pesos.,true,false,false,true,replaceSelection,newText=cien pesos,1
+E016,E,Cambia #Etiqueta por etiqueta.,true,false,false,true,replaceSelection,newText=etiqueta,1
+E017,E,Pon (sic) tras la cita.,true,false,false,true,replaceSelection,newText=(sic),1
+E018,E,Sustituye etc. por etcétera.,true,false,false,true,replaceSelection,newText=etcétera,1
+E019,E,Escribe Niño Héroe.,true,false,false,true,replaceSelection,newText=Niño Héroe,1
+E020,E,Cambia Sr. por Señor.,true,false,false,true,replaceSelection,newText=Señor,1
+E021,E,Halla la palabra pingüino.,false,false,false,true,findText,query=pingüino,1
+E022,E,Ubica el símbolo €.,false,false,false,true,findText,query=€,1
+E023,E,Rastrea el hashtag #TDAH.,false,false,false,true,findText,query=#TDAH,1
+E024,E,Detecta la arroba del correo.,false,false,false,true,findText,query=@,1
+E025,E,Caza el 3.5% restante.,false,false,false,true,findText,query=3.5%,1
+E026,E,Encuentra la diéresis.,false,false,false,true,findText,query=ü,1
+E027,E,Localiza la eñe perdida.,false,false,false,true,findText,query=ñ,1
+E028,E,Busca el dos puntos.,false,false,false,true,findText,query=:,1
+E029,E,Halla comillas «latinas».,false,false,false,true,findText,query=«latinas»,1
+E030,E,Ubica el asterisco.,false,false,false,true,findText,query=*,1
+E031,E,Selecciona el otrosí tercero.,false,false,false,true,selectText,target=el otrosí tercero,1
+E032,E,Marca el inciso ñ).,false,false,false,true,selectText,target=el inciso ñ),1
+E033,E,Toma la gráfica 5-A.,false,false,false,true,selectText,target=la gráfica 5-A,1
+E034,E,Elige el considerando 12º.,false,false,false,true,selectText,target=el considerando 12º,1
+E035,E,Aparta la foja 007.,false,false,false,true,selectText,target=la foja 007,1
+E036,E,Señala a María Félix.,false,false,false,true,selectText,target=a María Félix,1
+E037,E,Encierra al Ñoño.,false,false,false,true,selectText,target=al Ñoño,1
+E038,E,Delimita IHC vs HCI.,false,false,false,true,selectText,target=IHC vs HCI,1
+E039,E,Enfoca el § 4o.,false,false,false,true,selectText,target=el § 4o,1
+E040,E,Ubica TDAH-I.,false,false,false,true,selectText,target=TDAH-I,1
+E041,E,Abre el acta Ño. 5.,false,false,false,true,openDocument,reference=el acta Ño. 5,1
+E042,E,Carga Fotos 2026/01.,false,false,false,true,openDocument,reference=Fotos 2026/01,1
+E043,E,Jala el .zip adjunto.,false,false,false,true,openDocument,reference=el .zip adjunto,1
+E044,E,Trae el CV de Muñoz.,false,false,false,true,openDocument,reference=el CV de Muñoz,1
+E045,E,Muéstrame Los de abajo.pdf.,false,false,false,true,openDocument,reference=Los de abajo.pdf,1
+E046,E,Desempolva ñoñerías.doc.,false,false,false,true,openDocument,reference=ñoñerías.doc,1
+E047,E,Reabre Tesis_Ñoño_v2.,false,false,false,true,openDocument,reference=Tesis_Ñoño_v2,1
+E048,E,Presenta el 5º informe.,false,false,false,true,openDocument,reference=el 5º informe,1
+E049,E,Exhibe el cartel ¡Ya!.,false,false,false,true,openDocument,reference=el cartel ¡Ya!,1
+E050,E,Desarchiva e-mails '24.,false,false,false,true,openDocument,reference=e-mails '24,1
+E051,E,Remarca en negrita Ñoño.,true,false,false,true,formatSelection,style=bold,0
+E052,E,Cursiva el e-mail.,true,false,false,true,formatSelection,style=italic,0
+E053,E,Subraya el 100%.,true,false,false,true,formatSelection,style=underline,0
+E054,E,Negrita TDAH-I.,true,false,false,true,formatSelection,style=bold,0
+E055,E,Cursiva nº 5.,true,false,false,true,formatSelection,style=italic,0
+E056,E,Deshaz el pegado de ayer.,false,true,false,true,undo,,0
+E057,E,Anula la firma digital.,false,true,false,true,undo,,0
+E058,E,Revierte ^Z.,false,true,false,true,undo,,0
+E059,E,Cancela ctrl+Z.,false,true,false,true,undo,,0
+E060,E,Vuelve al .bak.,false,true,false,true,undo,,0
+E061,E,Rehaz el ctrl+Y.,false,false,true,true,redo,,0
+E062,E,Reaplica el ^Y.,false,false,true,true,redo,,0
+E063,E,Repite el F4.,false,false,true,true,redo,,0
+E064,E,Restaura el .tmp.,false,false,true,true,redo,,0
+E065,E,Vuelve a ponerlo –así–.,false,false,true,true,redo,,0
+E066,E,Respalda el .docx.,false,false,false,true,saveDocument,,0
+E067,E,Archiva el .pdf firmado.,false,false,false,true,saveDocument,,0
+E068,E,Consigna el .zip.,false,false,false,true,saveDocument,,0
+E069,E,Deposita el .bak.,false,false,false,true,saveDocument,,0
+E070,E,Fija la v2.1.,false,false,false,true,saveDocument,,0
+E071,E,Saca el acta en .pdf.,false,false,false,true,exportDocument,format=pdf,0
+E072,E,Baja el .txt plano.,false,false,false,true,exportDocument,format=plainText,0
+E073,E,Genera .rtf enriquecido.,false,false,false,true,exportDocument,format=richText,0
+E074,E,Vierte a .docx.,false,false,false,true,exportDocument,format=word,0
+E075,E,Rinde _borrador_.,false,false,false,true,exportDocument,format=plainText,0
+E076,E,Reescribe el considerando.,true,false,false,true,rewriteSelection,,0
+E077,E,Condensa el altri pormenores.,true,false,false,true,rewriteSelection,,0
+E078,E,Aclara el otrosí.,true,false,false,true,rewriteSelection,,0
+E079,E,Abrevia el proemio.,true,false,false,true,rewriteSelection,,0
+E080,E,Expón el petitorio.,true,false,false,true,rewriteSelection,,0
+F001,F,Titula como Balance y guarda copia.,false,false,false,true,renameTitle+saveDocument,newTitle=Balance,1
+F002,F,Pon Metodología de título y exporta en pdf.,false,false,false,true,renameTitle+exportDocument,newTitle=Metodología|format=pdf,1
+F003,F,Borra la nota y deshaz lo anterior.,true,true,false,true,deleteSelection+undo,,0
+F004,F,Quita el inciso y guarda el tanto.,true,false,false,true,deleteSelection+saveDocument,,0
+F005,F,Subraya el monto y archiva el oficio.,true,false,false,true,formatSelection+saveDocument,style=underline,0
+F006,F,Cursiva la cita y exporta en texto plano.,true,false,false,true,formatSelection+exportDocument,style=italic|format=plainText,0
+F007,F,Remarca el fallo y pon Discusión de título.,true,false,false,true,formatSelection+renameTitle,style=bold|newTitle=Discusión,1
+F008,F,Hazlo breve y guarda el acta.,true,false,false,true,rewriteSelection+saveDocument,,0
+F009,F,Aclara el acuerdo y exporta en Word.,true,false,false,true,rewriteSelection+exportDocument,format=word,0
+F010,F,Troca pesos por dólares y archiva.,true,false,false,true,replaceSelection+saveDocument,newText=dólares,1
+F011,F,Pon 2026 donde dice 2025 y guarda.,true,false,false,true,replaceSelection+saveDocument,newText=2026,1
+F012,F,Cambia Ana por Anita y exporta en pdf.,true,false,false,true,replaceSelection+exportDocument,newText=Anita|format=pdf,1
+F013,F,Busca el folio 7 y marca la foja.,false,false,false,true,findText+selectText,query=7,1
+F014,F,Halla TDAH y selecciona el renglón.,false,false,false,true,findText+selectText,query=TDAH,1
+F015,F,Ubica la ñ y toma la palabra.,false,false,false,true,findText+selectText,query=ñ,1
+F016,F,Selecciona la tabla y ponla en negritas.,true,false,false,true,selectText+formatSelection,style=bold,0
+F017,F,Marca el diagrama y subraya el total.,true,false,false,true,selectText+formatSelection,style=underline,0
+F018,F,Toma el gráfico y expórtalo en pdf.,true,false,false,true,selectText+exportDocument,format=pdf,0
+F019,F,Deshaz el pegado y rehace la numeración.,false,true,true,true,undo+redo,,0
+F020,F,Anula la firma y restaura el formato.,false,true,true,true,undo+redo,,0
+F021,F,Revierte el borrado y guarda el tanto.,false,true,false,true,undo+saveDocument,,0
+F022,F,Cancela el envío y archiva el oficio.,false,true,false,true,undo+saveDocument,,0
+F023,F,Abre el acta vieja y busca el folio.,false,false,false,true,openDocument+findText,reference=el acta vieja,1
+F024,F,Carga el informe 2024 y selecciona la tabla.,false,false,false,true,openDocument+selectText,reference=el informe 2024,1
+F025,F,Jala el adjunto y exporta en texto plano.,false,false,false,true,openDocument+exportDocument,reference=el adjunto|format=plainText,1
+F026,F,Trae el contrato y ponlo en negritas.,true,false,false,true,openDocument+formatSelection,reference=el contrato|style=bold,1
+F027,F,Muéstrame la tesis de Ana y guarda copia.,false,false,false,true,openDocument+saveDocument,reference=la tesis de Ana,1
+F028,F,Desarchiva el legajo y numera las fojas.,false,false,false,true,openDocument+saveDocument,reference=el legajo,0
+F029,F,"Borra el renglón, deshazlo y guarda.",true,true,false,true,deleteSelection+undo+saveDocument,,0
+F030,F,"Pon Claridad de título, subraya el acuerdo y exporta en pdf.",true,false,false,true,renameTitle+formatSelection+exportDocument,newTitle=Claridad|style=underline|format=pdf,1
+F031,F,"Busca IHC, selecciona el renglón y ponlo en cursivas.",true,false,false,true,findText+selectText+formatSelection,query=IHC|style=italic,1
+F032,F,"Cambia CDMX por Ciudad de México, guarda y exporta en Word.",true,false,false,true,replaceSelection+saveDocument+exportDocument,newText=Ciudad de México|format=word,1
+F033,F,"Hazlo breve, titula como Síntesis y archiva el tanto.",true,false,false,true,rewriteSelection+renameTitle+saveDocument,newTitle=Síntesis,1
+F034,F,Tacha el renglón y ponlo en negritas.,true,false,false,true,deleteSelection+formatSelection,style=bold,0
+F035,F,Endereza la línea y centra el título.,true,false,false,true,deleteSelection+renameTitle,,0
+F036,F,Limpia los tachones y guarda el acta.,true,false,false,true,deleteSelection+saveDocument,,0
+F037,F,Quita el corrector viejo y deshaz el cambio.,true,true,false,true,deleteSelection+undo,,0
+F038,F,Pule la portada y exporta en pdf.,true,false,false,true,deleteSelection+exportDocument,format=pdf,0
+F039,F,Retoca la foto y archiva el legajo.,true,false,false,true,deleteSelection+saveDocument,,0
+F040,F,Enmarca la cita y subraya al deudor.,true,false,false,true,selectText+formatSelection,style=underline,0
+F041,F,Colorea los títulos y guarda el informe.,true,false,false,true,formatSelection+saveDocument,style=bold,0
+F042,F,Decora el encabezado y titula como Fiesta.,true,false,false,true,formatSelection+renameTitle,style=bold|newTitle=Fiesta,1
+F043,F,Grafica resultados y exporta en Word.,true,false,false,true,formatSelection+exportDocument,style=bold|format=word,0
+F044,F,Tabula respuestas y guarda la minuta.,true,false,false,true,formatSelection+saveDocument,style=bold,0
+F045,F,Esquematiza el capítulo y ponle Índice.,true,false,false,true,formatSelection+renameTitle,style=bold|newTitle=Índice,1
+F046,F,Resume en viñetas y archiva.,true,false,false,true,rewriteSelection+saveDocument,,0
+F047,F,Sintetiza el argumento y titula Tesis.,true,false,false,true,rewriteSelection+renameTitle,newTitle=Tesis,1
+F048,F,Condensa la crónica y exporta en pdf.,true,false,false,true,rewriteSelection+exportDocument,format=pdf,0
+F049,F,Desarrolla el nudo y guarda copia.,true,false,false,true,rewriteSelection+saveDocument,,0
+F050,F,Amplía el desenlace y ponlo en cursivas.,true,false,false,true,rewriteSelection+formatSelection,style=italic,0
+F051,F,Recorta el diálogo y subraya el final.,true,false,false,true,deleteSelection+formatSelection,style=underline,0
+F052,F,Poda adjetivos y hazlo más breve.,true,false,false,true,deleteSelection+rewriteSelection,,0
+F053,F,Quita muletillas y guarda el capítulo.,true,false,false,true,deleteSelection+saveDocument,,0
+F054,F,Elimina repeticiones y exporta en texto plano.,true,false,false,true,deleteSelection+exportDocument,format=plainText,0
+F055,F,Anota al margen y guarda el oficio.,true,false,false,true,selectText+saveDocument,,0
+F056,F,Glosa el término y subraya la fecha.,true,false,false,true,selectText+formatSelection,style=underline,0
+F057,F,Firma con rúbrica y sella con lacre.,false,false,false,true,saveDocument+saveDocument,,0
+F058,F,Franquea la carta y certifica el envío.,false,false,false,true,saveDocument+saveDocument,,0
+F059,F,Acusa recibo y archiva el comprobante.,false,false,false,true,saveDocument+saveDocument,,0
+F060,F,Digitaliza el legajo y escanea a color.,false,false,false,true,saveDocument+saveDocument,,0
+G001,G,Hazlo un poco más corto.,true,false,false,true,rewriteSelection,,0
+G002,G,Déjalo en negritas.,true,false,false,true,formatSelection,style=bold,0
+G003,G,Reemplázalo por esta frase corta y clara.,true,false,false,true,replaceSelection,,0
+G004,G,Borra esto mismo.,true,false,false,true,deleteSelection,,0
+G005,G,Quita la muletilla.,true,false,false,true,deleteSelection,,0
+G006,G,Endereza el renglón.,true,false,false,true,deleteSelection,,0
+G007,G,Tacha el duplicado.,true,false,false,true,deleteSelection,,0
+G008,G,Recorta el excedente.,true,false,false,true,deleteSelection,,0
+G009,G,Subraya el acuerdo.,true,false,false,true,formatSelection,style=underline,0
+G010,G,Cursiva la cita larga.,true,false,false,true,formatSelection,style=italic,0
+G011,G,Remarca el monto final.,true,false,false,true,formatSelection,style=bold,0
+G012,G,Aplica viñetas al listado.,true,false,false,true,formatSelection,,0
+G013,G,Condensa el informe.,true,false,false,true,rewriteSelection,,0
+G014,G,Aclara el otrosí.,true,false,false,true,rewriteSelection,,0
+G015,G,Abrevia el proemio.,true,false,false,true,rewriteSelection,,0
+G016,G,Expón el petitorio.,true,false,false,true,rewriteSelection,,0
+G017,G,Troca el saldo viejo.,true,false,false,true,replaceSelection,,0
+G018,G,Pon el folio nuevo.,true,false,false,true,replaceSelection,,0
+G019,G,Actualiza la cifra.,true,false,false,true,replaceSelection,,0
+G020,G,Corrige al deudor.,true,false,false,true,replaceSelection,,0
+G021,G,Deshaz el formato.,true,true,false,true,undo,,0
+G022,G,Anula el pegado.,true,true,false,true,undo,,0
+G023,G,Revierte el centrado.,true,true,false,true,undo,,0
+G024,G,Rehaz la sangría.,true,false,true,true,redo,,0
+G025,G,Reaplica el estilo.,true,false,true,true,redo,,0
+G026,G,Restaura el margen.,true,false,true,true,redo,,0
+G027,G,Selecciona el considerando.,true,false,false,true,selectText,,0
+G028,G,Marca el anexo.,true,false,false,true,selectText,,0
+G029,G,Halla el otrosí.,true,false,false,true,findText,,0
+G030,G,Ubica la foja.,true,false,false,true,findText,,0
+H001,H,Deshaz la sangría.,false,false,false,true,undo,,0
+H002,H,Anula el pegado de ayer.,false,false,false,true,undo,,0
+H003,H,Revierte lo centrado.,false,false,false,true,undo,,0
+H004,H,Cancela el subrayado.,false,false,false,true,undo,,0
+H005,H,Echa atrás el pegado.,false,false,false,true,undo,,0
+H006,H,Da un paso atrás.,false,false,false,true,undo,,0
+H007,H,Vuelve al texto previo.,false,false,false,true,undo,,0
+H008,H,Recupera el párrafo.,false,false,false,true,undo,,0
+H009,H,Restaura lo borrado.,false,false,false,true,undo,,0
+H010,H,Vuelve a poner lo quitado.,false,false,false,true,undo,,0
+H011,H,Reaplica lo deshecho.,false,false,false,true,redo,,0
+H012,H,Vuelve a aplicar el borrado.,false,false,false,true,redo,,0
+H013,H,Repite lo anulado.,false,false,false,true,redo,,0
+H014,H,Rehaz lo revertido.,false,false,false,true,redo,,0
+H015,H,Restaura lo anulado.,false,false,false,true,redo,,0
+H016,H,Vuelve a quitar lo puesto.,false,false,false,true,redo,,0
+H017,H,Repite el deshacer.,false,false,false,true,redo,,0
+H018,H,Reaplica lo cancelado.,false,false,false,true,redo,,0
+H019,H,Restaura lo revertido.,false,false,false,true,redo,,0
+H020,H,Vuelve a anular lo activo.,false,false,false,true,redo,,0
+H021,H,Regresa atrás otra vez.,false,false,false,true,undo,,0
+H022,H,Devuelve el cambio previo.,false,false,false,true,undo,,0
+H023,H,Retorna al estado anterior.,false,false,false,true,undo,,0
+H024,H,Deshaz lo último otra vez.,false,false,false,true,undo,,0
+H025,H,Cancela de nuevo.,false,false,false,true,undo,,0
+H026,H,Rehaz una vez más.,false,false,false,true,redo,,0
+H027,H,Otra vez rehacer.,false,false,false,true,redo,,0
+H028,H,De nuevo deshacer.,false,false,false,true,undo,,0
+H029,H,Restaurar lo deshecho ya.,false,false,false,true,redo,,0
+H030,H,Recuperar lo anterior ya.,false,false,false,true,undo,,0
+I001,I,Halla el considerando quinto.,false,false,false,true,findText,,0
+I002,I,Busca el otrosí final.,false,false,false,true,findText,,0
+I003,I,Rastrea la foja 12.,false,false,false,true,findText,,0
+I004,I,Detecta el inciso b.,false,false,false,true,findText,,0
+I005,I,Ubica la rúbrica faltante.,false,false,false,true,findText,,0
+I006,I,Encuentra el sello borroso.,false,false,false,true,findText,,0
+I007,I,Localiza el folio roto.,false,false,false,true,findText,,0
+I008,I,Caza la coma asesina.,false,false,false,true,findText,,0
+I009,I,Persigue el error.,false,false,false,true,findText,,0
+I010,I,Sigue el rastro del duplicado.,false,false,false,true,findText,,0
+I011,I,Elige el otrosí.,false,false,false,true,selectText,,0
+I012,I,Aparta el considerando.,false,false,false,true,selectText,,0
+I013,I,Toma la foja.,false,false,false,true,selectText,,0
+I014,I,Aísla el inciso.,false,false,false,true,selectText,,0
+I015,I,Recorta la cita a mano.,false,false,false,true,selectText,,0
+I016,I,Enfoca el artículo.,false,false,false,true,selectText,,0
+I017,I,Apunta el anexo.,false,false,false,true,selectText,,0
+I018,I,Señala el diagrama.,false,false,false,true,selectText,,0
+I019,I,Delimita el párrafo.,false,false,false,true,selectText,,0
+I020,I,Enmarca el recuadro.,false,false,false,true,selectText,,0
+I021,I,Remarca los totales.,false,false,false,true,formatSelection,style=bold,0
+I022,I,Enfatiza el matiz.,false,false,false,true,formatSelection,style=italic,0
+I023,I,Recalca el acuerdo.,false,false,false,true,formatSelection,style=underline,0
+I024,I,Subraya los nombres.,false,false,false,true,formatSelection,style=underline,0
+I025,I,Cursiva los títulos.,false,false,false,true,formatSelection,style=italic,0
+I026,I,Negrita los montos.,false,false,false,true,formatSelection,style=bold,0
+I027,I,Marca en negro el fallo.,false,false,false,true,formatSelection,style=bold,0
+I028,I,Pon en itálica el matiz.,false,false,false,true,formatSelection,style=italic,0
+I029,I,Traza línea bajo el acuerdo.,false,false,false,true,formatSelection,style=underline,0
+I030,I,Resalta el considerando.,false,false,false,true,formatSelection,,0
+I031,I,Halla el fallo y márcalo.,false,false,false,true,findText+selectText,,0
+I032,I,Busca el anexo y tómalo.,false,false,false,true,findText+selectText,,0
+I033,I,Ubica la foja y apártala.,false,false,false,true,findText+selectText,,0
+I034,I,Detecta el inciso y aíslalo.,false,false,false,true,findText+selectText,,0
+I035,I,Encuentra el sello y enmárcalo.,false,false,false,true,findText+selectText,,0
+I036,I,Elige el considerando y subráyalo.,false,false,false,true,selectText+formatSelection,style=underline,0
+I037,I,Toma la foja y ponla en negritas.,false,false,false,true,selectText+formatSelection,style=bold,0
+I038,I,Aparta el anexo y ponlo en cursivas.,false,false,false,true,selectText+formatSelection,style=italic,0
+I039,I,Marca el diagrama y archívalo.,false,false,false,true,selectText+saveDocument,,0
+I040,I,Halla el otrosí y expórtalo en pdf.,false,false,false,true,findText+exportDocument,format=pdf,0

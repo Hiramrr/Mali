@@ -1,0 +1,311 @@
+id,group,utterance,hasSelection,canUndo,canRedo,documentIsOpen,expected,expectedArgs,preserveLang
+B001,B,"Rúbrica el examen ajeno.",false,false,false,true,UNSUPPORTED,,0
+B002,B,"Timbra la factura electrónica.",false,false,false,true,UNSUPPORTED,,0
+B003,B,"Notaría el documento mañana.",false,false,false,true,UNSUPPORTED,,0
+B004,B,"Manda flores a la oficina.",false,false,false,true,UNSUPPORTED,,0
+B005,B,"Pide dos pizzas grandes.",false,false,false,true,UNSUPPORTED,,0
+B006,B,"Reserva mesa para ocho.",false,false,false,true,UNSUPPORTED,,0
+B007,B,"Compra boletos de avión.",false,false,false,true,UNSUPPORTED,,0
+B008,B,"Renta un coche compacto.",false,false,false,true,UNSUPPORTED,,0
+B009,B,"Agenda cita con el dentista.",false,false,false,true,UNSUPPORTED,,0
+B010,B,"Llama a mamá más tarde.",false,false,false,true,UNSUPPORTED,,0
+B011,B,"Riega las plantas del patio.",false,false,false,true,UNSUPPORTED,,0
+B012,B,"Saca al perro al parque.",false,false,false,true,UNSUPPORTED,,0
+B013,B,"Tiende la ropa tendida.",false,false,false,true,UNSUPPORTED,,0
+B014,B,"Barre la banqueta.",false,false,false,true,UNSUPPORTED,,0
+B015,B,"Lava el coche el sábado.",false,false,false,true,UNSUPPORTED,,0
+B016,B,"Poda el limonero seco.",false,false,false,true,UNSUPPORTED,,0
+B017,B,"Pinta la fachada de azul.",false,false,false,true,UNSUPPORTED,,0
+B018,B,"Arregla la gotera.",false,false,false,true,UNSUPPORTED,,0
+B019,B,"Cambia la llanta ponchada.",false,false,false,true,UNSUPPORTED,,0
+B020,B,"Lleva el coche al taller.",false,false,false,true,UNSUPPORTED,,0
+B021,B,"Paga la luz vencida.",false,false,false,true,UNSUPPORTED,,0
+B022,B,"Deposita la renta.",false,false,false,true,UNSUPPORTED,,0
+B023,B,"Retira efectivo del cajero.",false,false,false,true,UNSUPPORTED,,0
+B024,B,"Transfiere el saldo.",false,false,false,true,UNSUPPORTED,,0
+B025,B,"Firma cheques en blanco.",false,false,false,true,UNSUPPORTED,,0
+B026,B,"Endosa el pagaré.",false,false,false,true,UNSUPPORTED,,0
+B027,B,"Hipoteca la casa.",false,false,false,true,UNSUPPORTED,,0
+B028,B,"Vende el terreno ejidal.",false,false,false,true,UNSUPPORTED,,0
+B029,B,"Compra dólares baratos.",false,false,false,true,UNSUPPORTED,,0
+B030,B,"Invierte en cetes.",false,false,false,true,UNSUPPORTED,,0
+B031,B,"Declara impuestos atrasados.",false,false,false,true,UNSUPPORTED,,0
+B032,B,"Factura el servicio.",false,false,false,true,UNSUPPORTED,,0
+B033,B,"Cotiza el seguro del auto.",false,false,false,true,UNSUPPORTED,,0
+B034,B,"Contrata internet rápido.",false,false,false,true,UNSUPPORTED,,0
+B035,B,"Cancela la tarjeta robada.",false,false,false,true,UNSUPPORTED,,0
+B036,B,"Reporta el robo.",false,false,false,true,UNSUPPORTED,,0
+B037,B,"Denuncia al vecino.",false,false,false,true,UNSUPPORTED,,0
+B038,B,"Demanda por daños.",false,false,false,true,UNSUPPORTED,,0
+B039,B,"Apela la sentencia.",false,false,false,true,UNSUPPORTED,,0
+B040,B,"Testifica mañana.",false,false,false,true,UNSUPPORTED,,0
+B041,B,"Perjura sin pudor.",false,false,false,true,UNSUPPORTED,,0
+B042,B,"Soborna al inspector.",false,false,false,true,UNSUPPORTED,,0
+B043,B,"Extorsiona al tendero.",false,false,false,true,UNSUPPORTED,,0
+B044,B,"Secuestra la información.",false,false,false,true,UNSUPPORTED,,0
+B045,B,"Hackea la cuenta.",false,false,false,true,UNSUPPORTED,,0
+B046,B,"Crackea el programa.",false,false,false,true,UNSUPPORTED,,0
+B047,B,"Minéa criptomonedas.",false,false,false,true,UNSUPPORTED,,0
+B048,B,"Ejecuta el script.",false,false,false,true,UNSUPPORTED,,0
+B049,B,"Compila el kernel.",false,false,false,true,UNSUPPORTED,,0
+B050,B,"Despliega a producción.",false,false,false,true,UNSUPPORTED,,0
+B051,B,"Reinicia el servidor.",false,false,false,true,UNSUPPORTED,,0
+B052,B,"Formatea el disco.",false,false,false,true,UNSUPPORTED,,0
+B053,B,"Particiona la unidad.",false,false,false,true,UNSUPPORTED,,0
+B054,B,"Instala Linux.",false,false,false,true,UNSUPPORTED,,0
+B055,B,"Configura el router.",false,false,false,true,UNSUPPORTED,,0
+B056,B,"Cablea la oficina.",false,false,false,true,UNSUPPORTED,,0
+B057,B,"Suelda los pines.",false,false,false,true,UNSUPPORTED,,0
+B058,B,"Taladra el muro.",false,false,false,true,UNSUPPORTED,,0
+B059,B,"Lija la puerta.",false,false,false,true,UNSUPPORTED,,0
+B060,B,"Barniza la mesa.",false,false,false,true,UNSUPPORTED,,0
+B061,B,"Tapiza el sillón.",false,false,false,true,UNSUPPORTED,,0
+B062,B,"Repara el boiler.",false,false,false,true,UNSUPPORTED,,0
+B063,B,"Destapa el caño.",false,false,false,true,UNSUPPORTED,,0
+B064,B,"Impermeabiliza la azotea.",false,false,false,true,UNSUPPORTED,,0
+B065,B,"Fumiga la cocina.",false,false,false,true,UNSUPPORTED,,0
+B066,B,"Extermina las cucarachas.",false,false,false,true,UNSUPPORTED,,0
+B067,B,"Captura al ratón.",false,false,false,true,UNSUPPORTED,,0
+B068,B,"Adopta un perro.",false,false,false,true,UNSUPPORTED,,0
+B069,B,"Vacuna al gato.",false,false,false,true,UNSUPPORTED,,0
+B070,B,"Esteriliza a la perra.",false,false,false,true,UNSUPPORTED,,0
+B071,B,"Baña al loro.",false,false,false,true,UNSUPPORTED,,0
+B072,B,"Pasea al conejo.",false,false,false,true,UNSUPPORTED,,0
+B073,B,"Alimenta peces tropicales.",false,false,false,true,UNSUPPORTED,,0
+B074,B,"Riega el cactus.",false,false,false,true,UNSUPPORTED,,0
+B075,B,"Trasplanta el rosal.",false,false,false,true,UNSUPPORTED,,0
+B076,B,"Abona el huerto.",false,false,false,true,UNSUPPORTED,,0
+B077,B,"Cosecha jitomates.",false,false,false,true,UNSUPPORTED,,0
+B078,B,"Ordeña la vaca.",false,false,false,true,UNSUPPORTED,,0
+B079,B,"Esquila la oveja.",false,false,false,true,UNSUPPORTED,,0
+B080,B,"Arrea el ganado.",false,false,false,true,UNSUPPORTED,,0
+C001,C,"Ya merito queda el texto.",false,false,false,true,NOACTION,,0
+C002,C,"Aguanta, ya casi termino.",false,false,false,true,NOACTION,,0
+C003,C,"No te awites, va bien.",false,false,false,true,NOACTION,,0
+C004,C,"Échale ganas al informe.",false,false,false,true,NOACTION,,0
+C005,C,"Qué onda con el acta.",false,false,false,true,NOACTION,,0
+C006,C,"Con permiso, sigo escribiendo.",false,false,false,true,NOACTION,,0
+C007,C,"Se hizo de noche y sigo.",false,false,false,true,NOACTION,,0
+C008,C,"Escampó pero continúa la minuta.",false,false,false,true,NOACTION,,0
+C009,C,"Caló el sol en la oficina.",false,false,false,true,NOACTION,,0
+C010,C,"Granizó sobre el archivo.",false,false,false,true,NOACTION,,0
+C011,C,"Permíteme tantito más.",false,false,false,true,NOACTION,,0
+C012,C,"Dame chance, ya voy.",false,false,false,true,NOACTION,,0
+C013,C,"Ahorita lo reviso.",false,false,false,true,NOACTION,,0
+C014,C,"Al rato lo checo.",false,false,false,true,NOACTION,,0
+C015,C,"Luego lo platicamos.",false,false,false,true,NOACTION,,0
+C016,C,"Mañana lo decidimos.",false,false,false,true,NOACTION,,0
+C017,C,"En un momento te aviso.",false,false,false,true,NOACTION,,0
+C018,C,"Casi, casi listo.",false,false,false,true,NOACTION,,0
+C019,C,"Ahí va quedando el capítulo.",false,false,false,true,NOACTION,,0
+C020,C,"Va tomando forma.",false,false,false,true,NOACTION,,0
+C021,C,"Pinta bien el borrador.",false,false,false,true,NOACTION,,0
+C022,C,"Huele a éxito este texto.",false,false,false,true,NOACTION,,0
+C023,C,"Tiene potencial la idea.",false,false,false,true,NOACTION,,0
+C024,C,"Le falta sazón al cierre.",false,false,false,true,NOACTION,,0
+C025,C,"Ya madurará el argumento.",false,false,false,true,NOACTION,,0
+C026,C,"Dale tiempo al capítulo.",false,false,false,true,NOACTION,,0
+C027,C,"Sin prisa con la tesis.",false,false,false,true,NOACTION,,0
+C028,C,"Paso a paso con el acta.",false,false,false,true,NOACTION,,0
+C029,C,"Ahí la llevamos con el informe.",false,false,false,true,NOACTION,,0
+C030,C,"El examen me dejó pensando.",false,false,false,true,NOACTION,,0
+C031,C,"La junta se alargó.",false,false,false,true,NOACTION,,0
+C032,C,"El curso superó expectativas.",false,false,false,true,NOACTION,,0
+C033,C,"Traigo sueño atrasado.",false,false,false,true,NOACTION,,0
+C034,C,"Ando desvelado.",false,false,false,true,NOACTION,,0
+C035,C,"Me duele la espalda de escribir.",false,false,false,true,NOACTION,,0
+C036,C,"Tengo hambre ya.",false,false,false,true,NOACTION,,0
+C037,C,"Muero de sed.",false,false,false,true,NOACTION,,0
+C038,C,"Qué calorón en la sala.",false,false,false,true,NOACTION,,0
+C039,C,"Mi equipo perdió otra vez.",false,false,false,true,NOACTION,,0
+C040,C,"El arbitraje fue pésimo.",false,false,false,true,NOACTION,,0
+C041,C,"El celular se traba.",false,false,false,true,NOACTION,,0
+C042,C,"Se acabó la pila.",false,false,false,true,NOACTION,,0
+C043,C,"No hay señal aquí.",false,false,false,true,NOACTION,,0
+C044,C,"El internet está lento.",false,false,false,true,NOACTION,,0
+C045,C,"Se cayó el sistema.",false,false,false,true,NOACTION,,0
+C046,C,"La impresora no jala.",false,false,false,true,NOACTION,,0
+C047,C,"Olvidé mi contraseña.",false,false,false,true,NOACTION,,0
+C048,C,"El coche no arranca.",false,false,false,true,NOACTION,,0
+C049,C,"Poncharon la llanta.",false,false,false,true,NOACTION,,0
+C050,C,"El camión no pasó.",false,false,false,true,NOACTION,,0
+C051,C,"La interacción humano computadora estudia sistemas.",false,false,false,true,NOACTION,,0
+C052,C,"Guardar archivos viejos libera espacio.",false,false,false,true,NOACTION,,0
+C053,C,"Abrir ventanas nuevas ventila.",false,false,false,true,NOACTION,,0
+C054,C,"Imprimir actas viejas cuesta.",false,false,false,true,NOACTION,,0
+C055,C,"Buscar culpables rara vez ayuda.",false,false,false,true,NOACTION,,0
+C056,C,"Copiar diseños registrados infringe.",false,false,false,true,NOACTION,,0
+C057,C,"Pegar afiches viejos decora.",false,false,false,true,NOACTION,,0
+C058,C,"Leer mapas viejos orienta poco.",false,false,false,true,NOACTION,,0
+C059,C,"Cerrar tratos justos conviene.",false,false,false,true,NOACTION,,0
+C060,C,"El gerente cambió al proveedor.",false,false,false,true,NOACTION,,0
+C061,C,"La maestra borró el pizarrón.",false,false,false,true,NOACTION,,0
+C062,C,"El mecánico reemplazó la bomba.",false,false,false,true,NOACTION,,0
+C063,C,"Los niños borran dibujos.",false,false,false,true,NOACTION,,0
+C064,C,"La tormenta cambió la sede.",false,false,false,true,NOACTION,,0
+C065,C,"El sindicato deshizo recortes.",false,false,false,true,NOACTION,,0
+C066,C,"Borrar cintas libera estanterías.",false,false,false,true,NOACTION,,0
+C067,C,"Cambiar pañales evita irritaciones.",false,false,false,true,NOACTION,,0
+C068,C,"Reemplazar la batería extendió la vida.",false,false,false,true,NOACTION,,0
+C069,C,"Seleccionar frutas se aprende.",false,false,false,true,NOACTION,,0
+C070,C,"El jurado cambió el veredicto.",false,false,false,true,NOACTION,,0
+C071,C,"El letrero advierte no borrar.",false,false,false,true,NOACTION,,0
+C072,C,"El reglamento dice cambiar contraseñas.",false,false,false,true,NOACTION,,0
+C073,C,"La receta ordena poner canela.",false,false,false,true,NOACTION,,0
+C074,C,"El contrato estipula deshacer compras.",false,false,false,true,NOACTION,,0
+C075,C,"El menú aclara cambiar guarniciones.",false,false,false,true,NOACTION,,0
+C076,C,"El acta asienta borrar el punto.",false,false,false,true,NOACTION,,0
+C077,C,"La guía recomienda decir siguiente.",false,false,false,true,NOACTION,,0
+C078,C,"El aviso dice no cambiar nada.",false,false,false,true,NOACTION,,0
+C079,C,"El modo dictado desactiva atajos.",false,false,false,true,NOACTION,,0
+C080,C,"La papelera conserva eliminados.",false,false,false,true,NOACTION,,0
+C081,C,"El corrector sugiere alternativas.",false,false,false,true,NOACTION,,0
+C082,C,"Voy a narrar que cambiar enseña.",false,false,false,true,NOACTION,,0
+C083,C,"Quiero relatar que borrar alivia.",false,false,false,true,NOACTION,,0
+C084,C,"El informe quedó listo ayer.",false,false,false,true,NOACTION,,0
+C085,C,"La propuesta incluye secciones.",false,false,false,true,NOACTION,,0
+C086,C,"El artículo será revisado.",false,false,false,true,NOACTION,,0
+C087,C,"La carta circula.",false,false,false,true,NOACTION,,0
+C088,C,"El ensayo necesita lectura.",false,false,false,true,NOACTION,,0
+C089,C,"La memoria describe el proceso.",false,false,false,true,NOACTION,,0
+C090,C,"El museo inaugura sala.",false,false,false,true,NOACTION,,0
+C091,C,"El tren amplió recorrido.",false,false,false,true,NOACTION,,0
+C092,C,"El hospital atiende urgencias.",false,false,false,true,NOACTION,,0
+C093,C,"El puente quedó iluminado.",false,false,false,true,NOACTION,,0
+C094,C,"El banco necesita donadores.",false,false,false,true,NOACTION,,0
+C095,C,"El mercado abre domingos.",false,false,false,true,NOACTION,,0
+C096,C,"El parque protege especies.",false,false,false,true,NOACTION,,0
+C097,C,"El acuario renovó el tanque.",false,false,false,true,NOACTION,,0
+C098,C,"El observatorio organiza visitas.",false,false,false,true,NOACTION,,0
+C099,C,"El gimnasio abre temprano.",false,false,false,true,NOACTION,,0
+C100,C,"El pan sigue tibio.",false,false,false,true,NOACTION,,0
+D001,D,"Borra esto.",false,false,false,true,deleteSelection,,0
+D002,D,"Quita la nota.",false,false,false,true,deleteSelection,,0
+D003,D,"Elimina el inciso.",false,false,false,true,deleteSelection,,0
+D004,D,"Suprime el ejemplo.",false,false,false,true,deleteSelection,,0
+D005,D,"Descarta el párrafo.",false,false,false,true,deleteSelection,,0
+D006,D,"Tacha el renglón.",false,false,false,true,deleteSelection,,0
+D007,D,"Corta el fragmento.",false,false,false,true,deleteSelection,,0
+D008,D,"Limpia lo marcado.",false,false,false,true,deleteSelection,,0
+D009,D,"Vacía el recuadro.",false,false,false,true,deleteSelection,,0
+D010,D,"Retira la cita.",false,false,false,true,deleteSelection,,0
+D011,D,"Ponlo en negritas.",false,false,false,true,formatSelection,style=bold,0
+D012,D,"Cursiva el título.",false,false,false,true,formatSelection,style=italic,0
+D013,D,"Subraya el monto.",false,false,false,true,formatSelection,style=underline,0
+D014,D,"Remarca el fallo.",false,false,false,true,formatSelection,style=bold,0
+D015,D,"Enfatiza el matiz.",false,false,false,true,formatSelection,style=italic,0
+D016,D,"Hazlo más breve.",false,false,false,true,rewriteSelection,,0
+D017,D,"Acorta el considerando.",false,false,false,true,rewriteSelection,,0
+D018,D,"Condensa el informe.",false,false,false,true,rewriteSelection,,0
+D019,D,"Resume la minuta.",false,false,false,true,rewriteSelection,,0
+D020,D,"Aclara el acuerdo.",false,false,false,true,rewriteSelection,,0
+D021,D,"Troca pesos por dólares.",false,false,false,true,replaceSelection,newText=dólares,1
+D022,D,"Pon 2026 donde dice 2025.",false,false,false,true,replaceSelection,newText=2026,1
+D023,D,"Cambia Ana por Anita.",false,false,false,true,replaceSelection,newText=Anita,1
+D024,D,"Sustituye coma por punto.",false,false,false,true,replaceSelection,newText=punto,1
+D025,D,"Escribe Ñoño con eñe.",false,false,false,true,replaceSelection,newText=Ñoño,1
+D026,D,"Deshaz esta mañana.",false,false,false,true,undo,,0
+D027,D,"Anula lo de ayer.",false,false,false,true,undo,,0
+D028,D,"Revierte el pegado.",false,false,false,true,undo,,0
+D029,D,"Cancela el borrado.",false,false,false,true,undo,,0
+D030,D,"Echa atrás el envío.",false,false,false,true,undo,,0
+D031,D,"Rehaz el pegado.",false,false,false,true,redo,,0
+D032,D,"Reaplica el título.",false,false,false,true,redo,,0
+D033,D,"Repite el borrado.",false,false,false,true,redo,,0
+D034,D,"Restaura el formato.",false,false,false,true,redo,,0
+D035,D,"Vuelve a centrar.",false,false,false,true,redo,,0
+D036,D,"Selecciona la tabla.",false,false,false,true,selectText,,0
+D037,D,"Marca el diagrama.",false,false,false,true,selectText,,0
+D038,D,"Toma el gráfico.",false,false,false,true,selectText,,0
+D039,D,"Delimita el extracto.",false,false,false,true,selectText,,0
+D040,D,"Ubica la rúbrica.",false,false,false,true,selectText,,0
+D041,D,"Halla el folio 7.",false,false,false,true,findText,query=7,1
+D042,D,"Ubica la ñ.",false,false,false,true,findText,query=ñ,1
+D043,D,"Rastrea el 10%.",false,false,false,true,findText,query=10%,1
+D044,D,"Detecta el guion.",false,false,false,true,findText,,
+D045,D,"Caza la errata.",false,false,false,true,findText,,
+D046,D,"Guarda el tanto.",false,false,false,true,saveDocument,,0
+D047,D,"Archiva el oficio.",false,false,false,true,saveDocument,,0
+D048,D,"Consigna el avance.",false,false,false,true,saveDocument,,0
+D049,D,"Recupera el expediente.",false,false,false,true,openDocument,reference=el expediente,1
+D050,D,"Reabre el acta.",false,false,false,true,openDocument,reference=el acta,1
+E001,E,"Titula la crónica como Ida y vuelta.",false,false,false,true,renameTitle,newTitle=Ida y vuelta,1
+E002,E,"El membrete dirá Casa TDAH.",false,false,false,true,renameTitle,newTitle=Casa TDAH,1
+E003,E,"Nombra el anexo Ñandú común.",false,false,false,true,renameTitle,newTitle=Ñandú común,1
+E004,E,"Que el título cite IHC 2026.",false,false,false,true,renameTitle,newTitle=IHC 2026,1
+E005,E,"Ponle 100 años de soledad.",false,false,false,true,renameTitle,newTitle=100 años de soledad,1
+E006,E,"El encabezado: ¿Qué sigue?.",false,false,false,true,renameTitle,newTitle=¿Qué sigue?,1
+E007,E,"Titula ¡Manos a la obra!.",false,false,false,true,renameTitle,newTitle=¡Manos a la obra!,1
+E008,E,"Nombre: María-José Pérez.",false,false,false,true,renameTitle,newTitle=María-José Pérez,1
+E009,E,"Título con número 7.5%.",false,false,false,true,renameTitle,newTitle=7.5%,1
+E010,E,"Ponle e-mail: contacto@ejemplo.mx.",false,false,false,true,renameTitle,newTitle=e-mail: contacto@ejemplo.mx,1
+E011,E,"Sustituye pez por pez globo.",true,false,false,true,replaceSelection,newText=pez globo,1
+E012,E,"Cambia CDMX por Ciudad de México.",true,false,false,true,replaceSelection,newText=Ciudad de México,1
+E013,E,"Pon co-autor con guion.",true,false,false,true,replaceSelection,newText=co-autor,1
+E014,E,"Escribe 3.1416 completo.",true,false,false,true,replaceSelection,newText=3.1416,1
+E015,E,"Troca $100 por cien pesos.",true,false,false,true,replaceSelection,newText=cien pesos,1
+E016,E,"Cambia #Etiqueta por etiqueta.",true,false,false,true,replaceSelection,newText=etiqueta,1
+E017,E,"Pon (sic) tras la cita.",true,false,false,true,replaceSelection,newText=(sic),1
+E018,E,"Sustituye etc. por etcétera.",true,false,false,true,replaceSelection,newText=etcétera,1
+E019,E,"Escribe Niño Héroe.",true,false,false,true,replaceSelection,newText=Niño Héroe,1
+E020,E,"Cambia Sr. por Señor.",true,false,false,true,replaceSelection,newText=Señor,1
+E021,E,"Halla la palabra pingüino.",false,false,false,true,findText,query=pingüino,1
+E022,E,"Ubica el símbolo €.",false,false,false,true,findText,query=€,1
+E023,E,"Rastrea el hashtag #TDAH.",false,false,false,true,findText,query=#TDAH,1
+E024,E,"Detecta la arroba del correo.",false,false,false,true,findText,query=@,1
+E025,E,"Caza el 3.5% restante.",false,false,false,true,findText,query=3.5%,1
+E026,E,"Encuentra la diéresis.",false,false,false,true,findText,query=ü,1
+E027,E,"Localiza la eñe perdida.",false,false,false,true,findText,query=ñ,1
+E028,E,"Busca el dos puntos.",false,false,false,true,findText,query=:,1
+E029,E,"Halla comillas «latinas».",false,false,false,true,findText,query=«latinas»,1
+E030,E,"Ubica el asterisco.",false,false,false,true,findText,query=*,1
+E031,E,"Selecciona el otrosí tercero.",false,false,false,true,selectText,target=el otrosí tercero,1
+E032,E,"Marca el inciso ñ).",false,false,false,true,selectText,target=el inciso ñ),1
+E033,E,"Toma la gráfica 5-A.",false,false,false,true,selectText,target=la gráfica 5-A,1
+E034,E,"Elige el considerando 12º.",false,false,false,true,selectText,target=el considerando 12º,1
+E035,E,"Aparta la foja 007.",false,false,false,true,selectText,target=la foja 007,1
+E036,E,"Señala a María Félix.",false,false,false,true,selectText,target=a María Félix,1
+E037,E,"Encierra al Ñoño.",false,false,false,true,selectText,target=al Ñoño,1
+E038,E,"Delimita IHC vs HCI.",false,false,false,true,selectText,target=IHC vs HCI,1
+E039,E,"Enfoca el § 4o.",false,false,false,true,selectText,target=el § 4o,1
+E040,E,"Ubica TDAH-I.",false,false,false,true,selectText,target=TDAH-I,1
+E041,E,"Abre el acta Ño. 5.",false,false,false,true,openDocument,reference=el acta Ño. 5,1
+E042,E,"Carga Fotos 2026/01.",false,false,false,true,openDocument,reference=Fotos 2026/01,1
+E043,E,"Jala el .zip adjunto.",false,false,false,true,openDocument,reference=el .zip adjunto,1
+E044,E,"Trae el CV de Muñoz.",false,false,false,true,openDocument,reference=el CV de Muñoz,1
+E045,E,"Muéstrame Los de abajo.pdf.",false,false,false,true,openDocument,reference=Los de abajo.pdf,1
+E046,E,"Desempolva ñoñerías.doc.",false,false,false,true,openDocument,reference=ñoñerías.doc,1
+E047,E,"Reabre Tesis_Ñoño_v2.",false,false,false,true,openDocument,reference=Tesis_Ñoño_v2,1
+E048,E,"Presenta el 5º informe.",false,false,false,true,openDocument,reference=el 5º informe,1
+E049,E,"Exhibe el cartel ¡Ya!.",false,false,false,true,openDocument,reference=el cartel ¡Ya!,1
+E050,E,"Desarchiva e-mails '24.",false,false,false,true,openDocument,reference=e-mails '24,1
+E051,E,"Remarca en negrita Ñoño.",true,false,false,true,formatSelection,style=bold,0
+E052,E,"Cursiva el e-mail.",true,false,false,true,formatSelection,style=italic,0
+E053,E,"Subraya el 100%.",true,false,false,true,formatSelection,style=underline,0
+E054,E,"Negrita TDAH-I.",true,false,false,true,formatSelection,style=bold,0
+E055,E,"Cursiva nº 5.",true,false,false,true,formatSelection,style=italic,0
+E056,E,"Deshaz el pegado de ayer.",false,true,false,true,undo,,0
+E057,E,"Anula la firma digital.",false,true,false,true,undo,,0
+E058,E,"Revierte ^Z.",false,true,false,true,undo,,0
+E059,E,"Cancela ctrl+Z.",false,true,false,true,undo,,0
+E060,E,"Vuelve al .bak.",false,true,false,true,undo,,0
+E061,E,"Rehaz el ctrl+Y.",false,false,true,true,redo,,0
+E062,E,"Reaplica el ^Y.",false,false,true,true,redo,,0
+E063,E,"Repite el F4.",false,false,true,true,redo,,0
+E064,E,"Restaura el .tmp.",false,false,true,true,redo,,0
+E065,E,"Vuelve a ponerlo –así–.",false,false,true,true,redo,,0
+E066,E,"Respalda el .docx.",false,false,false,true,saveDocument,,0
+E067,E,"Archiva el .pdf firmado.",false,false,false,true,saveDocument,,0
+E068,E,"Consigna el .zip.",false,false,false,true,saveDocument,,0
+E069,E,"Deposita el .bak.",false,false,false,true,saveDocument,,0
+E070,E,"Fija la v2.1.",false,false,false,true,saveDocument,,0
+E071,E,"Saca el acta en .pdf.",false,false,false,true,exportDocument,format=pdf,0
+E072,E,"Baja el .txt plano.",false,false,false,true,exportDocument,format=plainText,0
+E073,E,"Genera .rtf enriquecido.",false,false,false,true,exportDocument,format=richText,0
+E074,E,"Vierte a .docx.",false,false,false,true,exportDocument,format=word,0
+E075,E,"Rinde _borrador_.",false,false,false,true,exportDocument,format=plainText,0
+E076,E,"Reescribe el considerando.",true,false,false,true,rewriteSelection,,0
+E077,E,"Condensa el altri pormenores.",true,false,false,true,rewriteSelection,,0
+E078,E,"Aclara el otrosí.",true,false,false,true,rewriteSelection,,0
+E079,E,"Abrevia el proemio.",true,false,false,true,rewriteSelection,,0
+E080,E,"Expón el petitorio.",true,false,false,true,rewriteSelection,,0
