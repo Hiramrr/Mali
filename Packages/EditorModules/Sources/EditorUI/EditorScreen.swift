@@ -49,6 +49,7 @@ public struct EditorScreen: View {
     // depender de VoiceModule) o `nil` si la pieza está quitada.
     private let commandBus: EditorCommandBus
     private let voicePanel: AnyView?
+    private let voiceBanner: AnyView?
     private let modules: ModuleRegistry
     // Pieza Lego: Gestos. `gesturePanel` es el botón+popover de la cámara y
     // `gestureCards` las tarjetas flotantes de sesión (`AnyView` para no
@@ -56,7 +57,9 @@ public struct EditorScreen: View {
     // al módulo; `nil` sin la pieza.
     private let gesturePanel: AnyView?
     private let gestureCards: AnyView?
+    private let gestureCursor: AnyView?
     private let onGestureDocument: ((String, NSRange) -> Void)?
+    private let onGestureEditorReady: ((EditorSession) -> Void)?
     @State private var session = EditorSession()
     @State private var showSidebar = true
     @State private var showHome: Bool
@@ -91,11 +94,13 @@ public struct EditorScreen: View {
     @State private var autosaveWorkItem: DispatchWorkItem?
     @State private var folderDocuments: [URL] = []
     @State private var libraryRevision = 0
+    @State private var imageAccessAsked: Set<String> = []
+    @State private var imageAccessRevision = 0
     // Pantallas anteriores, de la más reciente a la más antigua, para volver.
     @State private var screenHistory: [ScreenSnapshot] = []
     @State private var singleWindow = SingleWindowCoordinator.shared
 
-    public init(text: Binding<String>, title: String, currentURL: URL?, recentURLs: [URL], openFile: @escaping (URL) -> Void, startOnHome: Bool = false, commandBus: EditorCommandBus = EditorCommandBus(), voicePanel: AnyView? = nil, modules: ModuleRegistry = ModuleRegistry(), gesturePanel: AnyView? = nil, gestureCards: AnyView? = nil, onGestureDocument: ((String, NSRange) -> Void)? = nil) {
+    public init(text: Binding<String>, title: String, currentURL: URL?, recentURLs: [URL], openFile: @escaping (URL) -> Void, startOnHome: Bool = false, commandBus: EditorCommandBus = EditorCommandBus(), voicePanel: AnyView? = nil, voiceBanner: AnyView? = nil, modules: ModuleRegistry = ModuleRegistry(), gesturePanel: AnyView? = nil, gestureCards: AnyView? = nil, gestureCursor: AnyView? = nil, onGestureDocument: ((String, NSRange) -> Void)? = nil, onGestureEditorReady: ((EditorSession) -> Void)? = nil) {
         _text = text
         _documentTitle = State(initialValue: title)
         self.currentURL = currentURL
@@ -104,10 +109,13 @@ public struct EditorScreen: View {
         self.startOnHome = startOnHome
         self.commandBus = commandBus
         self.voicePanel = voicePanel
+        self.voiceBanner = voiceBanner
         self.modules = modules
         self.gesturePanel = gesturePanel
         self.gestureCards = gestureCards
+        self.gestureCursor = gestureCursor
         self.onGestureDocument = onGestureDocument
+        self.onGestureEditorReady = onGestureEditorReady
         _showHome = State(initialValue: startOnHome || (currentURL == nil && text.wrappedValue.isEmpty))
         _launchHome = State(initialValue: startOnHome)
     }
@@ -206,8 +214,13 @@ public struct EditorScreen: View {
     private var sampleFolder: URL? {
         Bundle.main.url(forResource: "Samples", withExtension: nil)
     }
+    private var savedSampleFolder: URL? {
+        let folder = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?
+            .appendingPathComponent("Samples", isDirectory: true)
+        return folder.flatMap { FileManager.default.fileExists(atPath: $0.path) ? $0 : nil }
+    }
     private var folders: [URL] {
-        let candidates = Array(Set((sampleFolder.map { [$0] } ?? []) + savedFolders + recentURLs.compactMap { url in
+        let candidates = Array(Set((sampleFolder.map { [$0] } ?? []) + (savedSampleFolder.map { [$0] } ?? []) + savedFolders + recentURLs.compactMap { url in
             guard url.isFileURL else { return nil }
             return url.deletingLastPathComponent().standardizedFileURL
         } + (currentURL.map { [$0.deletingLastPathComponent().standardizedFileURL] } ?? [])))
@@ -241,23 +254,15 @@ public struct EditorScreen: View {
         return set.sorted().joined(separator: "|")
     }
     private var activeURLs: [URL] {
-        availableURLs.filter { !isTrashed($0) && !isArchived($0) }
+        let excluded = trashedKeys.union(archivedKeys)
+        return availableURLs.filter { !excluded.contains(storageKey(for: $0)) }
     }
     private var orderedRecentURLs: [URL] {
-        var seen = Set<String>()
-        var ordered: [URL] = []
-        let candidates = (currentURL.map { [$0] } ?? []) + recentURLs
-        for url in candidates {
-            let key = storageKey(for: url)
-            guard !seen.contains(key) else { continue }
-            seen.insert(key)
-            guard availableURLs.contains(where: { storageKey(for: $0) == key }) else { continue }
-            guard !isTrashed(url) && !isArchived(url) else { continue }
-            if let match = availableURLs.first(where: { storageKey(for: $0) == key }) {
-                ordered.append(match)
-            }
-        }
-        return ordered
+        DocumentLibrary.orderedRecents(
+            (currentURL.map { [$0] } ?? []) + recentURLs,
+            available: availableURLs,
+            excluding: trashedKeys.union(archivedKeys)
+        )
     }
     private var draftURLs: [URL] {
         activeURLs.filter { $0.deletingPathExtension().lastPathComponent.hasPrefix("Sin título") }
@@ -269,16 +274,20 @@ public struct EditorScreen: View {
         case .recents:
             return orderedRecentURLs
         case .favorites:
-            return activeURLs.filter { isFavorite($0) }
+            let keys = favoriteKeys
+            return activeURLs.filter { keys.contains(storageKey(for: $0)) }
         case .archived:
-            return availableURLs.filter { isArchived($0) && !isTrashed($0) }
+            let included = archivedKeys.subtracting(trashedKeys)
+            return availableURLs.filter { included.contains(storageKey(for: $0)) }
         case .drafts:
             return draftURLs
         case .trash:
-            return availableURLs.filter { isTrashed($0) }
+            let keys = trashedKeys
+            return availableURLs.filter { keys.contains(storageKey(for: $0)) }
         case .folder(let folder):
+            let trashed = trashedKeys
             return availableURLs.filter {
-                $0.deletingLastPathComponent().standardizedFileURL == folder && !isTrashed($0)
+                $0.deletingLastPathComponent().standardizedFileURL == folder && !trashed.contains(storageKey(for: $0))
             }
         }
     }
@@ -364,6 +373,9 @@ public struct EditorScreen: View {
                     .background(Color(nsColor: style.effectiveBackgroundColor))
             }
         }
+        .safeAreaInset(edge: .top, spacing: 0) {
+            if let voiceBanner { voiceBanner }
+        }
         .inspector(isPresented: Binding(
             get: { showInspector && !session.focusMode && !isShowingHome },
             set: { if !session.focusMode { showInspector = $0 } }
@@ -437,8 +449,8 @@ public struct EditorScreen: View {
                     applyVoiceRename(title)
                 case .saveDocument:
                     applyVoiceSave()
-                case .openDocument:
-                    applyVoiceOpen()
+                case .openDocument(let name):
+                    applyVoiceOpen(name: name)
                 case .exportDocument(let format):
                     applyVoiceExport(format)
                 default:
@@ -448,6 +460,7 @@ public struct EditorScreen: View {
         }
         .onAppear {
             hasAppeared = true
+            onGestureEditorReady?(session)
             if startOnHome { launchHome = true; showHome = true }
             if currentURL == nil && text.isEmpty { showHome = true }
             mergeExtraWindowIfNeeded()
@@ -467,7 +480,9 @@ public struct EditorScreen: View {
                 if statistics && !session.focusMode {
                     HStack {
                         Spacer()
-                        Text("\(session.statistics.words.formatted()) palabras")
+                        Text(session.selectedCharacters > 0
+                             ? "\(session.selectedCharacters.formatted()) caracteres · \(session.selectedWords.formatted()) palabras seleccionadas"
+                             : "\(session.statistics.words.formatted()) palabras")
                             .font(.caption).foregroundStyle(Color(nsColor: style.secondaryTextColor)).monospacedDigit()
                     }.padding(.horizontal, 32).padding(.top, 16)
                 }
@@ -485,17 +500,21 @@ public struct EditorScreen: View {
                 }
                 .padding(.horizontal, 32).padding(.top, session.focusMode ? 20 : 28).padding(.bottom, 8)
                 ZStack(alignment: .topLeading) {
-                    NativeTextEditor(text: $text, session: session, style: style, onTextActivity: onGestureDocument)
+                    NativeTextEditor(text: $text, session: session, style: style, documentURL: activeDocument?.fileURL ?? currentURL, onTextActivity: onGestureDocument)
                         .opacity(session.readingMode ? 0 : 1)
                         .allowsHitTesting(!session.readingMode)
                         .accessibilityHidden(session.readingMode)
+                    if let gestureCursor, !session.readingMode {
+                        gestureCursor
+                    }
                     if text.isEmpty && !session.readingMode {
                         Text("Escribe aquí…")
                             .font(.system(size: fontSize)).foregroundStyle(Color(nsColor: style.tertiaryTextColor))
                             .padding(.leading, 33).padding(.top, 25).allowsHitTesting(false)
                     }
                     if session.readingMode {
-                        MarkdownReader(text: text, style: style)
+                        MarkdownReader(text: text, style: style, documentURL: activeDocument?.fileURL ?? currentURL)
+                            .id(imageAccessRevision)
                     }
                     // Pieza Lego: Gestos. Las tarjetas se pintan solas solo
                     // cuando hay sesión o aviso; sin la pieza no hay nada.
@@ -518,6 +537,7 @@ public struct EditorScreen: View {
 
         }
         .background(Color(nsColor: style.effectiveBackgroundColor))
+        .onAppear { requestImageAccessIfNeeded() }
     }
 
     @ToolbarContentBuilder private var toolbar: some ToolbarContent {
@@ -547,6 +567,9 @@ public struct EditorScreen: View {
                     .help("Cursiva · ⌘I").accessibilityLabel("Cursiva").disabled(session.readingMode)
                 Button { session.send(.insertLink) } label: { Image(systemName: "link") }
                     .help("Insertar enlace · ⌘K").accessibilityLabel("Insertar enlace").disabled(session.readingMode)
+                Button { insertImage() } label: { Image(systemName: "photo") }
+                    .help("Insertar imagen · ⇧⌘I").accessibilityLabel("Insertar imagen")
+                    .keyboardShortcut("i", modifiers: [.command, .shift]).disabled(session.readingMode)
             }
             ToolbarSpacer(.fixed, placement: .primaryAction)
             ToolbarItem(placement: .primaryAction) {
@@ -849,7 +872,7 @@ public struct EditorScreen: View {
             Divider()
             Button("Imprimir o guardar PDF…") {
                 showReadingControls = false
-                PrintDocument.run(text: text, title: documentTitle, window: session.textView?.window)
+                PrintDocument.run(text: text, title: documentTitle, window: session.textView?.window, documentURL: activeDocument?.fileURL ?? currentURL)
             }
         }.padding(22).frame(width: 340)
     }
@@ -1088,6 +1111,87 @@ public struct EditorScreen: View {
         view.window?.makeFirstResponder(view)
     }
 
+    private func insertImage() {
+        guard let documentURL = activeDocument?.fileURL ?? currentURL else {
+            let alert = NSAlert()
+            alert.messageText = "Guarda el documento antes de agregar imágenes"
+            alert.informativeText = "Las imágenes se guardan junto al archivo para que puedas abrirlas después."
+            alert.addButton(withTitle: "Guardar…")
+            alert.addButton(withTitle: "Cancelar")
+            if alert.runModal() == .alertFirstButtonReturn { applyVoiceSave() }
+            return
+        }
+        let panel = NSOpenPanel()
+        panel.message = "Elige una imagen"
+        panel.allowedContentTypes = [.image]
+        panel.allowsMultipleSelection = false
+        guard panel.runModal() == .OK, let source = panel.url else { return }
+        let access = source.startAccessingSecurityScopedResource()
+        defer { if access { source.stopAccessingSecurityScopedResource() } }
+        guard let data = try? Data(contentsOf: source), let bitmap = NSImage(data: data),
+              bitmap.size.width > 0, bitmap.size.height > 0 else {
+            let alert = NSAlert()
+            alert.messageText = "No se puede abrir esa imagen"
+            alert.informativeText = "Elige un archivo de imagen compatible y vuelve a intentarlo."
+            alert.runModal()
+            return
+        }
+        let folder = documentURL.deletingLastPathComponent().appendingPathComponent("images", isDirectory: true)
+        let name = UUID().uuidString + "." + source.pathExtension.lowercased()
+        let destination = folder.appendingPathComponent(name)
+        do {
+            try FileManager.default.createDirectory(at: folder, withIntermediateDirectories: true)
+            try data.write(to: destination, options: .atomic)
+        } catch {
+            guard (error as NSError).code == NSFileWriteNoPermissionError else {
+                NSApplication.shared.presentError(error)
+                return
+            }
+            guard grantImageFolderAccess(to: documentURL) else { return }
+            do {
+                try FileManager.default.createDirectory(at: folder, withIntermediateDirectories: true)
+                try data.write(to: destination, options: .atomic)
+            } catch {
+                NSApplication.shared.presentError(error)
+                return
+            }
+        }
+        let alt = source.deletingPathExtension().lastPathComponent
+        let image = MarkdownImage(alt: alt, path: "images/" + name)
+        session.send(.insertText("\n" + image.markdown + "\n"))
+    }
+
+    private func grantImageFolderAccess(to documentURL: URL) -> Bool {
+        let panel = NSOpenPanel()
+        panel.canChooseFiles = false
+        panel.canChooseDirectories = true
+        panel.allowsMultipleSelection = false
+        panel.directoryURL = documentURL.deletingLastPathComponent()
+        panel.message = "Elige la carpeta de este documento para guardar y mostrar sus imágenes."
+        panel.prompt = "Dar acceso"
+        guard panel.runModal() == .OK, let folder = panel.url else { return false }
+        do {
+            try DocumentImageAccess.remember(folder, for: documentURL)
+            imageAccessRevision += 1
+            session.refreshOutline(text)
+            return true
+        } catch {
+            NSApplication.shared.presentError(error)
+            return false
+        }
+    }
+
+    private func requestImageAccessIfNeeded() {
+        guard let documentURL = activeDocument?.fileURL ?? currentURL,
+              !imageAccessAsked.contains(documentURL.path), text.contains("![") else { return }
+        DocumentImageAccess.start(for: documentURL)
+        let image = MarkdownDocument(text).lines.lazy.compactMap { MarkdownImage(line: $0.content) }.first
+        guard let image, let url = image.fileURL(relativeTo: documentURL) else { return }
+        imageAccessAsked.insert(documentURL.path)
+        guard (try? Data(contentsOf: url)) == nil else { return }
+        _ = grantImageFolderAccess(to: documentURL)
+    }
+
     /// Guardar por voz ("Guarda el documento"): delega al NSDocument activo
     /// vía la cadena de respondedores (sin panel si ya tiene archivo; con
     /// panel si es borrador nuevo). Respeta autosave y sandbox del sistema.
@@ -1095,12 +1199,16 @@ public struct EditorScreen: View {
         NSApplication.shared.sendAction(#selector(NSDocument.save(_:)), to: nil, from: nil)
     }
 
-    /// Abrir por voz ("Abre…"): panel del sistema (powerbox: acceso permitido)
-    /// y apertura en la ventana actual. El nombre dicho solo orienta: el
-    /// editor no resuelve nombres a rutas por sí solo.
-    private func applyVoiceOpen() {
+    /// Busca en los documentos que la biblioteca ya conoce. Si el nombre no
+    /// identifica uno solo, deja elegirlo en el panel del sistema.
+    private func applyVoiceOpen(name: String?) {
+        if let name, let url = Self.matchVoiceDocument(name, in: availableURLs.filter({ !isTrashed($0) })) {
+            open(url: url)
+            return
+        }
         let panel = NSOpenPanel()
-        panel.message = "Elige el documento para abrir"
+        panel.message = name.map { "No encontré un documento único para «\($0)». Elígelo para abrir." }
+            ?? "Elige el documento para abrir"
         panel.allowedContentTypes = [UTType.plainText, UTType(filenameExtension: "md"), UTType(filenameExtension: "markdown")].compactMap { $0 }
         panel.allowsMultipleSelection = false
         panel.canChooseDirectories = false
@@ -1108,21 +1216,53 @@ public struct EditorScreen: View {
         openFile(url)
     }
 
+    static func matchVoiceDocument(_ spoken: String, in urls: [URL]) -> URL? {
+        func normalized(_ text: String) -> String {
+            text.trimmingCharacters(in: .whitespacesAndNewlines)
+                .trimmingCharacters(in: CharacterSet(charactersIn: ".!?"))
+                .folding(options: [.caseInsensitive, .diacriticInsensitive], locale: Locale(identifier: "es_MX"))
+        }
+        var query = normalized(spoken)
+        for article in ["el ", "la ", "los ", "las ", "un ", "una "] where query.hasPrefix(article) {
+            query.removeFirst(article.count)
+            break
+        }
+        guard !query.isEmpty else { return nil }
+        let exact = urls.filter { normalized($0.deletingPathExtension().lastPathComponent) == query }
+        if exact.count == 1 { return exact[0] }
+        if exact.count > 1 { return nil }
+        let partial = urls.filter { normalized($0.deletingPathExtension().lastPathComponent).contains(query) }
+        return partial.count == 1 ? partial[0] : nil
+    }
+
     /// Exportar por voz. pdf → diálogo de impresión (ahí se guarda como PDF);
-    /// txt/rtf → panel de guardado con el contenido real. word no lo soporta
-    /// el editor (el mapeo ya lo filtra con aviso en el HUD).
+    /// txt/rtf/word → panel de guardado con el contenido real (word en .docx).
     private func applyVoiceExport(_ format: String) {
         switch format {
         case "pdf":
-            PrintDocument.run(text: text, title: documentTitle, window: session.textView?.window)
-        case "txt", "rtf":
+            PrintDocument.run(text: text, title: documentTitle, window: session.textView?.window, documentURL: activeDocument?.fileURL ?? currentURL)
+        case "txt", "rtf", "word":
             let panel = NSSavePanel()
             panel.nameFieldStringValue = documentTitle
-            panel.allowedContentTypes = format == "txt" ? [.plainText] : [.rtf]
+            panel.allowedContentTypes = switch format {
+            case "txt": [.plainText]
+            case "rtf": [.rtf]
+            default: [UTType(filenameExtension: "docx")].compactMap { $0 }
+            }
             guard panel.runModal() == .OK, let url = panel.url else { return }
             do {
                 if format == "txt" {
                     try Data(text.utf8).write(to: url, options: .atomic)
+                } else if format == "word" {
+                    let source = "# \(documentTitle)\n\n" + text
+                    let rendered = MarkdownAppearance.readingText(
+                        source, document: MarkdownDocument(source),
+                        style: WritingStyle(size: 12, family: "serif", spacing: 4),
+                        forPrint: false, documentURL: activeDocument?.fileURL ?? currentURL)
+                    let data = try rendered.data(
+                        from: NSRange(location: 0, length: rendered.length),
+                        documentAttributes: [.documentType: NSAttributedString.DocumentType.officeOpenXML])
+                    try data.write(to: url, options: .atomic)
                 } else if let storage = session.textView?.textStorage,
                           let data = storage.rtf(from: NSRange(location: 0, length: storage.length), documentAttributes: [:]) {
                     try data.write(to: url, options: .atomic)

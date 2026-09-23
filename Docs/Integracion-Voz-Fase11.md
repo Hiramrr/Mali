@@ -47,11 +47,37 @@ Cobertura: find/select inmediatos (solo selección), delete/replace/format/
 undo/redo/rename/save/open/export ejecutados, rewrite y word con aviso
 honesto (Fase 12), unsupported/unknown/múltiple → dictado o aviso, 0 comandos.
 
-Desviación consciente de Fase 11: la app auto-ejecuta (no hay UI de
-confirmación; construirla es el siguiente paso). Red de seguridad: cada
-mutación es UNA operación de Undo y el HUD dice qué pasó + «deshacer» por
-voz revierte. Borrado/reemplazo/formato sin selección = no-op.
+El panel de voz muestra la transcripción y la propuesta. Dictado y comandos
+comparten el mismo micrófono. En el modo por turnos, Enter confirma, Esc
+descarta y R vuelve a grabar. Buscar y seleccionar se ejecutan al momento;
+las acciones que cambian estado esperan confirmación. Si una frase como
+«Titula bien tus ideas» se reconoce como comando, «Usar como texto» cambia
+la propuesta a dictado sin volver a hablar.
+Tras confirmar, el panel conserva la transcripción junto al resultado.
+«Corrige eso» propone deshacer el último cambio.
 
-Dictado automático: `continuousListening` (defecto sí) + cierre por pausa
-(1.6 s sin cambios en el parcial). Un toque inicia, cada pausa ejecuta y
-rearma, otro toque o Terminar detiene. El silencio total nunca cierra solo.
+Abrir por nombre consulta los documentos conocidos de la biblioteca. Solo
+abre directamente cuando el nombre identifica un archivo único. Si no hay
+coincidencia única, muestra el panel de apertura del sistema.
+
+Manos libres: `continuousListening` (defecto sí) cierra cada frase tras 1.6 s
+sin cambios en el parcial. El dictado parcial aparece en el documento sin
+guardarse y se inserta al cerrar la pausa. El micrófono se rearma. Para un
+cambio pendiente, sigue escuchando «confirmar», «descartar», «repetir» o
+«usar como texto». «Detener voz» termina la escucha. El silencio total nunca
+cierra solo. El umbral aún requiere medición con micrófono real.
+
+## Actualización: reescritura real y Word (2026-09-23)
+
+- «Hazlo más breve» (rewrite) es real en la app: `VoiceModule` lo mapea a
+  `EditorCommand.rewriteSelection` y `EditorSession` genera con
+  `RewriteProvider` (Foundation Models on-device) y reemplaza la selección
+  en una sola operación de undo. Sin selección, sin modelo, con fallo de IA
+  o con edición intermedia no toca nada (nunca aplica a ciegas).
+- «Exporta en Word» es real: `EditorScreen` guarda .docx (Office Open XML
+  desde la lectura renderizada) vía panel del sistema. «Exporta a pdf»
+  sigue yendo al diálogo de impresión.
+- Harness (`VoiceCommandIntegration`, doble de pruebas): export pdf (PDF
+  headless al store temporal) y word (.docx al store) reales. Rewrite sigue
+  simulado a propósito (doble determinista para la política de
+  confirmación; el path real de producción es `EditorSession`).

@@ -1,5 +1,77 @@
 import Foundation
 
+public struct MarkdownImage: Equatable, Sendable {
+    private static let expression = try! NSRegularExpression(pattern: #"^!\[([^\]]*)\]\(([^\s)]+)(?: "width=([0-9]+);align=(left|center|right)")?\)$"#)
+    public enum Alignment: String, CaseIterable, Sendable { case left, center, right }
+    public let alt: String
+    public let path: String
+    public let width: Int
+    public let alignment: Alignment
+
+    public init?(line: String) {
+        guard line.hasPrefix("![") else { return nil }
+        guard let result = Self.expression.firstMatch(in: line, range: NSRange(line.startIndex..., in: line)),
+              result.range.length == (line as NSString).length,
+              let altRange = Range(result.range(at: 1), in: line),
+              let pathRange = Range(result.range(at: 2), in: line) else { return nil }
+        let path = String(line[pathRange])
+        guard !path.hasPrefix("/"), !path.contains("://"), !path.split(separator: "/").contains("..") else { return nil }
+        self.alt = String(line[altRange])
+        self.path = path
+        if let range = Range(result.range(at: 3), in: line), let value = Int(line[range]) {
+            width = min(1200, max(80, value))
+        } else {
+            width = 480
+        }
+        if let range = Range(result.range(at: 4), in: line) {
+            alignment = Alignment(rawValue: String(line[range])) ?? .left
+        } else {
+            alignment = .left
+        }
+    }
+
+    public init(alt: String, path: String, width: Int = 480, alignment: Alignment = .left) {
+        self.alt = alt.replacingOccurrences(of: "]", with: "")
+        self.path = path
+        self.width = min(1200, max(80, width))
+        self.alignment = alignment
+    }
+
+    public var markdown: String { "![\(alt)](\(path) \"width=\(width);align=\(alignment.rawValue)\")" }
+
+    public func fileURL(relativeTo documentURL: URL) -> URL? {
+        guard let decoded = path.removingPercentEncoding else { return nil }
+        let folder = documentURL.deletingLastPathComponent().standardizedFileURL
+        let url = folder.appendingPathComponent(decoded).standardizedFileURL
+        guard url.path.hasPrefix(folder.path + "/") else { return nil }
+        return url
+    }
+}
+
+@MainActor public enum DocumentImageAccess {
+    // ponytail: conserva el acceso hasta cerrar la app; liberar por documento si se editan cientos de carpetas por sesión.
+    private static var activeFolders: [String: URL] = [:]
+
+    public static func start(for documentURL: URL) {
+        let path = documentURL.deletingLastPathComponent().resolvingSymlinksInPath().path
+        guard activeFolders[path] == nil,
+              let bookmark = UserDefaults.standard.data(forKey: "image-folder:" + path) else { return }
+        var stale = false
+        guard let folder = try? URL(resolvingBookmarkData: bookmark, options: .withSecurityScope,
+                                    relativeTo: nil, bookmarkDataIsStale: &stale),
+              folder.startAccessingSecurityScopedResource() else { return }
+        activeFolders[path] = folder
+    }
+
+    public static func remember(_ folder: URL, for documentURL: URL) throws {
+        let path = documentURL.deletingLastPathComponent().resolvingSymlinksInPath().path
+        guard folder.resolvingSymlinksInPath().path == path else { throw CocoaError(.fileReadNoPermission) }
+        let bookmark = try folder.bookmarkData(options: .withSecurityScope, includingResourceValuesForKeys: nil, relativeTo: nil)
+        UserDefaults.standard.set(bookmark, forKey: "image-folder:" + path)
+        start(for: documentURL)
+    }
+}
+
 public struct MarkdownLine: Sendable, Equatable {
     public enum Kind: Sendable, Equatable {
         case text

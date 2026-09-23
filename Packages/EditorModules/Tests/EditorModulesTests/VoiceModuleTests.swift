@@ -3,6 +3,7 @@ import AppKit
 import CommandGrammar
 import EditorCore
 import EditorEngine
+@testable import EditorUI
 @testable import ModuleKit
 @testable import VoiceModule
 
@@ -27,12 +28,48 @@ final class MockSpeechRecognizer: VoiceSpeechRecognizer, @unchecked Sendable {
     func cancel() async { lock.withLock { _started = false } }
 }
 
+private final class DelayedSpeechRecognizer: VoiceSpeechRecognizer, @unchecked Sendable {
+    private let lock = NSLock()
+    private var startContinuation: CheckedContinuation<Void, Never>?
+    private var started = false
+    private var stoppedBeforeStart = false
+    var onStart: (@Sendable () -> Void)?
+    var onPartial: (@Sendable (String) -> Void)?
+    var onLevel: (@Sendable (Float) -> Void)?
+    var hasSpeech: Bool { true }
+    var liveTranscript: String { "hola" }
+    var didStopBeforeStart: Bool { lock.withLock { stoppedBeforeStart } }
+
+    func start() async throws {
+        await withCheckedContinuation { continuation in
+            lock.withLock { startContinuation = continuation }
+            onStart?()
+        }
+        lock.withLock { started = true }
+    }
+
+    func completeStart() {
+        lock.withLock {
+            startContinuation?.resume()
+            startContinuation = nil
+        }
+    }
+
+    func stop() async throws -> String {
+        lock.withLock { stoppedBeforeStart = !started }
+        return "hola"
+    }
+
+    func cancel() async {}
+}
+
 final class VoiceCommandParserTests: XCTestCase {
     func testCommands() {
         let parser = VoiceCommandParser()
         XCTAssertEqual(parser.parse("cancelar"), .cancel)
         XCTAssertEqual(parser.parse("Borra eso."), .deleteLastInsertion)
         XCTAssertEqual(parser.parse("deshacer"), .undo)
+        XCTAssertEqual(parser.parse("corrige eso"), .undo)
         XCTAssertEqual(parser.parse("nueva línea"), .newline)
         XCTAssertEqual(parser.parse("nuevo párrafo"), .paragraph)
     }
@@ -131,9 +168,10 @@ final class VoiceCommandParserTests: XCTestCase {
         XCTAssertEqual(module.editorCommands(for: .exportDocument(.pdf)), [.exportDocument("pdf")])
         XCTAssertEqual(module.editorCommands(for: .exportDocument(.plainText)), [.exportDocument("txt")])
         XCTAssertEqual(module.editorCommands(for: .exportDocument(.richText)), [.exportDocument("rtf")])
-        // Sin fingir: rewrite y word no emiten comandos.
-        XCTAssertEqual(module.editorCommands(for: .rewriteSelection("x")), [])
-        XCTAssertEqual(module.editorCommands(for: .exportDocument(.word)), [])
+        // Rewrite y word emiten comandos reales (IA on-device y .docx).
+        XCTAssertEqual(module.editorCommands(for: .rewriteSelection("x")), [.rewriteSelection("x")])
+        XCTAssertEqual(module.editorCommands(for: .rewriteSelection("  ")), [])
+        XCTAssertEqual(module.editorCommands(for: .exportDocument(.word)), [.exportDocument("word")])
         XCTAssertEqual(module.editorCommands(for: .unsupported("z")), [])
         XCTAssertEqual(module.editorCommands(for: .unknown), [])
         XCTAssertEqual(module.editorCommands(for: .multipleActions), [])
@@ -144,7 +182,7 @@ final class VoiceCommandParserTests: XCTestCase {
         XCTAssertFalse(module.feedback(for: .saveDocument).isEmpty)
         XCTAssertFalse(module.feedback(for: .renameTitle("X")).isEmpty)
         XCTAssertTrue(module.feedback(for: .exportDocument(.word)).contains("Word"))
-        XCTAssertTrue(module.feedback(for: .rewriteSelection("x")).contains("Fase 12"))
+        XCTAssertTrue(module.feedback(for: .rewriteSelection("x")).contains("Reescrib"))
     }
 
     func testEndpointReached() {
@@ -152,6 +190,143 @@ final class VoiceCommandParserTests: XCTestCase {
         XCTAssertFalse(VoiceModule.endpointReached(partial: "hola", unchangedFor: 0.5, timeout: 1.6))
         XCTAssertFalse(VoiceModule.endpointReached(partial: "   ", unchangedFor: 9.0, timeout: 1.6))
         XCTAssertFalse(VoiceModule.endpointReached(partial: "", unchangedFor: 9.0, timeout: 1.6))
+    }
+
+    func testPushToTalkHotkeyDetection() {
+        func keyEvent(type: NSEvent.EventType, flags: NSEvent.ModifierFlags, keyCode: UInt16, repeat repeatFlag: Bool = false) -> NSEvent? {
+            NSEvent.keyEvent(with: type, location: .zero, modifierFlags: flags, timestamp: 0, windowNumber: 0, context: nil, characters: " ", charactersIgnoringModifiers: " ", isARepeat: repeatFlag, keyCode: keyCode)
+        }
+        XCTAssertNotNil(keyEvent(type: .keyDown, flags: .option, keyCode: 49))
+        if let down = keyEvent(type: .keyDown, flags: .option, keyCode: 49) {
+            XCTAssertTrue(VoicePushToTalk.isHotkeyDown(down))
+        }
+        // Con comando o control ya no es el hotkey de voz.
+        if let cmd = keyEvent(type: .keyDown, flags: [.option, .command], keyCode: 49) {
+            XCTAssertFalse(VoicePushToTalk.isHotkeyDown(cmd))
+        }
+        if let ctrl = keyEvent(type: .keyDown, flags: [.option, .control], keyCode: 49) {
+            XCTAssertFalse(VoicePushToTalk.isHotkeyDown(ctrl))
+        }
+        // Otra tecla con opción no dispara.
+        if let other = keyEvent(type: .keyDown, flags: .option, keyCode: 8) {
+            XCTAssertFalse(VoicePushToTalk.isHotkeyDown(other))
+        }
+        // KeyUp nunca es "down".
+        if let up = keyEvent(type: .keyUp, flags: .option, keyCode: 49) {
+            XCTAssertFalse(VoicePushToTalk.isHotkeyDown(up))
+        }
+    }
+}
+
+final class VoicePushToTalkTests: XCTestCase {
+    @MainActor func testReleaseWaitsForMicrophoneStartup() async throws {
+        let recognizer = DelayedSpeechRecognizer()
+        let started = expectation(description: "El micrófono empezó a prepararse")
+        recognizer.onStart = { started.fulfill() }
+        let module = VoiceModule(recognizer: recognizer)
+        module.pushToTalkEnabled = true
+        let press = Task { await module.beginPushToTalk() }
+        await fulfillment(of: [started], timeout: 2)
+        let release = Task { await module.endPushToTalk() }
+        await Task.yield()
+        XCTAssertFalse(recognizer.didStopBeforeStart)
+        recognizer.completeStart()
+        await press.value
+        await release.value
+        XCTAssertFalse(recognizer.didStopBeforeStart)
+        XCTAssertEqual(module.pendingDictationText, "Hola.")
+    }
+
+    @MainActor func testPushToTalkDictationFlow() async throws {
+        let bus = EditorCommandBus()
+        let mock = MockSpeechRecognizer()
+        mock.nextTranscript = "hola coma mundo"
+        let module = VoiceModule(recognizer: mock)
+        module.pushToTalkEnabled = true
+        try await module.start(context: EditorModuleContext(commandBus: bus))
+        XCTAssertTrue(module.canBeginPushToTalk)
+        let stream = await bus.commands()
+        await module.beginPushToTalk()
+        XCTAssertTrue(module.pushToTalkHeld)
+        XCTAssertTrue(module.isListening)
+        // Segunda pulsación mientras se mantiene: no hace nada.
+        XCTAssertFalse(module.canBeginPushToTalk)
+        await module.endPushToTalk()
+        XCTAssertFalse(module.pushToTalkHeld)
+        XCTAssertFalse(module.isListening)
+        XCTAssertEqual(module.pendingAction?.preview, "Insertar: \"Hola, mundo.\"")
+        await module.confirmPending()
+        await bus.finish()
+        var received: [EditorCommand] = []
+        for await command in stream { received.append(command) }
+        XCTAssertEqual(received, [.insertText("Hola, mundo.")])
+    }
+
+    @MainActor func testPushToTalkKeepsCommandMode() async throws {
+        let bus = EditorCommandBus()
+        let mock = MockSpeechRecognizer()
+        mock.nextTranscript = "Guarda el documento"
+        let module = VoiceModule(recognizer: mock)
+        module.pushToTalkEnabled = true
+        try await module.start(context: EditorModuleContext(commandBus: bus))
+        let stream = await bus.commands()
+        await module.beginPushToTalk()
+        await module.endPushToTalk()
+        // El comando pasa por propuesta (igual que por toques), no se inserta texto.
+        XCTAssertEqual(module.pendingAction?.intent, .command(.saveDocument))
+        await module.confirmPending()
+        await bus.finish()
+        var received: [EditorCommand] = []
+        for await command in stream { received.append(command) }
+        XCTAssertEqual(received, [.saveDocument])
+    }
+
+    @MainActor func testPushToTalkImmediateCommand() async throws {
+        let bus = EditorCommandBus()
+        let mock = MockSpeechRecognizer()
+        mock.nextTranscript = "Busca TDAH"
+        let module = VoiceModule(recognizer: mock)
+        module.pushToTalkEnabled = true
+        try await module.start(context: EditorModuleContext(commandBus: bus))
+        let stream = await bus.commands()
+        await module.beginPushToTalk()
+        await module.endPushToTalk()
+        XCTAssertNil(module.pendingAction)
+        await bus.finish()
+        var received: [EditorCommand] = []
+        for await command in stream { received.append(command) }
+        XCTAssertEqual(received, [.findText("TDAH")])
+    }
+
+    @MainActor func testPushToTalkBlockedWhilePending() async throws {
+        let bus = EditorCommandBus()
+        let mock = MockSpeechRecognizer()
+        mock.nextTranscript = "hola"
+        let module = VoiceModule(recognizer: mock)
+        module.pushToTalkEnabled = true
+        try await module.start(context: EditorModuleContext(commandBus: bus))
+        await module.beginPushToTalk()
+        await module.endPushToTalk()
+        XCTAssertNotNil(module.pendingAction)
+        XCTAssertFalse(module.canBeginPushToTalk)
+        await module.beginPushToTalk()
+        XCTAssertFalse(module.pushToTalkHeld, "con propuesta pendiente no se rearma")
+        XCTAssertFalse(module.isListening)
+        module.cancelPending()
+        await bus.finish()
+    }
+
+    @MainActor func testPushToTalkDisabledNeverStarts() async throws {
+        let bus = EditorCommandBus()
+        let module = VoiceModule(recognizer: MockSpeechRecognizer())
+        module.pushToTalkEnabled = false
+        try await module.start(context: EditorModuleContext(commandBus: bus))
+        XCTAssertFalse(module.canBeginPushToTalk)
+        await module.beginPushToTalk()
+        XCTAssertFalse(module.pushToTalkHeld)
+        XCTAssertFalse(module.isListening)
+        module.pushToTalkEnabled = true
+        await bus.finish()
     }
 }
 
@@ -199,6 +374,57 @@ final class VoiceBusRegistryTests: XCTestCase {
 }
 
 final class VoiceModuleTests: XCTestCase {
+    @MainActor func testHandsFreeShowsDictationAndAcceptsNextCommandByVoice() async throws {
+        let (window, view, session) = voiceTestSession(text: "base ")
+        defer { session.stop(); window.orderOut(nil) }
+        view.setSelectedRange(NSRange(location: 5, length: 0))
+        let bus = EditorCommandBus()
+        let mock = MockSpeechRecognizer()
+        let module = VoiceModule(recognizer: mock)
+        try await module.start(context: EditorModuleContext(commandBus: bus))
+        let consumer = Task { @MainActor in
+            for await command in await bus.commands() { session.send(command) }
+        }
+        defer { consumer.cancel() }
+        for _ in 0..<50 { await Task.yield() }
+
+        await module.toggle()
+        mock.onPartial?("probando")
+        for _ in 0..<50 { await Task.yield() }
+        XCTAssertEqual(view.string, "base probando")
+        XCTAssertTrue(session.isPreviewing)
+
+        mock.nextTranscript = "hola"
+        await module.autoFinish()
+        for _ in 0..<50 { await Task.yield() }
+        XCTAssertEqual(view.string, "base Hola.")
+        XCTAssertTrue(session.isPreviewing, "la siguiente frase ya está preparada")
+        XCTAssertTrue(module.isListening)
+
+        mock.nextTranscript = "deshacer"
+        await module.autoFinish()
+        XCTAssertNotNil(module.pendingAction)
+        XCTAssertTrue(module.isListening)
+        mock.nextTranscript = "confirmar"
+        await module.autoFinish()
+        for _ in 0..<50 { await Task.yield() }
+        XCTAssertEqual(view.string, "base ")
+        XCTAssertNil(module.pendingAction)
+        XCTAssertTrue(module.isListening)
+
+        mock.onPartial?("provisional")
+        for _ in 0..<50 { await Task.yield() }
+        XCTAssertEqual(view.string, "base provisional")
+        mock.nextTranscript = "detener voz"
+        await module.autoFinish()
+        for _ in 0..<50 { await Task.yield() }
+        XCTAssertEqual(view.string, "base ")
+        XCTAssertFalse(session.isPreviewing)
+        XCTAssertFalse(module.isListening)
+        await module.stop()
+        await bus.finish()
+    }
+
     @MainActor func testIntentMapping() {
         let module = VoiceModule(recognizer: MockSpeechRecognizer())
         XCTAssertEqual(module.editorCommands(for: .dictation("Hola.")), [.insertText("Hola.")])
@@ -231,6 +457,9 @@ final class VoiceModuleTests: XCTestCase {
         await module.begin()
         XCTAssertTrue(mock.didStart)
         await module.finish()
+        XCTAssertEqual(module.pendingAction?.transcript, "hola coma mundo")
+        XCTAssertEqual(module.pendingAction?.preview, "Insertar: \"Hola, mundo.\"")
+        await module.confirmPending()
         var received: EditorCommand?
         for await command in stream {
             received = command
@@ -249,6 +478,8 @@ final class VoiceModuleTests: XCTestCase {
         let stream = await bus.commands()
         await module.begin()
         await module.finish()
+        XCTAssertNotNil(module.pendingAction)
+        await module.confirmPending()
         var received: EditorCommand?
         for await command in stream {
             received = command
@@ -256,6 +487,30 @@ final class VoiceModuleTests: XCTestCase {
         }
         XCTAssertEqual(received, .undo)
         await bus.finish()
+    }
+
+    @MainActor func testCorrectedDictationIsInsertedOnce() async throws {
+        let bus = EditorCommandBus()
+        let mock = MockSpeechRecognizer()
+        mock.nextTranscript = "ola mundo"
+        let module = VoiceModule(recognizer: mock)
+        try await module.start(context: EditorModuleContext(commandBus: bus))
+        let stream = await bus.commands()
+        await module.begin()
+        await module.finish()
+        module.updatePendingDictation("Hola mundo.")
+        XCTAssertEqual(module.pendingAction?.transcript, "ola mundo")
+        XCTAssertEqual(module.pendingDictationText, "Hola mundo.")
+        module.updatePendingDictation("   ")
+        await module.confirmPending()
+        XCTAssertNotNil(module.pendingAction)
+        module.updatePendingDictation("Hola mundo.")
+        await module.confirmPending()
+        await module.confirmPending()
+        await bus.finish()
+        var received: [EditorCommand] = []
+        for await command in stream { received.append(command) }
+        XCTAssertEqual(received, [.insertText("Hola mundo.")])
     }
 
     @MainActor func testRenameTitleTravelsAsRenameNotInsert() async throws {
@@ -268,13 +523,96 @@ final class VoiceModuleTests: XCTestCase {
         let stream = await bus.commands()
         await module.begin()
         await module.finish()
-        var received: EditorCommand?
-        for await command in stream {
-            received = command
-            break
-        }
-        XCTAssertEqual(received, .renameTitle("prueba"))
+        XCTAssertEqual(module.pendingAction?.transcript, "Cambia el título a prueba.")
+        XCTAssertEqual(module.lastTranscript, "Cambia el título a prueba.")
+        await module.confirmPending()
+        await module.confirmPending()
         await bus.finish()
+        var received: [EditorCommand] = []
+        for await command in stream { received.append(command) }
+        XCTAssertEqual(received, [.renameTitle("prueba")])
+    }
+
+    @MainActor func testCancelNeverEmits() async throws {
+        for spoken in ["Titula bien tus ideas", "Cambia el título a prueba"] {
+            let bus = EditorCommandBus()
+            let mock = MockSpeechRecognizer()
+            mock.nextTranscript = spoken
+            let module = VoiceModule(recognizer: mock)
+            try await module.start(context: EditorModuleContext(commandBus: bus))
+            let stream = await bus.commands()
+            await module.begin()
+            await module.finish()
+            XCTAssertNotNil(module.pendingAction)
+            module.cancelPending()
+            await bus.finish()
+            var received: [EditorCommand] = []
+            for await command in stream { received.append(command) }
+            XCTAssertTrue(received.isEmpty, "\(spoken) se envió antes de confirmar")
+        }
+    }
+
+    @MainActor func testAmbiguousCommandCanBeUsedAsDictation() async throws {
+        let bus = EditorCommandBus()
+        let mock = MockSpeechRecognizer()
+        mock.nextTranscript = "Titula bien tus ideas"
+        let module = VoiceModule(recognizer: mock)
+        try await module.start(context: EditorModuleContext(commandBus: bus))
+        let stream = await bus.commands()
+        await module.begin()
+        await module.finish()
+        XCTAssertEqual(module.pendingAction?.intent, .command(.renameTitle("bien tus ideas")))
+        module.usePendingAsDictation()
+        XCTAssertEqual(module.pendingAction?.intent, .dictation("Titula bien tus ideas."))
+        await module.confirmPending()
+        await bus.finish()
+        var received: [EditorCommand] = []
+        for await command in stream { received.append(command) }
+        XCTAssertEqual(received, [.insertText("Titula bien tus ideas.")])
+    }
+
+    @MainActor func testNavigationIsImmediate() async throws {
+        let bus = EditorCommandBus()
+        let mock = MockSpeechRecognizer()
+        mock.nextTranscript = "Busca TDAH"
+        let module = VoiceModule(recognizer: mock)
+        try await module.start(context: EditorModuleContext(commandBus: bus))
+        let stream = await bus.commands()
+        await module.begin()
+        await module.finish()
+        XCTAssertNil(module.pendingAction)
+        await bus.finish()
+        var received: [EditorCommand] = []
+        for await command in stream { received.append(command) }
+        XCTAssertEqual(received, [.findText("TDAH")])
+    }
+
+    @MainActor func testRepeatDropsProposalAndListensAgain() async throws {
+        let bus = EditorCommandBus()
+        let mock = MockSpeechRecognizer()
+        mock.nextTranscript = "Guarda el documento"
+        let module = VoiceModule(recognizer: mock)
+        try await module.start(context: EditorModuleContext(commandBus: bus))
+        let stream = await bus.commands()
+        await module.begin()
+        await module.finish()
+        XCTAssertNotNil(module.pendingAction)
+        await module.repeatPending()
+        XCTAssertNil(module.pendingAction)
+        XCTAssertTrue(module.isListening)
+        await module.cancelDictation()
+        await bus.finish()
+        var received: [EditorCommand] = []
+        for await command in stream { received.append(command) }
+        XCTAssertTrue(received.isEmpty)
+    }
+
+    @MainActor func testOpenByNameRequiresUniqueMatch() {
+        let acta = URL(fileURLWithPath: "/tmp/acta vieja.md")
+        let other = URL(fileURLWithPath: "/tmp/notas.md")
+        XCTAssertEqual(EditorScreen.matchVoiceDocument("el acta vieja", in: [acta, other]), acta)
+        XCTAssertNil(EditorScreen.matchVoiceDocument("acta", in: [acta, URL(fileURLWithPath: "/tmp/acta nueva.md")]))
+        XCTAssertNil(EditorScreen.matchVoiceDocument("desconocido", in: [acta, other]))
     }
 
     @MainActor func testSilenceDoesNotInsert() async throws {
@@ -350,9 +688,107 @@ final class VoiceModuleTests: XCTestCase {
         XCTAssertEqual(view.string, "borra esto por favor", "un undo restaura")
         window.orderOut(nil)
     }
+
+    @MainActor func testRewriteTravelsAsRewriteCommand() async throws {
+        let bus = EditorCommandBus()
+        let mock = MockSpeechRecognizer()
+        mock.nextTranscript = "Hazlo más breve."
+        let module = VoiceModule(recognizer: mock)
+        try await module.start(context: EditorModuleContext(commandBus: bus))
+        let stream = await bus.commands()
+        await module.begin()
+        await module.finish()
+        XCTAssertEqual(module.pendingAction?.intent, .command(.rewriteSelection("más breve")))
+        XCTAssertTrue(module.pendingAction?.preview.contains("más breve") == true)
+        await module.confirmPending()
+        await bus.finish()
+        var received: [EditorCommand] = []
+        for await command in stream { received.append(command) }
+        XCTAssertEqual(received, [.rewriteSelection("más breve")])
+    }
+
+    @MainActor func testWordTravelsAsWordExport() async throws {
+        let bus = EditorCommandBus()
+        let mock = MockSpeechRecognizer()
+        mock.nextTranscript = "Exporta a Word."
+        let module = VoiceModule(recognizer: mock)
+        try await module.start(context: EditorModuleContext(commandBus: bus))
+        let stream = await bus.commands()
+        await module.begin()
+        await module.finish()
+        XCTAssertNotNil(module.pendingAction, "word requiere confirmación")
+        await module.confirmPending()
+        await bus.finish()
+        var received: [EditorCommand] = []
+        for await command in stream { received.append(command) }
+        XCTAssertEqual(received, [.exportDocument("word")])
+    }
+
+    @MainActor func testSessionRewriteApplies() async {
+        let (window, view, session) = voiceTestSession(
+            text: "texto original aquí",
+            rewrite: MockRewriteProvider(result: "nuevo"))
+        voiceTestSelect(view, "original")
+        session.send(.rewriteSelection("más breve"))
+        // La IA es asíncrona: el texto no cambia antes de generarse.
+        XCTAssertEqual(view.string, "texto original aquí")
+        try? await Task.sleep(for: .milliseconds(500))
+        XCTAssertEqual(view.string, "texto nuevo aquí")
+        view.undoManager?.undo()
+        XCTAssertEqual(view.string, "texto original aquí", "un undo restaura")
+        window.orderOut(nil)
+    }
+
+    @MainActor func testSessionRewriteRequiresSelection() async {
+        let (window, view, session) = voiceTestSession(
+            text: "texto intacto",
+            rewrite: MockRewriteProvider(result: "X"))
+        view.setSelectedRange(NSRange(location: 0, length: 0))
+        session.send(.rewriteSelection("más breve"))
+        try? await Task.sleep(for: .milliseconds(300))
+        XCTAssertEqual(view.string, "texto intacto", "sin selección no reescribe")
+        window.orderOut(nil)
+    }
+
+    @MainActor func testSessionRewriteFailureKeepsText() async {
+        let (window, view, session) = voiceTestSession(
+            text: "texto intacto",
+            rewrite: MockRewriteProvider(result: nil))
+        voiceTestSelect(view, "intacto")
+        session.send(.rewriteSelection("más breve"))
+        try? await Task.sleep(for: .milliseconds(300))
+        XCTAssertEqual(view.string, "texto intacto", "si la IA falla no toca nada")
+        window.orderOut(nil)
+    }
+
+    @MainActor func testSessionRewriteStaleDoesNotApplyBlindly() async {
+        let (window, view, session) = voiceTestSession(
+            text: "texto original aquí",
+            rewrite: MockRewriteProvider(result: "TARDÍO", delay: .milliseconds(200)))
+        voiceTestSelect(view, "original")
+        session.send(.rewriteSelection("más breve"))
+        // El usuario edita mientras la IA genera: el span queda obsoleto.
+        view.setSelectedRange(NSRange(location: 0, length: 0))
+        session.send(.insertText("¡Hola! "))
+        try? await Task.sleep(for: .milliseconds(600))
+        XCTAssertTrue(view.string.hasPrefix("¡Hola! "), "la edición del usuario manda")
+        XCTAssertFalse(view.string.contains("TARDÍO"), "nunca aplica a ciegas")
+        window.orderOut(nil)
+    }
 }
 
-@MainActor private func voiceTestSession(text: String) -> (NSWindow, NSTextView, EditorSession) {
+private struct MockRewriteProvider: RewriteProvider {
+    var result: String?
+    var delay: Duration = .zero
+    var isAvailable: Bool { true }
+    var availabilityReason: String? { nil }
+    func rewrite(_ text: String, instruction: String) async -> String? {
+        if delay > .zero { try? await Task.sleep(for: delay) }
+        return result
+    }
+}
+
+@MainActor private func voiceTestSession(text: String, rewrite: (any RewriteProvider)? = nil) -> (NSWindow, NSTextView, EditorSession) {
     _ = NSApplication.shared
     let window = NSWindow(contentRect: NSRect(x: 0, y: 0, width: 400, height: 300),
                           styleMask: [.titled], backing: .buffered, defer: false)
@@ -365,7 +801,7 @@ final class VoiceModuleTests: XCTestCase {
     view.string = text
     view.breakUndoCoalescing()
     view.undoManager?.removeAllActions()
-    let session = EditorSession()
+    let session = EditorSession(rewriteProvider: rewrite)
     session.textView = view
     return (window, view, session)
 }

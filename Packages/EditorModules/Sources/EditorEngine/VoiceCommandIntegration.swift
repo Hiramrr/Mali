@@ -30,11 +30,14 @@
 //    MISMO UndoManager vía registerUndo (deshacer/restaurar incluidos).
 //  - rewriteSelection: NO llama Foundation Models. Registra
 //    SIMULATED_REWRITE_REQUEST con texto, instrucción y rango. 0 mutación.
-//  - Export: solo texto plano (.txt) y enriquecido (.rtf), que son los que el
-//    editor puede producir sin UI modal. pdf/word → NOT_IMPLEMENTED_IN_EDITOR.
+//    (Doble determinista para la política de confirmación; la reescritura
+//    real de producción vive en EditorSession con RewriteProvider.)
+//  - Export: texto plano (.txt), enriquecido (.rtf), PDF headless (.pdf) y
+//    Word (.docx vía Office Open XML), todos al almacén temporal.
 //  - Guardar/abrir: solo archivos dentro del directorio temporal (fixtures).
 import AppKit
 import Foundation
+import DesignSystem
 import EditorCore
 
 // MARK: - Comando (espejo de ParsedCommand; la gramática sigue congelada)
@@ -47,7 +50,7 @@ public enum TextFormatStyle: String, Equatable, Sendable {
     case underline
 }
 
-/// Formatos de exportación. Solo plainText/richText están implementados.
+/// Formatos de exportación. Todos implementados contra el almacén temporal.
 public enum VoiceExportFormat: String, Equatable, Sendable {
     case pdf
     case word
@@ -633,10 +636,51 @@ public enum VoiceFixtureText {
             } catch {
                 return .failure(.ioError("exportación rtf: \(error)"))
             }
-        case .pdf, .word:
-            // El editor solo imprime a PDF vía PrintDocument (modal con ventana)
-            // y no tiene exportador Word. No fingir éxito.
-            return .failure(.notImplementedInEditor("export \(format.rawValue)"))
+        case .pdf:
+            guard let url = store.url(for: documentName, extension: "pdf") else {
+                return .failure(.ioError("exportación pdf: ruta"))
+            }
+            // PDF sin modal: misma renderización que PrintDocument, guardada
+            // directo al almacén temporal (jobSavingURL).
+            let source = "# \(documentTitle)\n\n" + view.string
+            let rendered = MarkdownAppearance.readingText(
+                source, document: MarkdownDocument(source),
+                style: WritingStyle(size: 12, family: "serif", spacing: 4),
+                forPrint: true, documentURL: nil)
+            let info = NSPrintInfo()
+            info.topMargin = 48
+            info.bottomMargin = 48
+            info.leftMargin = 54
+            info.rightMargin = 54
+            info.horizontalPagination = .fit
+            info.verticalPagination = .automatic
+            let width = info.paperSize.width - info.leftMargin - info.rightMargin
+            let printView = NSTextView(frame: NSRect(x: 0, y: 0, width: width, height: 100))
+            printView.textStorage?.setAttributedString(rendered)
+            printView.sizeToFit()
+            let operation = NSPrintOperation(view: printView, printInfo: info)
+            operation.jobTitle = documentTitle
+            operation.showsPrintPanel = false
+            operation.showsProgressPanel = false
+            operation.printInfo.jobDisposition = .save
+            operation.printInfo.dictionary()[NSPrintInfo.AttributeKey.jobSavingURL] = url
+            return operation.run()
+                ? .success(.exported(format, url))
+                : .failure(.ioError("exportación pdf: cancelada"))
+        case .word:
+            do {
+                let attr = NSAttributedString(string: view.string)
+                let data = try attr.data(
+                    from: NSRange(location: 0, length: attr.length),
+                    documentAttributes: [.documentType: NSAttributedString.DocumentType.officeOpenXML])
+                guard let url = store.url(for: documentName, extension: "docx") else {
+                    return .failure(.ioError("exportación word: ruta"))
+                }
+                try data.write(to: url, options: .atomic)
+                return .success(.exported(format, url))
+            } catch {
+                return .failure(.ioError("exportación word: \(error)"))
+            }
         }
     }
 }

@@ -3,15 +3,15 @@ import EditorCore
 import DesignSystem
 
 @MainActor public enum PrintDocument {
-    public static func run(text: String, title: String, window: NSWindow?) {
-        let operation = makeOperation(text: text, title: title)
+    public static func run(text: String, title: String, window: NSWindow?, documentURL: URL? = nil) {
+        let operation = makeOperation(text: text, title: title, documentURL: documentURL)
         // The native PDF menu handles destination access and overwrite confirmation.
         if let window {
             operation.runModal(for: window, delegate: nil, didRun: nil, contextInfo: nil)
         } else { operation.run() }
     }
 
-    static func makeOperation(text: String, title: String) -> NSPrintOperation {
+    static func makeOperation(text: String, title: String, documentURL: URL? = nil) -> NSPrintOperation {
         let info = NSPrintInfo()
         info.topMargin = 48
         info.bottomMargin = 48
@@ -28,7 +28,7 @@ import DesignSystem
         view.textContainer?.containerSize = NSSize(width: width, height: CGFloat.greatestFiniteMagnitude)
         view.textContainer?.widthTracksTextView = true
         let source = "# \(title)\n\n" + text
-        let rendered = MarkdownAppearance.readingText(source, document: MarkdownDocument(source), style: WritingStyle(size: 12, family: "serif", spacing: 4), forPrint: true)
+        let rendered = MarkdownAppearance.readingText(source, document: MarkdownDocument(source), style: WritingStyle(size: 12, family: "serif", spacing: 4), forPrint: true, documentURL: documentURL)
         view.textStorage?.setAttributedString(rendered)
         view.sizeToFit()
         let operation = NSPrintOperation(view: view, printInfo: info)

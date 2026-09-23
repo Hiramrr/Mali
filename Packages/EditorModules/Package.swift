@@ -26,6 +26,6 @@ let package = Package(
         .target(name: "EditorEngine", dependencies: ["EditorCore", "DesignSystem"]),
         .target(name: "ExportFeature", dependencies: ["EditorCore", "DesignSystem"]),
         .target(name: "EditorUI", dependencies: ["EditorCore", "EditorEngine", "DesignSystem", "DocumentKit", "ExportFeature", "ModuleKit"]),
-        .testTarget(name: "EditorModulesTests", dependencies: ["EditorCore", "DocumentKit", "EditorEngine", "DesignSystem", "ExportFeature", "ModuleKit", "VoiceModule", "GestureModule"])
+        .testTarget(name: "EditorModulesTests", dependencies: ["EditorCore", "DocumentKit", "EditorEngine", "EditorUI", "DesignSystem", "ExportFeature", "ModuleKit", "VoiceModule", "GestureModule"])
     ]
 )

@@ -430,9 +430,24 @@ public extension WritingStyle {
             darkTextHex: "#E5D6B8", darkBackgroundHex: "#241C12", darkAccentHex: "#C9A86A"
         ),
         WritingThemePreset(
-            id: "night", name: "Noche",
-            lightTextHex: "#23262B", lightBackgroundHex: "#EDEFF3", lightAccentHex: "#0A84FF",
-            darkTextHex: "#E6E6E6", darkBackgroundHex: "#1E1E1E", darkAccentHex: "#0A84FF"
+            id: "terracotta", name: "Terracota",
+            lightTextHex: "#3A2A23", lightBackgroundHex: "#FAF1E9", lightAccentHex: "#9A4B30",
+            darkTextHex: "#F1E3D7", darkBackgroundHex: "#2B211D", darkAccentHex: "#E29B7D"
+        ),
+        WritingThemePreset(
+            id: "forest", name: "Bosque",
+            lightTextHex: "#1E2B24", lightBackgroundHex: "#E9EFE8", lightAccentHex: "#3E7D4E",
+            darkTextHex: "#E8EDE6", darkBackgroundHex: "#1A2620", darkAccentHex: "#7FB685"
+        ),
+        WritingThemePreset(
+            id: "coast", name: "Costa",
+            lightTextHex: "#1F3538", lightBackgroundHex: "#EDF5F4", lightAccentHex: "#286B72",
+            darkTextHex: "#DDEDEF", darkBackgroundHex: "#17292D", darkAccentHex: "#81C4CC"
+        ),
+        WritingThemePreset(
+            id: "lavender", name: "Lavanda",
+            lightTextHex: "#342B43", lightBackgroundHex: "#F5F1F8", lightAccentHex: "#6B4F95",
+            darkTextHex: "#EDE6F4", darkBackgroundHex: "#241D30", darkAccentHex: "#BCA2DF"
         ),
         WritingThemePreset(
             id: "graphite", name: "Grafito",
@@ -440,14 +455,16 @@ public extension WritingStyle {
             darkTextHex: "#D7DCE2", darkBackgroundHex: "#2B2F36", darkAccentHex: "#64B5F6"
         ),
         WritingThemePreset(
-            id: "forest", name: "Bosque",
-            lightTextHex: "#1E2B24", lightBackgroundHex: "#E9EFE8", lightAccentHex: "#3E7D4E",
-            darkTextHex: "#E8EDE6", darkBackgroundHex: "#1A2620", darkAccentHex: "#7FB685"
+            id: "night", name: "Noche",
+            lightTextHex: "#23262B", lightBackgroundHex: "#EDEFF3", lightAccentHex: "#0A84FF",
+            darkTextHex: "#E6E6E6", darkBackgroundHex: "#1E1E1E", darkAccentHex: "#0A84FF"
         ),
     ]
 }
 
 @MainActor public enum MarkdownAppearance {
+    private static let inlineMarkers = CharacterSet(charactersIn: "\\`<[!*_~")
+
     public static func decorate(_ storage: NSMutableAttributedString, document: MarkdownDocument, style: WritingStyle, lines: Range<Int>? = nil) {
         let selectedLines = document.lines[lines ?? document.lines.indices]
         let affected: NSRange
@@ -507,9 +524,9 @@ public extension WritingStyle {
         }
         guard effectiveLength > 0 else { return }
         let effectiveRange = NSRange(location: lineRange.location, length: effectiveLength)
-        let lineText = nsString.substring(with: effectiveRange)
-        guard !lineText.isEmpty else { return }
-        scanInline(lineText: lineText, baseOffset: effectiveRange.location, storage: storage, style: style)
+        let marker = nsString.rangeOfCharacter(from: inlineMarkers, range: effectiveRange)
+        guard marker.location != NSNotFound else { return }
+        scanInline(lineText: nsString.substring(with: effectiveRange), baseOffset: effectiveRange.location, storage: storage, style: style)
     }
 
     private static func nsRange(of range: Range<String.Index>, in text: String, base: Int) -> NSRange? {
@@ -905,7 +922,7 @@ public extension WritingStyle {
                 collapseMarker(in: storage, range: closeNS)
             }
             // Recursión para anidado (`**negrita *cursiva* **`).
-            if !contentRange.isEmpty {
+            if !contentRange.isEmpty, lineText[contentRange].rangeOfCharacter(from: inlineMarkers) != nil {
                 let innerText = String(lineText[contentRange])
                 let innerNS = NSRange(contentRange, in: lineText)
                 let innerBase = baseOffset + innerNS.location
@@ -947,7 +964,8 @@ public extension WritingStyle {
 
     // MARK: - Lectura
 
-    public static func readingText(_ source: String, document: MarkdownDocument, style: WritingStyle, forPrint: Bool = false) -> NSAttributedString {
+    public static func readingText(_ source: String, document: MarkdownDocument, style: WritingStyle, forPrint: Bool = false, documentURL: URL? = nil) -> NSAttributedString {
+        if let documentURL { DocumentImageAccess.start(for: documentURL) }
         let result = NSMutableAttributedString()
         let color = forPrint ? NSColor.black : style.effectiveTextColor
         let secondary = forPrint ? NSColor.darkGray : style.secondaryTextColor
@@ -1020,6 +1038,26 @@ public extension WritingStyle {
         }
 
         for line in document.lines {
+            if case .text = line.kind,
+               let documentURL, let image = MarkdownImage(line: line.content),
+               let url = image.fileURL(relativeTo: documentURL),
+               let data = try? Data(contentsOf: url), let bitmap = NSImage(data: data), bitmap.size.width > 0, bitmap.size.height > 0 {
+                flushParagraph(); flushQuote(); flushList(); flushCode()
+                let attachment = NSTextAttachment()
+                attachment.image = bitmap
+                let width = min(CGFloat(image.width), forPrint ? 480 : 680)
+                attachment.bounds = NSRect(x: 0, y: 0, width: width, height: width * bitmap.size.height / bitmap.size.width)
+                let paragraph = NSMutableParagraphStyle()
+                paragraph.alignment = switch image.alignment {
+                case .left: .left
+                case .center: .center
+                case .right: .right
+                }
+                result.append(NSAttributedString(attachment: attachment))
+                result.addAttribute(.paragraphStyle, value: paragraph, range: NSRange(location: result.length - 1, length: 1))
+                result.append(NSAttributedString(string: "\n"))
+                continue
+            }
             switch line.kind {
             case .fence, .hidden:
                 flushParagraph(); flushQuote(); flushList(); flushCode()

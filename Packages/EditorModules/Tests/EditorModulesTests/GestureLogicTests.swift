@@ -147,12 +147,11 @@ final class GestureSynonymsTests: XCTestCase {
         XCTAssertEqual(alts.first, "zxq")
     }
 
-    func testLengthVariantsKeepOriginalInMiddle() {
+    func testLengthRejectsCopiedAndIncompleteVersions() {
         let paragraph = "Primera oración completa. Segunda oración con desarrollo importante y metodología clara."
-        let variants = GestureSynonyms.lengthVariants(for: paragraph)
-        XCTAssertEqual(variants.count, 3)
-        XCTAssertEqual(variants[1], paragraph)
-        XCTAssertEqual(variants[2], paragraph)
-        XCTAssertTrue(GestureSynonyms.isValidShort(variants[0], original: paragraph))
+        XCTAssertFalse(GestureSynonyms.isValidShort(paragraph, original: paragraph))
+        XCTAssertFalse(GestureSynonyms.isValidLong(paragraph, original: paragraph))
+        XCTAssertFalse(GestureSynonyms.isValidShort("Primera oración completa…", original: paragraph))
+        XCTAssertTrue(GestureSynonyms.isValidShort("Primera oración completa.", original: paragraph))
     }
 }

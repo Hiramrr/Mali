@@ -1,13 +1,6 @@
 import Foundation
 
-/// Alternativas locales para las sesiones de gesto. Portado de EditorTDAH
-/// (`LocalFallback`), sin la parte de IA: este programa no genera texto con
-/// modelos, así que la lista local es final y la tarjeta lo dice en voz alta
-/// ("Sugerencias locales", "Versiones locales").
-///
-/// La corta es la primera oración (o la mitad inicial si hay una sola);
-/// la larga local equivale al original. Así "no mover = sin cambios" se
-/// mantiene sin IA, y confirmar sin mover jamás ensucia el historial.
+/// Alternativas locales de sinónimos y validación de versiones de longitud.
 public enum GestureSynonyms: Sendable {
     public static let synonyms: [String: [String]] = [
         "enfoque": ["perspectiva", "planteamiento", "aproximación"],
@@ -150,13 +143,6 @@ public enum GestureSynonyms: Sendable {
         return Array(out.prefix(3))
     }
 
-    /// Versiones locales de longitud: [corta, original, original].
-    public static func lengthVariants(for paragraph: String) -> [String] {
-        let clean = paragraph.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard !clean.isEmpty else { return [] }
-        return [shortened(clean), clean, clean]
-    }
-
     /// Mínimos para aceptar una versión corta.
     public static let minShortChars = 12
     public static let minShortWords = 3
@@ -188,6 +174,7 @@ public enum GestureSynonyms: Sendable {
         let oWords = original.split(separator: " ").count
         return s.count >= minShortChars
             && sWords >= minShortWords
+            && s.last.map { ".!?".contains($0) } == true
             && s != original && s.count < original.count
             && oWords > 0 && Double(sWords) <= Double(oWords) * 0.7
             && keepsVocabulary(s, original: original)
@@ -203,37 +190,5 @@ public enum GestureSynonyms: Sendable {
             && sWords >= minShortWords
             && (oWords > 0 && Double(sWords) >= Double(oWords) * 1.08 || charGain >= 40)
             && keepsVocabulary(s, original: original)
-    }
-
-    private static func shortened(_ text: String) -> String {
-        var sentences: [String] = []
-        text.enumerateSubstrings(in: text.startIndex..<text.endIndex, options: .bySentences) { substr, _, _, _ in
-            if let s = substr?.trimmingCharacters(in: .whitespacesAndNewlines), !s.isEmpty {
-                sentences.append(s)
-            }
-        }
-        var acc = ""
-        for s in sentences {
-            acc = acc.isEmpty ? s : acc + " " + s
-            if acc.count >= minShortChars && acc.split(separator: " ").count >= minShortWords { break }
-        }
-        let candidate = acc.trimmingCharacters(in: .whitespacesAndNewlines)
-        if !candidate.isEmpty, candidate.count < text.count, text.count - candidate.count >= minShortChars {
-            return candidate
-        }
-        let words = text.split(separator: " ").map(String.init)
-        guard words.count > minShortWords else { return text }
-        let wordCut = words.prefix(max(minShortWords, words.count * 6 / 10)).joined(separator: " ")
-        var cut = wordCut
-        if let lastComma = wordCut.range(of: ", ", options: .backwards),
-           wordCut.distance(from: wordCut.startIndex, to: lastComma.lowerBound) >= wordCut.count / 3 {
-            let clause = String(wordCut[..<lastComma.lowerBound])
-            if clause.split(separator: " ").count >= minShortWords {
-                cut = clause
-            }
-        }
-        var clean = cut.trimmingCharacters(in: .whitespacesAndNewlines)
-        while let last = clean.last, ".,;:!?…".contains(last) { clean.removeLast() }
-        return clean.count < text.count ? clean + "…" : text
     }
 }

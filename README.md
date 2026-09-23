@@ -4,18 +4,13 @@ Editor nativo con edición Markdown, lectura y herramientas de concentración. D
 
 ## Ejecutar
 
-Abre `EditorFinal.xcodeproj` y ejecuta el esquema EditorFinal. También puedes compilar desde esta carpeta:
+Para compilar sin abrir una ventana:
 
 ```sh
 xcodebuild -project EditorFinal.xcodeproj -scheme EditorFinal -configuration Debug -derivedDataPath build build
-open build/Build/Products/Debug/EditorFinal.app
 ```
 
-Para ver un documento de ejemplo:
-
-```sh
-open -a "$PWD/build/Build/Products/Debug/EditorFinal.app" "$PWD/Samples/Felis catus.md"
-```
+Para usar la app manualmente, abre `EditorFinal.xcodeproj` y ejecuta el esquema `EditorFinal` en Xcode.
 
 ## Alcance de esta entrega
 
@@ -26,12 +21,13 @@ open -a "$PWD/build/Build/Products/Debug/EditorFinal.app" "$PWD/Samples/Felis ca
 - Títulos, negrita, cursiva y código con formato durante la edición. La vista de lectura, ⇧⌘R, oculta los marcadores sin cambiar el archivo. Al volver a editar se conserva la selección.
 - Preferencias persistentes de fuente, tamaño, interlineado, ancho, apariencia y estadísticas. El índice y el conteo se actualizan tras una pausa de escritura.
 - Menú Formato con negrita, cursiva, código, títulos, lista, cita y enlace. Repetir negrita o cursiva retira los marcadores de la selección.
+- Imágenes en bloques Markdown: usa el botón de imagen para copiarlas a `images/` junto al documento. Arrastra la esquina inferior derecha para cambiar el tamaño, arrastra la imagen para moverla de párrafo y usa el menú contextual para alinearla. La vista de lectura y el PDF muestran la imagen. Guarda un documento nuevo antes de insertar imágenes; fuera del contenedor, macOS puede pedir acceso a su carpeta.
 - Imprimir o guardar PDF con ⌘P mediante el diálogo de macOS. El PDF usa texto negro y conserva los títulos con el párrafo siguiente al paginar.
 - Sandbox con acceso a archivos elegidos por el usuario e impresión. No solicita red. El micrófono y el reconocimiento de voz solo se piden al usar el dictado por voz (⌃⌘V), que es una pieza extraíble: sin ella no se piden esos permisos.
 - Gestos con la cámara desde el botón de la mano en la barra: mano abierta para elegir palabra, pinza quieta para sinónimos locales (suelta para confirmar), pinza + barrido lateral para deshacer/rehacer, dos manos para la longitud del párrafo (retira una para confirmar). “Probar sin cámara” abre las mismas tarjetas sin pedir permiso. La cámara solo se pide al activarla y todo se procesa en el Mac. Ver `Docs/Integracion.md` para quitar la pieza.
-- Dictado local con el micrófono de la barra (⌃⌘V): habla, pulsa Insertar y el texto entra al documento con limpieza local. Comandos: “nueva línea”, “nuevo párrafo”, “deshacer”, “borra eso”, “cancelar”. Ver `Docs/Integracion.md` para quitar la pieza.
+- Dictado y comandos comparten el micrófono de la barra (⌃⌘V). Con Manos libres, el texto aparece en el documento mientras hablas y se inserta tras una pausa. El micrófono sigue escuchando: para cambiar algo, di el comando y luego «confirmar», «descartar» o «repetir». «Detener voz» termina la escucha. Buscar y seleccionar se aplican al momento. Ver `Docs/Integracion-Voz-Fase11.md` y `Docs/PruebaVozEnVivo.md`.
 
-El formato cubre títulos ATX (incluido cierre `##`) y setext, código con cercas o sangría, listas con viñetas, ordenadas y de tareas, citas (`>` con o sin espacio, anidadas), reglas y formato en línea (`**`/`__`, `*`/`_`, `***`, `~~`, código, enlaces, autolinks y escapes). No implementa tablas ni imágenes incrustadas. Los enlaces de lectura solo admiten http, https y mailto.
+El formato cubre títulos ATX (incluido cierre `##`) y setext, código con cercas o sangría, listas con viñetas, ordenadas y de tareas, citas (`>` con o sin espacio, anidadas), reglas y formato en línea (`**`/`__`, `*`/`_`, `***`, `~~`, código, enlaces, autolinks y escapes). Admite imágenes locales en bloques propios, con ancho y alineación guardados en el título Markdown. No implementa tablas. Los enlaces de lectura solo admiten http, https y mailto.
 
 `EditorCore` contiene comandos, rangos UTF-16 e índice. `EditorEngine` encapsula TextKit. `EditorUI` compone las vistas. `DocumentKit` valida y codifica UTF-8. El adaptador `FileDocument` vive en App, para mantener SwiftUI fuera de DocumentKit. El sistema realiza el I/O de documentos. `ExportFeature` prepara la impresión y el PDF sin intervenir en el motor de edición.
 

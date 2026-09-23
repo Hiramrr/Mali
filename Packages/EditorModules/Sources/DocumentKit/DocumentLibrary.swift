@@ -1,6 +1,20 @@
 import Foundation
 
 public enum DocumentLibrary {
+    public static func orderedRecents(_ candidates: [URL], available: [URL], excluding excluded: Set<String>) -> [URL] {
+        func key(_ url: URL) -> String { url.standardizedFileURL.path }
+        var availableByKey: [String: URL] = [:]
+        for url in available where availableByKey[key(url)] == nil {
+            availableByKey[key(url)] = url
+        }
+        var seen = Set<String>()
+        return candidates.compactMap { url in
+            let path = key(url)
+            guard seen.insert(path).inserted, !excluded.contains(path) else { return nil }
+            return availableByKey[path]
+        }
+    }
+
     /// El listado se ejecuta fuera del actor de la interfaz.
     public static func documents(in folders: [URL]) async -> [URL] {
         var documents: [URL] = []

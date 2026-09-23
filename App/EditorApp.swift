@@ -136,14 +136,16 @@ struct EditorApp: App {
     // `EditorSettings()`. Nada más cambia: el editor no depende de voz.
     private let voiceModule = VoiceModule()
     private var voicePanel: AnyView { AnyView(VoiceControl(module: voiceModule)) }
+    private var voiceBanner: AnyView { AnyView(VoiceProposalBanner(module: voiceModule)) }
 
     // MARK: - Pieza Lego: Gestos (quitar para compilar sin gestos)
-    // Borra estas líneas, el `import GestureModule` de arriba y los tres
-    // parámetros `gesture*` en DocumentGroup. Nada más cambia: el editor no
+    // Borra estas líneas, el `import GestureModule` de arriba y los parámetros
+    // `gesture*`/`onGesture*` en DocumentGroup. Nada más cambia: el editor no
     // depende de gestos y jamás pide permiso de cámara.
     private let gestureModule = GestureModule()
     private var gesturePanel: AnyView { AnyView(GestureControl(module: gestureModule)) }
     private var gestureCards: AnyView { AnyView(GestureCards(module: gestureModule)) }
+    private var gestureCursor: AnyView { AnyView(GestureCursor(module: gestureModule)) }
 
     init() {
         NSWindow.allowsAutomaticWindowTabbing = false
@@ -155,6 +157,7 @@ struct EditorApp: App {
         registry.register(GestureModule.descriptor)
         Task { @MainActor in
             try? await voice.start(context: EditorModuleContext(commandBus: bus))
+            voice.enablePushToTalk()
             try? await gestures.start(context: EditorModuleContext(commandBus: bus))
         }
         DispatchQueue.main.async {
@@ -179,11 +182,18 @@ struct EditorApp: App {
                 startOnHome: true,
                 commandBus: commandBus,
                 voicePanel: voicePanel,
+                voiceBanner: voiceBanner,
                 modules: moduleRegistry,
                 gesturePanel: gesturePanel,
                 gestureCards: gestureCards,
+                gestureCursor: gestureCursor,
                 onGestureDocument: { [gestures = gestureModule] text, selection in
                     gestures.updateDocument(text: text, selection: selection)
+                },
+                onGestureEditorReady: { [gestures = gestureModule] session in
+                    gestures.imageHitTest = { [weak session] point in
+                        session?.imageRange(atNormalizedPoint: point)
+                    }
                 }
             )
         }

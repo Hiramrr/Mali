@@ -202,15 +202,22 @@ public struct GesturePanel: View {
                 }
                 .buttonStyle(.bordered)
                 .controlSize(.small)
-                .disabled(module.hasLengthSession || module.hasPinchSession)
+                .disabled(module.hasLengthSession || module.hasPinchSession || module.hasImageSizeSession)
                 .help("Abre la tarjeta de sinónimos sobre la palabra actual")
                 Button("Longitud") {
                     Task { await module.startLengthSessionManually() }
                 }
                 .buttonStyle(.bordered)
                 .controlSize(.small)
-                .disabled(module.hasLengthSession || module.hasPinchSession)
+                .disabled(module.hasLengthSession || module.hasPinchSession || module.hasImageSizeSession)
                 .help("Abre corto/medio/largo sobre el párrafo actual")
+                Button("Imagen") {
+                    Task { await module.startImageSizeSessionManually() }
+                }
+                .buttonStyle(.bordered)
+                .controlSize(.small)
+                .disabled(module.hasLengthSession || module.hasPinchSession || module.hasImageSizeSession)
+                .help("Ajusta el ancho de la imagen bajo el cursor")
             }
             Text("Clic en una opción confirma, ✕ cancela.")
                 .font(.caption2)
@@ -246,8 +253,12 @@ public struct GesturePanel: View {
             ""
         } else if module.hasLengthSession {
             "Longitud: acerca ↔ separa"
+        } else if module.hasImageSizeSession {
+            "Imagen: acerca ↔ separa"
         } else if module.hasPinchSession {
             "Pinza: mueve ↔"
+        } else if module.isPointingAtImage {
+            "Imagen bajo el dedo: muestra la otra mano"
         } else if module.state.hasTwoDistinctHands {
             "Dos manos: mantén…"
         } else if !module.state.handDetected {

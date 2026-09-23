@@ -63,6 +63,65 @@ final class EditorTests: XCTestCase {
 }
 
 final class MarkdownExperienceTests: XCTestCase {
+    @MainActor func testImageBlockPreservesMarkdownAndReflowsText() throws {
+        let folder = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString, isDirectory: true)
+        let assets = folder.appendingPathComponent("images", isDirectory: true)
+        try FileManager.default.createDirectory(at: assets, withIntermediateDirectories: true)
+        defer { try? FileManager.default.removeItem(at: folder) }
+        let bitmap = try XCTUnwrap(NSBitmapImageRep(bitmapDataPlanes: nil, pixelsWide: 100, pixelsHigh: 50,
+                                                    bitsPerSample: 8, samplesPerPixel: 4, hasAlpha: true,
+                                                    isPlanar: false, colorSpaceName: .deviceRGB, bytesPerRow: 0, bitsPerPixel: 0))
+        try XCTUnwrap(bitmap.representation(using: .png, properties: [:])).write(to: assets.appendingPathComponent("sample.png"))
+        let documentURL = folder.appendingPathComponent("note.md")
+        let image = MarkdownImage(alt: "Muestra", path: "images/sample.png", width: 240, alignment: .center)
+        XCTAssertEqual(MarkdownImage(line: image.markdown), image)
+        XCTAssertNil(MarkdownImage(line: "![x](../outside.png)"))
+        let text = "Antes\n\(image.markdown)\nDespués"
+        let view = WritingTextView(frame: NSRect(x: 0, y: 0, width: 600, height: 800))
+        view.documentURL = documentURL
+        view.string = text
+        view.applyAnalysis(MarkdownDocument(text))
+        XCTAssertEqual(view.string, text)
+        let range = (text as NSString).range(of: image.markdown)
+        let paragraph = try XCTUnwrap(view.textStorage?.attribute(.paragraphStyle, at: range.location, effectiveRange: nil) as? NSParagraphStyle)
+        XCTAssertGreaterThan(paragraph.minimumLineHeight, 120)
+        let tallCaret = NSRect(x: 28, y: 20, width: 1, height: paragraph.minimumLineHeight)
+        XCTAssertLessThan(view.insertionPointRect(tallCaret, at: range.location).height, 40)
+        XCTAssertEqual(view.insertionPointRect(tallCaret, at: 0), tallCaret)
+        view.setFrameSize(NSSize(width: 180, height: 800))
+        let resized = try XCTUnwrap(view.textStorage?.attribute(.paragraphStyle, at: range.location, effectiveRange: nil) as? NSParagraphStyle)
+        XCTAssertLessThan(resized.minimumLineHeight, paragraph.minimumLineHeight)
+        view.setFrameSize(NSSize(width: 600, height: 800))
+        let session = EditorSession()
+        session.textView = view
+        session.send(.beginPreview(TextRange(location: range.location, length: range.length)))
+        session.send(.showPreview(MarkdownImage(alt: image.alt, path: image.path, width: 400, alignment: image.alignment).markdown))
+        let previewHeight = (view.textStorage?.attribute(.paragraphStyle, at: range.location, effectiveRange: nil) as? NSParagraphStyle)?.minimumLineHeight ?? 0
+        XCTAssertGreaterThan(previewHeight, paragraph.minimumLineHeight)
+        session.send(.cancelPreview)
+        XCTAssertEqual(view.string, text)
+        let reading = MarkdownAppearance.readingText(text, document: MarkdownDocument(text), style: WritingStyle(), documentURL: documentURL)
+        XCTAssertTrue(reading.string.contains("\u{FFFC}"))
+        let standard = "![Muestra](images/sample.png)\n"
+        view.string = standard
+        view.applyAnalysis(MarkdownDocument(standard))
+        XCTAssertGreaterThan((view.textStorage?.attribute(.paragraphStyle, at: 0, effectiveRange: nil) as? NSParagraphStyle)?.minimumLineHeight ?? 0, 50)
+        let scroll = NSScrollView(frame: NSRect(x: 0, y: 0, width: 600, height: 400))
+        scroll.documentView = view
+        let imagePoint = NSPoint(x: 100, y: 100)
+        XCTAssertNotNil(view.imageRange(at: imagePoint))
+        let clip = scroll.contentView
+        let visiblePoint = clip.convert(imagePoint, from: view)
+        let normalized = CGPoint(
+            x: (visiblePoint.x - clip.bounds.minX) / clip.bounds.width,
+            y: clip.isFlipped
+                ? (visiblePoint.y - clip.bounds.minY) / clip.bounds.height
+                : (clip.bounds.maxY - visiblePoint.y) / clip.bounds.height
+        )
+        session.textView = view
+        XCTAssertEqual(session.imageRange(atNormalizedPoint: normalized), NSRange(location: 0, length: (standard as NSString).length - 1))
+    }
+
     func testFencesUnicodeAndStatistics() {
         let source = "# Café 🐈\r\n\r\n~~~swift\r\n# No es título\r\n```\r\n~~~\r\n## Fin\r\n"
         let document = MarkdownDocument(source)

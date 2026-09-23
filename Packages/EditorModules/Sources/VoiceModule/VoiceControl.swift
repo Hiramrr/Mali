@@ -13,23 +13,26 @@ public struct VoiceControl: View {
 
     public var body: some View {
         Button {
-            Task { await module.toggle() }
+            if module.isListening || module.pendingAction == nil { Task { await module.toggle() } }
             showHUD = true
         } label: {
-            Image(systemName: symbol)
+            Image(systemName: module.isListening ? symbol : module.pendingAction == nil ? symbol : "exclamationmark.bubble")
                 .foregroundStyle(showHUD ? .white : .primary)
                 .frame(minWidth: 28, minHeight: 28)
-                .background(showHUD ? Color.accentColor : Color.clear, in: Circle())
+                .background(showHUD || module.pendingAction != nil ? Color.accentColor : Color.clear, in: Circle())
         }
-        .help("Dictar con la voz · ⌃⌘V")
-        .accessibilityLabel("Dictar con la voz")
-        .accessibilityHint("Pulsa para empezar a dictar y de nuevo para insertar el texto.")
+        .help(module.isListening ? "Detener escucha" : module.pendingAction != nil ? "Revisar propuesta de voz" : "Dictar con la voz · mantén ⌥Espacio o pulsa ⌃⌘V")
+        .accessibilityLabel(module.isListening ? "Detener escucha" : module.pendingAction != nil ? "Revisar propuesta de voz" : "Iniciar dictado")
+        .accessibilityHint("Mantén Opción Espacio para hablar y suelta para revisar, o pulsa para empezar y de nuevo para terminar.")
         .keyboardShortcut("v", modifiers: [.control, .command])
         .popover(isPresented: $showHUD, arrowEdge: .bottom) {
             hud
         }
         .onChange(of: isActive) { _, active in
             if active { showHUD = true }
+        }
+        .onChange(of: module.pendingAction) { _, action in
+            if action != nil { showHUD = true }
         }
     }
 
@@ -60,7 +63,13 @@ public struct VoiceControl: View {
                 "Insertado: \(module.lastInsertedText.prefix(80))"
             }
         case .listening:
-            module.partialTranscript.isEmpty ? "Escuchando… habla ahora" : module.partialTranscript
+            if !module.microphoneReady {
+                "Preparando micrófono…"
+            } else if module.partialTranscript.isEmpty {
+                module.pushToTalkHeld ? "Hablando… suelta ⌥Espacio para terminar" : "Escuchando… habla ahora"
+            } else {
+                module.partialTranscript
+            }
         case .processing:
             "Procesando…"
         case .failed(let message):
@@ -71,36 +80,100 @@ public struct VoiceControl: View {
     private var hud: some View {
         VStack(alignment: .leading, spacing: 12) {
             Text("Dictado por voz").font(.headline)
-            Text(statusText)
-                .font(.callout)
-                .foregroundStyle(.secondary)
-                .lineLimit(4)
-                .frame(maxWidth: .infinity, alignment: .leading)
+            if let action = module.pendingAction {
+                Text("Escuché: \(action.transcript)")
+                    .font(.callout)
+                    .foregroundStyle(.secondary)
+                    .textSelection(.enabled)
+                if let text = module.pendingDictationText {
+                    TextField("Texto a insertar", text: Binding(
+                        get: { module.pendingDictationText ?? text },
+                        set: { module.updatePendingDictation($0) }
+                    ), axis: .vertical)
+                    .lineLimit(2...5)
+                } else {
+                    Text(action.preview)
+                        .font(.callout)
+                        .textSelection(.enabled)
+                }
+                HStack {
+                    Button("Confirmar") { Task { await module.confirmPending() } }
+                        .buttonStyle(.borderedProminent)
+                        .keyboardShortcut(.defaultAction)
+                        .disabled(module.pendingDictationText?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty == true)
+                    Button("Descartar", role: .cancel) { module.cancelPending() }
+                        .keyboardShortcut(.cancelAction)
+                    Button("Repetir") { Task { await module.repeatPending() } }
+                        .keyboardShortcut("r", modifiers: [])
+                }
+                if !action.isDictation {
+                    Button("Usar como texto") { module.usePendingAsDictation() }
+                }
+                if module.handsFreeActive {
+                    Text(!module.microphoneReady
+                         ? "Preparando micrófono…"
+                         : module.partialTranscript.isEmpty
+                            ? "Escuchando respuesta. Di confirmar, descartar o repetir."
+                            : "Escuchando: \(module.partialTranscript)")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
+                if module.lastCommandFeedback == "Di confirmar, descartar o repetir" {
+                    Text(module.lastCommandFeedback).font(.caption).foregroundStyle(.secondary)
+                }
+                Text("Enter confirma · Esc descarta · R repite")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+            } else {
+                if !module.lastTranscript.isEmpty && module.state == .idle {
+                    Text("Escuché: \(module.lastTranscript)")
+                        .font(.callout)
+                        .foregroundStyle(.secondary)
+                        .textSelection(.enabled)
+                }
+                Text(statusText)
+                    .font(.callout)
+                    .foregroundStyle(.secondary)
+                    .lineLimit(4)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                if module.handsFreeActive && !module.lastCommandFeedback.isEmpty {
+                    Text(module.lastCommandFeedback)
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
+            }
             if module.state == .listening {
                 ProgressView(value: Double(module.inputLevel))
                     .accessibilityLabel("Nivel del micrófono")
+                if module.pushToTalkHeld {
+                    Text("Suelta ⌥Espacio para terminar y revisar la propuesta.")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
             }
-            HStack {
-                if module.isListening {
-                    Button("Terminar") { Task { await module.finish() } }
+            if module.pendingAction == nil {
+                HStack {
+                    if module.isListening {
+                        Button("Terminar") { Task { await module.finish() } }
+                            .buttonStyle(.borderedProminent)
+                            .keyboardShortcut(.defaultAction)
+                            .help("Cierra el enunciado y prepara la propuesta")
+                        Button("Descartar", role: .cancel) { Task { await module.cancelDictation() } }
+                    } else {
+                        Button(module.lastInsertedText.isEmpty && module.lastCommandFeedback.isEmpty ? "Dictar" : "Dictar de nuevo") {
+                            Task { await module.toggle() }
+                        }
                         .buttonStyle(.borderedProminent)
                         .keyboardShortcut(.defaultAction)
-                        .help("Cierra el enunciado y lo ejecuta sin esperar la pausa")
-                    Button("Descartar", role: .cancel) { Task { await module.cancelDictation() } }
-                } else {
-                    Button(module.lastInsertedText.isEmpty && module.lastCommandFeedback.isEmpty ? "Dictar" : "Dictar de nuevo") {
-                        Task { await module.begin() }
-                    }
-                    .buttonStyle(.borderedProminent)
-                    .keyboardShortcut(.defaultAction)
-                    if case .failed = module.state {
-                        Button("Cerrar") { showHUD = false }
+                        if case .failed = module.state {
+                            Button("Cerrar") { showHUD = false }
+                        }
                     }
                 }
             }
-            Toggle("Escucha continua (cierra solo con pausas)", isOn: $module.continuousListening)
+            Toggle("Manos libres", isOn: $module.continuousListening)
                 .font(.callout)
-                .help("Un toque inicia; cada pausa ejecuta y sigue escuchando; otro toque detiene.")
+                .help("Un toque inicia. Cada pausa inserta el dictado; los cambios esperan confirmación por voz. Di «detener voz» para salir.")
             Toggle("Estilo formal (mayúscula y punto final)", isOn: $module.formalStyle)
                 .font(.callout)
             Picker("Idioma", selection: $module.localeIdentifier) {
@@ -110,11 +183,68 @@ public struct VoiceControl: View {
             }
             .pickerStyle(.menu)
             .font(.callout)
-            Text("Comandos: “busca…”, “selecciona…”, “pon en negritas”, “borra la selección”, “guarda”, “abre”, “exporta…”, “cambia el título a…”, “deshacer”, “cancelar”.")
+            Text("Con Manos libres, pulsa una vez y dicta. El texto aparece en el documento y se inserta tras una pausa. Para cambios, di el comando y luego «confirmar», «descartar» o «repetir». Di «detener voz» para salir. También puedes mantener ⌥Espacio para hablar por turnos.")
                 .font(.caption)
                 .foregroundStyle(.secondary)
         }
         .padding(16)
         .frame(width: 300)
+    }
+}
+
+/// Propuesta visible en la ventana aunque se cierre el panel del micrófono.
+public struct VoiceProposalBanner: View {
+    @Bindable private var module: VoiceModule
+
+    public init(module: VoiceModule) { self.module = module }
+
+    public var body: some View {
+        if let action = module.pendingAction {
+            HStack(alignment: .center, spacing: 16) {
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("Escuché: \(action.transcript)")
+                        .foregroundStyle(.secondary)
+                    if let text = module.pendingDictationText {
+                        TextField("Texto a insertar", text: Binding(
+                            get: { module.pendingDictationText ?? text },
+                            set: { module.updatePendingDictation($0) }
+                        ), axis: .vertical)
+                        .lineLimit(2...5)
+                    } else {
+                        Text(action.preview)
+                    }
+                    if module.handsFreeActive {
+                        Text(!module.microphoneReady
+                             ? "Preparando micrófono…"
+                             : module.partialTranscript.isEmpty
+                                ? "Escuchando respuesta: di confirmar, descartar o repetir."
+                                : "Escuchando: \(module.partialTranscript)")
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                    }
+                }
+                .font(.callout)
+                .textSelection(.enabled)
+                Spacer(minLength: 8)
+                Button("Confirmar") { Task { await module.confirmPending() } }
+                    .buttonStyle(.borderedProminent)
+                    .keyboardShortcut(.defaultAction)
+                    .disabled(module.pendingDictationText?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty == true)
+                Button("Descartar", role: .cancel) { module.cancelPending() }
+                    .keyboardShortcut(.cancelAction)
+                Button("Repetir") { Task { await module.repeatPending() } }
+                    .keyboardShortcut("r", modifiers: [])
+                if !action.isDictation {
+                    Button("Usar como texto") { module.usePendingAsDictation() }
+                }
+            }
+            .padding(.horizontal, 24)
+            .padding(.vertical, 12)
+            .frame(maxWidth: .infinity)
+            .background(Color(nsColor: .controlBackgroundColor))
+            .overlay(alignment: .bottom) { Divider() }
+            .accessibilityElement(children: .contain)
+            .accessibilityLabel("Propuesta de voz pendiente")
+        }
     }
 }

@@ -51,8 +51,13 @@ public enum EditorCommand: Equatable, Sendable {
     /// documento y de los paneles); si llegan a `send`, se ignoran.
     case saveDocument
     case openDocument(String?)
-    /// Formato: "pdf", "txt" o "rtf". "word" no lo soporta el editor.
+    /// Formato: "pdf", "txt", "rtf" o "word" (.docx). Lo aplica `EditorScreen`.
     case exportDocument(String)
+    /// Reescribir la selección con IA según una instrucción ("más breve").
+    /// Lo aplica `EditorSession` con Foundation Models en este Mac: genera y
+    /// reemplaza en una sola operación de undo. Sin selección, sin modelo o
+    /// con edición intermedia, no toca nada (nunca aplica a ciegas).
+    case rewriteSelection(String)
     // Previsualización atómica para módulos (gestos). Mientras dura, el texto
     // mostrado no toca el binding, el guardado ni el historial: confirmar
     // registra un único undo (o ninguno si no hubo cambio) y cancelar
@@ -61,6 +66,12 @@ public enum EditorCommand: Equatable, Sendable {
     case showPreview(String)
     case commitPreview
     case cancelPreview
+    /// Dictado provisional en el documento. La sesión lo muestra sin guardar
+    /// ni registrar undo hasta recibir el texto final.
+    case beginVoicePreview
+    case showVoicePreview(String)
+    case commitVoicePreview(String)
+    case cancelVoicePreview
 }
 
 public struct DocumentHeading: Identifiable, Equatable, Sendable {
