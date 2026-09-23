@@ -1,0 +1,20 @@
+id,expected_command,expected_spoken,top1_transcript,top1_parsed,grupo,proposal_efecto_sin_confirm,efecto_con_confirm_ideal
+V005,renameTitle,"Renombra el documento a SwiftUI.","Renombre el documento SwiftUI","unknown",A,"sin-efecto",cancelado→sin-efecto
+V006,renameTitle,"Actualiza el nombre a Evaluación de IHC.","Actualiza el nombre evaluación de IHC","unknown",A,"sin-efecto",cancelado→sin-efecto
+V012,renameTitle,"Que el título cite Capítulo 3.","Qué el título si te capítulo tres","unknown",A,"sin-efecto",cancelado→sin-efecto
+V013,renameTitle,"Modifica el encabezado a Metodología.","Modificar el encabezado a metodología","unknown",A,"sin-efecto",cancelado→sin-efecto
+V034,replaceSelection,"Cambia este término por IHC.","Cambias de término por IHC","unknown",A,"sin-efecto",cancelado→sin-efecto
+V046,formatSelection:bold,"Pon en negrita el título.","Pone negrito el","unknown",A,"sin-efecto",cancelado→sin-efecto
+V059,formatSelection:bold,"Hazlo en negritas.","Hazle negritas","unknown",A,"sin-efecto",cancelado→sin-efecto
+V066,undo,"Deshaz eso.","Deshace eso","unknown",A,"sin-efecto",cancelado→sin-efecto
+V068,undo,"Deshaz el último cambio.","Deshace el último cambio","unknown",A,"sin-efecto",cancelado→sin-efecto
+V082,redo,"Rehaz eso.","Reto","unknown",A,"sin-efecto",cancelado→sin-efecto
+V083,redo,"Rehazlo.","Fea hazlo","unknown",A,"sin-efecto",cancelado→sin-efecto
+V086,redo,"Reaplica el formato.","Aplicar el formato","unknown",A,"sin-efecto",cancelado→sin-efecto
+V089,redo,"Deshaz el deshacer.","Les haz el deshacer","unknown",A,"sin-efecto",cancelado→sin-efecto
+V090,redo,"Repite el cambio deshecho.","Repite el cambio de desecho","unknown",A,"sin-efecto",cancelado→sin-efecto
+V094,redo,"Rehace el cambio.","Creas el cambio","unknown",A,"sin-efecto",cancelado→sin-efecto
+V103,findText,"Halla Capítulo 3.","Haya capítulo tres","unknown",A,"sin-efecto",cancelado→sin-efecto
+V118,selectText,"Delimita Evaluación de IHC.","Te limita evaluación de IH","unknown",A,"sin-efecto",cancelado→sin-efecto
+V154,unsupported,"Centra el título.","Central título","unknown",A,"sin-efecto",cancelado→sin-efecto
+V173,unknown,"Borrar información accidentalmente afecta.","Borra información accidentalmente afecta","deleteSelection",C,"EFECTO-MUTANTE (direct=true)",cancelado→sin-efecto

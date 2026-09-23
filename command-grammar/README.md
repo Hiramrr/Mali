@@ -208,3 +208,50 @@ Resultados (`alternatives_results.csv`, `confidence_analysis.csv`,
 - Criterios: Top-3 ≥95% NO (90.0%); ≥50% failures STRONG NO (0%);
   confidence útil NO. Escenario C: Top-5 casi no mejora → dejar de optimizar
   recognizer + UX de repeat/confirmation. Sin auto-resolve ni gates.
+
+## Fase Confirmation UX (rama prueba/command-confirmation-ux)
+
+Capa DESPUÉS de Speech→Grammar→ParsedCommand. Sin mejorar reconocimiento,
+sin tocar Speech ni Grammar (base `1e8b943`, SHA verificados). Sin
+alternatives/confidence para decidir (solo diagnóstico). Sin Foundation
+Models (rewrite simulado), sin editor real (FakeEditorState + historial
+undo/redo). Política: ALL SUPPORTED REQUIRE CONFIRMATION.
+
+```bash
+cd command-grammar
+swift run GrammarTest confirm-tests  # 352 tests + invariante seguridad
+swift run GrammarTest sim-19         # 19 fallos reales, sin retranscribir
+swift run GrammarTest confirm-live   # protocolo manual 30 (requiere humano+mic)
+```
+
+Componentes (`ConfirmationUX.swift`): `FakeEditorState` (title/text/selección/
+doc + undo/redo stacks + rewrite log + find/save/export), `CommandProposal`
+(transcript+command+preview+riesgo), `CommandInteractionState`
+(idle/listening/recognized/unsupported/notUnderstood/invalidContext/executed/
+cancelled), validador (`No hay texto seleccionado.` / `Nada que deshacer.` /
+`Nada que rehacer.`), `CommandRisk` (metadato NO operativo). Solo Enter
+confirma (`NO CONFIRMATION = NO STATE CHANGE`); Esc cancela; R repite sin
+combinar (attempts, descarta transcript). Mensajes: unsupported
+"Ese comando no está disponible.", unknown "No entendí el comando.", multi
+"Prueba una acción a la vez.". UI mínima: overlay de terminal en
+`confirm-live` (Listening…/Reconocido/Enter/Esc/R; sin SwiftUI: paquete CLI
+sin host de app).
+
+Tests 352/352 (`ConfirmationTests.swift`): confirm 60, cancel 36, repeat 20,
+invalid-context 40, unknown/unsupported/multi 50, undo/redo 40, argumentos 30,
+riesgo-política 24, rewrite-simulado 12, barrido-cancel 40. Invariante
+verificado por test (`SAFETY-INVARIANTS-OK`): unconfirmed/cancelled/
+unsupported/unknown/invalid-context changes = 0.
+
+sim-19 (`data/ux_sim19.csv`, editor generoso peor caso): A→unknown 18
+(repeat), B→unsupported 0, C→SUPPORTED ERRÓNEO 1 (V173 `Borra…`→deleteSelection).
+Sin confirmación: 1 efecto incorrecto. Con confirmación ideal: 0.
+Supported confirmed success: 352-tests confirman efectos + previews (≥98% ✓
+estructural sobre FakeEditorState).
+
+Live (`data/confirmation_live_protocol.csv`: 20 normal + 5 repeat + 5 cancel;
+runner con timings speech-end→proposal/proposal→decisión/total;
+`confirmation_live_results.csv`): PENDIENTE de ejecución humana (mic+teclado).
+Friction baseline esperada ≈1.0 confirm/comando. Recomendación: tras medir
+fricción, Fase 10 risk-based (navigation→inmediato, reversible→inmediato+Undo,
+content→confirm, external→confirm). DETENIDO sin auto-ejecución.

@@ -25,6 +25,12 @@ struct Runner {
             await runAltsSmoke(path: args[i + 1])
         } else if args.contains("eval-alts") {
             await runEvalAlternatives()
+        } else if args.contains("confirm-tests") {
+            runConfirmTests()
+        } else if args.contains("sim-19") {
+            runSim19()
+        } else if args.contains("confirm-live") {
+            await runConfirmLive()
         } else if args.contains("protocol") {
             printLiveProtocol()
         } else if let i = args.firstIndex(of: "transcribe"), i + 1 < args.count {
