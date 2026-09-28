@@ -1,10 +1,10 @@
 # Verificación del editor
 
-Actualizada el 21 de septiembre de 2026. Xcode 27 y SDK macOS 27. Destino mínimo macOS 26.
+Actualizada el 24 de septiembre de 2026. Xcode 27 y SDK macOS 27. Destino mínimo macOS 26.
 
 ## Automatizada
 
-`swift test --package-path Packages/EditorModules` ejecuta 69 pruebas XCTest. Cubren codificación, Unicode, índice, rangos, comandos sobre NSTextView, lectura y decoración Markdown (títulos ATX/setext con cierre, citas, listas ordenadas y de tareas, reglas, énfasis `**`/`__`/`*`/`_`/`***`/tachado, código, enlaces, autolinks y escapes, párrafos con saltos suaves), alternancia de formato con undo, exportación PDF multipágina, bus de comandos y registro de módulos, lógica de gestos sin cámara (histéresis, calibración, navegación, sinónimos locales) y preview atómica sobre NSTextView real.
+`swift test --package-path Packages/EditorModules` ejecuta 254 pruebas XCTest. Cubren codificación, Unicode, índice, rangos, comandos sobre NSTextView, lectura y decoración Markdown (títulos ATX/setext con cierre, citas, listas ordenadas y de tareas, reglas, énfasis `**`/`__`/`*`/`_`/`***`/tachado, código, enlaces, autolinks y escapes, párrafos con saltos suaves), alternancia de formato con undo, exportación PDF multipágina, tablas GFM (celdas, alineación, `NSTextTable` en lectura y Word, paso a TextKit 1 en la vista de lectura), diagramas (parser, layout determinista sin solapes, adjunto en lectura y PDF sin cortes), imágenes de documentos sin guardar, bus de comandos y registro de módulos, lógica de gestos sin cámara (histéresis, calibración, navegación, sinónimos locales) y preview atómica sobre NSTextView real. Las pruebas de voz usan un reconocedor simulado; aún falta la sesión con micrófono real.
 
 `xcodebuild -project EditorFinal.xcodeproj -scheme EditorFinal -configuration Debug -derivedDataPath build build` compila y firma la app con sandbox. El compilador Swift no reporta advertencias. La herramienta de Xcode AppIntents emite su aviso de metadatos omitidos porque la app no usa AppIntents.
 
@@ -14,6 +14,7 @@ Actualizada el 21 de septiembre de 2026. Xcode 27 y SDK macOS 27. Destino mínim
 - Verificar el diseño con una captura en modo oscuro.
 - Buscar Cazador con ⌘F y obtener una coincidencia.
 - Crear un documento con ⌘N y escribir.
+- Activar Configuración › Documentos › Guardar documentos en iCloud Drive y elegir una carpeta dentro de iCloud Drive. Crear un documento con ⌘N y comprobar que el archivo aparece en esa carpeta, en la barra lateral y en otro dispositivo con la misma cuenta. Tras reiniciar la app, los documentos nuevos se deben seguir creando ahí sin volver a pedir la carpeta. Una carpeta fuera de iCloud Drive se rechaza con un aviso.
 - Guardar con ⌘S en `build/Prueba de guardado.md`.
 - Copiar y pegar texto con ⌘C y ⌘V, deshacer con ⌘Z y rehacer con ⇧⌘Z.
 - Activar concentración y comprobar que desaparecen ambas columnas laterales.
