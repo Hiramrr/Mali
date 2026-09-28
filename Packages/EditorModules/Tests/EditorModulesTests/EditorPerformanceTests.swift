@@ -61,6 +61,30 @@ final class EditorPerformanceTests: XCTestCase {
         XCTAssertEqual(documents.count, 3)
     }
 
+    func testRecentDocumentsKeepOrderWithoutDuplicatesOrArchivedFiles() {
+        let folder = URL(fileURLWithPath: "/tmp/notes", isDirectory: true)
+        let first = folder.appendingPathComponent("one.md")
+        let second = folder.appendingPathComponent("two.md")
+        let missing = folder.appendingPathComponent("missing.md")
+        let ordered = DocumentLibrary.orderedRecents(
+            [second, first, second, missing],
+            available: [first, second],
+            excluding: [first.standardizedFileURL.path]
+        )
+        XCTAssertEqual(ordered, [second])
+    }
+
+    @MainActor func testPlainTextDecoration() {
+        let source = String(repeating: "Una frase sencilla sin formato.\n", count: 20_000)
+        let document = MarkdownDocument(source)
+        let output = NSMutableAttributedString(string: source)
+        let start = ContinuousClock.now
+        MarkdownAppearance.decorate(output, document: document, style: WritingStyle())
+        print("PLAIN DECORATION: \(start.duration(to: .now))")
+        XCTAssertNotNil(output.attribute(.font, at: 0, effectiveRange: nil))
+        XCTAssertNotNil(output.attribute(.font, at: output.length - 1, effectiveRange: nil))
+    }
+
     @MainActor func testLargeDocumentEditing() throws {
         _ = NSApplication.shared
         let clock = ContinuousClock()

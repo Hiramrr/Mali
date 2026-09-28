@@ -7,14 +7,16 @@ public struct NativeTextEditor: NSViewRepresentable {
     @Binding private var text: String
     private let session: EditorSession
     private let style: WritingStyle
+    private let isOpeningDocument: Bool
     /// Pieza Lego (gestos): informa texto+selección para instantáneas del
     /// documento. `nil` sin la pieza; el editor funciona igual.
     private let onTextActivity: ((String, NSRange) -> Void)?
 
-    public init(text: Binding<String>, session: EditorSession, style: WritingStyle = WritingStyle(), onTextActivity: ((String, NSRange) -> Void)? = nil) {
+    public init(text: Binding<String>, session: EditorSession, style: WritingStyle = WritingStyle(), isOpeningDocument: Bool = false, onTextActivity: ((String, NSRange) -> Void)? = nil) {
         _text = text
         self.session = session
         self.style = style
+        self.isOpeningDocument = isOpeningDocument
         self.onTextActivity = onTextActivity
     }
 
@@ -41,6 +43,8 @@ public struct NativeTextEditor: NSViewRepresentable {
         view.textContainer?.containerSize = NSSize(width: 0, height: CGFloat.greatestFiniteMagnitude)
         view.textContainerInset = NSSize(width: 28, height: 24)
         view.style = style
+        view.isEditable = !session.readingMode && !isOpeningDocument
+        view.isSelectable = !session.readingMode && !isOpeningDocument
         WritingTextView.apply(style: style, to: view)
         view.string = text
         view.setAccessibilityLabel("Contenido del documento")
@@ -82,8 +86,8 @@ public struct NativeTextEditor: NSViewRepresentable {
         }
         let wasHidden = scroll.isHidden
         scroll.isHidden = session.readingMode
-        view.isEditable = !session.readingMode
-        view.isSelectable = !session.readingMode
+        view.isEditable = !session.readingMode && !isOpeningDocument
+        view.isSelectable = !session.readingMode && !isOpeningDocument
         if wasHidden && !scroll.isHidden { view.window?.makeFirstResponder(view) }
     }
 

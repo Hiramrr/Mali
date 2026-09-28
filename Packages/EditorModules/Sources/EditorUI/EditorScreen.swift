@@ -31,8 +31,8 @@ public struct EditorScreen: View {
             case .recents: "Recientes"
             case .favorites: "Favoritos"
             case .archived: "Archivado"
-            case .drafts: "Borradores"
-            case .trash: "Basura"
+            case .drafts: "Sin título"
+            case .trash: "Papelera de EditorFinal"
             case .folder(let url): url.lastPathComponent
             }
         }
@@ -89,6 +89,7 @@ public struct EditorScreen: View {
     @AppStorage("editor.archived") private var archivedPaths = ""
     @AppStorage("editor.trashed") private var trashedPaths = ""
     @State private var autosaveWorkItem: DispatchWorkItem?
+    @State private var openingDocument = false
     @State private var folderDocuments: [URL] = []
     @State private var libraryRevision = 0
     // Pantallas anteriores, de la más reciente a la más antigua, para volver.
@@ -241,23 +242,15 @@ public struct EditorScreen: View {
         return set.sorted().joined(separator: "|")
     }
     private var activeURLs: [URL] {
-        availableURLs.filter { !isTrashed($0) && !isArchived($0) }
+        let excluded = trashedKeys.union(archivedKeys)
+        return availableURLs.filter { !excluded.contains(storageKey(for: $0)) }
     }
     private var orderedRecentURLs: [URL] {
-        var seen = Set<String>()
-        var ordered: [URL] = []
-        let candidates = (currentURL.map { [$0] } ?? []) + recentURLs
-        for url in candidates {
-            let key = storageKey(for: url)
-            guard !seen.contains(key) else { continue }
-            seen.insert(key)
-            guard availableURLs.contains(where: { storageKey(for: $0) == key }) else { continue }
-            guard !isTrashed(url) && !isArchived(url) else { continue }
-            if let match = availableURLs.first(where: { storageKey(for: $0) == key }) {
-                ordered.append(match)
-            }
-        }
-        return ordered
+        DocumentLibrary.orderedRecents(
+            (currentURL.map { [$0] } ?? []) + recentURLs,
+            available: availableURLs,
+            excluding: trashedKeys.union(archivedKeys)
+        )
     }
     private var draftURLs: [URL] {
         activeURLs.filter { $0.deletingPathExtension().lastPathComponent.hasPrefix("Sin título") }
@@ -269,16 +262,20 @@ public struct EditorScreen: View {
         case .recents:
             return orderedRecentURLs
         case .favorites:
-            return activeURLs.filter { isFavorite($0) }
+            let keys = favoriteKeys
+            return activeURLs.filter { keys.contains(storageKey(for: $0)) }
         case .archived:
-            return availableURLs.filter { isArchived($0) && !isTrashed($0) }
+            let included = archivedKeys.subtracting(trashedKeys)
+            return availableURLs.filter { included.contains(storageKey(for: $0)) }
         case .drafts:
             return draftURLs
         case .trash:
-            return availableURLs.filter { isTrashed($0) }
+            let keys = trashedKeys
+            return availableURLs.filter { keys.contains(storageKey(for: $0)) }
         case .folder(let folder):
+            let trashed = trashedKeys
             return availableURLs.filter {
-                $0.deletingLastPathComponent().standardizedFileURL == folder && !isTrashed($0)
+                $0.deletingLastPathComponent().standardizedFileURL == folder && !trashed.contains(storageKey(for: $0))
             }
         }
     }
@@ -307,13 +304,13 @@ public struct EditorScreen: View {
         trashedPaths = setStored(trashedPaths, key: storageKey(for: url), present: false)
         archivedPaths = setStored(archivedPaths, key: storageKey(for: url), present: false)
     }
-    private func deletePermanently(_ url: URL) {
+    private func moveToSystemTrash(_ url: URL) {
         let key = storageKey(for: url)
         if currentURL?.standardizedFileURL.path == key {
             NSApplication.shared.presentError(NSError(
                 domain: NSCocoaErrorDomain,
                 code: NSFileWriteFileExistsError,
-                userInfo: [NSLocalizedDescriptionKey: "No se puede eliminar el documento abierto. Ciérralo primero."]
+                userInfo: [NSLocalizedDescriptionKey: "No se puede enviar a la papelera del Mac el documento abierto. Ciérralo primero."]
             ))
             return
         }
@@ -332,16 +329,8 @@ public struct EditorScreen: View {
     }
     private func emptyTrash() {
         for url in baseURLs(for: .trash) {
-            let key = storageKey(for: url)
-            if currentURL?.standardizedFileURL.path == key { continue }
-            if FileManager.default.fileExists(atPath: url.path) {
-                try? FileManager.default.trashItem(at: url, resultingItemURL: nil)
-            }
+            moveToSystemTrash(url)
         }
-        let currentKey = currentURL.map { storageKey(for: $0) }
-        let remaining = storedSet(trashedPaths).intersection(currentKey.map { Set([$0]) } ?? [])
-        trashedPaths = remaining.sorted().joined(separator: "|")
-        libraryRevision += 1
     }
     private func revealInFinder(_ url: URL) {
         NSWorkspace.shared.activateFileViewerSelecting([url])
@@ -485,7 +474,7 @@ public struct EditorScreen: View {
                 }
                 .padding(.horizontal, 32).padding(.top, session.focusMode ? 20 : 28).padding(.bottom, 8)
                 ZStack(alignment: .topLeading) {
-                    NativeTextEditor(text: $text, session: session, style: style, onTextActivity: onGestureDocument)
+                    NativeTextEditor(text: $text, session: session, style: style, isOpeningDocument: openingDocument, onTextActivity: onGestureDocument)
                         .opacity(session.readingMode ? 0 : 1)
                         .allowsHitTesting(!session.readingMode)
                         .accessibilityHidden(session.readingMode)
@@ -603,9 +592,13 @@ public struct EditorScreen: View {
         VStack(alignment: .leading, spacing: 18) {
             HStack(spacing: 8) {
                 Image(systemName: "magnifyingglass").foregroundStyle(chromeSecondary)
-                TextField("Buscar", text: $search).textFieldStyle(.plain)
+                TextField("Buscar escritos", text: $search).textFieldStyle(.plain)
                     .foregroundStyle(chromePrimary)
-                    .accessibilityLabel("Buscar")
+                    .accessibilityLabel("Buscar escritos por nombre")
+                    .help("Filtra escritos por nombre. Para buscar en la nota, usa ⌘F.")
+                    .onChange(of: search) { _, value in
+                        if !value.isEmpty { launchHome = false; showHome = true }
+                    }
                 if !search.isEmpty {
                     Button { search = "" } label: { Image(systemName: "xmark.circle.fill") }
                         .buttonStyle(.plain).foregroundStyle(chromeSecondary).accessibilityLabel("Borrar búsqueda")
@@ -623,8 +616,8 @@ public struct EditorScreen: View {
                         navigationButton("Recientes", symbol: "clock", destination: .recents)
                         navigationButton("Favoritos", symbol: "star", destination: .favorites)
                         navigationButton("Archivado", symbol: "archivebox", destination: .archived)
-                        navigationButton("Borradores", symbol: "doc.text", destination: .drafts)
-                        navigationButton("Basura", symbol: "trash", destination: .trash)
+                        navigationButton("Sin título", symbol: "doc.text", destination: .drafts)
+                        navigationButton("Papelera de EditorFinal", symbol: "trash", destination: .trash)
                     }
                     if !folders.isEmpty {
                         VStack(alignment: .leading, spacing: 4) {
@@ -716,11 +709,6 @@ public struct EditorScreen: View {
             .contentShape(RoundedRectangle(cornerRadius: 8))
         }.buttonStyle(.plain)
         .accessibilityAddTraits(selected ? [.isSelected] : [])
-    }
-
-    private var filteredHeadings: [DocumentHeading] {
-        guard !search.isEmpty else { return session.headings }
-        return session.headings.filter { $0.title.localizedStandardContains(search) }
     }
 
     private func outlineRow(for heading: DocumentHeading) -> some View {
@@ -871,12 +859,8 @@ public struct EditorScreen: View {
                         Text("Escribe # antes de un título para organizar el documento.")
                             .font(.callout).foregroundStyle(chromeSecondary)
                             .padding(14)
-                    } else if filteredHeadings.isEmpty {
-                        Text("Sin coincidencias.")
-                            .font(.callout).foregroundStyle(chromeSecondary)
-                            .padding(14)
                     }
-                    ForEach(filteredHeadings) { heading in
+                    ForEach(session.headings) { heading in
                         outlineRow(for: heading)
                     }
                 }.padding(10)
@@ -891,8 +875,8 @@ public struct EditorScreen: View {
         case .recents: "Tus documentos abiertos recientemente."
         case .favorites: "Tus escritos marcados con estrella."
         case .archived: "Documentos guardados fuera de Inicio."
-        case .drafts: "Borradores y escritos sin título."
-        case .trash: "Puedes restaurarlos o eliminarlos definitivamente."
+        case .drafts: "Archivos «Sin título» y documento actual sin guardar."
+        case .trash: "Los archivos siguen en su carpeta hasta enviarlos a la papelera del Mac."
         case .folder(let url): "Documentos en \(url.lastPathComponent)."
         }
     }
@@ -920,8 +904,8 @@ public struct EditorScreen: View {
         case .recents: return "Sin recientes"
         case .favorites: return "Sin favoritos"
         case .archived: return "Nada archivado"
-        case .drafts: return "Sin borradores"
-        case .trash: return "Basura vacía"
+        case .drafts: return "No hay escritos sin título"
+        case .trash: return "Papelera vacía"
         case .folder: return "Carpeta vacía"
         }
     }
@@ -932,12 +916,16 @@ public struct EditorScreen: View {
         case .recents: return "Abre un documento y aparecerá aquí."
         case .favorites: return "Marca un escrito con estrella para verlo aquí."
         case .archived: return "Archiva un documento para limpiar Inicio sin borrarlo."
-        case .drafts: return "Empieza un escrito sin guardar para verlo aquí."
-        case .trash: return "Mueve un documento a la basura para verlo aquí."
+        case .drafts: return "Crea un escrito nuevo para verlo aquí hasta que le pongas un nombre."
+        case .trash: return "Mueve un escrito a la papelera de EditorFinal para verlo aquí."
         case .folder: return "No hay escritos en esta carpeta."
         }
     }
     private var hasVirtualDraft: Bool { currentURL == nil && !text.isEmpty }
+    private var showsVirtualDraft: Bool {
+        hasVirtualDraft && (destination == .home || destination == .drafts)
+            && (search.isEmpty || documentTitle.localizedStandardContains(search))
+    }
     private func open(url: URL) {
         if url == currentURL {
             hasChosenDocument = true
@@ -988,11 +976,11 @@ public struct EditorScreen: View {
         .contextMenu {
             if destination == .trash {
                 Button("Restaurar") { restore(url) }
-                Button("Eliminar definitivamente", role: .destructive) { deletePermanently(url) }
+                Button("Enviar a la papelera del Mac", role: .destructive) { moveToSystemTrash(url) }
             } else {
                 Button(isFavorite(url) ? "Quitar de favoritos" : "Añadir a favoritos") { toggleFavorite(url) }
                 Button(isArchived(url) ? "Desarchivar" : "Archivar") { setArchived(url, archived: !isArchived(url)) }
-                Button("Mover a la basura", role: .destructive) { setTrashed(url, trashed: true) }
+                Button("Mover a la papelera de EditorFinal", role: .destructive) { setTrashed(url, trashed: true) }
             }
             Button("Mostrar en el Finder") { revealInFinder(url) }
         }
@@ -1010,7 +998,7 @@ public struct EditorScreen: View {
                 Spacer()
                 if destination == .trash {
                     if !baseURLs(for: .trash).isEmpty {
-                        Button("Vaciar basura", systemImage: "trash", role: .destructive, action: emptyTrash)
+                        Button("Enviar todo a la papelera del Mac", systemImage: "trash", role: .destructive, action: emptyTrash)
                             .buttonStyle(.bordered)
                     }
                 } else if showsNewCard {
@@ -1042,7 +1030,7 @@ public struct EditorScreen: View {
                         .buttonStyle(.plain)
                         .accessibilityLabel("Crear un nuevo escrito")
                     }
-                    if hasVirtualDraft && (destination == .home || destination == .drafts) {
+                    if showsVirtualDraft {
                         Button {
                             hasChosenDocument = true
                             launchHome = false
@@ -1066,7 +1054,7 @@ public struct EditorScreen: View {
                     ForEach(homeURLs, id: \.self) { url in
                         documentCard(for: url)
                     }
-                    if homeURLs.isEmpty && !(hasVirtualDraft && (destination == .home || destination == .drafts)) {
+                    if homeURLs.isEmpty && !showsVirtualDraft {
                         ContentUnavailableView(
                             emptyTitle,
                             systemImage: search.isEmpty ? destinationSymbol : "magnifyingglass",
@@ -1180,8 +1168,8 @@ public struct EditorScreen: View {
     /// Carga un archivo en esta misma ventana, sin crear ventana ni documento nuevos.
     private func applySameWindowOpen(url: URL, text newText: String) {
         let controller = NSDocumentController.shared
-        let mine = ownDocument ?? activeDocument
-        let myURL = mine?.fileURL ?? currentURL
+        guard let mine = ownDocument ?? activeDocument else { return }
+        let myURL = mine.fileURL ?? currentURL
         if let myURL, myURL.standardizedFileURL == url.standardizedFileURL {
             hasChosenDocument = true
             launchHome = false
@@ -1190,44 +1178,63 @@ public struct EditorScreen: View {
             return
         }
         let loadNew = {
-            self.text = newText
-            self.documentTitle = url.deletingPathExtension().lastPathComponent
-            self.hasChosenDocument = true
-            self.launchHome = false
-            self.showHome = false
-            self.session.textView?.undoManager?.removeAllActions()
-            controller.noteNewRecentDocumentURL(url)
-            if let document = self.ownDocument ?? self.activeDocument {
-                document.save(
-                    to: url,
-                    ofType: document.fileType ?? UTType.plainText.identifier,
-                    for: .saveAsOperation
-                ) { error in
-                    if let error { NSApplication.shared.presentError(error) }
-                    self.closeExtraWindows()
-                    self.focusEditor()
-                }
-            } else {
+            self.replaceDocument(mine, with: newText, at: url) {
+                self.documentTitle = url.deletingPathExtension().lastPathComponent
+                self.hasChosenDocument = true
+                self.launchHome = false
+                self.showHome = false
+                controller.noteNewRecentDocumentURL(url)
                 self.closeExtraWindows()
                 self.focusEditor()
             }
         }
-        if let document = mine,
-           let oldURL = document.fileURL ?? currentURL,
-           document.isDocumentEdited {
-            document.save(
-                to: oldURL,
-                ofType: document.fileType ?? UTType.plainText.identifier,
-                for: .saveOperation
-            ) { error in
-                if let error {
-                    NSApplication.shared.presentError(error)
-                } else {
-                    loadNew()
-                }
+        saveBeforeSwitch(mine, then: loadNew)
+    }
+
+    private func saveBeforeSwitch(_ document: NSDocument, then continueSwitch: @escaping () -> Void) {
+        let oldURL = document.fileURL ?? currentURL
+        if (oldURL == nil && text.isEmpty) || (oldURL != nil && !document.isDocumentEdited) {
+            continueSwitch()
+            return
+        }
+        let save: (URL, NSDocument.SaveOperationType) -> Void = { url, operation in
+            document.save(to: url, ofType: document.fileType ?? UTType.plainText.identifier, for: operation) { error in
+                if let error { NSApplication.shared.presentError(error) }
+                else { continueSwitch() }
             }
+        }
+        if let oldURL {
+            save(oldURL, .saveOperation)
         } else {
-            loadNew()
+            let panel = NSSavePanel()
+            panel.allowedContentTypes = [UTType(filenameExtension: "md") ?? .plainText]
+            panel.nameFieldStringValue = "\(documentTitle).md"
+            panel.begin { response in
+                guard response == .OK, let url = panel.url else { return }
+                save(url, .saveAsOperation)
+            }
+        }
+    }
+
+    /// `saveAs` necesita el texto nuevo en el binding; revierte si falla.
+    private func replaceDocument(_ document: NSDocument, with newText: String, at url: URL, onSuccess: @escaping () -> Void) {
+        let previousText = text
+        autosaveWorkItem?.cancel()
+        openingDocument = true
+        session.textView?.isEditable = false
+        session.textView?.isSelectable = false
+        text = newText
+        document.save(to: url, ofType: document.fileType ?? UTType.plainText.identifier, for: .saveAsOperation) { error in
+            if let error {
+                text = previousText
+                NSApplication.shared.presentError(error)
+            } else {
+                session.textView?.undoManager?.removeAllActions()
+                onSuccess()
+            }
+            openingDocument = false
+            session.textView?.isEditable = !session.readingMode
+            session.textView?.isSelectable = !session.readingMode
         }
     }
 
@@ -1268,9 +1275,7 @@ public struct EditorScreen: View {
     }
 
     private func createDocument() {
-        guard let document = activeDocument else { return }
-        hasChosenDocument = true
-        launchHome = false
+        guard let document = ownDocument ?? activeDocument else { return }
         let suggestedDirectory = currentURL?.deletingLastPathComponent()
             ?? folders.first
             ?? FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -1287,34 +1292,21 @@ public struct EditorScreen: View {
         }
 
         let startWriting = {
-            text = ""
-            documentTitle = url.deletingPathExtension().lastPathComponent
-            destination = .home
-            showHome = false
-            document.save(
-                to: url,
-                ofType: document.fileType ?? UTType.plainText.identifier,
-                for: .saveAsOperation
-            ) { error in
-                if let error { NSApplication.shared.presentError(error) }
+            replaceDocument(document, with: "", at: url) {
+                hasChosenDocument = true
+                launchHome = false
+                documentTitle = url.deletingPathExtension().lastPathComponent
+                destination = .home
+                showHome = false
             }
         }
 
-        if let oldURL = document.fileURL ?? currentURL {
-            document.save(to: oldURL, ofType: document.fileType ?? UTType.plainText.identifier, for: .saveOperation) { error in
-                if let error {
-                    NSApplication.shared.presentError(error)
-                } else {
-                    startWriting()
-                }
-            }
-        } else {
-            startWriting()
-        }
+        saveBeforeSwitch(document, then: startWriting)
     }
 
     private func scheduleAutosave() {
         autosaveWorkItem?.cancel()
+        guard !openingDocument else { return }
         guard let document = activeDocument,
               document.fileURL != nil || currentURL != nil else { return }
         let workItem = DispatchWorkItem { [weak document] in

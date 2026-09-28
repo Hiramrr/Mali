@@ -1,5 +1,6 @@
 import XCTest
 import AppKit
+import SwiftUI
 @testable import EditorCore
 @testable import DocumentKit
 @testable import EditorEngine
@@ -8,6 +9,24 @@ import PDFKit
 @testable import ExportFeature
 
 final class EditorTests: XCTestCase {
+    @MainActor func testDocumentSwitchLocksEditing() throws {
+        let session = EditorSession()
+        let editor = NativeTextEditor(text: .constant("Antes"), session: session, isOpeningDocument: true)
+        let host = NSHostingView(rootView: editor)
+        let window = NSWindow(contentRect: NSRect(x: 0, y: 0, width: 500, height: 400),
+                              styleMask: [.titled], backing: .buffered, defer: false)
+        window.contentView = host
+        host.layoutSubtreeIfNeeded()
+        let view = try XCTUnwrap(session.textView)
+        XCTAssertFalse(view.isEditable)
+        XCTAssertFalse(view.isSelectable)
+        host.rootView = NativeTextEditor(text: .constant("Después"), session: session)
+        host.layoutSubtreeIfNeeded()
+        XCTAssertTrue(view.isEditable)
+        XCTAssertTrue(view.isSelectable)
+        window.orderOut(nil)
+    }
+
     func testUTF8RoundTripAndInvalidData() throws {
         for text in ["", "Español, 日本語, 👩🏽‍💻\r\n", String(repeating: "á", count: 100_000), String(repeating: "文", count: 500_000), String(repeating: "x", count: 1_000_000)] {
             XCTAssertEqual(try UTF8Document.decode(UTF8Document.encode(text)), text)

@@ -57,7 +57,6 @@ func requestSameWindowOpen(_ requestedURL: URL) {
     do {
         let data = try Data(contentsOf: url)
         let text = try UTF8Document.decode(data)
-        NSDocumentController.shared.noteNewRecentDocumentURL(url)
         SingleWindowCoordinator.shared.requestOpen(url: url, text: text)
         NSApp.activate(ignoringOtherApps: true)
         if let window = NSDocumentController.shared.documents.first?.windowControllers.first?.window {
