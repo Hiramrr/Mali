@@ -23,9 +23,11 @@ let package = Package(
         .target(name: "GestureModule", dependencies: ["EditorCore", "ModuleKit"]),
         .target(name: "DocumentKit", dependencies: ["EditorCore"]),
         .target(name: "DesignSystem", dependencies: ["EditorCore"]),
-        .target(name: "EditorEngine", dependencies: ["EditorCore", "DesignSystem"]),
-        .target(name: "ExportFeature", dependencies: ["EditorCore", "DesignSystem"]),
+        // Pieza extraíble: diagramas ```diagram en lectura, PDF y Word (Docs/Diagramas.md).
+        .target(name: "DiagramModule"),
+        .target(name: "EditorEngine", dependencies: ["EditorCore", "DesignSystem", "DiagramModule"]),
+        .target(name: "ExportFeature", dependencies: ["EditorCore", "DesignSystem", "EditorEngine"]),
         .target(name: "EditorUI", dependencies: ["EditorCore", "EditorEngine", "DesignSystem", "DocumentKit", "ExportFeature", "ModuleKit"]),
-        .testTarget(name: "EditorModulesTests", dependencies: ["EditorCore", "DocumentKit", "EditorEngine", "DesignSystem", "ExportFeature", "ModuleKit", "VoiceModule", "GestureModule"])
+        .testTarget(name: "EditorModulesTests", dependencies: ["EditorCore", "DocumentKit", "EditorEngine", "EditorUI", "DesignSystem", "ExportFeature", "ModuleKit", "VoiceModule", "GestureModule", "DiagramModule"])
     ]
 )

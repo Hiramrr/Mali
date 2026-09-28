@@ -2,7 +2,7 @@
 
 Especificación de la pieza futura que renderiza diagramas de flujo dentro de la vista de lectura, en lugar de mostrar el bloque de código crudo. Referencia: demo de Amelia Wattenberger (22-sep-2026, x.com/Wattenberger/status/2102425299237720493), donde un agente publica notas con diagramas nativos (nodos, rombos de decisión, aristas con etiquetas) y recorre la ruta paso a paso.
 
-Estado: especificación. Sin código en esta entrega. Todo el diseño cumple el marco actual: Swift 6, macOS 26 de mínimo, SwiftUI + AppKit, sin dependencias externas, sin red, sandbox.
+Estado (28-sep-2026): fase 1 implementada y parte de la 2 en el target `DiagramModule`. Ver «Estado de la implementación» al final. El resto del documento sigue siendo la especificación. Todo el diseño cumple el marco actual: Swift 6, macOS 26 de mínimo, SwiftUI + AppKit, sin dependencias externas, sin red, sandbox.
 
 ## 1. Alcance
 
@@ -163,3 +163,16 @@ Las pruebas de layout viven en `EditorModulesTests` con fixtures pequeños, igua
 2. **Pulido de enrutamiento**: canales laterales para saltos de capa y ciclos, separación de aristas duplicadas, texto truncado con `…`.
 3. **Paso animado** (§7) y ampliación con clic.
 4. **Opcional**: subconjunto Mermaid (`flowchart TD/LR`) traducido a `DiagramGraph` en el parser, para poder pegar lo que generan otros agentes. Solo si el DSL propio se queda corto; no antes.
+
+## Estado de la implementación
+
+Hecho:
+
+- `MarkdownLine.Kind.fence(info:)` conserva la info string. `readingText` dibuja los bloques ` ```diagram ` y degrada a código si el parser falla.
+- `DiagramParser` (§2): formas, escapes, ids implícitos y repetidos, `direction TB|TD|LR`, comentarios `#` y cadenas `a -> b -> c`. Además de `-- texto -->` admite `-->`, `-- texto ->` y `-->|texto|` (estilo Mermaid). Topes: 200 líneas, 60 nodos y 120 aristas; por encima, código.
+- `DiagramLayout` (§4): ciclos por DFS, rango por camino más largo, nodos virtuales en las aristas que saltan capas (así ninguna atraviesa un nodo), barridos de barycenter conservando el orden con menos cruces, coordenadas con separación mínima y un puerto propio por arista en cada lado del nodo, también en las de ida y vuelta.
+- `DiagramRenderer` (§5): dibuja con AppKit en un `NSBitmapImageRep` a 2× y lo adjunta como `NSTextAttachment` de imagen. Se eligió imagen en lugar de `NSTextAttachmentViewProvider` + `Canvas` para que la misma pieza sirva en lectura, PDF y Word. Colores del `WritingStyle` en pantalla y negro sobre blanco al imprimir.
+- Accesibilidad (§6.4): la imagen lleva `accessibilityDescription` generada desde el grafo.
+- PDF: `PrintDocument` no corta imágenes ni diagramas entre páginas. Al imprimir, el diagrama se escala para caber en una página.
+
+Pendiente: separación de aristas duplicadas con la misma dupla (§4.6), clic para ampliar y paso animado (§7), subconjunto Mermaid completo (§10.4). Sin prueba manual con VoiceOver.

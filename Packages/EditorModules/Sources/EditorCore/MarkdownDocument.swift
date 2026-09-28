@@ -1,5 +1,77 @@
 import Foundation
 
+public struct MarkdownImage: Equatable, Sendable {
+    private static let expression = try! NSRegularExpression(pattern: #"^!\[([^\]]*)\]\(([^\s)]+)(?: "width=([0-9]+);align=(left|center|right)")?\)$"#)
+    public enum Alignment: String, CaseIterable, Sendable { case left, center, right }
+    public let alt: String
+    public let path: String
+    public let width: Int
+    public let alignment: Alignment
+
+    public init?(line: String) {
+        guard line.hasPrefix("![") else { return nil }
+        guard let result = Self.expression.firstMatch(in: line, range: NSRange(line.startIndex..., in: line)),
+              result.range.length == (line as NSString).length,
+              let altRange = Range(result.range(at: 1), in: line),
+              let pathRange = Range(result.range(at: 2), in: line) else { return nil }
+        let path = String(line[pathRange])
+        guard !path.hasPrefix("/"), !path.contains("://"), !path.split(separator: "/").contains("..") else { return nil }
+        self.alt = String(line[altRange])
+        self.path = path
+        if let range = Range(result.range(at: 3), in: line), let value = Int(line[range]) {
+            width = min(1200, max(80, value))
+        } else {
+            width = 480
+        }
+        if let range = Range(result.range(at: 4), in: line) {
+            alignment = Alignment(rawValue: String(line[range])) ?? .left
+        } else {
+            alignment = .left
+        }
+    }
+
+    public init(alt: String, path: String, width: Int = 480, alignment: Alignment = .left) {
+        self.alt = alt.replacingOccurrences(of: "]", with: "")
+        self.path = path
+        self.width = min(1200, max(80, width))
+        self.alignment = alignment
+    }
+
+    public var markdown: String { "![\(alt)](\(path) \"width=\(width);align=\(alignment.rawValue)\")" }
+
+    public func fileURL(relativeTo documentURL: URL) -> URL? {
+        guard let decoded = path.removingPercentEncoding else { return nil }
+        let folder = documentURL.deletingLastPathComponent().standardizedFileURL
+        let url = folder.appendingPathComponent(decoded).standardizedFileURL
+        guard url.path.hasPrefix(folder.path + "/") else { return nil }
+        return url
+    }
+}
+
+@MainActor public enum DocumentImageAccess {
+    // ponytail: conserva el acceso hasta cerrar la app; liberar por documento si se editan cientos de carpetas por sesión.
+    private static var activeFolders: [String: URL] = [:]
+
+    public static func start(for documentURL: URL) {
+        let path = documentURL.deletingLastPathComponent().resolvingSymlinksInPath().path
+        guard activeFolders[path] == nil,
+              let bookmark = UserDefaults.standard.data(forKey: "image-folder:" + path) else { return }
+        var stale = false
+        guard let folder = try? URL(resolvingBookmarkData: bookmark, options: .withSecurityScope,
+                                    relativeTo: nil, bookmarkDataIsStale: &stale),
+              folder.startAccessingSecurityScopedResource() else { return }
+        activeFolders[path] = folder
+    }
+
+    public static func remember(_ folder: URL, for documentURL: URL) throws {
+        let path = documentURL.deletingLastPathComponent().resolvingSymlinksInPath().path
+        guard folder.resolvingSymlinksInPath().path == path else { throw CocoaError(.fileReadNoPermission) }
+        let bookmark = try folder.bookmarkData(options: .withSecurityScope, includingResourceValuesForKeys: nil, relativeTo: nil)
+        UserDefaults.standard.set(bookmark, forKey: "image-folder:" + path)
+        start(for: documentURL)
+    }
+}
+
 public struct MarkdownLine: Sendable, Equatable {
     public enum Kind: Sendable, Equatable {
         case text
@@ -9,7 +81,12 @@ public struct MarkdownLine: Sendable, Equatable {
         case orderedList(number: Int)
         case taskList(checked: Bool, number: Int?)
         case code
-        case fence
+        /// Valla de código. `info` es el texto tras la apertura (`diagram`, `swift`…); vacío en el cierre.
+        case fence(info: String)
+        /// Fila de tabla GFM; `header` marca la primera.
+        case tableRow(header: Bool)
+        /// Fila de separación de una tabla (`| --- | :-: |`).
+        case tableDelimiter
         case rule
         case hidden
     }
@@ -25,6 +102,56 @@ public struct MarkdownLine: Sendable, Equatable {
         self.prefixLength = prefixLength
         self.trailingLength = trailingLength
         self.kind = kind
+    }
+
+    func with(kind: Kind) -> MarkdownLine {
+        MarkdownLine(range: range, content: content, prefixLength: prefixLength, trailingLength: trailingLength, kind: kind)
+    }
+}
+
+/// Celdas y alineación de tablas GFM. Solo texto: el render vive en EditorEngine.
+public enum MarkdownTable {
+    public enum Alignment: Sendable, Equatable { case natural, left, center, right }
+
+    /// Celdas de una fila, sin las barras de los extremos. `\|` es una barra literal.
+    public static func cells(in line: String) -> [String] {
+        var body = line.trimmingCharacters(in: .whitespacesAndNewlines)
+        if body.hasPrefix("|") { body.removeFirst() }
+        if body.hasSuffix("|"), !body.hasSuffix("\\|") { body.removeLast() }
+        var cells: [String] = []
+        var current = ""
+        var escaped = false
+        for character in body {
+            if escaped {
+                if character != "|" { current.append("\\") }
+                current.append(character)
+                escaped = false
+            } else if character == "\\" {
+                escaped = true
+            } else if character == "|" {
+                cells.append(current.trimmingCharacters(in: .whitespaces))
+                current = ""
+            } else {
+                current.append(character)
+            }
+        }
+        if escaped { current.append("\\") }
+        cells.append(current.trimmingCharacters(in: .whitespaces))
+        return cells
+    }
+
+    /// Alineación de cada columna, o `nil` si la línea no es una fila de separación.
+    public static func alignments(delimiter line: String) -> [Alignment]? {
+        let cells = cells(in: line)
+        var result: [Alignment] = []
+        for cell in cells {
+            let left = cell.hasPrefix(":")
+            let right = cell.hasSuffix(":") && cell.count > 1
+            let dashes = cell.dropFirst(left ? 1 : 0).dropLast(right ? 1 : 0)
+            guard !dashes.isEmpty, dashes.allSatisfy({ $0 == "-" }) else { return nil }
+            result.append(left && right ? .center : right ? .right : left ? .left : .natural)
+        }
+        return result
     }
 }
 
@@ -69,7 +196,7 @@ public struct MarkdownDocument: Sendable {
                 let count = stripped.prefix(while: { $0 == marker }).count
                 if marker == current.0, count >= current.1,
                    stripped.dropFirst(count).trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-                    kind = .fence
+                    kind = .fence(info: "")
                     prefixChars = indentChars + count
                     content = String(raw.dropFirst(min(prefixChars, raw.count)))
                     fence = nil
@@ -82,10 +209,10 @@ public struct MarkdownDocument: Sendable {
                 if fenceOpen.marker == "`", stripped.dropFirst(fenceOpen.count).contains("`") {
                     kind = .text
                 } else {
-                    kind = .fence
                     fence = (fenceOpen.marker, fenceOpen.count)
                     prefixChars = indentChars + fenceOpen.count
                     content = String(raw.dropFirst(min(prefixChars, raw.count)))
+                    kind = .fence(info: content.trimmingCharacters(in: .whitespaces))
                 }
             } else if let heading = Self.atxHeading(raw: raw, indentChars: indentChars, stripped: stripped) {
                 kind = .heading(heading.level)
@@ -124,6 +251,28 @@ public struct MarkdownDocument: Sendable {
                 kind: kind
             ))
             offset += text[enclosing].utf16.count
+        }
+
+        // Tablas GFM: cabecera con `|` seguida de una fila de separación con el mismo número de celdas.
+        var row = 0
+        while row + 1 < parsed.count {
+            let header = parsed[row]
+            let delimiter = parsed[row + 1]
+            guard header.kind == .text, header.content.contains("|"),
+                  delimiter.kind == .text || delimiter.kind == .rule,
+                  let alignments = MarkdownTable.alignments(delimiter: delimiter.content),
+                  alignments.count == MarkdownTable.cells(in: header.content).count else {
+                row += 1
+                continue
+            }
+            parsed[row] = header.with(kind: .tableRow(header: true))
+            parsed[row + 1] = delimiter.with(kind: .tableDelimiter)
+            row += 2
+            while row < parsed.count, parsed[row].kind == .text,
+                  !parsed[row].content.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                parsed[row] = parsed[row].with(kind: .tableRow(header: false))
+                row += 1
+            }
         }
 
         // Segunda pasada: títulos setext (`===` / `---` bajo un párrafo).
@@ -367,5 +516,15 @@ public struct MarkdownDocument: Sendable {
             tail = String(tail.dropFirst())
         }
         return (middle == "x" || middle == "X", basePrefix + consumed)
+    }
+}
+
+public extension MarkdownLine.Kind {
+    /// Líneas cuyo texto fuente se muestra tal cual en edición (código y tablas).
+    var keepsSource: Bool {
+        switch self {
+        case .code, .fence, .hidden, .tableRow, .tableDelimiter: true
+        default: false
+        }
     }
 }

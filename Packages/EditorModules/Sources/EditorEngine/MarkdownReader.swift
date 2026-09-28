@@ -6,9 +6,11 @@ import DesignSystem
 public struct MarkdownReader: NSViewRepresentable {
     public let text: String
     public let style: WritingStyle
-    public init(text: String, style: WritingStyle) {
+    public let documentURL: URL?
+    public init(text: String, style: WritingStyle, documentURL: URL? = nil) {
         self.text = text
         self.style = style
+        self.documentURL = documentURL
     }
     public func makeCoordinator() -> Coordinator { Coordinator() }
     public func makeNSView(context: Context) -> NSScrollView {
@@ -37,14 +39,21 @@ public struct MarkdownReader: NSViewRepresentable {
         view.backgroundColor = style.effectiveBackgroundColor
         view.textColor = style.effectiveTextColor
         view.insertionPointColor = style.effectiveTextColor
-        guard context.coordinator.text != text || context.coordinator.style != style else { return }
+        guard context.coordinator.text != text || context.coordinator.style != style || context.coordinator.documentURL != documentURL else { return }
         context.coordinator.text = text
         context.coordinator.style = style
-        view.textStorage?.setAttributedString(MarkdownAppearance.readingText(text, document: MarkdownDocument(text), style: style))
+        context.coordinator.documentURL = documentURL
+        let document = MarkdownDocument(text)
+        // TextKit 2 no dibuja NSTextTable: con tablas, la vista de lectura (solo lectura) pasa a TextKit 1.
+        if view.textLayoutManager != nil, document.lines.contains(where: { $0.kind == .tableDelimiter }) {
+            _ = view.layoutManager
+        }
+        view.textStorage?.setAttributedString(MarkdownAppearance.readingText(text, document: document, style: style, documentURL: documentURL))
     }
     @MainActor public final class Coordinator {
         var text: String?
         var style: WritingStyle?
+        var documentURL: URL?
     }
 }
 

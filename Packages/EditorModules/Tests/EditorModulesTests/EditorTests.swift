@@ -87,7 +87,7 @@ final class MarkdownExperienceTests: XCTestCase {
         let document = MarkdownDocument(source)
         XCTAssertEqual(document.headings.map(\.title), ["Café 🐈", "Fin"])
         XCTAssertEqual(document.headings.last?.offset, (source as NSString).range(of: "## Fin").location)
-        XCTAssertEqual(document.lines.filter { $0.kind == .fence }.count, 2)
+        XCTAssertEqual(document.lines.map(\.kind).filter { if case .fence = $0 { true } else { false } }, [.fence(info: "swift"), .fence(info: "")])
         XCTAssertEqual(document.statistics.characters, source.count)
         XCTAssertGreaterThan(document.statistics.words, 0)
         XCTAssertEqual(MarkdownDocument("").statistics.words, 0)
