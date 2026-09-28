@@ -663,6 +663,14 @@ final class VoiceModuleTests: XCTestCase {
         XCTAssertTrue(received.isEmpty)
     }
 
+    @MainActor func testOpenByNameRequiresUniqueMatch() {
+        let acta = URL(fileURLWithPath: "/tmp/acta vieja.md")
+        let other = URL(fileURLWithPath: "/tmp/notas.md")
+        XCTAssertEqual(EditorScreen.matchVoiceDocument("el acta vieja", in: [acta, other]), acta)
+        XCTAssertNil(EditorScreen.matchVoiceDocument("acta", in: [acta, URL(fileURLWithPath: "/tmp/acta nueva.md")]))
+        XCTAssertNil(EditorScreen.matchVoiceDocument("desconocido", in: [acta, other]))
+    }
+
     @MainActor func testSilenceDoesNotInsert() async throws {
         let bus = EditorCommandBus()
         let mock = MockSpeechRecognizer()

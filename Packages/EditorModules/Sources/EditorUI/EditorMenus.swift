@@ -58,7 +58,7 @@ public struct EditorMenus: Commands {
         CommandGroup(replacing: .printItem) {
             Button("Imprimir o guardar PDF…") {
                 guard let view = session?.textView else { return }
-                PrintDocument.run(text: view.string, title: title ?? "Sin título", window: view.window)
+                PrintDocument.run(text: view.string, title: title ?? "Sin título", window: view.window, documentURL: NSDocumentController.shared.currentDocument?.fileURL)
             }.keyboardShortcut("p").disabled(session == nil)
         }
     }

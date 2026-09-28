@@ -65,6 +65,14 @@ final class MarkdownTableTests: XCTestCase {
         XCTAssertNil(try readerView("| a | b |\n| - | - |\n| 1 | 2 |\n").textLayoutManager)
         XCTAssertNotNil(try readerView("Sin tablas").textLayoutManager)
     }
+
+    @MainActor func testWordExportKeepsTableCells() throws {
+        let text = "| Nombre | Precio |\n| --- | --- |\n| Café | 2 |\n"
+        let word = try XCTUnwrap(DocumentExport.data(format: .word, text: text, title: "Tabla", richText: nil))
+        let read = try NSAttributedString(data: word, options: [.documentType: NSAttributedString.DocumentType.officeOpenXML], documentAttributes: nil)
+        XCTAssertTrue(read.string.contains("Café"))
+        XCTAssertFalse(read.string.contains("| Café"))
+    }
 }
 
 final class DiagramParserTests: XCTestCase {
