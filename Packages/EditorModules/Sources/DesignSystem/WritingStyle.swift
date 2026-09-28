@@ -425,14 +425,34 @@ public extension WritingStyle {
             darkTextHex: "#EDE4D3", darkBackgroundHex: "#1F1B15", darkAccentHex: "#C9A86A"
         ),
         WritingThemePreset(
+            id: "jasmine", name: "Jazmín",
+            lightTextHex: "#2D3228", lightBackgroundHex: "#FBF9EA", lightAccentHex: "#63733B",
+            darkTextHex: "#F1EFD9", darkBackgroundHex: "#252A22", darkAccentHex: "#C4D486"
+        ),
+        WritingThemePreset(
             id: "sepia", name: "Sepia",
             lightTextHex: "#433422", lightBackgroundHex: "#F1E9D2", lightAccentHex: "#8A6D3B",
             darkTextHex: "#E5D6B8", darkBackgroundHex: "#241C12", darkAccentHex: "#C9A86A"
         ),
         WritingThemePreset(
-            id: "night", name: "Noche",
-            lightTextHex: "#23262B", lightBackgroundHex: "#EDEFF3", lightAccentHex: "#0A84FF",
-            darkTextHex: "#E6E6E6", darkBackgroundHex: "#1E1E1E", darkAccentHex: "#0A84FF"
+            id: "terracotta", name: "Terracota",
+            lightTextHex: "#3A2A23", lightBackgroundHex: "#FAF1E9", lightAccentHex: "#9A4B30",
+            darkTextHex: "#F1E3D7", darkBackgroundHex: "#2B211D", darkAccentHex: "#E29B7D"
+        ),
+        WritingThemePreset(
+            id: "forest", name: "Bosque",
+            lightTextHex: "#1E2B24", lightBackgroundHex: "#E9EFE8", lightAccentHex: "#3E7D4E",
+            darkTextHex: "#E8EDE6", darkBackgroundHex: "#1A2620", darkAccentHex: "#7FB685"
+        ),
+        WritingThemePreset(
+            id: "coast", name: "Costa",
+            lightTextHex: "#1F3538", lightBackgroundHex: "#EDF5F4", lightAccentHex: "#286B72",
+            darkTextHex: "#DDEDEF", darkBackgroundHex: "#17292D", darkAccentHex: "#81C4CC"
+        ),
+        WritingThemePreset(
+            id: "lavender", name: "Lavanda",
+            lightTextHex: "#342B43", lightBackgroundHex: "#F5F1F8", lightAccentHex: "#6B4F95",
+            darkTextHex: "#EDE6F4", darkBackgroundHex: "#241D30", darkAccentHex: "#BCA2DF"
         ),
         WritingThemePreset(
             id: "graphite", name: "Grafito",
@@ -440,9 +460,9 @@ public extension WritingStyle {
             darkTextHex: "#D7DCE2", darkBackgroundHex: "#2B2F36", darkAccentHex: "#64B5F6"
         ),
         WritingThemePreset(
-            id: "forest", name: "Bosque",
-            lightTextHex: "#1E2B24", lightBackgroundHex: "#E9EFE8", lightAccentHex: "#3E7D4E",
-            darkTextHex: "#E8EDE6", darkBackgroundHex: "#1A2620", darkAccentHex: "#7FB685"
+            id: "night", name: "Noche",
+            lightTextHex: "#23262B", lightBackgroundHex: "#EDEFF3", lightAccentHex: "#0A84FF",
+            darkTextHex: "#E6E6E6", darkBackgroundHex: "#1E1E1E", darkAccentHex: "#0A84FF"
         ),
     ]
 }

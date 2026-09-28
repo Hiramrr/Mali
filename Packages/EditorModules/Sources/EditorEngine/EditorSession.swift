@@ -12,6 +12,7 @@ public final class EditorSession {
     public private(set) var headings: [DocumentHeading] = []
     public private(set) var statistics = DocumentStatistics()
     public private(set) var selectedCharacters = 0
+    public private(set) var selectedWords = 0
     public private(set) var cursorOffset = 0
     public private(set) var analysisRevision = 0
     @ObservationIgnored public weak var textView: NSTextView?
@@ -55,7 +56,14 @@ public final class EditorSession {
     public func selectionChanged() {
         guard let view = textView else { return }
         cursorOffset = view.selectedRange().location
-        selectedCharacters = view.selectedRange().length == 0 ? 0 : (view.string as NSString).substring(with: view.selectedRange()).count
+        let range = view.selectedRange()
+        let selectedText = range.length == 0 ? "" : (view.string as NSString).substring(with: range)
+        selectedCharacters = selectedText.count
+        var words = 0
+        selectedText.enumerateSubstrings(in: selectedText.startIndex..., options: [.byWords, .substringNotRequired]) { _, _, _, _ in
+            words += 1
+        }
+        selectedWords = words
         (view as? WritingTextView)?.updateParagraphHighlight()
     }
 

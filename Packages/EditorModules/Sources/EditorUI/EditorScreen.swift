@@ -59,6 +59,7 @@ public struct EditorScreen: View {
     private let onGestureDocument: ((String, NSRange) -> Void)?
     @State private var session = EditorSession()
     @State private var showSidebar = true
+    @State private var showOutline = false
     @State private var showHome: Bool
     @State private var hasAppeared = false
     @State private var launchHome: Bool
@@ -358,8 +359,10 @@ public struct EditorScreen: View {
                 home
                     .frame(minWidth: 560, maxWidth: .infinity, maxHeight: .infinity)
             } else {
-                documentOutline
-                    .frame(minWidth: 230, idealWidth: 270, maxWidth: 340)
+                if showOutline && !session.focusMode && !session.headings.isEmpty {
+                    documentOutline
+                        .frame(minWidth: 230, idealWidth: 270, maxWidth: 340)
+                }
                 writingCanvas
                     .frame(minWidth: 360, maxWidth: .infinity, maxHeight: .infinity)
                     .background(Color(nsColor: style.effectiveBackgroundColor))
@@ -468,7 +471,9 @@ public struct EditorScreen: View {
                 if statistics && !session.focusMode {
                     HStack {
                         Spacer()
-                        Text("\(session.statistics.words.formatted()) palabras")
+                        Text(session.selectedCharacters > 0
+                             ? "\(session.selectedCharacters.formatted()) caracteres · \(session.selectedWords.formatted()) palabras seleccionadas"
+                             : "\(session.statistics.words.formatted()) palabras")
                             .font(.caption).foregroundStyle(Color(nsColor: style.secondaryTextColor)).monospacedDigit()
                     }.padding(.horizontal, 32).padding(.top, 16)
                 }
@@ -535,6 +540,14 @@ public struct EditorScreen: View {
                 .help("Mostrar u ocultar navegación · ⌃⌘S").accessibilityLabel("Mostrar u ocultar navegación")
                 .keyboardShortcut("s", modifiers: [.control, .command])
                 .disabled(session.focusMode)
+        }
+        if !isShowingHome && !session.focusMode && !session.headings.isEmpty {
+            ToolbarItem(placement: .navigation) {
+                Button { showOutline.toggle() } label: { Image(systemName: "list.bullet") }
+                    .help(showOutline ? "Ocultar índice · ⌥⌘1" : "Mostrar índice · ⌥⌘1")
+                    .accessibilityLabel(showOutline ? "Ocultar índice" : "Mostrar índice")
+                    .keyboardShortcut("1", modifiers: [.option, .command])
+            }
         }
         ToolbarItem(placement: .navigation) {
             Button { createDocument() } label: { Image(systemName: "plus") }
