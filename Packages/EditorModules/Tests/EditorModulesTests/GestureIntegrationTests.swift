@@ -8,7 +8,7 @@ import AppKit
 /// Flujo completo gesto → bus → sesión, sin cámara.
 final class GestureIntegrationTests: XCTestCase {
     @MainActor
-    private func makeHarness(text: String) -> (GestureModule, EditorSession, NSTextView, NSWindow, EditorCommandBus) {
+    private func makeHarness(text: String, lengthProvider: (any LengthProvider)? = nil) -> (GestureModule, EditorSession, NSTextView, NSWindow, EditorCommandBus) {
         let window = NSWindow(contentRect: NSRect(x: 0, y: 0, width: 500, height: 400),
                               styleMask: [.titled], backing: .buffered, defer: false)
         let view = NSTextView(usingTextLayoutManager: true)
@@ -21,7 +21,7 @@ final class GestureIntegrationTests: XCTestCase {
         session.textView = view
         session.onPreviewCommitted = { _ in }
         let bus = EditorCommandBus()
-        let module = GestureModule()
+        let module = GestureModule(lengthProvider: lengthProvider)
         return (module, session, view, window, bus)
     }
 
@@ -94,7 +94,7 @@ final class GestureIntegrationTests: XCTestCase {
 
     @MainActor func testManualLengthSessionEndToEnd() async throws {
         let paragraph = "Primera oración completa. Segunda oración con desarrollo importante y metodología clara."
-        let (module, session, view, window, bus) = makeHarness(text: paragraph)
+        let (module, session, view, window, bus) = makeHarness(text: paragraph, lengthProvider: StubLengthProvider())
         defer { session.stop(); window.orderOut(nil) }
         try await module.start(context: EditorModuleContext(commandBus: bus))
         let consumer = Task { @MainActor in
@@ -110,11 +110,29 @@ final class GestureIntegrationTests: XCTestCase {
         await pump()
         XCTAssertTrue(module.hasLengthSession, "mensaje: \(module.message)")
         XCTAssertEqual(module.lengthOptions.count, 3)
-        await module.commitLengthSession(at: 0)
+        await module.commitLengthSession(at: 2)
         await pump()
         XCTAssertFalse(module.hasLengthSession)
-        XCTAssertNotEqual(view.string, paragraph)
+        XCTAssertEqual(view.string, StubLengthProvider().results[1])
         XCTAssertNotNil(module.lengthToast)
+    }
+
+    @MainActor func testFailedLengthGenerationKeepsParagraph() async throws {
+        let paragraph = "Primera oración completa. Segunda oración con desarrollo importante y metodología clara."
+        let (module, session, view, window, bus) = makeHarness(text: paragraph, lengthProvider: StubLengthProvider(results: []))
+        defer { session.stop(); window.orderOut(nil) }
+        try await module.start(context: EditorModuleContext(commandBus: bus))
+        let consumer = Task { @MainActor in
+            for await command in await bus.commands() { session.send(command) }
+        }
+        defer { consumer.cancel() }
+        await pump()
+        module.updateDocument(text: paragraph, selection: NSRange(location: 5, length: 0))
+        await module.startLengthSessionManually()
+        await pump()
+        XCTAssertFalse(module.hasLengthSession)
+        XCTAssertEqual(view.string, paragraph)
+        XCTAssertFalse(module.lengthToastCanUndo)
     }
 
     @MainActor func testUnknownWordOpensNoSession() async {
@@ -134,6 +152,19 @@ final class GestureIntegrationTests: XCTestCase {
         XCTAssertTrue(module.hasPinchSession)
         XCTAssertGreaterThan(module.sessionOptions.count, 1)
         XCTAssertEqual(module.sessionOptions.first, "mundo")
+    }
+
+    @MainActor func testPinchOnImageOpensNoSynonyms() async {
+        // El markdown de imagen no son palabras: pinzar sobre `![...]` no debe
+        // abrir sinónimos (antes ofrecía "foto"/"width"/"align" y al confirmar rompía la imagen).
+        let image = "![foto](images/foto.png \"width=320;align=center\")"
+        for location in [4, 15, 30, 40] {
+            let module = GestureModule(synonymProvider: LocalSynonymProvider())
+            module.updateDocument(text: image, selection: NSRange(location: location, length: 0))
+            await module.startPinchSessionManually()
+            XCTAssertFalse(module.hasPinchSession, "loc \(location) abrió sinónimos en imagen")
+            XCTAssertTrue(module.message.lowercased().contains("imagen"), "loc \(location): \(module.message)")
+        }
     }
 
     // MARK: - Gesto a dos manos (detecciones sintéticas, sin cámara)
@@ -163,9 +194,9 @@ final class GestureIntegrationTests: XCTestCase {
 
     @MainActor func testTwoHandLengthFlow() async throws {
         let paragraph = "Primera oración completa. Segunda oración con desarrollo importante y metodología clara."
-        let short = GestureSynonyms.lengthVariants(for: paragraph)[0]
+        let short = StubLengthProvider().results[0]
         XCTAssertNotEqual(short, paragraph)
-        let (module, session, view, window, bus) = makeHarness(text: paragraph)
+        let (module, session, view, window, bus) = makeHarness(text: paragraph, lengthProvider: StubLengthProvider())
         defer { session.stop(); window.orderOut(nil) }
         try await module.start(context: EditorModuleContext(commandBus: bus))
         let consumer = Task { @MainActor in
@@ -187,6 +218,7 @@ final class GestureIntegrationTests: XCTestCase {
         await module.handleLengthVision(twoHands(span: 0.75), at: 0.15)
         await pump()
         XCTAssertEqual(module.lengthIndex, LengthLevel.largo.rawValue)
+        XCTAssertEqual(view.string, StubLengthProvider().results[1])
         // Acercar reduce un nivel por frame hasta la versión corta, que previsualiza.
         await module.handleLengthVision(twoHands(span: 0.30), at: 0.20)
         await module.handleLengthVision(twoHands(span: 0.22), at: 0.25)
@@ -208,6 +240,177 @@ final class GestureIntegrationTests: XCTestCase {
         session.send(.undo)
         XCTAssertEqual(view.string, paragraph)
     }
+
+    @MainActor func testTwoHandImageSizeAndUndo() async throws {
+        let image = "![foto](images/foto.png \"width=320;align=center\")"
+        let (module, session, view, window, bus) = makeHarness(text: image)
+        defer { session.stop(); window.orderOut(nil) }
+        try await module.start(context: EditorModuleContext(commandBus: bus))
+        let consumer = Task { @MainActor in
+            for await command in await bus.commands() { session.send(command) }
+        }
+        defer { consumer.cancel() }
+        await pump()
+        module.updateDocument(text: image, selection: NSRange(location: 4, length: 0))
+        await module.handleLengthVision(twoHands(span: 0.40), at: 0)
+        await module.handleLengthVision(twoHands(span: 0.41), at: 0.05)
+        await module.handleLengthVision(twoHands(span: 0.42), at: 0.10)
+        XCTAssertTrue(module.hasImageSizeSession)
+        XCTAssertFalse(module.hasLengthSession)
+        await module.handleLengthVision(twoHands(span: 0.75), at: 0.15)
+        await pump()
+        XCTAssertGreaterThan(module.imageWidth, 320)
+        XCTAssertEqual(MarkdownImage(line: view.string)?.width, module.imageWidth)
+        for step in 0..<GestureTuning.lengthCommitFrames {
+            await module.handleLengthVision(oneHand(), at: 0.20 + Double(step) * 0.05)
+        }
+        await pump()
+        XCTAssertFalse(module.hasImageSizeSession)
+        XCTAssertGreaterThan(MarkdownImage(line: view.string)?.width ?? 0, 320)
+        XCTAssertTrue(module.lengthToastCanUndo)
+        session.send(.undo)
+        XCTAssertEqual(view.string, image)
+    }
+
+    @MainActor func testFingerTargetsImageWithoutTextCursor() async throws {
+        let image = "![foto](images/foto.png \"width=320;align=center\")"
+        let text = "Texto\n" + image
+        let imageRange = (text as NSString).range(of: image)
+        let (module, session, view, window, bus) = makeHarness(text: text)
+        defer { session.stop(); window.orderOut(nil) }
+        try await module.start(context: EditorModuleContext(commandBus: bus))
+        let consumer = Task { @MainActor in
+            for await command in await bus.commands() { session.send(command) }
+        }
+        defer { consumer.cancel() }
+        await pump()
+        module.updateDocument(text: text, selection: NSRange(location: 2, length: 0))
+        module.imageHitTest = { point in
+            guard let point, (0.35...0.45).contains(point.x), (0.45...0.55).contains(point.y) else { return nil }
+            return imageRange
+        }
+        module.running = true
+        await module.handleVision(twoHands(span: 0.40), at: 0)
+        await module.handleVision(twoHands(span: 0.41), at: 0.05)
+        await module.handleVision(twoHands(span: 0.42), at: 0.10)
+        await pump()
+        XCTAssertTrue(module.isPointingAtImage)
+        XCTAssertNotNil(module.cursorPoint)
+        XCTAssertTrue(module.hasImageSizeSession)
+        XCTAssertEqual(view.selectedRange(), imageRange)
+    }
+
+    @MainActor func testManualImageSizeCancelRestoresOriginal() async throws {
+        let image = "![foto](images/foto.png)"
+        let (module, session, view, window, bus) = makeHarness(text: image)
+        defer { session.stop(); window.orderOut(nil) }
+        try await module.start(context: EditorModuleContext(commandBus: bus))
+        let consumer = Task { @MainActor in
+            for await command in await bus.commands() { session.send(command) }
+        }
+        defer { consumer.cancel() }
+        await pump()
+        module.updateDocument(text: image, selection: NSRange(location: 4, length: 0))
+        await module.startImageSizeSessionManually()
+        await module.setImageWidth(240)
+        await pump()
+        XCTAssertEqual(MarkdownImage(line: view.string)?.width, 240)
+        module.cancelImageSizeSession()
+        await pump()
+        XCTAssertEqual(view.string, image)
+    }
+
+    @MainActor func testCursorSelectsAndPinchMovesParagraph() async throws {
+        let text = "primer párrafo\nsegundo párrafo\ntercer párrafo"
+        let (module, session, view, window, bus) = makeHarness(text: text)
+        defer { session.stop(); window.orderOut(nil) }
+        try await module.start(context: EditorModuleContext(commandBus: bus))
+        let consumer = Task { @MainActor in
+            for await command in await bus.commands() { session.send(command) }
+        }
+        defer { consumer.cancel() }
+        await pump()
+        module.updateDocument(text: text, selection: NSRange(location: 0, length: 0))
+        let previousMode = module.navigateByParagraph
+        module.navigateByParagraph = true
+        defer { module.navigateByParagraph = previousMode }
+        module.textHitTest = { point in
+            point.x > 0.6 ? 1 : point.x > 0.4 ? 17 : 33
+        }
+        module.running = true
+        var hand = oneHand()
+        hand.x = 0.5
+        await module.handleVision(hand, at: 0)
+        await pump()
+        XCTAssertEqual((view.string as NSString).substring(with: view.selectedRange()), "segundo párrafo")
+        hand.pinch = true
+        hand.event = .changed
+        for frame in 0..<2 {
+            await module.handleVision(hand, at: 0.05 + Double(frame) * 0.05)
+        }
+        XCTAssertTrue(module.isDraggingParagraph)
+        hand.landmarks = validLandmarks(x: 0.7)
+        hand.x = 0.7
+        await module.handleVision(hand, at: 0.35)
+        await pump()
+        XCTAssertEqual((view.string as NSString).substring(with: view.selectedRange()), "tercer párrafo")
+        hand.pinch = false
+        for frame in 0..<3 {
+            await module.handleVision(hand, at: 0.4 + Double(frame) * 0.05)
+        }
+        await pump()
+        XCTAssertEqual(view.string, "primer párrafo\ntercer párrafo\nsegundo párrafo")
+        XCTAssertFalse(module.hasPinchSession)
+        XCTAssertFalse(module.isDraggingParagraph)
+        session.send(.undo)
+        XCTAssertEqual(view.string, text)
+        module.navigateByParagraph = false
+        module.textHitTest = { _ in 2 }
+        var pointing = oneHand()
+        pointing.x = 0.5
+        await module.handleVision(pointing, at: 0.6)
+        await pump()
+        XCTAssertEqual((view.string as NSString).substring(with: view.selectedRange()), "primer")
+    }
+
+    @MainActor func testPausingCancelsPreviewAndIgnoresHand() async throws {
+        let text = "mundo importante"
+        let (module, session, view, window, bus) = makeHarness(text: text)
+        defer { session.stop(); window.orderOut(nil) }
+        try await module.start(context: EditorModuleContext(commandBus: bus))
+        let consumer = Task { @MainActor in
+            for await command in await bus.commands() { session.send(command) }
+        }
+        defer { consumer.cancel() }
+        await pump()
+        module.updateDocument(text: text, selection: NSRange(location: 1, length: 0))
+        module.running = true
+        await module.startPinchSessionManually()
+        await pump()
+        XCTAssertTrue(session.isPreviewing)
+        await module.setGesturesPaused(true)
+        await pump()
+        XCTAssertFalse(module.hasPinchSession)
+        XCTAssertFalse(session.isPreviewing)
+        let selection = view.selectedRange()
+        var hand = oneHand()
+        hand.x = 0.9
+        await module.handleVision(hand, at: 0)
+        await pump()
+        XCTAssertEqual(view.selectedRange(), selection)
+        XCTAssertEqual(view.string, text)
+    }
+}
+
+private struct StubLengthProvider: LengthProvider {
+    let results: [String]
+    init(results: [String] = [
+        "Primera oración completa.",
+        "Primera oración completa. La segunda oración desarrolla la idea con una metodología clara e importante."
+    ]) { self.results = results }
+    var isAvailable: Bool { true }
+    var availabilityReason: String? { nil }
+    func variants(for paragraph: String) async -> [String] { results }
 }
 
 /// Doble sin modelo: devuelve lista fija sin Apple Intelligence.

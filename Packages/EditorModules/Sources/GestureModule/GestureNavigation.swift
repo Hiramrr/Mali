@@ -17,9 +17,10 @@ public struct WordNavigator: Sendable {
         ranges: [NSRange],
         selection: NSRange,
         referenceX: Double?,
-        handX: Double
+        handX: Double,
+        step: Double = GestureTuning.wordStep
     ) -> (select: NSRange, referenceX: Double)? {
-        guard !ranges.isEmpty, handX.isFinite, (0...1).contains(handX) else { return nil }
+        guard !ranges.isEmpty, handX.isFinite, (0...1).contains(handX), step > 0 else { return nil }
         let index = ranges.firstIndex(where: { NSLocationInRange(selection.location, $0) })
             ?? ranges.firstIndex(where: { $0.location >= selection.location })
             ?? (ranges.count - 1)

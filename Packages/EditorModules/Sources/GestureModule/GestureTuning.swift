@@ -26,6 +26,8 @@ public enum GestureTuning: Sendable {
     public static let optionStep = 0.05
     /// Paso horizontal para caminar la selección palabra por palabra.
     public static let wordStep = 0.07
+    /// Los párrafos requieren un movimiento más amplio que las palabras.
+    public static let paragraphStep = 0.16
     /// Frames seguidos de pinza antes de abrir la sesión (evita roces).
     public static let pinchStartFrames = 4
     /// Barrido lateral con pinza para deshacer/rehacer.

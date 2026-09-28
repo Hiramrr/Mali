@@ -98,6 +98,16 @@ final class GestureNavigationTests: XCTestCase {
                                           referenceX: first?.referenceX, handX: 0.5 + GestureTuning.wordStep + 0.01))
     }
 
+    func testWiderStepForParagraphs() {
+        XCTAssertNil(WordNavigator.update(ranges: ranges,
+                                          selection: ranges[0], referenceX: 0.5, handX: 0.6,
+                                          step: GestureTuning.paragraphStep))
+        let moved = WordNavigator.update(ranges: ranges,
+                                         selection: ranges[0], referenceX: 0.5, handX: 0.67,
+                                         step: GestureTuning.paragraphStep)
+        XCTAssertEqual(moved?.select, ranges[1])
+    }
+
     func testClampsAtEdges() {
         let out = WordNavigator.update(ranges: ranges,
                                        selection: NSRange(location: 11, length: 0),
@@ -147,12 +157,11 @@ final class GestureSynonymsTests: XCTestCase {
         XCTAssertEqual(alts.first, "zxq")
     }
 
-    func testLengthVariantsKeepOriginalInMiddle() {
+    func testLengthRejectsCopiedAndIncompleteVersions() {
         let paragraph = "Primera oración completa. Segunda oración con desarrollo importante y metodología clara."
-        let variants = GestureSynonyms.lengthVariants(for: paragraph)
-        XCTAssertEqual(variants.count, 3)
-        XCTAssertEqual(variants[1], paragraph)
-        XCTAssertEqual(variants[2], paragraph)
-        XCTAssertTrue(GestureSynonyms.isValidShort(variants[0], original: paragraph))
+        XCTAssertFalse(GestureSynonyms.isValidShort(paragraph, original: paragraph))
+        XCTAssertFalse(GestureSynonyms.isValidLong(paragraph, original: paragraph))
+        XCTAssertFalse(GestureSynonyms.isValidShort("Primera oración completa…", original: paragraph))
+        XCTAssertTrue(GestureSynonyms.isValidShort("Primera oración completa.", original: paragraph))
     }
 }

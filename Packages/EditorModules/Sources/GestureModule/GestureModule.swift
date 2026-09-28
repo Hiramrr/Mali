@@ -23,14 +23,13 @@ struct PinchSession: Sendable {
 /// versiones de longitud, acercar/separar cambia el preview en el
 /// documento, retirar una mano confirma.
 ///
-/// Las versiones son locales ([corta, original, original]): sin IA en este
-/// programa, la lista local es final y la tarjeta lo indica. Navegar entre
-/// ellas nunca espera a nada.
+/// Las versiones se generan en este Mac. Mientras llegan, el gesto espera
+/// sin aplicar texto incompleto.
 struct LengthSession: Sendable {
     let id: UUID
     let originalText: String
     let originalLocation: Int
-    /// Orden fijo: [corta, media (= original), larga (= original)].
+    /// Orden fijo: [corta, media (= original), larga].
     var alternatives: [String]
     var currentIndex: Int
     var referenceSpan: Double
@@ -38,15 +37,30 @@ struct LengthSession: Sendable {
     var option: String { alternatives[currentIndex] }
 }
 
+private struct ImageSizeSession {
+    let original: MarkdownImage
+    let originalText: String
+    let location: Int
+    var width: Int
+    var referenceSpan: Double
+
+    var markdown: String {
+        MarkdownImage(alt: original.alt, path: original.path, width: width,
+                      alignment: original.alignment).markdown
+    }
+}
+
 /// Entrada por gestos con la cámara local, como pieza extraíble.
 ///
-/// - Mano abierta + mover a los lados → la selección camina palabra por palabra.
+/// - El índice señala y selecciona la palabra o el párrafo bajo el cursor.
 /// - Pinza sobre una palabra → muestra sinónimos locales; mover elige, soltar confirma.
+/// - En modo párrafo, la pinza toma el párrafo; mover y soltar lo reordena.
 /// - Abrir la pinza o perder la mano → cancela y restaura la palabra.
 /// - Pinza + barrido lateral amplio → deshacer/rehacer (una vez por pinza).
 /// - Dos manos + acercar/separar → cambia la longitud del párrafo
-///   (corto/medio/largo locales); retirar UNA mano confirma, perder AMBAS
+///   (corto/medio/largo generados en el Mac); retirar UNA mano confirma, perder AMBAS
 ///   restaura (nunca se confirma a ciegas).
+/// - Si el cursor está sobre una imagen, el mismo gesto ajusta su ancho.
 ///
 /// El módulo nunca toca `NSTextView` ni el motor de texto:
 /// - Navegación y deshacer/rehacer viajan como `EditorCommand` por el bus
@@ -68,13 +82,29 @@ public final class GestureModule: EditorInputModule {
 
     public var running = false
     public var starting = false
+    public private(set) var paused = false
     public var message = "Cámara apagada"
     public var state = GestureState()
+    public var navigateByParagraph = UserDefaults.standard.bool(forKey: "editor.gestureParagraphNavigation") {
+        didSet {
+            navigationX = nil
+            if paragraphDragSource != nil { requiresRelease = true }
+            paragraphDragSource = nil
+            paragraphDropTarget = nil
+            UserDefaults.standard.set(navigateByParagraph, forKey: "editor.gestureParagraphNavigation")
+        }
+    }
 
     private var commandBus: EditorCommandBus?
+    @ObservationIgnored public var imageHitTest: ((CGPoint?) -> NSRange?)?
+    @ObservationIgnored public var textHitTest: ((CGPoint) -> Int?)?
+    public private(set) var cursorPoint: CGPoint?
+    private var pointedImageRange: NSRange?
+    public var isPointingAtImage: Bool { pointedImageRange != nil }
     /// Mejora de sinónimos con IA (on-device). Por defecto Foundation Models
     /// con fallback local; en pruebas se inyecta un doble sin modelo.
     private let synonymProvider: any SynonymProvider
+    private let lengthProvider: any LengthProvider
 
     // @Observable no admite `lazy`: inicialización explícita a demanda.
     // La cámara solo existe si el usuario la activa: sin la pieza (o sin
@@ -98,7 +128,12 @@ public final class GestureModule: EditorInputModule {
     private var cachedSelection = NSRange(location: 0, length: 0)
     private var rangedText = ""
     private var cachedWordRanges: [NSRange] = []
+    private var paragraphText = ""
+    private var cachedParagraphRanges: [NSRange] = []
     private var navigationX: Double?
+    private var paragraphDragSource: NSRange?
+    private var paragraphDropTarget: NSRange?
+    public var isDraggingParagraph: Bool { paragraphDragSource != nil }
 
     // Sesión de pinza. Interna para pruebas (@testable): simulan el avance
     // del preview sin cámara.
@@ -124,6 +159,11 @@ public final class GestureModule: EditorInputModule {
     /// La lista actual ya incluye sinónimos de IA (si no, locales).
     public private(set) var sessionUpgraded = false
     private var upgradeTask: Task<Void, Never>?
+    /// Caché de sinónimos de IA por palabra (minúsculas): reabrir la misma
+    /// palabra reusa al instante sin regenerar con el modelo.
+    /// Solo se guardan respuestas no vacías; los fallos no se cachean
+    /// para poder reintentar.
+    private var synonymCache: [String: [String]] = [:]
     /// Estado de la IA para la UI (panel y ajustes).
     public var synonymProviderAvailable: Bool { synonymProvider.isAvailable }
     public var synonymProviderReason: String? { synonymProvider.availabilityReason }
@@ -148,6 +188,17 @@ public final class GestureModule: EditorInputModule {
     // MARK: - Sesión a dos manos (longitud del párrafo)
 
     private var lengthSession: LengthSession?
+    private var imageSizeSession: ImageSizeSession?
+    private var imageManualControl = false
+    public var hasImageSizeSession: Bool { imageSizeSession != nil }
+    public var imageWidth: Int { imageSizeSession?.width ?? 0 }
+    public var isImageSizeManual: Bool { imageManualControl }
+    private var lengthTask: Task<Void, Never>?
+    public private(set) var lengthLoading = false
+    /// Caché de variantes por párrafo original: reabrir el mismo párrafo
+    /// (p. ej. tras Deshacer) no regenera con la IA, reusa al instante.
+    /// Clave: texto original; valor: [corta, larga].
+    private var lengthCache: [String: [String]] = [:]
     private var lengthLastSpan = 0.0
     /// Separación suavizada (media móvil exponencial). Congelada durante
     /// pérdidas de seguimiento: al volver, el re-anclaje excluye el salto.
@@ -167,7 +218,10 @@ public final class GestureModule: EditorInputModule {
 
     /// Lecturas para la tarjeta de longitud (observadas por SwiftUI).
     public var hasLengthSession: Bool { lengthSession != nil }
-    public var lengthOptions: [String] { lengthSession?.alternatives ?? [] }
+    public var lengthOptions: [String] {
+        guard let options = lengthSession?.alternatives else { return [] }
+        return lengthLoading ? ["Preparando versión corta…", options[1], "Preparando versión larga…"] : options
+    }
     public var lengthIndex: Int { lengthSession?.currentIndex ?? LengthLevel.medio.rawValue }
     public var lengthLabels: [String] { LengthLevel.allCases.map(\.label) }
     public var isLengthManual: Bool { lengthManualControl }
@@ -178,9 +232,11 @@ public final class GestureModule: EditorInputModule {
     /// Si el toast confirma un cambio real (con "Sin cambios" no hay nada que deshacer).
     public private(set) var lengthToastCanUndo = true
 
-    public init(synonymProvider: (any SynonymProvider)? = nil) {
+    public init(synonymProvider: (any SynonymProvider)? = nil,
+                lengthProvider: (any LengthProvider)? = nil) {
         // Sin inyección (producción): IA on-device si hay modelo, locales si no.
         self.synonymProvider = synonymProvider ?? FoundationModelsSynonymProvider()
+        self.lengthProvider = lengthProvider ?? FoundationModelsLengthProvider()
     }
 
     // MARK: - EditorInputModule
@@ -199,6 +255,11 @@ public final class GestureModule: EditorInputModule {
     /// La app empuja texto+selección (valores, sin vistas). Barato: los rangos
     /// de palabra se recalculan bajo demanda, no en cada pulsación.
     public func updateDocument(text: String, selection: NSRange) {
+        if paragraphDragSource != nil, text != cachedText {
+            paragraphDragSource = nil
+            paragraphDropTarget = nil
+            requiresRelease = true
+        }
         cachedText = text
         cachedSelection = selection
         guard commandBus != nil else { return }
@@ -212,6 +273,19 @@ public final class GestureModule: EditorInputModule {
             navigationX = nil
         }
         return cachedWordRanges
+    }
+
+    private func currentParagraphRanges() -> [NSRange] {
+        if cachedText != paragraphText {
+            paragraphText = cachedText
+            cachedParagraphRanges = []
+            let ns = cachedText as NSString
+            ns.enumerateSubstrings(in: NSRange(location: 0, length: ns.length), options: .byParagraphs) { _, range, _, _ in
+                if range.length > 0 { self.cachedParagraphRanges.append(range) }
+            }
+            navigationX = nil
+        }
+        return cachedParagraphRanges
     }
 
     private static func wordRanges(in text: String) -> [NSRange] {
@@ -243,6 +317,14 @@ public final class GestureModule: EditorInputModule {
                 cancelLengthSession()
             }
         }
+        if let s = imageSizeSession {
+            if !spanMatches(s.location, length: (s.originalText as NSString).length,
+                            text: s.originalText, in: ns)
+                && !spanMatches(s.location, length: (s.markdown as NSString).length,
+                                text: s.markdown, in: ns) {
+                cancelImageSizeSession()
+            }
+        }
     }
 
     private func spanMatches(_ location: Int, length: Int, text: String, in ns: NSString) -> Bool {
@@ -264,10 +346,13 @@ public final class GestureModule: EditorInputModule {
         do {
             _ = try await camera.start()
             running = true
+            paused = false
             navigationX = nil
             trackingLostAt = nil
             lastRawPinch = false
-            message = "Muestra tu mano: moverla elige palabra, la pinza muestra sinónimos."
+            message = navigateByParagraph
+                ? "Señala un párrafo y usa la pinza para moverlo."
+                : "Señala una palabra; la pinza muestra sinónimos."
             // Un único consumidor del AsyncStream durante toda la vida del
             // objeto: crearlo por arranque dividía la entrega de frames.
             ensureConsumer()
@@ -280,8 +365,14 @@ public final class GestureModule: EditorInputModule {
         // No se cancela el consumidor: aparcado sin frames, se reutiliza
         // al arrancar de nuevo.
         cancelPinchSession()
+        paragraphDragSource = nil
+        paragraphDropTarget = nil
+        cancelImageSizeSession()
+        cursorPoint = nil
+        pointedImageRange = imageHitTest?(nil)
         _camera?.stop()
         running = false
+        paused = false
         navigationX = nil
         trackingLostAt = nil
         lengthTrackingLostAt = nil
@@ -302,6 +393,33 @@ public final class GestureModule: EditorInputModule {
         calibrationMessage = nil
         state = GestureState()
         message = "Cámara apagada"
+    }
+
+    /// Detiene las acciones sin cerrar la cámara. Toda vista previa activa se
+    /// restaura antes de aceptar otro gesto.
+    public func setGesturesPaused(_ shouldPause: Bool) async {
+        guard running, paused != shouldPause else { return }
+        paused = shouldPause
+        if shouldPause {
+            paragraphDragSource = nil
+            paragraphDropTarget = nil
+            if pinchSession != nil { await cancelSession(reason: "gestos en pausa") }
+            if lengthSession != nil { await cancelLengthSession(reason: "gestos en pausa") }
+            if imageSizeSession != nil { await finishImageSizeSession(commit: false) }
+            calibration = nil
+            calibrationMessage = nil
+            cursorPoint = nil
+            pointedImageRange = imageHitTest?(nil)
+            navigationX = nil
+            pinchStreak = 0
+            lastRawPinch = false
+            undoSwipeAnchor = nil
+            undoSwipeFired = false
+            lengthTwoHandHits = []
+            requiresRelease = true
+            lengthRequiresRelease = true
+        }
+        message = shouldPause ? "Gestos en pausa. La cámara sigue encendida." : "Gestos activos. Muestra una mano para navegar."
     }
 
     private func ensureConsumer() {
@@ -404,9 +522,11 @@ public final class GestureModule: EditorInputModule {
 
     // MARK: - Visión (MainActor)
 
-    private func handleVision(_ vision: GestureState, at uptime: TimeInterval) async {
+    func handleVision(_ vision: GestureState, at uptime: TimeInterval) async {
         guard running else { return }
         state = vision
+        if paused { return }
+        updateFingerCursor(vision)
         // Calibrando: solo muestrear (la interacción queda congelada).
         if calibration != nil {
             sampleCalibration(vision, at: uptime)
@@ -414,12 +534,17 @@ public final class GestureModule: EditorInputModule {
         }
         // Sesión manual (botón): la cámara solo decora, no decide.
         // La tarjeta confirma con clic y cancela con ✕.
-        if pinchManualControl {
+        if pinchManualControl || imageManualControl {
             return
         }
         // Dos manos: el gesto de longitud tiene prioridad y suspende
         // la navegación y la pinza de una mano mientras está activo.
-        if lengthSession != nil || vision.hasTwoDistinctHands {
+        if lengthSession != nil || imageSizeSession != nil || vision.hasTwoDistinctHands {
+            if paragraphDragSource != nil {
+                paragraphDragSource = nil
+                paragraphDropTarget = nil
+                requiresRelease = true
+            }
             await handleLengthVision(vision, at: uptime)
             return
         }
@@ -430,6 +555,13 @@ public final class GestureModule: EditorInputModule {
             return
         }
         resolveTrackingGap(vision)
+        if pinchSession == nil, pointedImageRange != nil {
+            navigationX = nil
+            pinchStreak = 0
+            lastRawPinch = false
+            message = "Imagen bajo el dedo. Muestra la otra mano para cambiar su tamaño."
+            return
+        }
         // Antirrebote: la pinza efectiva exige 2 frames seguidos.
         // Solo retrasa el cierre (40 ms); la apertura sigue instantánea.
         let rawPinch = vision.pinch
@@ -439,7 +571,10 @@ public final class GestureModule: EditorInputModule {
             openStreak = 0
             navigationX = nil
             pinchStreak += 1
-            if pinchSession == nil {
+            if navigateByParagraph {
+                if paragraphDragSource == nil { await tryStartSession(vision) }
+                if paragraphDragSource != nil { await updateParagraphDropTarget() }
+            } else if pinchSession == nil {
                 // Pinza + barrido lateral amplio = deshacer/rehacer.
                 // Se evalúa antes de abrir sinónimos: pinza quieta abre la
                 // tarjeta, pinza que barre ejecuta (una vez por pinza; abrir
@@ -475,7 +610,9 @@ public final class GestureModule: EditorInputModule {
             requiresRelease = false
             undoSwipeAnchor = nil
             undoSwipeFired = false
-            if pinchSession != nil {
+            if paragraphDragSource != nil {
+                await finishParagraphDrag()
+            } else if pinchSession != nil {
                 // Soltar confirma: al instante si es decidido, o tras
                 // 3 frames sostenidos (un parpadeo no confirma solo).
                 let clearRelease = vision.event == .ended
@@ -486,6 +623,65 @@ public final class GestureModule: EditorInputModule {
                 await navigateWords(vision)
             }
         }
+    }
+
+    private func updateFingerCursor(_ vision: GestureState) {
+        guard calibration == nil else {
+            cursorPoint = nil
+            pointedImageRange = imageHitTest?(nil)
+            return
+        }
+        cursorPoint = nil
+        pointedImageRange = nil
+        for hand in [vision.landmarks, vision.secondaryLandmarks].compactMap({ $0 }) where hand.isValid {
+            let point = CGPoint(x: 1 - hand.index.x, y: 1 - hand.index.y)
+            let hit = imageHitTest?(point)
+            if cursorPoint == nil || hit != nil {
+                cursorPoint = point
+                pointedImageRange = hit
+            }
+            if hit != nil { return }
+        }
+        if cursorPoint == nil { pointedImageRange = imageHitTest?(nil) }
+    }
+
+    private func rangeUnderCursor(_ ranges: [NSRange]) -> NSRange? {
+        guard let point = cursorPoint, let location = textHitTest?(point) else { return nil }
+        return ranges.first(where: { NSLocationInRange(location, $0) })
+            ?? ranges.last(where: { NSMaxRange($0) <= location })
+            ?? ranges.first
+    }
+
+    private func updateParagraphDropTarget() async {
+        let target = rangeUnderCursor(currentParagraphRanges())
+        guard target != paragraphDropTarget else { return }
+        paragraphDropTarget = target
+        if let target {
+            await send(.selectRange(TextRange(location: target.location, length: target.length)))
+            message = target == paragraphDragSource
+                ? "Párrafo en su lugar."
+                : "Suelta para mover el párrafo aquí."
+        }
+    }
+
+    private func finishParagraphDrag() async {
+        await updateParagraphDropTarget()
+        defer {
+            paragraphDragSource = nil
+            paragraphDropTarget = nil
+            requiresRelease = true
+        }
+        guard let source = paragraphDragSource,
+              let target = paragraphDropTarget, target != source else {
+            if let source = paragraphDragSource {
+                await send(.selectRange(TextRange(location: source.location, length: source.length)))
+            }
+            message = "Párrafo en su lugar."
+            return
+        }
+        await send(.moveParagraph(from: TextRange(location: source.location, length: source.length),
+                                  to: TextRange(location: target.location, length: target.length)))
+        message = "Párrafo movido."
     }
 
     private func handleVisionError(_ text: String) async {
@@ -503,6 +699,12 @@ public final class GestureModule: EditorInputModule {
         lastRawPinch = false
         undoSwipeAnchor = nil
         undoSwipeFired = false
+        if paragraphDragSource != nil {
+            paragraphDragSource = nil
+            paragraphDropTarget = nil
+            requiresRelease = true
+            message = "Se perdió la mano; movimiento cancelado."
+        }
         guard pinchSession != nil else { return }
         if trackingLostAt == nil {
             trackingLostAt = uptime
@@ -556,6 +758,14 @@ public final class GestureModule: EditorInputModule {
 
     private func tryStartSession(_ vision: GestureState) async {
         guard !requiresRelease, let x = vision.x, x.isFinite else { return }
+        if navigateByParagraph {
+            guard let range = rangeUnderCursor(currentParagraphRanges()),
+                  range == cachedSelection else { return }
+            paragraphDragSource = range
+            paragraphDropTarget = range
+            message = "Párrafo tomado. Muévelo y abre la pinza para soltarlo."
+            return
+        }
         guard let (word, range) = wordAtSelection() else {
             // Aviso una sola vez por pinza (al abrir la ventana de inicio).
             if pinchStreak == GestureTuning.pinchStartFrames {
@@ -563,11 +773,23 @@ public final class GestureModule: EditorInputModule {
             }
             return
         }
+        // El markdown de imagen no son palabras: pinzar sobre `![alt](...)`
+        // abría sinónimos para "alt", "width" o "align" y al confirmar
+        // rompía la imagen. Se bloquea y se dirige al gesto de imagen.
+        if wordIsInsideImage(range) {
+            if pinchStreak == GestureTuning.pinchStartFrames {
+                message = "Esto es una imagen: muestra las dos manos o usa el botón Imagen para su tamaño, no sinónimos."
+            }
+            return
+        }
         let starter = PinchStep.starterOptions(word: word, local: GestureSynonyms.alternatives(for: word))
-        // Sin locales solo se abre si la IA puede generar: son justo las
+        // Reuso instantáneo: la misma palabra no regenera con la IA.
+        let cachedFresh = self.cachedSynonyms(for: word)
+        let opening = cachedFresh.map { PinchStep.mergedOptions(word: word, fresh: $0) } ?? starter
+        // Sin locales ni caché solo se abre si la IA puede generar: son justo las
         // palabras que más la necesitan. Sin IA que las genere, decirlo en
         // vez de abrir una tarjeta con la palabra sola (control falso).
-        guard starter.count > 1 || synonymProvider.isAvailable else {
+        guard opening.count > 1 || synonymProvider.isAvailable else {
             let reason = synonymProvider.availabilityReason.map { " \($0)" } ?? ""
             if pinchStreak == GestureTuning.pinchStartFrames {
                 message = "Sin sinónimos locales para “\(word)”. Prueba con otra palabra.\(reason)"
@@ -578,13 +800,17 @@ public final class GestureModule: EditorInputModule {
         // La palabra objetivo queda seleccionada: se ve qué va a cambiar.
         await send(.selectRange(TextRange(location: range.location, length: range.length)))
         pinchSession = PinchSession(id: UUID(), word: word, location: range.location,
-                                    alternatives: starter,
-                                    currentIndex: starter.firstIndex(of: word) ?? 0,
+                                    alternatives: opening,
+                                    currentIndex: opening.firstIndex(of: word) ?? 0,
                                     referenceX: x)
         sessionLastHandX = x
         sessionDelta = 0
-        sessionUpgraded = false
+        sessionUpgraded = cachedFresh != nil
         openStreak = 0
+        if cachedFresh != nil {
+            message = "Sinónimos listos (reusados). Mueve para elegir, suelta para confirmar."
+            return
+        }
         message = starter.count > 1
             ? "Pinza: mueve para elegir, suelta para confirmar."
             : "Buscando sinónimos con IA… mantén la pinza."
@@ -675,7 +901,7 @@ public final class GestureModule: EditorInputModule {
     /// alternativa accesible a la pinza. La tarjeta la dirige:
     /// clic confirma, ✕ cancela.
     public func startPinchSessionManually() async {
-        guard pinchSession == nil, lengthSession == nil else {
+        guard pinchSession == nil, lengthSession == nil, imageSizeSession == nil else {
             message = "Ya hay una sesión de gesto activa."
             return
         }
@@ -683,8 +909,16 @@ public final class GestureModule: EditorInputModule {
             message = "Coloca el cursor en una palabra primero."
             return
         }
+        // Igual que con cámara: el markdown de imagen no admite sinónimos.
+        // Confirmar aquí reemplazaría "alt", "width" o "align" y rompería la imagen.
+        if wordIsInsideImage(range) {
+            message = "El cursor está en una imagen: usa el botón Imagen para su tamaño, no sinónimos."
+            return
+        }
         let starter = PinchStep.starterOptions(word: word, local: GestureSynonyms.alternatives(for: word))
-        guard starter.count > 1 || synonymProvider.isAvailable else {
+        let cachedFresh = self.cachedSynonyms(for: word)
+        let opening = cachedFresh.map { PinchStep.mergedOptions(word: word, fresh: $0) } ?? starter
+        guard opening.count > 1 || synonymProvider.isAvailable else {
             let reason = synonymProvider.availabilityReason.map { " \($0)" } ?? ""
             message = "Sin sinónimos locales para “\(word)”. Prueba con otra palabra.\(reason)"
             return
@@ -692,15 +926,19 @@ public final class GestureModule: EditorInputModule {
         await send(.beginPreview(TextRange(location: range.location, length: range.length)))
         await send(.selectRange(TextRange(location: range.location, length: range.length)))
         pinchSession = PinchSession(id: UUID(), word: word, location: range.location,
-                                    alternatives: starter,
-                                    currentIndex: starter.firstIndex(of: word) ?? 0,
+                                    alternatives: opening,
+                                    currentIndex: opening.firstIndex(of: word) ?? 0,
                                     referenceX: 0)
         sessionLastHandX = 0
         sessionDelta = 0
-        sessionUpgraded = false
+        sessionUpgraded = cachedFresh != nil
         openStreak = 0
         pinchStreak = 0
         pinchManualControl = true
+        if cachedFresh != nil {
+            message = "Sinónimos listos (reusados). Elige en la tarjeta para confirmar, o ✕ para cancelar."
+            return
+        }
         message = starter.count > 1
             ? "Elige un sinónimo en la tarjeta para confirmar, o ✕ para cancelar."
             : "Buscando sinónimos con IA…"
@@ -708,13 +946,40 @@ public final class GestureModule: EditorInputModule {
     }
 
     /// Sinónimos reales (IA on-device) que mejoran la lista local si llegan
-    /// a tiempo. Sin modelo disponible el proveedor devuelve vacío y la
-    /// tarjeta conserva los locales diciendo que son locales.
+    /// a tiempo. Con caché no se llama al modelo. Sin modelo disponible
+    /// el proveedor devuelve vacío y la tarjeta conserva los locales
+    /// diciendo que son locales.
     private func fetchUpgrade(sessionId: UUID, word: String) {
+        // La misma palabra no regenera: reusa al instante.
+        if let cached = cachedSynonyms(for: word), !cached.isEmpty {
+            Task { [weak self] in
+                await self?.applyUpgrade(cached, sessionId: sessionId, word: word)
+            }
+            return
+        }
         upgradeTask?.cancel()
         upgradeTask = Task { [weak self] in
             let fresh = await self?.synonymProvider.synonyms(for: word) ?? []
             await self?.applyUpgrade(fresh, sessionId: sessionId, word: word)
+        }
+    }
+
+    /// Clave insensible a mayúsculas: "Importante" y "importante" comparten caché.
+    private func synonymCacheKey(_ word: String) -> String {
+        word.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+    }
+
+    private func cachedSynonyms(for word: String) -> [String]? {
+        let hit = synonymCache[synonymCacheKey(word)]
+        guard let hit, !hit.isEmpty else { return nil }
+        return hit
+    }
+
+    private func storeSynonyms(_ fresh: [String], for word: String) {
+        guard !fresh.isEmpty else { return }
+        synonymCache[synonymCacheKey(word)] = fresh
+        if synonymCache.count > 200 {
+            synonymCache.removeValue(forKey: synonymCache.keys.first ?? "")
         }
     }
 
@@ -731,6 +996,7 @@ public final class GestureModule: EditorInputModule {
             }
             return
         }
+        storeSynonyms(fresh, for: word)
         let merged = PinchStep.mergedOptions(word: word, fresh: fresh)
         guard merged != s.alternatives else { return }
         let currentOption = s.option
@@ -765,7 +1031,7 @@ public final class GestureModule: EditorInputModule {
     /// Interna para pruebas (@testable): simulan detecciones sin cámara.
     func handleLengthVision(_ vision: GestureState, at uptime: TimeInterval) async {
         // Sesión manual (botón): la cámara solo decora, no decide.
-        guard !lengthManualControl else { return }
+        guard !lengthManualControl, !imageManualControl else { return }
         guard vision.landmarksValid else {
             await handleLengthTrackingGap(at: uptime)
             return
@@ -776,9 +1042,14 @@ public final class GestureModule: EditorInputModule {
             // Vuelve tras perder frames: conserva lo avanzado pero excluye
             // el salto no observado (igual que la pinza de una mano).
             lengthTrackingLostAt = nil
-            if var s = lengthSession, let span {
-                s.referenceSpan += span - lengthLastSpan
-                lengthSession = s
+            if let span {
+                if var s = lengthSession {
+                    s.referenceSpan += span - lengthLastSpan
+                    lengthSession = s
+                } else if var s = imageSizeSession {
+                    s.referenceSpan += span - lengthLastSpan
+                    imageSizeSession = s
+                }
                 lengthLastSpan = span
             }
         }
@@ -786,11 +1057,12 @@ public final class GestureModule: EditorInputModule {
             lengthTwoHandHits.append(uptime)
             lengthTwoHandHits.removeAll { uptime - $0 > GestureTuning.twoHandWindow }
             lengthOpenStreak = 0
-        } else if lengthSession != nil {
+        } else if lengthSession != nil || imageSizeSession != nil {
             // Sesión activa y solo una mano: contar hacia confirmar.
             lengthOpenStreak += 1
             if lengthOpenStreak >= GestureTuning.lengthCommitFrames {
-                await commitLengthSession()
+                if imageSizeSession != nil { await commitImageSizeSession() }
+                else { await commitLengthSession() }
             } else {
                 message = "Retira una mano para confirmar (las dos cancela)."
             }
@@ -799,24 +1071,31 @@ public final class GestureModule: EditorInputModule {
             return
         }
         let hits = min(lengthTwoHandHits.count, GestureTuning.twoHandStartFrames)
-        let ready = lengthSession != nil
+        let ready = lengthSession != nil || imageSizeSession != nil
             || (!lengthRequiresRelease && pinchSession == nil
                 && lengthTwoHandHits.count >= GestureTuning.twoHandStartFrames)
         guard ready else {
             if pinchSession != nil {
                 message = "Termina la pinza de una mano primero (suelta para confirmar)."
             } else if lengthRequiresRelease {
-                message = "Separa las manos antes de otro gesto de longitud."
+                message = "Separa las manos antes de otro gesto de dos manos."
             } else {
                 message = "Dos manos \(hits)/\(GestureTuning.twoHandStartFrames)… mantén la posición."
             }
             return
         }
-        if lengthSession == nil {
+        if lengthSession == nil && imageSizeSession == nil {
             // Un gesto cada vez: la sesión de palabra sigue intacta.
             guard pinchSession == nil else { return }
             guard let span else { return }
-            await tryStartLengthSession(span: span)
+            if let (image, range) = pointedImageRange.flatMap(imageAtRange) ?? imageAtSelection() {
+                await startImageSizeSession(image: image, range: range, span: span, manual: false)
+            } else {
+                await tryStartLengthSession(span: span)
+            }
+        } else if imageSizeSession != nil {
+            guard let span else { return }
+            await updateImageSizeSession(span: span)
         } else {
             guard let span else { return }
             await updateLengthSession(span: span)
@@ -826,18 +1105,160 @@ public final class GestureModule: EditorInputModule {
     private func handleLengthTrackingGap(at uptime: TimeInterval) async {
         lengthRequiresRelease = false
         lastRawPinch = false
-        guard lengthSession != nil else { return }
+        guard lengthSession != nil || imageSizeSession != nil else { return }
+        // Mientras genera no se cancela por perder las manos: la IA sigue
+        // en segundo plano y al volver la sesión sigue viva.
+        if lengthLoading, lengthSession != nil {
+            message = "Generando versiones… mantén ambas manos visibles, medio ya disponible."
+            return
+        }
         if lengthTrackingLostAt == nil {
             lengthTrackingLostAt = uptime
             message = "Sin seguimiento. Mantén ambas manos visibles."
         } else if uptime - lengthTrackingLostAt! >= GestureTuning.trackingLossGrace {
             // Manos perdidas del todo: se restaura el párrafo original.
             // Solo confirma lo que se ve: retirar UNA mano.
-            await cancelLengthSession(reason: "Se perdieron las manos; párrafo restaurado")
+            if imageSizeSession != nil {
+                await finishImageSizeSession(commit: false)
+                message = "Se perdieron las manos; imagen restaurada."
+            } else {
+                await cancelLengthSession(reason: "Se perdieron las manos; párrafo restaurado")
+            }
         }
     }
 
+    private func imageAtSelection() -> (MarkdownImage, NSRange)? {
+        let full = cachedText as NSString
+        guard full.length > 0 else { return nil }
+        let caret = min(max(cachedSelection.location, 0), full.length - 1)
+        var range = full.paragraphRange(for: NSRange(location: caret, length: 0))
+        if range.length > 0, full.character(at: NSMaxRange(range) - 1) == 10 { range.length -= 1 }
+        guard caret < NSMaxRange(range),
+              let image = MarkdownImage(line: full.substring(with: range)) else { return nil }
+        return (image, range)
+    }
+
+    private func imageAtRange(_ range: NSRange) -> (MarkdownImage, NSRange)? {
+        let full = cachedText as NSString
+        guard range.location >= 0, NSMaxRange(range) <= full.length,
+              let image = MarkdownImage(line: full.substring(with: range)) else { return nil }
+        return (image, range)
+    }
+
+    /// ¿La palabra candidata está dentro del párrafo de una imagen?
+    /// Evita que `![alt](ruta "width=..")` se trate como texto con sinónimos:
+    /// cualquier fragmento (alt, ruta, width, align) rompería el markdown al confirmar.
+    private func wordIsInsideImage(_ wordRange: NSRange) -> Bool {
+        let full = cachedText as NSString
+        guard wordRange.location >= 0, NSMaxRange(wordRange) <= full.length else { return false }
+        var para = full.paragraphRange(for: wordRange)
+        if para.length > 0, NSMaxRange(para) <= full.length,
+           full.character(at: NSMaxRange(para) - 1) == 10 {
+            para.length -= 1
+        }
+        guard para.length > 0, NSMaxRange(para) <= full.length else { return false }
+        return MarkdownImage(line: full.substring(with: para)) != nil
+    }
+
+    private func startImageSizeSession(image: MarkdownImage, range: NSRange,
+                                       span: Double, manual: Bool) async {
+        await send(.beginPreview(TextRange(location: range.location, length: range.length)))
+        await send(.selectRange(TextRange(location: range.location, length: range.length)))
+        imageSizeSession = ImageSizeSession(original: image,
+                                             originalText: (cachedText as NSString).substring(with: range),
+                                             location: range.location,
+                                             width: image.width, referenceSpan: span)
+        imageManualControl = manual
+        lengthLastSpan = span
+        lengthOpenStreak = 0
+        lengthSessionDelta = 0
+        lengthToast = nil
+        pinchStreak = 0
+        lastRawPinch = false
+        navigationX = nil
+        message = "Imagen · ancho \(image.width). Acerca para reducir, separa para ampliar."
+    }
+
+    private func updateImageSizeSession(span: Double) async {
+        guard var s = imageSizeSession, span.isFinite else { return }
+        lengthLastSpan = span
+        let delta = span - s.referenceSpan
+        lengthSessionDelta = delta
+        let steps = min(2, max(-2, Int(delta / (GestureTuning.lengthSpanStep / 2))))
+        guard steps != 0 else { return }
+        s.referenceSpan += Double(steps) * GestureTuning.lengthSpanStep / 2
+        imageSizeSession = s
+        await setImageWidth(s.width + steps * 40)
+    }
+
+    public func setImageWidth(_ width: Int) async {
+        guard var s = imageSizeSession else { return }
+        let next = min(1200, max(80, width))
+        guard next != s.width else { return }
+        s.width = next
+        imageSizeSession = s
+        await send(.showPreview(s.markdown))
+        message = "Imagen · ancho \(next). Retira una mano para confirmar."
+    }
+
+    private func commitImageSizeSession() async {
+        await finishImageSizeSession(commit: true)
+    }
+
+    public func confirmImageSizeSession() async {
+        guard imageSizeSession != nil else { return }
+        await commitImageSizeSession()
+    }
+
+    private func finishImageSizeSession(commit: Bool) async {
+        guard let s = imageSizeSession else { return }
+        imageSizeSession = nil
+        imageManualControl = false
+        lengthTrackingLostAt = nil
+        lengthTwoHandHits = []
+        lengthSmoothedSpan = nil
+        lengthOpenStreak = 0
+        lengthSessionDelta = 0
+        lengthRequiresRelease = true
+        requiresRelease = true
+        await send(commit ? .commitPreview : .cancelPreview)
+        message = commit ? "Imagen · ancho \(s.width) confirmado. ⌘Z para deshacer."
+                         : "Tamaño de imagen cancelado."
+        if commit {
+            lengthToast = s.width == s.original.width ? "Imagen sin cambios" : "Imagen · ancho \(s.width)"
+            lengthToastCanUndo = s.width != s.original.width
+        }
+    }
+
+    public func cancelImageSizeSession() {
+        guard imageSizeSession != nil else { return }
+        imageSizeSession = nil
+        imageManualControl = false
+        lengthTrackingLostAt = nil
+        lengthTwoHandHits = []
+        lengthSmoothedSpan = nil
+        lengthOpenStreak = 0
+        lengthSessionDelta = 0
+        lengthRequiresRelease = true
+        requiresRelease = true
+        Task { await send(.cancelPreview) }
+    }
+
+    public func startImageSizeSessionManually() async {
+        guard imageSizeSession == nil, lengthSession == nil, pinchSession == nil else {
+            message = "Ya hay una sesión de gesto activa."
+            return
+        }
+        guard let (image, range) = imageAtSelection() else {
+            message = "Coloca el cursor en una imagen primero."
+            return
+        }
+        await startImageSizeSession(image: image, range: range,
+                                    span: state.handSpan ?? 0, manual: true)
+    }
+
     private func paragraphForLength() -> (text: String, range: NSRange)? {
+        guard imageAtSelection() == nil else { return nil }
         let full = cachedText as NSString
         guard full.length > 0 else { return nil }
         let caret = min(max(cachedSelection.location, 0), full.length - 1)
@@ -857,13 +1278,17 @@ public final class GestureModule: EditorInputModule {
             message = "Coloca el cursor en un párrafo y muestra las dos manos."
             return
         }
-        // Alternativa local inmediata (la media es el original exacto).
-        let starter = GestureSynonyms.lengthVariants(for: text)
-        guard starter.count == 3 else { return }
+        guard lengthProvider.isAvailable else {
+            message = "No se puede cambiar la longitud. \(lengthProvider.availabilityReason ?? "Modelo de IA no disponible.")"
+            lengthToast = message
+            lengthToastCanUndo = false
+            lengthRequiresRelease = true
+            return
+        }
         await send(.beginPreview(TextRange(location: range.location, length: range.length)))
         await send(.selectRange(TextRange(location: range.location, length: range.length)))
         lengthSession = LengthSession(id: UUID(), originalText: text, originalLocation: range.location,
-                                      alternatives: starter,
+                                      alternatives: [text, text, text],
                                       currentIndex: LengthLevel.medio.rawValue,
                                       referenceSpan: span)
         lengthLastSpan = span
@@ -877,7 +1302,55 @@ public final class GestureModule: EditorInputModule {
         lastRawPinch = false
         navigationX = nil
         lengthToast = nil
-        message = "Longitud · medio. Acerca para acortar, separa para ampliar. Retira UNA mano para confirmar."
+        // Reuso instantáneo: el mismo párrafo no regenera.
+        if let cached = lengthCache[text], cached.count == 2,
+           GestureSynonyms.isValidShort(cached[0], original: text),
+           GestureSynonyms.isValidLong(cached[1], original: text) {
+            lengthSession?.alternatives = [cached[0], text, cached[1]]
+            lengthLoading = false
+            message = "Versiones listas (reusadas). Acerca para acortar, separa para ampliar. Retira una mano para confirmar."
+            return
+        }
+        lengthLoading = true
+        message = "Preparando versiones corta y larga… Puedes quedarte en medio mientras tanto."
+        fetchLengthVariants(sessionId: lengthSession!.id, text: text)
+    }
+
+    private func fetchLengthVariants(sessionId: UUID, text: String) {
+        lengthTask?.cancel()
+        lengthTask = Task { [weak self] in
+            guard let self else { return }
+            let variants = await lengthProvider.variants(for: text)
+            await applyLengthVariants(variants, sessionId: sessionId)
+        }
+    }
+
+    private func applyLengthVariants(_ variants: [String], sessionId: UUID) async {
+        guard var s = lengthSession, s.id == sessionId else { return }
+        guard variants.count == 2,
+              GestureSynonyms.isValidShort(variants[0], original: s.originalText),
+              GestureSynonyms.isValidLong(variants[1], original: s.originalText) else {
+            await cancelLengthSession(reason: "no se pudieron crear versiones útiles; prueba con otro párrafo")
+            lengthToast = "No se pudieron crear versiones útiles. Prueba con otro párrafo."
+            lengthToastCanUndo = false
+            return
+        }
+        s.alternatives = [variants[0], s.originalText, variants[1]]
+        // Guarda para reuso: reabrir el mismo párrafo es instantáneo.
+        lengthCache[s.originalText] = [variants[0], variants[1]]
+        if lengthCache.count > 30 {
+            lengthCache.removeValue(forKey: lengthCache.keys.first ?? "")
+        }
+        // Si el usuario ya se movió a un extremo mientras cargaba, conserva
+        // su posición y previsualízala; si no, queda en medio.
+        let keptIndex = s.currentIndex
+        lengthSession = s
+        lengthLoading = false
+        if keptIndex != LengthLevel.medio.rawValue {
+            lengthSession?.currentIndex = keptIndex
+            await send(.showPreview(s.alternatives[keptIndex]))
+        }
+        message = "Versiones listas. Acerca para acortar, separa para ampliar. Retira una mano para confirmar."
     }
 
     private func updateLengthSession(span: Double) async {
@@ -888,13 +1361,18 @@ public final class GestureModule: EditorInputModule {
         guard let out = LengthSpanStep.advance(current: s.currentIndex, count: s.alternatives.count,
                                                delta: delta, reference: s.referenceSpan,
                                                maxSteps: 1) else { return }
+        // Mientras carga solo se puede volver al medio (original): los
+        // extremos aún no existen y no se previsualiza texto a medias.
+        if lengthLoading, out.index != LengthLevel.medio.rawValue { return }
         s.referenceSpan = out.reference
         if out.index != s.currentIndex {
             s.currentIndex = out.index
             lengthSession = s
             await send(.showPreview(s.option))
             let level = LengthLevel(rawValue: out.index)?.label ?? ""
-            message = "Longitud · \(level). Retira UNA mano para confirmar."
+            message = lengthLoading
+                ? "Longitud · \(level) (tu texto) mientras se generan las versiones."
+                : "Longitud · \(level). Retira UNA mano para confirmar."
         } else {
             lengthSession = s
             message = out.index == 0
@@ -905,7 +1383,17 @@ public final class GestureModule: EditorInputModule {
 
     private func commitLengthSession() async {
         guard let s = lengthSession else { return }
+        if lengthLoading {
+            // Confirmar el medio (original) no necesita esperar: no hay
+            // cambio que generar. Otro nivel sí debe esperar.
+            guard s.currentIndex == LengthLevel.medio.rawValue else {
+                message = "Aún generando versiones… espera o elige medio para salir sin cambios."
+                return
+            }
+        }
         lengthSession = nil
+        lengthTask?.cancel()
+        lengthTask = nil
         lengthTrackingLostAt = nil
         lengthTwoHandHits = []
         lengthSmoothedSpan = nil
@@ -935,6 +1423,7 @@ public final class GestureModule: EditorInputModule {
 
     /// Confirma directamente un nivel de la tarjeta (clic).
     /// Sin silencios: si no se puede aplicar, se dice en voz alta (toast).
+    /// El medio (original) confirma incluso mientras carga: no hay espera.
     public func commitLengthSession(at index: Int) async {
         guard var s = lengthSession else {
             lengthToast = "La sesión ya no está activa; vuelve a abrirla"
@@ -942,14 +1431,37 @@ public final class GestureModule: EditorInputModule {
             return
         }
         guard s.alternatives.indices.contains(index) else { return }
+        if lengthLoading, index != LengthLevel.medio.rawValue { return }
         s.currentIndex = index
         lengthSession = s
         await send(.showPreview(s.option))
         await commitLengthSession()
     }
 
+    /// Previsualiza un nivel sin confirmar: el usuario puede comparar
+    /// corto/medio/largo antes de decidir. Confirmar es explícito
+    /// (botón Confirmar o retirar una mano). No cierra la sesión.
+    public func previewLengthOption(at index: Int) async {
+        guard var s = lengthSession, s.alternatives.indices.contains(index) else { return }
+        if lengthLoading, index != LengthLevel.medio.rawValue { return }
+        guard index != s.currentIndex else { return }
+        s.currentIndex = index
+        lengthSession = s
+        await send(.showPreview(s.option))
+        let level = LengthLevel(rawValue: index)?.label ?? ""
+        message = "Longitud · \(level) en vista previa. Confirma o sigue comparando."
+    }
+
+    /// Confirmación explícita del nivel previsualizado (botón Confirmar).
+    public func confirmLengthSession() async {
+        await commitLengthSession()
+    }
+
     private func cancelLengthSession(reason: String) async {
         lengthSession = nil
+        lengthTask?.cancel()
+        lengthTask = nil
+        lengthLoading = false
         lengthTrackingLostAt = nil
         lengthOpenStreak = 0
         lengthTwoHandHits = []
@@ -967,6 +1479,9 @@ public final class GestureModule: EditorInputModule {
     public func cancelLengthSession() {
         if lengthSession != nil {
             lengthSession = nil
+            lengthTask?.cancel()
+            lengthTask = nil
+            lengthLoading = false
             lengthTrackingLostAt = nil
             lengthOpenStreak = 0
             lengthTwoHandHits = []
@@ -983,7 +1498,7 @@ public final class GestureModule: EditorInputModule {
     /// Sirve para probar la generación aislando el gesto, y como
     /// alternativa accesible al gesto a dos manos.
     public func startLengthSessionManually() async {
-        guard lengthSession == nil, pinchSession == nil else {
+        guard lengthSession == nil, pinchSession == nil, imageSizeSession == nil else {
             message = "Ya hay una sesión de gesto activa."
             return
         }
@@ -991,12 +1506,16 @@ public final class GestureModule: EditorInputModule {
             message = "Coloca el cursor en un párrafo primero."
             return
         }
-        let starter = GestureSynonyms.lengthVariants(for: text)
-        guard starter.count == 3 else { return }
+        guard lengthProvider.isAvailable else {
+            message = "No se puede cambiar la longitud. \(lengthProvider.availabilityReason ?? "Modelo de IA no disponible.")"
+            lengthToast = message
+            lengthToastCanUndo = false
+            return
+        }
         await send(.beginPreview(TextRange(location: range.location, length: range.length)))
         await send(.selectRange(TextRange(location: range.location, length: range.length)))
         lengthSession = LengthSession(id: UUID(), originalText: text, originalLocation: range.location,
-                                      alternatives: starter,
+                                      alternatives: [text, text, text],
                                       currentIndex: LengthLevel.medio.rawValue,
                                       referenceSpan: state.handSpan ?? 0)
         lengthManualControl = true
@@ -1004,7 +1523,17 @@ public final class GestureModule: EditorInputModule {
         lengthSmoothedSpan = nil
         lengthToast = nil
         navigationX = nil
-        message = "Elige un nivel en la tarjeta para confirmar, o ✕ para cancelar."
+        if let cached = lengthCache[text], cached.count == 2,
+           GestureSynonyms.isValidShort(cached[0], original: text),
+           GestureSynonyms.isValidLong(cached[1], original: text) {
+            lengthSession?.alternatives = [cached[0], text, cached[1]]
+            lengthLoading = false
+            message = "Versiones listas (reusadas). Compara y confirma."
+            return
+        }
+        lengthLoading = true
+        message = "Preparando versiones corta y larga… Puedes ver tu texto en medio mientras tanto."
+        fetchLengthVariants(sessionId: lengthSession!.id, text: text)
     }
 
     /// Cierra el aviso de longitud confirmada (sin tocar el texto).
@@ -1016,7 +1545,7 @@ public final class GestureModule: EditorInputModule {
         lengthToast = nil
     }
 
-    // MARK: - Selección de palabra con mano abierta
+    // MARK: - Selección con mano abierta
 
     private func navigateWords(_ vision: GestureState) async {
         // Sin puerta de distancia: si el estado dice "no pinza", se navega.
@@ -1027,15 +1556,24 @@ public final class GestureModule: EditorInputModule {
             navigationX = nil
             return
         }
-        let ranges = currentWordRanges()
+        let ranges = navigateByParagraph ? currentParagraphRanges() : currentWordRanges()
         guard !ranges.isEmpty else {
             navigationX = nil
+            return
+        }
+        if textHitTest != nil {
+            guard let range = rangeUnderCursor(ranges) else { return }
+            navigationX = nil
+            guard range != cachedSelection else { return }
+            cachedSelection = range
+            await send(.selectRange(TextRange(location: range.location, length: range.length)))
             return
         }
         let selection = cachedSelection
         guard let out = WordNavigator.update(
             ranges: ranges, selection: selection,
-            referenceX: navigationX, handX: x
+            referenceX: navigationX, handX: x,
+            step: navigateByParagraph ? GestureTuning.paragraphStep : GestureTuning.wordStep
         ) else { return }
         navigationX = out.referenceX
         cachedSelection = out.select

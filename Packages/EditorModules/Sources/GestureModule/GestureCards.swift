@@ -1,11 +1,33 @@
 import SwiftUI
 
+public struct GestureCursor: View {
+    @Bindable private var module: GestureModule
+
+    public init(module: GestureModule) { self.module = module }
+
+    public var body: some View {
+        GeometryReader { geometry in
+            if module.running, let point = module.cursorPoint {
+                Circle()
+                    .fill(module.isDraggingParagraph ? Color.orange : Color.accentColor)
+                    .frame(width: module.isDraggingParagraph ? 20 : 14,
+                           height: module.isDraggingParagraph ? 20 : 14)
+                    .overlay(Circle().stroke(.white, lineWidth: 2))
+                    .position(x: point.x * geometry.size.width,
+                              y: point.y * geometry.size.height)
+            }
+        }
+        .allowsHitTesting(false)
+        .accessibilityHidden(true)
+    }
+}
+
 /// Tarjetas flotantes de las sesiones de gesto. Las envuelve la app en
 /// `AnyView` para `EditorScreen(gestureCards:)`; sin la pieza, `nil`.
 ///
 /// Nada cambia a ciegas: la opción actual se resalta y el documento la
 /// previsualiza. Clic en una opción la confirma directamente; ✕ cancela y
-/// restaura. Las listas son locales (sin IA en este programa) y lo dicen.
+/// restaura.
 public struct GestureCards: View {
     @Bindable private var module: GestureModule
 
@@ -21,10 +43,36 @@ public struct GestureCards: View {
             if module.hasLengthSession {
                 LengthOptionsCard(module: module)
             }
+            if module.hasImageSizeSession {
+                ImageSizeCard(module: module)
+            }
             if let toast = module.lengthToast, !module.hasLengthSession {
                 LengthToast(module: module, text: toast)
             }
         }
+    }
+}
+
+struct ImageSizeCard: View {
+    @Bindable var module: GestureModule
+
+    var body: some View {
+        HStack(spacing: 12) {
+            Image(systemName: "photo")
+            Text("Imagen · ancho \(module.imageWidth)")
+                .monospacedDigit()
+            Button("Reducir") { Task { await module.setImageWidth(module.imageWidth - 40) } }
+                .disabled(module.imageWidth <= 80)
+            Button("Ampliar") { Task { await module.setImageWidth(module.imageWidth + 40) } }
+                .disabled(module.imageWidth >= 1200)
+            Button("Confirmar") { Task { await module.confirmImageSizeSession() } }
+            Button("Cancelar") { module.cancelImageSizeSession() }
+        }
+        .buttonStyle(.bordered)
+        .controlSize(.small)
+        .padding(12)
+        .background(.regularMaterial, in: RoundedRectangle(cornerRadius: 12))
+        .accessibilityElement(children: .contain)
     }
 }
 
@@ -182,23 +230,39 @@ struct LengthOptionsCard: View {
 
             ForEach(Array(options.enumerated()), id: \.offset) { index, option in
                 Button {
-                    Task { await module.commitLengthSession(at: index) }
+                    Task { await module.previewLengthOption(at: index) }
                 } label: {
                     levelRow(index: index, text: option, labels: labels, current: current)
                 }
                 .buttonStyle(.plain)
-                .help("\(index < labels.count ? labels[index].capitalized : "Versión"): \(option)")
+                .disabled(module.lengthLoading && index != LengthLevel.medio.rawValue)
+                .help(index != LengthLevel.medio.rawValue && module.lengthLoading
+                      ? "Aún generando esta versión…"
+                      : "\(index < labels.count ? labels[index].capitalized : "Versión") en vista previa: \(option)")
+            }
+
+            HStack(spacing: 8) {
+                Button("Confirmar") { Task { await module.confirmLengthSession() } }
+                    .buttonStyle(.borderedProminent)
+                    .controlSize(.small)
+                    .disabled(module.lengthLoading && module.lengthIndex != LengthLevel.medio.rawValue)
+                    .help("Aplica la versión previsualizada")
+                Button("Cancelar") { module.cancelLengthSession() }
+                    .buttonStyle(.bordered)
+                    .controlSize(.small)
+                    .help("Cancela y restaura el párrafo")
+                Spacer()
             }
 
             HStack {
-                Text("Versiones locales (sin IA)")
+                Text(module.lengthLoading ? "Generando con Apple Intelligence… medio ya disponible" : "Generadas en este Mac")
                     .font(.caption2)
                     .foregroundStyle(.tertiary)
                 Spacer()
                 // Acercar (juntar) acorta · separar amplía.
                 directionHint
                 Spacer()
-                Text(module.isLengthManual ? "Clic para confirmar" : "Retira UNA mano · ambas cancela")
+                Text(module.isLengthManual ? "Clic previsualiza · Confirma abajo" : "Retira UNA mano para confirmar")
                     .font(.caption2)
                     .foregroundStyle(.tertiary)
             }
@@ -220,7 +284,9 @@ struct LengthOptionsCard: View {
                 Text(index < labels.count ? labels[index] : "")
                     .font(.system(size: 12, weight: .semibold))
                     .foregroundStyle(.secondary)
-                Text("\(text.split(whereSeparator: \.isWhitespace).count) pal.\(text == module.lengthOriginalText ? " · tu texto" : "")")
+                Text(module.lengthLoading && index != LengthLevel.medio.rawValue
+                     ? ""
+                     : "\(text.split(whereSeparator: \.isWhitespace).count) pal.\(text == module.lengthOriginalText ? " · tu texto" : "")")
                     .font(.caption2)
                     .foregroundStyle(.tertiary)
                     .monospacedDigit()

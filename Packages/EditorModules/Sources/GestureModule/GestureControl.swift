@@ -16,7 +16,7 @@ public struct GestureControl: View {
         Button {
             showPanel = true
         } label: {
-            Image(systemName: module.running ? "hand.raised.fill" : "hand.raised")
+            Image(systemName: module.paused ? "pause.circle.fill" : module.running ? "hand.raised.fill" : "hand.raised")
         }
         .help("Gestos con la cámara")
         .accessibilityLabel("Gestos con la cámara")
@@ -24,7 +24,7 @@ public struct GestureControl: View {
         .popover(isPresented: $showPanel, arrowEdge: .bottom) {
             GesturePanel(module: module)
         }
-        .onChange(of: module.hasPinchSession || module.hasLengthSession) { _, active in
+        .onChange(of: module.hasPinchSession || module.hasLengthSession || module.hasImageSizeSession) { _, active in
             if active { showPanel = false }
         }
     }
@@ -143,9 +143,13 @@ public struct GesturePanel: View {
             .frame(width: 320, height: 180)
             .clipShape(RoundedRectangle(cornerRadius: 10))
 
-            Text("Mano abierta para elegir palabra. Pinza quieta para sinónimos (suelta para confirmar). Pinza + barrido lateral para deshacer/rehacer. Dos manos para la longitud (retira una para confirmar).")
+            Text("Señala el texto para elegir una palabra o un párrafo. En modo palabras, la pinza muestra sinónimos y el barrido lateral deshace o rehace. En modo párrafos, mantén la pinza, mueve el párrafo y suelta. Dos manos cambian la longitud o el tamaño de una imagen.")
                 .font(.callout)
                 .foregroundStyle(.secondary)
+
+            Toggle("Elegir párrafos en vez de palabras", isOn: $module.navigateByParagraph)
+                .font(.callout)
+                .help("Señala un párrafo para seleccionarlo; mantén la pinza para moverlo")
 
             Text(module.message)
                 .font(.caption)
@@ -164,6 +168,14 @@ public struct GesturePanel: View {
                 .buttonStyle(.borderedProminent)
                 .controlSize(.small)
                 .disabled(module.starting)
+                if module.running {
+                    Button(module.paused ? "Reanudar gestos" : "Pausar gestos") {
+                        Task { await module.setGesturesPaused(!module.paused) }
+                    }
+                    .buttonStyle(.bordered)
+                    .controlSize(.small)
+                    .help("Mantiene la cámara encendida sin ejecutar acciones")
+                }
                 Spacer()
                 Label("Local", systemImage: "lock.fill")
                     .font(.caption)
@@ -202,17 +214,24 @@ public struct GesturePanel: View {
                 }
                 .buttonStyle(.bordered)
                 .controlSize(.small)
-                .disabled(module.hasLengthSession || module.hasPinchSession)
+                .disabled(module.hasLengthSession || module.hasPinchSession || module.hasImageSizeSession)
                 .help("Abre la tarjeta de sinónimos sobre la palabra actual")
                 Button("Longitud") {
                     Task { await module.startLengthSessionManually() }
                 }
                 .buttonStyle(.bordered)
                 .controlSize(.small)
-                .disabled(module.hasLengthSession || module.hasPinchSession)
+                .disabled(module.hasLengthSession || module.hasPinchSession || module.hasImageSizeSession)
                 .help("Abre corto/medio/largo sobre el párrafo actual")
+                Button("Imagen") {
+                    Task { await module.startImageSizeSessionManually() }
+                }
+                .buttonStyle(.bordered)
+                .controlSize(.small)
+                .disabled(module.hasLengthSession || module.hasPinchSession || module.hasImageSizeSession)
+                .help("Ajusta el ancho de la imagen bajo el cursor")
             }
-            Text("Clic en una opción confirma, ✕ cancela.")
+            Text("Usa las tarjetas para comparar, confirmar o cancelar.")
                 .font(.caption2)
                 .foregroundStyle(.tertiary)
             // IA on-device para sinónimos: disponible o motivo honesto.
@@ -227,7 +246,9 @@ public struct GesturePanel: View {
     // MARK: - Estado en vivo
 
     private var statusPill: some View {
-        let (text, color): (String, Color) = if module.running {
+        let (text, color): (String, Color) = if module.running && module.paused {
+            ("En pausa", .orange)
+        } else if module.running {
             ("Detectando", .green)
         } else if module.starting {
             ("Iniciando…", .orange)
@@ -244,10 +265,18 @@ public struct GesturePanel: View {
     private var detectionBadge: some View {
         let text: String = if !module.running {
             ""
+        } else if module.paused {
+            "Gestos en pausa"
         } else if module.hasLengthSession {
             "Longitud: acerca ↔ separa"
+        } else if module.hasImageSizeSession {
+            "Imagen: acerca ↔ separa"
+        } else if module.isDraggingParagraph {
+            "Párrafo: mueve y suelta"
         } else if module.hasPinchSession {
             "Pinza: mueve ↔"
+        } else if module.isPointingAtImage {
+            "Imagen bajo el dedo: muestra la otra mano"
         } else if module.state.hasTwoDistinctHands {
             "Dos manos: mantén…"
         } else if !module.state.handDetected {
@@ -255,7 +284,7 @@ public struct GesturePanel: View {
         } else if module.state.pinch {
             "Pinza: mueve ↔"
         } else {
-            "Mano: mueve para elegir"
+            module.navigateByParagraph ? "Señala un párrafo" : "Señala una palabra"
         }
         return Group {
             if !text.isEmpty {
