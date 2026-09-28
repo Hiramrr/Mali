@@ -448,6 +448,8 @@ public extension WritingStyle {
 }
 
 @MainActor public enum MarkdownAppearance {
+    private static let inlineMarkers = CharacterSet(charactersIn: "\\`<[!*_~")
+
     public static func decorate(_ storage: NSMutableAttributedString, document: MarkdownDocument, style: WritingStyle, lines: Range<Int>? = nil) {
         let selectedLines = document.lines[lines ?? document.lines.indices]
         let affected: NSRange
@@ -507,9 +509,9 @@ public extension WritingStyle {
         }
         guard effectiveLength > 0 else { return }
         let effectiveRange = NSRange(location: lineRange.location, length: effectiveLength)
-        let lineText = nsString.substring(with: effectiveRange)
-        guard !lineText.isEmpty else { return }
-        scanInline(lineText: lineText, baseOffset: effectiveRange.location, storage: storage, style: style)
+        let marker = nsString.rangeOfCharacter(from: inlineMarkers, range: effectiveRange)
+        guard marker.location != NSNotFound else { return }
+        scanInline(lineText: nsString.substring(with: effectiveRange), baseOffset: effectiveRange.location, storage: storage, style: style)
     }
 
     private static func nsRange(of range: Range<String.Index>, in text: String, base: Int) -> NSRange? {
@@ -905,7 +907,7 @@ public extension WritingStyle {
                 collapseMarker(in: storage, range: closeNS)
             }
             // Recursión para anidado (`**negrita *cursiva* **`).
-            if !contentRange.isEmpty {
+            if !contentRange.isEmpty, lineText[contentRange].rangeOfCharacter(from: inlineMarkers) != nil {
                 let innerText = String(lineText[contentRange])
                 let innerNS = NSRange(contentRange, in: lineText)
                 let innerBase = baseOffset + innerNS.location
