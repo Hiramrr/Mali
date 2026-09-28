@@ -88,6 +88,8 @@ public struct EditorScreen: View {
     @AppStorage("editor.favorites") private var favoritePaths = ""
     @AppStorage("editor.archived") private var archivedPaths = ""
     @AppStorage("editor.trashed") private var trashedPaths = ""
+    @AppStorage(CloudDocuments.enabledKey) private var saveToICloud = false
+    @AppStorage(CloudDocuments.pathKey) private var cloudFolderPath = ""
     @State private var autosaveWorkItem: DispatchWorkItem?
     @State private var openingDocument = false
     @State private var folderDocuments: [URL] = []
@@ -207,8 +209,18 @@ public struct EditorScreen: View {
     private var sampleFolder: URL? {
         Bundle.main.url(forResource: "Samples", withExtension: nil)
     }
+    private var savedSampleFolder: URL? {
+        let folder = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?
+            .appendingPathComponent("Samples", isDirectory: true)
+        return folder.flatMap { FileManager.default.fileExists(atPath: $0.path) ? $0 : nil }
+    }
+    /// Carpeta de iCloud Drive autorizada, si el guardado en iCloud está activo.
+    private var cloudFolder: URL? {
+        guard saveToICloud, !cloudFolderPath.isEmpty else { return nil }
+        return CloudDocuments.folder
+    }
     private var folders: [URL] {
-        let candidates = Array(Set((sampleFolder.map { [$0] } ?? []) + savedFolders + recentURLs.compactMap { url in
+        let candidates = Array(Set((sampleFolder.map { [$0] } ?? []) + (savedSampleFolder.map { [$0] } ?? []) + (cloudFolder.map { [$0] } ?? []) + savedFolders + recentURLs.compactMap { url in
             guard url.isFileURL else { return nil }
             return url.deletingLastPathComponent().standardizedFileURL
         } + (currentURL.map { [$0.deletingLastPathComponent().standardizedFileURL] } ?? [])))
@@ -635,7 +647,7 @@ public struct EditorScreen: View {
                             }
                             .padding(.leading, 8).padding(.bottom, 6)
                             ForEach(folders, id: \.self) { folder in
-                                navigationButton(folder.lastPathComponent, symbol: "folder", destination: .folder(folder))
+                                navigationButton(folder.lastPathComponent, symbol: folder == cloudFolder ? "icloud" : "folder", destination: .folder(folder))
                                     .help(folder.path)
                             }
                         }
@@ -1209,6 +1221,7 @@ public struct EditorScreen: View {
             let panel = NSSavePanel()
             panel.allowedContentTypes = [UTType(filenameExtension: "md") ?? .plainText]
             panel.nameFieldStringValue = "\(documentTitle).md"
+            if let cloudFolder { panel.directoryURL = cloudFolder }
             panel.begin { response in
                 guard response == .OK, let url = panel.url else { return }
                 save(url, .saveAsOperation)
@@ -1276,7 +1289,8 @@ public struct EditorScreen: View {
 
     private func createDocument() {
         guard let document = ownDocument ?? activeDocument else { return }
-        let suggestedDirectory = currentURL?.deletingLastPathComponent()
+        let suggestedDirectory = cloudFolder
+            ?? currentURL?.deletingLastPathComponent()
             ?? folders.first
             ?? FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         let directory = suggestedDirectory.path.hasPrefix(Bundle.main.bundleURL.path)
@@ -1367,6 +1381,7 @@ public struct EditorScreen: View {
             let panel = NSSavePanel()
             panel.allowedContentTypes = [UTType(filenameExtension: "md") ?? .plainText]
             panel.nameFieldStringValue = "\(name).md"
+            if let cloudFolder { panel.directoryURL = cloudFolder }
             panel.begin { response in
                 guard response == .OK, let url = panel.url else { return }
                 document.save(to: url, ofType: document.fileType ?? UTType.plainText.identifier, for: .saveAsOperation) { error in
