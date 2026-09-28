@@ -29,8 +29,41 @@ public final class EditorSession {
     @ObservationIgnored private var previewOriginal = ""
     @ObservationIgnored private var previewCurrent = ""
     @ObservationIgnored private var previewLength = 0
+    @ObservationIgnored private var voicePreviewActive = false
+    /// Reescritura con IA (voz). Por defecto Foundation Models on-device;
+    /// en pruebas se inyecta un doble sin modelo.
+    @ObservationIgnored private let rewriteProvider: any RewriteProvider
+    @ObservationIgnored private var rewriteRequestID = UUID()
+    @ObservationIgnored private var rewriteProposal: (view: NSTextView, document: String, documentURL: URL?, range: NSRange, replacement: String)?
 
-    public init() {}
+    public init(rewriteProvider: (any RewriteProvider)? = nil) {
+        self.rewriteProvider = rewriteProvider ?? FoundationModelsRewriteProvider()
+    }
+
+    public func imageRange(atNormalizedPoint point: CGPoint?) -> NSRange? {
+        guard let view = textView as? WritingTextView,
+              let clip = view.enclosingScrollView?.contentView else { return nil }
+        guard let point, !readingMode, (0...1).contains(point.x), (0...1).contains(point.y) else {
+            return view.imageRange(at: nil)
+        }
+        let x = clip.bounds.minX + point.x * clip.bounds.width
+        let y = clip.isFlipped
+            ? clip.bounds.minY + point.y * clip.bounds.height
+            : clip.bounds.maxY - point.y * clip.bounds.height
+        return view.imageRange(at: view.convert(NSPoint(x: x, y: y), from: clip))
+    }
+
+    public func textLocation(atNormalizedPoint point: CGPoint) -> Int? {
+        guard let view = textView, let clip = view.enclosingScrollView?.contentView,
+              !readingMode, (0...1).contains(point.x), (0...1).contains(point.y) else { return nil }
+        let x = clip.bounds.minX + point.x * clip.bounds.width
+        let y = clip.isFlipped
+            ? clip.bounds.minY + point.y * clip.bounds.height
+            : clip.bounds.maxY - point.y * clip.bounds.height
+        let location = view.convert(NSPoint(x: x, y: y), from: clip)
+        guard view.bounds.contains(location) else { return nil }
+        return view.characterIndexForInsertion(at: location)
+    }
 
     public func refreshOutline(_ text: String) {
         generation += 1
@@ -69,6 +102,8 @@ public final class EditorSession {
 
     public func stop() {
         if isPreviewing { endPreview() }
+        discardRewrite()
+        voicePreviewActive = false
         onPreviewCommitted = nil
         outlineTask?.cancel()
         outlineTask = nil
@@ -76,7 +111,11 @@ public final class EditorSession {
     }
 
     public func send(_ command: EditorCommand) {
-        guard !readingMode, let view = textView else { return }
+        guard let view = textView else { return }
+        if readingMode {
+            if voicePreviewActive { cancelPreview(); voicePreviewActive = false }
+            return
+        }
         switch command {
         case .insertText(let text):
             edit(view) { $0.insertText(text, replacementRange: $0.selectedRange()) }
@@ -88,6 +127,9 @@ public final class EditorSession {
             guard let valid = range.validated(in: view.string) else { return }
             view.setSelectedRange(valid)
             view.scrollRangeToVisible(valid)
+        case .moveParagraph(let source, let target):
+            guard !isPreviewing else { return }
+            moveParagraph(from: source, to: target, in: view)
         case .selectAll: view.selectAll(nil)
         case .deleteBackward: view.deleteBackward(nil)
         case .deleteForward: view.deleteForward(nil)
@@ -111,13 +153,33 @@ public final class EditorSession {
                 v.setSelectedRange(NSRange(location: range.location + label.utf16.count + 3, length: 8))
             }
         case .beginPreview(let range):
-            beginPreview(range)
+            if !voicePreviewActive { beginPreview(range) }
         case .showPreview(let option):
-            showPreview(option: option)
+            if !voicePreviewActive { showPreview(option: option) }
         case .commitPreview:
-            commitPreview()
+            if !voicePreviewActive { commitPreview() }
         case .cancelPreview:
-            cancelPreview()
+            if !voicePreviewActive { cancelPreview() }
+        case .beginVoicePreview:
+            guard !isPreviewing else { break }
+            let range = view.selectedRange()
+            beginPreview(EditorCore.TextRange(location: range.location, length: range.length))
+            voicePreviewActive = isPreviewing
+        case .showVoicePreview(let text):
+            guard voicePreviewActive else { break }
+            showPreview(option: text)
+            voicePreviewActive = isPreviewing
+        case .commitVoicePreview(let text):
+            if voicePreviewActive {
+                let span = NSRange(location: previewLocation, length: previewLength)
+                let current = view.string as NSString
+                let unchanged = NSMaxRange(span) <= current.length && current.substring(with: span) == previewCurrent
+                cancelPreview()
+                voicePreviewActive = false
+                if unchanged { edit(view) { $0.insertText(text, replacementRange: $0.selectedRange()) } }
+            }
+        case .cancelVoicePreview:
+            if voicePreviewActive { cancelPreview(); voicePreviewActive = false }
         case .renameTitle:
             // Lo aplica EditorScreen (dueño del documento). Ver el caso en
             // EditorCommand: ignorar aquí evita el bug de insertar el título
@@ -127,6 +189,8 @@ public final class EditorSession {
             findInText(query, view: view)
         case .selectText(let query):
             findInText(query, view: view)
+        case .rewriteSelection:
+            break // La voz prepara y confirma la propuesta por separado.
         case .saveDocument, .openDocument, .exportDocument:
             // Los aplica EditorScreen (documento y paneles). Ignorar aquí.
             break
@@ -142,6 +206,41 @@ public final class EditorSession {
         body(view)
         view.undoManager?.endUndoGrouping()
         view.breakUndoCoalescing()
+    }
+
+    private func moveParagraph(from source: EditorCore.TextRange, to target: EditorCore.TextRange, in view: NSTextView) {
+        let text = view.string as NSString
+        guard let sourceRange = source.validated(in: view.string),
+              let targetRange = target.validated(in: view.string),
+              sourceRange != targetRange else { return }
+        var paragraphs: [NSRange] = []
+        text.enumerateSubstrings(in: NSRange(location: 0, length: text.length), options: .byParagraphs) { _, range, _, _ in
+            if range.length > 0 { paragraphs.append(range) }
+        }
+        guard let sourceIndex = paragraphs.firstIndex(of: sourceRange),
+              let targetIndex = paragraphs.firstIndex(of: targetRange) else { return }
+        let lower = min(sourceIndex, targetIndex)
+        let upper = max(sourceIndex, targetIndex)
+        let affected = Array(paragraphs[lower...upper])
+        var contents = affected.map { text.substring(with: $0) }
+        let separators = zip(affected, affected.dropFirst()).map { left, right in
+            text.substring(with: NSRange(location: NSMaxRange(left), length: right.location - NSMaxRange(left)))
+        }
+        let moved = contents.remove(at: sourceIndex - lower)
+        contents.insert(moved, at: targetIndex - lower)
+        var replacement = ""
+        var selectionLocation = affected[0].location
+        for index in contents.indices {
+            if index == targetIndex - lower { selectionLocation += (replacement as NSString).length }
+            replacement += contents[index]
+            if index < separators.count { replacement += separators[index] }
+        }
+        let span = NSRange(location: affected[0].location,
+                           length: NSMaxRange(affected[affected.count - 1]) - affected[0].location)
+        edit(view) { $0.insertText(replacement, replacementRange: span) }
+        let selection = NSRange(location: selectionLocation, length: (moved as NSString).length)
+        view.setSelectedRange(selection)
+        view.scrollRangeToVisible(selection)
     }
 
     private func prefixParagraph(_ prefix: String, view: NSTextView) {        let text = view.string as NSString
@@ -225,6 +324,53 @@ public final class EditorSession {
         }
     }
 
+    // MARK: - Reescritura con IA (voz "hazlo más breve")
+
+    /// Prepara una propuesta visible sin tocar el documento ni su undo.
+    public func prepareRewrite(instruction: String) async -> String? {
+        discardRewrite()
+        let requestID = rewriteRequestID
+        guard !readingMode, !isPreviewing, let view = textView else { return nil }
+        let range = view.selectedRange()
+        guard range.length > 0 else { return nil }
+        let ns = view.string as NSString
+        guard NSMaxRange(range) <= ns.length else { return nil }
+        let document = view.string
+        let documentURL = (view as? WritingTextView)?.documentURL
+        let original = ns.substring(with: range)
+        guard !original.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty,
+              let rewritten = await rewriteProvider.rewrite(original, instruction: instruction) else { return nil }
+        guard requestID == rewriteRequestID,
+              !rewritten.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty,
+              rewritten != original, textView === view,
+              !readingMode, !isPreviewing, view.string == document,
+              (view as? WritingTextView)?.documentURL == documentURL,
+              view.selectedRange() == range else { return nil }
+        rewriteProposal = (view, document, documentURL, range, rewritten)
+        return rewritten
+    }
+
+    /// Aplica exactamente la propuesta mostrada, si el documento y la selección siguen vigentes.
+    @discardableResult public func acceptRewrite() -> Bool {
+        guard let proposal = rewriteProposal else { return false }
+        rewriteProposal = nil
+        guard textView === proposal.view, !readingMode, !isPreviewing,
+              proposal.view.string == proposal.document,
+              (proposal.view as? WritingTextView)?.documentURL == proposal.documentURL,
+              proposal.view.selectedRange() == proposal.range else { return false }
+        edit(proposal.view) { $0.insertText(proposal.replacement, replacementRange: proposal.range) }
+        let range = NSRange(location: proposal.range.location, length: (proposal.replacement as NSString).length)
+        proposal.view.setSelectedRange(range)
+        proposal.view.scrollRangeToVisible(range)
+        proposal.view.window?.makeFirstResponder(proposal.view)
+        return true
+    }
+
+    public func discardRewrite() {
+        rewriteRequestID = UUID()
+        rewriteProposal = nil
+    }
+
     // MARK: - Previsualización atómica (gestos)
 
     /// Congela el undo y marca el span provisional. Vale para palabra y para
@@ -233,7 +379,7 @@ public final class EditorSession {
         guard !isPreviewing, !readingMode, let view = textView else { return }
         let ns = view.string as NSString
         let span = NSRange(location: range.location, length: range.length)
-        guard range.location >= 0, range.length > 0, NSMaxRange(span) <= ns.length else { return }
+        guard range.location >= 0, range.length >= 0, NSMaxRange(span) <= ns.length else { return }
         previewLocation = span.location
         previewOriginal = ns.substring(with: span)
         previewCurrent = previewOriginal
@@ -257,7 +403,9 @@ public final class EditorSession {
             return
         }
         applyPreviewSpan(option)
-        let sel = NSRange(location: previewLocation, length: previewLength)
+        let sel = previewOriginal.isEmpty
+            ? NSRange(location: previewLocation + previewLength, length: 0)
+            : NSRange(location: previewLocation, length: previewLength)
         view.setSelectedRange(sel)
         view.scrollRangeToVisible(sel)
     }
@@ -318,6 +466,9 @@ public final class EditorSession {
         view.didChangeText() // El Coordinator lo ignora mientras isPreviewing.
         previewCurrent = option
         previewLength = (option as NSString).length
+        if MarkdownImage(line: previewOriginal) != nil, let writing = view as? WritingTextView {
+            writing.applyAnalysis(MarkdownDocument(view.string))
+        }
     }
 
     /// Ping-pong undo/redo simétrico para el cambio confirmado.

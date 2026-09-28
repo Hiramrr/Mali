@@ -12,6 +12,17 @@ public enum VoiceState: Sendable, Equatable {
     case failed(String)
 }
 
+public struct PendingVoiceAction: Equatable, Sendable {
+    public let transcript: String
+    public let intent: VoiceIntent
+    public let preview: String
+
+    public var isDictation: Bool {
+        if case .dictation = intent { return true }
+        return false
+    }
+}
+
 // MARK: - Pieza Lego: Voz
 //
 // Para QUITAR la voz del programa:
@@ -25,8 +36,8 @@ public enum VoiceState: Sendable, Equatable {
 
 /// Dictado local estilo Wispr Flow como pieza extraíble.
 ///
-/// Flujo: micrófono → reconocedor → `VoiceCommandParser` + `DictationCleaner`
-/// → `EditorCommand` → `EditorCommandBus` → `EditorSession`.
+/// Flujo: micrófono → reconocedor → dictado o comando → propuesta si cambia
+/// estado → `EditorCommandBus` → `EditorSession`.
 ///
 /// El módulo nunca toca `NSTextView`: si el editor está en lectura, sus
 /// comandos se ignoran solos (`EditorSession.send` no escribe en lectura).
@@ -41,21 +52,50 @@ public final class VoiceModule: EditorInputModule {
     }
 
     public private(set) var state: VoiceState = .idle
+    public private(set) var microphoneReady = false
     /// Último parcial del reconocedor, para mostrar mientras se dicta.
     public private(set) var partialTranscript = ""
     /// Nivel de entrada 0…1 para la barra del HUD.
     public private(set) var inputLevel: Float = 0
     /// Último texto insertado (para confirmar sin reabrir el documento).
     public private(set) var lastInsertedText = ""
-    /// Qué hizo el último comando ("Guardado", "Título: X"…). Los comandos se
-    /// ejecutan al momento; "deshacer" por voz revierte la última acción.
+    /// La transcripción cruda acompaña al resultado para detectar errores de voz.
+    public private(set) var lastTranscript = ""
+    public private(set) var pendingAction: PendingVoiceAction?
+    /// El editor aporta la selección y conserva la propuesta hasta decidir.
+    public var prepareRewrite: (@MainActor (String) async -> String?)?
+    public var acceptRewrite: (@MainActor () -> Bool)?
+    public var discardRewrite: (@MainActor () -> Void)?
+    public var pendingDictationText: String? {
+        guard case .dictation(let text) = pendingAction?.intent else { return nil }
+        return text
+    }
+    /// Qué hizo el último comando ("Guardado", "Título: X"…).
     public private(set) var lastCommandFeedback = ""
-    /// Escucha continua: un toque inicia; cada pausa ejecuta y rearma; otro
-    /// toque detiene. Sin esto habría que pulsar para terminar cada frase.
+    /// Escucha continua: un toque inicia; cada pausa procesa un enunciado y
+    /// vuelve a escuchar, incluso si hay una propuesta por confirmar.
     public var continuousListening = true
+    public private(set) var handsFreeActive = false
+    /// Push-to-talk con `⌥Espacio`: mantener habla, soltar cierra. Comparte el
+    /// mismo `process` que el modo por toques, así los comandos
+    /// ("guarda", "busca…", "cambia el título a…") siguen funcionando.
+    public var pushToTalkEnabled = true {
+        didSet {
+            UserDefaults.standard.set(pushToTalkEnabled, forKey: Self.pushToTalkDefaultsKey)
+            pushToTalk?.isEnabled = pushToTalkEnabled
+        }
+    }
+    /// Hay una pulsación de push-to-talk en curso (para el HUD y para
+    /// suspender el cierre automático mientras se mantiene la tecla).
+    public private(set) var pushToTalkHeld = false
+    private var pushToTalk: VoicePushToTalk?
+    private static let pushToTalkDefaultsKey = "voice.pushToTalkEnabled"
     /// Pausa (s) sin cambios en el parcial para cerrar el enunciado solo.
     public var autoEndpointSilence: TimeInterval = 1.6
     private var monitorTask: Task<Void, Never>?
+    private var startTask: Task<Void, Error>?
+    private var voicePreviewStarted = false
+    private var recognitionGeneration = 0
     private var lastSeenPartial = ""
     private var lastPartialChange = Date()
     /// Idioma del dictado (`es-MX`, `es-ES`, `en-US`).
@@ -79,6 +119,7 @@ public final class VoiceModule: EditorInputModule {
     ///   en pruebas se inyecta un doble sin micrófono.
     public init(recognizer: (any VoiceSpeechRecognizer)? = nil, localeIdentifier: String = "es-MX") {
         self.localeIdentifier = localeIdentifier
+        self.pushToTalkEnabled = UserDefaults.standard.object(forKey: Self.pushToTalkDefaultsKey) as? Bool ?? true
         if let recognizer {
             self.recognizer = recognizer
         } else {
@@ -93,11 +134,23 @@ public final class VoiceModule: EditorInputModule {
     }
 
     public func stop() async {
+        disablePushToTalk()
+        stopMonitor()
+        recognitionGeneration += 1
+        discardRewrite?()
+        handsFreeActive = false
+        microphoneReady = false
+        pushToTalkHeld = false
+        recognizer.onPartial = nil
+        recognizer.onLevel = nil
+        _ = try? await startTask?.value
         stopMonitor()
         await recognizer.cancel()
+        await cancelLivePreview()
         context = nil
         state = .idle
         partialTranscript = ""
+        pendingAction = nil
     }
 
     // MARK: - Dictado (pulsar para hablar)
@@ -107,11 +160,16 @@ public final class VoiceModule: EditorInputModule {
         return false
     }
 
-    /// Alterna dictado: empieza si está en reposo, termina e inserta si escucha.
+    /// Alterna dictado: empieza si está en reposo, termina si escucha.
     public func toggle() async {
-        if isListening {
+        if pendingAction != nil && isListening {
+            await cancelDictation()
+        } else if isListening {
             await finish()
+        } else if state == .processing {
+            handsFreeActive = false
         } else {
+            handsFreeActive = continuousListening
             await begin()
         }
     }
@@ -119,49 +177,162 @@ public final class VoiceModule: EditorInputModule {
     /// Abre el micrófono. Pide permiso de micrófono y voz solo aquí,
     /// nunca al arrancar el editor. Arranca el monitor de cierre automático.
     public func begin() async {
-        guard !isListening else { return }
+        guard state == .idle || isFailed,
+              pendingAction == nil || handsFreeActive else { return }
         state = .listening
+        microphoneReady = false
         partialTranscript = ""
         inputLevel = 0
+        recognitionGeneration += 1
+        let generation = recognitionGeneration
         recognizer.onPartial = { [weak self] text in
-            Task { @MainActor [weak self] in self?.partialTranscript = text }
+            Task { @MainActor [weak self] in
+                guard let self, self.isListening, self.recognitionGeneration == generation else { return }
+                self.partialTranscript = text
+                if self.voicePreviewStarted {
+                    await self.context?.commandBus.send(.showVoicePreview(text))
+                }
+            }
         }
         recognizer.onLevel = { [weak self] level in
-            Task { @MainActor [weak self] in self?.inputLevel = level }
+            Task { @MainActor [weak self] in
+                guard let self, self.recognitionGeneration == generation else { return }
+                self.inputLevel = level
+            }
         }
-        do {
+        let bus = context?.commandBus
+        let showsPreview = handsFreeActive && pendingAction == nil
+        voicePreviewStarted = showsPreview
+        let task = Task {
+            if showsPreview { await bus?.send(.beginVoicePreview) }
             try await recognizer.start()
-            startMonitor()
+        }
+        startTask = task
+        do {
+            try await task.value
+            if isListening {
+                microphoneReady = true
+                startMonitor()
+            }
         } catch {
+            await cancelLivePreview()
+            handsFreeActive = false
+            microphoneReady = false
             state = .failed(error.localizedDescription)
             logger.error("Voice begin failed")
         }
+        startTask = nil
     }
 
-    /// Cierra el micrófono, procesa el texto y lo envía como comandos.
-    /// Uso manual (botón "Insertar ahora" o segundo toque): no rearma.
+    private var isFailed: Bool {
+        if case .failed = state { return true }
+        return false
+    }
+
+    /// Cierra el micrófono y procesa el texto. Una mutación espera confirmación.
+    /// Uso manual (botón "Terminar" o segundo toque): no rearma.
     public func finish() async {
-        await stopAndEmit()
+        let commitDictation = handsFreeActive
+        handsFreeActive = false
+        await stopAndEmit(commitDictation: commitDictation)
     }
 
-    /// Cierre automático por pausa: para, ejecuta y —en escucha continua—
-    /// rearma el micrófono para el siguiente enunciado sin tocar botones.
-    private func autoFinish() async {
-        await stopAndEmit()
-        if continuousListening, state == .idle {
+    /// Cierre automático por pausa. Conserva la escucha para responder a la propuesta.
+    func autoFinish() async {
+        await stopAndEmit(commitDictation: true)
+        if continuousListening, handsFreeActive, state == .idle {
             await begin()
+        } else {
+            handsFreeActive = false
         }
     }
 
-    private func stopAndEmit() async {
+    /// Escucha la respuesta a una propuesta con o sin Manos libres.
+    public func listenForPendingDecision() async {
+        guard pendingAction != nil, !isListening else { return }
+        handsFreeActive = true
+        await begin()
+    }
+
+    // MARK: - Push-to-talk (`⌥Espacio`: mantener para hablar, soltar para cerrar)
+
+    /// ¿Puede empezar una pulsación ahora? Síncrono para el monitor de teclas.
+    var canBeginPushToTalk: Bool {
+        pushToTalkEnabled && !pushToTalkHeld && (state == .idle || isFailed) && pendingAction == nil
+    }
+
+    /// Instala el hotkey global/local. La app real lo llama una vez tras
+    /// `start`; las pruebas no lo llaman (sin monitores de teclas).
+    public func enablePushToTalk() {
+        if let existing = pushToTalk {
+            existing.isEnabled = pushToTalkEnabled
+            return
+        }
+        let monitor = VoicePushToTalk(
+            onPress: { [weak self] in Task { @MainActor [weak self] in _ = self?.handlePushToTalkPress() } },
+            onRelease: { [weak self] in Task { @MainActor [weak self] in self?.handlePushToTalkRelease() } }
+        )
+        monitor.isEnabled = pushToTalkEnabled
+        monitor.start()
+        pushToTalk = monitor
+    }
+
+    public func disablePushToTalk() {
+        pushToTalk?.stop()
+        pushToTalk = nil
+    }
+
+    /// Entrada del hotkey (síncrona): reserva `held` y arranca el micrófono en
+    /// segundo plano. Devuelve si se consumió la pulsación.
+    @discardableResult
+    func handlePushToTalkPress() -> Bool {
+        guard canBeginPushToTalk else { return false }
+        pushToTalkHeld = true
+        Task {
+            await self.begin()
+            if !self.isListening { self.pushToTalkHeld = false }
+        }
+        return true
+    }
+
+    /// Soltada del hotkey: cierra el enunciado por el camino normal
+    /// (`stopAndEmit` → `process`), así dictado y comandos se conservan.
+    func handlePushToTalkRelease() {
+        guard pushToTalkHeld else { return }
+        pushToTalkHeld = false
+        Task { await self.finish() }
+    }
+
+    /// Atajos async para pruebas y para la UI sin teclas.
+    public func beginPushToTalk() async {
+        guard canBeginPushToTalk else { return }
+        pushToTalkHeld = true
+        await begin()
+        if !isListening { pushToTalkHeld = false }
+    }
+
+    public func endPushToTalk() async {
+        guard pushToTalkHeld else { return }
+        pushToTalkHeld = false
+        await finish()
+    }
+
+    private func stopAndEmit(commitDictation: Bool) async {
+        guard isListening else { return }
+        _ = try? await startTask?.value
         guard isListening else { return }
         state = .processing
+        microphoneReady = false
+        recognitionGeneration += 1
+        let generation = recognitionGeneration
         stopMonitor()
         recognizer.onPartial = nil
         recognizer.onLevel = nil
         do {
             let raw = try await recognizer.stop()
+            guard recognitionGeneration == generation else { return }
             guard !raw.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
+                await cancelLivePreview()
                 if recognizer.hasSpeech {
                     state = .idle
                 } else {
@@ -169,10 +340,32 @@ public final class VoiceModule: EditorInputModule {
                 }
                 return
             }
-            let intent = process(rawTranscript: raw)
-            await emit(intent)
-            state = .idle
+            if Self.isStopPhrase(raw) {
+                await cancelLivePreview()
+                handsFreeActive = false
+                lastCommandFeedback = "Escucha detenida"
+            } else if pendingAction != nil {
+                await handlePendingSpeech(raw)
+            } else if Self.decision(for: raw) != nil {
+                await cancelLivePreview()
+                lastCommandFeedback = "No hay propuesta pendiente"
+            } else {
+                let intent = process(rawTranscript: raw)
+                if commitDictation, case .dictation = intent {
+                    lastTranscript = raw
+                    let hadLivePreview = voicePreviewStarted
+                    voicePreviewStarted = false
+                    await emit(intent, livePreview: hadLivePreview)
+                } else {
+                    await cancelLivePreview()
+                    await receive(intent, transcript: raw, generation: generation)
+                }
+            }
+            if recognitionGeneration == generation && state == .processing { state = .idle }
         } catch {
+            guard recognitionGeneration == generation else { return }
+            await cancelLivePreview()
+            handsFreeActive = false
             state = .failed(error.localizedDescription)
             logger.error("Voice finish failed")
         }
@@ -188,7 +381,7 @@ public final class VoiceModule: EditorInputModule {
             while let self, !Task.isCancelled {
                 try? await Task.sleep(for: .milliseconds(200))
                 guard !Task.isCancelled else { return }
-                await self.checkAutoFinish()
+                self.checkAutoFinish()
             }
         }
     }
@@ -199,7 +392,7 @@ public final class VoiceModule: EditorInputModule {
     }
 
     private func checkAutoFinish() {
-        guard isListening, continuousListening else { return }
+        guard isListening, handsFreeActive, !pushToTalkHeld else { return }
         let current = partialTranscript
         let now = Date()
         if current != lastSeenPartial {
@@ -222,7 +415,15 @@ public final class VoiceModule: EditorInputModule {
     /// Descarta la grabación sin insertar nada. "Cancelar" por voz hace lo mismo.
     public func cancelDictation() async {
         stopMonitor()
+        recognitionGeneration += 1
+        handsFreeActive = false
+        microphoneReady = false
+        recognizer.onPartial = nil
+        recognizer.onLevel = nil
+        _ = try? await startTask?.value
+        stopMonitor()
         await recognizer.cancel()
+        await cancelLivePreview()
         state = .idle
         partialTranscript = ""
     }
@@ -298,8 +499,7 @@ public final class VoiceModule: EditorInputModule {
     /// Gramática probada → `EditorCommand`. Reglas:
     /// - find/select: inmediatos, solo mueven selección (la sesión no muta).
     /// - delete sin selección: no-op en sesión (nunca inserta ni borra de más).
-    /// - rewrite: la IA llega en Fase 12; no se finge (feedback + 0 comandos).
-    /// - word: el editor no exporta Word (feedback + 0 comandos).
+    /// - rewrite: la sesión genera antes de confirmar; la aceptación aplica el texto visible.
     /// - unsupported/unknown/múltiple: 0 comandos (el dictado ya los cubrió
     ///   como fallback en `process`; aquí nunca llegan, pero se blindan).
     func editorCommands(for command: ParsedCommand) -> [EditorCommand] {
@@ -310,8 +510,9 @@ public final class VoiceModule: EditorInputModule {
             return [.replaceSelection("")]
         case .replaceSelection(let t):
             return [.replaceSelection(t)]
-        case .rewriteSelection:
-            return []
+        case .rewriteSelection(let instruction):
+            return instruction.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+                ? [] : [.rewriteSelection(instruction)]
         case .formatSelection(let style):
             switch style {
             case .bold: return [.toggleBold]
@@ -335,7 +536,7 @@ public final class VoiceModule: EditorInputModule {
             case .pdf: return [.exportDocument("pdf")]
             case .plainText: return [.exportDocument("txt")]
             case .richText: return [.exportDocument("rtf")]
-            case .word: return []
+            case .word: return [.exportDocument("word")]
             }
         case .unsupported, .unknown, .multipleActions:
             return []
@@ -349,7 +550,7 @@ public final class VoiceModule: EditorInputModule {
         case .renameTitle(let t): return "Título: \(t)"
         case .deleteSelection: return "Selección eliminada — «deshacer» revierte"
         case .replaceSelection(let t): return "Reemplazado por «\(t)» — «deshacer» revierte"
-        case .rewriteSelection: return "La reescritura con IA llega en la Fase 12"
+        case .rewriteSelection: return "Reescribí la selección. «Deshacer» revierte el cambio."
         case .formatSelection(let s):
             let name: String
             switch s {
@@ -369,7 +570,7 @@ public final class VoiceModule: EditorInputModule {
             case .pdf: return "Exportando PDF…"
             case .plainText: return "Exportando texto…"
             case .richText: return "Exportando RTF…"
-            case .word: return "Word no disponible en el editor"
+            case .word: return "Exportando Word…"
             }
         case .unsupported: return "Ese comando no está disponible"
         case .unknown: return "No entendí el comando"
@@ -377,16 +578,175 @@ public final class VoiceModule: EditorInputModule {
         }
     }
 
-    private func emit(_ intent: VoiceIntent) async {
+    private func receive(_ intent: VoiceIntent, transcript: String, generation: Int) async {
+        lastTranscript = transcript
         if intent == .cancel {
             partialTranscript = ""
             return
         }
+        let commands = editorCommands(for: intent)
+        guard !commands.isEmpty else {
+            if case .command(let command) = intent { lastCommandFeedback = feedback(for: command) }
+            partialTranscript = ""
+            return
+        }
+        if case .command(.rewriteSelection(let instruction)) = intent {
+            let proposal = await prepareRewrite?(instruction)
+            guard recognitionGeneration == generation, context != nil else {
+                discardRewrite?()
+                return
+            }
+            guard let proposal else {
+                lastCommandFeedback = "No se pudo generar la propuesta. Selecciona texto y comprueba que Apple Intelligence esté disponible."
+                partialTranscript = ""
+                return
+            }
+            pendingAction = PendingVoiceAction(
+                transcript: transcript, intent: intent,
+                preview: "Reescribir selección: «\(instruction)»\n\nPropuesta:\n\(proposal)"
+            )
+            lastCommandFeedback = ""
+            partialTranscript = ""
+        } else if case .command(.findText) = intent {
+            await emit(intent)
+        } else if case .command(.selectText) = intent {
+            await emit(intent)
+        } else {
+            pendingAction = PendingVoiceAction(transcript: transcript, intent: intent, preview: preview(for: intent))
+            lastCommandFeedback = ""
+            partialTranscript = ""
+        }
+    }
+
+    private func handlePendingSpeech(_ raw: String) async {
+        switch Self.decision(for: raw) {
+        case .confirm:
+            await confirmPending()
+        case .discard:
+            cancelPending()
+        case .repeatAction:
+            discardRewrite?()
+            pendingAction = nil
+            lastCommandFeedback = "Repite la frase"
+        case .asText:
+            usePendingAsDictation()
+        default:
+            lastCommandFeedback = "Di confirmar, descartar o repetir"
+        }
+        partialTranscript = ""
+    }
+
+    private static func spokenAction(_ raw: String) -> String {
+        raw.folding(options: [.caseInsensitive, .diacriticInsensitive], locale: Locale(identifier: "es_MX"))
+            .trimmingCharacters(in: .whitespacesAndNewlines.union(.punctuationCharacters))
+    }
+
+    private static func isStopPhrase(_ raw: String) -> Bool {
+        ["detener voz", "deten la voz", "apaga el microfono", "termina el dictado"]
+            .contains(spokenAction(raw))
+    }
+
+    private func cancelLivePreview() async {
+        guard voicePreviewStarted else { return }
+        voicePreviewStarted = false
+        await context?.commandBus.send(.cancelVoicePreview)
+    }
+
+    private enum SpokenDecision { case confirm, discard, repeatAction, asText }
+
+    private static func decision(for raw: String) -> SpokenDecision? {
+        switch spokenAction(raw) {
+        case "confirmar", "confirma", "aceptar", "acepta", "confirmar la propuesta": return .confirm
+        case "descartar", "descarta", "cancelar", "cancela": return .discard
+        case "repetir", "repite", "intentar de nuevo": return .repeatAction
+        case "usar como texto": return .asText
+        default: return nil
+        }
+    }
+
+    private func preview(for intent: VoiceIntent) -> String {
+        switch intent {
+        case .dictation(let text): return "Insertar: \"\(text)\""
+        case .newline: return "Insertar salto de línea"
+        case .paragraph: return "Insertar párrafo"
+        case .undo, .deleteLastInsertion: return "Deshacer último cambio"
+        case .command(let command):
+            switch command {
+            case .renameTitle(let title): return "Cambiar título a: \"\(title)\""
+            case .replaceSelection(let text): return "Reemplazar selección por: \"\(text)\""
+            case .rewriteSelection(let instruction): return "Reescribir selección: «\(instruction)»"
+            case .deleteSelection: return "Eliminar selección"
+            case .formatSelection(let style): return "Aplicar formato: \(style.rawValue)"
+            case .undo: return "Deshacer último cambio"
+            case .redo: return "Rehacer último cambio"
+            case .saveDocument: return "Guardar documento"
+            case .openDocument(let name): return "Abrir: \(name ?? "elegir documento")"
+            case .exportDocument(let format): return "Exportar: \(format.rawValue)"
+            default: return feedback(for: command)
+            }
+        case .cancel: return ""
+        }
+    }
+
+    public func confirmPending() async {
+        guard let action = pendingAction else { return }
+        if case .dictation(let text) = action.intent,
+           text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty { return }
+        pendingAction = nil
+        if isListening && !continuousListening { await cancelDictation() }
+        if case .command(.rewriteSelection) = action.intent {
+            lastCommandFeedback = acceptRewrite?() == true
+                ? "Selección reescrita — «deshacer» revierte"
+                : "La propuesta caducó porque cambió la selección o el documento."
+            return
+        }
+        await emit(action.intent)
+    }
+
+    public func updatePendingDictation(_ text: String) {
+        guard let action = pendingAction, action.isDictation else { return }
+        let intent = VoiceIntent.dictation(text)
+        pendingAction = PendingVoiceAction(transcript: action.transcript, intent: intent, preview: preview(for: intent))
+    }
+
+    public func cancelPending() {
+        guard pendingAction != nil else { return }
+        discardRewrite?()
+        pendingAction = nil
+        lastCommandFeedback = "Propuesta descartada"
+    }
+
+    /// Si una frase era dictado, conserva el transcript y cambia la propuesta.
+    public func usePendingAsDictation() {
+        guard let action = pendingAction else { return }
+        if case .dictation = action.intent { return }
+        let text = cleaner.clean(action.transcript, formal: formalStyle)
+        guard !text.isEmpty else { return }
+        discardRewrite?()
+        let intent = VoiceIntent.dictation(text)
+        pendingAction = PendingVoiceAction(transcript: action.transcript, intent: intent, preview: preview(for: intent))
+    }
+
+    public func repeatPending() async {
+        guard pendingAction != nil else { return }
+        discardRewrite?()
+        pendingAction = nil
+        lastCommandFeedback = ""
+        if isListening && !continuousListening { await cancelDictation() }
+        await begin()
+    }
+
+    private func emit(_ intent: VoiceIntent, livePreview: Bool = false) async {
         guard let bus = context?.commandBus else {
             state = .failed("Voz sin conectar al editor. Reinicia la app.")
             return
         }
-        let commands = editorCommands(for: intent)
+        let commands: [EditorCommand]
+        if livePreview, case .dictation(let text) = intent {
+            commands = [.commitVoicePreview(text)]
+        } else {
+            commands = editorCommands(for: intent)
+        }
         switch intent {
         case .dictation(let text):
             lastInsertedText = text
@@ -394,6 +754,12 @@ public final class VoiceModule: EditorInputModule {
         case .command(let cmd):
             lastInsertedText = ""
             lastCommandFeedback = feedback(for: cmd)
+        case .undo, .deleteLastInsertion:
+            lastInsertedText = ""
+            lastCommandFeedback = "Deshecho"
+        case .newline, .paragraph:
+            lastInsertedText = ""
+            lastCommandFeedback = "Insertado"
         default:
             lastInsertedText = ""
             lastCommandFeedback = ""

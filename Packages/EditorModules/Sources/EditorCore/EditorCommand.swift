@@ -25,6 +25,7 @@ public enum EditorCommand: Equatable, Sendable {
     case insertText(String)
     case replaceSelection(String)
     case selectRange(TextRange)
+    case moveParagraph(from: TextRange, to: TextRange)
     case selectAll
     case deleteBackward
     case deleteForward
@@ -51,8 +52,11 @@ public enum EditorCommand: Equatable, Sendable {
     /// documento y de los paneles); si llegan a `send`, se ignoran.
     case saveDocument
     case openDocument(String?)
-    /// Formato: "pdf", "txt" o "rtf". "word" no lo soporta el editor.
+    /// Formato: "pdf", "txt", "rtf" o "word" (.docx). Lo aplica `EditorScreen`.
     case exportDocument(String)
+    /// Instrucción de reescritura por voz. VoiceModule prepara la propuesta
+    /// y EditorSession la aplica solo al confirmar.
+    case rewriteSelection(String)
     // Previsualización atómica para módulos (gestos). Mientras dura, el texto
     // mostrado no toca el binding, el guardado ni el historial: confirmar
     // registra un único undo (o ninguno si no hubo cambio) y cancelar
@@ -61,6 +65,12 @@ public enum EditorCommand: Equatable, Sendable {
     case showPreview(String)
     case commitPreview
     case cancelPreview
+    /// Dictado provisional en el documento. La sesión lo muestra sin guardar
+    /// ni registrar undo hasta recibir el texto final.
+    case beginVoicePreview
+    case showVoicePreview(String)
+    case commitVoicePreview(String)
+    case cancelVoicePreview
 }
 
 public struct DocumentHeading: Identifiable, Equatable, Sendable {

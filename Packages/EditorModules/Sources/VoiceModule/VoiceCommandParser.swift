@@ -37,7 +37,7 @@ public struct VoiceCommandParser: Sendable {
         if deletePhrases.contains(text), text.count < 80 {
             return .deleteLastInsertion
         }
-        if text == "deshacer" || text == "deshaz" || text == "undo" {
+        if text == "deshacer" || text == "deshaz" || text == "undo" || text == "corrige eso" {
             return .undo
         }
         if text.count < 40 {

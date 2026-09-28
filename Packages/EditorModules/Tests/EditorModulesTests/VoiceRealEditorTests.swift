@@ -775,16 +775,25 @@ final class VoiceRealEditorTests: XCTestCase {
         XCTAssertGreaterThan(data?.count ?? 0, 0)
     }
 
-    @MainActor func testDoc07ExportPdfNotImplemented() {
-        let (w, _, _, e, _) = makeRealTarget(); defer { w.orderOut(nil) }
+    @MainActor func testDoc07ExportPdf() {
+        let (w, v, _, e, _) = makeRealTarget(); defer { w.orderOut(nil) }
         let r = confirm(e, .exportDocument(.pdf))
-        XCTAssertEqual(r, .failure(.notImplementedInEditor("export pdf")), "no fingir éxito: \(r)")
+        guard case .success(.exported(.pdf, let url)) = r else { return XCTFail("export pdf: \(r)") }
+        XCTAssertEqual(url.pathExtension, "pdf")
+        let data = try? Data(contentsOf: url)
+        XCTAssertGreaterThan(data?.count ?? 0, 0)
+        _ = v
     }
 
-    @MainActor func testDoc08ExportWordNotImplemented() {
+    @MainActor func testDoc08ExportWord() {
         let (w, _, _, e, _) = makeRealTarget(); defer { w.orderOut(nil) }
         let r = confirm(e, .exportDocument(.word))
-        XCTAssertEqual(r, .failure(.notImplementedInEditor("export word")))
+        guard case .success(.exported(.word, let url)) = r else { return XCTFail("export word: \(r)") }
+        XCTAssertEqual(url.pathExtension, "docx")
+        let data = try? Data(contentsOf: url)
+        XCTAssertGreaterThan(data?.count ?? 0, 0)
+        // Office Open XML es un zip: empieza con "PK".
+        XCTAssertEqual(data?.prefix(2).map { $0 }, [0x50, 0x4B])
     }
 
     @MainActor func testDoc09StoreNeverEscapesBase() {

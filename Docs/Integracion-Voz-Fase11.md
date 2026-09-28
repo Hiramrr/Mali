@@ -44,14 +44,53 @@ Ruta: transcript → legacy (frases exactas) → `parseCommand` real (+reintento
 → `[EditorCommand]` → bus → sesión/pantalla.
 
 Cobertura: find/select inmediatos (solo selección), delete/replace/format/
-undo/redo/rename/save/open/export ejecutados, rewrite y word con aviso
-honesto (Fase 12), unsupported/unknown/múltiple → dictado o aviso, 0 comandos.
+undo/redo/rename/save/open/export ejecutados, rewrite con propuesta local
+y confirmación, unsupported/unknown/múltiple → dictado o aviso, 0 comandos.
 
-Desviación consciente de Fase 11: la app auto-ejecuta (no hay UI de
-confirmación; construirla es el siguiente paso). Red de seguridad: cada
-mutación es UNA operación de Undo y el HUD dice qué pasó + «deshacer» por
-voz revierte. Borrado/reemplazo/formato sin selección = no-op.
+El panel de voz muestra la transcripción y la propuesta. Dictado y comandos
+comparten el mismo micrófono. En el modo por turnos, Enter confirma, Esc
+descarta y R vuelve a grabar. Buscar y seleccionar se ejecutan al momento;
+las acciones que cambian estado esperan confirmación. Si una frase como
+«Titula bien tus ideas» se reconoce como comando, «Usar como texto» cambia
+la propuesta a dictado sin volver a hablar.
+Tras confirmar, el panel conserva la transcripción junto al resultado.
+«Corrige eso» propone deshacer el último cambio.
 
-Dictado automático: `continuousListening` (defecto sí) + cierre por pausa
-(1.6 s sin cambios en el parcial). Un toque inicia, cada pausa ejecuta y
-rearma, otro toque o Terminar detiene. El silencio total nunca cierra solo.
+Abrir por nombre consulta los documentos conocidos de la biblioteca. Solo
+abre directamente cuando el nombre identifica un archivo único. Si no hay
+coincidencia única, muestra el panel de apertura del sistema.
+
+Manos libres: `continuousListening` (defecto sí) cierra cada frase tras 1.6 s
+sin cambios en el parcial. El dictado parcial aparece en el documento sin
+guardarse y se inserta al cerrar la pausa. El micrófono se rearma. Para un
+cambio pendiente, sigue escuchando «confirmar», «descartar», «repetir» o
+«usar como texto». «Detener voz» termina la escucha. El silencio total nunca
+cierra solo. El umbral aún requiere medición con micrófono real.
+
+## Actualización: reescritura real y Word (2026-09-23)
+
+- «Hazlo más breve» y otras instrucciones de reescritura generan una
+  propuesta con Foundation Models en este Mac. El panel muestra el texto
+  generado antes de confirmar. Aceptar reemplaza la selección en un único
+  undo; descartar conserva el documento y el historial. Si no hay selección,
+  el modelo falla o cambia el documento o la selección, no aplica nada.
+- «Exporta en Word» es real: `EditorScreen` guarda .docx (Office Open XML
+  desde la lectura renderizada) vía panel del sistema. «Exporta a pdf»
+  sigue yendo al diálogo de impresión.
+- Harness (`VoiceCommandIntegration`, doble de pruebas): export pdf (PDF
+  headless al store temporal) y word (.docx al store) reales. Rewrite sigue
+  simulado a propósito (doble determinista para la política de
+  confirmación; el path real de producción es `EditorSession`).
+
+## Fase 12: verificación de reescritura local (2026-09-23)
+
+- `EditorSession` envía solo la selección y la instrucción a Foundation Models
+  en este Mac. El texto original y el historial de deshacer no cambian hasta
+  que la persona confirma la propuesta visible.
+- Cambiar el documento, la selección o el archivo antes de confirmar invalida
+  la propuesta. Detener voz también la descarta e ignora respuestas tardías.
+  Los espacios y saltos de línea al borde de la selección se conservan.
+- `swift test --package-path Packages/EditorModules` pasó con 227 pruebas.
+  Una prueba de consola con Foundation Models disponible devolvió una
+  reescritura breve. Falta comprobar el flujo completo con micrófono y la
+  interfaz en ejecución.
